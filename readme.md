@@ -8,5 +8,5 @@ Game project made in Godot
 4. Update Godot settings if needed
 
 ### Useful links:
-* [https://docs.google.com/document/d/1qERKAdkpZH27V4oyoe7L1V3VZTVXUXmb6nJv103BRSE/edit](Google Docs)
-* [https://godotengine.org/download](Godot engine)
+* [Google Docs](https://docs.google.com/document/d/1qERKAdkpZH27V4oyoe7L1V3VZTVXUXmb6nJv103BRSE/edit)
+* [Godot Engine](https://godotengine.org/download)
