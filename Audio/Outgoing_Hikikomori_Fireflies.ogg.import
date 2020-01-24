@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Outgoing_Hikikomori_Fireflies.ogg-028a7432d93dad5f440fdf96719a2ee2.oggstr"
+
+[deps]
+
+source_file="res://Audio/Outgoing_Hikikomori_Fireflies.ogg"
+dest_files=[ "res://.import/Outgoing_Hikikomori_Fireflies.ogg-028a7432d93dad5f440fdf96719a2ee2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
