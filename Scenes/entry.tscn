@@ -19,6 +19,8 @@ export(String) var scene_path
 
 
 func _ready():
+	# Load some settings
+	get_node(\"/root/global\").call(\"read_file\")
 	# At the moment this is the main way to play music by path in background
 	get_tree().get_root().get_node(\"ost\").call(\"setAndPlay\", music_path)
 	# Load main scene after everything was loaded

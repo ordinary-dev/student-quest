@@ -35,8 +35,7 @@ func _on_ButtonSettings_pressed():
 
 
 func _on_ButtonQuit_pressed():
-	# TODO: replace with custom quit function
-	#       that will save the game
+	get_node(\"/root/global\").call(\"write_file\")
 	get_tree().quit()
 	
 func _ready():
