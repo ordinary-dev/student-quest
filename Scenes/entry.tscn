@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://my_theme.tres" type="Theme" id=1]
+
+[sub_resource type="GDScript" id=1]
+resource_name = "Main"
+script/source = "extends Control
+
+
+# This scene is the first scene just for convinience.
+# It may call some functions and preload some objects
+# before the main scene will be loaded.
+# Now this scene is loading background music
+# and switching to menu after that.
+
+
+export(String) var music_path
+export(String) var scene_path
+
+
+func _ready():
+	# At the moment this is the main way to play music by path in background
+	get_tree().get_root().get_node(\"ost\").call(\"setAndPlay\", music_path)
+	# Load main scene after everything was loaded
+	assert(get_tree().change_scene(scene_path) == OK)
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+music_path = "res://Audio/Kalaido_Hanging_Lanterns.ogg"
+scene_path = "res://Scenes/menu.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+text = "Loading..."
+align = 1
+valign = 1
+clip_text = true

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Audio/Kalaido_Hanging_Lanterns.ogg" type="AudioStream" id=1]
+
+[sub_resource type="GDScript" id=1]
+resource_name = "Main"
+script/source = "extends AudioStreamPlayer
+
+func setAndPlay(path):
+	var obj = load(path)
+	if (self.stream != obj):
+		self.stream = obj
+	if (!self.playing):
+		self.play()
+"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )
+bus = "Background"
+script = SubResource( 1 )

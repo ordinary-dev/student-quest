@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://my_theme.tres" type="Theme" id=1]
+
+[sub_resource type="GDScript" id=1]
+resource_name = "Main"
+script/source = "extends Control
+
+# Path to scene that will start a new game
+export(String) var new_game
+
+# Path to scene that will load saved game
+export(String) var load_game
+
+# Path to scene that will show settings
+export(String) var settings
+
+func validate_scene(path):
+	# Make sure that path is defined
+	return path != \"\"
+
+func _on_ButtonNew_pressed():
+	if validate_scene(new_game):
+		assert(get_tree().change_scene(new_game) == OK)
+
+
+func _on_ButtonLoad_pressed():
+	if validate_scene(load_game):
+		assert(get_tree().change_scene(load_game) == OK)
+
+
+func _on_ButtonSettings_pressed():
+	if validate_scene(settings):
+		assert(get_tree().change_scene(settings) == OK)
+
+
+func _on_ButtonQuit_pressed():
+	# TODO: replace with custom quit function
+	#       that will save the game
+	get_tree().quit()
+	
+func _ready():
+	# Show app version
+	var dict = Engine.get_version_info()
+	var ver = str(dict[\"minor\"]) + \".\" + str(dict[\"major\"])
+	get_node(\"VBoxContainer/LabelVer\").text = \"ver: \" + ver
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonNew" type="Button" parent="VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 168.0
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "New game"
+
+[node name="ButtonLoad" type="Button" parent="VBoxContainer"]
+margin_top = 172.0
+margin_right = 1280.0
+margin_bottom = 340.0
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Load game"
+
+[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
+margin_top = 344.0
+margin_right = 1280.0
+margin_bottom = 512.0
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Settings"
+
+[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
+margin_top = 516.0
+margin_right = 1280.0
+margin_bottom = 684.0
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+text = "Quit"
+
+[node name="LabelVer" type="Label" parent="VBoxContainer"]
+margin_top = 688.0
+margin_right = 1280.0
+margin_bottom = 720.0
+theme = ExtResource( 1 )
+[connection signal="pressed" from="VBoxContainer/ButtonNew" to="." method="_on_ButtonNew_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonLoad" to="." method="_on_ButtonLoad_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
