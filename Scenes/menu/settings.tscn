@@ -79,11 +79,13 @@ func _ready():
 	# Load objects
 	slider_ost = get_node(slider_ost_path)
 	slider_fx = get_node(slider_fx_path)
-
+	
 	ost_text = get_node(ost_text_path)
 	fx_text = get_node(fx_text_path)
 	
 	fd = get_node(fd_path)
+	
+	update_settings()
 
 
 func _on_export_pressed():
@@ -184,7 +186,6 @@ step = 4.0
 tick_count = 14
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer"]
-editor/display_folded = true
 margin_top = 210.0
 margin_right = 1812.0
 margin_bottom = 313.0

@@ -15,6 +15,8 @@ export(String) var load_game
 # Path to scene that will show settings
 export(String) var settings
 
+export(String) var confirm_scene
+
 
 func validate_scene(path):
 	# Make sure that path is defined
@@ -41,15 +43,15 @@ func _on_ButtonSettings_pressed():
 
 func _on_ButtonQuit_pressed():
 	get_node(\"/root/fx\").call(\"click1\")
-	get_node(\"/root/global\").call(\"write_file\")
-	get_tree().quit()
+	if validate_scene(confirm_scene):
+		assert(get_tree().change_scene(confirm_scene) == OK)
 
 
 func _ready():
 	# Show app version
 	var dict = Engine.get_version_info()
 	var ver = str(dict[\"minor\"]) + \".\" + str(dict[\"major\"])
-	get_node(\"VBoxContainer/LabelVer\").text = \"ver: \" + ver
+	get_node(\"VBoxContainer/LabelVer\").text = \"ver: v\" + ver
 "
 
 [node name="Control" type="Control"]
@@ -57,6 +59,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
 settings = "res://Scenes/menu/settings.tscn"
+confirm_scene = "res://Scenes/menu/confirm.tscn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
