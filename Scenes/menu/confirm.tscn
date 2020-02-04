@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+func _on_ButtonNo_pressed():
+	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
+
+
+func _on_ButtonYes_pressed():
+	get_node(\"/root/fx\").call(\"click1\")
+	get_node(\"/root/global\").call(\"write_file\")
+	get_tree().quit()
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.105882, 0.105882, 0.105882, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 200.0
+margin_top = 200.0
+margin_right = -200.0
+margin_bottom = -200.0
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+margin_right = 1520.0
+margin_bottom = 338.0
+size_flags_vertical = 7
+text = "Do you really want to quit? 
+All data will be saved."
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 342.0
+margin_right = 1520.0
+margin_bottom = 680.0
+size_flags_vertical = 3
+custom_constants/separation = 30
+
+[node name="ButtonNo" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_right = 745.0
+margin_bottom = 338.0
+size_flags_horizontal = 3
+text = "No"
+
+[node name="ButtonYes" type="Button" parent="ColorRect/VBoxContainer/HBoxContainer"]
+margin_left = 775.0
+margin_right = 1520.0
+margin_bottom = 338.0
+size_flags_horizontal = 3
+text = "Yes"
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/ButtonNo" to="." method="_on_ButtonNo_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/ButtonYes" to="." method="_on_ButtonYes_pressed"]
