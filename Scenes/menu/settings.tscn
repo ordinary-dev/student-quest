@@ -1,20 +1,33 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Font Resources/Pixel_font_large.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font Resources/Pixel_font_small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://my_theme_small.tres" type="Theme" id=3]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
 script/source = "extends Control
 
 # Sliders
-onready var slider_ost = get_node(\"ColorRect/VBoxContainer/VBoxContainer/HSlider\")
-onready var slider_fx = get_node(\"ColorRect/VBoxContainer/VBoxContainer2/HSlider\")
+export (NodePath) var slider_ost_path
+export (NodePath) var slider_fx_path
+
+# Labels
+export (NodePath) var ost_text_path
+export (NodePath) var fx_text_path
+
+# File dialog
+export (NodePath) var fd_path
+
+var slider_ost
+var slider_fx
+var ost_text
+var fx_text
+var fd
 
 # Global objects
 onready var ost = get_tree().get_root().get_node(\"/root/ost\")
 onready var fx = get_tree().get_root().get_node(\"/root/fx\")
-
-# Labels
-onready var ost_text = get_node(\"ColorRect/VBoxContainer/VBoxContainer/HBoxContainer/Label\")
-onready var fx_text = get_node(\"ColorRect/VBoxContainer/VBoxContainer2/HBoxContainer/Label\")
 
 # Main scene
 var return_to = \"res://Scenes/menu/menu.tscn\"
@@ -28,42 +41,83 @@ func upd_fx(val):
 
 
 func _on_HSlider_value_changed(value):
-	get_node(\"/root/fx\").call(\"click1\")
+	click()
 	ost.volume_db = value
 	upd_label(value)
 
 
 func _on_HSliderFX_value_changed(value):
-	get_node(\"/root/fx\").call(\"click1\")
+	click()
 	fx.volume_db = value
 	upd_fx(value)
 
 
 func _on_Button_pressed():
-	get_node(\"/root/fx\").call(\"click1\")
+	click()
 	slider_ost.value = 0
 
 
 func _on_ButtonFX_pressed():
-	get_node(\"/root/fx\").call(\"click1\")
+	click()
 	slider_fx.value = 0
 
 
 func _on_ButtonBack_pressed():
-	get_node(\"/root/fx\").call(\"click1\")
+	click()
 	assert(get_tree().change_scene(return_to) == OK)
 
+func _on_TabContainer_tab_selected(tab):
+	click()
 
-func _ready():
+func update_settings():
 	slider_ost.value = ost.volume_db
 	slider_fx.value = fx.volume_db
 	upd_label(ost.volume_db)
-	upd_fx(fx.volume_db)"
+	upd_fx(fx.volume_db)
+
+func _ready():
+	# Load objects
+	slider_ost = get_node(slider_ost_path)
+	slider_fx = get_node(slider_fx_path)
+
+	ost_text = get_node(ost_text_path)
+	fx_text = get_node(fx_text_path)
+	
+	fd = get_node(fd_path)
+
+
+func _on_export_pressed():
+	click()
+	fd.mode = FileDialog.MODE_SAVE_FILE
+	fd.popup()
+
+func _on_import_pressed():
+	click()
+	fd.mode = FileDialog.MODE_OPEN_FILE
+	fd.popup()
+
+func _on_FileDialog_file_selected(path):
+	click()
+	if fd.mode == FileDialog.MODE_SAVE_FILE:
+		get_node(\"/root/global\").call(\"write_file\", path)
+	else:
+		get_node(\"/root/global\").call(\"read_file\", path)
+	update_settings() # Redraw ui
+
+
+func click():
+	get_node(\"/root/fx\").call(\"click1\")
+"
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
+slider_ost_path = NodePath("ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HSlider")
+slider_fx_path = NodePath("ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HSlider")
+ost_text_path = NodePath("ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer/Label")
+fx_text_path = NodePath("ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer/Label")
+fd_path = NodePath("ColorRect/VBoxContainer/TabContainer/Progress/FileDialog")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -73,35 +127,55 @@ color = Color( 0, 0, 0, 1 )
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
 custom_constants/separation = 50
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
-margin_right = 1280.0
-margin_bottom = 142.0
+margin_right = 1820.0
+margin_bottom = 97.0
 size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
 text = "Settings"
 align = 1
 valign = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
-editor/display_folded = true
-margin_top = 192.0
-margin_right = 1280.0
-margin_bottom = 334.0
+[node name="TabContainer" type="TabContainer" parent="ColorRect/VBoxContainer"]
+margin_top = 147.0
+margin_right = 1820.0
+margin_bottom = 831.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+tab_align = 0
+
+[node name="Audio" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 50.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio"]
+margin_right = 1812.0
+margin_bottom = 313.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer"]
-margin_right = 1280.0
-margin_bottom = 44.0
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+margin_right = 1812.0
+margin_bottom = 101.0
+size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Music volume"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="ColorRect/VBoxContainer/VBoxContainer"]
-margin_top = 48.0
-margin_right = 1280.0
-margin_bottom = 92.0
+[node name="HSlider" type="HSlider" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+margin_top = 105.0
+margin_right = 1812.0
+margin_bottom = 206.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -80.0
@@ -109,80 +183,172 @@ max_value = 24.0
 step = 4.0
 tick_count = 14
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/VBoxContainer"]
-margin_top = 96.0
-margin_right = 1280.0
-margin_bottom = 142.0
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+editor/display_folded = true
+margin_top = 210.0
+margin_right = 1812.0
+margin_bottom = 313.0
 size_flags_vertical = 3
+custom_constants/separation = 50
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 172.0
-margin_bottom = 46.0
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer"]
+margin_right = 132.0
+margin_bottom = 103.0
+custom_fonts/font = ExtResource( 2 )
 text = "Reset"
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 176.0
-margin_top = 7.0
-margin_right = 1280.0
-margin_bottom = 39.0
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer"]
+margin_left = 182.0
+margin_top = 39.0
+margin_right = 1812.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
 text = "Vol:"
-align = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio"]
 editor/display_folded = true
-margin_top = 384.0
-margin_right = 1280.0
-margin_bottom = 526.0
+margin_top = 317.0
+margin_right = 1812.0
+margin_bottom = 630.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer2"]
-margin_right = 1280.0
-margin_bottom = 44.0
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2"]
+margin_right = 1812.0
+margin_bottom = 101.0
 size_flags_vertical = 7
 text = "FX volume"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="ColorRect/VBoxContainer/VBoxContainer2"]
-margin_top = 48.0
-margin_right = 1280.0
-margin_bottom = 92.0
+[node name="HSlider" type="HSlider" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2"]
+margin_top = 105.0
+margin_right = 1812.0
+margin_bottom = 206.0
 size_flags_vertical = 3
 min_value = -80.0
 max_value = 24.0
 step = 4.0
 tick_count = 14
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2"]
 editor/display_folded = true
-margin_top = 96.0
-margin_right = 1280.0
-margin_bottom = 142.0
+margin_top = 210.0
+margin_right = 1812.0
+margin_bottom = 313.0
 size_flags_vertical = 3
+custom_constants/separation = 50
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/VBoxContainer2/HBoxContainer"]
-margin_right = 172.0
-margin_bottom = 46.0
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer"]
+margin_right = 132.0
+margin_bottom = 103.0
+custom_fonts/font = ExtResource( 2 )
 text = "Reset"
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/VBoxContainer2/HBoxContainer"]
-margin_left = 176.0
-margin_top = 7.0
-margin_right = 1280.0
-margin_bottom = 39.0
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer"]
+margin_left = 182.0
+margin_top = 39.0
+margin_right = 1812.0
+margin_bottom = 63.0
 size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
 text = "Vol:"
-align = 1
+
+[node name="Progress" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 50.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Progress"]
+margin_right = 1812.0
+margin_bottom = 200.0
+size_flags_vertical = 7
+text = "Be honest with yourself"
+valign = 1
+
+[node name="FileDialog" type="FileDialog" parent="ColorRect/VBoxContainer/TabContainer/Progress"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -8.0
+margin_bottom = -46.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+size_flags_stretch_ratio = 0.0
+theme = ExtResource( 3 )
+access = 2
+current_dir = "/home/user/StudentLife"
+current_path = "/home/user/StudentLife/"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Progress"]
+editor/display_folded = true
+margin_top = 204.0
+margin_right = 1812.0
+margin_bottom = 1005.0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/TabContainer/Progress/HBoxContainer"]
+margin_right = 904.0
+margin_bottom = 801.0
+size_flags_horizontal = 3
+text = "Import"
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/TabContainer/Progress/HBoxContainer"]
+margin_left = 908.0
+margin_right = 1812.0
+margin_bottom = 801.0
+size_flags_horizontal = 3
+text = "Export"
+
+[node name="Info" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 50.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Info"]
+anchor_right = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = 487.0
+text = "Authors:
+- mcraw
+- friday13
+
+Contact us:
+our@mail.com
+
+Please support us (we are starving):
+btc: ...
+eth: ...
+
+Every character is just a result of our imagination.
+
+(C) 2020"
+autowrap = true
 
 [node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
-margin_top = 576.0
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_top = 881.0
+margin_right = 1820.0
+margin_bottom = 980.0
 size_flags_vertical = 3
 text = "Back to menu"
-[connection signal="value_changed" from="ColorRect/VBoxContainer/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="value_changed" from="ColorRect/VBoxContainer/VBoxContainer2/HSlider" to="." method="_on_HSliderFX_value_changed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/VBoxContainer2/HBoxContainer/Button" to="." method="_on_ButtonFX_pressed"]
+[connection signal="tab_selected" from="ColorRect/VBoxContainer/TabContainer" to="." method="_on_TabContainer_tab_selected" flags=3]
+[connection signal="value_changed" from="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="value_changed" from="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HSlider" to="." method="_on_HSliderFX_value_changed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer/Button" to="." method="_on_ButtonFX_pressed"]
+[connection signal="file_selected" from="ColorRect/VBoxContainer/TabContainer/Progress/FileDialog" to="." method="_on_FileDialog_file_selected"]
+[connection signal="popup_hide" from="ColorRect/VBoxContainer/TabContainer/Progress/FileDialog" to="." method="click"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/TabContainer/Progress/HBoxContainer/Button" to="." method="_on_import_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/TabContainer/Progress/HBoxContainer/Button2" to="." method="_on_export_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_ButtonBack_pressed"]

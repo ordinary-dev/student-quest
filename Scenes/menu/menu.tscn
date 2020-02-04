@@ -63,40 +63,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ButtonNew" type="Button" parent="VBoxContainer"]
-margin_right = 1280.0
-margin_bottom = 168.0
+margin_right = 1920.0
+margin_bottom = 258.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "New game"
 
 [node name="ButtonLoad" type="Button" parent="VBoxContainer"]
-margin_top = 172.0
-margin_right = 1280.0
-margin_bottom = 340.0
+margin_top = 262.0
+margin_right = 1920.0
+margin_bottom = 520.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Load game"
 
 [node name="ButtonSettings" type="Button" parent="VBoxContainer"]
-margin_top = 344.0
-margin_right = 1280.0
-margin_bottom = 512.0
+margin_top = 524.0
+margin_right = 1920.0
+margin_bottom = 782.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Settings"
 
 [node name="ButtonQuit" type="Button" parent="VBoxContainer"]
-margin_top = 516.0
-margin_right = 1280.0
-margin_bottom = 684.0
+margin_top = 786.0
+margin_right = 1920.0
+margin_bottom = 1044.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Quit"
 
 [node name="LabelVer" type="Label" parent="VBoxContainer"]
-margin_top = 688.0
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_top = 1048.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 theme = ExtResource( 1 )
 [connection signal="pressed" from="VBoxContainer/ButtonNew" to="." method="_on_ButtonNew_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonLoad" to="." method="_on_ButtonLoad_pressed"]
