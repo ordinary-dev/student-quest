@@ -3,12 +3,28 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends AudioStreamPlayer
 
+var btn_click
+export (String) var btn_click_path
+
+# To play button click use this command:
+# get_node(\"/root/fx\").call(\"click1\")
+
+func click1():
+	self.stream = btn_click
+	self.play()
+
 func setAndPlay(path):
 	var obj = load(path)
 	if (self.stream != obj):
 		self.stream = obj
 	if (!self.playing):
-		self.play()"
+		self.play()
+		
+func _ready():
+	# Keep button click sound in memory
+	# It may be used a lot of times
+	btn_click = load(btn_click_path)"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 script = SubResource( 1 )
+btn_click_path = "res://Audio/fx/button_click_01.wav"

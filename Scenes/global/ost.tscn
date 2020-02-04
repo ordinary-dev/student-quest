@@ -16,5 +16,4 @@ func setAndPlay(path):
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-bus = "Background"
 script = SubResource( 1 )

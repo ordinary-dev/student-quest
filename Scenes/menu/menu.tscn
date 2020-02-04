@@ -15,29 +15,36 @@ export(String) var load_game
 # Path to scene that will show settings
 export(String) var settings
 
+
 func validate_scene(path):
 	# Make sure that path is defined
 	return path != \"\"
 
+
 func _on_ButtonNew_pressed():
+	get_node(\"/root/fx\").call(\"click1\")
 	if validate_scene(new_game):
 		assert(get_tree().change_scene(new_game) == OK)
 
 
 func _on_ButtonLoad_pressed():
+	get_node(\"/root/fx\").call(\"click1\")
 	if validate_scene(load_game):
 		assert(get_tree().change_scene(load_game) == OK)
 
 
 func _on_ButtonSettings_pressed():
+	get_node(\"/root/fx\").call(\"click1\")
 	if validate_scene(settings):
 		assert(get_tree().change_scene(settings) == OK)
 
 
 func _on_ButtonQuit_pressed():
+	get_node(\"/root/fx\").call(\"click1\")
 	get_node(\"/root/global\").call(\"write_file\")
 	get_tree().quit()
-	
+
+
 func _ready():
 	# Show app version
 	var dict = Engine.get_version_info()
