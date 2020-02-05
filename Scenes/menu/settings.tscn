@@ -156,7 +156,6 @@ size_flags_stretch_ratio = 7.0
 tab_align = 0
 
 [node name="Audio" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -308,6 +307,7 @@ size_flags_horizontal = 3
 text = "Экспорт"
 
 [node name="Info" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
