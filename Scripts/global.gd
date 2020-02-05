@@ -10,11 +10,16 @@ var file_name = "user://save_game.dat"
 # For easier changes in future
 var ost_field = "ost_vol"
 var fx_field = "fx_vol"
+var sg_field = "saved_games"
+
+# All files are named user://save.<number>.txt
+var saved_games = []
 
 func gen_dict():
 	var save_dict = {
 		ost_field:ost.volume_db,
-		fx_field:fx.volume_db
+		fx_field:fx.volume_db,
+		sg_field:saved_games
 	}
 	return save_dict
 
@@ -23,6 +28,8 @@ func restore(content):
 		ost.volume_db = content[ost_field]
 	if content.has(fx_field):
 		fx.volume_db = content[fx_field]
+	if content.has(sg_field):
+		saved_games = content[sg_field]
 
 func read_file(path=file_name):
 	var fl = File.new()
@@ -36,10 +43,9 @@ func read_file(path=file_name):
 		# Default values
 		ost.volume_db = 0
 		fx.volume_db = 0
-	
+
 func write_file(path=file_name):
 	var fl = File.new()
 	fl.open(path, File.WRITE)
 	fl.store_line(to_json(gen_dict()))
 	fl.close()
-	

@@ -25,8 +25,7 @@ func validate_scene(path):
 
 func _on_ButtonNew_pressed():
 	get_node(\"/root/fx\").call(\"click1\")
-	if validate_scene(new_game):
-		assert(get_tree().change_scene(new_game) == OK)
+	assert(get_tree().change_scene(new_game) == OK)
 
 
 func _on_ButtonLoad_pressed():
@@ -52,6 +51,9 @@ func _ready():
 	var dict = Engine.get_version_info()
 	var ver = str(dict[\"minor\"]) + \".\" + str(dict[\"major\"])
 	get_node(\"VBoxContainer/LabelVer\").text = \"Версия: v\" + ver
+	# Disable load button if there is no saved games
+	if get_node(\"/root/global\").saved_games.size() == 0:
+		get_node(\"VBoxContainer/ButtonLoad\").disabled = true
 "
 
 [node name="Control" type="Control"]
@@ -61,12 +63,17 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+new_game = "res://Scenes/menu/new.tscn"
+load_game = "res://Scenes/menu/load.tscn"
 settings = "res://Scenes/menu/settings.tscn"
 confirm_scene = "res://Scenes/menu/confirm.tscn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonNew" type="Button" parent="VBoxContainer"]
 margin_right = 1920.0
