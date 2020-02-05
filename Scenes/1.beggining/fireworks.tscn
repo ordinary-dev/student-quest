@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/firework.tres" type="SpriteFrames" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+func _ready():
+	get_node(\"AnimatedSprite\").frame = 0
+	get_node(\"AnimatedSprite\").play()
+
+
+func _on_AnimatedSprite_animation_finished():
+	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 48.2, 27.52 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 879.943, 507.626 )
+scale = Vector2( 9.08128, 9.33285 )
+frames = ExtResource( 1 )
+animation = "Main"
+frame = 28
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
