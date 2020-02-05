@@ -32,7 +32,7 @@ func _ready():
 
 func _on_Button_pressed():
 	get_node(\"/root/fx\").call(\"click1\")
-	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
+	assert(get_tree().change_scene(\"res://Scenes/1.beggining/fireworks.tscn\") == OK)
 "
 
 [node name="Control" type="Control"]
