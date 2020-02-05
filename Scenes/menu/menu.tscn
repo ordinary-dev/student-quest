@@ -51,13 +51,16 @@ func _ready():
 	# Show app version
 	var dict = Engine.get_version_info()
 	var ver = str(dict[\"minor\"]) + \".\" + str(dict[\"major\"])
-	get_node(\"VBoxContainer/LabelVer\").text = \"ver: v\" + ver
+	get_node(\"VBoxContainer/LabelVer\").text = \"Версия: v\" + ver
 "
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 settings = "res://Scenes/menu/settings.tscn"
 confirm_scene = "res://Scenes/menu/confirm.tscn"
 
@@ -70,7 +73,7 @@ margin_right = 1920.0
 margin_bottom = 258.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
-text = "New game"
+text = "Новая игра"
 
 [node name="ButtonLoad" type="Button" parent="VBoxContainer"]
 margin_top = 262.0
@@ -78,7 +81,7 @@ margin_right = 1920.0
 margin_bottom = 520.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
-text = "Load game"
+text = "Загрузить игру"
 
 [node name="ButtonSettings" type="Button" parent="VBoxContainer"]
 margin_top = 524.0
@@ -86,7 +89,7 @@ margin_right = 1920.0
 margin_bottom = 782.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
-text = "Settings"
+text = "Настройки"
 
 [node name="ButtonQuit" type="Button" parent="VBoxContainer"]
 margin_top = 786.0
@@ -94,7 +97,7 @@ margin_right = 1920.0
 margin_bottom = 1044.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
-text = "Quit"
+text = "Выйти"
 
 [node name="LabelVer" type="Label" parent="VBoxContainer"]
 margin_top = 1048.0
