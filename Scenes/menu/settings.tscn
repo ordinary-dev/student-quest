@@ -33,11 +33,11 @@ onready var fx = get_tree().get_root().get_node(\"/root/fx\")
 var return_to = \"res://Scenes/menu/menu.tscn\"
 
 func upd_label(val):
-	ost_text.text = \"Громкость: \" + str(val) + \"db\"
+	ost_text.text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
 
 
 func upd_fx(val):
-	fx_text.text = \"Громкость: \" + str(val) + \"db\"
+	fx_text.text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
 
 
 func _on_HSlider_value_changed(value):
@@ -183,8 +183,8 @@ margin_right = 1812.0
 margin_bottom = 206.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-min_value = -80.0
-max_value = 24.0
+min_value = -32.0
+max_value = 0.0
 step = 4.0
 tick_count = 14
 
@@ -229,8 +229,8 @@ margin_top = 105.0
 margin_right = 1812.0
 margin_bottom = 206.0
 size_flags_vertical = 3
-min_value = -80.0
-max_value = 24.0
+min_value = -32.0
+max_value = 0.0
 step = 4.0
 tick_count = 14
 
