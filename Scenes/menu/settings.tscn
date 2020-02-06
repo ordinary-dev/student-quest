@@ -26,8 +26,8 @@ var fx_text
 var fd
 
 # Глобальные объекты
-onready var ost = get_tree().get_root().get_node(\"/root/ost\")
-onready var fx = get_tree().get_root().get_node(\"/root/fx\")
+onready var ost = get_node(\"/root/ost\")
+onready var fx = get_node(\"/root/fx\")
 
 # Главная сцена
 var return_to = \"res://Scenes/menu/menu.tscn\"
@@ -101,14 +101,14 @@ func _on_import_pressed():
 func _on_FileDialog_file_selected(path):
 	click()
 	if fd.mode == FileDialog.MODE_SAVE_FILE:
-		get_node(\"/root/global\").call(\"write_file\", path)
+		get_node(\"/root/global\").write_file(path)
 	else:
-		get_node(\"/root/global\").call(\"read_file\", path)
+		get_node(\"/root/global\").read_file(path)
 	update_settings() # Перерисовать интерфейс
 
 
 func click():
-	get_node(\"/root/fx\").call(\"click1\")
+	get_node(\"/root/fx\").click1()
 "
 
 [node name="Control" type="Control"]

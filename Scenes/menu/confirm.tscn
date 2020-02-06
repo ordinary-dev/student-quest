@@ -12,9 +12,9 @@ func _on_ButtonNo_pressed():
 # Выход
 func _on_ButtonYes_pressed():
 	# Звук нажатия
-	get_node(\"/root/fx\").call(\"click1\")
+	get_node(\"/root/fx\").click1()
 	# Сохранить данные
-	get_node(\"/root/global\").call(\"write_file\")
+	get_node(\"/root/global\").write_file()
 	# Закрыть игру
 	get_tree().quit()
 "

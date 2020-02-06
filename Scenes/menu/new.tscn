@@ -27,7 +27,7 @@ func _ready():
 	# Добавить номер в массив
 	glob.saved_games.push_back(num)
 	# Сохранить изменения
-	glob.call(\"write_file\")
+	glob.write_file()
 	# Дать игроку знать, что он может играть
 	get_node(label).text += \" Готово!\"
 	get_node(button).disabled = false
@@ -35,13 +35,13 @@ func _ready():
 
 
 func _on_Button_pressed():
-	get_node(\"/root/fx\").call(\"click1\")
+	get_node(\"/root/fx\").click1()
 	get_node(\"/root/global\").loaded = num
 	assert(get_tree().change_scene(\"res://Scenes/1.beggining/fireworks.tscn\") == OK)
 
 
 func _on_ButtonBack_pressed():
-	get_node(\"/root/fx\").call(\"click1\")
+	get_node(\"/root/fx\").click1()
 	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
 
 "
