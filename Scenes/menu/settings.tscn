@@ -8,15 +8,15 @@
 resource_name = "Main"
 script/source = "extends Control
 
-# Sliders
+# Слайдеры
 export (NodePath) var slider_ost_path
 export (NodePath) var slider_fx_path
 
-# Labels
+# Подписи
 export (NodePath) var ost_text_path
 export (NodePath) var fx_text_path
 
-# File dialog
+# Выбор файла
 export (NodePath) var fd_path
 
 var slider_ost
@@ -25,11 +25,11 @@ var ost_text
 var fx_text
 var fd
 
-# Global objects
+# Глобальные объекты
 onready var ost = get_tree().get_root().get_node(\"/root/ost\")
 onready var fx = get_tree().get_root().get_node(\"/root/fx\")
 
-# Main scene
+# Главная сцена
 var return_to = \"res://Scenes/menu/menu.tscn\"
 
 func upd_label(val):
@@ -76,7 +76,7 @@ func update_settings():
 	upd_fx(fx.volume_db)
 
 func _ready():
-	# Load objects
+	# Загрузить объекты
 	slider_ost = get_node(slider_ost_path)
 	slider_fx = get_node(slider_fx_path)
 	
@@ -104,7 +104,7 @@ func _on_FileDialog_file_selected(path):
 		get_node(\"/root/global\").call(\"write_file\", path)
 	else:
 		get_node(\"/root/global\").call(\"read_file\", path)
-	update_settings() # Redraw ui
+	update_settings() # Перерисовать интерфейс
 
 
 func click():

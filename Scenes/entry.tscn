@@ -7,11 +7,11 @@ resource_name = "Main"
 script/source = "extends Control
 
 
-# This scene is the first scene just for convinience.
-# It may call some functions and preload some objects
-# before the main scene will be loaded.
-# Now this scene is loading background music
-# and switching to menu after that.
+# Эта сцена является первой просто для удобства.
+# Она может вызывать некоторые функции и загружать объекты
+# перед тем, как будет загружена главная сцена.
+# Сейчас эта сцена загружает фоновую музыку
+# и переключается в меню после этого
 
 
 export(String) var music_path
@@ -19,11 +19,11 @@ export(String) var scene_path
 
 
 func _ready():
-	# Load some settings
+	# Загрузить настройки
 	get_node(\"/root/global\").call(\"read_file\")
-	# At the moment this is the main way to play music by path in background
+	# Воспроизвести музыку по ее пути
 	get_tree().get_root().get_node(\"ost\").call(\"setAndPlay\", music_path)
-	# Load main scene after everything was loaded
+	# Загрузить сцену меню
 	assert(get_tree().change_scene(scene_path) == OK)
 "
 

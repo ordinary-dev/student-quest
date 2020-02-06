@@ -4,13 +4,18 @@
 script/source = "extends Control
 
 
+# Отмена выхода
 func _on_ButtonNo_pressed():
 	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
 
 
+# Выход
 func _on_ButtonYes_pressed():
+	# Звук нажатия
 	get_node(\"/root/fx\").call(\"click1\")
+	# Сохранить данные
 	get_node(\"/root/global\").call(\"write_file\")
+	# Закрыть игру
 	get_tree().quit()
 "
 

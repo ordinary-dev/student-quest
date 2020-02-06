@@ -6,20 +6,20 @@
 resource_name = "Main"
 script/source = "extends Control
 
-# Path to scene that will start a new game
+# Путь к сцене новой игры
 export(String) var new_game
 
-# Path to scene that will load saved game
+# Путь к сцене загрузки
 export(String) var load_game
 
-# Path to scene that will show settings
+# Путь к настройкам
 export(String) var settings
 
 export(String) var confirm_scene
 
 
 func validate_scene(path):
-	# Make sure that path is defined
+	# Убедиться, что путь задан
 	return path != \"\"
 
 
@@ -47,11 +47,11 @@ func _on_ButtonQuit_pressed():
 
 
 func _ready():
-	# Show app version
+	# Показать версию
 	var dict = Engine.get_version_info()
 	var ver = str(dict[\"minor\"]) + \".\" + str(dict[\"major\"])
 	get_node(\"VBoxContainer/LabelVer\").text = \"Версия: v\" + ver
-	# Disable load button if there is no saved games
+	# Отключить кнопку загрузки если нет сохраненных игр
 	if get_node(\"/root/global\").saved_games.size() == 0:
 		get_node(\"VBoxContainer/ButtonLoad\").disabled = true
 "
