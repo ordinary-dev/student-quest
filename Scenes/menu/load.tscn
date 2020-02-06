@@ -4,42 +4,54 @@
 script/source = "extends Control
 
 
+# При нажатии на удаление сохраненной игры
 func on_Del_Pressed(num):
 	get_node(\"/root/fx\").call(\"click1\")
-	# Remove container with entry
+	# Удалить контейнер с кнопками
 	var nd = get_node(\"ColorRect/VBoxContainer/\" + str(num))
 	var glob = get_node(\"/root/global\")
 	nd.get_parent().remove_child(nd)
-	# Remove entry from array
+	# Удалить номер игры из массива
 	var pos = glob.saved_games.bsearch(num)
 	glob.saved_games.remove(pos)
-	# Delete file
+	# Удалить сам файл
 	var dir = Directory.new()
 	dir.remove(\"user://save.\" + str(num) + \".txt\")
 
 
+# Вернуться в меню
 func on_Button_Pressed():
+	# Щелчек
 	get_node(\"/root/fx\").call(\"click1\")
+	# Сохранить изменения
 	get_node(\"/root/global\").call(\"write_file\")
+	# Загрузить сцену меню
 	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
 
 
 func _ready():
+	# Основной вертикальный контейнер
 	var box = get_node(\"ColorRect/VBoxContainer\")
+	# Глобальный объект
 	var glob = get_node(\"/root/global\")
+	# Для всех номеров сохраненных игр
 	for i in glob.saved_games:
 		var cont = HBoxContainer.new()
+		# Создать кнопку для загрузки
 		var btn = Button.new()
-		var del = Button.new()
 		btn.text = \"Сохраненная игра #\" + str(i)
-		del.text = \"Удалить\"
-		del.connect(\"pressed\", self, \"on_Del_Pressed\", [i])
 		btn.size_flags_horizontal = SIZE_EXPAND_FILL
 		btn.size_flags_vertical = SIZE_EXPAND_FILL
+		# Создать кнопку для удаления игры
+		var del = Button.new()
+		del.text = \"Удалить\"
+		del.connect(\"pressed\", self, \"on_Del_Pressed\", [i])
+		# Переименовать контейнер и добавить элементы
 		cont.name = str(i)
 		cont.add_child(btn)
 		cont.add_child(del)
 		box.add_child(cont)
+	# Кнопка возврата
 	var btn = Button.new()
 	btn.text = \"Назад в меню\"
 	btn.size_flags_horizontal = SIZE_EXPAND_FILL

@@ -9,7 +9,7 @@ export (NodePath) var button
 
 
 func _ready():
-	# Create a new file named save.num.txt
+	# Создать новый файл save.n.txt
 	var glob = get_node(\"/root/global\")
 	var num
 	if glob.saved_games.size() != 0:
@@ -19,13 +19,13 @@ func _ready():
 	var file_path = \"user://save.\" + str(num) + \".txt\"
 	var fl = File.new()
 	fl.open(file_path, File.WRITE)
-	# Leave it empty
+	# Оставить его пока пустым
 	fl.close()
-	# Increase number of saved games
+	# Добавить номер в массив
 	glob.saved_games.push_back(num)
-	# Save changes
+	# Сохранить изменения
 	glob.call(\"write_file\")
-	# Let player know that he can play
+	# Дать игроку знать, что он может играть
 	get_node(label).text += \" Готово!\"
 	get_node(button).disabled = false
 

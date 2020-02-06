@@ -1,20 +1,22 @@
 extends Node
 
-# Volume of audio players
+# Объекты для проигрывания музыки
 onready var ost = get_node("/root/ost")
 onready var fx = get_node("/root/fx")
 
-# File to read and write data
+# Путь к файлу с настройками
 var file_name = "user://save_game.dat"
 
-# For easier changes in future
+# Поля для хранения и считывания данных
+# (чтобы в будущем не менять 2 поля сразу)
 var ost_field = "ost_vol"
 var fx_field = "fx_vol"
 var sg_field = "saved_games"
 
-# All files are named user://save.<number>.txt
+# Все файлы с сохранениями игр названы user://save.<номер>.txt
 var saved_games = []
 
+# Создать словарь с переменными для сохранения
 func gen_dict():
 	var save_dict = {
 		ost_field:ost.volume_db,
@@ -23,7 +25,16 @@ func gen_dict():
 	}
 	return save_dict
 
+# Записать данные в файл
+func write_file(path=file_name):
+	var fl = File.new()
+	fl.open(path, File.WRITE)
+	# Сохранить словарь как JSON
+	fl.store_line(to_json(gen_dict()))
+	fl.close()
+
 func restore(content):
+	# Если есть ключ, то записать значение в переменную
 	if content.has(ost_field):
 		ost.volume_db = content[ost_field]
 	if content.has(fx_field):
@@ -31,21 +42,21 @@ func restore(content):
 	if content.has(sg_field):
 		saved_games = content[sg_field]
 
+# Прочитать файл с настройками
 func read_file(path=file_name):
 	var fl = File.new()
+	# Если файл существует
 	if fl.file_exists(path):
-		# Restore saved data
+		# Считать данные
 		fl.open(path, File.READ)
 		var content = parse_json(fl.get_line())
 		fl.close()
+		# Восстановить данные
 		restore(content)
 	else:
-		# Default values
+		# Значения по-умолчанию
 		ost.volume_db = 0
 		fx.volume_db = 0
 
-func write_file(path=file_name):
-	var fl = File.new()
-	fl.open(path, File.WRITE)
-	fl.store_line(to_json(gen_dict()))
-	fl.close()
+
+
