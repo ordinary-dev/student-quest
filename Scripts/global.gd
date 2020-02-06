@@ -16,6 +16,9 @@ var sg_field = "saved_games"
 # Все файлы с сохранениями игр названы user://save.<номер>.txt
 var saved_games = []
 
+# Для того, чтобы игра знала, в какой файл сохранять данные
+var loaded = 0
+
 # Создать словарь с переменными для сохранения
 func gen_dict():
 	var save_dict = {
@@ -58,5 +61,19 @@ func read_file(path=file_name):
 		ost.volume_db = 0
 		fx.volume_db = 0
 
-
+func get_event_names(list):
+	var i = 0
+	var last = list.max()
+	var dict = {}
+	#OS.alert(str(list))
+	var fl = File.new()
+	var st = ""
+	fl.open("res://Scripts/events.tres", File.READ)
+	while i <= last:
+		st = fl.get_line()
+		if list.has(i):
+			dict[str(i)] = st
+		i+=1
+	fl.close()
+	return dict
 

@@ -34,6 +34,7 @@ func _ready():
 	var box = get_node(\"ColorRect/VBoxContainer\")
 	# Глобальный объект
 	var glob = get_node(\"/root/global\")
+	var list = []
 	# Для всех номеров сохраненных игр
 	for i in glob.saved_games:
 		var cont = HBoxContainer.new()
@@ -48,9 +49,21 @@ func _ready():
 		del.connect(\"pressed\", self, \"on_Del_Pressed\", [i])
 		# Переименовать контейнер и добавить элементы
 		cont.name = str(i)
+		btn.name = \"Button\"
 		cont.add_child(btn)
 		cont.add_child(del)
 		box.add_child(cont)
+		# Добавить stage из файла в список, 
+		# чтобы потом найти описание этапа
+		var fl = File.new()
+		fl.open(\"user://save.\" + str(i) + \".txt\", File.READ)
+		var stage = 0
+		var content = parse_json(fl.get_line())
+		if content != null:
+			if content.has(\"stage\"):
+				stage = content[\"stage\"]
+		list.push_back(int(stage))
+		fl.close()
 	# Кнопка возврата
 	var btn = Button.new()
 	btn.text = \"Назад в меню\"
@@ -58,6 +71,12 @@ func _ready():
 	btn.size_flags_vertical = SIZE_EXPAND_FILL
 	btn.connect(\"pressed\", self, \"on_Button_Pressed\")
 	box.add_child(btn)
+	# Обновить этапы
+	var dat = get_node(\"/root/global\").get_event_names(list)
+	var ind = 0
+	for i in glob.saved_games:
+		get_node(\"ColorRect/VBoxContainer/\" + str(i) + \"/Button\").text = dat[str(list[ind])]
+		ind+=1
 "
 
 [node name="Control" type="Control"]
