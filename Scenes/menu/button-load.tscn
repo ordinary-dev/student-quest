@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Font Resources/Pixel_font_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font Resources/Pixel_font_large.tres" type="DynamicFont" id=2]
+
+[node name="0" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.00012207
+margin_bottom = -930.0
+rect_min_size = Vector2( 0, 150 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnLoad" type="Button" parent="."]
+margin_right = 1616.0
+margin_bottom = 150.0
+size_flags_horizontal = 3
+
+[node name="ContLoad" type="VBoxContainer" parent="BtnLoad"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextGame" type="Label" parent="BtnLoad/ContLoad"]
+margin_right = 1616.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Игра # 1"
+align = 1
+valign = 1
+
+[node name="TextStage" type="Label" parent="BtnLoad/ContLoad"]
+margin_top = 84.0
+margin_right = 1616.0
+margin_bottom = 150.0
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "После полуночи"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnDel" type="Button" parent="."]
+margin_left = 1620.0
+margin_right = 1920.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 300, 0 )
+text = "Удалить"
