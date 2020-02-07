@@ -16,7 +16,7 @@ func _on_AnimatedSprite_animation_finished():
 	fl.open(\"user://save.\" + str(get_node(\"/root/global\").loaded) + \".txt\", File.WRITE)
 	fl.store_line(to_json({\"stage\":1}))
 	fl.close()
-	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
+	assert(get_tree().change_scene(\"res://Scenes/1.beggining/nav_test.tscn\") == OK)
 "
 
 [node name="Node2D" type="Node2D"]
@@ -36,7 +36,7 @@ margin_bottom = 40.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 879.943, 507.626 )
+position = Vector2( 675.226, 441.394 )
 scale = Vector2( 9.08128, 9.33285 )
 frames = ExtResource( 1 )
 animation = "Main"
