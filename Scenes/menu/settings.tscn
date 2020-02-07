@@ -137,6 +137,9 @@ margin_top = 50.0
 margin_right = -50.0
 margin_bottom = -50.0
 custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
 margin_right = 1820.0
@@ -150,12 +153,14 @@ valign = 1
 [node name="TabContainer" type="TabContainer" parent="ColorRect/VBoxContainer"]
 margin_top = 147.0
 margin_right = 1820.0
-margin_bottom = 831.0
+margin_bottom = 829.0
+rect_clip_content = true
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
 tab_align = 0
 
 [node name="Audio" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -307,7 +312,6 @@ size_flags_horizontal = 3
 text = "Экспорт"
 
 [node name="Info" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -315,9 +319,16 @@ margin_top = 50.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Info"]
+[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/VBoxContainer/TabContainer/Info"]
+margin_right = 1812.0
+margin_bottom = 628.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Info/ScrollContainer"]
 margin_right = 1812.0
 margin_bottom = 487.0
+size_flags_horizontal = 3
 text = "Авторы:
 - mcraw
 - friday13
@@ -333,11 +344,15 @@ eth: ...
 
 (C) 2020"
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
-margin_top = 881.0
+margin_top = 879.0
 margin_right = 1820.0
-margin_bottom = 980.0
+margin_bottom = 979.0
+rect_min_size = Vector2( 0, 100 )
 size_flags_vertical = 3
 text = "Назад в меню"
 [connection signal="tab_selected" from="ColorRect/VBoxContainer/TabContainer" to="." method="_on_TabContainer_tab_selected" flags=3]
