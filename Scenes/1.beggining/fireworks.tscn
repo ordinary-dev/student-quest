@@ -1,13 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/firework.tres" type="SpriteFrames" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
+var fw = \"res://Audio/fx/firework_explosion_fizz_002.wav\"
+
 func _ready():
+	get_node(\"AnimationPlayer\").play(\"camera\")
 	get_node(\"AnimatedSprite\").frame = 0
+	get_node(\"AnimatedSprite2\").frame = 0
+	get_node(\"AnimatedSprite3\").frame = 0
 	get_node(\"AnimatedSprite\").play()
+	yield(get_tree().create_timer(0.7), \"timeout\")
+	get_node(\"/root/fx\").setAndPlay(fw)
+	yield(get_tree().create_timer(0.08), \"timeout\")
+	get_node(\"AnimatedSprite2\").play()
+	yield(get_tree().create_timer(0.7), \"timeout\")
+	get_node(\"/root/fx\").setAndPlay(fw)
+	yield(get_tree().create_timer(0.4), \"timeout\")
+	get_node(\"AnimatedSprite3\").play()
+	yield(get_tree().create_timer(0.7), \"timeout\")
+	get_node(\"/root/fx\").setAndPlay(fw)
 
 
 func _on_AnimatedSprite_animation_finished():
@@ -16,24 +31,55 @@ func _on_AnimatedSprite_animation_finished():
 	fl.open(\"user://save.\" + str(get_node(\"/root/global\").loaded) + \".txt\", File.WRITE)
 	fl.store_line(to_json({\"stage\":1}))
 	fl.close()
-	assert(get_tree().change_scene(\"res://Scenes/1.beggining/train.tscn\") == OK)
+	assert(get_tree().change_scene(\"res://Scenes/1.beggining/date2.tscn\") == OK)
 "
+
+[sub_resource type="Animation" id=2]
+resource_name = "camera"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
-margin_bottom = 40.0
+margin_bottom = 48.0
 rect_scale = Vector2( 48.2, 27.52 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 675.226, 441.394 )
@@ -41,4 +87,27 @@ scale = Vector2( 9.08128, 9.33285 )
 frames = ExtResource( 1 )
 animation = "Main"
 frame = 28
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 1232.91, 729.087 )
+scale = Vector2( 9.08128, 9.33285 )
+frames = ExtResource( 1 )
+animation = "Main"
+frame = 28
+flip_h = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 498.184, 786.626 )
+scale = Vector2( 9.08128, 9.33285 )
+frames = ExtResource( 1 )
+animation = "Main"
+frame = 28
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/camera = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.9, 0.9 )
+[connection signal="animation_finished" from="AnimatedSprite3" to="." method="_on_AnimatedSprite_animation_finished"]

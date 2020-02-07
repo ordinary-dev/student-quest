@@ -37,7 +37,7 @@ func _ready():
 func _on_Button_pressed():
 	get_node(\"/root/fx\").click1()
 	get_node(\"/root/global\").loaded = num
-	assert(get_tree().change_scene(\"res://Scenes/1.beggining/fireworks.tscn\") == OK)
+	assert(get_tree().change_scene(\"res://Scenes/1.beggining/date1.tscn\") == OK)
 
 
 func _on_ButtonBack_pressed():
