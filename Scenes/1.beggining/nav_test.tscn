@@ -12,7 +12,7 @@ onready var character : Sprite = $Character
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT && event.pressed:
-			var new_path : = nav_2d.get_simple_path(character.global_position, event.global_position)
+			var new_path : = nav_2d.get_simple_path(character.position, event.position)
 			character.path = new_path
 "
 
