@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Control
+
+export var song = \"res://Audio/SummerNight.ogg\"
+
+func _ready():
+	get_node(\"/root/ost\").setAndPlay(song)
+	get_node(\"ColorRect/AnimationPlayer\").play(\"text_anim\")
+
+
+# warning-ignore:unused_argument
+func _on_AnimationPlayer_animation_finished(anim_name):
+	yield(get_tree().create_timer(3), \"timeout\")
+	assert(get_tree().change_scene(\"res://Scenes/1.beggining/fireworks.tscn\") == OK)
+"
+
+[sub_resource type="Animation" id=1]
+resource_name = "text_anim"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.45, 0.45, 1.0 ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "26.06.2020
+Выпускной вечер"
+align = 1
+valign = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/text_anim = SubResource( 1 )
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

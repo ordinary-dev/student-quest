@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/firework_explosion_fizz_002.wav-e19f1c876fc7aa7a40b01578b63f57cc.sample"
+
+[deps]
+
+source_file="res://Audio/fx/firework_explosion_fizz_002.wav"
+dest_files=[ "res://.import/firework_explosion_fizz_002.wav-e19f1c876fc7aa7a40b01578b63f57cc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

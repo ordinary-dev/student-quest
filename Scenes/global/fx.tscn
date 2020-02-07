@@ -54,11 +54,14 @@ func _ready():
 "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+bus = "FX"
 script = SubResource( 1 )
 btn_click_path = "res://Audio/fx/button_click_01.wav"
 fx2_path = NodePath("AudioStreamPlayer2")
 fx3_path = NodePath("AudioStreamPlayer3")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+bus = "FX"
 
 [node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="."]
+bus = "FX"

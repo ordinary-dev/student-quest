@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+var audio = \"res://Audio/fx/tspt_fast_smooth_passenger_train_037.ogg\"
+
+func _ready():
+	get_node(\"ColorRect/AnimationPlayer\").play(\"text_anim\")
+	get_node(\"/root/fx\").setAndPlay(audio)
+
+
+# warning-ignore:unused_argument
+func _on_AnimationPlayer_animation_finished(anim_name):
+	yield(get_tree().create_timer(1.5), \"timeout\")
+	assert(get_tree().change_scene(\"res://Scenes/1.beggining/train.tscn\") == OK)
+"
+
+[sub_resource type="Animation" id=2]
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.42, 0.42, 0.82, 0.82, 1.0 ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "27.06.2020
+Раннее утро. Поезд"
+align = 1
+valign = 1
+percent_visible = 0.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+anims/text_anim = SubResource( 2 )
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
