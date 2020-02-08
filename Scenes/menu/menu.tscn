@@ -24,24 +24,24 @@ func validate_scene(path):
 
 
 func _on_ButtonNew_pressed():
-	get_node(\"/root/fx\").click1()
+	get_node(\"/root/fx\").btn_click()
 	assert(get_tree().change_scene(new_game) == OK)
 
 
 func _on_ButtonLoad_pressed():
-	get_node(\"/root/fx\").click1()
+	get_node(\"/root/fx\").btn_click()
 	if validate_scene(load_game):
 		assert(get_tree().change_scene(load_game) == OK)
 
 
 func _on_ButtonSettings_pressed():
-	get_node(\"/root/fx\").click1()
+	get_node(\"/root/fx\").btn_click()
 	if validate_scene(settings):
 		assert(get_tree().change_scene(settings) == OK)
 
 
 func _on_ButtonQuit_pressed():
-	get_node(\"/root/fx\").click1()
+	get_node(\"/root/fx\").btn_click()
 	if validate_scene(confirm_scene):
 		assert(get_tree().change_scene(confirm_scene) == OK)
 

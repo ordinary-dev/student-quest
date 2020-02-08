@@ -22,8 +22,8 @@ var loaded = 0
 # Создать словарь с переменными для сохранения
 func gen_dict():
 	var save_dict = {
-		ost_field:ost.volume_db,
-		fx_field:fx.volume_db,
+		ost_field:AudioServer.get_bus_volume_db(2),
+		fx_field:AudioServer.get_bus_volume_db(2),
 		sg_field:saved_games
 	}
 	return save_dict
@@ -39,9 +39,9 @@ func write_file(path=file_name):
 func restore(content):
 	# Если есть ключ, то записать значение в переменную
 	if content.has(ost_field):
-		ost.volume_db = content[ost_field]
+		AudioServer.set_bus_volume_db(2, content[ost_field])
 	if content.has(fx_field):
-		fx.volume_db = content[fx_field]
+		AudioServer.set_bus_volume_db(1, content[ost_field])
 	if content.has(sg_field):
 		saved_games = content[sg_field]
 
@@ -58,8 +58,8 @@ func read_file(path=file_name):
 		restore(content)
 	else:
 		# Значения по-умолчанию
-		ost.volume_db = 0
-		fx.volume_db = 0
+		AudioServer.set_bus_volume_db(1, 0)
+		AudioServer.set_bus_volume_db(2, 0)
 
 func get_event_names(list):
 	var i = 0

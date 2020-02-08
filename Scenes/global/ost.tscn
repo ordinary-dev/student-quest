@@ -6,8 +6,10 @@
 resource_name = "Main"
 script/source = "extends AudioStreamPlayer
 
-func setAndPlay(path):
-	var obj = load(path)
+# Воспроизводит только один файл
+# get_node(\"/root/ost\").play_sound(sound)
+
+func play_sound(obj : AudioStream) -> void:
 	if (self.stream != obj):
 		self.stream = obj
 	if (!self.playing):
@@ -16,4 +18,5 @@ func setAndPlay(path):
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
+bus = "OST"
 script = SubResource( 1 )

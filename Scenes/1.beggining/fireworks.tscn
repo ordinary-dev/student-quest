@@ -5,7 +5,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-var fw = \"res://Audio/fx/firework_explosion_fizz_002.wav\"
+var fw = load(\"res://Audio/fx/firework_explosion_fizz_002.wav\")
 
 func _ready():
 	get_node(\"AnimationPlayer\").play(\"camera\")
@@ -14,15 +14,15 @@ func _ready():
 	get_node(\"AnimatedSprite3\").frame = 0
 	get_node(\"AnimatedSprite\").play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
-	get_node(\"/root/fx\").setAndPlay(fw)
+	get_node(\"/root/fx\").play_sound(fw)
 	yield(get_tree().create_timer(0.08), \"timeout\")
 	get_node(\"AnimatedSprite2\").play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
-	get_node(\"/root/fx\").setAndPlay(fw)
+	get_node(\"/root/fx\").play_sound(fw)
 	yield(get_tree().create_timer(0.4), \"timeout\")
 	get_node(\"AnimatedSprite3\").play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
-	get_node(\"/root/fx\").setAndPlay(fw)
+	get_node(\"/root/fx\").play_sound(fw)
 
 
 func _on_AnimatedSprite_animation_finished():
