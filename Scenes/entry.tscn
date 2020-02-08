@@ -20,8 +20,6 @@ export var scene_path : = \"res://Scenes/menu/menu.tscn\"
 
 
 func _ready():
-	# Загрузить настройки
-	get_node(\"/root/global\").read_file()
 	# Воспроизвести музыку по ее пути
 	get_node(\"/root/ost\").play_sound(music)
 	# Загрузить сцену меню
