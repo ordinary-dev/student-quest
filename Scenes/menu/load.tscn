@@ -8,11 +8,11 @@ script/source = "extends Control
 export (PackedScene) var loadbtn
 
 # При нажатии на удаление сохраненной игры
-func on_Del_Pressed(num):
+func on_Del_Pressed(num) -> void:
 	get_node(\"/root/fx\").btn_click()
 	# Удалить контейнер с кнопками
-	var nd = get_node(\"ColorRect/VBoxContainer/\" + str(num))
-	var glob = get_node(\"/root/global\")
+	var nd : = get_node(\"ColorRect/VBoxContainer/\" + str(num))
+	var glob : = get_node(\"/root/global\")
 	nd.get_parent().remove_child(nd)
 	# Удалить номер игры из массива
 	var pos = glob.saved_games.bsearch(num)
@@ -23,7 +23,7 @@ func on_Del_Pressed(num):
 
 
 # Вернуться в меню
-func on_Button_Pressed():
+func on_Button_Pressed() -> void:
 	# Щелчек
 	get_node(\"/root/fx\").btn_click()
 	# Сохранить изменения
@@ -32,7 +32,7 @@ func on_Button_Pressed():
 	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
 
 
-func _ready():
+func _ready() -> void:
 	# Основной вертикальный контейнер
 	var box = get_node(\"ColorRect/VBoxContainer\")
 	# Глобальный объект
@@ -45,16 +45,16 @@ func _ready():
 		tmp.name = str(i)
 		box.add_child(tmp)
 		# Изменить название сохранения
-		var loadpath = \"ColorRect/VBoxContainer/\" + str(i) + \"/BtnLoad/ContLoad/TextGame\"
+		var loadpath : = \"ColorRect/VBoxContainer/\" + str(i) + \"/BtnLoad/ContLoad/TextGame\"
 		get_node(loadpath).text = \"Сохраненная игра #\" + str(i)
 		# Привязать кнопку удаления
-		var delpath = \"ColorRect/VBoxContainer/\" + str(i) + \"/BtnDel\"
+		var delpath : = \"ColorRect/VBoxContainer/\" + str(i) + \"/BtnDel\"
 		get_node(delpath).connect(\"pressed\", self, \"on_Del_Pressed\", [i])
 #		# Добавить stage из файла в список, 
 #		# чтобы потом найти описание этапа
-		var fl = File.new()
+		var fl : = File.new()
 		fl.open(\"user://save.\" + str(i) + \".txt\", File.READ)
-		var stage = 0
+		var stage : = 0
 		var content = parse_json(fl.get_line())
 		if content != null:
 			if content.has(\"stage\"):
@@ -62,7 +62,7 @@ func _ready():
 		list.push_back(int(stage))
 		fl.close()
 	# Кнопка возврата
-	var btn = Button.new()
+	var btn : = Button.new()
 	btn.text = \"Назад в меню\"
 	# Занять доступный объем
 	btn.size_flags_horizontal = SIZE_EXPAND_FILL
@@ -71,10 +71,10 @@ func _ready():
 	btn.connect(\"pressed\", self, \"on_Button_Pressed\")
 	box.add_child(btn)
 	# Присвоить этапы
-	var dat = get_node(\"/root/global\").get_event_names(list)
-	var ind = 0
+	var dat = glob.get_event_names(list)
+	var ind : = 0
 	for i in glob.saved_games:
-		var stagepath = \"ColorRect/VBoxContainer/\" + str(i) + \"/BtnLoad/ContLoad/TextStage\"
+		var stagepath : = \"ColorRect/VBoxContainer/\" + str(i) + \"/BtnLoad/ContLoad/TextStage\"
 		get_node(stagepath).text = dat[str(list[ind])]
 		ind+=1
 "

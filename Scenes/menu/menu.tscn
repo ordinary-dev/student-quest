@@ -7,50 +7,40 @@ resource_name = "Main"
 script/source = "extends Control
 
 # Путь к сцене новой игры
-export(String) var new_game
+export var new_game : = \"res://Scenes/menu/new.tscn\"
 
 # Путь к сцене загрузки
-export(String) var load_game
+export var load_game : = \"res://Scenes/menu/load.tscn\"
 
 # Путь к настройкам
-export(String) var settings
+export var settings : = \"res://Scenes/menu/settings.tscn\"
 
-export(String) var confirm_scene
+# Подтверждение выхода
+export var confirm_scene : = \"res://Scenes/menu/confirm.tscn\"
 
-
-func validate_scene(path):
-	# Убедиться, что путь задан
-	return path != \"\"
-
-
+# Начать новую игру
 func _on_ButtonNew_pressed():
 	get_node(\"/root/fx\").btn_click()
 	assert(get_tree().change_scene(new_game) == OK)
 
 
+# Загрузить игру
 func _on_ButtonLoad_pressed():
 	get_node(\"/root/fx\").btn_click()
-	if validate_scene(load_game):
-		assert(get_tree().change_scene(load_game) == OK)
+	assert(get_tree().change_scene(load_game) == OK)
 
-
+# Открыть настройки
 func _on_ButtonSettings_pressed():
 	get_node(\"/root/fx\").btn_click()
-	if validate_scene(settings):
-		assert(get_tree().change_scene(settings) == OK)
+	assert(get_tree().change_scene(settings) == OK)
 
-
+# Перейти к подтверждению выхода
 func _on_ButtonQuit_pressed():
 	get_node(\"/root/fx\").btn_click()
-	if validate_scene(confirm_scene):
-		assert(get_tree().change_scene(confirm_scene) == OK)
+	assert(get_tree().change_scene(confirm_scene) == OK)
 
 
-func _ready():
-	# Показать версию
-	var dict = Engine.get_version_info()
-	var ver = str(dict[\"minor\"]) + \".\" + str(dict[\"major\"])
-	get_node(\"VBoxContainer/LabelVer\").text = \"Версия: v\" + ver
+func _ready() -> void:
 	# Отключить кнопку загрузки если нет сохраненных игр
 	if get_node(\"/root/global\").saved_games.size() == 0:
 		get_node(\"VBoxContainer/ButtonLoad\").disabled = true
@@ -63,10 +53,6 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-new_game = "res://Scenes/menu/new.tscn"
-load_game = "res://Scenes/menu/load.tscn"
-settings = "res://Scenes/menu/settings.tscn"
-confirm_scene = "res://Scenes/menu/confirm.tscn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -77,40 +63,34 @@ __meta__ = {
 
 [node name="ButtonNew" type="Button" parent="VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 258.0
+margin_bottom = 267.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Новая игра"
 
 [node name="ButtonLoad" type="Button" parent="VBoxContainer"]
-margin_top = 262.0
+margin_top = 271.0
 margin_right = 1920.0
-margin_bottom = 520.0
+margin_bottom = 538.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Загрузить игру"
 
 [node name="ButtonSettings" type="Button" parent="VBoxContainer"]
-margin_top = 524.0
+margin_top = 542.0
 margin_right = 1920.0
-margin_bottom = 782.0
+margin_bottom = 809.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Настройки"
 
 [node name="ButtonQuit" type="Button" parent="VBoxContainer"]
-margin_top = 786.0
+margin_top = 813.0
 margin_right = 1920.0
-margin_bottom = 1044.0
+margin_bottom = 1080.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Выйти"
-
-[node name="LabelVer" type="Label" parent="VBoxContainer"]
-margin_top = 1048.0
-margin_right = 1920.0
-margin_bottom = 1080.0
-theme = ExtResource( 1 )
 [connection signal="pressed" from="VBoxContainer/ButtonNew" to="." method="_on_ButtonNew_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonLoad" to="." method="_on_ButtonLoad_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]

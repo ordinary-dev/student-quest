@@ -4,24 +4,27 @@
 script/source = "extends Control
 
 
-export (NodePath) var label
-export (NodePath) var button
-export (NodePath) var buttonback
+onready var label : = $ColorRect/VBoxContainer/Label
+onready var button_start : = $ColorRect/VBoxContainer/Button
+onready var button_back : = $ColorRect/VBoxContainer/Button2
 
-var num
+onready var glob : = $\"/root/global\"
+var num : int
 
-func _ready():
+export var next_scene : = \"res://Scenes/1.beggining/date1.tscn\"
+export var prev_scene : = \"res://Scenes/menu/menu.tscn\"
+
+func _ready() -> void:
 	# Создать новый файл save.n.txt
-	var glob = get_node(\"/root/global\")
 	if glob.saved_games.size() != 0:
 		num = glob.saved_games.back() + 1
 	else:
 		num = 1
-	var file_path = \"user://save.\" + str(num) + \".txt\"
-	var fl = File.new()
+	var file_path : = \"user://save.\" + str(num) + \".txt\"
+	var fl : = File.new()
 	fl.open(file_path, File.WRITE)
 	# Сохранить номер этапа
-	var dat = {\"stage\":0}
+	var dat : = {\"stage\":0}
 	fl.store_line(to_json(dat))
 	fl.close()
 	# Добавить номер в массив
@@ -29,20 +32,20 @@ func _ready():
 	# Сохранить изменения
 	glob.write_file()
 	# Дать игроку знать, что он может играть
-	get_node(label).text += \" Готово!\"
-	get_node(button).disabled = false
-	get_node(buttonback).disabled = false
+	label.text += \" Готово!\"
+	button_start.disabled = false
+	button_back.disabled = false
 
 
 func _on_Button_pressed():
 	get_node(\"/root/fx\").btn_click()
 	get_node(\"/root/global\").loaded = num
-	assert(get_tree().change_scene(\"res://Scenes/1.beggining/date1.tscn\") == OK)
+	assert(get_tree().change_scene(next_scene) == OK)
 
 
 func _on_ButtonBack_pressed():
 	get_node(\"/root/fx\").btn_click()
-	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
+	assert(get_tree().change_scene(prev_scene) == OK)
 
 "
 
@@ -53,9 +56,6 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-label = NodePath("ColorRect/VBoxContainer/Label")
-button = NodePath("ColorRect/VBoxContainer/Button")
-buttonback = NodePath("ColorRect/VBoxContainer/Button2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

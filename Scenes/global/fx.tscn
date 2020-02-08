@@ -38,7 +38,7 @@ func play_sound(obj : AudioStream) -> void:
 		self.play()
 	# Создать дополнительный источник
 	else:
-		var player = AudioStreamPlayer.new()
+		var player : = AudioStreamPlayer.new()
 		player.name = str(num)
 		player.stream = obj
 		player.bus = \"FX\"
