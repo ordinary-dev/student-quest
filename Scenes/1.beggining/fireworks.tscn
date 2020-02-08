@@ -7,31 +7,41 @@ script/source = "extends Node2D
 
 var fw = load(\"res://Audio/fx/firework_explosion_fizz_002.wav\")
 
-func _ready():
+onready var sprite1 : AnimatedSprite = $AnimatedSprite
+onready var sprite2 : AnimatedSprite = $AnimatedSprite2
+onready var sprite3 : AnimatedSprite = $AnimatedSprite3
+onready var fx : = $\"/root/fx\"
+
+export var next_scene : = \"res://Scenes/1.beggining/date2.tscn\"
+
+func _ready() -> void:
 	get_node(\"AnimationPlayer\").play(\"camera\")
-	get_node(\"AnimatedSprite\").frame = 0
-	get_node(\"AnimatedSprite2\").frame = 0
-	get_node(\"AnimatedSprite3\").frame = 0
-	get_node(\"AnimatedSprite\").play()
+	sprite1.frame = 0
+	sprite2.frame = 0
+	sprite3.frame = 0
+	
+	sprite1.play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
-	get_node(\"/root/fx\").play_sound(fw)
+	fx.play_sound(fw)
+	
 	yield(get_tree().create_timer(0.08), \"timeout\")
-	get_node(\"AnimatedSprite2\").play()
+	sprite2.play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
-	get_node(\"/root/fx\").play_sound(fw)
+	fx.play_sound(fw)
+	
 	yield(get_tree().create_timer(0.4), \"timeout\")
-	get_node(\"AnimatedSprite3\").play()
+	sprite3.play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
-	get_node(\"/root/fx\").play_sound(fw)
+	fx.play_sound(fw)
 
 
-func _on_AnimatedSprite_animation_finished():
+func _on_AnimatedSprite_animation_finished() -> void:
 	# Обновить информацию об этапе
-	var fl = File.new()
+	var fl : = File.new()
 	fl.open(\"user://save.\" + str(get_node(\"/root/global\").loaded) + \".txt\", File.WRITE)
 	fl.store_line(to_json({\"stage\":1}))
 	fl.close()
-	assert(get_tree().change_scene(\"res://Scenes/1.beggining/date2.tscn\") == OK)
+	assert(get_tree().change_scene(next_scene) == OK)
 "
 
 [sub_resource type="Animation" id=2]

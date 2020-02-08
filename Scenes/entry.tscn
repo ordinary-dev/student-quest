@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://my_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Audio/Kalaido_Hanging_Lanterns.ogg" type="AudioStream" id=2]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
@@ -14,15 +15,15 @@ script/source = "extends Control
 # и переключается в меню после этого
 
 
-export(String) var music_path
-export(String) var scene_path
+export(AudioStream) var music
+export var scene_path : = \"res://Scenes/menu/menu.tscn\"
 
 
 func _ready():
 	# Загрузить настройки
 	get_node(\"/root/global\").read_file()
 	# Воспроизвести музыку по ее пути
-	get_node(\"/root/ost\").play_sound(load(music_path))
+	get_node(\"/root/ost\").play_sound(music)
 	# Загрузить сцену меню
 	assert(get_tree().change_scene(scene_path) == OK)
 "
@@ -31,8 +32,10 @@ func _ready():
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
-music_path = "res://Audio/Kalaido_Hanging_Lanterns.ogg"
-scene_path = "res://Scenes/menu/menu.tscn"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+music = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

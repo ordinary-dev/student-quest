@@ -30,52 +30,52 @@ onready var ost = get_node(\"/root/ost\")
 onready var fx = get_node(\"/root/fx\")
 
 # Главная сцена
-var return_to = \"res://Scenes/menu/menu.tscn\"
+export var return_to : = \"res://Scenes/menu/menu.tscn\"
 
-func upd_label(val):
+func upd_ost(val : float) -> void:
 	ost_text.text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
 
 
-func upd_fx(val):
+func upd_fx(val : float) -> void:
 	fx_text.text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
 
 
-func _on_HSlider_value_changed(value):
+func _on_HSlider_value_changed(value : float) -> void:
 	click()
 	AudioServer.set_bus_volume_db(2, value)
-	upd_label(value)
+	upd_ost(value)
 
 
-func _on_HSliderFX_value_changed(value):
+func _on_HSliderFX_value_changed(value : float) -> void:
 	click()
 	AudioServer.set_bus_volume_db(1, value)
 	upd_fx(value)
 
 
-func _on_Button_pressed():
+func _on_Button_pressed() -> void:
 	click()
 	slider_ost.value = 0
 
 
-func _on_ButtonFX_pressed():
+func _on_ButtonFX_pressed() -> void:
 	click()
 	slider_fx.value = 0
 
 
-func _on_ButtonBack_pressed():
+func _on_ButtonBack_pressed() -> void:
 	click()
 	assert(get_tree().change_scene(return_to) == OK)
 
-func _on_TabContainer_tab_selected(tab):
+func _on_TabContainer_tab_selected(tab) -> void:
 	click()
 
-func update_settings():
+func update_settings() -> void:
 	slider_ost.value = AudioServer.get_bus_volume_db(2)
 	slider_fx.value = AudioServer.get_bus_volume_db(1)
-	upd_label(AudioServer.get_bus_volume_db(2))
+	upd_ost(AudioServer.get_bus_volume_db(2))
 	upd_fx(AudioServer.get_bus_volume_db(1))
 
-func _ready():
+func _ready() -> void:
 	# Загрузить объекты
 	slider_ost = get_node(slider_ost_path)
 	slider_fx = get_node(slider_fx_path)
@@ -98,7 +98,7 @@ func _on_import_pressed():
 	fd.mode = FileDialog.MODE_OPEN_FILE
 	fd.popup()
 
-func _on_FileDialog_file_selected(path):
+func _on_FileDialog_file_selected(path : String):
 	click()
 	if fd.mode == FileDialog.MODE_SAVE_FILE:
 		get_node(\"/root/global\").write_file(path)
@@ -108,7 +108,7 @@ func _on_FileDialog_file_selected(path):
 
 
 func click():
-	get_node(\"/root/fx\").btn_click()
+	fx.btn_click()
 "
 
 [node name="Control" type="Control"]
