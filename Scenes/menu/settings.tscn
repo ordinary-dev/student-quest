@@ -1,36 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Font Resources/Pixel_font_large.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Font Resources/Pixel_font_small.tres" type="DynamicFont" id=2]
-[ext_resource path="res://my_theme_small.tres" type="Theme" id=3]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
 script/source = "extends Control
 
-# Слайдеры
-export (NodePath) var slider_ost_path
-export (NodePath) var slider_fx_path
 
-# Подписи
-export (NodePath) var ost_text_path
-export (NodePath) var fx_text_path
+onready var slider_ost : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HSlider
+onready var slider_fx  : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HSlider
+onready var ost_text : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer/Label
+onready var fx_text  : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer/Label
 
-# Выбор файла
-export (NodePath) var fd_path
-
-var slider_ost
-var slider_fx
-var ost_text
-var fx_text
-var fd
 
 # Глобальные объекты
 onready var ost = get_node(\"/root/ost\")
 onready var fx = get_node(\"/root/fx\")
 
-# Главная сцена
-export var return_to : = \"res://Scenes/menu/menu.tscn\"
 
 func upd_ost(val : float) -> void:
 	ost_text.text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
@@ -62,12 +48,9 @@ func _on_ButtonFX_pressed() -> void:
 	slider_fx.value = 0
 
 
-func _on_ButtonBack_pressed() -> void:
-	click()
-	assert(get_tree().change_scene(return_to) == OK)
-
 func _on_TabContainer_tab_selected(tab) -> void:
 	click()
+
 
 func update_settings() -> void:
 	slider_ost.value = AudioServer.get_bus_volume_db(2)
@@ -75,192 +58,151 @@ func update_settings() -> void:
 	upd_ost(AudioServer.get_bus_volume_db(2))
 	upd_fx(AudioServer.get_bus_volume_db(1))
 
+
 func _ready() -> void:
-	# Загрузить объекты
-	slider_ost = get_node(slider_ost_path)
-	slider_fx = get_node(slider_fx_path)
-	
-	ost_text = get_node(ost_text_path)
-	fx_text = get_node(fx_text_path)
-	
-	fd = get_node(fd_path)
-	
 	update_settings()
-
-
-func _on_export_pressed():
-	click()
-	fd.mode = FileDialog.MODE_SAVE_FILE
-	fd.popup()
-
-func _on_import_pressed():
-	click()
-	fd.mode = FileDialog.MODE_OPEN_FILE
-	fd.popup()
-
-func _on_FileDialog_file_selected(path : String):
-	click()
-	if fd.mode == FileDialog.MODE_SAVE_FILE:
-		get_node(\"/root/global\").write_file(path)
-	else:
-		get_node(\"/root/global\").read_file(path)
-	update_settings() # Перерисовать интерфейс
 
 
 func click():
 	fx.btn_click()
 "
 
-[node name="Control" type="Control"]
+[node name="Settings" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-slider_ost_path = NodePath("ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HSlider")
-slider_fx_path = NodePath("ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HSlider")
-ost_text_path = NodePath("ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer/Label")
-fx_text_path = NodePath("ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer/Label")
-fd_path = NodePath("ColorRect/VBoxContainer/TabContainer/Progress/FileDialog")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 50.0
-margin_right = -50.0
-margin_bottom = -50.0
 custom_constants/separation = 50
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
-margin_right = 1820.0
-margin_bottom = 97.0
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Настройки"
-align = 1
-valign = 1
-
-[node name="TabContainer" type="TabContainer" parent="ColorRect/VBoxContainer"]
-margin_top = 147.0
-margin_right = 1820.0
-margin_bottom = 829.0
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 1080.0
 rect_clip_content = true
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
 tab_align = 0
 
-[node name="Audio" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
+[node name="Audio" type="MarginContainer" parent="VBoxContainer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
 margin_top = 50.0
 margin_right = -4.0
 margin_bottom = -4.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio"]
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1862.0
+margin_bottom = 976.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio"]
 margin_right = 1812.0
-margin_bottom = 312.0
+margin_bottom = 461.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
 margin_right = 1812.0
-margin_bottom = 101.0
+margin_bottom = 151.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Громкость музыки"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer"]
-margin_top = 105.0
+[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
+margin_top = 155.0
 margin_right = 1812.0
-margin_bottom = 206.0
+margin_bottom = 306.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -32.0
 max_value = 0.0
 step = 4.0
-tick_count = 14
+tick_count = 9
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer"]
-margin_top = 210.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
+margin_top = 310.0
 margin_right = 1812.0
-margin_bottom = 312.0
+margin_bottom = 461.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer"]
 margin_right = 204.0
-margin_bottom = 102.0
+margin_bottom = 151.0
 custom_fonts/font = ExtResource( 2 )
 text = "Сбросить"
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer"]
 margin_left = 254.0
-margin_top = 39.0
+margin_top = 63.0
 margin_right = 1812.0
-margin_bottom = 63.0
+margin_bottom = 87.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
-text = "Громкость::"
+text = "Громкость: 100%"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio"]
-margin_top = 316.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio"]
+margin_top = 465.0
 margin_right = 1812.0
-margin_bottom = 628.0
+margin_bottom = 926.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
 margin_right = 1812.0
-margin_bottom = 101.0
+margin_bottom = 151.0
 size_flags_vertical = 7
 text = "Громкость эффектов"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2"]
-margin_top = 105.0
+[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
+margin_top = 155.0
 margin_right = 1812.0
-margin_bottom = 206.0
+margin_bottom = 306.0
 size_flags_vertical = 3
 min_value = -32.0
 max_value = 0.0
 step = 4.0
-tick_count = 14
+tick_count = 9
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2"]
-margin_top = 210.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
+margin_top = 310.0
 margin_right = 1812.0
-margin_bottom = 312.0
+margin_bottom = 461.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer"]
 margin_right = 204.0
-margin_bottom = 102.0
+margin_bottom = 151.0
 custom_fonts/font = ExtResource( 2 )
 text = "Сбросить"
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer"]
 margin_left = 254.0
-margin_top = 39.0
+margin_top = 63.0
 margin_right = 1812.0
-margin_bottom = 63.0
+margin_bottom = 87.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
-text = "Громкость:"
+text = "Громкость: 100%"
 
-[node name="Progress" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
+[node name="Info" type="MarginContainer" parent="VBoxContainer/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -268,68 +210,30 @@ margin_left = 4.0
 margin_top = 50.0
 margin_right = -4.0
 margin_bottom = -4.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Progress"]
-margin_right = 1812.0
-margin_bottom = 125.0
-size_flags_vertical = 7
-text = "Будьте честны с собой"
-valign = 1
-
-[node name="FileDialog" type="FileDialog" parent="ColorRect/VBoxContainer/TabContainer/Progress"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = -8.0
-margin_bottom = -46.0
-size_flags_horizontal = 8
-size_flags_vertical = 8
-size_flags_stretch_ratio = 0.0
-theme = ExtResource( 3 )
-window_title = "Сохранить файл"
-access = 2
-current_dir = "/home/user/StudentLife"
-current_path = "/home/user/StudentLife/"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer/TabContainer/Progress"]
-margin_top = 129.0
-margin_right = 1812.0
-margin_bottom = 630.0
-size_flags_vertical = 3
-size_flags_stretch_ratio = 4.0
-
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer/TabContainer/Progress/HBoxContainer"]
-margin_right = 904.0
-margin_bottom = 501.0
-size_flags_horizontal = 3
-text = "Импорт"
-
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/TabContainer/Progress/HBoxContainer"]
-margin_left = 908.0
-margin_right = 1812.0
-margin_bottom = 501.0
-size_flags_horizontal = 3
-text = "Экспорт"
-
-[node name="Info" type="VBoxContainer" parent="ColorRect/VBoxContainer/TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
+[node name="Info" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info"]
+margin_left = 50.0
 margin_top = 50.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_right = 1862.0
+margin_bottom = 976.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect/VBoxContainer/TabContainer/Info"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Info/Info"]
 margin_right = 1812.0
-margin_bottom = 628.0
+margin_bottom = 926.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer/TabContainer/Info/ScrollContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Info/Info/ScrollContainer"]
 margin_right = 1812.0
-margin_bottom = 487.0
+margin_bottom = 557.0
 size_flags_horizontal = 3
-text = "Авторы:
+text = "Student Quest
+
+Авторы:
 - mcraw
 - friday13
 
@@ -347,21 +251,8 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
-margin_top = 879.0
-margin_right = 1820.0
-margin_bottom = 979.0
-rect_min_size = Vector2( 0, 100 )
-size_flags_vertical = 3
-text = "Назад в меню"
-[connection signal="tab_selected" from="ColorRect/VBoxContainer/TabContainer" to="." method="_on_TabContainer_tab_selected" flags=3]
-[connection signal="value_changed" from="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="value_changed" from="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HSlider" to="." method="_on_HSliderFX_value_changed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/TabContainer/Audio/VBoxContainer2/HBoxContainer/Button" to="." method="_on_ButtonFX_pressed"]
-[connection signal="file_selected" from="ColorRect/VBoxContainer/TabContainer/Progress/FileDialog" to="." method="_on_FileDialog_file_selected"]
-[connection signal="popup_hide" from="ColorRect/VBoxContainer/TabContainer/Progress/FileDialog" to="." method="click"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/TabContainer/Progress/HBoxContainer/Button" to="." method="_on_import_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/TabContainer/Progress/HBoxContainer/Button2" to="." method="_on_export_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_ButtonBack_pressed"]
+[connection signal="tab_selected" from="VBoxContainer/TabContainer" to="." method="_on_TabContainer_tab_selected" flags=3]
+[connection signal="value_changed" from="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HSlider" to="." method="_on_HSliderFX_value_changed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer/Button" to="." method="_on_ButtonFX_pressed"]
