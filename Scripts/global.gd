@@ -68,3 +68,8 @@ func read_file(path : String = file_name) -> void:
 		AudioServer.set_bus_volume_db(1, 0)
 		AudioServer.set_bus_volume_db(2, 0)
 
+
+func _ready():
+	# Загрузить настройки
+	read_file()
+
