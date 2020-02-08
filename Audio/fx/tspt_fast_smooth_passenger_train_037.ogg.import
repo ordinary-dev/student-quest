@@ -11,5 +11,5 @@ dest_files=[ "res://.import/tspt_fast_smooth_passenger_train_037.ogg-dc8f3344a27
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
