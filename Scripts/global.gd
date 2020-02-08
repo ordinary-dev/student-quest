@@ -23,7 +23,7 @@ var loaded : = 0
 func gen_dict() -> Dictionary:
 	var save_dict = {
 		ost_field:AudioServer.get_bus_volume_db(2),
-		fx_field:AudioServer.get_bus_volume_db(2),
+		fx_field:AudioServer.get_bus_volume_db(1),
 		sg_field:saved_games
 	}
 	return save_dict
@@ -41,7 +41,7 @@ func restore(content : Dictionary) -> void:
 	if content.has(ost_field):
 		AudioServer.set_bus_volume_db(2, content[ost_field])
 	if content.has(fx_field):
-		AudioServer.set_bus_volume_db(1, content[ost_field])
+		AudioServer.set_bus_volume_db(1, content[fx_field])
 	if content.has(sg_field):
 		saved_games = content[sg_field]
 

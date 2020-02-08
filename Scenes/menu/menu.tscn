@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://my_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Sprites/8bit-background.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/menu/settings.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/menu/load.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/menu/confirm.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
@@ -9,14 +13,12 @@ script/source = "extends Control
 # Путь к сцене новой игры
 export var new_game : = \"res://Scenes/menu/new.tscn\"
 
-# Путь к сцене загрузки
-export var load_game : = \"res://Scenes/menu/load.tscn\"
+# Кнопка загрузки
+onready var load_btn : = $HBoxContainer/MarginContainer/VBoxContainer/ButtonLoad
 
-# Путь к настройкам
-export var settings : = \"res://Scenes/menu/settings.tscn\"
-
-# Подтверждение выхода
-export var confirm_scene : = \"res://Scenes/menu/confirm.tscn\"
+onready var settings_scene : = $HBoxContainer/MarginContainer2/Settings
+onready var load_scene : = $HBoxContainer/MarginContainer2/Load
+onready var confirm_scene : = $HBoxContainer/MarginContainer2/Confirm
 
 # Начать новую игру
 func _on_ButtonNew_pressed():
@@ -27,23 +29,33 @@ func _on_ButtonNew_pressed():
 # Загрузить игру
 func _on_ButtonLoad_pressed():
 	get_node(\"/root/fx\").btn_click()
-	assert(get_tree().change_scene(load_game) == OK)
+	load_scene.visible = !load_scene.visible
+	settings_scene.visible = false
+	confirm_scene.visible = false
 
 # Открыть настройки
 func _on_ButtonSettings_pressed():
 	get_node(\"/root/fx\").btn_click()
-	assert(get_tree().change_scene(settings) == OK)
+	settings_scene.visible = !settings_scene.visible
+	load_scene.visible = false
+	confirm_scene.visible = false
 
 # Перейти к подтверждению выхода
 func _on_ButtonQuit_pressed():
 	get_node(\"/root/fx\").btn_click()
-	assert(get_tree().change_scene(confirm_scene) == OK)
+	confirm_scene.visible = !confirm_scene.visible
+	settings_scene.visible = false
+	load_scene.visible = false
 
 
 func _ready() -> void:
 	# Отключить кнопку загрузки если нет сохраненных игр
 	if get_node(\"/root/global\").saved_games.size() == 0:
-		get_node(\"VBoxContainer/ButtonLoad\").disabled = true
+		load_btn.disabled = true
+	# Отключить все доп. сцены
+	settings_scene.visible = false
+	load_scene.visible = false
+	confirm_scene.visible = false
 "
 
 [node name="Control" type="Control"]
@@ -54,44 +66,113 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 613.0
+margin_bottom = 213.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonNew" type="Button" parent="VBoxContainer"]
-margin_right = 1920.0
-margin_bottom = 267.0
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 958.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 100
+custom_constants/margin_top = 150
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 150
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+modulate = Color( 0.992157, 0.843137, 0.823529, 0.886275 )
+margin_left = 100.0
+margin_top = 150.0
+margin_right = 858.0
+margin_bottom = 930.0
+size_flags_horizontal = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonNew" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 758.0
+margin_bottom = 192.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Новая игра"
 
-[node name="ButtonLoad" type="Button" parent="VBoxContainer"]
-margin_top = 271.0
-margin_right = 1920.0
-margin_bottom = 538.0
+[node name="ButtonLoad" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 196.0
+margin_right = 758.0
+margin_bottom = 388.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Загрузить игру"
 
-[node name="ButtonSettings" type="Button" parent="VBoxContainer"]
-margin_top = 542.0
-margin_right = 1920.0
-margin_bottom = 809.0
+[node name="ButtonSettings" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 392.0
+margin_right = 758.0
+margin_bottom = 584.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Настройки"
 
-[node name="ButtonQuit" type="Button" parent="VBoxContainer"]
-margin_top = 813.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+[node name="ButtonQuit" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 588.0
+margin_right = 758.0
+margin_bottom = 780.0
 size_flags_vertical = 3
 theme = ExtResource( 1 )
 text = "Выйти"
-[connection signal="pressed" from="VBoxContainer/ButtonNew" to="." method="_on_ButtonNew_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonLoad" to="." method="_on_ButtonLoad_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
-[connection signal="pressed" from="VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 100
+custom_constants/margin_top = 150
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 150
+
+[node name="Confirm" parent="HBoxContainer/MarginContainer2" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_top = 150.0
+margin_right = 858.0
+margin_bottom = 930.0
+
+[node name="Settings" parent="HBoxContainer/MarginContainer2" instance=ExtResource( 3 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_top = 150.0
+margin_right = 858.0
+margin_bottom = 930.0
+size_flags_horizontal = 3
+
+[node name="Load" parent="HBoxContainer/MarginContainer2" instance=ExtResource( 4 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_top = 150.0
+margin_right = 858.0
+margin_bottom = 930.0
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ButtonNew" to="." method="_on_ButtonNew_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ButtonLoad" to="." method="_on_ButtonLoad_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
