@@ -36,11 +36,6 @@ func _ready() -> void:
 
 
 func _on_AnimatedSprite_animation_finished() -> void:
-	# Обновить информацию об этапе
-	var fl : = File.new()
-	fl.open(\"user://save.\" + str(get_node(\"/root/global\").loaded) + \".txt\", File.WRITE)
-	fl.store_line(to_json({\"stage\":1}))
-	fl.close()
 	assert(get_tree().change_scene(next_scene) == OK)
 "
 

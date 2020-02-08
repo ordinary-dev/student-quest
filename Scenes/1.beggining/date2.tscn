@@ -6,6 +6,8 @@ script/source = "extends Control
 var audio = \"res://Audio/fx/tspt_fast_smooth_passenger_train_037.ogg\"
 
 func _ready():
+	# Обновить информацию об этапе
+	get_node(\"/root/global\").upd_stage(1)
 	get_node(\"ColorRect/AnimationPlayer\").play(\"text_anim\")
 	get_node(\"/root/fx\").play_sound(load(audio))
 

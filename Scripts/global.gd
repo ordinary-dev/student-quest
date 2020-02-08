@@ -19,6 +19,13 @@ var saved_games : = []
 # Для того, чтобы игра знала, в какой файл сохранять данные
 var loaded : = 0
 
+# Обновить информацию об этапе для файла сохранения игры
+func upd_stage(stage : int) -> void:
+	var fl : = File.new()
+	fl.open("user://save." + str(loaded) + ".txt", File.WRITE)
+	fl.store_line(to_json({"stage":stage}))
+	fl.close()
+
 # Создать словарь с переменными для сохранения
 func gen_dict() -> Dictionary:
 	var save_dict = {
@@ -60,20 +67,4 @@ func read_file(path : String = file_name) -> void:
 		# Значения по-умолчанию
 		AudioServer.set_bus_volume_db(1, 0)
 		AudioServer.set_bus_volume_db(2, 0)
-
-func get_event_names(list : Array) -> Dictionary:
-	var i : = 0
-	var last = list.max()
-	var dict : = {}
-	#OS.alert(str(list))
-	var fl : = File.new()
-	var st : = ""
-	fl.open("res://Scripts/events.tres", File.READ)
-	while i <= last:
-		st = fl.get_line()
-		if list.has(i):
-			dict[str(i)] = st
-		i+=1
-	fl.close()
-	return dict
 
