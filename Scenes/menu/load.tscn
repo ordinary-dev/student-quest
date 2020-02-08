@@ -9,7 +9,7 @@ export (PackedScene) var loadbtn
 
 # При нажатии на удаление сохраненной игры
 func on_Del_Pressed(num):
-	get_node(\"/root/fx\").click1()
+	get_node(\"/root/fx\").btn_click()
 	# Удалить контейнер с кнопками
 	var nd = get_node(\"ColorRect/VBoxContainer/\" + str(num))
 	var glob = get_node(\"/root/global\")
@@ -25,7 +25,7 @@ func on_Del_Pressed(num):
 # Вернуться в меню
 func on_Button_Pressed():
 	# Щелчек
-	get_node(\"/root/fx\").click1()
+	get_node(\"/root/fx\").btn_click()
 	# Сохранить изменения
 	get_node(\"/root/global\").write_file()
 	# Загрузить сцену меню

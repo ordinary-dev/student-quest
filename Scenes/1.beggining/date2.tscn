@@ -7,7 +7,7 @@ var audio = \"res://Audio/fx/tspt_fast_smooth_passenger_train_037.ogg\"
 
 func _ready():
 	get_node(\"ColorRect/AnimationPlayer\").play(\"text_anim\")
-	get_node(\"/root/fx\").setAndPlay(audio)
+	get_node(\"/root/fx\").play_sound(load(audio))
 
 
 # warning-ignore:unused_argument

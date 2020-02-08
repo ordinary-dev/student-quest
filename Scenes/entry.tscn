@@ -22,7 +22,7 @@ func _ready():
 	# Загрузить настройки
 	get_node(\"/root/global\").read_file()
 	# Воспроизвести музыку по ее пути
-	get_node(\"/root/ost\").setAndPlay(music_path)
+	get_node(\"/root/ost\").play_sound(load(music_path))
 	# Загрузить сцену меню
 	assert(get_tree().change_scene(scene_path) == OK)
 "
