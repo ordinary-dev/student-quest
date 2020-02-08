@@ -28,12 +28,20 @@ func upd_fx(val : float) -> void:
 
 func _on_HSlider_value_changed(value : float) -> void:
 	click()
+	if value == slider_ost.min_value:
+		AudioServer.set_bus_mute(2, true)
+	else:
+		AudioServer.set_bus_mute(2, false)
 	AudioServer.set_bus_volume_db(2, value)
 	upd_ost(value)
 
 
 func _on_HSliderFX_value_changed(value : float) -> void:
 	click()
+	if value == slider_fx.min_value:
+		AudioServer.set_bus_mute(1, true)
+	else:
+		AudioServer.set_bus_mute(1, false)
 	AudioServer.set_bus_volume_db(1, value)
 	upd_fx(value)
 
