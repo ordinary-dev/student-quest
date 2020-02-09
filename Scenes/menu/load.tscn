@@ -40,6 +40,11 @@ func on_Del_Pressed(num) -> void:
 	# Удалить сам файл
 	var dir = Directory.new()
 	dir.remove(\"user://save.\" + str(num) + \".txt\")
+	# По возможности обновить кнопку
+	var path : = \"/root/Control/HBoxContainer/MarginContainer/VBoxContainer/ButtonLoad\"
+	if has_node(path):
+		if glob.saved_games.size() == 0:
+			get_node(path).disabled = true
 
 func btn_load_scene(name : String, num : int) -> void:
 	get_node(\"/root/fx\").btn_click()
