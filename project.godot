@@ -24,6 +24,7 @@ config/icon="res://logo.png"
 global="*res://Scripts/global.gd"
 ost="*res://Scenes/global/ost.tscn"
 fx="*res://Scenes/global/fx.tscn"
+d_obj="*res://Scripts/dialog.gd"
 
 [display]
 
