@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://my_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Sprites/8bit-background.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/menu/settings.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/menu/load.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/menu/confirm.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Audio/Kalaido_Hanging_Lanterns.ogg" type="AudioStream" id=6]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
@@ -19,6 +20,8 @@ onready var load_btn : = $HBoxContainer/MarginContainer/VBoxContainer/ButtonLoad
 onready var settings_scene : = $HBoxContainer/MarginContainer2/Settings
 onready var load_scene : = $HBoxContainer/MarginContainer2/Load
 onready var confirm_scene : = $HBoxContainer/MarginContainer2/Confirm
+
+export(AudioStream) var music
 
 # Начать новую игру
 func _on_ButtonNew_pressed():
@@ -49,6 +52,8 @@ func _on_ButtonQuit_pressed():
 
 
 func _ready() -> void:
+	# Воспроизвести музыку по ее пути
+	get_node(\"/root/ost\").play_sound(music)
 	# Отключить кнопку загрузки если нет сохраненных игр
 	if get_node(\"/root/global\").saved_games.size() == 0:
 		load_btn.disabled = true
@@ -65,6 +70,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+music = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
