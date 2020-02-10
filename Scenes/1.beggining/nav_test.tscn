@@ -9,8 +9,10 @@ script/source = "extends Node2D
 
 onready var nav_2d : Navigation2D = $Navigation2D
 onready var character : Sprite = $Character
+export var song : = \"res://Audio/SummerNight.ogg\"
 
 func _ready():
+	get_node(\"/root/ost\").play_sound(load(song))
 	get_node(\"/root/d_obj\").show_dialog(1)
 
 func _unhandled_input(event: InputEvent) -> void:
