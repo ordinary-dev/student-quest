@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/field.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/train_front.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/circle.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/train_main.png" type="Texture" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -71,51 +72,51 @@ position = Vector2( 440, 855 )
 scale = Vector2( 13.8132, 16.7737 )
 texture = ExtResource( 2 )
 
-[node name="Sprite3" type="Sprite" parent="Node2D"]
-position = Vector2( -460, 855 )
+[node name="Sprite10" type="Sprite" parent="Node2D"]
+position = Vector2( -6652.11, 855.311 )
 scale = Vector2( 13.8132, 16.7737 )
 texture = ExtResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="Node2D"]
+position = Vector2( -449.006, 862.099 )
+scale = Vector2( 11.0058, 13.3647 )
+texture = ExtResource( 4 )
 
 [node name="Sprite4" type="Sprite" parent="Node2D"]
-position = Vector2( -1360, 855 )
-scale = Vector2( 13.8132, 16.7737 )
-texture = ExtResource( 2 )
+position = Vector2( -1334.63, 862.611 )
+scale = Vector2( 11.0058, 13.3647 )
+texture = ExtResource( 4 )
 
 [node name="Sprite5" type="Sprite" parent="Node2D"]
-position = Vector2( -2260, 855 )
-scale = Vector2( 13.8132, 16.7737 )
-texture = ExtResource( 2 )
-
-[node name="Sprite8" type="Sprite" parent="Node2D"]
-position = Vector2( -3160, 855 )
-scale = Vector2( 13.8132, 16.7737 )
-texture = ExtResource( 2 )
-
-[node name="Sprite7" type="Sprite" parent="Node2D"]
-position = Vector2( -4060, 855 )
-scale = Vector2( 13.8132, 16.7737 )
-texture = ExtResource( 2 )
+position = Vector2( -2219.63, 862.611 )
+scale = Vector2( 11.0058, 13.3647 )
+texture = ExtResource( 4 )
 
 [node name="Sprite6" type="Sprite" parent="Node2D"]
-position = Vector2( -4960, 855 )
-scale = Vector2( 13.8132, 16.7737 )
-texture = ExtResource( 2 )
+position = Vector2( -3104.63, 862.611 )
+scale = Vector2( 11.0058, 13.3647 )
+texture = ExtResource( 4 )
 
-[node name="Sprite10" type="Sprite" parent="Node2D"]
-position = Vector2( -5860, 855 )
-scale = Vector2( 13.8132, 16.7737 )
-texture = ExtResource( 2 )
+[node name="Sprite7" type="Sprite" parent="Node2D"]
+position = Vector2( -3989.63, 862.611 )
+scale = Vector2( 11.0058, 13.3647 )
+texture = ExtResource( 4 )
+
+[node name="Sprite8" type="Sprite" parent="Node2D"]
+position = Vector2( -4874.63, 862.611 )
+scale = Vector2( 11.0058, 13.3647 )
+texture = ExtResource( 4 )
 
 [node name="Sprite9" type="Sprite" parent="Node2D"]
-position = Vector2( -6760, 855 )
-scale = Vector2( 13.8132, 16.7737 )
-texture = ExtResource( 2 )
+position = Vector2( -5759.63, 862.611 )
+scale = Vector2( 11.0058, 13.3647 )
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/train = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 13.6364, 80 )
+offset = Vector2( 0, 80 )
 anchor_mode = 0
 current = true
 zoom = Vector2( 0.9, 0.9 )
