@@ -32,7 +32,7 @@ func show_dialog(num : int) -> void:
 		nd.add_child(tmp)
 		# Открыть файл
 		var fl : = File.new()
-		fl.open("res://Dialogs/" + str(num) + ".json", File.READ)
+		fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
 		var content = parse_json(fl.get_as_text())
 		fl.close()
 		# Показать диалог
