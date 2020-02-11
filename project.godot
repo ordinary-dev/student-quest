@@ -36,7 +36,7 @@ window/stretch/aspect="keep"
 
 [gui]
 
-theme/custom_font="res://Font Resources/Pixel_font.tres"
+theme/custom_font="res://Fonts/PressStart_Res/Pixel_font.tres"
 
 [rendering]
 

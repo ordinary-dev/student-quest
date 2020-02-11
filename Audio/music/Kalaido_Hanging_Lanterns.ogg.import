@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kalaido_Hanging_Lanterns.ogg-5c418accbf81c1460972598035688c3e.oggstr"
+
+[deps]
+
+source_file="res://Audio/music/Kalaido_Hanging_Lanterns.ogg"
+dest_files=[ "res://.import/Kalaido_Hanging_Lanterns.ogg-5c418accbf81c1460972598035688c3e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
