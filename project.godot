@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="StudentLife"
 run/main_scene="res://Scenes/entry.tscn"
+boot_splash/image="res://Sprites/Splash.png"
 config/icon="res://logo.png"
 
 [autoload]
