@@ -1,6 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Font Resources/Pixel_font_small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=2]
+
+
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
