@@ -30,7 +30,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	assert(get_tree().change_scene(next_scene) == OK)
 "
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:offset")
@@ -137,7 +137,7 @@ hframes = 13
 frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/camera = SubResource( 3 )
+anims/camera = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
