@@ -1,46 +1,36 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprites/firework.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Sprites/fireworks.tres" type="Texture" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 var fw = load(\"res://Audio/fx/firework_explosion_fizz_002.wav\")
 
-onready var sprite1 : AnimatedSprite = $AnimatedSprite
-onready var sprite2 : AnimatedSprite = $AnimatedSprite2
-onready var sprite3 : AnimatedSprite = $AnimatedSprite3
 onready var fx : = $\"/root/fx\"
 
 export var next_scene : = \"res://Scenes/1.beggining/date2.tscn\"
 
 func _ready() -> void:
 	get_node(\"AnimationPlayer\").play(\"camera\")
-	sprite1.frame = 0
-	sprite2.frame = 0
-	sprite3.frame = 0
 	
-	sprite1.play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
 	fx.play_sound(fw)
 	
 	yield(get_tree().create_timer(0.08), \"timeout\")
-	sprite2.play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
 	fx.play_sound(fw)
 	
 	yield(get_tree().create_timer(0.4), \"timeout\")
-	sprite3.play()
 	yield(get_tree().create_timer(0.7), \"timeout\")
 	fx.play_sound(fw)
 
 
-func _on_AnimatedSprite_animation_finished() -> void:
+func _on_AnimationPlayer_animation_finished(anim_name):
 	assert(get_tree().change_scene(next_scene) == OK)
 "
 
-[sub_resource type="Animation" id=2]
-resource_name = "camera"
+[sub_resource type="Animation" id=3]
 length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:offset")
@@ -66,6 +56,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 6.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 155 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AnimatedSprite2:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.8, 6.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 155 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AnimatedSprite3:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.9, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 155 ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
@@ -86,33 +112,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite" type="Sprite" parent="."]
 position = Vector2( 675.226, 441.394 )
 scale = Vector2( 9.08128, 9.33285 )
-frames = ExtResource( 1 )
-animation = "Main"
-frame = 28
+texture = ExtResource( 1 )
+vframes = 12
+hframes = 13
 
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite2" type="Sprite" parent="."]
 position = Vector2( 1232.91, 729.087 )
 scale = Vector2( 9.08128, 9.33285 )
-frames = ExtResource( 1 )
-animation = "Main"
-frame = 28
+texture = ExtResource( 1 )
 flip_h = true
+vframes = 12
+hframes = 13
+frame = 5
 
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+[node name="AnimatedSprite3" type="Sprite" parent="."]
 position = Vector2( 498.184, 786.626 )
 scale = Vector2( 9.08128, 9.33285 )
-frames = ExtResource( 1 )
-animation = "Main"
-frame = 28
+texture = ExtResource( 1 )
+vframes = 12
+hframes = 13
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/camera = SubResource( 2 )
+anims/camera = SubResource( 3 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 current = true
 zoom = Vector2( 0.9, 0.9 )
-[connection signal="animation_finished" from="AnimatedSprite3" to="." method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

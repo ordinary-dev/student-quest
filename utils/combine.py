@@ -14,6 +14,7 @@ def combine(inp, output):
         :return: void
     """
     files = os.listdir(inp)
+    files.sort()
     im = Image.open(inp + "/" + files[0])
     width = im.size[0]  # Определяем ширину
     height = im.size[1]  # Определяем высоту
