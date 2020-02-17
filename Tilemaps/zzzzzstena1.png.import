@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree.png-218a9b144a4660ec65831a04468897fe.stex"
+path="res://.import/zzzzzstena1.png-d8cfb3fec7b0127f3aec3802c8535b66.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemaps/Tree.png"
-dest_files=[ "res://.import/Tree.png-218a9b144a4660ec65831a04468897fe.stex" ]
+source_file="res://Tilemaps/zzzzzstena1.png"
+dest_files=[ "res://.import/zzzzzstena1.png-d8cfb3fec7b0127f3aec3802c8535b66.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree.png-218a9b144a4660ec65831a04468897fe.stex"
+path="res://.import/personazh_3.png-695bc496b5718e06ca41ae13f5f4ca98.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemaps/Tree.png"
-dest_files=[ "res://.import/Tree.png-218a9b144a4660ec65831a04468897fe.stex" ]
+source_file="res://Sprites/personazh_3.png"
+dest_files=[ "res://.import/personazh_3.png-695bc496b5718e06ca41ae13f5f4ca98.stex" ]
 
 [params]
 

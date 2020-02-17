@@ -2,8 +2,6 @@
 
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=2]
 
-
-
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
 script/source = "extends Control
@@ -80,6 +78,8 @@ func click():
 [node name="Settings" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -94,8 +94,8 @@ __meta__ = {
 }
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_right = 1280.0
+margin_bottom = 720.0
 rect_clip_content = true
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
@@ -116,17 +116,17 @@ custom_constants/margin_bottom = 50
 [node name="Audio" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 1862.0
-margin_bottom = 976.0
+margin_right = 1222.0
+margin_bottom = 616.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio"]
-margin_right = 1812.0
-margin_bottom = 461.0
+margin_right = 1172.0
+margin_bottom = 281.0
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
-margin_right = 1812.0
-margin_bottom = 151.0
+margin_right = 1172.0
+margin_bottom = 91.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Громкость музыки"
@@ -134,9 +134,9 @@ align = 1
 valign = 1
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
-margin_top = 155.0
-margin_right = 1812.0
-margin_bottom = 306.0
+margin_top = 95.0
+margin_right = 1172.0
+margin_bottom = 186.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -32.0
@@ -145,45 +145,45 @@ step = 4.0
 tick_count = 9
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
-margin_top = 310.0
-margin_right = 1812.0
-margin_bottom = 461.0
+margin_top = 190.0
+margin_right = 1172.0
+margin_bottom = 281.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
 [node name="Button" type="Button" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer"]
 margin_right = 204.0
-margin_bottom = 151.0
+margin_bottom = 91.0
 custom_fonts/font = ExtResource( 2 )
 text = "Сбросить"
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer"]
 margin_left = 254.0
-margin_top = 63.0
-margin_right = 1812.0
-margin_bottom = 87.0
+margin_top = 33.0
+margin_right = 1172.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "Громкость: 100%"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio"]
-margin_top = 465.0
-margin_right = 1812.0
-margin_bottom = 926.0
+margin_top = 285.0
+margin_right = 1172.0
+margin_bottom = 566.0
 size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
-margin_right = 1812.0
-margin_bottom = 151.0
+margin_right = 1172.0
+margin_bottom = 91.0
 size_flags_vertical = 7
 text = "Громкость эффектов"
 align = 1
 valign = 1
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
-margin_top = 155.0
-margin_right = 1812.0
-margin_bottom = 306.0
+margin_top = 95.0
+margin_right = 1172.0
+margin_bottom = 186.0
 size_flags_vertical = 3
 min_value = -32.0
 max_value = 0.0
@@ -191,23 +191,23 @@ step = 4.0
 tick_count = 9
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
-margin_top = 310.0
-margin_right = 1812.0
-margin_bottom = 461.0
+margin_top = 190.0
+margin_right = 1172.0
+margin_bottom = 281.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
 [node name="Button" type="Button" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer"]
 margin_right = 204.0
-margin_bottom = 151.0
+margin_bottom = 91.0
 custom_fonts/font = ExtResource( 2 )
 text = "Сбросить"
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer"]
 margin_left = 254.0
-margin_top = 63.0
-margin_right = 1812.0
-margin_bottom = 87.0
+margin_top = 33.0
+margin_right = 1172.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "Громкость: 100%"
@@ -228,8 +228,8 @@ custom_constants/margin_bottom = 50
 [node name="Info" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 1862.0
-margin_bottom = 976.0
+margin_right = 1222.0
+margin_bottom = 616.0
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Info/Info"]
 margin_right = 1812.0

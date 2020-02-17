@@ -9,7 +9,7 @@
 script/source = "extends Node2D
 
 
-export var next_scene : = \"res://Scenes/1.beggining/nav_test.tscn\"
+export var next_scene : = \"res://Scenes/street.tscn\"
 
 
 func _ready() -> void:
