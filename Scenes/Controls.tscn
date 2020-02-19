@@ -62,8 +62,8 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
-margin_top = -370.0
-margin_right = 370.0
+margin_top = -520.0
+margin_right = 520.0
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 __meta__ = {
@@ -72,8 +72,8 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
 margin_left = 50.0
-margin_right = 370.0
-margin_bottom = 320.0
+margin_right = 520.0
+margin_bottom = 470.0
 custom_constants/vseparation = 10
 custom_constants/hseparation = 10
 columns = 3
@@ -82,64 +82,64 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="MarginContainer/GridContainer"]
-margin_right = 100.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_right = 150.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
 flat = true
 
 [node name="Button2" type="Button" parent="MarginContainer/GridContainer"]
-margin_left = 110.0
-margin_right = 210.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 160.0
+margin_right = 310.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
 
 [node name="Button3" type="Button" parent="MarginContainer/GridContainer"]
-margin_left = 220.0
-margin_right = 320.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 320.0
+margin_right = 470.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 150, 150 )
 flat = true
 
 [node name="Button4" type="Button" parent="MarginContainer/GridContainer"]
-margin_top = 110.0
-margin_right = 100.0
-margin_bottom = 210.0
-rect_min_size = Vector2( 100, 100 )
+margin_top = 160.0
+margin_right = 150.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 150, 150 )
 
 [node name="Button5" type="Button" parent="MarginContainer/GridContainer"]
-margin_left = 110.0
-margin_top = 110.0
-margin_right = 210.0
-margin_bottom = 210.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 160.0
+margin_top = 160.0
+margin_right = 310.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 150, 150 )
 
 [node name="Button6" type="Button" parent="MarginContainer/GridContainer"]
-margin_left = 220.0
-margin_top = 110.0
-margin_right = 320.0
-margin_bottom = 210.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 320.0
+margin_top = 160.0
+margin_right = 470.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 150, 150 )
 
 [node name="Button7" type="Button" parent="MarginContainer/GridContainer"]
-margin_top = 220.0
-margin_right = 100.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 100, 100 )
+margin_top = 320.0
+margin_right = 150.0
+margin_bottom = 470.0
+rect_min_size = Vector2( 150, 150 )
 flat = true
 
 [node name="Button8" type="Button" parent="MarginContainer/GridContainer"]
-margin_left = 110.0
-margin_top = 220.0
-margin_right = 210.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 160.0
+margin_top = 320.0
+margin_right = 310.0
+margin_bottom = 470.0
+rect_min_size = Vector2( 150, 150 )
 
 [node name="Button9" type="Button" parent="MarginContainer/GridContainer"]
-margin_left = 220.0
-margin_top = 220.0
-margin_right = 320.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 100, 100 )
+margin_left = 320.0
+margin_top = 320.0
+margin_right = 470.0
+margin_bottom = 470.0
+rect_min_size = Vector2( 150, 150 )
 flat = true
 [connection signal="button_down" from="MarginContainer/GridContainer/Button2" to="." method="_on_Button2_button_down"]
 [connection signal="button_up" from="MarginContainer/GridContainer/Button2" to="." method="_on_Button2_button_up"]
