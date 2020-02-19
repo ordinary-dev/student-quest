@@ -4,8 +4,10 @@ onready var nav_2d : Navigation2D = $Navigation2D
 onready var character : Sprite = $Character
 export var song : = "res://Audio/music/SummerNight.ogg"
 
+
 func _ready():
 	get_node("/root/ost").play_sound(load(song))
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
