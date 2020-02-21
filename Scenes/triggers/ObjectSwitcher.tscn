@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+export (NodePath) var object
+
+
+
+func _on_Area2D_body_entered(body):
+	if \"Body\" in body.name:
+		get_node(object).visible = false
+
+
+func _on_Area2D_body_exited(body):
+	if \"Body\" in body.name:
+		get_node(object).visible = true
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="Area2D" type="Area2D"]
+linear_damp = 0.0
+angular_damp = 0.0
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]

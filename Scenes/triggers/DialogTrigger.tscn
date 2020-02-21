@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/icons/info_settings.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Area2D
+
+export (int) var dialog_number
+
+
+func _on_Area2D_body_entered(body):
+	if \"Body\" in body.name:
+		get_node(\"/root/d_obj\").show_dialog(dialog_number)
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.6932, 10.756 )
+
+[node name="Area2D" type="Area2D"]
+script = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.807711, 0.717968 )
+scale = Vector2( 0.887818, 0.887818 )
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
