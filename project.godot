@@ -27,6 +27,7 @@ ost="*res://Scenes/global/ost.tscn"
 fx="*res://Scenes/global/fx.tscn"
 d_obj="*res://Scripts/dialog.gd"
 pause_init="*res://Scripts/pause_init.gd"
+scene_loader="*res://Scripts/scene_loader.gd"
 
 [display]
 

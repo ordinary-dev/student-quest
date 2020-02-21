@@ -49,7 +49,7 @@ func on_Del_Pressed(num) -> void:
 func btn_load_scene(name : String, num : int) -> void:
 	get_node(\"/root/fx\").btn_click()
 	glob.loaded = num
-	get_tree().change_scene(\"res://Scenes/\" + name)
+	get_node(\"/root/scene_loader\").load_scene(\"res://Scenes/\" + name)
 
 func _ready() -> void:
 	if glob.saved_games.size() > 0:

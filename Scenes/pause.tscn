@@ -7,6 +7,7 @@ script/source = "extends Control
 
 
 var enabled : bool = false
+export (String, FILE, \"*.tscn\") var menu_scene
 
 
 func _ready() -> void:
@@ -42,7 +43,7 @@ func _on_Button_pressed() -> void:
 # Кнопка выхода
 func _on_Button2_pressed() -> void:
 	get_node(\"/root/fx\").btn_click()
-	assert(get_tree().change_scene(\"res://Scenes/menu/menu.tscn\") == OK)
+	get_node(\"/root/scene_loader\").load_scene(menu_scene)
 "
 
 [node name="Control" type="Control"]
@@ -54,6 +55,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+menu_scene = "res://Scenes/menu/menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false

@@ -5,6 +5,8 @@ script/source = "extends Control
 
 var audio = \"res://Audio/fx/tspt_fast_smooth_passenger_train_037.ogg\"
 
+export (String, FILE, \"*.tscn\") var next_scene
+
 func _ready():
 	# Обновить информацию об этапе
 	get_node(\"/root/global\").upd_stage(1)
@@ -15,7 +17,7 @@ func _ready():
 # warning-ignore:unused_argument
 func _on_AnimationPlayer_animation_finished(anim_name):
 	yield(get_tree().create_timer(1.5), \"timeout\")
-	assert(get_tree().change_scene(\"res://Scenes/1.beggining/train.tscn\") == OK)
+	get_node(\"/root/scene_loader\").load_scene(next_scene)
 "
 
 [sub_resource type="Animation" id=2]
@@ -40,6 +42,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+next_scene = "res://Scenes/1.beggining/train.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

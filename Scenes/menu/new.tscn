@@ -11,8 +11,8 @@ onready var button_back : = $ColorRect/VBoxContainer/Button2
 onready var glob : = $\"/root/global\"
 var num : int
 
-export var next_scene : = \"res://Scenes/1.beggining/date1.tscn\"
-export var prev_scene : = \"res://Scenes/menu/menu.tscn\"
+export (String, FILE, \"*.tscn\") var next_scene
+export (String, FILE, \"*.tscn\") var prev_scene
 
 func _ready() -> void:
 	# Создать новый файл save.n.txt
@@ -40,12 +40,12 @@ func _ready() -> void:
 func _on_Button_pressed():
 	get_node(\"/root/fx\").btn_click()
 	get_node(\"/root/global\").loaded = num
-	assert(get_tree().change_scene(next_scene) == OK)
+	get_node(\"/root/scene_loader\").load_scene(next_scene)
 
 
 func _on_ButtonBack_pressed():
 	get_node(\"/root/fx\").btn_click()
-	assert(get_tree().change_scene(prev_scene) == OK)
+	get_node(\"/root/scene_loader\").load_scene(prev_scene)
 
 "
 
@@ -56,6 +56,8 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+next_scene = "res://Scenes/1.beggining/date1.tscn"
+prev_scene = "res://Scenes/menu/menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

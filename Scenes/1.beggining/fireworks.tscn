@@ -9,7 +9,8 @@ var fw = load(\"res://Audio/fx/firework_explosion_fizz_002.wav\")
 
 onready var fx : = $\"/root/fx\"
 
-export var next_scene : = \"res://Scenes/1.beggining/date2.tscn\"
+export (String, FILE, \"*.tscn\") var next_scene
+
 
 func _ready() -> void:
 	get_node(\"AnimationPlayer\").play(\"camera\")
@@ -27,7 +28,7 @@ func _ready() -> void:
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	assert(get_tree().change_scene(next_scene) == OK)
+	get_node(\"/root/scene_loader\").load_scene(next_scene)
 "
 
 [sub_resource type="Animation" id=2]
@@ -95,6 +96,7 @@ tracks/4/keys = {
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
+next_scene = "res://Scenes/1.beggining/date2.tscn"
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0

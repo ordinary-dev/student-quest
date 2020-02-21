@@ -4,7 +4,7 @@
 script/source = "extends Control
 
 export var song : = \"res://Audio/music/SummerNight.ogg\"
-export var next_scene : = \"res://Scenes/1.beggining/fireworks.tscn\"
+export (String, FILE, \"*.tscn\") var next_scene
 
 func _ready() -> void:
 	get_node(\"/root/ost\").play_sound(load(song))
@@ -14,7 +14,7 @@ func _ready() -> void:
 # warning-ignore:unused_argument
 func _on_AnimationPlayer_animation_finished(anim_name) -> void:
 	yield(get_tree().create_timer(3), \"timeout\")
-	assert(get_tree().change_scene(next_scene) == OK)
+	get_node(\"/root/scene_loader\").load_scene(next_scene)
 "
 
 [sub_resource type="Animation" id=2]
@@ -39,6 +39,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+next_scene = "res://Scenes/1.beggining/fireworks.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

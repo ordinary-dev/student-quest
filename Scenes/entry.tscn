@@ -10,16 +10,15 @@ script/source = "extends Control
 # Эта сцена является первой просто для удобства.
 # Она может вызывать некоторые функции и загружать объекты
 # перед тем, как будет загружена главная сцена.
-# Сейчас эта сцена загружает фоновую музыку
-# и переключается в меню после этого
+# Сейчас эта сцена загружает меню
 
 
-export var scene_path : = \"res://Scenes/menu/menu.tscn\"
+export (String, FILE, \"*.tscn\") var scene_path
 
 
 func _ready():
 	# Загрузить сцену меню
-	assert(get_tree().change_scene(scene_path) == OK)
+	get_node(\"/root/scene_loader\").load_scene(scene_path)
 "
 
 [node name="Control" type="Control"]
@@ -29,6 +28,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+scene_path = "res://Scenes/menu/menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

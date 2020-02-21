@@ -12,7 +12,7 @@ resource_name = "Main"
 script/source = "extends Control
 
 # Путь к сцене новой игры
-export var new_game : = \"res://Scenes/menu/new.tscn\"
+export (String, FILE, \"*.tscn\") var new_game
 
 # Кнопка загрузки
 onready var load_btn : = $HBoxContainer/MarginContainer/VBoxContainer/ButtonLoad
@@ -26,7 +26,7 @@ export(AudioStream) var music
 # Начать новую игру
 func _on_ButtonNew_pressed():
 	get_node(\"/root/fx\").btn_click()
-	assert(get_tree().change_scene(new_game) == OK)
+	get_node(\"/root/scene_loader\").load_scene(new_game)
 
 
 # Загрузить игру
@@ -70,6 +70,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+new_game = "res://Scenes/menu/new.tscn"
 music = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="."]

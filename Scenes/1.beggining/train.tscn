@@ -9,7 +9,7 @@
 script/source = "extends Node2D
 
 
-export var next_scene : = \"res://Scenes/street.tscn\"
+export (String, FILE, \"*.tscn\") var next_scene
 
 
 func _ready() -> void:
@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	assert(get_tree().change_scene(next_scene) == OK)
+	get_node(\"/root/scene_loader\").load_scene(next_scene)
 "
 
 [sub_resource type="Animation" id=2]
@@ -49,6 +49,7 @@ tracks/1/keys = {
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
+next_scene = "res://Scenes/street.tscn"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.513726, 0.439216, 0.439216, 1 )
