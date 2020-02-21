@@ -3,18 +3,42 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Area2D
 
+# Исчезающий объект
 export (NodePath) var object
+# Модифицированный цвет
+export (Color) var mod_color = Color(1, 1, 1, 0.3)
+# Стандартный цвет (будет взят с объекта)
+export (Color) var def_color = Color(1, 1, 1, 1)
+# Время анимации в секундах
+export (float) var time = 0.3
+# Tween, выполняющий анимацию
+onready var effect : = $Tween
+# Загруженный объект
+var obj
 
 
+# Запомнить цвет по возможности
+func _ready():
+	obj = get_node(object)
+	def_color = obj.modulate
 
+
+# Сделать объект полупрозрачным
 func _on_Area2D_body_entered(body):
 	if \"Body\" in body.name:
-		get_node(object).visible = false
+		effect.interpolate_property(obj, \"modulate\",
+				obj.modulate, mod_color, time, 
+				Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		effect.start()
 
 
+# Вернуть стандартный цвет
 func _on_Area2D_body_exited(body):
 	if \"Body\" in body.name:
-		get_node(object).visible = true
+		effect.interpolate_property(obj, \"modulate\",
+				obj.modulate, def_color, time,
+				Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		effect.start()
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -23,8 +47,11 @@ func _on_Area2D_body_exited(body):
 linear_damp = 0.0
 angular_damp = 0.0
 script = SubResource( 1 )
+mod_color = Color( 1, 1, 1, 0.352941 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]
