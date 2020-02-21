@@ -54,6 +54,7 @@ func _on_Button8_button_up():
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1920, 1080 )
+mouse_filter = 2
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -64,6 +65,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -520.0
 margin_right = 520.0
+mouse_filter = 2
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 __meta__ = {

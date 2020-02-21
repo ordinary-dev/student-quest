@@ -18,11 +18,11 @@ tile_data = PoolIntArray( -458779, 5, 0, -458778, 5, 0, -458777, 5, 0, -458776, 
 
 [node name="Body" parent="." instance=ExtResource( 2 )]
 
-[node name="Area2D" parent="." instance=ExtResource( 3 )]
+[node name="Dialog_2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 22.6665, 383.816 )
 dialog_number = 2
 
-[node name="Area2D2" parent="." instance=ExtResource( 5 )]
+[node name="Transition" parent="." instance=ExtResource( 5 )]
 position = Vector2( 64.0668, 448.356 )
 scale = Vector2( 12.72, 12.68 )
 object = NodePath("../Railways")
