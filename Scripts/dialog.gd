@@ -1,6 +1,7 @@
 extends Node
 
 var dialog_scene : = load("res://Scenes/dialog.tscn")
+var effect
 
 func hide_dialog():
 	get_node("/root/Node2D/Position2D").remove_child(get_node("/root/Node2D/Position2D/dialog"))
@@ -20,7 +21,8 @@ func show_next(content : Dictionary, key : String) -> void:
 		key = "-1"
 		btn.disconnect("pressed", self, "show_next")
 		btn.connect("pressed", self, "hide_dialog")
-	get_node("/root/Node2D/Position2D/dialog/AnimationPlayer").play("text")
+	effect.interpolate_property(text, "percent_visible", 0, 1, len(text.text) / 30.0, Tween.TRANS_LINEAR)
+	effect.start()
 	
 
 func show_dialog(num : int) -> void:
@@ -35,6 +37,8 @@ func show_dialog(num : int) -> void:
 		fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
 		var content = parse_json(fl.get_as_text())
 		fl.close()
+		# Найти Tween
+		effect = get_node("/root/Node2D/Position2D/dialog/Tween")
 		# Показать диалог
 		show_next(content, "0")
 		
