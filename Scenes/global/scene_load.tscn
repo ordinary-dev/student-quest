@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+onready var effect = $Tween
+export (Color) var start = Color(0, 0, 0, 0)
+export (Color) var end = Color(0, 0, 0, 1)
+export var time : = 0.5
+var rct
+var obj
+
+
+func addRect():
+	var root = get_tree().get_root()
+	root.get_child(root.get_child_count()-1).add_child(rct)
+	obj = root.get_child(root.get_child_count()-1).get_node(\"_transition_tmp_node\")
+
+
+func rmRect():
+	var root = get_tree().get_root()
+	root.get_child(root.get_child_count()-1).remove_child(obj)
+
+
+func _ready():
+	rct = ColorRect.new()
+	rct.name = \"_transition_tmp_node\"
+	rct.color = start
+
+# Общая функция для смены сцен.
+# Позже можно добавить анимацию, изменив лишь эту функцию,
+# Не затрагивая множество разных скриптов
+func load_scene(scene_name : String) -> void:
+	addRect()
+	effect.interpolate_property(obj, \"color\",
+				start, end, time, 
+				Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.start()
+	yield(get_tree().create_timer(time), \"timeout\")
+	rmRect()
+	
+	assert(get_tree().change_scene(scene_name) == OK)
+	
+	addRect()
+	effect.interpolate_property(obj, \"color\",
+				end, start, time, 
+				Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.start()
+	rmRect()
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+mouse_filter = 2
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
