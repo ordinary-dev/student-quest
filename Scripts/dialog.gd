@@ -26,7 +26,7 @@ func show_next() -> void:
 	if s_content[s_key].has("next"):
 		s_key = s_content[s_key]["next"]
 		btn.disconnect("pressed", self, "show_next")
-		btn.connect("pressed", self, "show_next", [s_key])
+		btn.connect("pressed", self, "show_next")
 	else:
 		s_key = "-1"
 		btn.disconnect("pressed", self, "show_next")
