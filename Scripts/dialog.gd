@@ -8,6 +8,8 @@ var s_key : String
 func hide_dialog():
 	get_node("/root/Node2D/Position2D").remove_child(get_node("/root/Node2D/Position2D/dialog"))
 	set_process(false)
+	# Разблокировать персонажа
+	get_node("/root/Node2D/Body").unlock()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -51,9 +53,12 @@ func show_dialog(num : int) -> void:
 		effect = get_node("/root/Node2D/Position2D/dialog/Tween")
 		# Активировать отслеживание кнопки
 		set_process(true)
-		# Показать диалог
+		# Сохранить значения
 		s_content = content
 		s_key = "0"
+		# Заблокировать персонажа
+		get_node("/root/Node2D/Body").lock()
+		# Показать диалог
 		show_next()
 		
 func _ready():

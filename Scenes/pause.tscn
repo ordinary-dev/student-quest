@@ -29,6 +29,7 @@ func _on_Pause_pressed() -> void:
 	get_node(\"MarginContainer\").visible = true
 	get_node(\"ColorRect\").visible = true
 	get_node(\"Pause\").visible = false
+	get_node(\"/root/Node2D/Body\").lock()
 
 
 # Кнопка возврата в игру
@@ -38,6 +39,7 @@ func _on_Button_pressed() -> void:
 	get_node(\"MarginContainer\").visible = false
 	get_node(\"ColorRect\").visible = false
 	get_node(\"Pause\").visible = true
+	get_node(\"/root/Node2D/Body\").unlock()
 
 
 # Кнопка выхода

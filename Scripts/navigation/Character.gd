@@ -4,6 +4,11 @@ export (int) var speed = 100
 var velocity = Vector2()
 onready var character = $Character
 
+func lock():
+	set_physics_process(false)
+
+func unlock():
+	set_physics_process(true)
 
 func get_input():
 	velocity = Vector2()
