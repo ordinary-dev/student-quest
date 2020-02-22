@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/character.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 30.2443, 57.644 )
+extents = Vector2( 29.3519, 54.8124 )
 
 [node name="Body" type="KinematicBody2D"]
 position = Vector2( -351.576, 564.435 )
@@ -12,19 +12,21 @@ script = ExtResource( 1 )
 speed = 400
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 27.0109, 54.0217 )
 shape = SubResource( 1 )
 
 [node name="Character" type="Sprite" parent="."]
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
+centered = false
 vframes = 2
-hframes = 2
-frame = 2
+hframes = 3
+frame = 1
 region_enabled = true
-region_rect = Rect2( 0, 0, 304, 576 )
+region_rect = Rect2( 0, 0, 57, 72 )
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
-scale = Vector2( 2.5, 2.5 )
+scale = Vector2( 0.335, 0.335 )
 current = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Character/Camera2D"]
