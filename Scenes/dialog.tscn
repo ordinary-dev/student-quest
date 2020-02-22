@@ -1,21 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=1]
-
-[sub_resource type="Animation" id=1]
-resource_name = "text"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Dialog/Main/Margin/HBox/VBox/Text:percent_visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0 ]
-}
 
 [node name="Control" type="Control"]
 margin_right = 1280.0
@@ -104,14 +89,16 @@ size_flags_vertical = 3
 text = "Sample text for development"
 valign = 1
 autowrap = true
+percent_visible = 0.0
 
 [node name="Button" type="Button" parent="Dialog/Main/Margin/HBox"]
 margin_left = 1614.0
 margin_right = 1744.0
 margin_bottom = 130.0
 rect_min_size = Vector2( 130, 130 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = ">"
 flat = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/text = SubResource( 1 )
+[node name="Tween" type="Tween" parent="."]
