@@ -110,6 +110,8 @@ margin_left = 1614.0
 margin_right = 1744.0
 margin_bottom = 130.0
 rect_min_size = Vector2( 130, 130 )
+focus_mode = 0
+enabled_focus_mode = 0
 text = ">"
 flat = true
 
