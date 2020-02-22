@@ -4,49 +4,34 @@
 script/source = "extends Control
 
 onready var effect = $Tween
-export (Color) var start = Color(0, 0, 0, 0)
+onready var cm = $CanvasModulate
+export (Color) var start = Color(1, 1, 1, 1)
 export (Color) var end = Color(0, 0, 0, 1)
-export var time : = 0.5
-var rct
-var obj
+export (float, 0.1, 3) var time = 0.5
 
-
-func addRect():
-	var root = get_tree().get_root()
-	root.get_child(root.get_child_count()-1).add_child(rct)
-	obj = root.get_child(root.get_child_count()-1).get_node(\"_transition_tmp_node\")
-
-
-func rmRect():
-	var root = get_tree().get_root()
-	root.get_child(root.get_child_count()-1).remove_child(obj)
-
-
-func _ready():
-	rct = ColorRect.new()
-	rct.name = \"_transition_tmp_node\"
-	rct.color = start
 
 # Общая функция для смены сцен.
 # Позже можно добавить анимацию, изменив лишь эту функцию,
 # Не затрагивая множество разных скриптов
-func load_scene(scene_name : String) -> void:
-	addRect()
-	effect.interpolate_property(obj, \"color\",
-				start, end, time, 
-				Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	effect.start()
-	yield(get_tree().create_timer(time), \"timeout\")
-	rmRect()
+func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool = true) -> void:
+	# Анимация затухания
+	if anim_start:
+		effect.interpolate_property(cm, \"color\",
+			start, end, time, 
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		effect.start()
+		yield(get_tree().create_timer(time), \"timeout\")
 	
+	# Загрузка сцены
 	assert(get_tree().change_scene(scene_name) == OK)
 	
-	addRect()
-	effect.interpolate_property(obj, \"color\",
-				end, start, time, 
-				Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	effect.start()
-	rmRect()
+	# Анимация появления
+	if anim_end:
+		effect.interpolate_property(cm, \"color\",
+			end, start, time, 
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		effect.start()
+
 "
 
 [node name="Control" type="Control"]
@@ -60,3 +45,5 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
