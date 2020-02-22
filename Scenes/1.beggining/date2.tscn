@@ -17,7 +17,7 @@ func _ready():
 # warning-ignore:unused_argument
 func _on_AnimationPlayer_animation_finished(anim_name):
 	yield(get_tree().create_timer(1.5), \"timeout\")
-	get_node(\"/root/scene_loader\").load_scene(next_scene)
+	get_node(\"/root/scene_loader\").load_scene(next_scene, true, false)
 "
 
 [sub_resource type="Animation" id=2]
