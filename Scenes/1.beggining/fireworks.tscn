@@ -21,10 +21,6 @@ func _ready() -> void:
 	yield(get_tree().create_timer(0.08), \"timeout\")
 	yield(get_tree().create_timer(0.7), \"timeout\")
 	fx.play_sound(fw)
-	
-	yield(get_tree().create_timer(0.4), \"timeout\")
-	yield(get_tree().create_timer(0.7), \"timeout\")
-	fx.play_sound(fw)
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -81,18 +77,6 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0, 155 ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSprite3:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 1.9, 8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0, 155 ]
-}
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
@@ -115,34 +99,27 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="Sprite" parent="."]
-position = Vector2( 675.226, 441.394 )
-scale = Vector2( 9.08128, 9.33285 )
+position = Vector2( 546.168, 487.855 )
+scale = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 13
+frame = 155
 
 [node name="AnimatedSprite2" type="Sprite" parent="."]
-position = Vector2( 1232.91, 729.087 )
-scale = Vector2( 9.08128, 9.33285 )
+position = Vector2( 1279.37, 698.113 )
+scale = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 flip_h = true
 vframes = 12
 hframes = 13
-frame = 5
-
-[node name="AnimatedSprite3" type="Sprite" parent="."]
-position = Vector2( 498.184, 786.626 )
-scale = Vector2( 9.08128, 9.33285 )
-texture = ExtResource( 1 )
-vframes = 12
-hframes = 13
-frame = 5
+frame = 155
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/camera = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, 200 )
 anchor_mode = 0
 current = true
-zoom = Vector2( 0.9, 0.9 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
