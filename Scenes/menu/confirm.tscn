@@ -8,6 +8,10 @@ script/source = "extends Control
 func _on_ButtonYes_pressed() -> void:
 	# Звук нажатия
 	get_node(\"/root/fx\").btn_click()
+	# Затухание
+	var sl = get_node(\"/root/scene_loader\")
+	sl.fade_in()
+	yield(get_tree().create_timer(sl.time), \"timeout\")
 	# Сохранить данные
 	get_node(\"/root/global\").write_file()
 	# Закрыть игру

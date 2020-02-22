@@ -42,10 +42,21 @@ func _on_Button_pressed() -> void:
 	get_node(\"/root/Node2D/Body\").unlock()
 
 
-# Кнопка выхода
+# Кнопка возврата в меню
 func _on_Button2_pressed() -> void:
 	get_node(\"/root/fx\").btn_click()
 	get_node(\"/root/scene_loader\").load_scene(menu_scene)
+
+# Выход из игры
+func _on_Button3_pressed():
+	# Затухание
+	var sl = get_node(\"/root/scene_loader\")
+	sl.fade_in()
+	yield(get_tree().create_timer(sl.time), \"timeout\")
+	# Сохранить данные
+	get_node(\"/root/global\").write_file()
+	# Закрыть игру
+	get_tree().quit()
 "
 
 [node name="Control" type="Control"]
@@ -105,18 +116,26 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 327.0
+margin_top = 265.0
 margin_right = 1120.0
-margin_bottom = 427.0
+margin_bottom = 365.0
 rect_min_size = Vector2( 0, 100 )
 text = "Вернуться"
 
 [node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
-margin_top = 452.0
+margin_top = 390.0
 margin_right = 1120.0
-margin_bottom = 552.0
+margin_bottom = 490.0
 rect_min_size = Vector2( 0, 100 )
-text = "Выйти"
+text = "В меню"
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+margin_top = 515.0
+margin_right = 1120.0
+margin_bottom = 615.0
+rect_min_size = Vector2( 0, 100 )
+text = "Выйти из игры"
 [connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
