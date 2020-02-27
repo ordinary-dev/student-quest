@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mr_singer_atlas.png-6dc19baba60dcc5cffa916e157b6ce0f.stex"
+path="res://.import/wtr0.png-104d6256a98f6c6c15d6d90b31158d67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mr_singer_atlas.png"
-dest_files=[ "res://.import/mr_singer_atlas.png-6dc19baba60dcc5cffa916e157b6ce0f.stex" ]
+source_file="res://Sprites/fountain/wtr0.png"
+dest_files=[ "res://.import/wtr0.png-104d6256a98f6c6c15d6d90b31158d67.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

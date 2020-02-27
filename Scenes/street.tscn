@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Tilemaps/street.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Body.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Scripts/common.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/triggers/ObjectSwitcher.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/mr_singer.tres" type="SpriteFrames" id=6]
+[ext_resource path="res://Sprites/fountain.tres" type="SpriteFrames" id=7]
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends AnimatedSprite
@@ -17,6 +18,16 @@ func _ready():
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 111.588, 75.31 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends AnimatedSprite
+
+
+func _ready():
+	playing = true
+"
+
+[sub_resource type="CircleShape2D" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -42,6 +53,21 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mr_singer/StaticBody2D"]
 shape = SubResource( 1 )
+
+[node name="Fountain" type="AnimatedSprite" parent="."]
+position = Vector2( 3005.24, 3517.17 )
+scale = Vector2( 20, 20 )
+frames = ExtResource( 7 )
+frame = 1
+script = SubResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Fountain"]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fountain/StaticBody2D"]
+position = Vector2( 0.535, 3.873 )
+scale = Vector2( 0.805, 0.55 )
+shape = SubResource( 4 )
 
 [node name="Transition" parent="." instance=ExtResource( 5 )]
 position = Vector2( 64.0668, 448.356 )
