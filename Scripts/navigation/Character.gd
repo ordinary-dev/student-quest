@@ -101,6 +101,7 @@ func get_input():
 				play_step()
 			elif distance_passed == 3 * change:
 				character.frame = 3
+				play_step()
 			elif distance_passed == 4 * change:
 				distance_passed = 0 
 		velocity.y += 1
@@ -119,6 +120,7 @@ func get_input():
 				play_step()
 			elif distance_passed == 3 * change:
 				character.frame = 4
+				play_step()
 			elif distance_passed == 4 * change:
 				distance_passed = 0 
 		velocity.y -= 1
