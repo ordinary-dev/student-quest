@@ -7,6 +7,13 @@ var distance_passed = 0
 export (int) var change = 10
 var type = 0
 var side_used = false
+var any_button_pressed : bool = false
+
+# Sound
+export (AudioStream) var step1
+export (AudioStream) var step2
+onready var player = $AudioStreamPlayer
+var first_stage : bool = false
 
 
 func lock():
@@ -15,40 +22,72 @@ func lock():
 func unlock():
 	set_physics_process(true)
 
+func play_step():
+	if first_stage:
+		player.stream = step1
+	else:
+		player.stream = step2
+	first_stage = !first_stage
+	player.play()
+
 func get_input():
 	velocity = Vector2()
+	any_button_pressed = false
 	side_used = false
+	# Вправо
 	if Input.is_action_pressed('ui_right'):
 		side_used = true
+		any_button_pressed = true
+		# Если предыдущее состояние не "вправо"
 		if type != 3:
-			distance_passed = 0
 			type = 3
+			# Обнулить счетчик для анимации
+			distance_passed = 0
 			character.frame = 2
 			character.flip_h = false
 		distance_passed += 1
-		if distance_passed >= change:
-			if character.frame == 2:
-				character.frame = 5
-			else:
-				character.frame = 2
+		# Анимация
+		# Крайнее положение
+		if distance_passed == change:
+			character.frame = 5
+			play_step()
+		elif distance_passed == 2 * change:
+			character.frame = 8
+		# Крайнее положение
+		elif distance_passed == 3 * change:
+			character.frame = 2
+			play_step()
+		# Обратный порядок
+		elif distance_passed == 4 * change:
+			character.frame = 8
 			distance_passed = 0
 		velocity.x += 1
 	if Input.is_action_pressed('ui_left'):
 		side_used = true
+		any_button_pressed = true
 		if type != 2:
 			distance_passed = 0
 			type = 2
 			character.frame = 2
 			character.flip_h = true
 		distance_passed += 1
-		if distance_passed >= change:
-			if character.frame == 2:
-				character.frame = 5
-			else:
-				character.frame = 2
+		# Крайнее положение
+		if distance_passed == change:
+			character.frame = 5
+			play_step()
+		elif distance_passed == 2 * change:
+			character.frame = 8
+		# Крайнее положение
+		elif distance_passed == 3 * change:
+			character.frame = 2
+			play_step()
+		# Обратный порядок
+		elif distance_passed == 4 * change:
+			character.frame = 8
 			distance_passed = 0
 		velocity.x -= 1
 	if Input.is_action_pressed('ui_down'):
+		any_button_pressed = true
 		if type != 0 && !side_used:
 			distance_passed = 0
 			type = 0
@@ -56,14 +95,17 @@ func get_input():
 			character.flip_h = false
 		if !side_used:
 			distance_passed += 1
-			if distance_passed >= change:
-				if character.frame == 0:
-					character.frame = 3
-				else:
-					character.frame = 0
-				distance_passed = 0
+			# Крайнее положение
+			if distance_passed == change:
+				character.frame = 0
+				play_step()
+			elif distance_passed == 3 * change:
+				character.frame = 3
+			elif distance_passed == 4 * change:
+				distance_passed = 0 
 		velocity.y += 1
 	if Input.is_action_pressed('ui_up'):
+		any_button_pressed = true
 		if type != 1 && !side_used:
 			distance_passed = 0
 			type = 1
@@ -71,13 +113,23 @@ func get_input():
 			character.flip_h = false
 		if !side_used:
 			distance_passed += 1
-			if distance_passed >= change:
-				if character.frame == 1:
-					character.frame = 4
-				else:
-					character.frame = 1
-				distance_passed = 0
+			# Крайнее положение
+			if distance_passed == change:
+				character.frame = 1
+				play_step()
+			elif distance_passed == 3 * change:
+				character.frame = 4
+			elif distance_passed == 4 * change:
+				distance_passed = 0 
 		velocity.y -= 1
+	if !any_button_pressed:
+		if type == 1:
+			character.frame = 7
+		elif type == 0:
+			character.frame = 6
+		# Left or right
+		else:
+			character.frame = 8
 	velocity = velocity.normalized() * speed
 
 func _physics_process(delta):

@@ -30,10 +30,9 @@ tile_data = PoolIntArray( -458779, 5, 0, -458778, 5, 0, -458777, 5, 0, -458776, 
 
 [node name="Body" parent="." instance=ExtResource( 2 )]
 collision_layer = 1025
-change = 15
 
 [node name="Mr_singer" type="AnimatedSprite" parent="."]
-position = Vector2( 13.8174, 401.308 )
+position = Vector2( 13.8174, 371.391 )
 scale = Vector2( 0.650735, 0.650735 )
 frames = ExtResource( 6 )
 script = SubResource( 2 )
@@ -43,15 +42,6 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mr_singer/StaticBody2D"]
 shape = SubResource( 1 )
-
-[node name="Dialog_2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 54.3643, 375.514 )
-linear_damp = 0.0
-angular_damp = 0.0
-collision_layer = 0
-collision_mask = 1024
-dialog_number = 2
-person = "Мистер Дудец"
 
 [node name="Transition" parent="." instance=ExtResource( 5 )]
 position = Vector2( 64.0668, 448.356 )
@@ -82,3 +72,12 @@ tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -65534, 31, 0, -65531, 31, 0, -65527, 12, 0, -65523, 12, 0, -65519, 31, 0, -65507, 12, 0, -65505, 12, 0, 3, 31, 0, 7, 31, 0, 11, 12, 0, 15, 12, 0, 27, 12, 0, 30, 12, 0, 32, 12, 0, 524304, 12, 0, 786448, 12, 0, 1048592, 12, 0, 1310736, 12, 0, 1572880, 12, 0, 1835024, 12, 0, 2097168, 12, 0, 2359312, 12, 0, 4128764, 12, 0, 4194297, 12, 0, 4325372, 12, 0, 4456442, 12, 0, 4587513, 31, 0, 4718588, 31, 0, 4849657, 12, 0, 4980732, 31, 0, 5046264, 31, 0, 5111803, 12, 0 )
+
+[node name="Dialog_2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 73.2009, 357.785 )
+linear_damp = 0.0
+angular_damp = 0.0
+collision_layer = 0
+collision_mask = 1024
+dialog_number = 2
+person = "Мистер Дудец"

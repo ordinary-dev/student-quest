@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/navigation/Character.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/character.png" type="Texture" id=2]
+[ext_resource path="res://Audio/fx/steps/footstep1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/fx/steps/footstep2.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.3519, 54.8124 )
@@ -9,7 +11,9 @@ extents = Vector2( 29.3519, 54.8124 )
 [node name="Body" type="KinematicBody2D"]
 position = Vector2( -351.576, 564.435 )
 script = ExtResource( 1 )
-speed = 400
+speed = 350
+step1 = ExtResource( 3 )
+step2 = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 27.0109, 54.0217 )
@@ -19,11 +23,11 @@ shape = SubResource( 1 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 centered = false
-vframes = 2
+vframes = 3
 hframes = 3
 frame = 1
 region_enabled = true
-region_rect = Rect2( 0, 0, 57, 72 )
+region_rect = Rect2( 0, 0, 57, 108 )
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 scale = Vector2( 0.335, 0.335 )
@@ -35,3 +39,7 @@ __meta__ = {
 "_editor_description_": "Ignore warning /
 Игнорируйте предупреждение"
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+bus = "FX"
