@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wtr0.png-104d6256a98f6c6c15d6d90b31158d67.stex"
+path="res://.import/logo.png-80db6ca08aaa3f794bba7bb596d1b872.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fountain/wtr0.png"
-dest_files=[ "res://.import/wtr0.png-104d6256a98f6c6c15d6d90b31158d67.stex" ]
+source_file="res://Sprites/icons/logo.png"
+dest_files=[ "res://.import/logo.png-80db6ca08aaa3f794bba7bb596d1b872.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

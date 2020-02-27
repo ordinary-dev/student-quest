@@ -27,7 +27,7 @@ func _ready():
 	playing = true
 "
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -66,7 +66,7 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fountain/StaticBody2D"]
 position = Vector2( 0.535, 3.873 )
-scale = Vector2( 0.805, 0.55 )
+scale = Vector2( 0.766, 0.426 )
 shape = SubResource( 4 )
 
 [node name="Transition" parent="." instance=ExtResource( 5 )]

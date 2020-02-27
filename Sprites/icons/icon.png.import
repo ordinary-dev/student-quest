@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mr_singer1.png-dab293dd78ce7254020acefd8687d3e2.stex"
+path="res://.import/icon.png-9533111fa5b8fe9142e137ae1cd2186c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/mr_singer_anim/mr_singer1.png"
-dest_files=[ "res://.import/mr_singer1.png-dab293dd78ce7254020acefd8687d3e2.stex" ]
+source_file="res://Sprites/icons/icon.png"
+dest_files=[ "res://.import/icon.png-9533111fa5b8fe9142e137ae1cd2186c.stex" ]
 
 [params]
 
