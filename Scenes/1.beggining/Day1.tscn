@@ -12,7 +12,11 @@ script/source = "extends Node2D
 
 export (AudioStream) var song
 
+
 func _ready():
+	# Обновить информацию об этапе
+	get_node(\"/root/global\").upd_stage(1)
+	# Начать играть песню, если играет другая
 	get_node(\"/root/ost\").play_sound(song)
 "
 

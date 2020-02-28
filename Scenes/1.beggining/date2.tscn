@@ -14,8 +14,6 @@ export (AudioStream) var audio
 
 
 func _ready() -> void:
-	# Обновить информацию об этапе
-	get_node(\"/root/global\").upd_stage(1)
 	get_node(\"Control\")._start()
 	# Начать играть звук поезда
 	get_node(\"/root/fx\").play_sound(audio)
