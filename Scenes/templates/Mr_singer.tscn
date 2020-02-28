@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/mr_singer.tres" type="SpriteFrames" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends AnimatedSprite
+
+
+func _ready():
+	playing = true
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 111.588, 75.31 )
+
+[node name="Mr_singer" type="AnimatedSprite"]
+position = Vector2( 13.8174, 371.391 )
+scale = Vector2( 0.650735, 0.650735 )
+frames = ExtResource( 1 )
+script = SubResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )

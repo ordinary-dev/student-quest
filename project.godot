@@ -28,6 +28,7 @@ fx="*res://Scenes/global/fx.tscn"
 d_obj="*res://Scripts/dialog.gd"
 pause_init="*res://Scripts/pause_init.gd"
 scene_loader="*res://Scenes/global/scene_load.tscn"
+ui="*res://Scenes/global/ui.tscn"
 
 [display]
 

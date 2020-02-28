@@ -39,7 +39,7 @@ func _ready() -> void:
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/street.tscn"
+next_scene = "res://Scenes/1.beggining/Day1.tscn"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.513726, 0.439216, 0.439216, 1 )

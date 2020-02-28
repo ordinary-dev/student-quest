@@ -29,7 +29,8 @@ func _on_Pause_pressed() -> void:
 	get_node(\"MarginContainer\").visible = true
 	get_node(\"ColorRect\").visible = true
 	get_node(\"Pause\").visible = false
-	get_node(\"/root/Node2D/Body\").lock()
+	if (has_node(\"/root/Node2D/Body\")):
+		get_node(\"/root/Node2D/Body\").lock()
 
 
 # Кнопка возврата в игру
@@ -39,13 +40,21 @@ func _on_Button_pressed() -> void:
 	get_node(\"MarginContainer\").visible = false
 	get_node(\"ColorRect\").visible = false
 	get_node(\"Pause\").visible = true
-	get_node(\"/root/Node2D/Body\").unlock()
+	if (has_node(\"/root/Node2D/Body\")):
+		get_node(\"/root/Node2D/Body\").unlock()
 
 
 # Кнопка возврата в меню
 func _on_Button2_pressed() -> void:
 	get_node(\"/root/fx\").btn_click()
-	get_node(\"/root/scene_loader\").load_scene(menu_scene)
+	# Затемнить экран
+	var sl = get_node(\"/root/scene_loader\")
+	sl.fade_in()
+	yield(get_tree().create_timer(sl.time), \"timeout\")
+	# Убрать паузу
+	_on_Button_pressed()
+	get_node(\"/root/scene_loader\").load_scene(menu_scene, false)
+
 
 # Выход из игры
 func _on_Button3_pressed():

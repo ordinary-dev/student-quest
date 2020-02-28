@@ -1,15 +1,16 @@
 extends Node
 
-var dialog_scene : = load("res://Scenes/dialog.tscn")
+var dialog_scene : = load("res://Scenes/templates/dialog.tscn")
 var effect
 var s_content : Dictionary
 var s_key : String
 
 func hide_dialog():
-	get_node("/root/Node2D/Position2D").remove_child(get_node("/root/Node2D/Position2D/dialog"))
+	get_node("/root/ui").remove_child(get_node("/root/ui/dialog"))
 	set_process(false)
 	# Разблокировать персонажа
-	get_node("/root/Node2D/Body").unlock()
+	if has_node("/root/Node2D/Body"):
+		get_node("/root/Node2D/Body").unlock()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -19,9 +20,9 @@ func _process(_delta):
 			hide_dialog()
 
 func show_next() -> void:
-	var name : = get_node("/root/Node2D/Position2D/dialog/Dialog/Main/Margin/HBox/VBox/Name")
-	var text : = get_node("/root/Node2D/Position2D/dialog/Dialog/Main/Margin/HBox/VBox/Text")
-	var btn : = get_node("/root/Node2D/Position2D/dialog/Dialog/Main/Margin/HBox/Button")
+	var name : = get_node("/root/ui/dialog/Dialog/Main/Margin/HBox/VBox/Name")
+	var text : = get_node("/root/ui/dialog/Dialog/Main/Margin/HBox/VBox/Text")
+	var btn : = get_node("/root/ui/dialog/Dialog/Main/Margin/HBox/Button")
 	text.percent_visible = 0
 	name.text = s_content[s_key]["name"]
 	text.text = s_content[s_key]["text"]
@@ -38,28 +39,28 @@ func show_next() -> void:
 	
 
 func show_dialog(num : int) -> void:
-	if has_node("/root/Node2D"):
-		# Подготовить интерфейс
-		var nd : = get_node("/root/Node2D/Position2D")
-		var tmp = dialog_scene.instance()
-		tmp.name = "dialog"
-		nd.add_child(tmp)
-		# Открыть файл
-		var fl : = File.new()
-		fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
-		var content = parse_json(fl.get_as_text())
-		fl.close()
-		# Найти Tween
-		effect = get_node("/root/Node2D/Position2D/dialog/Tween")
-		# Активировать отслеживание кнопки
-		set_process(true)
-		# Сохранить значения
-		s_content = content
-		s_key = "0"
-		# Заблокировать персонажа
+	# Подготовить интерфейс
+	var nd : = get_node("/root/ui")
+	var tmp = dialog_scene.instance()
+	tmp.name = "dialog"
+	nd.add_child(tmp)
+	# Открыть файл
+	var fl : = File.new()
+	fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
+	var content = parse_json(fl.get_as_text())
+	fl.close()
+	# Найти Tween
+	effect = get_node("/root/ui/dialog/Tween")
+	# Активировать отслеживание кнопки
+	set_process(true)
+	# Сохранить значения
+	s_content = content
+	s_key = "0"
+	# Заблокировать персонажа
+	if has_node("/root/Node2D/Body"):
 		get_node("/root/Node2D/Body").lock()
-		# Показать диалог
-		show_next()
+	# Показать диалог
+	show_next()
 		
 func _ready():
 	set_process(false)
