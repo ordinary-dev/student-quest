@@ -4,15 +4,16 @@
 script/source = "extends Control
 
 
-onready var label : = $ColorRect/VBoxContainer/Label
-onready var button_start : = $ColorRect/VBoxContainer/Button
-onready var button_back : = $ColorRect/VBoxContainer/Button2
+onready var label : = $ColorRect/VBoxContainer/MarginContainer/Label
+onready var button_start : = $ColorRect/VBoxContainer/ColorRect/Button
+onready var button_back : = $ColorRect/VBoxContainer/ColorRect2/Button2
 
 onready var glob : = $\"/root/global\"
 var num : int
 
 export (String, FILE, \"*.tscn\") var next_scene
 export (String, FILE, \"*.tscn\") var prev_scene
+
 
 func _ready() -> void:
 	# Создать новый файл save.n.txt
@@ -32,7 +33,9 @@ func _ready() -> void:
 	# Сохранить изменения
 	glob.write_file()
 	# Дать игроку знать, что он может играть
-	label.text += \" Готово!\"
+	label.bbcode_text += (str(num) 
+	+ \"                    [[color=green]OK[/color]]\")
+	label.bbcode_text += \"\\n* Этап #1: Воспоминания и иллюзии   [[color=yellow]Waiting[/color]]\"
 	button_start.disabled = false
 	button_back.disabled = false
 
@@ -71,29 +74,71 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 693.0
+margin_bottom = 772.0
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+
+[node name="Label" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 722.0
 size_flags_vertical = 7
 size_flags_stretch_ratio = 3.67
-text = "Создаем файл..."
-align = 1
-valign = 1
+bbcode_enabled = true
+bbcode_text = "[center]Welcome to net manager[/center]
 
-[node name="Button" type="Button" parent="ColorRect/VBoxContainer"]
-margin_top = 697.0
+[color=gray][user@of] $ tail ~/user.log [/color]
+
+* Создаем файл сохранения...        [[color=green]OK[/color]]
+* Номер файла: "
+text = "Welcome to net manager
+
+[user@of] $ tail ~/user.log 
+
+* Создаем файл сохранения...        [OK]
+* Номер файла: "
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/VBoxContainer"]
+margin_top = 776.0
 margin_right = 1920.0
-margin_bottom = 886.0
+margin_bottom = 926.0
+rect_min_size = Vector2( 0, 150 )
+color = Color( 0.141176, 0.141176, 0.141176, 1 )
+
+[node name="Button" type="Button" parent="ColorRect/VBoxContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 150 )
 size_flags_vertical = 3
 disabled = true
 text = "Начать!"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Button2" type="Button" parent="ColorRect/VBoxContainer"]
-margin_top = 890.0
+[node name="ColorRect2" type="ColorRect" parent="ColorRect/VBoxContainer"]
+margin_top = 930.0
 margin_right = 1920.0
 margin_bottom = 1080.0
+rect_min_size = Vector2( 0, 150 )
+color = Color( 0.141176, 0.141176, 0.141176, 1 )
+
+[node name="Button2" type="Button" parent="ColorRect/VBoxContainer/ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 size_flags_vertical = 3
 disabled = true
 text = "Вернуться"
-[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/Button2" to="." method="_on_ButtonBack_pressed"]
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="ColorRect/VBoxContainer/ColorRect/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/ColorRect2/Button2" to="." method="_on_ButtonBack_pressed"]

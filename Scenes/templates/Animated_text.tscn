@@ -9,11 +9,11 @@ export (String) var text_1
 # Текст во второй строчке
 export (String) var text_2
 # Время анимации на символ, можно не менять
-export (float) var animation_duration = 0.15
+export (float, 0.1, 0.3) var animation_duration = 0.15
 # Задежки до и после (можно не менять)
-export (float) var delay_before = 1.0
-export (float) var delay_after = 1.0
-export (float) var delay_between = 1.0
+export (float, 0, 2) var delay_before = 1.0
+export (float, 0, 2) var delay_after = 1.0
+export (float, 0, 2) var delay_between = 1.0
 
 # Объекты сцены
 # Текст сверху
