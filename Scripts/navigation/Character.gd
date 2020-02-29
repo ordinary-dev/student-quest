@@ -9,6 +9,8 @@ var type = 0
 var side_used = false
 var any_button_pressed : bool = false
 var idle = true
+# При нажатии shift меняется
+var mult : int = 1
 
 # Sound
 export (AudioStream) var step1
@@ -129,6 +131,10 @@ func get_input():
 			elif distance_passed == 4 * change:
 				distance_passed = 0 
 		velocity.y -= 1
+	if Input.is_action_pressed("speed_up"):
+		mult = 2
+	else:
+		mult = 1
 	if !any_button_pressed && !idle:
 		idle = true
 		if type == 1:
@@ -138,7 +144,7 @@ func get_input():
 		# Left or right
 		else:
 			character.frame = 8
-	velocity = velocity.normalized() * speed
+	velocity = velocity.normalized() * speed * mult
 
 func _physics_process(_delta):
 	get_input()
