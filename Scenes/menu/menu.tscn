@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Themes/my_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Sprites/backgrounds/8bit-background.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/menu/settings.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/menu/load.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/menu/confirm.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Audio/music/Kalaido_Hanging_Lanterns.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
@@ -15,40 +15,43 @@ script/source = "extends Control
 export (String, FILE, \"*.tscn\") var new_game
 
 # Кнопка загрузки
-onready var load_btn : = $HBoxContainer/MarginContainer/VBoxContainer/ButtonLoad
+export (NodePath) var load_btn
 
-onready var settings_scene : = $HBoxContainer/MarginContainer2/Settings
-onready var load_scene : = $HBoxContainer/MarginContainer2/Load
-onready var confirm_scene : = $HBoxContainer/MarginContainer2/Confirm
+export (NodePath) var settings_scene
+export (NodePath) var load_scene
+export (NodePath) var confirm_scene
 
 export(AudioStream) var music
 
 # Начать новую игру
-func _on_ButtonNew_pressed():
+func _new_game():
 	get_node(\"/root/fx\").btn_click()
 	get_node(\"/root/scene_loader\").load_scene(new_game)
 
 
 # Загрузить игру
-func _on_ButtonLoad_pressed():
+func _load_game():
 	get_node(\"/root/fx\").btn_click()
-	load_scene.visible = !load_scene.visible
-	settings_scene.visible = false
-	confirm_scene.visible = false
+	get_node(load_scene).visible = !get_node(load_scene).visible
+	get_node(settings_scene).visible = false
+	get_node(confirm_scene).visible = false
 
 # Открыть настройки
-func _on_ButtonSettings_pressed():
+func _toggle_settings():
 	get_node(\"/root/fx\").btn_click()
-	settings_scene.visible = !settings_scene.visible
-	load_scene.visible = false
-	confirm_scene.visible = false
+	get_node(settings_scene).visible = !get_node(settings_scene).visible
+	get_node(load_scene).visible = false
+	get_node(confirm_scene).visible = false
 
 # Перейти к подтверждению выхода
-func _on_ButtonQuit_pressed():
+func _quit():
 	get_node(\"/root/fx\").btn_click()
-	confirm_scene.visible = !confirm_scene.visible
-	settings_scene.visible = false
-	load_scene.visible = false
+	if get_node(confirm_scene).visible:
+		get_node(confirm_scene).visible = false
+	else:
+		get_node(confirm_scene).visible = true
+	get_node(settings_scene).visible = false
+	get_node(load_scene).visible = false
 
 
 func _ready() -> void:
@@ -56,18 +59,19 @@ func _ready() -> void:
 	# (Если в меню вернуться через паузу, то она останется
 	# Т.к. нужно выполнить переход)
 	get_node(\"/root/pause_init\").disable()
-	# Воспроизвести музыку по ее пути
+	# Воспроизвести музыку
 	get_node(\"/root/ost\").play_sound(music)
 	# Отключить кнопку загрузки если нет сохраненных игр
 	if get_node(\"/root/global\").saved_games.size() == 0:
-		load_btn.disabled = true
+		get_node(load_btn).disabled = true
 	# Отключить все доп. сцены
-	settings_scene.visible = false
-	load_scene.visible = false
-	confirm_scene.visible = false
+	get_node(settings_scene).visible = false
+	get_node(load_scene).visible = false
+	get_node(confirm_scene).visible = false
+
 "
 
-[node name="Control" type="Control"]
+[node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
@@ -75,6 +79,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 new_game = "res://Scenes/menu/new.tscn"
+settings_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Settings")
+load_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Load")
+confirm_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Confirm")
 music = ExtResource( 6 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -116,36 +123,32 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ButtonNew" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="ColorRect5" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_right = 758.0
 margin_bottom = 192.0
 size_flags_vertical = 3
-theme = ExtResource( 1 )
-text = "Новая игра"
+btn_text = "Новая игра"
 
-[node name="ButtonLoad" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="ColorRect6" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 196.0
 margin_right = 758.0
 margin_bottom = 388.0
 size_flags_vertical = 3
-theme = ExtResource( 1 )
-text = "Загрузить игру"
+btn_text = "Загрузить игру"
 
-[node name="ButtonSettings" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="ColorRect7" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 392.0
 margin_right = 758.0
 margin_bottom = 584.0
 size_flags_vertical = 3
-theme = ExtResource( 1 )
-text = "Настройки"
+btn_text = "Настройки"
 
-[node name="ButtonQuit" type="Button" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="ColorRect8" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 588.0
 margin_right = 758.0
 margin_bottom = 780.0
 size_flags_vertical = 3
-theme = ExtResource( 1 )
-text = "Выйти"
+btn_text = "Выход"
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
 margin_left = 962.0
@@ -167,6 +170,7 @@ margin_right = 858.0
 margin_bottom = 930.0
 
 [node name="Settings" parent="HBoxContainer/MarginContainer2" instance=ExtResource( 3 )]
+visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 100.0
@@ -184,7 +188,7 @@ margin_left = 100.0
 margin_top = 150.0
 margin_right = 858.0
 margin_bottom = 930.0
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ButtonNew" to="." method="_on_ButtonNew_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ButtonLoad" to="." method="_on_ButtonLoad_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ButtonSettings" to="." method="_on_ButtonSettings_pressed"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ButtonQuit" to="." method="_on_ButtonQuit_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ColorRect5" to="." method="_new_game"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ColorRect6" to="." method="_load_game"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ColorRect7" to="." method="_toggle_settings"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ColorRect8" to="." method="_quit"]

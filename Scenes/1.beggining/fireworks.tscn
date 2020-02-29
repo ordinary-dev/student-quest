@@ -133,7 +133,6 @@ scale = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 13
-frame = 155
 
 [node name="AnimatedSprite2" type="Sprite" parent="."]
 light_mask = 2
@@ -143,11 +142,11 @@ texture = ExtResource( 1 )
 flip_h = true
 vframes = 12
 hframes = 13
-frame = 155
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 856.547, 1028.28 )
 scale = Vector2( 8.98045, 8.98045 )
+z_index = 5
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 3
@@ -159,6 +158,7 @@ modulate = Color( 0, 0, 0, 0.980392 )
 light_mask = 2
 position = Vector2( 854.575, 1016.44 )
 scale = Vector2( 7.9637, 7.82004 )
+z_index = 5
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 3
@@ -174,10 +174,10 @@ current = true
 zoom = Vector2( 0.9, 0.9 )
 
 [node name="Light2D2" type="Light2D" parent="."]
-position = Vector2( 1195.02, 741.433 )
+position = Vector2( 848.941, 559.133 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 3 )
 texture_scale = 2.17
-energy = 1.58
+energy = 2.59
 mode = 3
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
