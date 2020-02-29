@@ -1,11 +1,22 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[sub_resource type="GDScript" id=1]
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=2]
 script/source = "extends Control
 
 
+# Вернуться
+func _return() -> void:
+	# Звук нажатия
+	get_node(\"/root/fx\").btn_click()
+	# Если есть меню
+	if has_node(\"/root/Menu\"):
+		get_node(\"/root/Menu\")._quit()
+
+
 # Выход
-func _on_ButtonYes_pressed() -> void:
+func _quit() -> void:
 	# Звук нажатия
 	get_node(\"/root/fx\").btn_click()
 	# Затухание
@@ -18,23 +29,17 @@ func _on_ButtonYes_pressed() -> void:
 	get_tree().quit()
 "
 
-[node name="Control" type="Control"]
+[node name="VBoxContainer" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 1 )
+margin_right = -960.0
+script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="VBoxContainer"]
-margin_right = 1920.0
+[node name="Label" type="Label" parent="."]
+margin_right = 960.0
 margin_bottom = 538.0
 size_flags_vertical = 7
 text = "Вы действительно хотите выйти?
@@ -43,17 +48,26 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_top = 542.0
-margin_right = 1920.0
+margin_right = 960.0
 margin_bottom = 1080.0
 size_flags_vertical = 3
 custom_constants/separation = 30
 
-[node name="ButtonYes" type="Button" parent="VBoxContainer/HBoxContainer"]
-margin_right = 1920.0
+[node name="Button_No" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_right = 465.0
 margin_bottom = 538.0
-rect_min_size = Vector2( 200, 200 )
 size_flags_horizontal = 3
-text = "Да"
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/ButtonYes" to="." method="_on_ButtonYes_pressed"]
+btn_text = "Нет"
+use_animation = false
+
+[node name="Button_Yes2" parent="HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 495.0
+margin_right = 960.0
+margin_bottom = 538.0
+size_flags_horizontal = 3
+btn_text = "Да"
+use_animation = false
+[connection signal="pressed" from="HBoxContainer/Button_No" to="." method="_return"]
+[connection signal="pressed" from="HBoxContainer/Button_Yes2" to="." method="_quit"]
