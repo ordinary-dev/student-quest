@@ -51,6 +51,7 @@ tile_data = PoolIntArray( 393215, -536870898, 0, 327680, -536870901, 0, 327681, 
 
 [node name="Trees" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
+z_index = 4
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
@@ -59,6 +60,7 @@ tile_data = PoolIntArray( -65534, 31, 0, -65531, 31, 0, -65527, 12, 0, -65523, 1
 [node name="Fountain" type="AnimatedSprite" parent="."]
 position = Vector2( 3005.24, 3517.17 )
 scale = Vector2( 20, 20 )
+z_index = 4
 frames = ExtResource( 7 )
 frame = 1
 script = SubResource( 1 )

@@ -38,4 +38,3 @@ person = "Мистер Дудец"
 [node name="Body" parent="." instance=ExtResource( 4 )]
 position = Vector2( -365.641, 488.837 )
 collision_layer = 1025
-collision_mask = 0

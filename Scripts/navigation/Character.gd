@@ -8,6 +8,7 @@ export (int) var change = 10
 var type = 0
 var side_used = false
 var any_button_pressed : bool = false
+var idle = true
 
 # Sound
 export (AudioStream) var step1
@@ -36,6 +37,7 @@ func get_input():
 	side_used = false
 	# Вправо
 	if Input.is_action_pressed('ui_right'):
+		idle = false
 		side_used = true
 		any_button_pressed = true
 		# Если предыдущее состояние не "вправо"
@@ -63,6 +65,7 @@ func get_input():
 			distance_passed = 0
 		velocity.x += 1
 	if Input.is_action_pressed('ui_left'):
+		idle = false
 		side_used = true
 		any_button_pressed = true
 		if type != 2:
@@ -87,6 +90,7 @@ func get_input():
 			distance_passed = 0
 		velocity.x -= 1
 	if Input.is_action_pressed('ui_down'):
+		idle = false
 		any_button_pressed = true
 		if type != 0 && !side_used:
 			distance_passed = 0
@@ -106,6 +110,7 @@ func get_input():
 				distance_passed = 0 
 		velocity.y += 1
 	if Input.is_action_pressed('ui_up'):
+		idle = false
 		any_button_pressed = true
 		if type != 1 && !side_used:
 			distance_passed = 0
@@ -124,7 +129,8 @@ func get_input():
 			elif distance_passed == 4 * change:
 				distance_passed = 0 
 		velocity.y -= 1
-	if !any_button_pressed:
+	if !any_button_pressed && !idle:
+		idle = true
 		if type == 1:
 			character.frame = 7
 		elif type == 0:

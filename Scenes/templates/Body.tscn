@@ -25,7 +25,7 @@ texture = ExtResource( 2 )
 centered = false
 vframes = 3
 hframes = 3
-frame = 1
+frame = 7
 region_enabled = true
 region_rect = Rect2( 0, 0, 57, 108 )
 
