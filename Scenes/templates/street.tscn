@@ -91,7 +91,7 @@ n = 6
 m = 73
 
 [node name="Noise2" parent="NoiseBorders" instance=ExtResource( 3 )]
-position = Vector2( -3264, -1080 )
+position = Vector2( -3264, -1088 )
 n = 69
 m = 3
 
