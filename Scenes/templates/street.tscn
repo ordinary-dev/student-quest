@@ -83,6 +83,28 @@ position = Vector2( 2752, 0 )
 n = 4
 m = 2
 
+[node name="NoiseBorders" type="Node2D" parent="."]
+
+[node name="Noise" parent="NoiseBorders" instance=ExtResource( 3 )]
+position = Vector2( 8960, -512 )
+n = 6
+m = 73
+
+[node name="Noise2" parent="NoiseBorders" instance=ExtResource( 3 )]
+position = Vector2( -3264, -1080 )
+n = 69
+m = 3
+
+[node name="Noise3" parent="NoiseBorders" instance=ExtResource( 3 )]
+position = Vector2( -2240, 13312 )
+n = 65
+m = 3
+
+[node name="Noise4" parent="NoiseBorders" instance=ExtResource( 3 )]
+position = Vector2( -3264, -512 )
+n = 7
+m = 75
+
 [node name="Base" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 tile_set = ExtResource( 1 )
