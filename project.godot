@@ -15,7 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="StudentLife"
+config/name="Student Life"
+config/description="Через тернии к звездам"
 run/main_scene="res://Scenes/entry.tscn"
 boot_splash/image="res://Sprites/Splash.png"
 config/icon="res://Sprites/icons/logo.png"
@@ -97,6 +98,8 @@ speed_up={
 
 [rendering]
 
+quality/intended_usage/framebuffer_allocation=0
+quality/intended_usage/framebuffer_allocation.mobile=0
 quality/2d/use_pixel_snap=true
 threads/thread_model=2
 quality/filters/msaa=2
