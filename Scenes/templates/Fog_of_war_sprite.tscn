@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/fog_of_war.tres" type="SpriteFrames" id=1]
+
+[node name="AnimatedSprite" type="AnimatedSprite"]
+position = Vector2( 96, 96 )
+scale = Vector2( 6, 6 )
+frames = ExtResource( 1 )

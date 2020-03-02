@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/templates/Fog_of_war_sprite.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+\"\"\"
+Туман войны.
+Создает массив NxM из первого дочернего объекта.
+Отражает каждый следующий объект по горизонтали горизонтально
+и каждый следующий вертикальный объект вертикально.
+\"\"\"
+
+export (int) var n
+export (int) var m
+export (String, FILE, \"*.tscn\") var dub
+
+func _ready():
+	var nd = load(dub)
+	for i in range(n):
+		for j in range(m):
+			if i == 0 and j == 0:
+				get_child(0).playing = true
+			else:
+				var tmp = nd.instance()
+				add_child(tmp)
+				tmp.position = Vector2(96+i*192, 96+j*192)
+				if i % 2 != 0:
+					tmp.flip_h = true
+				if j % 2 != 0:
+					tmp.flip_v = true
+				tmp.playing = true
+"
+
+[node name="Noise" type="Node2D"]
+script = SubResource( 1 )
+n = 2
+m = 1
+dub = "res://Scenes/templates/Fog_of_war_sprite.tscn"
+
+[node name="AnimatedSprite" parent="." instance=ExtResource( 1 )]
