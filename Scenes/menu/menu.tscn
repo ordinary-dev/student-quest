@@ -79,6 +79,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 new_game = "res://Scenes/menu/new.tscn"
+load_btn = NodePath("HBoxContainer/MarginContainer/VBoxContainer/ColorRect6")
 settings_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Settings")
 load_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Load")
 confirm_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Confirm")
