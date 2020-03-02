@@ -27,14 +27,14 @@ script = ExtResource( 4 )
 position = Vector2( 2784, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 2976, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -42,14 +42,14 @@ flip_h = true
 position = Vector2( 3168, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 3360, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -57,14 +57,14 @@ flip_h = true
 position = Vector2( 3552, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 3744, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -72,14 +72,14 @@ flip_h = true
 position = Vector2( 3936, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite8" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 4128, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -87,14 +87,14 @@ flip_h = true
 position = Vector2( 4320, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite10" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 4512, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -102,7 +102,7 @@ flip_h = true
 position = Vector2( 2784, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -110,7 +110,7 @@ flip_v = true
 position = Vector2( 2976, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -119,7 +119,7 @@ flip_v = true
 position = Vector2( 3168, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -127,7 +127,7 @@ flip_v = true
 position = Vector2( 3360, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -136,7 +136,7 @@ flip_v = true
 position = Vector2( 3552, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -144,7 +144,7 @@ flip_v = true
 position = Vector2( 3744, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -153,7 +153,7 @@ flip_v = true
 position = Vector2( 3936, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -161,7 +161,7 @@ flip_v = true
 position = Vector2( 4128, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -170,7 +170,7 @@ flip_v = true
 position = Vector2( 4320, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -178,7 +178,7 @@ flip_v = true
 position = Vector2( 4512, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -187,14 +187,14 @@ flip_v = true
 position = Vector2( 2784, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite29" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 2976, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -202,14 +202,14 @@ flip_h = true
 position = Vector2( 3168, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite27" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 3360, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -217,14 +217,14 @@ flip_h = true
 position = Vector2( 3552, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite25" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 3744, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -232,14 +232,14 @@ flip_h = true
 position = Vector2( 3936, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite23" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 4128, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -247,14 +247,14 @@ flip_h = true
 position = Vector2( 4320, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite21" type="AnimatedSprite" parent="Noise/Noise1"]
 position = Vector2( 4512, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -262,7 +262,7 @@ flip_h = true
 position = Vector2( 2784, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -270,7 +270,7 @@ flip_v = true
 position = Vector2( 2976, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -279,7 +279,7 @@ flip_v = true
 position = Vector2( 3168, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -287,7 +287,7 @@ flip_v = true
 position = Vector2( 3360, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -296,7 +296,7 @@ flip_v = true
 position = Vector2( 3552, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -304,7 +304,7 @@ flip_v = true
 position = Vector2( 3744, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -313,7 +313,7 @@ flip_v = true
 position = Vector2( 3936, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -321,7 +321,7 @@ flip_v = true
 position = Vector2( 4128, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -330,7 +330,7 @@ flip_v = true
 position = Vector2( 4320, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -338,7 +338,7 @@ flip_v = true
 position = Vector2( 4512, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -350,14 +350,12 @@ position = Vector2( 2304, 0 )
 position = Vector2( 2784, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise2"]
 position = Vector2( 2976, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -365,14 +363,12 @@ flip_h = true
 position = Vector2( 3168, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Noise/Noise2"]
 position = Vector2( 3360, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -380,14 +376,12 @@ flip_h = true
 position = Vector2( 3552, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Noise/Noise2"]
 position = Vector2( 3744, 864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -395,7 +389,6 @@ flip_h = true
 position = Vector2( 2784, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -403,7 +396,6 @@ flip_v = true
 position = Vector2( 2976, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -412,7 +404,6 @@ flip_v = true
 position = Vector2( 3168, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -420,7 +411,6 @@ flip_v = true
 position = Vector2( 3360, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -429,7 +419,6 @@ flip_v = true
 position = Vector2( 3552, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -437,7 +426,6 @@ flip_v = true
 position = Vector2( 3744, 1056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -446,14 +434,12 @@ flip_v = true
 position = Vector2( 2784, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite29" type="AnimatedSprite" parent="Noise/Noise2"]
 position = Vector2( 2976, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -461,14 +447,12 @@ flip_h = true
 position = Vector2( 3168, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite27" type="AnimatedSprite" parent="Noise/Noise2"]
 position = Vector2( 3360, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -476,14 +460,12 @@ flip_h = true
 position = Vector2( 3552, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite31" type="AnimatedSprite" parent="Noise/Noise2"]
 position = Vector2( 3744, 1248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -491,7 +473,6 @@ flip_h = true
 position = Vector2( 2784, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -499,7 +480,6 @@ flip_v = true
 position = Vector2( 2976, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -508,7 +488,6 @@ flip_v = true
 position = Vector2( 3168, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -516,7 +495,6 @@ flip_v = true
 position = Vector2( 3360, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -525,7 +503,6 @@ flip_v = true
 position = Vector2( 3552, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -533,7 +510,6 @@ flip_v = true
 position = Vector2( 3744, 1440 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -544,14 +520,14 @@ flip_v = true
 position = Vector2( 4448, 2272 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 4640, 2272 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -559,16 +535,12 @@ flip_h = true
 position = Vector2( 4832, 2272 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5024, 2272 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -577,7 +549,6 @@ position = Vector2( 5216, 2272 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Noise/Noise3"]
@@ -585,7 +556,6 @@ position = Vector2( 5408, 2272 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -593,14 +563,14 @@ flip_h = true
 position = Vector2( 5600, 2272 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5792, 2272 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -608,7 +578,6 @@ flip_h = true
 position = Vector2( 4448, 2464 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -616,7 +585,6 @@ flip_v = true
 position = Vector2( 4640, 2464 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -626,7 +594,6 @@ position = Vector2( 4832, 2464 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -635,7 +602,6 @@ position = Vector2( 5024, 2464 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -644,7 +610,6 @@ flip_v = true
 position = Vector2( 5216, 2464 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -652,7 +617,6 @@ flip_v = true
 position = Vector2( 5408, 2464 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -661,7 +625,6 @@ flip_v = true
 position = Vector2( 5600, 2464 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -669,7 +632,6 @@ flip_v = true
 position = Vector2( 5792, 2464 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -678,16 +640,12 @@ flip_v = true
 position = Vector2( 4448, 2656 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite23" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 4640, 2656 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -695,14 +653,14 @@ flip_h = true
 position = Vector2( 4832, 2656 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite21" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5024, 2656 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -710,16 +668,12 @@ flip_h = true
 position = Vector2( 5216, 2656 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite19" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5408, 2656 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -727,16 +681,12 @@ flip_h = true
 position = Vector2( 5600, 2656 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5792, 2656 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -744,8 +694,6 @@ flip_h = true
 position = Vector2( 4448, 2848 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -753,8 +701,6 @@ flip_v = true
 position = Vector2( 4640, 2848 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -763,7 +709,7 @@ flip_v = true
 position = Vector2( 4832, 2848 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -771,7 +717,7 @@ flip_v = true
 position = Vector2( 5024, 2848 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -780,8 +726,6 @@ flip_v = true
 position = Vector2( 5216, 2848 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -789,8 +733,6 @@ flip_v = true
 position = Vector2( 5408, 2848 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -799,8 +741,6 @@ flip_v = true
 position = Vector2( 5600, 2848 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -808,8 +748,6 @@ flip_v = true
 position = Vector2( 5792, 2848 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -818,14 +756,14 @@ flip_v = true
 position = Vector2( 4448, 3040 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite39" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 4640, 3040 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -833,16 +771,12 @@ flip_h = true
 position = Vector2( 4832, 3040 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite37" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5024, 3040 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -850,14 +784,14 @@ flip_h = true
 position = Vector2( 5216, 3040 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite35" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5408, 3040 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -865,14 +799,14 @@ flip_h = true
 position = Vector2( 5600, 3040 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite33" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5792, 3040 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -880,14 +814,14 @@ flip_h = true
 position = Vector2( 4448, 3232 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite47" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 4640, 3232 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -895,16 +829,12 @@ flip_h = true
 position = Vector2( 4832, 3232 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite45" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5024, 3232 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -912,14 +842,14 @@ flip_h = true
 position = Vector2( 5216, 3232 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite43" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5408, 3232 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -927,14 +857,14 @@ flip_h = true
 position = Vector2( 5600, 3232 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite41" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5792, 3232 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -942,8 +872,6 @@ flip_h = true
 position = Vector2( 4448, 3424 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -951,8 +879,6 @@ flip_v = true
 position = Vector2( 4640, 3424 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -961,7 +887,7 @@ flip_v = true
 position = Vector2( 4832, 3424 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -969,7 +895,7 @@ flip_v = true
 position = Vector2( 5024, 3424 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -978,8 +904,6 @@ flip_v = true
 position = Vector2( 5216, 3424 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -987,8 +911,6 @@ flip_v = true
 position = Vector2( 5408, 3424 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -997,8 +919,6 @@ flip_v = true
 position = Vector2( 5600, 3424 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1006,8 +926,6 @@ flip_v = true
 position = Vector2( 5792, 3424 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1017,7 +935,6 @@ position = Vector2( 4448, 3616 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite63" type="AnimatedSprite" parent="Noise/Noise3"]
@@ -1025,7 +942,6 @@ position = Vector2( 4640, 3616 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1033,14 +949,12 @@ flip_h = true
 position = Vector2( 4832, 3616 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite61" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5024, 3616 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1049,7 +963,6 @@ position = Vector2( 5216, 3616 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite59" type="AnimatedSprite" parent="Noise/Noise3"]
@@ -1057,7 +970,6 @@ position = Vector2( 5408, 3616 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1066,7 +978,6 @@ position = Vector2( 5600, 3616 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite57" type="AnimatedSprite" parent="Noise/Noise3"]
@@ -1074,7 +985,6 @@ position = Vector2( 5792, 3616 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1082,7 +992,7 @@ flip_h = true
 position = Vector2( 4448, 3808 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1090,7 +1000,7 @@ flip_v = true
 position = Vector2( 4640, 3808 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1099,8 +1009,6 @@ flip_v = true
 position = Vector2( 4832, 3808 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1108,8 +1016,6 @@ flip_v = true
 position = Vector2( 5024, 3808 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1118,7 +1024,7 @@ flip_v = true
 position = Vector2( 5216, 3808 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1126,7 +1032,7 @@ flip_v = true
 position = Vector2( 5408, 3808 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1135,7 +1041,7 @@ flip_v = true
 position = Vector2( 5600, 3808 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1143,7 +1049,7 @@ flip_v = true
 position = Vector2( 5792, 3808 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1152,16 +1058,12 @@ flip_v = true
 position = Vector2( 4448, 4000 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite79" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 4640, 4000 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1169,14 +1071,14 @@ flip_h = true
 position = Vector2( 4832, 4000 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite77" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5024, 4000 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -1184,16 +1086,12 @@ flip_h = true
 position = Vector2( 5216, 4000 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite75" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5408, 4000 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1201,16 +1099,12 @@ flip_h = true
 position = Vector2( 5600, 4000 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite73" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5792, 4000 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1218,7 +1112,7 @@ flip_h = true
 position = Vector2( 4448, 4192 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1226,7 +1120,7 @@ flip_v = true
 position = Vector2( 4640, 4192 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1235,8 +1129,6 @@ flip_v = true
 position = Vector2( 4832, 4192 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1244,8 +1136,6 @@ flip_v = true
 position = Vector2( 5024, 4192 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1254,7 +1144,7 @@ flip_v = true
 position = Vector2( 5216, 4192 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1262,7 +1152,7 @@ flip_v = true
 position = Vector2( 5408, 4192 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1271,7 +1161,7 @@ flip_v = true
 position = Vector2( 5600, 4192 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1279,7 +1169,7 @@ flip_v = true
 position = Vector2( 5792, 4192 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1288,16 +1178,12 @@ flip_v = true
 position = Vector2( 4448, 4384 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite95" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 4640, 4384 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1305,14 +1191,14 @@ flip_h = true
 position = Vector2( 4832, 4384 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite93" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5024, 4384 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -1320,16 +1206,12 @@ flip_h = true
 position = Vector2( 5216, 4384 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite91" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5408, 4384 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1337,16 +1219,12 @@ flip_h = true
 position = Vector2( 5600, 4384 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite89" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5792, 4384 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1354,8 +1232,6 @@ flip_h = true
 position = Vector2( 4448, 4576 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1363,8 +1239,6 @@ flip_v = true
 position = Vector2( 4640, 4576 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1373,7 +1247,7 @@ flip_v = true
 position = Vector2( 4832, 4576 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1381,7 +1255,7 @@ flip_v = true
 position = Vector2( 5024, 4576 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1390,8 +1264,6 @@ flip_v = true
 position = Vector2( 5216, 4576 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1399,8 +1271,6 @@ flip_v = true
 position = Vector2( 5408, 4576 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1409,8 +1279,6 @@ flip_v = true
 position = Vector2( 5600, 4576 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1418,8 +1286,6 @@ flip_v = true
 position = Vector2( 5792, 4576 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1429,7 +1295,6 @@ position = Vector2( 4448, 4768 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite111" type="AnimatedSprite" parent="Noise/Noise3"]
@@ -1437,7 +1302,6 @@ position = Vector2( 4640, 4768 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1445,14 +1309,12 @@ flip_h = true
 position = Vector2( 4832, 4768 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite109" type="AnimatedSprite" parent="Noise/Noise3"]
 position = Vector2( 5024, 4768 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1461,7 +1323,6 @@ position = Vector2( 5216, 4768 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite107" type="AnimatedSprite" parent="Noise/Noise3"]
@@ -1469,7 +1330,6 @@ position = Vector2( 5408, 4768 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1478,7 +1338,6 @@ position = Vector2( 5600, 4768 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite105" type="AnimatedSprite" parent="Noise/Noise3"]
@@ -1486,7 +1345,6 @@ position = Vector2( 5792, 4768 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1494,7 +1352,7 @@ flip_h = true
 position = Vector2( 4448, 4960 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1502,7 +1360,7 @@ flip_v = true
 position = Vector2( 4640, 4960 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1511,8 +1369,6 @@ flip_v = true
 position = Vector2( 4832, 4960 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1520,8 +1376,6 @@ flip_v = true
 position = Vector2( 5024, 4960 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1530,7 +1384,7 @@ flip_v = true
 position = Vector2( 5216, 4960 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1538,7 +1392,7 @@ flip_v = true
 position = Vector2( 5408, 4960 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1547,7 +1401,7 @@ flip_v = true
 position = Vector2( 5600, 4960 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1555,7 +1409,7 @@ flip_v = true
 position = Vector2( 5792, 4960 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1566,15 +1420,12 @@ flip_v = true
 position = Vector2( 6560, 2336 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise4"]
 position = Vector2( 6752, 2336 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1583,14 +1434,12 @@ position = Vector2( 6944, 2336 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Noise/Noise4"]
 position = Vector2( 7136, 2336 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1598,8 +1447,6 @@ flip_h = true
 position = Vector2( 6560, 2528 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1607,8 +1454,6 @@ flip_v = true
 position = Vector2( 6752, 2528 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1617,7 +1462,7 @@ flip_v = true
 position = Vector2( 6944, 2528 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1625,8 +1470,6 @@ flip_v = true
 position = Vector2( 7136, 2528 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1635,16 +1478,12 @@ flip_v = true
 position = Vector2( 6560, 2720 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="Noise/Noise4"]
 position = Vector2( 6752, 2720 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1652,15 +1491,13 @@ flip_h = true
 position = Vector2( 6944, 2720 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="Noise/Noise4"]
 position = Vector2( 7136, 2720 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1668,7 +1505,7 @@ flip_h = true
 position = Vector2( 6560, 2912 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -1676,7 +1513,7 @@ flip_v = true
 position = Vector2( 6752, 2912 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1685,8 +1522,6 @@ flip_v = true
 position = Vector2( 6944, 2912 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1694,7 +1529,7 @@ flip_v = true
 position = Vector2( 7136, 2912 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -1703,14 +1538,12 @@ flip_v = true
 position = Vector2( 6560, 3104 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite19" type="AnimatedSprite" parent="Noise/Noise4"]
 position = Vector2( 6752, 3104 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1719,14 +1552,12 @@ position = Vector2( 6944, 3104 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="Noise/Noise4"]
 position = Vector2( 7136, 3104 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1734,7 +1565,6 @@ flip_h = true
 position = Vector2( 6560, 3296 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1742,7 +1572,6 @@ flip_v = true
 position = Vector2( 6752, 3296 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1752,7 +1581,6 @@ position = Vector2( 6944, 3296 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1760,7 +1588,6 @@ flip_v = true
 position = Vector2( 7136, 3296 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1770,7 +1597,6 @@ position = Vector2( 6560, 3488 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite27" type="AnimatedSprite" parent="Noise/Noise4"]
@@ -1778,7 +1604,6 @@ position = Vector2( 6752, 3488 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1786,7 +1611,6 @@ flip_h = true
 position = Vector2( 6944, 3488 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite25" type="AnimatedSprite" parent="Noise/Noise4"]
@@ -1794,7 +1618,6 @@ position = Vector2( 7136, 3488 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1803,7 +1626,6 @@ position = Vector2( 6560, 3680 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1812,7 +1634,6 @@ position = Vector2( 6752, 3680 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1821,7 +1642,6 @@ flip_v = true
 position = Vector2( 6944, 3680 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1830,7 +1650,6 @@ position = Vector2( 7136, 3680 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1839,14 +1658,12 @@ flip_v = true
 position = Vector2( 6560, 3872 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite35" type="AnimatedSprite" parent="Noise/Noise4"]
 position = Vector2( 6752, 3872 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1855,14 +1672,12 @@ position = Vector2( 6944, 3872 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite33" type="AnimatedSprite" parent="Noise/Noise4"]
 position = Vector2( 7136, 3872 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1871,7 +1686,6 @@ position = Vector2( 6560, 4064 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1880,7 +1694,6 @@ position = Vector2( 6752, 4064 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1889,7 +1702,6 @@ flip_v = true
 position = Vector2( 6944, 4064 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1898,7 +1710,6 @@ position = Vector2( 7136, 4064 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1911,14 +1722,12 @@ scale = Vector2( 6, 6 )
 position = Vector2( -640, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -608, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1927,14 +1736,12 @@ position = Vector2( -576, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -544, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1942,14 +1749,12 @@ flip_h = true
 position = Vector2( -512, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -480, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -1958,7 +1763,6 @@ position = Vector2( -640, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1967,7 +1771,6 @@ position = Vector2( -608, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1976,7 +1779,6 @@ flip_v = true
 position = Vector2( -576, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -1984,7 +1786,6 @@ flip_v = true
 position = Vector2( -544, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -1993,7 +1794,6 @@ flip_v = true
 position = Vector2( -512, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2001,7 +1801,6 @@ flip_v = true
 position = Vector2( -480, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2011,7 +1810,6 @@ position = Vector2( -640, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="Noise/Noise5"]
@@ -2019,7 +1817,6 @@ position = Vector2( -608, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2027,14 +1824,12 @@ flip_h = true
 position = Vector2( -576, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite15" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -544, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2042,14 +1837,12 @@ flip_h = true
 position = Vector2( -512, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -480, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2057,7 +1850,7 @@ flip_h = true
 position = Vector2( -640, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -2065,7 +1858,7 @@ flip_v = true
 position = Vector2( -608, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2074,8 +1867,6 @@ flip_v = true
 position = Vector2( -576, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2083,8 +1874,6 @@ flip_v = true
 position = Vector2( -544, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2093,8 +1882,6 @@ flip_v = true
 position = Vector2( -512, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2102,8 +1889,6 @@ flip_v = true
 position = Vector2( -480, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2112,14 +1897,14 @@ flip_v = true
 position = Vector2( -640, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite29" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -608, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -2127,16 +1912,12 @@ flip_h = true
 position = Vector2( -576, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite27" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -544, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2144,16 +1925,12 @@ flip_h = true
 position = Vector2( -512, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite25" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -480, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2161,8 +1938,6 @@ flip_h = true
 position = Vector2( -640, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2170,8 +1945,6 @@ flip_v = true
 position = Vector2( -608, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2180,7 +1953,7 @@ flip_v = true
 position = Vector2( -576, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -2188,7 +1961,7 @@ flip_v = true
 position = Vector2( -544, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2197,7 +1970,7 @@ flip_v = true
 position = Vector2( -512, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -2205,7 +1978,7 @@ flip_v = true
 position = Vector2( -480, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2215,7 +1988,6 @@ position = Vector2( -640, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite41" type="AnimatedSprite" parent="Noise/Noise5"]
@@ -2223,7 +1995,6 @@ position = Vector2( -608, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2231,14 +2002,12 @@ flip_h = true
 position = Vector2( -576, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite39" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -544, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2246,14 +2015,12 @@ flip_h = true
 position = Vector2( -512, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite37" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -480, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2261,7 +2028,6 @@ flip_h = true
 position = Vector2( -640, 522.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2269,7 +2035,6 @@ flip_v = true
 position = Vector2( -608, 522.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2279,7 +2044,6 @@ position = Vector2( -576, 522.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2288,7 +2052,6 @@ position = Vector2( -544, 522.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2298,7 +2061,6 @@ position = Vector2( -512, 522.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2307,7 +2069,6 @@ position = Vector2( -480, 522.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2316,14 +2077,12 @@ flip_v = true
 position = Vector2( -640, 554.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite53" type="AnimatedSprite" parent="Noise/Noise5"]
 position = Vector2( -608, 554.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2332,7 +2091,6 @@ position = Vector2( -576, 554.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite51" type="AnimatedSprite" parent="Noise/Noise5"]
@@ -2340,7 +2098,6 @@ position = Vector2( -544, 554.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2349,7 +2106,6 @@ position = Vector2( -512, 554.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite49" type="AnimatedSprite" parent="Noise/Noise5"]
@@ -2357,7 +2113,6 @@ position = Vector2( -480, 554.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2365,7 +2120,6 @@ flip_h = true
 position = Vector2( -640, 586.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2373,7 +2127,6 @@ flip_v = true
 position = Vector2( -608, 586.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2383,7 +2136,6 @@ position = Vector2( -576, 586.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2392,7 +2144,6 @@ position = Vector2( -544, 586.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2402,7 +2153,6 @@ position = Vector2( -512, 586.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2411,7 +2161,6 @@ position = Vector2( -480, 586.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2425,7 +2174,6 @@ position = Vector2( -640, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -2433,7 +2181,6 @@ position = Vector2( -608, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2441,7 +2188,6 @@ flip_h = true
 position = Vector2( -576, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite4" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -2449,7 +2195,6 @@ position = Vector2( -544, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2458,7 +2203,6 @@ position = Vector2( -512, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite6" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -2466,7 +2210,6 @@ position = Vector2( -480, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2474,7 +2217,6 @@ flip_h = true
 position = Vector2( -640, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2482,7 +2224,6 @@ flip_v = true
 position = Vector2( -608, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2492,7 +2233,6 @@ position = Vector2( -576, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2501,7 +2241,6 @@ position = Vector2( -544, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2511,7 +2250,6 @@ position = Vector2( -512, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2520,7 +2258,6 @@ position = Vector2( -480, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2529,14 +2266,12 @@ flip_v = true
 position = Vector2( -640, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -608, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2545,7 +2280,6 @@ position = Vector2( -576, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite15" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -2553,7 +2287,6 @@ position = Vector2( -544, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2562,7 +2295,6 @@ position = Vector2( -512, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -2570,7 +2302,6 @@ position = Vector2( -480, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2579,7 +2310,6 @@ position = Vector2( -640, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2588,7 +2318,6 @@ position = Vector2( -608, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2597,7 +2326,6 @@ flip_v = true
 position = Vector2( -576, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2605,7 +2333,6 @@ flip_v = true
 position = Vector2( -544, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2614,7 +2341,6 @@ flip_v = true
 position = Vector2( -512, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2622,7 +2348,6 @@ flip_v = true
 position = Vector2( -480, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2632,7 +2357,6 @@ position = Vector2( -640, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite29" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -2640,7 +2364,6 @@ position = Vector2( -608, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2648,14 +2371,12 @@ flip_h = true
 position = Vector2( -576, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite27" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -544, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2663,14 +2384,12 @@ flip_h = true
 position = Vector2( -512, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite25" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -480, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2678,7 +2397,6 @@ flip_h = true
 position = Vector2( -640, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2686,7 +2404,6 @@ flip_v = true
 position = Vector2( -608, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2696,7 +2413,6 @@ position = Vector2( -576, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2705,7 +2421,6 @@ position = Vector2( -544, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2715,7 +2430,6 @@ position = Vector2( -512, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2724,7 +2438,6 @@ position = Vector2( -480, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2733,14 +2446,12 @@ flip_v = true
 position = Vector2( -640, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite41" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -608, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2749,7 +2460,6 @@ position = Vector2( -576, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite39" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -2757,7 +2467,6 @@ position = Vector2( -544, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2766,7 +2475,6 @@ position = Vector2( -512, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite37" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -2774,7 +2482,6 @@ position = Vector2( -480, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2782,16 +2489,12 @@ flip_h = true
 position = Vector2( -448, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite83" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -416, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2799,15 +2502,13 @@ flip_h = true
 position = Vector2( -384, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite81" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -352, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2815,16 +2516,12 @@ flip_h = true
 position = Vector2( -320, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite79" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -288, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2832,7 +2529,7 @@ flip_h = true
 position = Vector2( -448, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -2840,7 +2537,7 @@ flip_v = true
 position = Vector2( -416, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2849,8 +2546,6 @@ flip_v = true
 position = Vector2( -384, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2858,8 +2553,6 @@ flip_v = true
 position = Vector2( -352, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2868,8 +2561,6 @@ flip_v = true
 position = Vector2( -320, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2877,8 +2568,6 @@ flip_v = true
 position = Vector2( -288, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2887,14 +2576,14 @@ flip_v = true
 position = Vector2( -448, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite71" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -416, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -2902,16 +2591,12 @@ flip_h = true
 position = Vector2( -384, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite69" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -352, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2919,16 +2604,12 @@ flip_h = true
 position = Vector2( -320, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite67" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -288, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -2936,8 +2617,6 @@ flip_h = true
 position = Vector2( -448, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -2945,8 +2624,6 @@ flip_v = true
 position = Vector2( -416, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -2955,7 +2632,7 @@ flip_v = true
 position = Vector2( -384, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -2963,7 +2640,7 @@ flip_v = true
 position = Vector2( -352, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2972,7 +2649,7 @@ flip_v = true
 position = Vector2( -320, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -2980,7 +2657,7 @@ flip_v = true
 position = Vector2( -288, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -2989,16 +2666,12 @@ flip_v = true
 position = Vector2( -448, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite59" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -416, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3006,14 +2679,14 @@ flip_h = true
 position = Vector2( -384, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite57" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -352, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3021,14 +2694,14 @@ flip_h = true
 position = Vector2( -320, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite55" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -288, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3036,7 +2709,7 @@ flip_h = true
 position = Vector2( -448, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -3044,7 +2717,7 @@ flip_v = true
 position = Vector2( -416, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3053,8 +2726,6 @@ flip_v = true
 position = Vector2( -384, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3062,8 +2733,6 @@ flip_v = true
 position = Vector2( -352, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3072,8 +2741,6 @@ flip_v = true
 position = Vector2( -320, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3081,8 +2748,6 @@ flip_v = true
 position = Vector2( -288, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3091,14 +2756,14 @@ flip_v = true
 position = Vector2( -448, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite47" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -416, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3106,16 +2771,12 @@ flip_h = true
 position = Vector2( -384, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite45" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -352, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3123,16 +2784,12 @@ flip_h = true
 position = Vector2( -320, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite43" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -288, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3140,14 +2797,12 @@ flip_h = true
 position = Vector2( -256, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite125" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -224, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3156,14 +2811,12 @@ position = Vector2( -192, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite123" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -160, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3171,14 +2824,12 @@ flip_h = true
 position = Vector2( -128, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite121" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -95.9999, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3186,7 +2837,7 @@ flip_h = true
 position = Vector2( -63.9999, 298.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3195,7 +2846,6 @@ position = Vector2( -256, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3204,7 +2854,6 @@ position = Vector2( -224, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3213,7 +2862,6 @@ flip_v = true
 position = Vector2( -192, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3221,7 +2869,6 @@ flip_v = true
 position = Vector2( -160, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3230,7 +2877,6 @@ flip_v = true
 position = Vector2( -128, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3238,7 +2884,6 @@ flip_v = true
 position = Vector2( -95.9999, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3247,7 +2892,7 @@ flip_v = true
 position = Vector2( -63.9999, 330.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3257,7 +2902,6 @@ position = Vector2( -256, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite113" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -3265,7 +2909,6 @@ position = Vector2( -224, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3273,14 +2916,12 @@ flip_h = true
 position = Vector2( -192, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite111" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -160, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3288,14 +2929,12 @@ flip_h = true
 position = Vector2( -128, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite109" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -95.9999, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3303,7 +2942,7 @@ flip_h = true
 position = Vector2( -63.9999, 362.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3311,7 +2950,6 @@ flip_h = true
 position = Vector2( -256, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3319,7 +2957,6 @@ flip_v = true
 position = Vector2( -224, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3329,7 +2966,6 @@ position = Vector2( -192, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3338,7 +2974,6 @@ position = Vector2( -160, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3348,7 +2983,6 @@ position = Vector2( -128, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3357,7 +2991,6 @@ position = Vector2( -95.9999, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3366,8 +2999,6 @@ flip_v = true
 position = Vector2( -63.9999, 394.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3376,14 +3007,12 @@ flip_v = true
 position = Vector2( -256, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite101" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -224, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3392,7 +3021,6 @@ position = Vector2( -192, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite99" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -3400,7 +3028,6 @@ position = Vector2( -160, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3409,7 +3036,6 @@ position = Vector2( -128, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite97" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -3417,7 +3043,6 @@ position = Vector2( -95.9999, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3425,8 +3050,6 @@ flip_h = true
 position = Vector2( -63.9999, 426.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3435,7 +3058,6 @@ position = Vector2( -256, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3444,7 +3066,6 @@ position = Vector2( -224, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3453,7 +3074,6 @@ flip_v = true
 position = Vector2( -192, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3461,7 +3081,6 @@ flip_v = true
 position = Vector2( -160, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3470,7 +3089,6 @@ flip_v = true
 position = Vector2( -128, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3478,7 +3096,6 @@ flip_v = true
 position = Vector2( -95.9999, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3487,7 +3104,7 @@ flip_v = true
 position = Vector2( -63.9999, 458.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3497,7 +3114,6 @@ position = Vector2( -256, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite89" type="AnimatedSprite" parent="Noise/Noise6"]
@@ -3505,7 +3121,6 @@ position = Vector2( -224, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3513,14 +3128,12 @@ flip_h = true
 position = Vector2( -192, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite87" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -160, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3528,14 +3141,12 @@ flip_h = true
 position = Vector2( -128, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite85" type="AnimatedSprite" parent="Noise/Noise6"]
 position = Vector2( -95.9999, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3543,7 +3154,7 @@ flip_h = true
 position = Vector2( -63.9999, 490.667 )
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3553,15 +3164,12 @@ flip_h = true
 position = Vector2( 480, 5856 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise7"]
 position = Vector2( 672, 5856 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3569,14 +3177,14 @@ flip_h = true
 position = Vector2( 864, 5856 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Noise/Noise7"]
 position = Vector2( 1056, 5856 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3584,15 +3192,13 @@ flip_h = true
 position = Vector2( 1248, 5856 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="Noise/Noise7"]
 position = Vector2( 1440, 5856 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3600,14 +3206,14 @@ flip_h = true
 position = Vector2( 1632, 5856 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Noise/Noise7"]
 position = Vector2( 1824, 5856 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -3615,8 +3221,6 @@ flip_h = true
 position = Vector2( 480, 6048 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3624,7 +3228,7 @@ flip_v = true
 position = Vector2( 672, 6048 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3633,7 +3237,7 @@ flip_v = true
 position = Vector2( 864, 6048 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -3641,7 +3245,7 @@ flip_v = true
 position = Vector2( 1056, 6048 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3650,8 +3254,6 @@ flip_v = true
 position = Vector2( 1248, 6048 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3659,7 +3261,7 @@ flip_v = true
 position = Vector2( 1440, 6048 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3668,7 +3270,7 @@ flip_v = true
 position = Vector2( 1632, 6048 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -3676,7 +3278,7 @@ flip_v = true
 position = Vector2( 1824, 6048 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3685,15 +3287,13 @@ flip_v = true
 position = Vector2( 480, 6240 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite23" type="AnimatedSprite" parent="Noise/Noise7"]
 position = Vector2( 672, 6240 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3701,16 +3301,12 @@ flip_h = true
 position = Vector2( 864, 6240 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite21" type="AnimatedSprite" parent="Noise/Noise7"]
 position = Vector2( 1056, 6240 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3718,15 +3314,13 @@ flip_h = true
 position = Vector2( 1248, 6240 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite19" type="AnimatedSprite" parent="Noise/Noise7"]
 position = Vector2( 1440, 6240 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3734,16 +3328,12 @@ flip_h = true
 position = Vector2( 1632, 6240 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="Noise/Noise7"]
 position = Vector2( 1824, 6240 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3753,7 +3343,6 @@ flip_h = true
 position = Vector2( 672, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -3761,7 +3350,6 @@ position = Vector2( 864, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3770,7 +3358,6 @@ position = Vector2( 1056, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -3778,7 +3365,6 @@ position = Vector2( 1248, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3787,7 +3373,6 @@ position = Vector2( 1440, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -3795,7 +3380,6 @@ position = Vector2( 1632, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3803,15 +3387,13 @@ flip_h = true
 position = Vector2( 1824, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite14" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 672, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3819,7 +3401,7 @@ flip_v = true
 position = Vector2( 864, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3828,7 +3410,7 @@ flip_v = true
 position = Vector2( 1056, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -3836,7 +3418,7 @@ flip_v = true
 position = Vector2( 1248, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3845,7 +3427,7 @@ flip_v = true
 position = Vector2( 1440, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -3853,7 +3435,7 @@ flip_v = true
 position = Vector2( 1632, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -3862,7 +3444,7 @@ flip_v = true
 position = Vector2( 1824, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -3871,14 +3453,12 @@ position = Vector2( 672, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite20" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 864, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3886,14 +3466,12 @@ flip_h = true
 position = Vector2( 1056, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 1248, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3901,14 +3479,12 @@ flip_h = true
 position = Vector2( 1440, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 1632, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -3916,14 +3492,12 @@ flip_h = true
 position = Vector2( 1824, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite28" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 672, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3932,7 +3506,6 @@ position = Vector2( 864, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3942,7 +3515,6 @@ position = Vector2( 1056, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3951,7 +3523,6 @@ position = Vector2( 1248, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3961,7 +3532,6 @@ position = Vector2( 1440, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3970,7 +3540,6 @@ position = Vector2( 1632, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -3980,7 +3549,6 @@ position = Vector2( 1824, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -3989,14 +3557,12 @@ position = Vector2( 672, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite34" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 864, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4004,14 +3570,12 @@ flip_h = true
 position = Vector2( 1056, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite32" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 1248, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4019,14 +3583,12 @@ flip_h = true
 position = Vector2( 1440, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite30" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 1632, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4034,14 +3596,13 @@ flip_h = true
 position = Vector2( 1824, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite42" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 672, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -4049,8 +3610,6 @@ flip_v = true
 position = Vector2( 864, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4059,8 +3618,6 @@ flip_v = true
 position = Vector2( 1056, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4068,8 +3625,6 @@ flip_v = true
 position = Vector2( 1248, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4078,8 +3633,6 @@ flip_v = true
 position = Vector2( 1440, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4087,8 +3640,6 @@ flip_v = true
 position = Vector2( 1632, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4097,8 +3648,6 @@ flip_v = true
 position = Vector2( 1824, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4106,7 +3655,6 @@ flip_v = true
 position = Vector2( 672, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite48" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -4114,7 +3662,6 @@ position = Vector2( 864, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4123,7 +3670,6 @@ position = Vector2( 1056, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite46" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -4131,7 +3677,6 @@ position = Vector2( 1248, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4140,7 +3685,6 @@ position = Vector2( 1440, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite44" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -4148,7 +3692,6 @@ position = Vector2( 1632, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4157,15 +3700,12 @@ position = Vector2( 1824, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite56" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 672, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4173,7 +3713,7 @@ flip_v = true
 position = Vector2( 864, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -4182,7 +3722,7 @@ flip_v = true
 position = Vector2( 1056, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -4190,7 +3730,7 @@ flip_v = true
 position = Vector2( 1248, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -4199,7 +3739,7 @@ flip_v = true
 position = Vector2( 1440, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -4207,7 +3747,7 @@ flip_v = true
 position = Vector2( 1632, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -4216,7 +3756,7 @@ flip_v = true
 position = Vector2( 1824, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -4224,15 +3764,13 @@ flip_v = true
 position = Vector2( 672, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite62" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 864, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -4240,14 +3778,14 @@ flip_h = true
 position = Vector2( 1056, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite60" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 1248, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -4255,14 +3793,14 @@ flip_h = true
 position = Vector2( 1440, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite58" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 1632, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -4270,15 +3808,13 @@ flip_h = true
 position = Vector2( 1824, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite70" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 672, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4286,7 +3822,7 @@ flip_v = true
 position = Vector2( 864, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -4295,7 +3831,7 @@ flip_v = true
 position = Vector2( 1056, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -4303,7 +3839,7 @@ flip_v = true
 position = Vector2( 1248, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -4312,7 +3848,7 @@ flip_v = true
 position = Vector2( 1440, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -4320,7 +3856,7 @@ flip_v = true
 position = Vector2( 1632, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -4329,7 +3865,7 @@ flip_v = true
 position = Vector2( 1824, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -4337,15 +3873,13 @@ flip_v = true
 position = Vector2( 672, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite76" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 864, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4353,16 +3887,12 @@ flip_h = true
 position = Vector2( 1056, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite74" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 1248, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4370,16 +3900,12 @@ flip_h = true
 position = Vector2( 1440, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite72" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 1632, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4387,15 +3913,12 @@ flip_h = true
 position = Vector2( 1824, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite84" type="AnimatedSprite" parent="Noise/Noise8"]
 position = Vector2( 672, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4404,7 +3927,6 @@ position = Vector2( 864, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4414,7 +3936,6 @@ position = Vector2( 1056, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4423,7 +3944,6 @@ position = Vector2( 1248, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4433,7 +3953,6 @@ position = Vector2( 1440, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4442,7 +3961,6 @@ position = Vector2( 1632, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4452,7 +3970,6 @@ position = Vector2( 1824, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4460,7 +3977,6 @@ flip_v = true
 position = Vector2( 672, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite90" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -4468,7 +3984,6 @@ position = Vector2( 864, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4477,7 +3992,6 @@ position = Vector2( 1056, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite88" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -4485,7 +3999,6 @@ position = Vector2( 1248, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4494,7 +4007,6 @@ position = Vector2( 1440, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite86" type="AnimatedSprite" parent="Noise/Noise8"]
@@ -4502,7 +4014,6 @@ position = Vector2( 1632, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4511,7 +4022,6 @@ position = Vector2( 1824, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="Noise9" type="Node2D" parent="Noise"]
@@ -4522,14 +4032,12 @@ position = Vector2( 672, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 864, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4537,14 +4045,12 @@ flip_h = true
 position = Vector2( 1056, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 1248, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4552,14 +4058,12 @@ flip_h = true
 position = Vector2( 1440, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 1632, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4567,7 +4071,6 @@ flip_h = true
 position = Vector2( 1824, 6944 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite14" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4575,7 +4078,6 @@ position = Vector2( 672, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4583,7 +4085,6 @@ flip_v = true
 position = Vector2( 864, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4592,7 +4093,6 @@ flip_v = true
 position = Vector2( 1056, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4600,7 +4100,6 @@ flip_v = true
 position = Vector2( 1248, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4609,7 +4108,6 @@ flip_v = true
 position = Vector2( 1440, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4617,7 +4115,6 @@ flip_v = true
 position = Vector2( 1632, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4626,7 +4123,6 @@ flip_v = true
 position = Vector2( 1824, 7136 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4634,7 +4130,6 @@ flip_v = true
 position = Vector2( 672, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite20" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4642,7 +4137,6 @@ position = Vector2( 864, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4651,7 +4145,6 @@ position = Vector2( 1056, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite18" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4659,7 +4152,6 @@ position = Vector2( 1248, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4668,7 +4160,6 @@ position = Vector2( 1440, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite16" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4676,7 +4167,6 @@ position = Vector2( 1632, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4685,7 +4175,6 @@ position = Vector2( 1824, 7328 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite28" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4693,7 +4182,6 @@ position = Vector2( 672, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4701,7 +4189,6 @@ flip_v = true
 position = Vector2( 864, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4710,7 +4197,6 @@ flip_v = true
 position = Vector2( 1056, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4718,7 +4204,6 @@ flip_v = true
 position = Vector2( 1248, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4727,7 +4212,6 @@ flip_v = true
 position = Vector2( 1440, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4735,7 +4219,6 @@ flip_v = true
 position = Vector2( 1632, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4744,7 +4227,6 @@ flip_v = true
 position = Vector2( 1824, 7520 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4752,7 +4234,6 @@ flip_v = true
 position = Vector2( 672, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite34" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4760,7 +4241,6 @@ position = Vector2( 864, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4769,7 +4249,6 @@ position = Vector2( 1056, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite32" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4777,7 +4256,6 @@ position = Vector2( 1248, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4786,7 +4264,6 @@ position = Vector2( 1440, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite30" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4794,7 +4271,6 @@ position = Vector2( 1632, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4803,14 +4279,12 @@ position = Vector2( 1824, 7712 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite42" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 672, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4819,7 +4293,6 @@ position = Vector2( 864, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4829,7 +4302,6 @@ position = Vector2( 1056, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4838,7 +4310,6 @@ position = Vector2( 1248, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4848,7 +4319,6 @@ position = Vector2( 1440, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4857,7 +4327,6 @@ position = Vector2( 1632, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4867,7 +4336,6 @@ position = Vector2( 1824, 7904 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4876,14 +4344,12 @@ position = Vector2( 672, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite48" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 864, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4891,14 +4357,12 @@ flip_h = true
 position = Vector2( 1056, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite46" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 1248, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4906,14 +4370,12 @@ flip_h = true
 position = Vector2( 1440, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite44" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 1632, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -4921,7 +4383,6 @@ flip_h = true
 position = Vector2( 1824, 8096 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite56" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -4929,7 +4390,6 @@ position = Vector2( 672, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4937,7 +4397,6 @@ flip_v = true
 position = Vector2( 864, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4946,7 +4405,6 @@ flip_v = true
 position = Vector2( 1056, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4954,7 +4412,6 @@ flip_v = true
 position = Vector2( 1248, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4963,7 +4420,6 @@ flip_v = true
 position = Vector2( 1440, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4971,7 +4427,6 @@ flip_v = true
 position = Vector2( 1632, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -4980,7 +4435,6 @@ flip_v = true
 position = Vector2( 1824, 8288 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -4989,14 +4443,12 @@ position = Vector2( 672, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite62" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 864, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5004,14 +4456,12 @@ flip_h = true
 position = Vector2( 1056, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite60" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 1248, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5019,14 +4469,12 @@ flip_h = true
 position = Vector2( 1440, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite58" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 1632, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5034,7 +4482,6 @@ flip_h = true
 position = Vector2( 1824, 8480 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite70" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -5042,7 +4489,6 @@ position = Vector2( 672, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5050,7 +4496,6 @@ flip_v = true
 position = Vector2( 864, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5059,7 +4504,6 @@ flip_v = true
 position = Vector2( 1056, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5067,7 +4511,6 @@ flip_v = true
 position = Vector2( 1248, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5076,7 +4519,6 @@ flip_v = true
 position = Vector2( 1440, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5084,7 +4526,6 @@ flip_v = true
 position = Vector2( 1632, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5093,7 +4534,6 @@ flip_v = true
 position = Vector2( 1824, 8672 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5101,7 +4541,6 @@ flip_v = true
 position = Vector2( 672, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite76" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -5109,7 +4548,6 @@ position = Vector2( 864, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5118,7 +4556,6 @@ position = Vector2( 1056, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite74" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -5126,7 +4563,6 @@ position = Vector2( 1248, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5135,7 +4571,6 @@ position = Vector2( 1440, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite72" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -5143,7 +4578,6 @@ position = Vector2( 1632, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5152,7 +4586,6 @@ position = Vector2( 1824, 8864 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite84" type="AnimatedSprite" parent="Noise/Noise9"]
@@ -5160,7 +4593,6 @@ position = Vector2( 672, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5168,7 +4600,6 @@ flip_v = true
 position = Vector2( 864, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5177,7 +4608,6 @@ flip_v = true
 position = Vector2( 1056, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5185,7 +4615,6 @@ flip_v = true
 position = Vector2( 1248, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5194,7 +4623,6 @@ flip_v = true
 position = Vector2( 1440, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5202,7 +4630,6 @@ flip_v = true
 position = Vector2( 1632, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5211,7 +4638,6 @@ flip_v = true
 position = Vector2( 1824, 9056 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5220,14 +4646,12 @@ position = Vector2( 672, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite90" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 864, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5235,14 +4659,12 @@ flip_h = true
 position = Vector2( 1056, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite88" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 1248, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5250,14 +4672,12 @@ flip_h = true
 position = Vector2( 1440, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite86" type="AnimatedSprite" parent="Noise/Noise9"]
 position = Vector2( 1632, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5265,7 +4685,6 @@ flip_h = true
 position = Vector2( 1824, 9248 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="Noise10" type="Node2D" parent="Noise"]
@@ -5274,14 +4693,12 @@ playing = true
 position = Vector2( 2848, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3040, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5289,16 +4706,12 @@ flip_h = true
 position = Vector2( 3232, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite3" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3424, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5307,7 +4720,6 @@ position = Vector2( 3616, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite5" type="AnimatedSprite" parent="Noise/Noise10"]
@@ -5315,7 +4727,6 @@ position = Vector2( 3808, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5323,14 +4734,14 @@ flip_h = true
 position = Vector2( 4000, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite7" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4192, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5338,14 +4749,12 @@ flip_h = true
 position = Vector2( 4384, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite9" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4576, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5354,7 +4763,6 @@ position = Vector2( 4768, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite19" type="AnimatedSprite" parent="Noise/Noise10"]
@@ -5362,7 +4770,6 @@ position = Vector2( 4960, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5371,7 +4778,6 @@ position = Vector2( 5152, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite17" type="AnimatedSprite" parent="Noise/Noise10"]
@@ -5379,7 +4785,6 @@ position = Vector2( 5344, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5387,14 +4792,12 @@ flip_h = true
 position = Vector2( 5536, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite15" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 5728, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5402,14 +4805,12 @@ flip_h = true
 position = Vector2( 5920, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite13" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6112, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5417,14 +4818,12 @@ flip_h = true
 position = Vector2( 6304, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite11" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6496, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5432,16 +4831,12 @@ flip_h = true
 position = Vector2( 6688, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite23" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6880, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5449,16 +4844,12 @@ flip_h = true
 position = Vector2( 7072, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite21" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 7264, 9824 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5466,8 +4857,6 @@ flip_h = true
 position = Vector2( 2848, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5475,8 +4864,6 @@ flip_v = true
 position = Vector2( 3040, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5485,8 +4872,6 @@ flip_v = true
 position = Vector2( 3232, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5494,8 +4879,6 @@ flip_v = true
 position = Vector2( 3424, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5504,7 +4887,7 @@ flip_v = true
 position = Vector2( 3616, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -5512,7 +4895,7 @@ flip_v = true
 position = Vector2( 3808, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -5521,8 +4904,6 @@ flip_v = true
 position = Vector2( 4000, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5530,8 +4911,6 @@ flip_v = true
 position = Vector2( 4192, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5540,8 +4919,6 @@ flip_v = true
 position = Vector2( 4384, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5549,8 +4926,6 @@ flip_v = true
 position = Vector2( 4576, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5559,7 +4934,7 @@ flip_v = true
 position = Vector2( 4768, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -5567,7 +4942,7 @@ flip_v = true
 position = Vector2( 4960, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -5576,7 +4951,7 @@ flip_v = true
 position = Vector2( 5152, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -5584,7 +4959,7 @@ flip_v = true
 position = Vector2( 5344, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -5593,8 +4968,6 @@ flip_v = true
 position = Vector2( 5536, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5602,8 +4975,6 @@ flip_v = true
 position = Vector2( 5728, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5612,8 +4983,6 @@ flip_v = true
 position = Vector2( 5920, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5621,8 +4990,6 @@ flip_v = true
 position = Vector2( 6112, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5631,8 +4998,6 @@ flip_v = true
 position = Vector2( 6304, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5640,8 +5005,6 @@ flip_v = true
 position = Vector2( 6496, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5650,8 +5013,6 @@ flip_v = true
 position = Vector2( 6688, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5659,8 +5020,6 @@ flip_v = true
 position = Vector2( 6880, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5669,8 +5028,6 @@ flip_v = true
 position = Vector2( 7072, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5678,8 +5035,6 @@ flip_v = true
 position = Vector2( 7264, 10016 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5688,14 +5043,14 @@ flip_v = true
 position = Vector2( 2848, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite71" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3040, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5703,14 +5058,14 @@ flip_h = true
 position = Vector2( 3232, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite69" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3424, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5718,16 +5073,12 @@ flip_h = true
 position = Vector2( 3616, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite67" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3808, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5735,14 +5086,14 @@ flip_h = true
 position = Vector2( 4000, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite65" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4192, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5750,14 +5101,14 @@ flip_h = true
 position = Vector2( 4384, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite63" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4576, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5765,16 +5116,12 @@ flip_h = true
 position = Vector2( 4768, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite61" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4960, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5782,16 +5129,12 @@ flip_h = true
 position = Vector2( 5152, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite59" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 5344, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -5799,14 +5142,14 @@ flip_h = true
 position = Vector2( 5536, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite57" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 5728, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5814,14 +5157,14 @@ flip_h = true
 position = Vector2( 5920, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite55" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6112, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5829,14 +5172,14 @@ flip_h = true
 position = Vector2( 6304, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite53" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6496, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5844,14 +5187,14 @@ flip_h = true
 position = Vector2( 6688, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite51" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6880, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5859,14 +5202,14 @@ flip_h = true
 position = Vector2( 7072, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite49" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 7264, 10208 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -5874,7 +5217,7 @@ flip_h = true
 position = Vector2( 2848, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -5882,7 +5225,7 @@ flip_v = true
 position = Vector2( 3040, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -5891,7 +5234,7 @@ flip_v = true
 position = Vector2( 3232, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -5899,7 +5242,7 @@ flip_v = true
 position = Vector2( 3424, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -5908,8 +5251,6 @@ flip_v = true
 position = Vector2( 3616, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5917,8 +5258,6 @@ flip_v = true
 position = Vector2( 3808, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5927,7 +5266,7 @@ flip_v = true
 position = Vector2( 4000, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -5935,7 +5274,7 @@ flip_v = true
 position = Vector2( 4192, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -5944,7 +5283,7 @@ flip_v = true
 position = Vector2( 4384, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -5952,7 +5291,7 @@ flip_v = true
 position = Vector2( 4576, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -5961,8 +5300,6 @@ flip_v = true
 position = Vector2( 4768, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5970,8 +5307,6 @@ flip_v = true
 position = Vector2( 4960, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5980,8 +5315,6 @@ flip_v = true
 position = Vector2( 5152, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -5989,8 +5322,6 @@ flip_v = true
 position = Vector2( 5344, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -5999,7 +5330,7 @@ flip_v = true
 position = Vector2( 5536, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -6007,7 +5338,7 @@ flip_v = true
 position = Vector2( 5728, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -6016,7 +5347,7 @@ flip_v = true
 position = Vector2( 5920, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -6024,7 +5355,7 @@ flip_v = true
 position = Vector2( 6112, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -6033,7 +5364,7 @@ flip_v = true
 position = Vector2( 6304, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -6041,7 +5372,7 @@ flip_v = true
 position = Vector2( 6496, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -6050,7 +5381,7 @@ flip_v = true
 position = Vector2( 6688, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -6058,7 +5389,7 @@ flip_v = true
 position = Vector2( 6880, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -6067,7 +5398,7 @@ flip_v = true
 position = Vector2( 7072, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_v = true
 
@@ -6075,7 +5406,7 @@ flip_v = true
 position = Vector2( 7264, 10400 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 flip_v = true
@@ -6084,14 +5415,12 @@ flip_v = true
 position = Vector2( 2848, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite119" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3040, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6099,14 +5428,12 @@ flip_h = true
 position = Vector2( 3232, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite117" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3424, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6115,7 +5442,6 @@ position = Vector2( 3616, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite115" type="AnimatedSprite" parent="Noise/Noise10"]
@@ -6123,7 +5449,6 @@ position = Vector2( 3808, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6131,14 +5456,12 @@ flip_h = true
 position = Vector2( 4000, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite113" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4192, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6146,14 +5469,12 @@ flip_h = true
 position = Vector2( 4384, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite111" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4576, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6162,7 +5483,6 @@ position = Vector2( 4768, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite109" type="AnimatedSprite" parent="Noise/Noise10"]
@@ -6170,7 +5490,6 @@ position = Vector2( 4960, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6179,7 +5498,6 @@ position = Vector2( 5152, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite107" type="AnimatedSprite" parent="Noise/Noise10"]
@@ -6187,7 +5505,6 @@ position = Vector2( 5344, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6195,14 +5512,12 @@ flip_h = true
 position = Vector2( 5536, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite105" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 5728, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6210,14 +5525,12 @@ flip_h = true
 position = Vector2( 5920, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite103" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6112, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6225,14 +5538,12 @@ flip_h = true
 position = Vector2( 6304, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite101" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6496, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6240,14 +5551,12 @@ flip_h = true
 position = Vector2( 6688, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite99" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6880, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6255,14 +5564,12 @@ flip_h = true
 position = Vector2( 7072, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite97" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 7264, 10592 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6270,7 +5577,6 @@ flip_h = true
 position = Vector2( 2848, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6278,7 +5584,6 @@ flip_v = true
 position = Vector2( 3040, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6287,7 +5592,6 @@ flip_v = true
 position = Vector2( 3232, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6295,7 +5599,6 @@ flip_v = true
 position = Vector2( 3424, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6305,7 +5608,6 @@ position = Vector2( 3616, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6314,7 +5616,6 @@ position = Vector2( 3808, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6323,7 +5624,6 @@ flip_v = true
 position = Vector2( 4000, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6331,7 +5631,6 @@ flip_v = true
 position = Vector2( 4192, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6340,7 +5639,6 @@ flip_v = true
 position = Vector2( 4384, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6348,7 +5646,6 @@ flip_v = true
 position = Vector2( 4576, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6358,7 +5655,6 @@ position = Vector2( 4768, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6367,7 +5663,6 @@ position = Vector2( 4960, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6377,7 +5672,6 @@ position = Vector2( 5152, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6386,7 +5680,6 @@ position = Vector2( 5344, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
 frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6395,7 +5688,6 @@ flip_v = true
 position = Vector2( 5536, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6403,7 +5695,6 @@ flip_v = true
 position = Vector2( 5728, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6412,7 +5703,6 @@ flip_v = true
 position = Vector2( 5920, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6420,7 +5710,6 @@ flip_v = true
 position = Vector2( 6112, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6429,7 +5718,6 @@ flip_v = true
 position = Vector2( 6304, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6437,7 +5725,6 @@ flip_v = true
 position = Vector2( 6496, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6446,7 +5733,6 @@ flip_v = true
 position = Vector2( 6688, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6454,7 +5740,6 @@ flip_v = true
 position = Vector2( 6880, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6463,7 +5748,6 @@ flip_v = true
 position = Vector2( 7072, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_v = true
 
@@ -6471,7 +5755,6 @@ flip_v = true
 position = Vector2( 7264, 10784 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
 playing = true
 flip_h = true
 flip_v = true
@@ -6480,16 +5763,12 @@ flip_v = true
 position = Vector2( 2848, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite167" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3040, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6497,16 +5776,12 @@ flip_h = true
 position = Vector2( 3232, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite165" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3424, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6514,14 +5789,14 @@ flip_h = true
 position = Vector2( 3616, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite163" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 3808, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -6529,16 +5804,12 @@ flip_h = true
 position = Vector2( 4000, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite161" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4192, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6546,16 +5817,12 @@ flip_h = true
 position = Vector2( 4384, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite159" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4576, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6563,14 +5830,14 @@ flip_h = true
 position = Vector2( 4768, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite157" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 4960, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -6578,14 +5845,14 @@ flip_h = true
 position = Vector2( 5152, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 
 [node name="AnimatedSprite155" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 5344, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-speed_scale = 0.3
+frame = 1
 playing = true
 flip_h = true
 
@@ -6593,16 +5860,12 @@ flip_h = true
 position = Vector2( 5536, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite153" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 5728, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6610,16 +5873,12 @@ flip_h = true
 position = Vector2( 5920, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite151" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6112, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6627,16 +5886,12 @@ flip_h = true
 position = Vector2( 6304, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite149" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6496, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6644,16 +5899,12 @@ flip_h = true
 position = Vector2( 6688, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite147" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 6880, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
@@ -6661,16 +5912,12 @@ flip_h = true
 position = Vector2( 7072, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 
 [node name="AnimatedSprite145" type="AnimatedSprite" parent="Noise/Noise10"]
 position = Vector2( 7264, 10976 )
 scale = Vector2( 6, 6 )
 frames = ExtResource( 2 )
-frame = 1
-speed_scale = 0.3
 playing = true
 flip_h = true
 
