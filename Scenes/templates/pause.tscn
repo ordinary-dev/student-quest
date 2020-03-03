@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/icons/pause.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -17,7 +18,7 @@ func _ready() -> void:
 
 func switch():
 	if enabled:
-		_on_Button_pressed()
+		_return_to_game()
 	else:
 		_on_Pause_pressed()
 
@@ -34,7 +35,7 @@ func _on_Pause_pressed() -> void:
 
 
 # Кнопка возврата в игру
-func _on_Button_pressed() -> void:
+func _return_to_game() -> void:
 	enabled = false
 	get_node(\"/root/fx\").btn_click()
 	get_node(\"MarginContainer\").visible = false
@@ -45,19 +46,19 @@ func _on_Button_pressed() -> void:
 
 
 # Кнопка возврата в меню
-func _on_Button2_pressed() -> void:
+func _to_menu() -> void:
 	get_node(\"/root/fx\").btn_click()
 	# Затемнить экран
 	var sl = get_node(\"/root/scene_loader\")
 	sl.fade_in()
 	yield(get_tree().create_timer(sl.time), \"timeout\")
 	# Убрать паузу
-	_on_Button_pressed()
+	_return_to_game()
 	get_node(\"/root/scene_loader\").load_scene(menu_scene, false)
 
 
 # Выход из игры
-func _on_Button3_pressed():
+func _quit_game():
 	# Затухание
 	var sl = get_node(\"/root/scene_loader\")
 	sl.fade_in()
@@ -102,21 +103,20 @@ __meta__ = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 400
+custom_constants/margin_right = 500
 custom_constants/margin_top = 100
-custom_constants/margin_left = 400
+custom_constants/margin_left = 500
 custom_constants/margin_bottom = 100
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_left = 400.0
+margin_left = 500.0
 margin_top = 100.0
-margin_right = 1520.0
+margin_right = 1420.0
 margin_bottom = 980.0
 custom_constants/separation = 25
 alignment = 1
@@ -124,27 +124,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="BtnReturn" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 265.0
-margin_right = 1120.0
+margin_right = 920.0
 margin_bottom = 365.0
-rect_min_size = Vector2( 0, 100 )
-text = "Вернуться"
+rect_min_size = Vector2( 80, 100 )
+btn_text = "Вернуться"
 
-[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="BtnToMenu" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 390.0
-margin_right = 1120.0
+margin_right = 920.0
 margin_bottom = 490.0
-rect_min_size = Vector2( 0, 100 )
-text = "В меню"
+rect_min_size = Vector2( 80, 100 )
+btn_text = "В меню"
 
-[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="BtnQuit" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 515.0
-margin_right = 1120.0
+margin_right = 920.0
 margin_bottom = 615.0
-rect_min_size = Vector2( 0, 100 )
-text = "Выйти из игры"
+rect_min_size = Vector2( 80, 100 )
+btn_text = "Выйти из игры"
 [connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnReturn" to="." method="_return_to_game"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnToMenu" to="." method="_to_menu"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnQuit" to="." method="_quit_game"]
