@@ -107,7 +107,7 @@ tracks/5/keys = {
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/1.beggining/date2.tscn"
+next_scene = "res://Scenes/1.beggining/Dialog_1.tscn"
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0

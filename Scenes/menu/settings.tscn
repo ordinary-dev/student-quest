@@ -7,10 +7,11 @@ resource_name = "Main"
 script/source = "extends Control
 
 
-onready var slider_ost : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HSlider
-onready var slider_fx  : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HSlider
-onready var ost_text : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer/Label
-onready var fx_text  : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer/Label
+# onready var slider_ost : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HSlider
+export (NodePath) var slider_ost
+export (NodePath) var slider_fx
+export (NodePath) var ost_text
+export (NodePath) var fx_text
 
 
 # Глобальные объекты
@@ -19,16 +20,16 @@ onready var fx = get_node(\"/root/fx\")
 
 
 func upd_ost(val : float) -> void:
-	ost_text.text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
+	get_node(ost_text).text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
 
 
 func upd_fx(val : float) -> void:
-	fx_text.text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
+	get_node(fx_text).text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
 
 
 func _on_HSlider_value_changed(value : float) -> void:
 	click()
-	if value == slider_ost.min_value:
+	if value == get_node(slider_ost).min_value:
 		AudioServer.set_bus_mute(2, true)
 	else:
 		AudioServer.set_bus_mute(2, false)
@@ -38,7 +39,7 @@ func _on_HSlider_value_changed(value : float) -> void:
 
 func _on_HSliderFX_value_changed(value : float) -> void:
 	click()
-	if value == slider_fx.min_value:
+	if value == get_node(slider_fx).min_value:
 		AudioServer.set_bus_mute(1, true)
 	else:
 		AudioServer.set_bus_mute(1, false)
@@ -48,12 +49,12 @@ func _on_HSliderFX_value_changed(value : float) -> void:
 
 func _on_Button_pressed() -> void:
 	click()
-	slider_ost.value = 0
+	get_node(slider_ost).value = 0
 
 
 func _on_ButtonFX_pressed() -> void:
 	click()
-	slider_fx.value = 0
+	get_node(slider_fx).value = 0
 
 
 func _on_TabContainer_tab_selected(tab) -> void:
@@ -61,8 +62,8 @@ func _on_TabContainer_tab_selected(tab) -> void:
 
 
 func update_settings() -> void:
-	slider_ost.value = AudioServer.get_bus_volume_db(2)
-	slider_fx.value = AudioServer.get_bus_volume_db(1)
+	get_node(slider_ost).value = AudioServer.get_bus_volume_db(2)
+	get_node(slider_fx).value = AudioServer.get_bus_volume_db(1)
 	upd_ost(AudioServer.get_bus_volume_db(2))
 	upd_fx(AudioServer.get_bus_volume_db(1))
 
@@ -84,6 +85,10 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+slider_ost = NodePath("VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer/HSlider")
+slider_fx = NodePath("VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2/HSlider")
+ost_text = NodePath("VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer/HBoxContainer/Label")
+fx_text = NodePath("VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2/HBoxContainer/Label")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -94,14 +99,14 @@ __meta__ = {
 }
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 rect_clip_content = true
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
 tab_align = 0
 
-[node name="Audio" type="MarginContainer" parent="VBoxContainer/TabContainer"]
+[node name="Аудио" type="MarginContainer" parent="VBoxContainer/TabContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -113,30 +118,30 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 
-[node name="Audio" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio"]
+[node name="Audio" type="VBoxContainer" parent="VBoxContainer/TabContainer/Аудио"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 1222.0
-margin_bottom = 616.0
+margin_right = 1862.0
+margin_bottom = 976.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio"]
-margin_right = 1172.0
-margin_bottom = 281.0
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Аудио/Audio"]
+margin_right = 1812.0
+margin_bottom = 461.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
-margin_right = 1172.0
-margin_bottom = 91.0
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer"]
+margin_right = 1812.0
+margin_bottom = 151.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Громкость музыки"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
-margin_top = 95.0
-margin_right = 1172.0
-margin_bottom = 186.0
+[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer"]
+margin_top = 155.0
+margin_right = 1812.0
+margin_bottom = 306.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 min_value = -32.0
@@ -144,75 +149,75 @@ max_value = 0.0
 step = 4.0
 tick_count = 9
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer"]
-margin_top = 190.0
-margin_right = 1172.0
-margin_bottom = 281.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer"]
+margin_top = 310.0
+margin_right = 1812.0
+margin_bottom = 461.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
-[node name="Button" type="Button" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer/HBoxContainer"]
 margin_right = 204.0
-margin_bottom = 91.0
+margin_bottom = 151.0
 custom_fonts/font = ExtResource( 2 )
 text = "Сбросить"
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer/HBoxContainer"]
 margin_left = 254.0
-margin_top = 33.0
-margin_right = 1172.0
-margin_bottom = 57.0
+margin_top = 63.0
+margin_right = 1812.0
+margin_bottom = 87.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "Громкость: 100%"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio"]
-margin_top = 285.0
-margin_right = 1172.0
-margin_bottom = 566.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/TabContainer/Аудио/Audio"]
+margin_top = 465.0
+margin_right = 1812.0
+margin_bottom = 926.0
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
-margin_right = 1172.0
-margin_bottom = 91.0
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2"]
+margin_right = 1812.0
+margin_bottom = 151.0
 size_flags_vertical = 7
 text = "Громкость эффектов"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
-margin_top = 95.0
-margin_right = 1172.0
-margin_bottom = 186.0
+[node name="HSlider" type="HSlider" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2"]
+margin_top = 155.0
+margin_right = 1812.0
+margin_bottom = 306.0
 size_flags_vertical = 3
 min_value = -32.0
 max_value = 0.0
 step = 4.0
 tick_count = 9
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2"]
-margin_top = 190.0
-margin_right = 1172.0
-margin_bottom = 281.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2"]
+margin_top = 310.0
+margin_right = 1812.0
+margin_bottom = 461.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
-[node name="Button" type="Button" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2/HBoxContainer"]
 margin_right = 204.0
-margin_bottom = 91.0
+margin_bottom = 151.0
 custom_fonts/font = ExtResource( 2 )
 text = "Сбросить"
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2/HBoxContainer"]
 margin_left = 254.0
-margin_top = 33.0
-margin_right = 1172.0
-margin_bottom = 57.0
+margin_top = 63.0
+margin_right = 1812.0
+margin_bottom = 87.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "Громкость: 100%"
 
-[node name="Info" type="MarginContainer" parent="VBoxContainer/TabContainer"]
+[node name="Инфо" type="MarginContainer" parent="VBoxContainer/TabContainer"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -225,19 +230,19 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 
-[node name="Info" type="VBoxContainer" parent="VBoxContainer/TabContainer/Info"]
+[node name="Info" type="VBoxContainer" parent="VBoxContainer/TabContainer/Инфо"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 1222.0
-margin_bottom = 616.0
+margin_right = 1862.0
+margin_bottom = 976.0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Info/Info"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/TabContainer/Инфо/Info"]
 margin_right = 1812.0
 margin_bottom = 926.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Info/Info/ScrollContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Инфо/Info/ScrollContainer"]
 margin_right = 1812.0
 margin_bottom = 557.0
 size_flags_horizontal = 3
@@ -261,8 +266,17 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Графика" type="MarginContainer" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
 [connection signal="tab_selected" from="VBoxContainer/TabContainer" to="." method="_on_TabContainer_tab_selected" flags=3]
-[connection signal="value_changed" from="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
-[connection signal="pressed" from="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="value_changed" from="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HSlider" to="." method="_on_HSliderFX_value_changed"]
-[connection signal="pressed" from="VBoxContainer/TabContainer/Audio/Audio/VBoxContainer2/HBoxContainer/Button" to="." method="_on_ButtonFX_pressed"]
+[connection signal="value_changed" from="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer/HSlider" to="." method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2/HSlider" to="." method="_on_HSliderFX_value_changed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/Аудио/Audio/VBoxContainer2/HBoxContainer/Button" to="." method="_on_ButtonFX_pressed"]

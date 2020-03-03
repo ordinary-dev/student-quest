@@ -5,12 +5,22 @@ var effect
 var s_content : Dictionary
 var s_key : String
 
+# Опционально вызвать функцию fnc у объекта obj
+var glob_obj:String
+var glob_fnc:String
+
 func hide_dialog():
 	get_node("/root/ui").remove_child(get_node("/root/ui/dialog"))
 	set_process(false)
 	# Разблокировать персонажа
 	if has_node("/root/Node2D/Body"):
 		get_node("/root/Node2D/Body").unlock()
+	# Отправить сигнал
+	# Нужен некоторым скриптам для того,
+	# Чтобы продолжить сразу после диалога
+	if has_node(glob_obj):
+		get_node(glob_obj).call(glob_fnc)
+	glob_obj = ""
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -38,7 +48,10 @@ func show_next() -> void:
 	effect.start()
 	
 
-func show_dialog(num : int) -> void:
+func show_dialog(num : int, obj:String = "", fnc:String = "") -> void:
+	# Сохранить значения
+	glob_obj = obj
+	glob_fnc = fnc
 	# Подготовить интерфейс
 	var nd : = get_node("/root/ui")
 	var tmp = dialog_scene.instance()
