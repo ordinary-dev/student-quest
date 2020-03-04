@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/Fog_of_war.tscn" type="PackedScene" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -13,7 +14,6 @@ export(NodePath) var label
 onready var glob : = $\"/root/global\"
 
 export (String, FILE, \"*.tscn\") var next_scene
-export (String, FILE, \"*.tscn\") var prev_scene
 
 
 func save_file() -> int:
@@ -44,22 +44,21 @@ func _ready() -> void:
 	# num - номер файла
 	var num = save_file()
 	# Дать игроку знать, что он может играть
+	# Выровнять текст
+	if (num < 10):
+		get_node(label).bbcode_text += \" \"
+	# Добавить [ok]
 	get_node(label).bbcode_text += (str(num) 
-	+ \"                    [[color=green]OK[/color]]\")
+	+ \"                   [[color=green]OK[/color]]\")
+	# Добавить текст об этапе
 	get_node(label).bbcode_text += \"\\n* Этап #1: Воспоминания и иллюзии   [[color=yellow]Waiting[/color]]\"
 	# Активировать кнопки
 	get_node(btn_start).disabled = false
-	get_node(btn_back).disabled = false
 
 
 func _start_game():
 	get_node(\"/root/fx\").btn_click()
 	get_node(\"/root/scene_loader\").load_scene(next_scene)
-
-
-func _return_to_menu():
-	get_node(\"/root/fx\").btn_click()
-	get_node(\"/root/scene_loader\").load_scene(prev_scene)
 "
 
 [node name="Control" type="Control"]
@@ -69,42 +68,50 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-btn_start = NodePath("ColorRect/VBoxContainer/HBoxContainer/BtnStart")
-btn_back = NodePath("ColorRect/VBoxContainer/HBoxContainer/BtnBack")
-label = NodePath("ColorRect/VBoxContainer/MarginContainer/Label")
+btn_start = NodePath("ColorRect/MarginContainer/VBoxContainer/BtnStart")
+label = NodePath("ColorRect/MarginContainer/VBoxContainer/Label")
 next_scene = "res://Scenes/1.beggining/date1.tscn"
-prev_scene = "res://Scenes/menu/menu.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 margin_right = 1920.0
-margin_bottom = 876.0
+margin_bottom = 1080.0
 size_flags_vertical = 3
 custom_constants/margin_right = 50
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Label" type="RichTextLabel" parent="ColorRect/VBoxContainer/MarginContainer"]
+[node name="Noise" parent="ColorRect/MarginContainer" instance=ExtResource( 2 )]
+n = 10
+m = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 1870.0
-margin_bottom = 826.0
-size_flags_vertical = 7
+margin_bottom = 1030.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 1820.0
+margin_bottom = 776.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 3.67
 bbcode_enabled = true
 bbcode_text = "[center]Welcome to net manager[/center]
+
+
 
 [color=gray][user@of] $ tail ~/user.log [/color]
 
@@ -112,30 +119,21 @@ bbcode_text = "[center]Welcome to net manager[/center]
 * Номер файла: "
 text = "Welcome to net manager
 
+
+
 [user@of] $ tail ~/user.log 
 
 * Создаем файл сохранения...        [OK]
 * Номер файла: "
 scroll_active = false
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
-margin_top = 880.0
-margin_right = 1920.0
-margin_bottom = 1080.0
-
-[node name="BtnBack" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_right = 958.0
-margin_bottom = 200.0
+[node name="BtnStart" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_top = 780.0
+margin_right = 1820.0
+margin_bottom = 980.0
 rect_min_size = Vector2( 80, 200 )
 size_flags_horizontal = 3
-btn_text = "Вернуться"
-
-[node name="BtnStart" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 962.0
-margin_right = 1920.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 80, 200 )
-size_flags_horizontal = 3
+size_flags_vertical = 0
 btn_text = "Начать"
-[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/BtnBack" to="." method="_return_to_menu"]
-[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/BtnStart" to="." method="_start_game"]
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/BtnStart" to="." method="_start_game"]
