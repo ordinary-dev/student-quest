@@ -9,98 +9,107 @@ resource_name = "Main"
 script/source = "extends Control
 
 
-# onready var slider_ost : = $VBoxContainer/TabContainer/Audio/Audio/VBoxContainer/HSlider
+# Слайдеры
 export (NodePath) var slider_ost
 export (NodePath) var slider_fx
+
+# Подписи
 export (NodePath) var ost_text
 export (NodePath) var fx_text
 
-
 # Глобальные объекты
-onready var ost = get_node(\"/root/ost\")
-onready var fx = get_node(\"/root/fx\")
+onready var ost = $\"/root/ost\"
+onready var fx = $\"/root/fx\"
 
 
-func upd_ost(val : float) -> void:
-	get_node(ost_text).text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
+# Обновить текст
+func update_text(val : float, obj : String) -> void:
+	get_node(obj).text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
 
 
-func upd_fx(val : float) -> void:
-	get_node(fx_text).text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
-
-
+# Изменение настроек слайдера музыки
 func _on_HSlider_value_changed(value : float) -> void:
-	click()
+	fx.btn_click()
 	if value == get_node(slider_ost).min_value:
 		AudioServer.set_bus_mute(2, true)
 	else:
 		AudioServer.set_bus_mute(2, false)
 	AudioServer.set_bus_volume_db(2, value)
-	upd_ost(value)
+	update_text(value, ost_text)
 
 
+# Изменение настроек слайдера эффектов
 func _on_HSliderFX_value_changed(value : float) -> void:
-	click()
+	fx.btn_click()
 	if value == get_node(slider_fx).min_value:
 		AudioServer.set_bus_mute(1, true)
 	else:
 		AudioServer.set_bus_mute(1, false)
 	AudioServer.set_bus_volume_db(1, value)
-	upd_fx(value)
+	update_text(value, fx_text)
 
 
+# Сбросить настройки музыки
 func _on_Button_pressed() -> void:
-	click()
+	fx.btn_click()
 	get_node(slider_ost).value = 0
 
 
+# Сбросить настройки эффектов
 func _on_ButtonFX_pressed() -> void:
-	click()
+	fx.btn_click()
 	get_node(slider_fx).value = 0
 
 
-func _on_TabContainer_tab_selected(tab) -> void:
-	click()
+# Воспроизведение щелчка при переключении вкладок
+func _on_TabContainer_tab_selected(_tab) -> void:
+	fx.btn_click()
 
 
+# Синхронизировать интерфейс
 func update_settings() -> void:
 	get_node(slider_ost).value = AudioServer.get_bus_volume_db(2)
 	get_node(slider_fx).value = AudioServer.get_bus_volume_db(1)
-	upd_ost(AudioServer.get_bus_volume_db(2))
-	upd_fx(AudioServer.get_bus_volume_db(1))
 
 
 func _ready() -> void:
 	update_settings()
-
-
-func click():
-	fx.btn_click()
 "
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends MarginContainer
 
 
+\"\"\"
+Интерфейс настроек
+Переносит значения настроек в интерфейс
+Содержит функции для обработки нажатия кнопок
+\"\"\"
+
+
 export(NodePath) var vsync_toggle
 export(NodePath) var fullscreen_toggle
+onready var glob = $\"/root/global\"
 
 
-func toggle_fullscreen(state : bool):
+# Полноэкранный режим
+func toggle_fullscreen(state : bool) -> void:
 	# На linux эта команда иногда крашит игру
 	if OS.get_name() == \"Windows\":
 		OS.window_fullscreen = state
-	get_node(\"/root/global\").fullscreen_enabled = state
+	glob.fullscreen_enabled = state
 
 
-func toggle_vsync(state : bool):
+# Вертикальная синхронизация
+func toggle_vsync(state : bool) -> void:
 	OS.vsync_enabled = state
-	get_node(\"/root/global\").vsync_enabled = state
+	glob.vsync_enabled = state
 
 
-func _ready():
-	get_node(vsync_toggle).pressed = get_node(\"/root/global\").vsync_enabled
-	get_node(fullscreen_toggle).pressed = get_node(\"/root/global\").fullscreen_enabled
+# Синхронизировать интерфейс при загрузке
+func _ready() -> void:
+	get_node(vsync_toggle).pressed = glob.vsync_enabled
+	get_node(fullscreen_toggle).pressed = glob.fullscreen_enabled
 "
 
 [node name="Settings" type="Control"]
