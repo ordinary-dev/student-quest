@@ -104,6 +104,30 @@ tracks/5/keys = {
 "update": 0,
 "values": [ 2.59, 2.59, 1.14, 2.74, 1.58 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimatedSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.8, 1.8, 2.7, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 462.073, 501.133 ), Vector2( 482.419, 427.013 ), Vector2( 532.412, 423.609 ), Vector2( 557.016, 425.348 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AnimatedSprite2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 2.5, 3, 3.6, 5.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1279.37, 698.113 ), Vector2( 1299.04, 691.078 ), Vector2( 1275.72, 611.419 ), Vector2( 1218, 547.552 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
@@ -128,11 +152,12 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="Sprite" parent="."]
 light_mask = 2
-position = Vector2( 546.168, 487.855 )
+position = Vector2( 462.073, 501.133 )
 scale = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 13
+frame = 5
 
 [node name="AnimatedSprite2" type="Sprite" parent="."]
 light_mask = 2
@@ -169,12 +194,13 @@ region_rect = Rect2( 0, 0, 18, 36 )
 anims/camera = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, 4.76191 )
 anchor_mode = 0
 current = true
-zoom = Vector2( 0.9, 0.9 )
+zoom = Vector2( 0.902381, 0.902381 )
 
 [node name="Light2D2" type="Light2D" parent="."]
-position = Vector2( 848.941, 559.133 )
+position = Vector2( 849.195, 579.546 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 3 )
 texture_scale = 2.17
