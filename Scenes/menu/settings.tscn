@@ -87,7 +87,9 @@ export(NodePath) var fullscreen_toggle
 
 
 func toggle_fullscreen(state : bool):
-	#OS.window_fullscreen = state
+	# На linux эта команда иногда крашит игру
+	if OS.get_name() == \"Windows\":
+		OS.window_fullscreen = state
 	get_node(\"/root/global\").fullscreen_enabled = state
 
 
@@ -132,7 +134,6 @@ size_flags_stretch_ratio = 7.0
 tab_align = 0
 
 [node name="Аудио" type="MarginContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -294,6 +295,7 @@ __meta__ = {
 }
 
 [node name="Графика" type="MarginContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
