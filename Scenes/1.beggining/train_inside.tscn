@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+export (String, FILE, \"*.tscn\") var next
+
+
+func _next_scene():
+	get_node(\"/root/scene_loader\").load_scene(next)
+
+
+func _ready():
+	get_node(\"/root/d_obj\").show_dialog(4, \"/root/Node2D\", \"_next_scene\")
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+next = "res://Scenes/1.beggining/Day1.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+rect_min_size = Vector2( 1920, 1080 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
