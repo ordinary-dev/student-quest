@@ -14,7 +14,7 @@ onready var obj = $Sprite2
 onready var lgt = $Light2D
 onready var cam = $Camera2D
 onready var audio = $AudioStreamPlayer
-export(float) var time = 5
+export(float) var time = 6
 export(float) var c_range = 0.8
 export(String, FILE, \"*.tscn\") var next_scene
 
@@ -37,7 +37,7 @@ func _ready():
 		Vector2(-490, 162),
 		time, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	effect.start()
-	yield(get_tree().create_timer(time + 1), \"timeout\")
+	yield(get_tree().create_timer(time), \"timeout\")
 	get_node(\"/root/scene_loader\").load_scene(next_scene, false, false)
 "
 
