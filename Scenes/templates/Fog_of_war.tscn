@@ -15,8 +15,7 @@ script/source = "extends Node2D
 \"\"\"
 
 # Размеры
-export (int, 1, 200) var n
-export (int, 1, 200) var m
+export (Vector2) var vect = Vector2(1, 1)
 # Экземпляр анимированного тайла с шумом
 export (String, FILE, \"*.tscn\") var dub
 # Static Body 2D
@@ -26,8 +25,8 @@ export (bool) var use_static_body = true
 
 func _ready():
 	var nd = load(dub)
-	for i in range(n):
-		for j in range(m):
+	for i in range(vect.x):
+		for j in range(vect.y):
 			if i == 0 and j == 0:
 				get_child(0).playing = true
 			else:
@@ -42,8 +41,8 @@ func _ready():
 	# StaticBody2D
 	if use_static_body:
 		var stat_body = get_node(sb)
-		stat_body.position = Vector2(96*n, 96*m)
-		stat_body.scale = Vector2(n, m)
+		stat_body.position = Vector2(96*vect.x, 96*vect.y)
+		stat_body.scale = Vector2(vect.x, vect.y)
 	else:
 		remove_child(get_node(sb))
 "
@@ -53,8 +52,6 @@ extents = Vector2( 96, 96 )
 
 [node name="Noise" type="Node2D"]
 script = SubResource( 1 )
-n = 1
-m = 1
 dub = "res://Scenes/templates/Fog_of_war_sprite.tscn"
 sb = NodePath("StaticBody2D")
 

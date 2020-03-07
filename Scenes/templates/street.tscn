@@ -23,87 +23,71 @@ script = ExtResource( 4 )
 
 [node name="Noise1" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 2688, 768 )
-n = 10
-m = 4
+vect = Vector2( 10, 4 )
 
 [node name="Noise2" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 4992, 768 )
-n = 6
-m = 4
+vect = Vector2( 6, 4 )
 
 [node name="Noise3" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 4352, 2176 )
-n = 8
-m = 15
+vect = Vector2( 8, 15 )
 
 [node name="Noise4" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 6464, 2232 )
-n = 4
-m = 10
+vect = Vector2( 4, 10 )
 
 [node name="Noise5" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 2624, 5760 )
-n = 6
-m = 10
+vect = Vector2( 6, 10 )
 
 [node name="Noise6" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 3776, 5952 )
-n = 19
-m = 7
+vect = Vector2( 19, 7 )
 
 [node name="Noise7" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 384, 5760 )
-n = 8
-m = 3
+vect = Vector2( 8, 3 )
 
 [node name="Noise8" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 512, 6848 )
-n = 7
-m = 13
+vect = Vector2( 7, 13 )
 
 [node name="Noise9" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 512, 9792 )
-n = 7
-m = 13
+vect = Vector2( 7, 13 )
 
 [node name="Noise10" parent="NoisePsu" instance=ExtResource( 3 )]
 position = Vector2( 2752, 9728 )
-n = 24
-m = 7
+vect = Vector2( 24, 7 )
 
 [node name="NoiseOutside" type="Node2D" parent="."]
 
 [node name="Noise" parent="NoiseOutside" instance=ExtResource( 3 )]
 position = Vector2( 256, 576 )
-n = 3
-m = 3
+vect = Vector2( 3, 3 )
 
 [node name="Noise2" parent="NoiseOutside" instance=ExtResource( 3 )]
 position = Vector2( 2752, 0 )
-n = 4
-m = 2
+vect = Vector2( 4, 2 )
 
 [node name="NoiseBorders" type="Node2D" parent="."]
 
 [node name="Noise" parent="NoiseBorders" instance=ExtResource( 3 )]
 position = Vector2( 8960, -512 )
-n = 6
-m = 73
+vect = Vector2( 6, 73 )
 
 [node name="Noise2" parent="NoiseBorders" instance=ExtResource( 3 )]
 position = Vector2( -3264, -1088 )
-n = 69
-m = 3
+vect = Vector2( 69, 3 )
 
 [node name="Noise3" parent="NoiseBorders" instance=ExtResource( 3 )]
 position = Vector2( -2240, 13312 )
-n = 65
-m = 3
+vect = Vector2( 65, 3 )
 
 [node name="Noise4" parent="NoiseBorders" instance=ExtResource( 3 )]
 position = Vector2( -3264, -512 )
-n = 7
-m = 75
+vect = Vector2( 7, 75 )
 
 [node name="Base" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
