@@ -23,18 +23,12 @@ func save_file() -> int:
 		num = glob.saved_games.back() + 1
 	else:
 		num = 1
-	var file_path : = \"user://save.\" + str(num) + \".txt\"
-	var fl : = File.new()
-	fl.open(file_path, File.WRITE)
-	# Сохранить номер этапа
-	var dat : = {\"stage\":0}
-	fl.store_line(to_json(dat))
-	fl.close()
+	glob.loaded = num
+	get_node(\"/root/global\").upd_stage(1)
 	# Добавить номер в массив
 	glob.saved_games.push_back(num)
 	# Сохранить изменения
 	glob.write_file()
-	glob.loaded = num
 	return num
 
 func _ready() -> void:
@@ -113,11 +107,15 @@ bbcode_text = "[center]Welcome to net manager[/center]
 
 
 
+
+
 [color=gray][user@of] $ tail ~/user.log [/color]
 
 * Создаем файл сохранения...        [[color=green]OK[/color]]
 * Номер файла: "
 text = "Welcome to net manager
+
+
 
 
 

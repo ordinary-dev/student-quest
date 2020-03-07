@@ -31,6 +31,7 @@ func upd_stage(stage : int) -> void:
 	fl.open("user://save." + str(loaded) + ".txt", File.WRITE)
 	fl.store_line(to_json({"stage":stage}))
 	fl.close()
+	get_node("/root/show_nf").show_notification("Игра сохранена")
 
 # Создать словарь с переменными для сохранения
 func gen_dict() -> Dictionary:
