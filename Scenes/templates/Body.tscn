@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/navigation/Character.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/character.png" type="Texture" id=2]
 [ext_resource path="res://Audio/fx/steps/footstep1.wav" type="AudioStream" id=3]
 [ext_resource path="res://Audio/fx/steps/footstep2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/templates/ui_fixer.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.3519, 54.8124 )
@@ -31,12 +32,7 @@ region_rect = Rect2( 0, 0, 57, 108 )
 scale = Vector2( 0.335, 0.335 )
 current = true
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Character/Camera2D"]
-position = Vector2( -960, -540 )
-__meta__ = {
-"_editor_description_": "Ignore warning /
-Игнорируйте предупреждение"
-}
+[node name="ui_fixer" parent="Character/Camera2D" instance=ExtResource( 5 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

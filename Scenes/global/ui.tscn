@@ -15,3 +15,12 @@ func _ready():
 [node name="RemoteTransform2D" type="Position2D"]
 z_index = 10
 script = SubResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1920, 1080 )
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

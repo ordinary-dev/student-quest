@@ -190,9 +190,3 @@ func _physics_process(_delta) -> void:
 		# Переместиться на velocity
 		# Он задается get_input() при обработке ввода
 		move_and_slide(velocity)
-
-
-func _ready() -> void:
-	# Заставить интерфейс следовать за собой
-	if has_node("/root/ui"):
-		get_node("Character/Camera2D/RemoteTransform2D").remote_path = "/root/ui"
