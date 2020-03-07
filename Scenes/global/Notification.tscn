@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+export (NodePath) var label_path
+onready var effect = $Tween
+var time = .05
+
+func set_label(text : String):
+	get_node(label_path).text = text
+
+func hide_self():
+	get_node(\"/root/ui\").remove_child(
+		self
+	)
+
+func start_anim():
+	effect.interpolate_property(get_node(label_path),
+	\"percent_visible\",
+	0, 1, time*len(get_node(label_path).text),
+	Tween.TRANS_LINEAR)
+	effect.start()
+	yield(get_tree().create_timer(
+		time*len(get_node(label_path).text)+3), \"timeout\")
+	hide_self()
+
+func _ready():
+	get_node(label_path).percent_visible = 0
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+label_path = NodePath("MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer/Label")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 550.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 500, 150 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/ColorRect/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 490.0
+margin_bottom = 140.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+margin_left = 10.0
+margin_top = 49.0
+margin_right = 470.0
+margin_bottom = 81.0
+text = "Your Message"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
