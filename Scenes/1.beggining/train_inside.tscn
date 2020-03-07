@@ -17,7 +17,7 @@ func _ready():
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-next = "res://Scenes/1.beggining/Day1.tscn"
+next = "res://Scenes/1.beggining/City.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 rect_min_size = Vector2( 1920, 1080 )
