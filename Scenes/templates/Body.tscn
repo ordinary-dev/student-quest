@@ -12,8 +12,6 @@ extents = Vector2( 29.3519, 54.8124 )
 position = Vector2( -351.576, 564.435 )
 script = ExtResource( 1 )
 speed = 350
-step1 = ExtResource( 3 )
-step2 = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 27.0109, 54.0217 )
@@ -41,5 +39,11 @@ __meta__ = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+bus = "FX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 volume_db = -10.0
 bus = "FX"
