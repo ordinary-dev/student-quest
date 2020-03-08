@@ -24,12 +24,16 @@ var fullscreen_enabled : bool
 
 # Для того, чтобы игра знала, в какой файл сохранять данные
 var loaded : = 0
+var fac : int = 0
 
 # Обновить информацию об этапе для файла сохранения игры
 func upd_stage(stage : int) -> void:
 	var fl : = File.new()
 	fl.open("user://save." + str(loaded) + ".txt", File.WRITE)
-	fl.store_line(to_json({"stage":stage}))
+	fl.store_line(to_json({
+		"stage":stage,
+		"fac":fac
+		}))
 	fl.close()
 	get_node("/root/show_nf").show_notification("Игра сохранена")
 

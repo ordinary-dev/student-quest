@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Sprites/backgrounds/city1.png" type="Texture" id=1]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
 export (String, FILE, \"*.tscn\") var next
@@ -12,7 +12,7 @@ func _ready():
 	get_node(\"/root/scene_loader\").load_scene(next)
 "
 
-[sub_resource type="ParticlesMaterial" id=1]
+[sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 2
 emission_box_extents = Vector3( 300, 1, 1 )
 flag_disable_z = true
@@ -30,11 +30,11 @@ color = Color( 0.596078, 0.709804, 0.513726, 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 2 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next = "res://Scenes/1.beggining/Day1.tscn"
+next = "res://Scenes/1.beggining/FSelect.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -105.0
@@ -52,4 +52,4 @@ amount = 40
 lifetime = 10.0
 preprocess = 65.35
 speed_scale = 0.37
-process_material = SubResource( 1 )
+process_material = SubResource( 2 )
