@@ -49,6 +49,8 @@ func show_next() -> void:
 	
 
 func show_dialog(num : int, obj:String = "", fnc:String = "") -> void:
+	# Звук
+	get_node("/root/fx").dialog()
 	# Сохранить значения
 	glob_obj = obj
 	glob_fnc = fnc
