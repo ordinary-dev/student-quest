@@ -156,6 +156,10 @@ func go_up() -> void:
 				distance_passed = UP_1
 		velocity.y -= 1
 
+func check_for_col_disable_btn():
+	if Input.is_action_just_pressed("ui_home"):
+		get_node("CollisionShape2D").disabled = !get_node("CollisionShape2D").disabled
+
 
 # Обработка ввода
 func get_input() -> bool:
@@ -163,6 +167,7 @@ func get_input() -> bool:
 	velocity = Vector2()
 	any_button_pressed = false
 	side_used = false
+	check_for_col_disable_btn()
 	# Обработка 4 сторон передвижения
 	go_right()
 	go_left()
@@ -178,7 +183,7 @@ func get_input() -> bool:
 		else:
 			character.frame = SIDE_STILL
 		return false
-	mult = 2 if Input.is_action_pressed("speed_up") else 1
+	mult = 4 if Input.is_action_pressed("speed_up") else 1
 	velocity = velocity.normalized() * speed * mult
 	return true
 
