@@ -9,14 +9,30 @@ script/source = "extends AudioStreamPlayer
 # Воспроизводит только один файл
 # get_node(\"/root/ost\").play_sound(sound)
 
+onready var effect = $Tween
+
 func play_sound(obj : AudioStream) -> void:
 	if (self.stream != obj):
 		self.stream = obj
 	if (!self.playing):
 		self.play()
+
+
+func fade_out():
+	var vol = volume_db
+	effect.interpolate_property(
+		self, \"volume_db\",
+		vol, -80, 3,
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.start()
+	yield(get_tree().create_timer(3), \"timeout\")
+	stop()
+	volume_db = vol
 "
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
 bus = "OST"
 script = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
