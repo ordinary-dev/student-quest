@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/backgrounds/city1.png" type="Texture" id=1]
+[ext_resource path="res://Audio/music/Its going to be better.wav" type="AudioStream" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -53,3 +54,7 @@ lifetime = 10.0
 preprocess = 65.35
 speed_scale = 0.37
 process_material = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
