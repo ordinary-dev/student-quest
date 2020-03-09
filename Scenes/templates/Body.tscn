@@ -14,6 +14,7 @@ script = ExtResource( 1 )
 speed = 350
 default_sprite = "res://Sprites/character.png"
 backpack_sprite = "res://Sprites/character_backpack_ver.png"
+character_main = "res://Sprites/character_main.png"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 27.0109, 54.0217 )

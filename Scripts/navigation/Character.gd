@@ -8,9 +8,11 @@ export (int) var speed = 100
 export (int) var change = 10
 # Показывать рюкзак
 export (bool) var backpack = false
+export (bool) var male = true
 
 export (String, FILE, "*.png") var default_sprite
 export (String, FILE, "*.png") var backpack_sprite
+export (String, FILE, "*.png") var character_main
 
 # Объекты
 onready var character = $Character
@@ -204,7 +206,9 @@ func _physics_process(_delta) -> void:
 
 
 func _ready():
-	if backpack:
+	if male:
+		character.texture = load(character_main)
+	elif backpack:
 		character.texture = load(backpack_sprite)
 	else:
 		character.texture = load(default_sprite)
