@@ -17,6 +17,10 @@ export (AudioStream) var song
 func to_store():
 	get_node(\"/root/show_nf\").show_notification(\"В магазин...\")
 
+# Касса
+func ticket_window():
+	get_node(\"/root/show_nf\").show_notification(\"Открыть кассу...\")
+
 func _ready():
 	# Обновить информацию об этапе
 	get_node(\"/root/global\").upd_stage(1)
@@ -49,3 +53,9 @@ position = Vector2( 505.852, 488.841 )
 label = "Магазин \"Четверочка\""
 object_name = NodePath("..")
 function_name = "to_store"
+
+[node name="Area2D3" parent="." instance=ExtResource( 6 )]
+position = Vector2( -296, -80 )
+label = "Касса"
+object_name = NodePath("..")
+function_name = "ticket_window"

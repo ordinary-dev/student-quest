@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Tilemaps/street.tres" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Store.png" type="Texture" id=2]
@@ -17,19 +17,25 @@ func _ready():
 "
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 6.005, 3.023 )
+extents = Vector2( 6.057, 3.023 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 4.974, 4.033 )
+extents = Vector2( 5.02901, 3.989 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 7.005, 2.036 )
+extents = Vector2( 7.02901, 1.989 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 7.838, 0.997 )
+extents = Vector2( 7.46201, 1.2415 )
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 120, 30 )
+extents = Vector2( 128, 32 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 32, 2048 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 32, 1056 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -152,8 +158,8 @@ format = 1
 tile_data = PoolIntArray( -262114, 12, 0, -262108, 12, 0, -262103, 12, 0, -262099, 12, 0, -262093, 12, 0, -196605, 12, 0, -196601, 12, 0, -196597, 12, 0, -196593, 12, 0, -196590, 12, 0, -196588, 12, 0, -196584, 12, 0, -196580, 12, 0, -196576, 12, 0, -196574, 12, 0, -196569, 12, 0, -196561, 12, 0, -196559, 12, 0, -131050, 12, 0, -131046, 12, 0, -131035, 12, 0, -131028, 12, 0, -65534, 31, 0, -65531, 31, 0, -65527, 12, 0, -65523, 12, 0, -65519, 31, 0, -65506, 12, 0, -65496, 12, 0, -65488, 12, 0, 3, 31, 0, 7, 31, 0, 11, 12, 0, 15, 12, 0, 19, 12, 0, 27, 12, 0, 32, 12, 0, 35, 12, 0, 524304, 12, 0, 786448, 12, 0, 1048592, 12, 0, 1310736, 12, 0, 1572880, 12, 0, 1835024, 12, 0, 2097168, 12, 0, 2359312, 12, 0 )
 
 [node name="Fountain" type="AnimatedSprite" parent="."]
-position = Vector2( 3005.24, 3517.17 )
-scale = Vector2( 20, 20 )
+position = Vector2( 3008, 3520 )
+scale = Vector2( 16, 16 )
 z_index = 4
 frames = ExtResource( 7 )
 script = SubResource( 1 )
@@ -174,7 +180,7 @@ position = Vector2( 0.971, 3.989 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Fountain/StaticBody2D"]
-position = Vector2( 0.787, 3.978 )
+position = Vector2( 0.537992, 3.7415 )
 shape = SubResource( 5 )
 
 [node name="FtoF" type="Node2D" parent="."]
@@ -308,12 +314,12 @@ format = 1
 tile_data = PoolIntArray( 10354717, 20, 0, 10354718, 20, 0, 10354719, 20, 0, 10354720, 20, 0, 10354721, 20, 0, 10354722, 20, 0, 10354723, 20, 0, 10354724, 20, 0, 10354725, 20, 0, 10354726, 20, 0, 10354727, 20, 0, 10354728, 20, 0, 10354729, 20, 0, 10420253, 6, 0, 10420254, 6, 0, 10420255, 6, 0, 10420256, 6, 0, 10420257, 6, 0, 10420258, 6, 0, 10420259, 6, 0, 10420260, 6, 0, 10420261, 6, 0, 10420262, 6, 0, 10420263, 6, 0, 10420264, 6, 0, 10420265, 6, 0, 10485789, 6, 0, 10485790, 6, 0, 10485791, 6, 0, 10485792, 6, 0, 10485793, 6, 0, 10485794, 6, 0, 10485795, 6, 0, 10485796, 6, 0, 10485797, 6, 0, 10485798, 6, 0, 10485799, 6, 0, 10485800, 6, 0, 10485801, 6, 0, 10551325, 6, 0, 10551326, 6, 0, 10551327, 6, 0, 10551328, 6, 0, 10551329, 6, 0, 10551330, 6, 0, 10551331, 6, 0, 10551332, 6, 0, 10551333, 6, 0, 10551334, 6, 0, 10551335, 6, 0, 10551336, 6, 0, 10551337, 6, 0, 10616861, 20, 0, 10616862, 20, 0, 10616863, 20, 0, 10616864, 20, 0, 10616865, 20, 0, 10616866, 20, 0, 10616867, 20, 0, 10616868, 20, 0, 10616869, 20, 0, 10616870, 20, 0, 10616871, 20, 0, 10616872, 20, 0, 10616873, 20, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -266.945, -97.0188 )
+position = Vector2( -264, -96 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( -362.172, -78.0405 )
+position = Vector2( -360, -80 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 6 )
 
@@ -321,5 +327,13 @@ texture = ExtResource( 6 )
 position = Vector2( -315.32, -50.5639 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -4.64273, -19.3447 )
+position = Vector2( -4.67963, -21.4361 )
 shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -164.68, 2002.56 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -164.68, 5106.56 )
+shape = SubResource( 8 )
