@@ -49,7 +49,7 @@ collision_layer = 1025
 backpack = true
 
 [node name="Area2D2" parent="." instance=ExtResource( 6 )]
-position = Vector2( 505.852, 488.841 )
+position = Vector2( 504, 488 )
 label = "Магазин \"Четверочка\""
 object_name = NodePath("..")
 function_name = "to_store"

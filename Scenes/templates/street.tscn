@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tilemaps/street.tres" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Store.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/triggers/ObjectSwitcher.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/block.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/fountain.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Sprites/Building_in_garden.png" type="Texture" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends AnimatedSprite
@@ -36,6 +37,9 @@ extents = Vector2( 32, 2048 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 32, 1056 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 11, 2 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -337,3 +341,15 @@ shape = SubResource( 7 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -164.68, 5106.56 )
 shape = SubResource( 8 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 1032, 1040 )
+scale = Vector2( 8, 8 )
+z_index = 5
+texture = ExtResource( 8 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D"]
+position = Vector2( -0.999992, 14 )
+shape = SubResource( 9 )
