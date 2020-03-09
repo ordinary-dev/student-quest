@@ -1,20 +1,17 @@
-[gd_scene load_steps=3 format=2]
-
-[ext_resource path="res://Themes/my_theme.tres" type="Theme" id=1]
+[gd_scene load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
 script/source = "extends Control
 
 
-\"\"\"
-Эта сцена является первой просто для удобства.
-Она может вызывать некоторые функции и загружать объекты
-перед тем, как будет загружена главная сцена.
-Сейчас эта сцена загружает меню
-\"\"\"
+# Эта сцена является первой просто для удобства.
+# Она может вызывать некоторые функции и загружать объекты
+# перед тем, как будет загружена главная сцена.
+# Сейчас эта сцена загружает меню
 
 
+# Меню
 export (String, FILE, \"*.tscn\") var scene_path
 
 
@@ -32,22 +29,12 @@ __meta__ = {
 }
 scene_path = "res://Scenes/menu/menu.tscn"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-theme = ExtResource( 1 )
 text = "Загрузка..."
 align = 1
 valign = 1
-clip_text = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
