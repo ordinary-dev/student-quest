@@ -11,8 +11,9 @@ func set_label(text : String):
 	get_node(label_path).text = text
 
 func hide_self():
+	get_node(\"/root/show_nf\").check_stack()
 	get_node(\"/root/ui\").remove_child(
-		self
+		get_node(\"/root/ui/notify\")
 	)
 
 func start_anim():
