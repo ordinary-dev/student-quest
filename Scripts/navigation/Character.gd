@@ -6,6 +6,11 @@ extends KinematicBody2D
 export (int) var speed = 100
 # Задержка между сменой кадров
 export (int) var change = 10
+# Показывать рюкзак
+export (bool) var backpack = false
+
+export (String, FILE, "*.png") var default_sprite
+export (String, FILE, "*.png") var backpack_sprite
 
 # Объекты
 onready var character = $Character
@@ -156,6 +161,7 @@ func go_up() -> void:
 				distance_passed = UP_1
 		velocity.y -= 1
 
+
 func check_for_col_disable_btn():
 	if Input.is_action_just_pressed("ui_home"):
 		get_node("CollisionShape2D").disabled = !get_node("CollisionShape2D").disabled
@@ -195,3 +201,10 @@ func _physics_process(_delta) -> void:
 		# Переместиться на velocity
 		# Он задается get_input() при обработке ввода
 		move_and_slide(velocity)
+
+
+func _ready():
+	if backpack:
+		character.texture = load(backpack_sprite)
+	else:
+		character.texture = load(default_sprite)
