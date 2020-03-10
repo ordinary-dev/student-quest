@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/navigation/Character.gd" type="Script" id=1]
+[ext_resource path="res://Audio/fx/steps/footstep1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/fx/steps/footstep2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/templates/ui_fixer.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.3519, 54.8124 )
+
+[node name="Body" type="KinematicBody2D"]
+position = Vector2( -351.576, 564.435 )
+script = ExtResource( 1 )
+speed = 350
+default_sprite = "res://Sprites/character.png"
+backpack_sprite = "res://Sprites/character_backpack_ver.png"
+character_main = "res://Sprites/character_main.png"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 27.0109, 54.0217 )
+shape = SubResource( 1 )
+
+[node name="Character" type="Sprite" parent="."]
+scale = Vector2( 3, 3 )
+centered = false
+vframes = 3
+hframes = 3
+frame = 7
+region_enabled = true
+region_rect = Rect2( 0, 0, 57, 108 )
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+scale = Vector2( 0.335, 0.335 )
+current = true
+
+[node name="ui_fixer" parent="Character/Camera2D" instance=ExtResource( 5 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+bus = "FX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.0
+bus = "FX"

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Its going to be better.wav-4fe109c18f82a641db91d828d83df6c8.sample"
+
+[deps]
+
+source_file="res://Audio/music/Its going to be better.wav"
+dest_files=[ "res://.import/Its going to be better.wav-4fe109c18f82a641db91d828d83df6c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

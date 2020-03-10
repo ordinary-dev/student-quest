@@ -1,37 +1,38 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/fireworks.tres" type="Texture" id=1]
+[ext_resource path="res://Sprites/character.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/light.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/templates/ui_fixer.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
+
 
 var fw = load(\"res://Audio/fx/firework_explosion_fizz_002.wav\")
 
 onready var fx : = $\"/root/fx\"
 
-export var next_scene : = \"res://Scenes/1.beggining/date2.tscn\"
+export (String, FILE, \"*.tscn\") var next_scene
+
 
 func _ready() -> void:
+	yield(get_tree().create_timer(0.7), \"timeout\")
 	get_node(\"AnimationPlayer\").play(\"camera\")
 	
 	yield(get_tree().create_timer(0.7), \"timeout\")
 	fx.play_sound(fw)
 	
-	yield(get_tree().create_timer(0.08), \"timeout\")
-	yield(get_tree().create_timer(0.7), \"timeout\")
-	fx.play_sound(fw)
-	
-	yield(get_tree().create_timer(0.4), \"timeout\")
-	yield(get_tree().create_timer(0.7), \"timeout\")
+	yield(get_tree().create_timer(2), \"timeout\")
 	fx.play_sound(fw)
 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
-	assert(get_tree().change_scene(next_scene) == OK)
+func _on_AnimationPlayer_animation_finished(_anim_name) -> void:
+	get_node(\"/root/scene_loader\").load_scene(next_scene)
 "
 
 [sub_resource type="Animation" id=2]
-length = 10.0
+length = 8.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:offset")
 tracks/0/interp = 1
@@ -39,7 +40,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 8.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, 200 ) ]
@@ -51,7 +52,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 10 ),
+"times": PoolRealArray( 0, 8.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
@@ -75,26 +76,63 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.8, 6.8 ),
+"times": PoolRealArray( 2, 7.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 155 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("AnimatedSprite3:frame")
+tracks/4/path = NodePath("Light2D2:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 1.9, 8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 1.3, 3.1, 3.5, 4.7, 5.7, 7.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0, 155 ]
+"values": [ Vector2( 848.941, 559.133 ), Vector2( 849.831, 630.578 ), Vector2( 718.788, 766.668 ), Vector2( 790.888, 893.386 ), Vector2( 811.437, 932.14 ), Vector2( 967.176, 839.851 ), Vector2( 1036.39, 795.509 ), Vector2( 1195.02, 741.433 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Light2D2:energy")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.3, 2.5, 3.1, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 2.59, 2.59, 1.14, 2.74, 1.58 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AnimatedSprite:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.8, 1.8, 2.7, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 462.073, 501.133 ), Vector2( 482.419, 427.013 ), Vector2( 532.412, 423.609 ), Vector2( 557.016, 425.348 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AnimatedSprite2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 2.5, 3, 3.6, 5.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1279.37, 698.113 ), Vector2( 1299.04, 691.078 ), Vector2( 1275.72, 611.419 ), Vector2( 1218, 547.552 ) ]
 }
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
+next_scene = "res://Scenes/1.beggining/Dialog_1.tscn"
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -105,6 +143,7 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Control"]
+light_mask = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
@@ -113,34 +152,61 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="Sprite" parent="."]
-position = Vector2( 675.226, 441.394 )
-scale = Vector2( 9.08128, 9.33285 )
+light_mask = 2
+position = Vector2( 462.073, 501.133 )
+scale = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 13
+frame = 5
 
 [node name="AnimatedSprite2" type="Sprite" parent="."]
-position = Vector2( 1232.91, 729.087 )
-scale = Vector2( 9.08128, 9.33285 )
+light_mask = 2
+position = Vector2( 1279.37, 698.113 )
+scale = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 flip_h = true
 vframes = 12
 hframes = 13
-frame = 5
 
-[node name="AnimatedSprite3" type="Sprite" parent="."]
-position = Vector2( 498.184, 786.626 )
-scale = Vector2( 9.08128, 9.33285 )
-texture = ExtResource( 1 )
-vframes = 12
-hframes = 13
-frame = 5
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 856.547, 1028.28 )
+scale = Vector2( 8.98045, 8.98045 )
+z_index = 5
+texture = ExtResource( 2 )
+vframes = 3
+hframes = 3
+frame = 7
+region_rect = Rect2( 0, 0, 18, 36 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.980392 )
+light_mask = 2
+position = Vector2( 854.575, 1016.44 )
+scale = Vector2( 7.9637, 7.82004 )
+z_index = 5
+texture = ExtResource( 2 )
+vframes = 3
+hframes = 3
+frame = 7
+region_rect = Rect2( 0, 0, 18, 36 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/camera = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, 4.76191 )
 anchor_mode = 0
 current = true
-zoom = Vector2( 0.9, 0.9 )
+zoom = Vector2( 0.902381, 0.902381 )
+
+[node name="RemoteTransform2D" parent="Camera2D" instance=ExtResource( 4 )]
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 849.195, 579.546 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 3 )
+texture_scale = 2.17
+energy = 2.59
+mode = 3
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
