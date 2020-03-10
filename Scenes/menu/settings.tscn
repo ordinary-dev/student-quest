@@ -304,7 +304,6 @@ __meta__ = {
 }
 
 [node name="Графика" type="MarginContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
