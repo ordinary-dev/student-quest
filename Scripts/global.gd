@@ -23,19 +23,23 @@ var vsync_enabled : bool
 var fullscreen_enabled : bool
 
 # Для того, чтобы игра знала, в какой файл сохранять данные
-var loaded : = 0
+var loaded : = -1
 var fac : int = 0
 
 # Обновить информацию об этапе для файла сохранения игры
 func upd_stage(stage : int) -> void:
-	var fl : = File.new()
-	fl.open("user://save." + str(loaded) + ".txt", File.WRITE)
-	fl.store_line(to_json({
-		"stage":stage,
-		"fac":fac
-		}))
-	fl.close()
-	get_node("/root/show_nf").show_notification("Игра сохранена")
+	if loaded == -1:
+		get_node("/root/show_nf").show_notification("Не могу сохранить, игра не загружена")
+	else:
+		var fl : = File.new()
+		var state : = fl.open("user://save." + str(loaded) + ".txt", File.WRITE)
+		assert(state == OK)
+		fl.store_line(to_json({
+			"stage":stage,
+			"fac":fac
+			}))
+		fl.close()
+		get_node("/root/show_nf").show_notification("Игра сохранена")
 
 # Создать словарь с переменными для сохранения
 func gen_dict() -> Dictionary:
