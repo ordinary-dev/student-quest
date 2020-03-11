@@ -31,6 +31,7 @@ pause_init="*res://Scripts/pause_init.gd"
 scene_loader="*res://Scenes/global/scene_load.tscn"
 ui="*res://Scenes/global/ui.tscn"
 show_nf="*res://Scripts/show_nf.gd"
+saved="*res://Scripts/Saved.gd"
 
 [display]
 
