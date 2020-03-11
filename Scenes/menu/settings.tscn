@@ -31,10 +31,10 @@ func update_text(val : float, obj : String) -> void:
 func _on_HSlider_value_changed(value : float) -> void:
 	fx.btn_click()
 	if value == get_node(slider_ost).min_value:
-		AudioServer.set_bus_mute(2, true)
+		AudioServer.set_bus_mute(1, true)
 	else:
-		AudioServer.set_bus_mute(2, false)
-	AudioServer.set_bus_volume_db(2, value)
+		AudioServer.set_bus_mute(1, false)
+	AudioServer.set_bus_volume_db(1, value)
 	update_text(value, ost_text)
 
 
@@ -42,10 +42,10 @@ func _on_HSlider_value_changed(value : float) -> void:
 func _on_HSliderFX_value_changed(value : float) -> void:
 	fx.btn_click()
 	if value == get_node(slider_fx).min_value:
-		AudioServer.set_bus_mute(1, true)
+		AudioServer.set_bus_mute(2, true)
 	else:
-		AudioServer.set_bus_mute(1, false)
-	AudioServer.set_bus_volume_db(1, value)
+		AudioServer.set_bus_mute(2, false)
+	AudioServer.set_bus_volume_db(2, value)
 	update_text(value, fx_text)
 
 
@@ -68,8 +68,8 @@ func _on_TabContainer_tab_selected(_tab) -> void:
 
 # Синхронизировать интерфейс
 func update_settings() -> void:
-	get_node(slider_ost).value = AudioServer.get_bus_volume_db(2)
-	get_node(slider_fx).value = AudioServer.get_bus_volume_db(1)
+	get_node(slider_ost).value = AudioServer.get_bus_volume_db(1)
+	get_node(slider_fx).value = AudioServer.get_bus_volume_db(2)
 
 
 func _ready() -> void:
@@ -304,6 +304,7 @@ __meta__ = {
 }
 
 [node name="Графика" type="MarginContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
