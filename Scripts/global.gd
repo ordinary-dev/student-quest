@@ -44,8 +44,8 @@ func upd_stage(stage : int) -> void:
 # Создать словарь с переменными для сохранения
 func gen_dict() -> Dictionary:
 	var save_dict = {
-		ost_field:AudioServer.get_bus_volume_db(2),
-		fx_field:AudioServer.get_bus_volume_db(1),
+		ost_field:AudioServer.get_bus_volume_db(1),
+		fx_field:AudioServer.get_bus_volume_db(2),
 		sg_field:saved_games,
 		fscreen_field:str(fullscreen_enabled),
 		vsync_field:str(vsync_enabled)
@@ -63,9 +63,9 @@ func write_file(path : String = file_name):
 func restore(content : Dictionary) -> void:
 	# Если есть ключ, то записать значение в переменную
 	if content.has(ost_field):
-		AudioServer.set_bus_volume_db(2, content[ost_field])
+		AudioServer.set_bus_volume_db(1, content[ost_field])
 	if content.has(fx_field):
-		AudioServer.set_bus_volume_db(1, content[fx_field])
+		AudioServer.set_bus_volume_db(2, content[fx_field])
 	if content.has(sg_field):
 		saved_games = content[sg_field]
 	if content.has(fscreen_field):
