@@ -55,26 +55,31 @@ func show_dialog(num : int, obj:String = "", fnc:String = "") -> void:
 	# Сохранить значения
 	glob_obj = obj
 	glob_fnc = fnc
-	# Подготовить интерфейс
-	var nd : = get_node("/root/ui")
-	var tmp = dialog_scene.instance()
-	tmp.name = "dialog"
-	nd.add_child(tmp)
+	
 	# Открыть файл
 	var fl : = File.new()
-	fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
-	var content = parse_json(fl.get_as_text())
-	fl.close()
-	# Активировать отслеживание кнопки
-	set_process(true)
-	# Сохранить значения
-	s_content = content
-	s_key = "0"
-	# Заблокировать персонажа
-	if has_node("/root/Node2D/Body"):
-		get_node("/root/Node2D/Body").lock()
-	# Показать диалог
-	show_next()
+	var state : = fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
+	if (state == OK):
+		# Подготовить интерфейс
+		var nd : = get_node("/root/ui")
+		var tmp = dialog_scene.instance()
+		tmp.name = "dialog"
+		nd.add_child(tmp)
+		# Прочитать файл
+		var content = parse_json(fl.get_as_text())
+		fl.close()
+		# Активировать отслеживание кнопки
+		set_process(true)
+		# Сохранить значения
+		s_content = content
+		s_key = "0"
+		# Заблокировать персонажа
+		if has_node("/root/Node2D/Body"):
+			get_node("/root/Node2D/Body").lock()
+		# Показать диалог
+		show_next()
+	else:
+		get_node("/root/show_nf").show_notification("Не могу загрузить диалог")
 		
 func _ready():
 	set_process(false)
