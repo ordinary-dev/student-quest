@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+# Подготовка первого дня
+
+onready var svd = get_node(\"/root/saved\")
+export (String, FILE, \"*.tscn\") var street
+
+
+func _ready() -> void:
+	svd.player_pos = Vector2(-365, 488)
+	svd.singer_dialog = 2
+	svd.singer_dialog_used = false
+	get_node(\"/root/scene_loader\").load_scene(street)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+street = "res://Scenes/1.beggining/Day1.tscn"
