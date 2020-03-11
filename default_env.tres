@@ -5,12 +5,3 @@
 [resource]
 background_mode = 4
 background_sky = SubResource( 1 )
-background_energy = 0.0
-auto_exposure_scale = 1.51
-dof_blur_far_distance = 0.01
-dof_blur_far_transition = 0.1
-dof_blur_far_amount = 1.0
-dof_blur_near_distance = 0.01
-dof_blur_near_amount = 1.0
-glow_intensity = 1.82
-adjustment_brightness = 3.76
