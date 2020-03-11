@@ -1,14 +1,120 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+# Позволяет легко присваивать 
+# текст и заголовок в окно диалога,
+# а также анимировать форму и текст
+
+# Анимация формы
+export (NodePath) var body_bg
+export (NodePath) var body_fg
+
+# Текстовые поля
+export (NodePath) var person_name
+export (NodePath) var main_text
+
+# Легкий доступ к кнопке для другого скрипта
+export (NodePath) var next_button
+
+onready var tween = $Tween
+var first : = true
+
+# Время анимации формы
+const shape_time : = 0.15
+# Отсутпы до / после слева и справа
+const c_left_from : = 100
+const c_left_to : = 50
+const c_right_from : = 1770
+const c_right_to : = 1870
+
+
+# Заготовка анимации
+func anim_template(left_from : int, left_to : int, 
+					right_from : int, right_to : int, 
+					play_text : bool) -> void:
+	# Анимация формы
+	tween.interpolate_property(
+		get_node(body_bg), \"margin_left\",
+		left_from, left_to, shape_time,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+	)
+	tween.interpolate_property(
+		get_node(body_bg), \"margin_right\",
+		right_from, right_to, shape_time,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+	)
+	tween.interpolate_property(
+		get_node(body_fg), \"margin_left\",
+		left_from, left_to, shape_time,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+	)
+	tween.interpolate_property(
+		get_node(body_fg), \"margin_right\",
+		right_from, right_to, shape_time,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+	)
+	tween.start()
+	
+	# Анимация текста
+	if play_text:
+		yield(get_tree().create_timer(shape_time), \"timeout\")
+		tween.interpolate_property(
+			get_node(main_text), \"percent_visible\",
+			0, 1, len(get_node(main_text).text) / 30.0,
+			Tween.TRANS_LINEAR
+		)
+		tween.start()
+
+
+# Анимация появления
+func play():
+	anim_template(
+		c_left_from, c_left_to, 
+		c_right_from, c_right_to, 
+		true
+	)
+
+
+# Анимация исчезновения
+func play_reverse():
+	anim_template(
+		c_left_to, c_left_from, 
+		c_right_to, c_right_from, 
+		false
+	)
+
+
+# Вызывается сторонним скриптом
+func play_dialog(person : String, dialog_text : String) -> void:
+	get_node(person_name).text = person
+	get_node(main_text).percent_visible = 0
+	get_node(main_text).text = dialog_text
+	# Если диалог показывается не в первый раз
+	if !first:
+		play_reverse()
+		yield(get_tree().create_timer(shape_time), \"timeout\")
+	else:
+		first = false
+	play()
+"
 
 [node name="Control" type="Control"]
 margin_right = 1280.0
 margin_bottom = 720.0
 rect_min_size = Vector2( 1920, 1080 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+body_bg = NodePath("Dialog/Border")
+body_fg = NodePath("Dialog/Main")
+person_name = NodePath("Dialog/Main/Margin/HBox/VBox/Name")
+main_text = NodePath("Dialog/Main/Margin/HBox/VBox/Text")
+next_button = NodePath("Dialog/Main/Margin/HBox/Button")
 
 [node name="Dialog" type="MarginContainer" parent="."]
 anchor_top = 1.0

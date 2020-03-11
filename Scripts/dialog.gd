@@ -1,7 +1,6 @@
 extends Node
 
 var dialog_scene : = load("res://Scenes/templates/dialog.tscn")
-var effect
 var s_content : Dictionary
 var s_key : String
 
@@ -10,6 +9,10 @@ var glob_obj:String
 var glob_fnc:String
 
 func hide_dialog():
+	get_node("/root/ui/dialog").play_reverse()
+	yield(get_tree().create_timer(
+		get_node("/root/ui/dialog").shape_time
+	), "timeout")
 	get_node("/root/ui").remove_child(get_node("/root/ui/dialog"))
 	set_process(false)
 	# Разблокировать персонажа
@@ -30,12 +33,12 @@ func _process(_delta):
 			hide_dialog()
 
 func show_next() -> void:
-	var name : = get_node("/root/ui/dialog/Dialog/Main/Margin/HBox/VBox/Name")
-	var text : = get_node("/root/ui/dialog/Dialog/Main/Margin/HBox/VBox/Text")
-	var btn : = get_node("/root/ui/dialog/Dialog/Main/Margin/HBox/Button")
-	text.percent_visible = 0
-	name.text = s_content[s_key]["name"]
-	text.text = s_content[s_key]["text"]
+	var dial = get_node("/root/ui/dialog")
+	dial.play_dialog(
+		s_content[s_key]["name"],
+		s_content[s_key]["text"]
+	)
+	var btn = get_node("/root/ui/dialog/" + dial.next_button)
 	if s_content[s_key].has("next"):
 		s_key = s_content[s_key]["next"]
 		btn.disconnect("pressed", self, "show_next")
@@ -44,8 +47,6 @@ func show_next() -> void:
 		s_key = "-1"
 		btn.disconnect("pressed", self, "show_next")
 		btn.connect("pressed", self, "hide_dialog")
-	effect.interpolate_property(text, "percent_visible", 0, 1, len(text.text) / 30.0, Tween.TRANS_LINEAR)
-	effect.start()
 	
 
 func show_dialog(num : int, obj:String = "", fnc:String = "") -> void:
@@ -64,8 +65,6 @@ func show_dialog(num : int, obj:String = "", fnc:String = "") -> void:
 	fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
 	var content = parse_json(fl.get_as_text())
 	fl.close()
-	# Найти Tween
-	effect = get_node("/root/ui/dialog/Tween")
 	# Активировать отслеживание кнопки
 	set_process(true)
 	# Сохранить значения
