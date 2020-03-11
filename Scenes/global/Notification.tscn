@@ -4,26 +4,77 @@
 script/source = "extends Control
 
 export (NodePath) var label_path
+export (NodePath) var mc
 onready var effect = $Tween
 var time = .05
 
+var text_delay
+
+const x_from : = 550
+const x_to : = 600
+const y_from : = 150
+const y_to : = 200
+const y_time : = 0.25
+
+
 func set_label(text : String):
 	get_node(label_path).text = text
+	text_delay = time*len(get_node(label_path).text)
+
 
 func hide_self():
+	hide_anim()
+	yield(get_tree().create_timer(
+		2*y_time + text_delay
+	), \"timeout\")
 	get_node(\"/root/show_nf\").check_stack()
 	get_node(\"/root/ui\").remove_child(
 		get_node(\"/root/ui/notify\")
 	)
 
+func hide_anim():
+	effect.interpolate_property(
+		get_node(label_path), \"percent_visible\",
+		1, 0, text_delay,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+	)
+	effect.interpolate_property(
+		get_node(mc), \"rect_size\",
+		Vector2(x_to, y_to), 
+		Vector2(x_from, y_to), y_time,
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
+		text_delay
+	)
+	effect.interpolate_property(
+		get_node(mc), \"rect_size\",
+		Vector2(x_from, y_to), 
+		Vector2(x_from, y_from), y_time,
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
+		text_delay + y_time
+	)
+	effect.start()
+
 func start_anim():
-	effect.interpolate_property(get_node(label_path),
-	\"percent_visible\",
-	0, 1, time*len(get_node(label_path).text),
-	Tween.TRANS_LINEAR)
+	effect.interpolate_property(
+		get_node(mc), \"rect_size\",
+		Vector2(x_from, y_from), 
+		Vector2(x_from, y_to), y_time,
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT
+	)
+	effect.interpolate_property(
+		get_node(mc), \"rect_size\",
+		Vector2(x_from, y_to), 
+		Vector2(x_to, y_to), y_time,
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, y_time
+	)
+	effect.interpolate_property(
+		get_node(label_path), \"percent_visible\",
+		0, 1, text_delay,
+		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 2*y_time)
 	effect.start()
 	yield(get_tree().create_timer(
-		time*len(get_node(label_path).text)+3), \"timeout\")
+		text_delay + 2*y_time + 1
+	), \"timeout\")
 	hide_self()
 
 func _ready():
@@ -39,10 +90,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 label_path = NodePath("MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer/Label")
+mc = NodePath("MarginContainer")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 550.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 550, 150 )
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 __meta__ = {
@@ -53,8 +106,9 @@ __meta__ = {
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 550.0
-margin_bottom = 200.0
-rect_min_size = Vector2( 500, 150 )
+margin_bottom = 150.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -74,7 +128,7 @@ __meta__ = {
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 490.0
-margin_bottom = 140.0
+margin_bottom = 90.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/ColorRect"]
@@ -90,9 +144,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer"]
 margin_left = 10.0
-margin_top = 49.0
+margin_top = 24.0
 margin_right = 470.0
-margin_bottom = 81.0
+margin_bottom = 56.0
 text = "Your Message"
 align = 1
 valign = 1
