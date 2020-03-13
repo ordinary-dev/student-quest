@@ -7,15 +7,17 @@ resource_name = "Main"
 script/source = "extends AudioStreamPlayer
 
 # Воспроизводит только один файл
-# get_node(\"/root/ost\").play_sound(sound)
+# get_node(\"/root/ost\").play_sound(song_path)
 
 onready var effect = $Tween
+onready var path : = \"no_song\"
 
-func play_sound(obj : AudioStream) -> void:
-	if (self.stream != obj):
-		self.stream = obj
-	if (!self.playing):
-		self.play()
+func play_sound(song_path : String) -> void:
+	if (path != song_path):
+		path = song_path
+		stream = load(song_path)
+	if (!playing):
+		play()
 
 
 func fade_out():
