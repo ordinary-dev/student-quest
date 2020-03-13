@@ -7,6 +7,8 @@ script/source = "extends Area2D
 
 export (int) var dialog_number
 export (String) var person = \"Мистер человек\"
+export (bool) var load_scene = false
+export (String, FILE, \"*.tscn\") var scene_path
 onready var effect = $Tween
 onready var text_name = $ColorRect3
 onready var text_btn = $ColorRect2
@@ -18,7 +20,11 @@ var used = false
 
 func _process(_delta):
 	if Input.is_action_pressed(\"dialog_start\"):
-		get_node(\"/root/d_obj\").show_dialog(dialog_number)
+		if load_scene:
+			get_node(\"/root/d_obj\").show_dialog(
+				dialog_number, \"/root/scene_loader\", \"load_scene\", scene_path)
+		else:
+			get_node(\"/root/d_obj\").show_dialog(dialog_number)
 		hide_ui()
 		used = true
 		set_process(false)

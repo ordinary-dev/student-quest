@@ -7,6 +7,7 @@ var s_key : String
 # Опционально вызвать функцию fnc у объекта obj
 var glob_obj:String
 var glob_fnc:String
+var glob_argv:String
 
 func hide_dialog():
 	get_node("/root/ui/dialog").play_reverse()
@@ -22,7 +23,12 @@ func hide_dialog():
 	# Нужен некоторым скриптам для того,
 	# Чтобы продолжить сразу после диалога
 	if has_node(glob_obj):
-		get_node(glob_obj).call(glob_fnc)
+		if glob_argv == "":
+			get_node(glob_obj).call(glob_fnc)
+		else:
+			get_node(glob_obj).call(glob_fnc, glob_argv)
+	else:
+		get_node("/root/show_nf").show_notification("No such object: " + glob_obj)
 	glob_obj = ""
 
 func _process(_delta):
@@ -47,14 +53,15 @@ func show_next() -> void:
 		s_key = "-1"
 		btn.disconnect("pressed", self, "show_next")
 		btn.connect("pressed", self, "hide_dialog")
-	
 
-func show_dialog(num : int, obj:String = "", fnc:String = "") -> void:
+
+func show_dialog(num : int, obj:String = "", fnc:String = "", argv:String="") -> void:
 	# Звук
 	get_node("/root/fx").dialog()
 	# Сохранить значения
 	glob_obj = obj
 	glob_fnc = fnc
+	glob_argv = argv
 	
 	# Открыть файл
 	var fl : = File.new()
