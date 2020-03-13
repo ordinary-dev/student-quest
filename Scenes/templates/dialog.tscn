@@ -35,33 +35,33 @@ const c_right_to : = 1870
 # Заготовка анимации
 func anim_template(left_from : int, left_to : int, 
 					right_from : int, right_to : int, 
-					play_text : bool) -> void:
+					animate_form : bool, atext:bool = true) -> void:
 	# Анимация формы
-	tween.interpolate_property(
-		get_node(body_bg), \"margin_left\",
-		left_from, left_to, shape_time,
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-	)
-	tween.interpolate_property(
-		get_node(body_bg), \"margin_right\",
-		right_from, right_to, shape_time,
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-	)
-	tween.interpolate_property(
-		get_node(body_fg), \"margin_left\",
-		left_from, left_to, shape_time,
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-	)
-	tween.interpolate_property(
-		get_node(body_fg), \"margin_right\",
-		right_from, right_to, shape_time,
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-	)
-	tween.start()
-	
-	# Анимация текста
-	if play_text:
+	if animate_form:
+		tween.interpolate_property(
+			get_node(body_bg), \"margin_left\",
+			left_from, left_to, shape_time,
+			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+		)
+		tween.interpolate_property(
+			get_node(body_bg), \"margin_right\",
+			right_from, right_to, shape_time,
+			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+		)
+		tween.interpolate_property(
+			get_node(body_fg), \"margin_left\",
+			left_from, left_to, shape_time,
+			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+		)
+		tween.interpolate_property(
+			get_node(body_fg), \"margin_right\",
+			right_from, right_to, shape_time,
+			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+		)
+		tween.start()
 		yield(get_tree().create_timer(shape_time), \"timeout\")
+	if atext:
+		# Анимация текста
 		tween.interpolate_property(
 			get_node(main_text), \"percent_visible\",
 			0, 1, len(get_node(main_text).text) / 30.0,
@@ -71,11 +71,11 @@ func anim_template(left_from : int, left_to : int,
 
 
 # Анимация появления
-func play():
+func play(anim : bool):
 	anim_template(
 		c_left_from, c_left_to, 
 		c_right_from, c_right_to, 
-		true
+		anim
 	)
 
 
@@ -84,22 +84,23 @@ func play_reverse():
 	anim_template(
 		c_left_to, c_left_from, 
 		c_right_to, c_right_from, 
-		false
+		true, false
 	)
 
 
 # Вызывается сторонним скриптом
 func play_dialog(person : String, dialog_text : String) -> void:
+	if tween.is_active():
+		tween.stop_all()
+	
 	get_node(person_name).text = person
 	get_node(main_text).percent_visible = 0
 	get_node(main_text).text = dialog_text
-	# Если диалог показывается не в первый раз
-	if !first:
-		play_reverse()
-		yield(get_tree().create_timer(shape_time), \"timeout\")
-	else:
+	if first:
+		play(true)
 		first = false
-	play()
+	else:
+		play(false)
 "
 
 [node name="Control" type="Control"]

@@ -35,7 +35,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next = "res://Scenes/1.beggining/FSelect.tscn"
+next = "res://Scenes/1.beggining/Facility-selection-scene.tscn"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -105.0
