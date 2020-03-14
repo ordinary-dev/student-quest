@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Tilemaps/street.tres" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Store.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Sprites/block.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/fountain.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://Sprites/Building_in_garden.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/templates/Water.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends AnimatedSprite
@@ -353,3 +354,11 @@ texture = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D"]
 position = Vector2( -0.999992, 14 )
 shape = SubResource( 9 )
+
+[node name="Water" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1232, 1104 )
+dim = Vector2( 4, 15 )
+
+[node name="Water2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 912, 1584 )
+dim = Vector2( 14, 4 )
