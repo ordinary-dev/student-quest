@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/backgrounds/city1.png" type="Texture" id=1]
-[ext_resource path="res://Audio/music/Ambient.ogg" type="AudioStream" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
 export (String, FILE, \"*.tscn\") var next
 
-func finished():
+func _ready():
+	yield(get_tree().create_timer(3), \"timeout\")
 	get_node(\"/root/scene_loader\").load_scene(next)
 "
 
@@ -53,9 +53,3 @@ lifetime = 10.0
 preprocess = 65.35
 speed_scale = 0.37
 process_material = SubResource( 2 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
-autoplay = true
-bus = "OST"
-[connection signal="finished" from="AudioStreamPlayer" to="." method="finished"]

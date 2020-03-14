@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/backgrounds/hall.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+export (String, FILE, \"*.tscn\") var next_scene
+export (String, FILE, \"*.ogg\") var music
+
+func _ready():
+	get_node(\"/root/ost\").play_sound(music)
+	yield(get_tree().create_timer(2.5),\"timeout\")
+	get_node(\"/root/scene_loader\").load_scene(next_scene)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+next_scene = "res://Scenes/1.beggining/City.tscn"
+music = "res://Audio/music/Ambient.ogg"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 983.564, 526.23 )
+scale = Vector2( 12.8893, 12.8893 )
+texture = ExtResource( 1 )
