@@ -70,7 +70,6 @@ scale = Vector2( 5, 5 )
 texture = ExtResource( 3 )
 region_enabled = true
 region_rect = Rect2( 6, 3, 60, 35 )
-script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 940.073, 380 )
@@ -92,3 +91,10 @@ shadow_enabled = true
 shadow_gradient_length = 4.0
 shadow_filter = 2
 shadow_filter_smooth = 25.4
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+script = ExtResource( 5 )
+max_diff = 2.0
+dpf = 0.6

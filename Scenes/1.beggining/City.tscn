@@ -1,16 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/backgrounds/city1.png" type="Texture" id=1]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Control
-
-export (String, FILE, \"*.tscn\") var next
-
-func _ready():
-	yield(get_tree().create_timer(3), \"timeout\")
-	get_node(\"/root/scene_loader\").load_scene(next)
-"
+[ext_resource path="res://Scripts/load_after_delay.gd" type="Script" id=2]
 
 [sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 2
@@ -30,11 +21,14 @@ color = Color( 0.596078, 0.709804, 0.513726, 1 )
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next = "res://Scenes/1.beggining/Facility-selection-scene.tscn"
+next_scene = "res://Scenes/1.beggining/City_overview.tscn"
+delay = 1.508
+transition_in = false
+transition_out = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_left = -105.0

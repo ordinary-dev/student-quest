@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/backgrounds/8bit-background.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/load_after_delay.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+next_scene = "res://Scenes/1.beggining/Facility-selection-scene.tscn"
+delay = 2.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 1 )
