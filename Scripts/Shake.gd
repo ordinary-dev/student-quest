@@ -16,12 +16,14 @@ var pos : Vector2
 func _process(_delta):
 	var dif_x = rand_range(-dpf, dpf)
 	var dif_y = rand_range(-dpf, dpf)
+	
 	if dif_x >= 0:
 		if pos.x + max_diff > position.x + dif_x:
 			position.x += dif_x
 	else:
 		if pos.x - max_diff < position.x + dif_x:
 			position.x += dif_x
+	
 	if dif_y >= 0:
 		if pos.y + max_diff > position.y + dif_y:
 			position.y += dif_y
