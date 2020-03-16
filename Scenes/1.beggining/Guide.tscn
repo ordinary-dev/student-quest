@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+func get_dialog_number() -> int:
+	var glob = get_node(\"/root/global\")
+	if glob.loaded != -1:
+		if glob.fac == 0:
+			return 5
+		if glob.fac == 1:
+			return 6
+		if glob.fac == 2:
+			return 7
+	get_node(\"/root/show_nf\").show_notification(
+		\"Игра не загружена\"
+	)
+	return -1
+
+func activate() -> void:
+	get_node(\"/root/d_obj\").show_dialog(
+		get_dialog_number()
+	)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, -40 )
+label = "Проводник"
+object_name = NodePath("..")
+function_name = "activate"
