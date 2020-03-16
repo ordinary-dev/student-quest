@@ -143,6 +143,7 @@ size_flags_stretch_ratio = 7.0
 tab_align = 0
 
 [node name="Аудио" type="MarginContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -254,7 +255,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "Громкость: 100%"
 
 [node name="Инфо" type="MarginContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -280,9 +280,10 @@ scroll_horizontal_enabled = false
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Инфо/Info/ScrollContainer"]
 margin_right = 1812.0
-margin_bottom = 557.0
+margin_bottom = 592.0
 size_flags_horizontal = 3
 text = "Student Quest
+v 1.20
 
 Авторы:
 - mcraw
