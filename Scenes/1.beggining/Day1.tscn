@@ -12,6 +12,7 @@ script/source = "extends Node2D
 
 
 export (String, FILE, \"*.ogg\") var song
+export (String, FILE, \"*.tscn\") var math_scene
 
 # Перейти в магазин
 func to_store():
@@ -20,6 +21,10 @@ func to_store():
 # Касса
 func ticket_window():
 	get_node(\"/root/show_nf\").show_notification(\"Открыть кассу...\")
+
+func math():
+	get_node(\"restore_state\")._save()
+	get_node(\"/root/scene_loader\").load_scene(math_scene)
 
 func _ready():
 	# Обновить информацию об этапе
@@ -62,6 +67,7 @@ func _ready() -> void:
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 song = "res://Audio/music/SummerNight.ogg"
+math_scene = "res://Scenes/templates/Math.tscn"
 
 [node name="Street" parent="." instance=ExtResource( 1 )]
 
@@ -91,7 +97,14 @@ label = "Касса"
 object_name = NodePath("..")
 function_name = "ticket_window"
 
+[node name="Math" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1024, 5656 )
+label = "Мехмат"
+object_name = NodePath("..")
+function_name = "math"
+
 [node name="restore_state" type="Node2D" parent="."]
+position = Vector2( 0, -8 )
 script = SubResource( 2 )
 player = NodePath("../Body")
 singer = NodePath("../Mr_Singer_Dialog")
