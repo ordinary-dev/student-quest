@@ -60,28 +60,26 @@ func _ready() -> void:
 			var tmp = loadbtn.instance()
 			tmp.name = dir_name + \"_btn\"
 			box.add_child(tmp)
+			var btn = get_node(\"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn\")
 			
 			# Изменить название сохранения
-			var loadpath : = \"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn/BtnLoad/ContLoad/TextGame\"
-			get_node(loadpath).text = \"#\" + dir_name
+			btn.set_game_name(\"#\" + dir_name)
 			
 			# Привязать кнопку удаления
-			var delpath : = \"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn/BtnDel\"
-			var state = get_node(delpath).connect(\"pressed\", self, \"on_Del_Pressed\", [dir_name])
+			var state = btn.get_delete_btn().connect(
+				\"pressed\", self, \"on_Del_Pressed\", [dir_name])
 			assert(state == OK)
 			
 			# Прочитать stage из папки
 			var stage = get_node(\"/root/prop\").get_param(dir_name, \"stage\")
 			var properties : Dictionary = get_node(\"/root/events\").get_event_info(stage)
-			var stagepath : = \"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn/BtnLoad/ContLoad/TextStage\"
-			get_node(stagepath).text = properties[\"name\"]
+			btn.set_game_stage(properties[\"name\"])
 			
 			
 			# Привязать кнопку к загрузке игры
-			var btnpath = \"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn/BtnLoad\"
-			state = get_node(btnpath).connect(
-				\"pressed\", self, 
-				\"btn_load_scene\", 
+			state = btn.get_load_btn().connect(
+				\"pressed\", self,
+				\"btn_load_scene\",
 				[properties[\"scene\"], dir_name])
 			assert(state == OK)
 		dir_name = dir.get_next()

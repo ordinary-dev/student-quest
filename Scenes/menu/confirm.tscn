@@ -32,15 +32,17 @@ func _quit() -> void:
 [node name="VBoxContainer" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -960.0
+margin_right = -1290.0
+margin_bottom = -583.0
+custom_constants/separation = 60
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 960.0
-margin_bottom = 538.0
+margin_right = 630.0
+margin_bottom = 137.0
 size_flags_vertical = 7
 text = "Вы действительно хотите выйти?
 Все данные будут сохранены"
@@ -49,25 +51,24 @@ valign = 1
 autowrap = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 542.0
-margin_right = 960.0
-margin_bottom = 1080.0
+margin_top = 197.0
+margin_right = 630.0
+margin_bottom = 497.0
 size_flags_vertical = 3
 custom_constants/separation = 30
+alignment = 1
 
 [node name="Button_No" parent="HBoxContainer" instance=ExtResource( 1 )]
-margin_right = 465.0
-margin_bottom = 538.0
-size_flags_horizontal = 3
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
 btn_text = "Нет"
-use_animation = false
 
 [node name="Button_Yes2" parent="HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 495.0
-margin_right = 960.0
-margin_bottom = 538.0
-size_flags_horizontal = 3
+margin_left = 330.0
+margin_right = 630.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
 btn_text = "Да"
-use_animation = false
 [connection signal="pressed" from="HBoxContainer/Button_No" to="." method="_return"]
 [connection signal="pressed" from="HBoxContainer/Button_Yes2" to="." method="_quit"]

@@ -3,7 +3,6 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
 
-
 # Скрипт управления кнопкой
 # Позволяет удобно задавать текст
 
@@ -13,8 +12,10 @@ onready var effect = $Tween
 onready var mrg = $MarginContainer
 onready var label = $Label
 
-export (Color) var light_color
-export (Color) var dark_color
+export (Color) var light_color = \"#ffffff\"
+export (Color) var dark_color = \"#1e1e1e\"
+
+export (Array, NodePath) var text_fields
 
 var gaps : int = 7
 
@@ -29,23 +30,25 @@ func _ready():
 
 func _on_Mouse_Enter():
 	if use_animation:
-		effect.interpolate_property(mrg, 
-		\"custom_constants/margin_right\",
-		rect_size.x - gaps, gaps, 0.25, 
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT
-		)
+		effect.interpolate_property(
+			mrg, \"custom_constants/margin_right\",
+			rect_size.x - gaps, gaps, 0.25, 
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		effect.start()
 		label.add_color_override(\"font_color\", dark_color)
+		for i in text_fields:
+			get_node(i).add_color_override(\"font_color\", dark_color)
 
 func _on_Mouse_Exit():
 	if use_animation:
-		effect.interpolate_property(mrg, 
-		\"custom_constants/margin_right\",
-		gaps, rect_size.x - gaps, 0.25, 
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT
-		)
+		effect.interpolate_property(
+			mrg, \"custom_constants/margin_right\",
+			gaps, rect_size.x - gaps, 0.25, 
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		effect.start()
 		label.add_color_override(\"font_color\", light_color)
+		for i in text_fields:
+			get_node(i).add_color_override(\"font_color\", light_color)
 "
 
 [node name="ColorRect" type="Button"]
@@ -60,8 +63,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 btn_text = "Hello"
-light_color = Color( 1, 1, 1, 1 )
-dark_color = Color( 0.117647, 0.117647, 0.117647, 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

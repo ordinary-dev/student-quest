@@ -107,6 +107,7 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
+frame = 2
 playing = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -144,28 +145,28 @@ custom_fonts/font = ExtResource( 9 )
 text = "Student quest"
 align = 1
 
-[node name="ColorRect5" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="BtnNew" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 104.0
 margin_right = 758.0
 margin_bottom = 270.0
 size_flags_vertical = 3
 btn_text = "Новая игра"
 
-[node name="ColorRect6" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="BtnLoad" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 274.0
 margin_right = 758.0
 margin_bottom = 440.0
 size_flags_vertical = 3
 btn_text = "Загрузить игру"
 
-[node name="ColorRect7" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="BtnSettings" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 444.0
 margin_right = 758.0
 margin_bottom = 610.0
 size_flags_vertical = 3
 btn_text = "Настройки"
 
-[node name="ColorRect8" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="BtnQuit" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 614.0
 margin_right = 758.0
 margin_bottom = 780.0
@@ -210,7 +211,7 @@ margin_left = 100.0
 margin_top = 150.0
 margin_right = 858.0
 margin_bottom = 930.0
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ColorRect5" to="." method="_new_game"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ColorRect6" to="." method="_load_game"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ColorRect7" to="." method="_toggle_settings"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ColorRect8" to="." method="_quit"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/BtnNew" to="." method="_new_game"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/BtnLoad" to="." method="_load_game"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/BtnSettings" to="." method="_toggle_settings"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/BtnQuit" to="." method="_quit"]

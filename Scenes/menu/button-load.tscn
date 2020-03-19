@@ -1,22 +1,60 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends HBoxContainer
+
+# Текстовые поля
+export (NodePath) var game_name
+export (NodePath) var game_stage
+
+# Путь кнопки удаления
+export (NodePath) var del_game
+# Путь кнопки загрузки
+export (NodePath) var load_game
+
+# Задать имя игры
+func set_game_name(text : String) -> void:
+	get_node(game_name).text = text
+
+
+# Задать текст
+func set_game_stage(text : String) -> void:
+	get_node(game_stage).text = text
+
+# Получить кнопку удаления
+func get_delete_btn() -> Node:
+	return get_node(del_game)
+
+# Получить кнопку загрузки
+func get_load_btn() -> Node:
+	return get_node(load_game)
+"
 
 [node name="0" type="HBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 0.00012207
+margin_right = -1116.0
 margin_bottom = -930.0
 rect_min_size = Vector2( 0, 150 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+game_name = NodePath("BtnLoad/ContLoad/TextGame")
+game_stage = NodePath("BtnLoad/ContLoad/TextStage")
+del_game = NodePath("BtnDel")
+load_game = NodePath("BtnLoad")
 
-[node name="BtnLoad" type="Button" parent="."]
-margin_right = 1616.0
+[node name="BtnLoad" parent="." instance=ExtResource( 3 )]
+margin_right = 550.0
 margin_bottom = 150.0
-size_flags_horizontal = 3
+rect_min_size = Vector2( 550, 150 )
+btn_text = ""
+text_fields = [ NodePath("ContLoad/TextGame"), NodePath("ContLoad/TextStage") ]
 
 [node name="ContLoad" type="VBoxContainer" parent="BtnLoad"]
 anchor_right = 1.0
@@ -26,7 +64,7 @@ __meta__ = {
 }
 
 [node name="TextGame" type="Label" parent="BtnLoad/ContLoad"]
-margin_right = 1616.0
+margin_right = 550.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_vertical = 3
@@ -37,7 +75,7 @@ valign = 1
 
 [node name="TextStage" type="Label" parent="BtnLoad/ContLoad"]
 margin_top = 84.0
-margin_right = 1616.0
+margin_right = 550.0
 margin_bottom = 150.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
@@ -48,9 +86,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnDel" type="Button" parent="."]
-margin_left = 1620.0
-margin_right = 1920.0
+[node name="BtnDel" parent="." instance=ExtResource( 3 )]
+margin_left = 554.0
+margin_right = 804.0
 margin_bottom = 150.0
-rect_min_size = Vector2( 300, 0 )
-text = "Удалить"
+rect_min_size = Vector2( 250, 150 )
+btn_text = "Удалить"
