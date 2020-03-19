@@ -8,12 +8,13 @@ script/source = "extends Node2D
 
 func get_dialog_number() -> int:
 	var glob = get_node(\"/root/global\")
-	if glob.loaded != -1:
-		if glob.fac == 0:
+	if glob.loaded != \"-1\":
+		var fac = get_node(\"/root/prop\").get_param(glob.loaded, \"facility\")
+		if fac == \"0\":
 			return 5
-		if glob.fac == 1:
+		if fac == \"1\":
 			return 6
-		if glob.fac == 2:
+		if fac == \"2\":
 			return 7
 	get_node(\"/root/show_nf\").show_notification(
 		\"Игра не загружена\"

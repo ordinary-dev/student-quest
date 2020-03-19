@@ -5,17 +5,23 @@ script/source = "extends Node2D
 
 # Подготовка первого дня
 
-onready var svd = get_node(\"/root/saved\")
 export (String, FILE, \"*.tscn\") var street
+export (String, FILE, \"*.tscn\") var saved_data
 
 
 func _ready() -> void:
+	var svd = get_node(\"/root/saved_street_data\")
+	
+	# Задать начальные значения для первого дня
 	svd.player_pos = Vector2(-365, 488)
 	svd.singer_dialog = 2
 	svd.singer_dialog_used = false
-	get_node(\"/root/scene_loader\").load_scene(street)
+	
+	# Загрузить сцену
+	get_node(\"/root/scene_loader\").load_scene(street, false)
 "
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 street = "res://Scenes/1.beggining/Day1.tscn"
+saved_data = "res://Scenes/containers/street_container.tscn"

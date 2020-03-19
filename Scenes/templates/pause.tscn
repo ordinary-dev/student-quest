@@ -64,7 +64,7 @@ func _quit_game():
 	sl.fade_in()
 	yield(get_tree().create_timer(sl.time), \"timeout\")
 	# Сохранить данные
-	get_node(\"/root/global\").write_file()
+	get_node(\"/root/global\").write_settings()
 	# Закрыть игру
 	get_tree().quit()
 "

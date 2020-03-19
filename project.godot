@@ -31,7 +31,9 @@ pause_init="*res://Scripts/pause_init.gd"
 scene_loader="*res://Scenes/global/scene_load.tscn"
 ui="*res://Scenes/global/ui.tscn"
 show_nf="*res://Scripts/show_nf.gd"
-saved="*res://Scripts/Saved.gd"
+prop="*res://Scenes/global/game_status.tscn"
+events="*res://Scripts/events.gd"
+saved_street_data="*res://Scenes/containers/street_container.tscn"
 
 [display]
 
@@ -107,3 +109,4 @@ threads/thread_model=2
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/msaa=2
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false

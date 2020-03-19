@@ -16,14 +16,12 @@ script/source = "extends Control
 # Путь к сцене новой игры
 export (String, FILE, \"*.tscn\") var new_game
 
-# Кнопка загрузки
-export (NodePath) var load_btn
-
 export (NodePath) var settings_scene
 export (NodePath) var load_scene
 export (NodePath) var confirm_scene
 
 export(String, FILE, \"*.ogg\") var music
+
 
 # Начать новую игру
 func _new_game():
@@ -63,9 +61,6 @@ func _ready() -> void:
 	get_node(\"/root/pause_init\").disable()
 	# Воспроизвести музыку
 	get_node(\"/root/ost\").play_sound(music)
-	# Отключить кнопку загрузки если нет сохраненных игр
-	if get_node(\"/root/global\").saved_games.size() == 0:
-		get_node(load_btn).disabled = true
 	# Отключить все доп. сцены
 	get_node(settings_scene).visible = false
 	get_node(load_scene).visible = false
@@ -81,7 +76,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 new_game = "res://Scenes/menu/new.tscn"
-load_btn = NodePath("HBoxContainer/MarginContainer/VBoxContainer/ColorRect6")
 settings_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Settings")
 load_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Load")
 confirm_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Confirm")
@@ -113,7 +107,6 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 1
 playing = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]

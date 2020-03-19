@@ -27,8 +27,10 @@ func math():
 	get_node(\"/root/scene_loader\").load_scene(math_scene)
 
 func _ready():
-	# Обновить информацию об этапе
-	get_node(\"/root/global\").upd_stage(1)
+	# Обновить этап
+	get_node(\"/root/prop\").save_param(
+		get_node(\"/root/global\").loaded, \"stage\", \"1\"
+	)
 	# Начать играть песню, если играет другая
 	get_node(\"/root/ost\").play_sound(song)
 "
@@ -43,7 +45,7 @@ script/source = "extends Node2D
 export (NodePath) var player
 # Триггер диалога Мистера Дудца
 export (NodePath) var singer
-onready var svd = get_node(\"/root/saved\")
+onready var svd = get_node(\"/root/saved_street_data\")
 
 
 # Временно сохранить текущее состояние

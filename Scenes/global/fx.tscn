@@ -20,6 +20,16 @@ script/source = "extends AudioStreamPlayer
 var num = 0
 export (AudioStream) var btn_click_sound
 export (AudioStream) var dialog_sound
+var volume : float setget set_volume, get_volume
+
+
+func set_volume(value : float) -> void:
+	volume = value
+	AudioServer.set_bus_volume_db(2, volume)
+
+
+func get_volume() -> float:
+	return volume
 
 
 func destroy(name : int) -> void:
@@ -48,7 +58,8 @@ func play_sound(obj : AudioStream) -> void:
 		player.name = str(num)
 		player.stream = obj
 		player.bus = \"FX\"
-		player.connect(\"finished\", self, \"destroy\", [num])
+		var state = player.connect(\"finished\", self, \"destroy\", [num])
+		assert(state == OK)
 		add_child(player)
 		get_node(str(num)).play()
 		num += 1

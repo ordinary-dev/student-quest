@@ -11,84 +11,81 @@ export (PackedScene) var loadbtn
 onready var box : = $ScrollContainer/VBoxContainer
 onready var glob : = $\"/root/global\"
 
-# Возвращает словарь вида
-# { 
-#     \"i\" : {
-#       \"name\"  : \"event name\", 
-#       \"scene\" : \"path\"
-#     }
-# }
-
-func get_event_names(list : Array) -> Dictionary:
-	var dict : = {}
-	var fl : = File.new()
-	for i in list:
-		fl.open(\"res://Events/\" + str(i) + \".tres\", File.READ)
-		dict[str(i)] = parse_json(fl.get_line())
-		fl.close()
-	return dict
 
 # При нажатии на удаление сохраненной игры
-func on_Del_Pressed(num) -> void:
+func on_Del_Pressed(game_id : String) -> void:
 	get_node(\"/root/fx\").btn_click()
+	
 	# Удалить контейнер с кнопками
-	var nd : = get_node(\"ScrollContainer/VBoxContainer/\" + str(num))
+	var nd : = get_node(\"ScrollContainer/VBoxContainer/\" + game_id + \"_btn\")
 	nd.get_parent().remove_child(nd)
-	# Удалить номер игры из массива
-	var pos = glob.saved_games.bsearch(num)
-	glob.saved_games.remove(pos)
-	# Удалить сам файл
-	var dir = Directory.new()
-	dir.remove(\"user://save.\" + str(num) + \".txt\")
-	# По возможности обновить кнопку
-	var path : = \"/root/Control/HBoxContainer/MarginContainer/VBoxContainer/ButtonLoad\"
-	if has_node(path):
-		if glob.saved_games.size() == 0:
-			get_node(path).disabled = true
+	
+	# Удалить папку
+	var dir : = Directory.new()
+	var path_to_dir : = \"user://\" + game_id
+	var state = dir.open(path_to_dir)
+	assert(state == OK)
+	
+	# Пройтись по всем файлам
+	state = dir.list_dir_begin(true)
+	assert(state == OK)
+	var cur : = dir.get_next()
+	while cur != \"\":
+		state = dir.remove(path_to_dir + \"/\" + cur)
+		assert(state == OK)
+		cur = dir.get_next()
+	dir.list_dir_end()
+	
+	# Удалить папку
+	state = dir.remove(path_to_dir)
+	assert(state == OK)
 
-func btn_load_scene(name : String, num : int) -> void:
+
+func btn_load_scene(name : String, game_id : String) -> void:
 	get_node(\"/root/fx\").btn_click()
-	glob.loaded = num
+	glob.loaded = game_id
 	get_node(\"/root/scene_loader\").load_scene(\"res://Scenes/\" + name)
 
+
 func _ready() -> void:
-	if glob.saved_games.size() > 0:
-		var list = []
-		# Для всех номеров сохраненных игр
-		for i in glob.saved_games:
+	# Открыть папку с сохранениями
+	var dir = Directory.new()
+	dir.open(\"user://\")
+	dir.list_dir_begin(true, true)
+	var dir_name : String = dir.get_next()
+	# Для всех id сохраненных игр
+	while dir_name != \"\":
+		if dir_name != \"config.json\":
 			# Загрузить шаблон кнопки
 			var tmp = loadbtn.instance()
-			tmp.name = str(i)
+			tmp.name = dir_name + \"_btn\"
 			box.add_child(tmp)
+			
 			# Изменить название сохранения
-			var loadpath : = \"ScrollContainer/VBoxContainer/\" + str(i) + \"/BtnLoad/ContLoad/TextGame\"
-			get_node(loadpath).text = \"#\" + str(i)
+			var loadpath : = \"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn/BtnLoad/ContLoad/TextGame\"
+			get_node(loadpath).text = \"#\" + dir_name
+			
 			# Привязать кнопку удаления
-			var delpath : = \"ScrollContainer/VBoxContainer/\" + str(i) + \"/BtnDel\"
-			get_node(delpath).connect(\"pressed\", self, \"on_Del_Pressed\", [i])
-	#		# Добавить stage из файла в список, 
-	#		# чтобы потом найти описание этапа
-			var fl : = File.new()
-			fl.open(\"user://save.\" + str(i) + \".txt\", File.READ)
-			var stage : = 0
-			var content = parse_json(fl.get_line())
-			if content != null:
-				if content.has(\"stage\"):
-					stage = content[\"stage\"]
-			var stagepath : = \"ScrollContainer/VBoxContainer/\" + str(i) + \"/BtnLoad/ContLoad/TextStage\"
-			get_node(stagepath).text = str(stage)
-			if !list.has(int(stage)):
-				list.push_back(int(stage))
-			fl.close()
-		# Присвоить этапы
-		var dat = get_event_names(list)
-		for i in glob.saved_games:
-			var stagepath : = \"ScrollContainer/VBoxContainer/\" + str(i) + \"/BtnLoad/ContLoad/TextStage\"
-			var tmp = dat[get_node(stagepath).text]
-			get_node(stagepath).text = tmp[\"name\"]
-			var btnpath : = \"ScrollContainer/VBoxContainer/\" + str(i) + \"/BtnLoad\"
-			get_node(btnpath).connect(\"pressed\", self, \"btn_load_scene\", [tmp[\"scene\"], i])
-
+			var delpath : = \"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn/BtnDel\"
+			var state = get_node(delpath).connect(\"pressed\", self, \"on_Del_Pressed\", [dir_name])
+			assert(state == OK)
+			
+			# Прочитать stage из папки
+			var stage = get_node(\"/root/prop\").get_param(dir_name, \"stage\")
+			var properties : Dictionary = get_node(\"/root/events\").get_event_info(stage)
+			var stagepath : = \"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn/BtnLoad/ContLoad/TextStage\"
+			get_node(stagepath).text = properties[\"name\"]
+			
+			
+			# Привязать кнопку к загрузке игры
+			var btnpath = \"ScrollContainer/VBoxContainer/\" + dir_name + \"_btn/BtnLoad\"
+			state = get_node(btnpath).connect(
+				\"pressed\", self, 
+				\"btn_load_scene\", 
+				[properties[\"scene\"], dir_name])
+			assert(state == OK)
+		dir_name = dir.get_next()
+	dir.list_dir_end()
 "
 
 [node name="Control" type="Control"]

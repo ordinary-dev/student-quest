@@ -1,106 +1,90 @@
 extends Node
 
+# Работает с настройками
+# Пытается загрузить сохраненные значения при старте
+# Также может сохранить настройки
+
+# Путь к файлу с настройками
+const file_path : = "user://config.json"
+
+# Поля для хранения и считывания данных
+# (чтобы в будущем не менять 2 поля сразу)
+const ost_field : = "ost_vol"
+const fx_field : = "fx_vol"
+const vsync_field : = "vsync"
+const fscreen_field : = "fullscreen"
+
 # Объекты для проигрывания музыки
 onready var ost : = $"/root/ost"
 onready var fx : = $"/root/fx"
 
-# Путь к файлу с настройками
-var file_name : = "user://save_game.dat"
-
-# Поля для хранения и считывания данных
-# (чтобы в будущем не менять 2 поля сразу)
-var ost_field : = "ost_vol"
-var fx_field : = "fx_vol"
-var sg_field : = "saved_games"
-var vsync_field : = "vsync"
-var fscreen_field : = "fullscreen"
-
-# Все файлы с сохранениями игр названы user://save.<номер>.txt
-var saved_games : = []
-
-# Настройки игры
-var vsync_enabled : bool
-var fullscreen_enabled : bool
-
 # Для того, чтобы игра знала, в какой файл сохранять данные
-var loaded : = -1
-var fac : int = 0
+var loaded : = "-1"
 
-# Обновить информацию об этапе для файла сохранения игры
-func upd_stage(stage : int) -> void:
-	if loaded == -1:
-		get_node("/root/show_nf").show_notification("Не могу сохранить, игра не загружена")
-	else:
-		var fl : = File.new()
-		var state : = fl.open("user://save." + str(loaded) + ".txt", File.WRITE)
-		assert(state == OK)
-		fl.store_line(to_json({
-			"stage":stage,
-			"fac":fac
-			}))
-		fl.close()
-		get_node("/root/show_nf").show_notification("Игра сохранена")
 
 # Создать словарь с переменными для сохранения
 func gen_dict() -> Dictionary:
 	var save_dict = {
-		ost_field:AudioServer.get_bus_volume_db(1),
-		fx_field:AudioServer.get_bus_volume_db(2),
-		sg_field:saved_games,
-		fscreen_field:str(fullscreen_enabled),
-		vsync_field:str(vsync_enabled)
+		ost_field : ost.volume,
+		fx_field : fx.volume,
+		fscreen_field : str(OS.window_fullscreen),
+		vsync_field : str(OS.vsync_enabled)
 	}
 	return save_dict
 
+
 # Записать данные в файл
-func write_file(path : String = file_name):
+func write_settings():
 	var fl = File.new()
-	fl.open(path, File.WRITE)
+	var state = fl.open(file_path, File.WRITE)
+	assert(state == OK)
 	# Сохранить словарь как JSON
 	fl.store_line(to_json(gen_dict()))
 	fl.close()
 
+
+# Если есть ключ, то записать значение в переменную
 func restore(content : Dictionary) -> void:
-	# Если есть ключ, то записать значение в переменную
+	# Аудио
 	if content.has(ost_field):
-		AudioServer.set_bus_volume_db(1, content[ost_field])
+		ost.volume = content[ost_field]
 	if content.has(fx_field):
-		AudioServer.set_bus_volume_db(2, content[fx_field])
-	if content.has(sg_field):
-		saved_games = content[sg_field]
+		fx.volume = content[fx_field]
+	
+	# Графика
 	if content.has(fscreen_field):
-		fullscreen_enabled = str_to_bool(content[fscreen_field])
-		#OS.window_fullscreen = fullscreen_enabled
+		OS.window_fullscreen = str_to_bool(content[fscreen_field])
 	if content.has(vsync_field):
-		vsync_enabled = str_to_bool(content[vsync_field])
-		OS.vsync_enabled = vsync_enabled
+		OS.vsync_enabled = str_to_bool(content[vsync_field])
+
 
 # Прочитать файл с настройками
-func read_file(path : String = file_name) -> void:
+func read_settings() -> void:
 	var fl = File.new()
 	# Если файл существует
-	if fl.file_exists(path):
+	if fl.file_exists(file_path):
 		# Считать данные
-		fl.open(path, File.READ)
+		var state = fl.open(file_path, File.READ)
+		assert(state == OK)
 		var content = parse_json(fl.get_line())
 		fl.close()
 		# Восстановить данные
 		restore(content)
 	else:
 		# Значения по-умолчанию
-		AudioServer.set_bus_volume_db(1, 0)
-		AudioServer.set_bus_volume_db(2, 0)
-		vsync_enabled = true
-		fullscreen_enabled = false
-		OS.vsync_enabled = vsync_enabled
-		OS.window_fullscreen = fullscreen_enabled
+		ost.volume = 0
+		fx.volume = 0
+		OS.vsync_enabled = true
+		OS.window_fullscreen = false
+
 
 func str_to_bool(val : String) -> bool:
 	if val == "True" || val == "true":
 		return true
 	return false
 
+
 func _ready():
 	# Загрузить настройки
-	read_file()
+	read_settings()
 

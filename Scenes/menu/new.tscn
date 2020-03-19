@@ -16,36 +16,46 @@ onready var glob : = $\"/root/global\"
 export (String, FILE, \"*.tscn\") var next_scene
 
 
-func save_file() -> int:
-	# Создать новый файл save.n.txt
-	var num : int
-	if glob.saved_games.size() != 0:
-		num = glob.saved_games.back() + 1
-	else:
-		num = 1
-	glob.loaded = num
-	get_node(\"/root/global\").upd_stage(1)
-	# Добавить номер в массив
-	glob.saved_games.push_back(num)
-	# Сохранить изменения
-	glob.write_file()
-	return num
+func random_dir_exists(path : String) -> bool:
+	var dir = Directory.new()
+	return dir.dir_exists(\"user://\" + path)
+
+
+func get_random_name() -> String:
+	var res : String = \"\"
+	var alp = \"123456789abcdefghkmnpqrst\"
+	var indmax : = len(alp)
+	randomize()
+	for _i in range(8):
+		res += alp[randi() % indmax]
+	return res
+
+
+func save_file() -> String:
+	# Получить уникальный game_id
+	var game_id : String = get_random_name()
+	while random_dir_exists(game_id):
+		game_id = get_random_name()
+	glob.loaded = game_id
+	# Сохранить статус #0
+	get_node(\"/root/prop\").save_param(game_id, \"stage\", \"0\")
+	return game_id
+
+
+func append_text(game_id : String) -> void:
+	# Дать игроку знать, что он может играть
+	# Добавить [ok]
+	get_node(label).bbcode_text += (game_id + \"             [[color=green]OK[/color]]\")
+	# Добавить текст об этапе
+	get_node(label).bbcode_text += \"\\n* Этап #1: Воспоминания и иллюзии   [[color=yellow]Waiting[/color]]\"
+
 
 func _ready() -> void:
 	# Отключить музыку
 	get_node(\"/root/ost\").stop()
 	# Создать и сохранить файл
-	# num - номер файла
-	var num = save_file()
-	# Дать игроку знать, что он может играть
-	# Выровнять текст
-	if (num < 10):
-		get_node(label).bbcode_text += \" \"
-	# Добавить [ok]
-	get_node(label).bbcode_text += (str(num) 
-	+ \"                   [[color=green]OK[/color]]\")
-	# Добавить текст об этапе
-	get_node(label).bbcode_text += \"\\n* Этап #1: Воспоминания и иллюзии   [[color=yellow]Waiting[/color]]\"
+	var game_id : = save_file()
+	append_text(game_id)
 	# Активировать кнопки
 	get_node(btn_start).disabled = false
 

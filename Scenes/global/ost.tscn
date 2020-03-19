@@ -11,6 +11,17 @@ script/source = "extends AudioStreamPlayer
 
 onready var effect = $Tween
 onready var path : = \"no_song\"
+var volume : float setget set_volume, get_volume
+
+
+func set_volume(value : float) -> void:
+	volume = value
+	AudioServer.set_bus_volume_db(1, volume)
+
+
+func get_volume() -> float:
+	return volume
+
 
 func play_sound(song_path : String) -> void:
 	if (path != song_path):

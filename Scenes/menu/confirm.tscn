@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
 
@@ -24,7 +24,7 @@ func _quit() -> void:
 	sl.fade_in()
 	yield(get_tree().create_timer(sl.time), \"timeout\")
 	# Сохранить данные
-	get_node(\"/root/global\").write_file()
+	get_node(\"/root/global\").write_settings()
 	# Закрыть игру
 	get_tree().quit()
 "
@@ -33,7 +33,7 @@ func _quit() -> void:
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -960.0
-script = SubResource( 2 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

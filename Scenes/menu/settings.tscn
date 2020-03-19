@@ -30,22 +30,24 @@ func update_text(val : float, obj : String) -> void:
 # Изменение настроек слайдера музыки
 func _on_HSlider_value_changed(value : float) -> void:
 	fx.btn_click()
+	
+	# Заглушить источник
 	if value == get_node(slider_ost).min_value:
-		AudioServer.set_bus_mute(1, true)
+		ost.volume = -80
 	else:
-		AudioServer.set_bus_mute(1, false)
-	AudioServer.set_bus_volume_db(1, value)
+		ost.volume = value
 	update_text(value, ost_text)
 
 
 # Изменение настроек слайдера эффектов
 func _on_HSliderFX_value_changed(value : float) -> void:
 	fx.btn_click()
+	
+	# Заглушить источник
 	if value == get_node(slider_fx).min_value:
-		AudioServer.set_bus_mute(2, true)
+		fx.volume = -80
 	else:
-		AudioServer.set_bus_mute(2, false)
-	AudioServer.set_bus_volume_db(2, value)
+		fx.volume = value
 	update_text(value, fx_text)
 
 
@@ -68,8 +70,8 @@ func _on_TabContainer_tab_selected(_tab) -> void:
 
 # Синхронизировать интерфейс
 func update_settings() -> void:
-	get_node(slider_ost).value = AudioServer.get_bus_volume_db(1)
-	get_node(slider_fx).value = AudioServer.get_bus_volume_db(2)
+	get_node(slider_ost).value = ost.volume
+	get_node(slider_fx).value = fx.volume
 
 
 func _ready() -> void:
@@ -79,13 +81,9 @@ func _ready() -> void:
 [sub_resource type="GDScript" id=2]
 script/source = "extends MarginContainer
 
-
-\"\"\"
-Интерфейс настроек
-Переносит значения настроек в интерфейс
-Содержит функции для обработки нажатия кнопок
-\"\"\"
-
+# Интерфейс настроек
+# Переносит значения настроек в интерфейс
+# Содержит функции для обработки нажатия кнопок
 
 export(NodePath) var vsync_toggle
 export(NodePath) var fullscreen_toggle
@@ -97,19 +95,17 @@ func toggle_fullscreen(state : bool) -> void:
 	# На linux эта команда иногда крашит игру
 	if OS.get_name() == \"Windows\":
 		OS.window_fullscreen = state
-	glob.fullscreen_enabled = state
 
 
 # Вертикальная синхронизация
 func toggle_vsync(state : bool) -> void:
 	OS.vsync_enabled = state
-	glob.vsync_enabled = state
 
 
 # Синхронизировать интерфейс при загрузке
 func _ready() -> void:
-	get_node(vsync_toggle).pressed = glob.vsync_enabled
-	get_node(fullscreen_toggle).pressed = glob.fullscreen_enabled
+	get_node(vsync_toggle).pressed = OS.vsync_enabled
+	get_node(fullscreen_toggle).pressed = OS.window_fullscreen
 "
 
 [node name="Settings" type="Control"]
@@ -143,7 +139,6 @@ size_flags_stretch_ratio = 7.0
 tab_align = 0
 
 [node name="Аудио" type="MarginContainer" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -255,6 +250,7 @@ custom_fonts/font = ExtResource( 2 )
 text = "Громкость: 100%"
 
 [node name="Инфо" type="MarginContainer" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
