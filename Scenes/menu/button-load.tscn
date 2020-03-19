@@ -16,6 +16,7 @@ export (NodePath) var del_game
 # Путь кнопки загрузки
 export (NodePath) var load_game
 
+
 # Задать имя игры
 func set_game_name(text : String) -> void:
 	get_node(game_name).text = text
@@ -25,9 +26,11 @@ func set_game_name(text : String) -> void:
 func set_game_stage(text : String) -> void:
 	get_node(game_stage).text = text
 
+
 # Получить кнопку удаления
 func get_delete_btn() -> Node:
 	return get_node(del_game)
+
 
 # Получить кнопку загрузки
 func get_load_btn() -> Node:

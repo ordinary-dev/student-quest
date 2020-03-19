@@ -4,18 +4,30 @@
 resource_name = "Main"
 script/source = "extends Control
 
-
-# Эта сцена является первой просто для удобства.
-# Она может вызывать некоторые функции и загружать объекты
-# перед тем, как будет загружена главная сцена.
-# Сейчас эта сцена загружает меню
+# Загрузка на черном фоне
 
 
 # Меню
 export (String, FILE, \"*.tscn\") var scene_path
+const time : float = 0.4
+
+
+# Анимация текста
+func text_anim():
+	while true:
+		get_node(\"Label\").text = \"Загрузка\"
+		yield(get_tree().create_timer(time), \"timeout\")
+		for _i in range(3):
+			get_node(\"Label\").text += \".\"
+			yield(get_tree().create_timer(time), \"timeout\")
 
 
 func _ready():
+	# Ожидание для пафоса
+	# Можно убрать потом, 
+	# если действительно нужно будет время на загрузку
+	call_deferred(\"text_anim\")
+	yield(get_tree().create_timer(3*time), \"timeout\")
 	# Загрузить сцену меню
 	get_node(\"/root/scene_loader\").load_scene(scene_path)
 "
@@ -32,8 +44,8 @@ scene_path = "res://Scenes/menu/menu.tscn"
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Загрузка..."
-align = 1
+margin_left = 780.0
+text = "Загрузка"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
