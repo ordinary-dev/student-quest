@@ -49,21 +49,21 @@ scale = Vector2( 2, 2 )
 collision_layer = 1024
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1144, 1088 )
+position = Vector2( 896, 1024 )
 scale = Vector2( 2, 2 )
 label = "2 этаж"
 object_name = NodePath("..")
 function_name = "floor_2"
 
 [node name="Area2D2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 824, 3456 )
+position = Vector2( 576, 3392 )
 scale = Vector2( 2, 2 )
 label = "1 этаж"
 object_name = NodePath("..")
 function_name = "floor_1"
 
 [node name="Area2D3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1144, -80 )
+position = Vector2( 896, -128 )
 scale = Vector2( 2, 2 )
 label = "Улица"
 object_name = NodePath("..")
