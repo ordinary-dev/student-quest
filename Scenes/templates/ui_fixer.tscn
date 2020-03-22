@@ -5,8 +5,7 @@ script/source = "extends RemoteTransform2D
 
 
 func _ready():
-	if has_node(\"/root/ui\"):
-		remote_path = \"/root/ui\"
+	remote_path = \"/root/ui\"
 "
 
 [node name="RemoteTransform2D" type="RemoteTransform2D"]

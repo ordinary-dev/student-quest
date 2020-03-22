@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/light.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/templates/ui_fixer.tscn" type="PackedScene" id=4]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 export (String, FILE, \"*.tscn\") var next_scene
@@ -20,12 +20,12 @@ func _ready():
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 429.962, 598.116, 1389.56, 598.116, 1386.77, 826.857, 432.752, 826.857 )
 
-[sub_resource type="OccluderPolygon2D" id=1]
+[sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( 847.085, 503.513, 846.861, 362.097, 870.569, 362.239, 870.723, 268.075, 941.07, 267.956, 941.11, 362.203, 964.813, 362.189, 964.72, 503.534, 941.195, 503.505, 941.076, 574.22, 870.706, 574.18, 870.501, 503.577 )
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 3 )
-next_scene = "res://Scenes/templates/Math.tscn"
+script = SubResource( 1 )
+next_scene = "res://Scenes/1.beggining/Math.tscn"
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 occluder = SubResource( 2 )
@@ -51,7 +51,7 @@ energy = 0.5
 shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 1 )
+occluder = SubResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 modulate = Color( 0.843137, 0.843137, 0.843137, 1 )

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+export (String, FILE, \"*.tscn\") var corridor
+
+func load_next():
+	get_node(\"/root/scene_loader\").load_scene(corridor)
+
+func _ready():
+	get_node(\"/root/d_obj\").show_dialog(11, \"/root/Control\", \"load_next\")
+	
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+corridor = "res://Scenes/1.beggining/Secret.tscn"

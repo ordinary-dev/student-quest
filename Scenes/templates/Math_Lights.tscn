@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/light.png" type="Texture" id=1]
+
+[node name="Lights" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 664, 392 )
+texture = ExtResource( 1 )
+texture_scale = 40.5
+energy = 0.4
+shadow_enabled = true
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( -1024, 384 )
+texture = ExtResource( 1 )
+texture_scale = 40.5
+energy = 0.4
+shadow_enabled = true
+
+[node name="Light2D3" type="Light2D" parent="."]
+position = Vector2( 770.511, 21293 )
+texture = ExtResource( 1 )
+texture_scale = 40.5
+energy = 0.4
+shadow_enabled = true
