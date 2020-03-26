@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Position2D
+
+###########
+# Waypoint
+# nodes - массив точек
+###########
+
+export (Array, NodePath) var nodes
+
+
+# Возвращает случайную точку кроме текущей
+func get_random_point_ex(ex : String) -> String:
+	if nodes.size() < 2:
+		return \"\"
+	var res = nodes[randi() % nodes.size()]
+	while ex == res:
+		res = nodes[randi() % nodes.size()]
+	return res
+"
+
+[node name="Position2D" type="Position2D"]
+script = SubResource( 1 )

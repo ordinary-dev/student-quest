@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/circle.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+###########
+# Персонаж
+###########
+
+export (NodePath) var prev_target_path
+export (NodePath) var target_path
+export (float) var speed = 3.0
+var target
+
+
+func vector_diff(p1 : Vector2, p2 : Vector2, e : float) -> bool:
+	return (abs(p1.x - p2.x) < e) and (abs(p1.y - p2.y) < e)
+
+
+func _process(_delta):
+	if !vector_diff(position, target.position, speed*2):
+		# X
+		if position.x < target.position.x:
+			position.x += speed
+		elif position.x > target.position.x:
+			position.x -= speed
+		# Y
+		if position.y < target.position.y:
+			position.y += speed
+		elif position.y > target.position.y:
+			position.y -= speed
+	else:
+		# Персонаж находится вблизи цели, 
+		# возможно с небольним отклонением
+		position = target.position
+		var tmp = target_path
+		target_path = target.get_random_point_ex(prev_target_path)
+		prev_target_path = tmp
+		target = get_node(target_path)
+
+
+func _ready():
+	target = get_node(target_path)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

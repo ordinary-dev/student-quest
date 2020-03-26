@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Tilemaps/street.tres" type="TileSet" id=1]
 [ext_resource path="res://Sprites/Store.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Sprites/fountain.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://Sprites/Building_in_garden.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/templates/Water.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/templates/waypoint.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/templates/Person.tscn" type="PackedScene" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends AnimatedSprite
@@ -362,3 +364,157 @@ dim = Vector2( 4, 15 )
 [node name="Water2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 912, 1584 )
 dim = Vector2( 14, 4 )
+
+[node name="Waypoints" type="Node2D" parent="."]
+position = Vector2( 160, -24 )
+
+[node name="Node2D" parent="Waypoints" instance=ExtResource( 11 )]
+position = Vector2( 1888, 1048 )
+prev_target_path = NodePath("../Position2D")
+target_path = NodePath("../Position2D2")
+
+[node name="Node2D2" parent="Waypoints" instance=ExtResource( 11 )]
+position = Vector2( 2336, 1048 )
+prev_target_path = NodePath("../Position2D3")
+target_path = NodePath("../Position2D4")
+
+[node name="Node2D3" parent="Waypoints" instance=ExtResource( 11 )]
+position = Vector2( 2336, 4888 )
+prev_target_path = NodePath("../Position2D11")
+target_path = NodePath("../Position2D9")
+
+[node name="Node2D4" parent="Waypoints" instance=ExtResource( 11 )]
+position = Vector2( 1120, 5208 )
+prev_target_path = NodePath("../Position2D8")
+target_path = NodePath("../Position2D20")
+
+[node name="Node2D6" parent="Waypoints" instance=ExtResource( 11 )]
+position = Vector2( 2976, 5528 )
+prev_target_path = NodePath("../Position2D17")
+target_path = NodePath("../Position2D18")
+
+[node name="Node2D7" parent="Waypoints" instance=ExtResource( 11 )]
+position = Vector2( 4960, 5528 )
+prev_target_path = NodePath("../Position2D16")
+target_path = NodePath("../Position2D17")
+
+[node name="Node2D5" parent="Waypoints" instance=ExtResource( 11 )]
+position = Vector2( 2336, 8504 )
+prev_target_path = NodePath("../Position2D24")
+target_path = NodePath("../Position2D26")
+
+[node name="Position2D" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 1824, 1112 )
+nodes = [ NodePath("../Position2D2"), NodePath("../Position2D8") ]
+
+[node name="Position2D8" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 1824, 5208 )
+nodes = [ NodePath("../Position2D9"), NodePath("../Position2D"), NodePath("../Position2D19"), NodePath("../Position2D20") ]
+
+[node name="Position2D20" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 416, 5208 )
+nodes = [ NodePath("../Position2D8"), NodePath("../Position2D21") ]
+
+[node name="Position2D21" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 352, 5368 )
+nodes = [ NodePath("../Position2D20"), NodePath("../Position2D22") ]
+
+[node name="Position2D22" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 832, 5528 )
+nodes = [ NodePath("../Position2D19"), NodePath("../Position2D21") ]
+
+[node name="Position2D9" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2336, 5144 )
+nodes = [ NodePath("../Position2D8"), NodePath("../Position2D10"), NodePath("../Position2D18"), NodePath("../Position2D15") ]
+
+[node name="Position2D10" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 3872, 3608 )
+nodes = [ NodePath("../Position2D9"), NodePath("../Position2D11") ]
+
+[node name="Position2D11" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2336, 2072 )
+nodes = [ NodePath("../Position2D4"), NodePath("../Position2D7"), NodePath("../Position2D10"), NodePath("../Position2D9") ]
+
+[node name="Position2D2" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2016, 920 )
+nodes = [ NodePath("../Position2D"), NodePath("../Position2D3") ]
+
+[node name="Position2D3" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2336, 920 )
+nodes = [ NodePath("../Position2D2"), NodePath("../Position2D4") ]
+
+[node name="Position2D4" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2336, 1752 )
+nodes = [ NodePath("../Position2D3"), NodePath("../Position2D5"), NodePath("../Position2D11") ]
+
+[node name="Position2D5" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 3456, 1752 )
+nodes = [ NodePath("../Position2D4"), NodePath("../Position2D6") ]
+
+[node name="Position2D6" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 4064, 1752 )
+nodes = [ NodePath("../Position2D5"), NodePath("../Position2D7"), NodePath("../Position2D13") ]
+
+[node name="Position2D13" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 5728, 1752 )
+nodes = [ NodePath("../Position2D6"), NodePath("../Position2D12") ]
+
+[node name="Position2D7" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 4064, 2072 )
+nodes = [ NodePath("../Position2D6"), NodePath("../Position2D11"), NodePath("../Position2D12"), NodePath("../Position2D15") ]
+
+[node name="Position2D12" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 5728, 2072 )
+nodes = [ NodePath("../Position2D7"), NodePath("../Position2D13"), NodePath("../Position2D13") ]
+
+[node name="Position2D14" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 5728, 5208 )
+nodes = [ NodePath("../Position2D15"), NodePath("../Position2D12"), NodePath("../Position2D16") ]
+
+[node name="Position2D16" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 5528, 5528 )
+nodes = [ NodePath("../Position2D14"), NodePath("../Position2D17") ]
+
+[node name="Position2D17" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 4064, 5528 )
+nodes = [ NodePath("../Position2D16"), NodePath("../Position2D15"), NodePath("../Position2D18") ]
+
+[node name="Position2D18" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2336, 5528 )
+nodes = [ NodePath("../Position2D17"), NodePath("../Position2D9"), NodePath("../Position2D19"), NodePath("../Position2D24") ]
+
+[node name="Position2D19" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 1888, 5528 )
+nodes = [ NodePath("../Position2D8"), NodePath("../Position2D18"), NodePath("../Position2D22"), NodePath("../Position2D23") ]
+
+[node name="Position2D23" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 1888, 8064 )
+nodes = [ NodePath("../Position2D19"), NodePath("../Position2D24"), NodePath("../Position2D25") ]
+
+[node name="Position2D25" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 1896, 11032 )
+nodes = [ NodePath("../Position2D23"), NodePath("../Position2D26") ]
+
+[node name="Position2D26" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2336, 11488 )
+nodes = [ NodePath("../Position2D25"), NodePath("../Position2D24"), NodePath("../Position2D27"), NodePath("../Position2D29") ]
+
+[node name="Position2D27" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 4752, 11480 )
+nodes = [ NodePath("../Position2D26"), NodePath("../Position2D28") ]
+
+[node name="Position2D28" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 4744, 12192 )
+nodes = [ NodePath("../Position2D27"), NodePath("../Position2D29") ]
+
+[node name="Position2D29" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2960, 12176 )
+nodes = [ NodePath("../Position2D28"), NodePath("../Position2D26") ]
+
+[node name="Position2D24" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 2336, 8064 )
+nodes = [ NodePath("../Position2D18"), NodePath("../Position2D23"), NodePath("../Position2D26") ]
+
+[node name="Position2D15" parent="Waypoints" instance=ExtResource( 10 )]
+position = Vector2( 4064, 5216 )
+nodes = [ NodePath("../Position2D14"), NodePath("../Position2D7"), NodePath("../Position2D9"), NodePath("../Position2D17") ]
