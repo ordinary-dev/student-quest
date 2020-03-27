@@ -32,20 +32,16 @@ get_node("/root/fx").btn_click()
 
 ## Изменение громкости
 
-Изменять громкость необходимо именно у шин. Код для присвоения:
-
+Для изменения громкости у объектов ost и fx есть параметр `volume`. Это простой способ управлять громкостью соответствующих шин.
 ```GDScript
 # Установить громкость ost на value
-AudioServer.set_bus_volume_db(2, value)
+get_node("/root/ost").volume = value
 # Для fx
-AudioServer.set_bus_volume_db(1, value)
+get_node("/root/fx").fx = value
 ```
 
-## Получение громкости
-
+## Затухание
+OST поддерживает плавное снижение громкости, отключение проигрываемой музыки и затем восстановление прежнего уровня громкости.
 ```GDScript
-# Сохранить в переменную громкость ost
-var ost_volume = AudioServer.get_bus_volume_db(2)
-# Для fx
-var fx_volume = AudioServer.get_bus_volume_db(1)
+get_node("/root/ost").fade_out()
 ```
