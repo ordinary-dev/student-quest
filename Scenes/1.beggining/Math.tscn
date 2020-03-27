@@ -6,7 +6,7 @@
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=5]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 # Выключить свет
@@ -30,11 +30,11 @@ func _ready():
 	get_node(tw).start()
 "
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 128, 16 )
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 2 )
+script = SubResource( 1 )
 cm = NodePath("ColorRect")
 tw = NodePath("Tween")
 hidden_room = "res://Scenes/1.beggining/Stairs.tscn"
@@ -80,11 +80,12 @@ position = Vector2( 543.53, 236.144 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 0.470337, 3.8562 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Body" parent="." instance=ExtResource( 5 )]
 position = Vector2( 344, 1560 )
 collision_layer = 1025
+default_state = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -808.0

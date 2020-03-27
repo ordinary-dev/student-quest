@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+# Типы положений
+enum a {DOWN, UP, LEFT, RIGHT}
 
 # Настройки передвижения
 # Скорость
@@ -9,6 +11,7 @@ export (int) var change = 10
 # Показывать рюкзак
 export (bool) var backpack = false
 export (bool) var male = true
+export (a) var default_state = a.UP
 
 export (String, FILE, "*.png") var default_sprite
 export (String, FILE, "*.png") var backpack_sprite
@@ -92,76 +95,72 @@ func go_side() -> void:
 
 # Вправо
 func go_right() -> void:
-	if Input.is_action_pressed('ui_right'):
-		# Если предыдущее состояние не "вправо"
-		if type != RIGHT:
-			type = RIGHT
-			# Обнулить счетчик для анимации
-			distance_passed = 0
-			character.frame = SIDE_1
-			character.flip_h = false
-		go_side()
-		velocity.x += 1
+	# Если предыдущее состояние не "вправо"
+	if type != RIGHT:
+		type = RIGHT
+		# Обнулить счетчик для анимации
+		distance_passed = 0
+		character.frame = SIDE_1
+		character.flip_h = false
+	go_side()
+	velocity.x += 1
 
 
 # Влево
 func go_left() -> void:
-	if Input.is_action_pressed('ui_left'):
-		if type != LEFT:
-			type = LEFT
-			distance_passed = 0
-			character.frame = 2
-			character.flip_h = true
-		go_side()
-		velocity.x -= 1
+	if type != LEFT:
+		type = LEFT
+		distance_passed = 0
+		character.frame = 2
+		character.flip_h = true
+	go_side()
+	velocity.x -= 1
 
 
 # Вниз
 func go_down() -> void:
-	if Input.is_action_pressed('ui_down'):
-		idle = false
-		any_button_pressed = true
-		if !side_used:
-			if type != DOWN:
-				type = DOWN
-				distance_passed = 0
-				character.frame = DOWN_1
-				character.flip_h = false
-			distance_passed += 1
-			# Крайнее положение
-			if distance_passed == change:
-				character.frame = DOWN_1
-				play_step()
-			elif distance_passed == 3 * change:
-				character.frame = DOWN_2
-				play_step()
-			elif distance_passed == 4 * change:
-				distance_passed = DOWN_1 
-		velocity.y += 1
+	idle = false
+	any_button_pressed = true
+	if !side_used:
+		if type != DOWN:
+			type = DOWN
+			distance_passed = 0
+			character.frame = DOWN_1
+			character.flip_h = false
+		distance_passed += 1
+		# Крайнее положение
+		if distance_passed == change:
+			character.frame = DOWN_1
+			play_step()
+		elif distance_passed == 3 * change:
+			character.frame = DOWN_2
+			play_step()
+		elif distance_passed == 4 * change:
+			distance_passed = DOWN_1 
+	velocity.y += 1
 
 
 # Вверх
 func go_up() -> void:
-	if Input.is_action_pressed('ui_up'):
-		idle = false
-		any_button_pressed = true
-		if !side_used:
-			if type != UP:
-				type = UP
-				distance_passed = 0
-				character.frame = UP_1
-				character.flip_h = false
-			distance_passed += 1
-			# Крайнее положение
-			if distance_passed == change:
-				character.frame = UP_1
-				play_step()
-			elif distance_passed == 3 * change:
-				character.frame = UP_2
-				play_step()
-			elif distance_passed == 4 * change:
-				distance_passed = UP_1
-		velocity.y -= 1
+	idle = false
+	any_button_pressed = true
+	if !side_used:
+		if type != UP:
+			type = UP
+			distance_passed = 0
+			character.frame = UP_1
+			character.flip_h = false
+		distance_passed += 1
+		# Крайнее положение
+		if distance_passed == change:
+			character.frame = UP_1
+			play_step()
+		elif distance_passed == 3 * change:
+			character.frame = UP_2
+			play_step()
+		elif distance_passed == 4 * change:
+			distance_passed = UP_1
+	velocity.y -= 1
 
 
 func check_for_col_disable_btn():
@@ -177,10 +176,14 @@ func get_input() -> bool:
 	side_used = false
 	check_for_col_disable_btn()
 	# Обработка 4 сторон передвижения
-	go_right()
-	go_left()
-	go_down()
-	go_up()
+	if Input.is_action_pressed('ui_right'):
+		go_right()
+	if Input.is_action_pressed('ui_left'):
+		go_left()
+	if Input.is_action_pressed('ui_down'):
+		go_down()
+	if Input.is_action_pressed('ui_up'):
+		go_up()
 	# Если кнопки не были нажаты в первый раз
 	if !idle && !any_button_pressed:
 		idle = true
@@ -212,3 +215,12 @@ func _ready():
 		character.texture = load(backpack_sprite)
 	else:
 		character.texture = load(default_sprite)
+	# Установка позиции
+	if default_state == UP:
+		go_up()
+	elif default_state == DOWN:
+		go_down()
+	elif default_state == RIGHT:
+		go_right()
+	else:
+		go_left()
