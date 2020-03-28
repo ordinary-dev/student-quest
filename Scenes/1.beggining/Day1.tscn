@@ -13,14 +13,20 @@ script/source = "extends Node2D
 
 export (String, FILE, \"*.ogg\") var song
 export (String, FILE, \"*.tscn\") var math_scene
+export (String, FILE, \"*.tscn\") var store_scene
+export (String, FILE, \"*.tscn\") var tickets_ui
 
 # Перейти в магазин
 func to_store():
-	get_node(\"/root/show_nf\").show_notification(\"В магазин...\")
+	get_node(\"restore_state\")._save()
+	get_node(\"/root/scene_loader\").load_scene(store_scene)
 
 # Касса
 func ticket_window():
-	get_node(\"/root/show_nf\").show_notification(\"Открыть кассу...\")
+	get_node(\"Body\").lock()
+	var ui = load(tickets_ui).instance()
+	ui.name = \"tickets\"
+	get_node(\"/root/ui\").add_child(ui)
 
 func math():
 	get_node(\"restore_state\")._save()
@@ -70,6 +76,8 @@ func _ready() -> void:
 script = SubResource( 1 )
 song = "res://Audio/music/SummerNight.ogg"
 math_scene = "res://Scenes/1.beggining/date3.tscn"
+store_scene = "res://Scenes/templates/Store.tscn"
+tickets_ui = "res://Scenes/templates/Tickets.tscn"
 
 [node name="Street" parent="." instance=ExtResource( 1 )]
 
