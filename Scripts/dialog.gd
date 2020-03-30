@@ -9,6 +9,9 @@ var glob_obj:String
 var glob_fnc:String
 var glob_argv:String
 
+# Нужно ли вернуть интерфейс
+var return_ui : bool
+
 func hide_dialog():
 	get_node("/root/ui/dialog").play_reverse()
 	yield(get_tree().create_timer(
@@ -30,6 +33,8 @@ func hide_dialog():
 	else:
 		get_node("/root/show_nf").show_notification("No such object: " + glob_obj)
 	glob_obj = ""
+	if return_ui:
+		get_node("/root/pause_init").enable_ui()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
@@ -56,6 +61,11 @@ func show_next() -> void:
 
 
 func show_dialog(num : int, obj:String = "", fnc:String = "", argv:String="") -> void:
+	if has_node("/root/ui/Pause"):
+		get_node("/root/pause_init").disable_ui()
+		return_ui = true
+	else:
+		return_ui = false
 	# Звук
 	get_node("/root/fx").dialog()
 	# Сохранить значения

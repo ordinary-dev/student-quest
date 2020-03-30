@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/Old_screen.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/backgrounds/8bit-background.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/templates/Rain.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sprites/backgrounds/8bit-person-2.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/backgrounds/8bit-person-1.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=15]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
@@ -21,12 +22,11 @@ script/source = "extends Control
 
 # Путь к сцене новой игры
 export (String, FILE, \"*.tscn\") var new_game
+export (String, FILE, \"*.ogg\") var music
 
 export (NodePath) var settings_scene
 export (NodePath) var load_scene
 export (NodePath) var confirm_scene
-
-export(String, FILE, \"*.ogg\") var music
 
 
 # Начать новую игру
@@ -61,10 +61,6 @@ func _quit():
 
 
 func _ready() -> void:
-	# Отключить паузу
-	# (Если в меню вернуться через паузу, то она останется
-	# Т.к. нужно выполнить переход)
-	get_node(\"/root/pause_init\").disable()
 	# Воспроизвести музыку
 	get_node(\"/root/ost\").play_sound(music)
 	# Отключить все доп. сцены
@@ -140,10 +136,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 new_game = "res://Scenes/menu/new.tscn"
-settings_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Settings")
-load_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Load")
-confirm_scene = NodePath("../Menu/HBoxContainer/MarginContainer2/Confirm")
 music = "res://Audio/music/Kalaido_Hanging_Lanterns.ogg"
+settings_scene = NodePath("Menu/Right/Settings")
+load_scene = NodePath("Menu/Right/Load")
+confirm_scene = NodePath("Menu/Right/Confirm")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color( 0.533333, 0.533333, 0.533333, 1 )
@@ -216,17 +212,16 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 1
 playing = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Menu" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+[node name="Left" type="MarginContainer" parent="Menu"]
 margin_right = 958.0
 margin_bottom = 1080.0
 size_flags_horizontal = 3
@@ -235,7 +230,7 @@ custom_constants/margin_top = 150
 custom_constants/margin_left = 100
 custom_constants/margin_bottom = 150
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+[node name="VBox" type="VBoxContainer" parent="Menu/Left"]
 modulate = Color( 0.992157, 0.843137, 0.823529, 0.886275 )
 margin_left = 100.0
 margin_top = 150.0
@@ -246,7 +241,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Menu/Left/VBox"]
 margin_right = 758.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
@@ -254,35 +249,35 @@ custom_fonts/font = ExtResource( 9 )
 text = "Student quest"
 align = 1
 
-[node name="BtnNew" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="BtnNew" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 104.0
 margin_right = 758.0
 margin_bottom = 270.0
 size_flags_vertical = 3
 btn_text = "Новая игра"
 
-[node name="BtnLoad" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="BtnLoad" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 274.0
 margin_right = 758.0
 margin_bottom = 440.0
 size_flags_vertical = 3
 btn_text = "Загрузить игру"
 
-[node name="BtnSettings" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="BtnSettings" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 444.0
 margin_right = 758.0
 margin_bottom = 610.0
 size_flags_vertical = 3
 btn_text = "Настройки"
 
-[node name="BtnQuit" parent="HBoxContainer/MarginContainer/VBoxContainer" instance=ExtResource( 7 )]
+[node name="BtnQuit" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 614.0
 margin_right = 758.0
 margin_bottom = 780.0
 size_flags_vertical = 3
 btn_text = "Выход"
 
-[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+[node name="Right" type="MarginContainer" parent="Menu"]
 margin_left = 962.0
 margin_right = 1920.0
 margin_bottom = 1080.0
@@ -292,7 +287,7 @@ custom_constants/margin_top = 150
 custom_constants/margin_left = 100
 custom_constants/margin_bottom = 150
 
-[node name="Confirm" parent="HBoxContainer/MarginContainer2" instance=ExtResource( 5 )]
+[node name="Confirm" parent="Menu/Right" instance=ExtResource( 5 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -301,7 +296,7 @@ margin_top = 150.0
 margin_right = 858.0
 margin_bottom = 930.0
 
-[node name="Settings" parent="HBoxContainer/MarginContainer2" instance=ExtResource( 3 )]
+[node name="Settings" parent="Menu/Right" instance=ExtResource( 3 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -312,7 +307,7 @@ margin_bottom = 930.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Load" parent="HBoxContainer/MarginContainer2" instance=ExtResource( 4 )]
+[node name="Load" parent="Menu/Right" instance=ExtResource( 4 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -330,7 +325,9 @@ background = NodePath("../Background")
 rain = NodePath("../Particles2D")
 person_1 = ExtResource( 14 )
 person_2 = ExtResource( 13 )
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/BtnNew" to="." method="_new_game"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/BtnLoad" to="." method="_load_game"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/BtnSettings" to="." method="_toggle_settings"]
-[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/BtnQuit" to="." method="_quit"]
+
+[node name="DisableUI" parent="." instance=ExtResource( 15 )]
+[connection signal="pressed" from="Menu/Left/VBox/BtnNew" to="." method="_new_game"]
+[connection signal="pressed" from="Menu/Left/VBox/BtnLoad" to="." method="_load_game"]
+[connection signal="pressed" from="Menu/Left/VBox/BtnSettings" to="." method="_toggle_settings"]
+[connection signal="pressed" from="Menu/Left/VBox/BtnQuit" to="." method="_quit"]

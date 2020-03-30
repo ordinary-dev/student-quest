@@ -1,10 +1,10 @@
 extends Node
 
 # Сцены паузы и управления
-export (String, FILE, "*.tscn") var pause_scene = "res://Scenes/templates/pause.tscn"
-export (String, FILE, "*.tscn") var contr_scene = "res://Scenes/templates/Controls.tscn"
+export (String, FILE, "*.tscn") var pause_scene = "res://Scenes/ui/Pause.tscn"
+export (String, FILE, "*.tscn") var contr_scene = "res://Scenes/ui/Controls.tscn"
 # Принудительно включить джойстик
-var SHOW_CONTROLS = false
+const SHOW_CONTROLS = false
 
 
 # Добавить кнопку паузы
@@ -22,14 +22,16 @@ func add_controls() -> void:
 
 
 # Создать интерфейс
-func init() -> void:
-	add_pause()
-	if OS.get_name() == "Android" || SHOW_CONTROLS:
-		add_controls()
+func enable_ui() -> void:
+	if !has_node("/root/ui/Pause"):
+		add_pause()
+	if OS.get_name() == "Android" or SHOW_CONTROLS:
+		if !has_node("/root/ui/Controls"):
+			add_controls()
 
 
 # Удалить интерфейс
-func disable() -> void:
+func disable_ui() -> void:
 	if has_node("/root/ui/Pause"):
 		get_node("/root/ui").remove_child(get_node("/root/ui/Pause"))
 	if has_node("/root/ui/Controls"):

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+# Включить интерфейс
+
+func _ready():
+	get_node(\"/root/pause_init\").enable_ui()
+"
+
+[node name="EnableUI" type="Node2D"]
+script = SubResource( 1 )
+__meta__ = {
+"_editor_description_": "Включает паузу и управление"
+}

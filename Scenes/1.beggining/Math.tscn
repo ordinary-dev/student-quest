@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/templates/Math.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -20,8 +21,6 @@ func adventure_begins():
 
 func _ready():
 	get_node(\"/root/ui\").restore_default()
-	get_node(\"/root/pause_init\").disable()
-	get_node(\"/root/pause_init\").init()
 	yield(get_tree().create_timer(2), \"timeout\")
 	get_node(tw).interpolate_property(
 		get_node(cm), \"color\",
@@ -92,6 +91,7 @@ margin_left = -808.0
 margin_top = -408.0
 margin_right = 1600.0
 margin_bottom = 2424.0
+mouse_filter = 1
 color = Color( 0.733333, 0.733333, 0.733333, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -112,3 +112,5 @@ z_index = 50
 label = "Путь?"
 object_name = NodePath("..")
 function_name = "adventure_begins"
+
+[node name="EnableUI" parent="." instance=ExtResource( 6 )]
