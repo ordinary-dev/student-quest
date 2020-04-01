@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/FTemplate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -100,6 +101,8 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 disabled = true
 btn_text = "Выбрать"
+
+[node name="DisableUI" parent="." instance=ExtResource( 3 )]
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer" to="." method="set_active" binds= [ 0 ]]
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2" to="." method="set_active" binds= [ 1 ]]
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer3" to="." method="set_active" binds= [ 2 ]]

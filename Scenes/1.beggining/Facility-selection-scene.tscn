@@ -1,18 +1,31 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprites/backgrounds/facility-selection.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/backgrounds/facility-man.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/templates/ui_fixer.tscn" type="PackedScene" id=7]
 
-[sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 12.7241, 96.7441, 44.7784, 96.6348, 41.0296, 99.3019, 15.261, 99.2416 )
+[sub_resource type="GDScript" id=7]
+script/source = "extends Node2D
+
+
+func _ready():
+	# Обновить этап
+	get_node(\"/root/prop\").save_param(
+		get_node(\"/root/global\").loaded, \"stage\", \"1\"
+	)
+"
 
 [sub_resource type="OccluderPolygon2D" id=1]
-polygon = PoolVector2Array( 922.251, 584.709, 902.354, 535.791, 902.23, 526.188, 962.114, 526.038, 962.166, 515.814, 971.945, 515.822, 971.795, 505.779, 981.388, 505.779, 981.285, 486.147, 990.525, 572.389 )
+polygon = PoolVector2Array( 12.7241, 96.7441, 44.7784, 96.6348, 41.0296, 99.3019, 15.261, 99.2416 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 922.251, 584.709, 902.354, 535.791, 902.23, 526.188, 962.114, 526.038, 962.166, 515.814, 971.945, 515.822, 971.795, 505.779, 981.388, 505.779, 981.285, 486.147, 990.525, 572.389 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( 1021.7, 535.589, 1022.09, 425.91, 1096.72, 496.198, 1080.43, 545.069 )
 
 [sub_resource type="RectangleShape2D" id=4]
@@ -25,6 +38,7 @@ extents = Vector2( 310, 10 )
 extents = Vector2( 100, 150 )
 
 [node name="Node2D" type="Node2D"]
+script = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 862.108, 505.908 )
@@ -36,7 +50,7 @@ position = Vector2( 598.697, 459.316 )
 collision_layer = 1024
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Body"]
-occluder = SubResource( 3 )
+occluder = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 872.989, 449.269 )
@@ -44,13 +58,14 @@ texture = ExtResource( 3 )
 texture_scale = 12.0
 mode = 3
 range_z_max = 1
+range_layer_max = 1
 shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 1 )
+occluder = SubResource( 2 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-occluder = SubResource( 2 )
+occluder = SubResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.184314 )
@@ -94,3 +109,7 @@ dialog_number = 1
 person = "Ректор"
 load_scene = true
 scene_path = "res://Scenes/1.beggining/FSelect.tscn"
+
+[node name="RemoteTransform2D" parent="." instance=ExtResource( 7 )]
+
+[node name="EnableUI" parent="." instance=ExtResource( 6 )]
