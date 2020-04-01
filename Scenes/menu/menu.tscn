@@ -42,12 +42,14 @@ func _load_game():
 	get_node(settings_scene).visible = false
 	get_node(confirm_scene).visible = false
 
+
 # Открыть настройки
 func _toggle_settings():
 	get_node(\"/root/fx\").btn_click()
 	get_node(settings_scene).visible = !get_node(settings_scene).visible
 	get_node(load_scene).visible = false
 	get_node(confirm_scene).visible = false
+
 
 # Перейти к подтверждению выхода
 func _quit():
@@ -67,7 +69,6 @@ func _ready() -> void:
 	get_node(settings_scene).visible = false
 	get_node(load_scene).visible = false
 	get_node(confirm_scene).visible = false
-
 "
 
 [sub_resource type="GDScript" id=2]
@@ -193,12 +194,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Particles2D" parent="." instance=ExtResource( 12 )]
-modulate = Color( 0.395471, 0.305756, 0.910156, 0.105882 )
-scale = Vector2( 0.5, 0.5 )
-emitting = false
-preprocess = 0.0
-
 [node name="Vignette" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -212,7 +207,13 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
+frame = 3
 playing = true
+
+[node name="Particles2D" parent="." instance=ExtResource( 12 )]
+modulate = Color( 1, 1, 1, 0.627451 )
+position = Vector2( 1006.84, -10.4977 )
+emitting = false
 
 [node name="Menu" type="HBoxContainer" parent="."]
 anchor_right = 1.0

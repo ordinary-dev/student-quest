@@ -12,6 +12,7 @@ var glob_argv:String
 # Нужно ли вернуть интерфейс
 var return_ui : bool
 
+
 func hide_dialog():
 	get_node("/root/ui/dialog").play_reverse()
 	yield(get_tree().create_timer(
@@ -36,12 +37,14 @@ func hide_dialog():
 	if return_ui:
 		get_node("/root/pause_init").enable_ui()
 
+
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		if s_key != "-1":
 			show_next()
 		else:
 			hide_dialog()
+
 
 func show_next() -> void:
 	var dial = get_node("/root/ui/dialog")
@@ -55,8 +58,9 @@ func show_next() -> void:
 		btn.disconnect("pressed", self, "show_next")
 		btn.connect("pressed", self, "show_next")
 	else:
+		if s_key != "0":
+			btn.disconnect("pressed", self, "show_next")
 		s_key = "-1"
-		btn.disconnect("pressed", self, "show_next")
 		btn.connect("pressed", self, "hide_dialog")
 
 

@@ -99,6 +99,7 @@ margin_top = 1000.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 disabled = true
+btn_text = "Выбрать"
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer" to="." method="set_active" binds= [ 0 ]]
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2" to="." method="set_active" binds= [ 1 ]]
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer3" to="." method="set_active" binds= [ 2 ]]

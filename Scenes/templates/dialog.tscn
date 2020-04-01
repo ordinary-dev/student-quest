@@ -101,6 +101,7 @@ func play_dialog(person : String, dialog_text : String) -> void:
 		first = false
 	else:
 		play(false)
+
 "
 
 [node name="Control" type="Control"]
@@ -159,6 +160,7 @@ margin_left = 8.0
 margin_top = 8.0
 margin_right = 1812.0
 margin_bottom = 178.0
+mouse_filter = 1
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 40
