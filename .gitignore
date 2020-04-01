@@ -1,3 +1,5 @@
 *.apk
 *.keystore
 .idea
+*.exe
+*.pck

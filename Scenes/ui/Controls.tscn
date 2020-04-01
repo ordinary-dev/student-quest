@@ -4,6 +4,15 @@
 script/source = "extends Control
 
 
+func emit_once(name):
+	var ev = InputEventAction.new()
+	ev.action = name
+	ev.pressed = true
+	Input.parse_input_event(ev)
+	ev.pressed = false
+	yield(get_tree().create_timer(0.3), \"timeout\")
+	Input.parse_input_event(ev)
+
 func emit_event(name):
 	var ev = InputEventAction.new()
 	ev.action = name
@@ -48,6 +57,10 @@ func _on_Button8_button_down():
 
 func _on_Button8_button_up():
 	stop_event(\"ui_down\")
+
+
+func emit_accept():
+	emit_once(\"dialog_start\")
 "
 
 [node name="Control" type="Control"]
@@ -60,36 +73,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeftBottom" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="LeftBottom" type="Control" parent="CanvasLayer"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -450.0
 margin_right = 450.0
 mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Up" type="Button" parent="LeftBottom"]
+[node name="Up" type="Button" parent="CanvasLayer/LeftBottom"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -75.0
 margin_right = 75.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 150, 150 )
+text = "Up"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Left" type="Button" parent="LeftBottom"]
+[node name="Left" type="Button" parent="CanvasLayer/LeftBottom"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_top = -75.0
 margin_right = 150.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 150, 150 )
+text = "L"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Right" type="Button" parent="LeftBottom"]
+[node name="Right" type="Button" parent="CanvasLayer/LeftBottom"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -98,11 +119,12 @@ margin_left = -150.0
 margin_top = -75.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 150, 150 )
+text = "R"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Down" type="Button" parent="LeftBottom"]
+[node name="Down" type="Button" parent="CanvasLayer/LeftBottom"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -111,11 +133,12 @@ margin_left = -75.0
 margin_top = -150.0
 margin_right = 75.0
 rect_min_size = Vector2( 150, 150 )
+text = "D"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Center" type="Button" parent="LeftBottom"]
+[node name="Center" type="Button" parent="CanvasLayer/LeftBottom"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -125,14 +148,16 @@ margin_top = -75.0
 margin_right = 75.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 150, 150 )
+text = "Ent"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="button_down" from="LeftBottom/Up" to="." method="_on_Button2_button_down"]
-[connection signal="button_up" from="LeftBottom/Up" to="." method="_on_Button2_button_up"]
-[connection signal="button_down" from="LeftBottom/Left" to="." method="_on_Button4_button_down"]
-[connection signal="button_up" from="LeftBottom/Left" to="." method="_on_Button4_button_up"]
-[connection signal="button_down" from="LeftBottom/Right" to="." method="_on_Button6_button_down"]
-[connection signal="button_up" from="LeftBottom/Right" to="." method="_on_Button6_button_up"]
-[connection signal="button_down" from="LeftBottom/Down" to="." method="_on_Button8_button_down"]
-[connection signal="button_up" from="LeftBottom/Down" to="." method="_on_Button8_button_up"]
+[connection signal="button_down" from="CanvasLayer/LeftBottom/Up" to="." method="_on_Button2_button_down"]
+[connection signal="button_up" from="CanvasLayer/LeftBottom/Up" to="." method="_on_Button2_button_up"]
+[connection signal="button_down" from="CanvasLayer/LeftBottom/Left" to="." method="_on_Button4_button_down"]
+[connection signal="button_up" from="CanvasLayer/LeftBottom/Left" to="." method="_on_Button4_button_up"]
+[connection signal="button_down" from="CanvasLayer/LeftBottom/Right" to="." method="_on_Button6_button_down"]
+[connection signal="button_up" from="CanvasLayer/LeftBottom/Right" to="." method="_on_Button6_button_up"]
+[connection signal="button_down" from="CanvasLayer/LeftBottom/Down" to="." method="_on_Button8_button_down"]
+[connection signal="button_up" from="CanvasLayer/LeftBottom/Down" to="." method="_on_Button8_button_up"]
+[connection signal="pressed" from="CanvasLayer/LeftBottom/Center" to="." method="emit_accept"]
