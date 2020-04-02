@@ -24,7 +24,7 @@ polygon = PoolVector2Array( 847.085, 503.513, 846.861, 362.097, 870.569, 362.239
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/1.beggining/Math.tscn"
+next_scene = "res://Scenes/1.beggining/MathBlackout.tscn"
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 occluder = SubResource( 2 )

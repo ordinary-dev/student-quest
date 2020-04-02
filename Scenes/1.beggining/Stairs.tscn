@@ -26,7 +26,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
-math = "res://Scenes/1.beggining/Math.tscn"
+math = "res://Scenes/1.beggining/MathBlackout.tscn"
 next = "res://Scenes/1.beggining/Dialog_2.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -41,9 +41,15 @@ collision_layer = 1025
 default_state = 0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 128, 16 )
+position = Vector2( 128, -16 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 128, 496 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 shape = SubResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -57,7 +63,7 @@ __meta__ = {
 }
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 32, -32 )
+position = Vector2( 32, -64 )
 z_index = 20
 label = "Вернуться"
 object_name = NodePath("..")
@@ -79,7 +85,7 @@ range_z_max = 10
 shadow_enabled = true
 
 [node name="Light2D2" type="Light2D" parent="."]
-position = Vector2( 128, 536 )
+position = Vector2( 128, 528 )
 texture = ExtResource( 4 )
 texture_scale = 13.5
 color = Color( 0.505882, 0.0705882, 0.0901961, 1 )

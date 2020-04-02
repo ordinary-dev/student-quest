@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Tilemaps/building.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=3]
@@ -34,6 +34,12 @@ extents = Vector2( 16, 64 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 64, 32 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 90, 32 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 128, 32 )
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
@@ -105,3 +111,17 @@ position = Vector2( 544, 680 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 0, -8 )
 shape = SubResource( 3 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 552, -48 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( 0, -8 )
+shape = SubResource( 5 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 480, 1896 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2( 0, -8 )
+shape = SubResource( 4 )
