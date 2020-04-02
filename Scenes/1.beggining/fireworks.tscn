@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/fireworks.tres" type="Texture" id=1]
 [ext_resource path="res://Sprites/character.png" type="Texture" id=2]
@@ -129,26 +129,21 @@ tracks/7/keys = {
 "values": [ Vector2( 1279.37, 698.113 ), Vector2( 1299.04, 691.078 ), Vector2( 1275.72, 611.419 ), Vector2( 1218, 547.552 ) ]
 }
 
+[sub_resource type="GDScript" id=3]
+script/source = "extends ColorRect
+
+# При загрузке ненадолго видно игрока,
+# Пока, видимо, не успевает загрузиться анимация
+# Это должно решить проблему, закрыв игрока в начале
+
+func _ready():
+	yield(get_tree().create_timer(0.2), \"timeout\")
+	get_parent().remove_child(self)
+"
+
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 next_scene = "res://Scenes/1.beggining/Dialog_1.tscn"
-
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 48.0
-rect_scale = Vector2( 48.2, 27.52 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="Control"]
-light_mask = 2
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimatedSprite" type="Sprite" parent="."]
 light_mask = 2
@@ -157,7 +152,6 @@ scale = Vector2( 8, 8 )
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 13
-frame = 5
 
 [node name="AnimatedSprite2" type="Sprite" parent="."]
 light_mask = 2
@@ -190,20 +184,33 @@ hframes = 3
 frame = 7
 region_rect = Rect2( 0, 0, 18, 36 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/camera = SubResource( 2 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, 4.76191 )
-anchor_mode = 0
-current = true
-zoom = Vector2( 0.902381, 0.902381 )
-
 [node name="Light2D2" type="Light2D" parent="."]
-position = Vector2( 849.195, 579.546 )
+position = Vector2( 848.941, 559.133 )
 scale = Vector2( 6, 6 )
 texture = ExtResource( 3 )
 texture_scale = 2.17
 energy = 2.59
 mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/camera = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.9, 0.9 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 6
+
+[node name="FixProblemWithLightAtStart" type="ColorRect" parent="CanvasLayer"]
+light_mask = 0
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 1920, 1080 )
+color = Color( 0, 0, 0, 1 )
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -7,7 +7,7 @@ script/source = "extends Control
 
 
 export (String, FILE, \"*.ogg\") var song
-export (String, FILE, \"*.tscn\") var next_scene
+export (String, FILE, \"*.tscn\") var fireworks_scene
 
 
 func _ready() -> void:
@@ -15,7 +15,7 @@ func _ready() -> void:
 	get_node(\"Control\")._start()
 	yield(get_tree().create_timer(
 		get_node(\"Control\").get_delay()), \"timeout\")
-	get_node(\"/root/scene_loader\").load_scene(next_scene)
+	get_node(\"/root/scene_loader\").load_scene(fireworks_scene)
 
 "
 
@@ -27,7 +27,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 song = "res://Audio/music/Outgoing_Hikikomori_Fireflies.ogg"
-next_scene = "res://Scenes/1.beggining/fireworks.tscn"
+fireworks_scene = "res://Scenes/1.beggining/fireworks.tscn"
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
 text_2 = "Ночь"
