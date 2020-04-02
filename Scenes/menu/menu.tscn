@@ -120,6 +120,11 @@ func _ready():
 	yield(get_tree().create_timer(12), \"timeout\")
 	
 	# Дождь
+	interpolate_property(
+		get_node(rain), \"modulate\",
+		Color(\"#00ffffff\"), Color(\"#5affffff\"), 5,
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	start()
 	get_node(rain).emitting = true
 	yield(get_tree().create_timer(3), \"timeout\")
 	
@@ -207,11 +212,11 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="Particles2D" parent="." instance=ExtResource( 12 )]
-modulate = Color( 1, 1, 1, 0.627451 )
+modulate = Color( 1, 1, 1, 0.352941 )
 position = Vector2( 1006.84, -10.4977 )
 emitting = false
 
@@ -299,8 +304,6 @@ margin_bottom = 930.0
 
 [node name="Settings" parent="Menu/Right" instance=ExtResource( 3 )]
 visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 100.0
 margin_top = 150.0
 margin_right = 858.0
