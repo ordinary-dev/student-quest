@@ -21,11 +21,22 @@ var num = 0
 export (AudioStream) var btn_click_sound
 export (AudioStream) var dialog_sound
 var volume : float setget set_volume, get_volume
+const max_volume := 5
+const min_volume := -35
 
 
 func set_volume(value : float) -> void:
+	if value > max_volume:
+		value = max_volume
+	elif value < min_volume:
+		value = min_volume
 	volume = value
 	AudioServer.set_bus_volume_db(2, volume)
+	# Отключить громкость при min_volume
+	if volume == min_volume:
+		AudioServer.set_bus_mute(2, true)
+	elif AudioServer.is_bus_mute(2):
+		AudioServer.set_bus_mute(2, false)
 
 
 func get_volume() -> float:

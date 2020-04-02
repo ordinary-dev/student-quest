@@ -10,10 +10,6 @@ resource_name = "Main"
 script/source = "extends Control
 
 
-# Слайдеры
-export (NodePath) var slider_ost
-export (NodePath) var slider_fx
-
 # Подписи
 export (NodePath) var ost_text
 export (NodePath) var fx_text
@@ -25,43 +21,35 @@ onready var fx = $\"/root/fx\"
 
 # Обновить текст
 func update_text(val : float, obj : String) -> void:
-	get_node(obj).text = \"Громкость: \" + str((val+32)/32*100) + \"%\"
+	get_node(obj).text = str(round((val+35)/35*100)) + \"%\"
 
 
 # Изменение настроек слайдера музыки
-func _on_HSlider_value_changed(value : float) -> void:
+func music(delta : int) -> void:
 	fx.btn_click()
-	
-	# Заглушить источник
-	if value == get_node(slider_ost).min_value:
-		ost.volume = -80
-	else:
-		ost.volume = value
-	update_text(value, ost_text)
+	ost.volume += delta
+	update_text(ost.volume, ost_text)
 
 
 # Изменение настроек слайдера эффектов
-func _on_HSliderFX_value_changed(value : float) -> void:
+func effects(delta : int) -> void:
 	fx.btn_click()
-	
-	# Заглушить источник
-	if value == get_node(slider_fx).min_value:
-		fx.volume = -80
-	else:
-		fx.volume = value
-	update_text(value, fx_text)
+	fx.volume += delta
+	update_text(fx.volume, fx_text)
 
 
 # Сбросить настройки музыки
 func reset_music_volume() -> void:
 	fx.btn_click()
-	get_node(slider_ost).value = 0
+	ost.volume = 0
+	update_text(0, ost_text)
 
 
 # Сбросить настройки эффектов
 func reset_effects_volume() -> void:
 	fx.btn_click()
-	get_node(slider_fx).value = 0
+	fx.volume = 0
+	update_text(0, fx_text)
 
 
 # Воспроизведение щелчка при переключении вкладок
@@ -71,8 +59,9 @@ func _on_TabContainer_tab_selected(_tab) -> void:
 
 # Синхронизировать интерфейс
 func update_settings() -> void:
-	get_node(slider_ost).value = ost.volume
-	get_node(slider_fx).value = fx.volume
+	update_text(fx.volume, fx_text)
+	update_text(ost.volume, ost_text)
+	pass
 
 
 func _ready() -> void:
@@ -131,14 +120,12 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-slider_ost = NodePath("TabContainer/Аудио/Audio/Music/HSlider")
-slider_fx = NodePath("TabContainer/Аудио/Audio/Effects/HSlider")
 ost_text = NodePath("TabContainer/Аудио/Audio/Music/HBoxContainer/Label")
 fx_text = NodePath("TabContainer/Аудио/Audio/Effects/HBoxContainer/Label")
 
 [node name="TabContainer" type="TabContainer" parent="."]
-margin_right = 728.0
-margin_bottom = 380.0
+margin_right = 791.0
+margin_bottom = 476.0
 rect_clip_content = true
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
@@ -162,18 +149,18 @@ custom_constants/margin_bottom = 50
 [node name="Audio" type="VBoxContainer" parent="TabContainer/Аудио"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 770.0
-margin_bottom = 466.0
+margin_right = 741.0
+margin_bottom = 384.0
 custom_constants/separation = 60
 
 [node name="Music" type="VBoxContainer" parent="TabContainer/Аудио/Audio"]
-margin_right = 720.0
-margin_bottom = 178.0
+margin_right = 691.0
+margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 25
 
 [node name="Label" type="Label" parent="TabContainer/Аудио/Audio/Music"]
-margin_right = 720.0
+margin_right = 691.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
@@ -181,21 +168,10 @@ text = "Громкость музыки"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="TabContainer/Аудио/Audio/Music"]
-margin_top = 57.0
-margin_right = 720.0
-margin_bottom = 73.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-min_value = -32.0
-max_value = 0.0
-step = 4.0
-tick_count = 9
-
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Аудио/Audio/Music"]
-margin_top = 98.0
-margin_right = 720.0
-margin_bottom = 178.0
+margin_top = 57.0
+margin_right = 691.0
+margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
@@ -204,45 +180,44 @@ margin_right = 285.0
 rect_min_size = Vector2( 285, 80 )
 btn_text = "Сбросить"
 
-[node name="Label" type="Label" parent="TabContainer/Аудио/Audio/Music/HBoxContainer"]
+[node name="M-" parent="TabContainer/Аудио/Audio/Music/HBoxContainer" instance=ExtResource( 4 )]
 margin_left = 335.0
+margin_right = 415.0
+btn_text = "-"
+
+[node name="Label" type="Label" parent="TabContainer/Аудио/Audio/Music/HBoxContainer"]
+margin_left = 465.0
 margin_top = 28.0
-margin_right = 720.0
+margin_right = 561.0
 margin_bottom = 52.0
-rect_min_size = Vector2( 385, 0 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
-text = "Громкость: 100%"
+text = "100%"
+
+[node name="M+" parent="TabContainer/Аудио/Audio/Music/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 611.0
+margin_right = 691.0
+btn_text = "+"
 
 [node name="Effects" type="VBoxContainer" parent="TabContainer/Аудио/Audio"]
-margin_top = 238.0
-margin_right = 720.0
-margin_bottom = 416.0
+margin_top = 197.0
+margin_right = 691.0
+margin_bottom = 334.0
 size_flags_vertical = 3
 custom_constants/separation = 25
 
 [node name="Label" type="Label" parent="TabContainer/Аудио/Audio/Effects"]
-margin_right = 720.0
+margin_right = 691.0
 margin_bottom = 32.0
 size_flags_vertical = 7
 text = "Громкость эффектов"
 align = 1
 valign = 1
 
-[node name="HSlider" type="HSlider" parent="TabContainer/Аудио/Audio/Effects"]
-margin_top = 57.0
-margin_right = 720.0
-margin_bottom = 73.0
-size_flags_vertical = 3
-min_value = -32.0
-max_value = 0.0
-step = 4.0
-tick_count = 9
-
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Аудио/Audio/Effects"]
-margin_top = 98.0
-margin_right = 720.0
-margin_bottom = 178.0
+margin_top = 57.0
+margin_right = 691.0
+margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
@@ -251,15 +226,24 @@ margin_right = 285.0
 rect_min_size = Vector2( 285, 80 )
 btn_text = "Сбросить"
 
-[node name="Label" type="Label" parent="TabContainer/Аудио/Audio/Effects/HBoxContainer"]
+[node name="E-" parent="TabContainer/Аудио/Audio/Effects/HBoxContainer" instance=ExtResource( 4 )]
 margin_left = 335.0
+margin_right = 415.0
+btn_text = "-"
+
+[node name="Label" type="Label" parent="TabContainer/Аудио/Audio/Effects/HBoxContainer"]
+margin_left = 465.0
 margin_top = 28.0
-margin_right = 720.0
+margin_right = 561.0
 margin_bottom = 52.0
-rect_min_size = Vector2( 385, 0 )
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
-text = "Громкость: 78.5%"
+text = "78%"
+
+[node name="E+" parent="TabContainer/Аудио/Audio/Effects/HBoxContainer" instance=ExtResource( 4 )]
+margin_left = 611.0
+margin_right = 691.0
+btn_text = "+"
 
 [node name="Инфо" type="MarginContainer" parent="TabContainer"]
 visible = false
@@ -274,24 +258,22 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 
-[node name="Info" type="VBoxContainer" parent="TabContainer/Инфо"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Инфо"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 762.0
-margin_bottom = 454.0
-
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Инфо/Info"]
-margin_right = 1812.0
-margin_bottom = 926.0
+margin_right = 733.0
+margin_bottom = 372.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="Label" type="Label" parent="TabContainer/Инфо/Info/ScrollContainer"]
-margin_right = 1812.0
+[node name="Label" type="Label" parent="TabContainer/Инфо/ScrollContainer"]
+margin_right = 683.0
 margin_bottom = 592.0
 size_flags_horizontal = 3
 text = "Student Quest
-v 1.20
+v 2.3
+
+Последнее важное изменение: новый интерфейс
 
 Авторы:
 - mcraw
@@ -331,8 +313,8 @@ fullscreen_toggle = NodePath("VBoxContainer/CheckButton2")
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Графика"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 762.0
-margin_bottom = 454.0
+margin_right = 733.0
+margin_bottom = 372.0
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Графика/VBoxContainer"]
 margin_right = 1812.0
@@ -353,9 +335,11 @@ custom_icons/off = ExtResource( 1 )
 custom_icons/on = ExtResource( 3 )
 text = "FULLSCREEN"
 [connection signal="tab_selected" from="TabContainer" to="." method="_on_TabContainer_tab_selected" flags=3]
-[connection signal="value_changed" from="TabContainer/Аудио/Audio/Music/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="TabContainer/Аудио/Audio/Music/HBoxContainer/ResetMusic" to="." method="reset_music_volume"]
-[connection signal="value_changed" from="TabContainer/Аудио/Audio/Effects/HSlider" to="." method="_on_HSliderFX_value_changed"]
+[connection signal="pressed" from="TabContainer/Аудио/Audio/Music/HBoxContainer/M-" to="." method="music" binds= [ -5 ]]
+[connection signal="pressed" from="TabContainer/Аудио/Audio/Music/HBoxContainer/M+" to="." method="music" binds= [ 5 ]]
 [connection signal="pressed" from="TabContainer/Аудио/Audio/Effects/HBoxContainer/ResetEffects" to="." method="reset_effects_volume"]
+[connection signal="pressed" from="TabContainer/Аудио/Audio/Effects/HBoxContainer/E-" to="." method="effects" binds= [ -5 ]]
+[connection signal="pressed" from="TabContainer/Аудио/Audio/Effects/HBoxContainer/E+" to="." method="effects" binds= [ 5 ]]
 [connection signal="toggled" from="TabContainer/Графика/VBoxContainer/CheckButton" to="TabContainer/Графика" method="toggle_vsync"]
 [connection signal="toggled" from="TabContainer/Графика/VBoxContainer/CheckButton2" to="TabContainer/Графика" method="toggle_fullscreen"]
