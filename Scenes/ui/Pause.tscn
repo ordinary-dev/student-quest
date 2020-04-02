@@ -17,8 +17,8 @@ func _process(delta):
 
 
 func _ready() -> void:
-	get_node(\"CanvasLayer/MarginContainer\").visible = false
-	get_node(\"CanvasLayer/ColorRect\").visible = false
+	get_node(\"MarginContainer\").visible = false
+	get_node(\"ColorRect\").visible = false
 
 
 func switch():
@@ -32,9 +32,9 @@ func switch():
 func _on_Pause_pressed() -> void:
 	enabled = true
 	get_node(\"/root/fx\").btn_click()
-	get_node(\"CanvasLayer/MarginContainer\").visible = true
-	get_node(\"CanvasLayer/ColorRect\").visible = true
-	get_node(\"CanvasLayer/Pause\").visible = false
+	get_node(\"MarginContainer\").visible = true
+	get_node(\"ColorRect\").visible = true
+	get_node(\"Pause\").visible = false
 	if (has_node(\"/root/Node2D/Body\")):
 		get_node(\"/root/Node2D/Body\").lock()
 
@@ -43,9 +43,9 @@ func _on_Pause_pressed() -> void:
 func _return_to_game() -> void:
 	enabled = false
 	get_node(\"/root/fx\").btn_click()
-	get_node(\"CanvasLayer/MarginContainer\").visible = false
-	get_node(\"CanvasLayer/ColorRect\").visible = false
-	get_node(\"CanvasLayer/Pause\").visible = true
+	get_node(\"MarginContainer\").visible = false
+	get_node(\"ColorRect\").visible = false
+	get_node(\"Pause\").visible = true
 	if (has_node(\"/root/Node2D/Body\")):
 		get_node(\"/root/Node2D/Body\").unlock()
 
@@ -86,10 +86,7 @@ __meta__ = {
 }
 menu_scene = "res://Scenes/menu/menu.tscn"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 10
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 light_mask = 0
 anchor_right = 1.0
@@ -99,7 +96,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pause" type="Button" parent="CanvasLayer"]
+[node name="Pause" type="Button" parent="."]
 light_mask = 0
 anchor_left = 1.0
 anchor_right = 1.0
@@ -113,7 +110,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 visible = false
 light_mask = 0
 anchor_right = 1.0
@@ -126,7 +123,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 light_mask = 0
 margin_left = 500.0
 margin_top = 100.0
@@ -138,30 +135,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnReturn" parent="CanvasLayer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-light_mask = 0
+[node name="BtnReturn" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 265.0
 margin_right = 920.0
 margin_bottom = 365.0
 rect_min_size = Vector2( 80, 100 )
 btn_text = "Вернуться"
 
-[node name="BtnToMenu" parent="CanvasLayer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-light_mask = 0
+[node name="BtnToMenu" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 390.0
 margin_right = 920.0
 margin_bottom = 490.0
 rect_min_size = Vector2( 80, 100 )
 btn_text = "В меню"
 
-[node name="BtnQuit" parent="CanvasLayer/MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
-light_mask = 0
+[node name="BtnQuit" parent="MarginContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 515.0
 margin_right = 920.0
 margin_bottom = 615.0
 rect_min_size = Vector2( 80, 100 )
 btn_text = "Выйти из игры"
-[connection signal="pressed" from="CanvasLayer/Pause" to="." method="_on_Pause_pressed"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/BtnReturn" to="." method="_return_to_game"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/BtnToMenu" to="." method="_to_menu"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/BtnQuit" to="." method="_quit_game"]
+[connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnReturn" to="." method="_return_to_game"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnToMenu" to="." method="_to_menu"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BtnQuit" to="." method="_quit_game"]

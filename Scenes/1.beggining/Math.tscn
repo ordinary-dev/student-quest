@@ -20,7 +20,6 @@ func adventure_begins():
 	get_node(\"/root/scene_loader\").load_scene(hidden_room)
 
 func _ready():
-	get_node(\"/root/ui\").restore_default()
 	yield(get_tree().create_timer(2), \"timeout\")
 	get_node(tw).interpolate_property(
 		get_node(cm), \"color\",

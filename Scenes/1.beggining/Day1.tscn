@@ -27,7 +27,7 @@ func ticket_window():
 	get_node(\"Body\").lock()
 	var ui = load(tickets_ui).instance()
 	ui.name = \"tickets\"
-	get_node(\"/root/ui\").add_child(ui)
+	get_node(\"/root/ui/CanvasLayer\").add_child(ui)
 
 func math():
 	get_node(\"restore_state\")._save()
@@ -94,7 +94,6 @@ person = "Мистер Дудец"
 [node name="Body" parent="." instance=ExtResource( 4 )]
 position = Vector2( -365, 488 )
 collision_layer = 1025
-backpack = true
 
 [node name="Store_Trigger" parent="." instance=ExtResource( 6 )]
 position = Vector2( 384, 448 )

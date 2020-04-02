@@ -7,9 +7,7 @@ script/source = "extends CenterContainer
 func close():
 	if has_node(\"/root/Node2D/Body\"):
 		get_node(\"/root/Node2D/Body\").unlock()
-	if has_node(\"/root/ui/tickets\"):
-		get_node(\"/root/ui\").remove_child(
-			get_node(\"/root/ui/tickets\"))
+	get_node(\"/root/ui/CanvasLayer\").remove_child(self)
 "
 
 [node name="CenterContainer" type="CenterContainer"]
@@ -104,18 +102,16 @@ margin_bottom = 228.0
 custom_constants/separation = 50
 
 [node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_top = -1.0
 margin_right = 400.0
-margin_bottom = 59.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 400, 60 )
 text = "Город N"
 valign = 1
 
 [node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 450.0
-margin_top = -1.0
 margin_right = 850.0
-margin_bottom = 59.0
+margin_bottom = 60.0
 rect_min_size = Vector2( 400, 60 )
 text = "3000 руб"
 valign = 1
@@ -151,18 +147,18 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/MarginContainer/ColorRect/HBoxContainer3"]
 margin_left = 275.0
-margin_top = 19.0
+margin_top = 20.0
 margin_right = 675.0
-margin_bottom = 79.0
+margin_bottom = 80.0
 rect_min_size = Vector2( 400, 60 )
 text = "Наличные:"
 valign = 1
 
 [node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/MarginContainer/ColorRect/HBoxContainer3"]
 margin_left = 725.0
-margin_top = 19.0
+margin_top = 20.0
 margin_right = 1125.0
-margin_bottom = 79.0
+margin_bottom = 80.0
 rect_min_size = Vector2( 400, 60 )
 text = "15 руб"
 valign = 1

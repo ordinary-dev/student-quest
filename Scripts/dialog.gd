@@ -14,11 +14,11 @@ var return_ui : bool
 
 
 func hide_dialog():
-	get_node("/root/ui/dialog").play_reverse()
+	get_node("/root/ui/CanvasLayer/dialog").play_reverse()
 	yield(get_tree().create_timer(
-		get_node("/root/ui/dialog").shape_time
+		get_node("/root/ui/CanvasLayer/dialog").shape_time
 	), "timeout")
-	get_node("/root/ui").remove_child(get_node("/root/ui/dialog"))
+	get_node("/root/ui/CanvasLayer").remove_child(get_node("/root/ui/CanvasLayer/dialog"))
 	set_process(false)
 	# Разблокировать персонажа
 	if has_node("/root/Node2D/Body"):
@@ -31,8 +31,6 @@ func hide_dialog():
 			get_node(glob_obj).call(glob_fnc)
 		else:
 			get_node(glob_obj).call(glob_fnc, glob_argv)
-	else:
-		get_node("/root/show_nf").show_notification("No such object: " + glob_obj)
 	glob_obj = ""
 	if return_ui:
 		get_node("/root/pause_init").enable_ui()
@@ -47,12 +45,12 @@ func _process(_delta):
 
 
 func show_next() -> void:
-	var dial = get_node("/root/ui/dialog")
+	var dial = get_node("/root/ui/CanvasLayer/dialog")
 	dial.play_dialog(
 		s_content[s_key]["name"],
 		s_content[s_key]["text"]
 	)
-	var btn = get_node("/root/ui/dialog/" + dial.next_button)
+	var btn = get_node("/root/ui/CanvasLayer/dialog/" + dial.next_button)
 	if s_content[s_key].has("next"):
 		s_key = s_content[s_key]["next"]
 		btn.disconnect("pressed", self, "show_next")
@@ -65,7 +63,7 @@ func show_next() -> void:
 
 
 func show_dialog(num : int, obj:String = "", fnc:String = "", argv:String="") -> void:
-	if has_node("/root/ui/Pause"):
+	if has_node("/root/ui/CanvasLayer/Pause"):
 		get_node("/root/pause_init").disable_ui()
 		return_ui = true
 	else:
@@ -82,7 +80,7 @@ func show_dialog(num : int, obj:String = "", fnc:String = "", argv:String="") ->
 	var state : = fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
 	if (state == OK):
 		# Подготовить интерфейс
-		var nd : = get_node("/root/ui")
+		var nd : = get_node("/root/ui/CanvasLayer")
 		var tmp = dialog_scene.instance()
 		tmp.name = "dialog"
 		nd.add_child(tmp)

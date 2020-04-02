@@ -8,14 +8,7 @@ enum a {DOWN, UP, LEFT, RIGHT}
 export (int) var speed = 100
 # Задержка между сменой кадров
 export (int) var change = 10
-# Показывать рюкзак
-export (bool) var backpack = false
-export (bool) var male = true
 export (a) var default_state = a.UP
-
-export (String, FILE, "*.png") var default_sprite
-export (String, FILE, "*.png") var backpack_sprite
-export (String, FILE, "*.png") var character_main
 
 # Объекты
 onready var character = $Character
@@ -209,12 +202,6 @@ func _physics_process(_delta) -> void:
 
 
 func _ready():
-	if male:
-		character.texture = load(character_main)
-	elif backpack:
-		character.texture = load(backpack_sprite)
-	else:
-		character.texture = load(default_sprite)
 	# Установка позиции
 	if default_state == UP:
 		go_up()

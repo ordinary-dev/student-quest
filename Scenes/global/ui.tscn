@@ -1,27 +1,21 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="GDScript" id=1]
-script/source = "extends Position2D
+script/source = "extends Control
 
 
 func restore_default() -> void:
-	position = Vector2(0, 0)
+	rect_position = Vector2(0, 0)
 
-
-func _ready():
-	restore_default()
 "
 
-[node name="RemoteTransform2D" type="Position2D"]
+[node name="ui" type="Control"]
 light_mask = 0
-z_index = 10
+mouse_filter = 1
 script = SubResource( 1 )
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 1920, 1080 )
-color = Color( 1, 1, 1, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 11

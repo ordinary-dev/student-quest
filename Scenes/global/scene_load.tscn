@@ -1,27 +1,42 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
+[sub_resource type="GDScript" id=2]
+script/source = "extends Tween
 
-onready var effect = $Tween
-onready var cm = $\"/root/ui/ColorRect\"
-export (Color) var start = Color(0, 0, 0, 0)
-export (Color) var end = Color(0, 0, 0, 1)
-export (float, 0.1, 3) var time = 0.5
+onready var canvas := $\"/root/ui/CanvasLayer\"
+const time := 0.5
+const start := Color(0, 0, 0, 0)
+const end := Color(0, 0, 0, 1)
 
 
-func fade_in():
-	effect.interpolate_property(cm, \"color\",
-			start, end, time, 
-			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	effect.start()
-	
+func create_color_rect() -> void:
+	var tmp := ColorRect.new()
+	tmp.color = start
+	tmp.name = \"transition\"
+	tmp.rect_min_size = Vector2(1920, 1080)
+	canvas.add_child(tmp)
 
-func fade_out():
-	effect.interpolate_property(cm, \"color\",
-			end, start, time, 
-			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	effect.start()
+
+func fade_in() -> void:
+	create_color_rect()
+	var color_rect = canvas.get_node(\"transition\")
+	interpolate_property(
+		color_rect, \"color\",
+		start, end, time, 
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	start()
+
+
+func fade_out() -> void:
+	var color_rect = canvas.get_node(\"transition\")
+	interpolate_property(
+		color_rect, \"color\",
+		end, start, time, 
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	start()
+	yield(get_tree().create_timer(time), \"timeout\")
+	canvas.remove_child(color_rect)
+
 
 # Общая функция для смены сцен
 func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool = true) -> void:
@@ -31,24 +46,23 @@ func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool =
 		yield(get_tree().create_timer(time), \"timeout\")
 	
 	# Загрузка сцены
-	var file_exists = Directory.new().file_exists(scene_name)
+	var file_exists := Directory.new().file_exists(scene_name)
 	if (file_exists):
 		assert(get_tree().change_scene(scene_name) == OK)
 	else:
 		get_node(\"/root/show_nf\").show_notification(\"Не могу найти сцену\")
-		
-	get_node(\"/root/ui\").position = Vector2(0, 0)
 	
 	# Анимация появления
 	if anim_end:
+		if !anim_start:
+			create_color_rect()
+			canvas.get_node(\"transition\").color = end
 		fade_out()
-	else:
-		cm.color = start
+	elif anim_start:
+			canvas.remove_child(canvas.get_node(\"transition\"))
+
 
 "
 
-[node name="scene_loader" type="Node2D"]
-z_index = 100
-script = SubResource( 1 )
-
-[node name="Tween" type="Tween" parent="."]
+[node name="Tween" type="Tween"]
+script = SubResource( 2 )

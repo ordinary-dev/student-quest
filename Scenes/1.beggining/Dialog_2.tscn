@@ -11,7 +11,9 @@ func load_next():
 	get_node(\"/root/scene_loader\").load_scene(corridor)
 
 func _ready():
-	get_node(\"/root/d_obj\").show_dialog(11, \"/root/Control\", \"load_next\")
+	get_node(\"/root/d_obj\").show_dialog(
+		11, \"/root/Control\", 
+		\"load_next\")
 	
 "
 
