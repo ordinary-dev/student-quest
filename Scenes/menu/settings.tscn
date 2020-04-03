@@ -9,7 +9,6 @@
 resource_name = "Main"
 script/source = "extends Control
 
-
 # Подписи
 export (NodePath) var ost_text
 export (NodePath) var fx_text
@@ -53,39 +52,35 @@ func reset_effects_volume() -> void:
 
 
 # Воспроизведение щелчка при переключении вкладок
-func _on_TabContainer_tab_selected(_tab) -> void:
+func tab_changed(_tab):
 	fx.btn_click()
 
 
 # Синхронизировать интерфейс
-func update_settings() -> void:
+func _ready() -> void:
 	update_text(fx.volume, fx_text)
 	update_text(ost.volume, ost_text)
-	pass
 
-
-func _ready() -> void:
-	update_settings()
 "
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 15.0
 content_margin_right = 15.0
 content_margin_top = 5.0
 bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 15.0
 content_margin_right = 15.0
 content_margin_top = 5.0
 bg_color = Color( 0.129412, 0.129412, 0.129412, 1 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.0605469, 0.0605469, 0.0605469, 1 )
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=5]
 script/source = "extends MarginContainer
 
 # Интерфейс настроек
@@ -129,9 +124,9 @@ margin_bottom = 476.0
 rect_clip_content = true
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
-custom_styles/tab_fg = SubResource( 4 )
-custom_styles/tab_bg = SubResource( 5 )
-custom_styles/panel = SubResource( 3 )
+custom_styles/tab_fg = SubResource( 2 )
+custom_styles/tab_bg = SubResource( 3 )
+custom_styles/panel = SubResource( 4 )
 tab_align = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -249,10 +244,7 @@ btn_text = "+"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 50.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_top = 42.0
 custom_constants/margin_right = 50
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
@@ -261,14 +253,14 @@ custom_constants/margin_bottom = 50
 [node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Инфо"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 733.0
-margin_bottom = 372.0
+margin_right = 741.0
+margin_bottom = 384.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="Label" type="Label" parent="TabContainer/Инфо/ScrollContainer"]
-margin_right = 683.0
-margin_bottom = 592.0
+margin_right = 691.0
+margin_bottom = 872.0
 size_flags_horizontal = 3
 text = "Student Quest
 v 2.3
@@ -298,23 +290,20 @@ __meta__ = {
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 50.0
-margin_right = -4.0
-margin_bottom = -4.0
+margin_top = 42.0
 custom_constants/margin_right = 50
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
-script = SubResource( 2 )
+script = SubResource( 5 )
 vsync_toggle = NodePath("VBoxContainer/CheckButton")
 fullscreen_toggle = NodePath("VBoxContainer/CheckButton2")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Графика"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 733.0
-margin_bottom = 372.0
+margin_right = 741.0
+margin_bottom = 384.0
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Графика/VBoxContainer"]
 margin_right = 1812.0
@@ -334,7 +323,7 @@ size_flags_horizontal = 3
 custom_icons/off = ExtResource( 1 )
 custom_icons/on = ExtResource( 3 )
 text = "FULLSCREEN"
-[connection signal="tab_selected" from="TabContainer" to="." method="_on_TabContainer_tab_selected" flags=3]
+[connection signal="tab_changed" from="TabContainer" to="." method="tab_changed"]
 [connection signal="pressed" from="TabContainer/Аудио/Audio/Music/HBoxContainer/ResetMusic" to="." method="reset_music_volume"]
 [connection signal="pressed" from="TabContainer/Аудио/Audio/Music/HBoxContainer/M-" to="." method="music" binds= [ -5 ]]
 [connection signal="pressed" from="TabContainer/Аудио/Audio/Music/HBoxContainer/M+" to="." method="music" binds= [ 5 ]]

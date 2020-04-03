@@ -9,6 +9,7 @@ script/source = "extends Control
 
 var enabled : bool = false
 export (String, FILE, \"*.tscn\") var menu_scene
+export (String, FILE, \"*.tscn\") var quit_scene
 
 
 func _process(delta):
@@ -40,9 +41,10 @@ func _on_Pause_pressed() -> void:
 
 
 # Кнопка возврата в игру
-func _return_to_game() -> void:
+func _return_to_game(play_sound : bool = true) -> void:
 	enabled = false
-	get_node(\"/root/fx\").btn_click()
+	if play_sound:
+		get_node(\"/root/fx\").btn_click()
 	get_node(\"MarginContainer\").visible = false
 	get_node(\"ColorRect\").visible = false
 	get_node(\"Pause\").visible = true
@@ -53,21 +55,19 @@ func _return_to_game() -> void:
 # Кнопка возврата в меню
 func _to_menu() -> void:
 	get_node(\"/root/fx\").btn_click()
+	get_node(\"/root/scene_loader\").load_scene(menu_scene)
+	yield(get_tree().create_timer(
+		get_node(\"/root/scene_loader\").time), \"timeout\")
 	# Убрать паузу
-	_return_to_game()
-	get_node(\"/root/scene_loader\").load_scene(menu_scene, false)
+	_return_to_game(false)
 
 
 # Выход из игры
 func _quit_game():
-	# Затухание
-	var sl = get_node(\"/root/scene_loader\")
-	sl.fade_in()
-	yield(get_tree().create_timer(sl.time), \"timeout\")
 	# Сохранить данные
 	get_node(\"/root/global\").write_settings()
 	# Закрыть игру
-	get_tree().quit()
+	get_node(\"/root/scene_loader\").load_scene(quit_scene)
 "
 
 [node name="Control" type="Control"]
@@ -81,6 +81,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 menu_scene = "res://Scenes/menu/menu.tscn"
+quit_scene = "res://Scenes/quit.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
