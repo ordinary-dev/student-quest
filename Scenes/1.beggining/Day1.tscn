@@ -11,16 +11,17 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-
 export (String, FILE, \"*.ogg\") var song
 export (String, FILE, \"*.tscn\") var math_scene
 export (String, FILE, \"*.tscn\") var store_scene
 export (String, FILE, \"*.tscn\") var tickets_ui
 
+
 # Перейти в магазин
 func to_store():
 	get_node(\"restore_state\")._save()
 	get_node(\"/root/scene_loader\").load_scene(store_scene)
+
 
 # Касса
 func ticket_window():
@@ -29,15 +30,37 @@ func ticket_window():
 	ui.name = \"tickets\"
 	get_node(\"/root/ui/CanvasLayer\").add_child(ui)
 
+
+# Вход в мехмат
 func math():
-	get_node(\"restore_state\")._save()
-	get_node(\"/root/scene_loader\").load_scene(math_scene)
+	if get_node(\"/root/prop\").get_param(\"facility\") == \"0\":
+		get_node(\"restore_state\")._save()
+		get_node(\"/root/scene_loader\").load_scene(math_scene)
+	else:
+		get_node(\"/root/show_nf\").show_notification(\"Вы не можете зайти сюда\")
+
+
+# Вход в естественно-научный факультет
+func ns():
+	if get_node(\"/root/prop\").get_param(\"facility\") == \"1\":
+		get_node(\"restore_state\")._save()
+		get_node(\"/root/scene_loader\").load_scene(math_scene)
+	else:
+		get_node(\"/root/show_nf\").show_notification(\"Вы не можете зайти сюда\")
+
+
+# Вход в гуманитарный факультет
+func hum():
+	if get_node(\"/root/prop\").get_param(\"facility\") == \"2\":
+		get_node(\"restore_state\")._save()
+		get_node(\"/root/scene_loader\").load_scene(math_scene)
+	else:
+		get_node(\"/root/show_nf\").show_notification(\"Вы не можете зайти сюда\")
+
 
 func _ready():
 	# Обновить этап
-	get_node(\"/root/prop\").save_param(
-		get_node(\"/root/global\").loaded, \"stage\", \"2\"
-	)
+	get_node(\"/root/prop\").save_param(\"stage\", \"2\")
 	# Начать играть песню, если играет другая
 	get_node(\"/root/ost\").play_sound(song)
 "
@@ -123,6 +146,18 @@ position = Vector2( 896, 5632 )
 label = "Мехмат"
 object_name = NodePath("..")
 function_name = "math"
+
+[node name="NS" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4216, 3520 )
+label = "Естественно-научный факультет"
+object_name = NodePath("..")
+function_name = "ns"
+
+[node name="Hum" parent="." instance=ExtResource( 6 )]
+position = Vector2( 4800, 11072 )
+label = "Гуманитарный факультет"
+object_name = NodePath("..")
+function_name = "hum"
 
 [node name="restore_state" type="Node2D" parent="."]
 position = Vector2( 0, -8 )

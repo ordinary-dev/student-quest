@@ -13,9 +13,7 @@ script/source = "extends Node2D
 
 func _ready():
 	# Обновить этап
-	get_node(\"/root/prop\").save_param(
-		get_node(\"/root/global\").loaded, \"stage\", \"1\"
-	)
+	get_node(\"/root/prop\").save_param(\"stage\", \"1\")
 "
 
 [sub_resource type="OccluderPolygon2D" id=2]

@@ -71,10 +71,20 @@ func _ready() -> void:
 			assert(state == OK)
 			
 			# Прочитать stage из папки
-			var stage = get_node(\"/root/prop\").get_param(dir_name, \"stage\")
+			var stage = get_node(\"/root/prop\").get_param(\"stage\", dir_name)
 			var properties : Dictionary = get_node(\"/root/events\").get_event_info(stage)
 			btn.set_game_stage(properties[\"name\"])
 			
+			# Задать факультет
+			var facility_number = get_node(\"/root/prop\").get_param(\"facility\", dir_name)
+			if facility_number == \"0\":
+				btn.set_game_facility(\"Мехмат\")
+			elif facility_number == \"1\":
+				btn.set_game_facility(\"Ест. факультет\")
+			elif facility_number == \"2\":
+				btn.set_game_facility(\"Гумфак\")
+			else:
+				btn.set_game_facility(\"Факультет не выбран\")
 			
 			# Привязать кнопку к загрузке игры
 			state = btn.get_load_btn().connect(

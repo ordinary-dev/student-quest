@@ -19,7 +19,7 @@ onready var ost : = $"/root/ost"
 onready var fx : = $"/root/fx"
 
 # Для того, чтобы игра знала, в какой файл сохранять данные
-var loaded : = "-1"
+var loaded : String = "-1"
 
 
 # Создать словарь с переменными для сохранения

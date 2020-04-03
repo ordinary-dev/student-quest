@@ -9,21 +9,28 @@ script/source = "extends Node2D
 
 
 # Получить параметр игры
-func get_param(game_id : String, param : String) -> String:
+func get_param(param : String, game_id : String = \"null\") -> String:
 	# Открыть файл
 	var fp : = File.new()
-	var path : = \"user://\" + game_id + \"/\" + param
-	var state : = fp.open(path, File.READ)
-	assert(state == OK)
-	
-	# Прочитать
-	var val : = fp.get_line()
-	fp.close()
-	return val
+	if game_id == \"null\":
+		game_id = get_node(\"/root/global\").loaded
+	if game_id == \"-1\":
+		get_node(\"/root/show_nf\").show_notification(\"Игра не загружена\")
+		return \"-1\"
+	else:
+		var path : = \"user://\" + game_id + \"/\" + param
+		var state : = fp.open(path, File.READ)
+		assert(state == OK)
+		
+		# Прочитать
+		var val : = fp.get_line()
+		fp.close()
+		return val
 
 
 # Сохранить параметр игры
-func save_param(game_id : String, param : String, value : String) -> void:
+func save_param(param : String, value : String) -> void:
+	var game_id : String = get_node(\"/root/global\").loaded
 	if game_id == \"-1\":
 		get_node(\"/root/show_nf\").show_notification(
 			\"Игра не загружена, не сохраняю\"

@@ -38,7 +38,7 @@ func save_file() -> String:
 		game_id = get_random_name()
 	glob.loaded = game_id
 	# Сохранить статус #0
-	get_node(\"/root/prop\").save_param(game_id, \"stage\", \"0\")
+	get_node(\"/root/prop\").save_param(\"stage\", \"0\")
 	return game_id
 
 
