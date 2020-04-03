@@ -34,6 +34,7 @@ show_nf="*res://Scripts/show_nf.gd"
 prop="*res://Scenes/global/game_status.tscn"
 events="*res://Scripts/events.gd"
 saved_street_data="*res://Scenes/containers/street_container.tscn"
+temp="*res://Scripts/temp.gd"
 
 [display]
 

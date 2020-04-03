@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Math.tscn" type="PackedScene" id=2]
@@ -16,20 +16,48 @@ export (NodePath) var cm
 export (NodePath) var tw
 export (String, FILE, \"*.tscn\") var hidden_room 
 
+
 func adventure_begins():
+	get_node(\"restore_state\").save()
 	get_node(\"/root/scene_loader\").load_scene(hidden_room)
 
-func _ready():
+
+func turn_lights_off():
 	yield(get_tree().create_timer(2), \"timeout\")
 	get_node(tw).interpolate_property(
 		get_node(cm), \"color\",
 		Color(\"#00080808\"), Color(\"#ee080808\"), 1,
 		Tween.TRANS_BOUNCE, Tween.EASE_IN_OUT)
 	get_node(tw).start()
+
+
+func turn_lights_off_now():
+	get_node(cm).color = Color(\"#ee080808\")
 "
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 128, 16 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node2D
+
+export (NodePath) var player
+onready var temp = $\"/root/temp\"
+
+func save():
+	temp.save(\"math_player_pos\", get_node(player).position)
+
+func restore():
+	# Свет должен быть выключен в любом случае
+	get_parent().turn_lights_off_now()
+	get_node(player).position = temp.get(\"math_player_pos\")
+
+func _ready():
+	if temp.is_saved(\"math_player_pos\"):
+		restore()
+	else:
+		get_parent().turn_lights_off()
+"
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
@@ -113,3 +141,7 @@ object_name = NodePath("..")
 function_name = "adventure_begins"
 
 [node name="EnableUI" parent="." instance=ExtResource( 3 )]
+
+[node name="restore_state" type="Node2D" parent="."]
+script = SubResource( 3 )
+player = NodePath("../Body")

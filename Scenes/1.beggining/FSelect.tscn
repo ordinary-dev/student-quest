@@ -37,7 +37,7 @@ func load_next():
 	get_node(\"/root/fx\").btn_click()
 	get_node(\"/root/prop\").save_param(
 		get_node(\"/root/global\").loaded, \"facility\", str(active))
-	get_node(\"/root/scene_loader\").load_scene(scene, true, false)
+	get_node(\"/root/scene_loader\").load_scene(scene)
 "
 
 [node name="Control" type="Control"]
@@ -47,7 +47,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-scene = "res://Scenes/1.beggining/Day1_setup.tscn"
+scene = "res://Scenes/1.beggining/Day1.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

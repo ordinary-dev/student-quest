@@ -46,31 +46,42 @@ func _ready():
 script/source = "extends Node2D
 
 # Восстанавливает состояние сцены
-# Считывает переменные из /root/saved
+# Считывает переменные из /root/temp
 
 # Игрок
 export (NodePath) var player
 # Триггер диалога Мистера Дудца
 export (NodePath) var singer
-onready var svd = get_node(\"/root/saved_street_data\")
+onready var temp = get_node(\"/root/temp\")
 
 
 # Временно сохранить текущее состояние
 # !Не сохраняет в файл
 func _save() -> void:
-	svd.player_pos = get_node(player).position
-	svd.singer_dialog = get_node(singer).dialog_number
-	svd.singer_dialog_used = get_node(singer).used
+	temp.save(
+		\"street_player_pos\", 
+		get_node(player).position)
+	temp.save(
+		\"street_singer_dialog\", 
+		get_node(singer).dialog_number)
+	temp.save(
+		\"street_singer_dialog_used\", 
+		get_node(singer).used)
 
 
 # Восстановить состояние
 func _restore() -> void:
-	get_node(player).position = svd.player_pos
-	get_node(singer).dialog_number = svd.singer_dialog
-	get_node(singer).used = svd.singer_dialog_used
+	get_node(player).position = temp.get(\"street_player_pos\")
+	get_node(singer).dialog_number = temp.get(\"street_singer_dialog\")
+	get_node(singer).used = temp.get(\"street_singer_dialog_used\")
 
 func _ready() -> void:
-	_restore()
+	if temp.is_saved(\"street_player_pos\"):
+		_restore()
+	else:
+		get_node(player).position = Vector2(-365, 488)
+		get_node(singer).dialog_number = 2
+		get_node(singer).used = false
 "
 
 [node name="Node2D" type="Node2D"]

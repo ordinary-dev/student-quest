@@ -9,13 +9,18 @@
 script/source = "extends Node2D
 
 export (String, FILE, \"*.tscn\") var math
-export (String, FILE, \"*.tscn\") var next
+export (String, FILE, \"*.tscn\") var dialog
+export (String, FILE, \"*.tscn\") var secret
 
 func return_back():
 	get_node(\"/root/scene_loader\").load_scene(math)
 	
 func go():
-	get_node(\"/root/scene_loader\").load_scene(next)
+	if temp.is_saved(\"stairs_secret\"):
+		get_node(\"/root/scene_loader\").load_scene(secret)
+	else:
+		temp.save(\"stairs_secret\", true)
+		get_node(\"/root/scene_loader\").load_scene(dialog)
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -27,7 +32,8 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 math = "res://Scenes/1.beggining/MathBlackout.tscn"
-next = "res://Scenes/1.beggining/Dialog_2.tscn"
+dialog = "res://Scenes/1.beggining/Dialog_2.tscn"
+secret = "res://Scenes/1.beggining/Secret.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
