@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Student Life"
-config/description="Через тернии к звездам"
+config/name="Student Quest"
+config/description="2D quest"
 run/main_scene="res://Scenes/entry.tscn"
 boot_splash/image="res://Sprites/Splash.png"
 config/icon="res://Sprites/icons/logo.png"
@@ -107,8 +107,11 @@ quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 quality/2d/use_pixel_snap=true
 threads/thread_model=2
+quality/directional_shadow/size=1024
+quality/directional_shadow/size.mobile=1024
 quality/shadow_atlas/quadrant_0_subdiv=2
+quality/shadows/filter_mode=0
 environment/default_clear_color=Color( 0, 0, 0, 1 )
-quality/filters/msaa=2
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false

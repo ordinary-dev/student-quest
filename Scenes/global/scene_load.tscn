@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Tween
 
 onready var canvas := $\"/root/ui/CanvasLayer\"
@@ -65,4 +65,4 @@ func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool =
 "
 
 [node name="Tween" type="Tween"]
-script = SubResource( 2 )
+script = SubResource( 1 )

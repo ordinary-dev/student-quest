@@ -53,10 +53,6 @@ func _return_to_game() -> void:
 # Кнопка возврата в меню
 func _to_menu() -> void:
 	get_node(\"/root/fx\").btn_click()
-	# Затемнить экран
-	var sl = get_node(\"/root/scene_loader\")
-	sl.fade_in()
-	yield(get_tree().create_timer(sl.time), \"timeout\")
 	# Убрать паузу
 	_return_to_game()
 	get_node(\"/root/scene_loader\").load_scene(menu_scene, false)
