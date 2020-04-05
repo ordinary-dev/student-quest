@@ -20,7 +20,8 @@ func get_param(param : String, game_id : String = \"null\") -> String:
 	else:
 		var path : = \"user://\" + game_id + \"/\" + param
 		var state : = fp.open(path, File.READ)
-		assert(state == OK)
+		if state != OK:
+			return \"-1\"
 		
 		# Прочитать
 		var val : = fp.get_line()
