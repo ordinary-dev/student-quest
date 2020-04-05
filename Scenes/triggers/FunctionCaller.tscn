@@ -5,7 +5,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Area2D
 
-export (String) var label = \"Мистер человек\"
+export (String) var label = \"Вызов функции\"
 onready var effect = $Tween
 onready var text_name = $ColorRect3
 onready var text_btn = $ColorRect2
@@ -80,6 +80,11 @@ script = SubResource( 1 )
 position = Vector2( 96, 96 )
 shape = SubResource( 2 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 9
+
+[node name="Tween" type="Tween" parent="."]
+
 [node name="ColorRect3" type="ColorRect" parent="."]
 margin_left = 96.0
 margin_top = -48.0
@@ -130,7 +135,7 @@ margin_bottom = 69.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
-text = "Мистер Дудец"
+text = "Вызов функции"
 autowrap = true
 clip_text = true
 __meta__ = {
@@ -172,7 +177,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Tween" type="Tween" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]
