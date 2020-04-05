@@ -51,15 +51,15 @@ export (NodePath) var player
 onready var temp = $\"/root/temp\"
 
 func save():
-	temp.save(\"math_player_pos\", get_node(player).position)
+	temp.save(\"ns_player_pos\", get_node(player).position)
 
 func restore():
 	# Свет должен быть выключен в любом случае
 	get_parent().turn_lights_off_now()
-	get_node(player).position = temp.get(\"math_player_pos\")
+	get_node(player).position = temp.get(\"ns_player_pos\")
 
 func _ready():
-	if temp.is_saved(\"math_player_pos\"):
+	if temp.is_saved(\"ns_player_pos\"):
 		restore()
 	else:
 		get_parent().turn_lights_off()
