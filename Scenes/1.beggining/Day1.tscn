@@ -7,13 +7,13 @@
 [ext_resource path="res://Scenes/1.beggining/Guide.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/Guide.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Old guide.png" type="Texture" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 export (String, FILE, \"*.ogg\") var song
-export (String, FILE, \"*.tscn\") var math_scene
+export (String, FILE, \"*.tscn\") var speaker_scene
 export (String, FILE, \"*.tscn\") var store_scene
 export (String, FILE, \"*.tscn\") var tickets_ui
 
@@ -36,7 +36,7 @@ func ticket_window():
 func math():
 	if get_node(\"/root/prop\").get_param(\"facility\") == \"0\":
 		get_node(\"restore_state\")._save()
-		get_node(\"/root/scene_loader\").load_scene(math_scene)
+		get_node(\"/root/scene_loader\").load_scene(speaker_scene)
 	else:
 		get_node(\"/root/show_nf\").show_notification(\"Вы не можете зайти сюда\")
 
@@ -45,7 +45,7 @@ func math():
 func ns():
 	if get_node(\"/root/prop\").get_param(\"facility\") == \"1\":
 		get_node(\"restore_state\")._save()
-		get_node(\"/root/scene_loader\").load_scene(math_scene)
+		get_node(\"/root/scene_loader\").load_scene(speaker_scene)
 	else:
 		get_node(\"/root/show_nf\").show_notification(\"Вы не можете зайти сюда\")
 
@@ -54,7 +54,7 @@ func ns():
 func hum():
 	if get_node(\"/root/prop\").get_param(\"facility\") == \"2\":
 		get_node(\"restore_state\")._save()
-		get_node(\"/root/scene_loader\").load_scene(math_scene)
+		get_node(\"/root/scene_loader\").load_scene(speaker_scene)
 	else:
 		get_node(\"/root/show_nf\").show_notification(\"Вы не можете зайти сюда\")
 
@@ -111,7 +111,7 @@ func _ready() -> void:
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 song = "res://Audio/music/SummerNight.ogg"
-math_scene = "res://Scenes/1.beggining/date3.tscn"
+speaker_scene = "res://Scenes/1.beggining/Speaker.tscn"
 store_scene = "res://Scenes/templates/Store.tscn"
 tickets_ui = "res://Scenes/templates/Tickets.tscn"
 
@@ -162,7 +162,7 @@ function_name = "hum"
 
 [node name="Guide" type="Sprite" parent="."]
 position = Vector2( 2192, 528 )
-scale = Vector2( 3, 3 )
+scale = Vector2( 2.99999, 3 )
 z_index = 3
 texture = ExtResource( 8 )
 

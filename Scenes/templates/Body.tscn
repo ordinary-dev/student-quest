@@ -9,7 +9,7 @@
 extents = Vector2( 29.3519, 51.1927 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( 4.36312, 33.52, 14.3768, 33.5515, 15.0066, 33.0162, 3.98525, 33.0162 )
+polygon = PoolVector2Array( 4.36312, 33.52, 14.3768, 33.5515, 14.9994, 32.9997, 3.99548, 32.9893 )
 
 [node name="Body" type="KinematicBody2D"]
 position = Vector2( -351.576, 564.435 )

@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/templates/Math_map.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sprites/light.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/light.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Guide.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sprites/Guide.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/templates/Hm_map.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -44,7 +44,7 @@ extents = Vector2( 128, 16 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=5]
 script/source = "extends Node2D
 
 export (NodePath) var player
@@ -71,21 +71,21 @@ cm = NodePath("ColorRect")
 tw = NodePath("Tween")
 hidden_room = "res://Scenes/1.beggining/Stairs.tscn"
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
+[node name="Node2D" parent="." instance=ExtResource( 7 )]
 
 [node name="Lights" type="Node2D" parent="."]
 
 [node name="Light2D" type="Light2D" parent="Lights"]
 position = Vector2( 143.112, 45.2781 )
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 texture_scale = 20.0
 energy = 0.4
 range_z_max = 10
 shadow_enabled = true
 
 [node name="Light2D2" type="Light2D" parent="Lights"]
-position = Vector2( -478.409, 194.102 )
-texture = ExtResource( 5 )
+position = Vector2( 1130.58, 455.942 )
+texture = ExtResource( 1 )
 texture_scale = 15.0
 energy = 0.4
 range_z_max = 10
@@ -93,7 +93,7 @@ shadow_enabled = true
 
 [node name="Light2D3" type="Light2D" parent="Lights"]
 position = Vector2( 469.587, 1873.79 )
-texture = ExtResource( 5 )
+texture = ExtResource( 1 )
 texture_scale = 15.0
 energy = 0.4
 range_z_max = 10
@@ -113,7 +113,7 @@ position = Vector2( 471.33, 340.644 )
 position = Vector2( 0.470337, 3.8562 )
 shape = SubResource( 3 )
 
-[node name="Body" parent="." instance=ExtResource( 1 )]
+[node name="Body" parent="." instance=ExtResource( 4 )]
 position = Vector2( 344, 1560 )
 collision_layer = 1025
 default_state = 0
@@ -121,7 +121,7 @@ default_state = 0
 [node name="Guide" type="Sprite" parent="."]
 position = Vector2( 472, 312 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
+texture = ExtResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -1364.0
@@ -136,8 +136,8 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Area2D3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1513.32, 1602.49 )
+[node name="Area2D3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -528, 1248 )
 label = "Естественно-научный факультет"
 object_name = NodePath("..")
 function_name = "next_facility"
@@ -148,16 +148,16 @@ z_index = 50
 dialog_number = 10
 person = "Охранник"
 
-[node name="Area2D2" parent="." instance=ExtResource( 4 )]
+[node name="Area2D2" parent="." instance=ExtResource( 2 )]
 light_mask = 0
-position = Vector2( -576, 128 )
+position = Vector2( 1077.15, 357.034 )
 z_index = 50
 label = "Путь?"
 object_name = NodePath("..")
 function_name = "adventure_begins"
 
-[node name="EnableUI" parent="." instance=ExtResource( 3 )]
+[node name="EnableUI" parent="." instance=ExtResource( 5 )]
 
 [node name="restore_state" type="Node2D" parent="."]
-script = SubResource( 4 )
+script = SubResource( 5 )
 player = NodePath("../Body")

@@ -7,10 +7,19 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-export (String, FILE, \"*.tscn\") var next_scene
+export (String, FILE, \"*.tscn\") var fac_0
+export (String, FILE, \"*.tscn\") var fac_1
+export (String, FILE, \"*.tscn\") var fac_2
 
 func load_scene():
-	get_node(\"/root/scene_loader\").load_scene(next_scene)
+	var n = get_node(\"/root/prop\").get_param(\"facility\")
+	if n == \"0\":
+		get_node(\"/root/scene_loader\").load_scene(fac_0)
+	elif n == \"1\":
+		get_node(\"/root/scene_loader\").load_scene(fac_1)
+	else:
+		get_node(\"/root/scene_loader\").load_scene(fac_2)
+
 
 func _ready():
 	get_node(\"/root/d_obj\").show_dialog(8, \"/root/Node2D\", \"load_scene\")
@@ -24,7 +33,9 @@ polygon = PoolVector2Array( 847.085, 503.513, 846.861, 362.097, 870.569, 362.239
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/1.beggining/MathBlackout.tscn"
+fac_0 = "res://Scenes/1.beggining/MathBlackout.tscn"
+fac_1 = "res://Scenes/1.beggining/NsBlackout.tscn"
+fac_2 = "res://Scenes/1.beggining/HmBlackout.tscn"
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 occluder = SubResource( 2 )
