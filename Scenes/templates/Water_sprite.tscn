@@ -2,5 +2,7 @@
 
 [ext_resource path="res://Sprites/water.tres" type="SpriteFrames" id=1]
 
-[node name="AnimatedSprite" type="AnimatedSprite"]
+[node name="Sprite" type="AnimatedSprite"]
+scale = Vector2( 2, 2 )
 frames = ExtResource( 1 )
+frame = 1

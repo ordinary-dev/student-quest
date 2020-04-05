@@ -12,6 +12,7 @@ export (a) var default_state = a.UP
 
 # Объекты
 onready var character = $Character
+onready var water_sprite = $Character/Water
 # Звук
 onready var player = $AudioStreamPlayer
 onready var player2 = $AudioStreamPlayer2
@@ -42,6 +43,19 @@ enum {DOWN_1, UP_1, SIDE_1,
 	DOWN_2, UP_2, SIDE_2,
 	DOWN_STILL, UP_STILL, SIDE_STILL}
 
+# Для предотвращения отключения воды
+var water_level : int = 0
+var water_protection : bool = false setget set_water_protection
+
+func set_water_protection(val):
+	water_protection = val
+	if !water_protection:
+		if water_level == 1:
+			water_sprite.visible = true
+			water_sprite.playing = true
+	else:
+		water_sprite.visible = false
+		water_sprite.playing = false
 
 # Заблокировать обработку ввода
 func lock() -> void:
@@ -51,6 +65,22 @@ func lock() -> void:
 # Возобновить обработку ввода
 func unlock() -> void:
 	set_physics_process(true)
+
+
+# Включить воду внизу
+func enable_water() -> void:
+	water_level += 1
+	if !water_protection and water_level == 1:
+		water_sprite.visible = true
+		water_sprite.playing = true
+
+
+# Отключить воду внизу
+func disable_water() -> void:
+	water_level -= 1
+	if water_level == 0:
+		water_sprite.visible = false
+		water_sprite.playing = false
 
 
 # Воспроизвести звук шага

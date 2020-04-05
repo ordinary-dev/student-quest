@@ -9,7 +9,7 @@ script/source = "extends Node2D
 func get_dialog_number() -> int:
 	var glob = get_node(\"/root/global\")
 	if glob.loaded != \"-1\":
-		var fac = get_node(\"/root/prop\").get_param(glob.loaded, \"facility\")
+		var fac = get_node(\"/root/prop\").get_param(\"facility\")
 		if fac == \"0\":
 			return 5
 		if fac == \"1\":

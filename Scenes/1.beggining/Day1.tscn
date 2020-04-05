@@ -137,7 +137,7 @@ object_name = NodePath("..")
 function_name = "to_store"
 
 [node name="Tickets_Trigger" parent="." instance=ExtResource( 6 )]
-position = Vector2( -384, -64 )
+position = Vector2( -384, -104 )
 label = "Касса"
 object_name = NodePath("..")
 function_name = "ticket_window"
@@ -160,6 +160,9 @@ label = "Гуманитарный факультет"
 object_name = NodePath("..")
 function_name = "hum"
 
+[node name="Guide_Dialog" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2056, 488 )
+
 [node name="Guide" type="Sprite" parent="."]
 position = Vector2( 2192, 528 )
 scale = Vector2( 2.99999, 3 )
@@ -171,8 +174,5 @@ position = Vector2( 0, -8 )
 script = SubResource( 2 )
 player = NodePath("../Body")
 singer = NodePath("../Mr_Singer_Dialog")
-
-[node name="Node2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( 2056, 488 )
 
 [node name="EnableUI" parent="." instance=ExtResource( 7 )]
