@@ -3,10 +3,19 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
+########################
 # Включить интерфейс
+########################
 
-func _ready():
+# Показать время
+export (bool) var show_time = false
+export (String) var time = \"10:00\"
+
+
+func _ready() -> void:
 	get_node(\"/root/pause_init\").enable_ui()
+	if show_time:
+		get_node(\"/root/pause_init\").show_time(time)
 "
 
 [node name="EnableUI" type="Node2D"]

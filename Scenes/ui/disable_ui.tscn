@@ -7,6 +7,7 @@ script/source = "extends Node2D
 
 func _ready():
 	get_node(\"/root/pause_init\").disable_ui()
+	get_node(\"/root/pause_init\").hide_time()
 "
 
 [node name="DisableUI" type="Node2D"]

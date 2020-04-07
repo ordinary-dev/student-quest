@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tree_flipped.png-5223ce22a4754bcf6625c55841a6041f.stex"
+path="res://.import/street.png-54a284bf6c522b4b7228f1c307284ea9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemaps/Tree_flipped.png"
-dest_files=[ "res://.import/Tree_flipped.png-5223ce22a4754bcf6625c55841a6041f.stex" ]
+source_file="res://Tilemaps/street/street.png"
+dest_files=[ "res://.import/street.png-54a284bf6c522b4b7228f1c307284ea9.stex" ]
 
 [params]
 

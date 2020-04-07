@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/street.png-645848bf2383e7a463f0bace08e5a809.stex"
+path="res://.import/building.png-5c7d8f486e3f937cb93a656cc26c7df1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemaps/street.png"
-dest_files=[ "res://.import/street.png-645848bf2383e7a463f0bace08e5a809.stex" ]
+source_file="res://Tilemaps/building/building.png"
+dest_files=[ "res://.import/building.png-5c7d8f486e3f937cb93a656cc26c7df1.stex" ]
 
 [params]
 

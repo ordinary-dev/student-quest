@@ -187,3 +187,5 @@ player = NodePath("../Body")
 singer = NodePath("../Mr_Singer_Dialog")
 
 [node name="EnableUI" parent="." instance=ExtResource( 7 )]
+show_time = true
+time = "9:45"
