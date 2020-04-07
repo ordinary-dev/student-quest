@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/templates/Animated_text.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+onready var tx = $Text
+export (String, FILE, \"*.tscn\") var day1
+
+func _ready():
+	var t = tx.get_delay()
+	tx._start()
+	yield(get_tree().create_timer(t), \"timeout\")
+	get_node(\"/root/scene_loader\").load_scene(day1)
+"
+
+[node name="Control" type="Control"]
+rect_min_size = Vector2( 1920, 1080 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+day1 = "res://Scenes/1.beggining/Day1.tscn"
+
+[node name="Text" parent="." instance=ExtResource( 1 )]
+text_1 = "1 сентября"
+text_2 = "Остановка"
