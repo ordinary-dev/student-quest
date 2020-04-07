@@ -135,6 +135,7 @@ __meta__ = {
 }
 
 [node name="Аудио" type="MarginContainer" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 62.0
@@ -246,7 +247,7 @@ btn_text = "+"
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 42.0
+margin_top = 62.0
 custom_constants/margin_right = 50
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
@@ -256,7 +257,7 @@ custom_constants/margin_bottom = 50
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 741.0
-margin_bottom = 404.0
+margin_bottom = 384.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
@@ -289,10 +290,9 @@ __meta__ = {
 }
 
 [node name="Графика" type="MarginContainer" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 42.0
+margin_top = 62.0
 custom_constants/margin_right = 50
 custom_constants/margin_top = 50
 custom_constants/margin_left = 50
@@ -305,10 +305,10 @@ fullscreen_toggle = NodePath("VBoxContainer/CheckButton2")
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 741.0
-margin_bottom = 404.0
+margin_bottom = 384.0
 
 [node name="CheckButton" type="CheckButton" parent="TabContainer/Графика/VBoxContainer"]
-margin_right = 1812.0
+margin_right = 691.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
@@ -318,7 +318,7 @@ text = "VSYNC"
 
 [node name="CheckButton2" type="CheckButton" parent="TabContainer/Графика/VBoxContainer"]
 margin_top = 84.0
-margin_right = 1812.0
+margin_right = 691.0
 margin_bottom = 164.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
