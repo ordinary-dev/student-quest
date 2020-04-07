@@ -1,19 +1,18 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Tilemaps/street/street.tres" type="TileSet" id=1]
-[ext_resource path="res://Sprites/Store.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/templates/Fog_of_war.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/common.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/triggers/ObjectSwitcher.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Sprites/block.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/fountain.tres" type="SpriteFrames" id=7]
-[ext_resource path="res://Sprites/Building_in_garden.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/outside/tickets_store/block.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/outside/fountain/fountain.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Sprites/outside/Building_in_garden.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/templates/Water.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/templates/waypoint.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/templates/Person.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/templates/Bridge.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Sprites/rocks.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/rocks2.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/outside/rocks/rocks.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/outside/rocks/rocks2.png" type="Texture" id=14]
 [ext_resource path="res://Tilemaps/trees/trees.tres" type="TileSet" id=15]
 
 [sub_resource type="GDScript" id=1]
@@ -46,7 +45,6 @@ extents = Vector2( 32, 2048 )
 extents = Vector2( 32, 1056 )
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 4 )
 
 [node name="NoisePsu" type="Node2D" parent="."]
 

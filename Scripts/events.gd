@@ -8,7 +8,7 @@ extends Node
 # Получить содержимое файла события
 func get_event_info(event : String) -> Dictionary:
 	var fp = File.new()
-	var state = fp.open("res://Events/" + event + ".tres", File.READ)
+	var state = fp.open("res://Events/" + event + ".json", File.READ)
 	assert(state == OK)
 	var tmp = fp.get_line()
 	var dict = parse_json(tmp)

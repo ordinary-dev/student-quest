@@ -77,7 +77,7 @@ func show_dialog(num : int, obj:String = "", fnc:String = "", argv:String="") ->
 	
 	# Открыть файл
 	var fl : = File.new()
-	var state : = fl.open("res://Dialogs/" + str(num) + ".tres", File.READ)
+	var state : = fl.open("res://Dialogs/" + str(num) + ".json", File.READ)
 	if (state == OK):
 		# Подготовить интерфейс
 		var nd : = get_node("/root/ui/CanvasLayer")

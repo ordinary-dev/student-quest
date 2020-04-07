@@ -2,11 +2,12 @@
 
 [ext_resource path="res://Sprites/light.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Guide.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Guard.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/templates/Ns_map.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
