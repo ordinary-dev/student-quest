@@ -1,0 +1,153 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/outside/Old guide.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Sprite
+
+export (Array, NodePath) var nodes
+const max_distance = 250
+var player
+var target
+var ind = 0
+var cdelay = 0
+# Текущее положение
+var cdir = -1
+const e = 3
+const speed = 3
+const delay = 20
+# Кадры
+enum {DOWN_1, UP_1, SIDE_1,
+	DOWN_2, UP_2, SIDE_2,
+	DOWN_STILL, UP_STILL, SIDE_STILL}
+# Типы положений
+enum {DOWN, UP, LEFT, RIGHT}
+
+func distance_from_player() -> float:
+	var dx = player.position.x - position.x
+	var dy = player.position.y - position.y
+	return sqrt(dx*dx+dy*dy)
+
+
+func not_equal(x:float, y:float) -> bool:
+	return abs(x - y) > e
+
+
+func _process(_delta):
+	if distance_from_player() < max_distance:
+		var changed = false
+		
+		if not_equal(position.x, target.position.x):
+			changed = true
+			if position.x < target.position.x:
+				position.x += speed
+				if cdir != RIGHT:
+					cdir = RIGHT
+					cdelay = 0
+					frame = SIDE_1
+					flip_h = false
+				elif cdelay < delay:
+					cdelay += 1
+				elif cdelay == delay:
+					cdelay += 1
+					frame = SIDE_STILL
+				elif cdelay < delay * 2:
+					cdelay += 1
+				elif cdelay == delay * 2:
+					cdelay += 1
+					frame = SIDE_2
+				elif cdelay < delay * 3:
+					cdelay += 1
+				elif cdelay == delay * 3:
+					cdelay += 1
+					frame = SIDE_STILL
+				elif cdelay < delay * 4:
+					cdelay += 1
+				else:
+					frame = SIDE_1
+					cdelay = 0
+			else:
+				position.x -= speed
+				if cdir != LEFT:
+					cdir = LEFT
+					cdelay = 0
+					frame = SIDE_1
+					flip_h = true
+				elif cdelay < delay:
+					cdelay += 1
+				elif cdelay == delay:
+					cdelay += 1
+					frame = SIDE_STILL
+				elif cdelay < delay * 2:
+					cdelay += 1
+				elif cdelay == delay * 2:
+					cdelay += 1
+					frame = SIDE_2
+				elif cdelay < delay * 3:
+					cdelay += 1
+				elif cdelay == delay * 3:
+					cdelay += 1
+					frame = SIDE_STILL
+				elif cdelay < delay * 4:
+					cdelay += 1
+				else:
+					frame = SIDE_1
+					cdelay = 0
+		
+		if not_equal(position.y, target.position.y):
+			if position.y > target.position.y:
+				position.y -= speed
+				if !changed && cdir != UP:
+					cdir = UP
+					frame = UP_1
+					cdelay = 0
+				elif cdelay < delay*2:
+					cdelay += 1
+				elif cdelay == delay*2:
+					cdelay += 1
+					frame = UP_2
+				elif cdelay < delay * 4:
+					cdelay += 1
+				elif cdelay == delay *4:
+					cdelay = 0
+					frame = UP_1
+			else:
+				position.y += speed
+				if !changed && cdir != DOWN:
+					cdir = DOWN
+					frame = DOWN_1
+					cdelay = 0
+				elif cdelay < delay*2:
+					cdelay += 1
+				elif cdelay == delay*2:
+					cdelay += 1
+					frame = DOWN_2
+				elif cdelay < delay * 4:
+					cdelay += 1
+				elif cdelay == delay *4:
+					cdelay = 0
+					frame = DOWN_1
+			changed = true
+		
+		# Следующая нода
+		if !changed:
+			if ind + 1 < nodes.size():
+				ind += 1
+				target = get_node(nodes[ind])
+			else:
+				set_process(false)
+				frame = UP_STILL
+
+
+func _ready():
+	if has_node(\"/root/Node2D/Body\"):
+		player = get_node(\"/root/Node2D/Body\")
+	target = get_node(nodes[ind])
+		
+"
+
+[node name="Guide" type="Sprite"]
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+script = SubResource( 1 )
