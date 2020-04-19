@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Tilemaps/store/store.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/light.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+# Store
+
+export (String, FILE, \"*.tscn\") var street_scene
+
+
+func load_street():
+	SCENES.load_scene(street_scene)
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 80, 15 )
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 1610612736, 0, 11, 1610612736, 0, 12, 1610612736, 0, 13, 1610612736, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65544, 0, 0, 65545, 0, 0, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 1610612736, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 327684, 1610612736, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 1610612736, 0, 393220, 1610612736, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 1610612736, 0, 458756, 1610612737, 0, 458757, 1610612737, 0, 458758, 1610612737, 0, 458759, 1610612737, 0, 458760, 1610612737, 0, 458761, 1610612737, 0, 458762, 1610612737, 0, 458763, 1610612737, 0, 458764, 1610612737, 0, 458765, 1610612737, 0, 524292, 1610612736, 0, 524293, 1610612736, 0, 524294, 1610612736, 0, 524295, 1610612736, 0, 524296, 1610612736, 0, 524297, 1610612736, 0, 524298, 1610612736, 0, 524299, 1610612736, 0, 524300, 1610612736, 0, 524301, 1610612736, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0 )
+
+[node name="Body" parent="." instance=ExtResource( 2 )]
+position = Vector2( 544, 104 )
+collision_layer = 1025
+collision_mask = 0
+default_state = 0
+
+[node name="TileMap2" type="TileMap" parent="."]
+scale = Vector2( 2, 2 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 4, 1610612738, 0, 5, -1073741821, 0, 6, -1073741821, 0, 7, -1073741821, 0, 10, -1073741821, 0, 11, -1073741821, 0, 12, -1073741821, 0, 13, -1073741822, 0, 65540, 1610612739, 0, 65549, 3, 0, 131076, 1610612739, 0, 131085, 3, 0, 196612, 1610612739, 0, 196621, 3, 0, 262148, 1610612739, 0, 262157, 3, 0, 327684, 1610612739, 0, 327693, 3, 0, 393220, 1610612739, 0, 393229, 3, 0, 458756, 1610612739, 0, 458765, 3, 0, 524292, 1610612739, 0, 524301, 3, 0, 589828, -1610612734, 0, 589829, -1610612733, 0, 589830, -1610612733, 0, 589831, -1610612733, 0, 589832, -1610612733, 0, 589833, -1610612733, 0, 589834, -1610612733, 0, 589835, -1610612733, 0, 589836, -1610612733, 0, 589837, 2, 0 )
+
+[node name="Area2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 480, -64 )
+label = "Выйти"
+object_name = NodePath("..")
+function_name = "load_street"
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 576, -136 )
+texture = ExtResource( 4 )
+texture_scale = 25.0
+energy = 0.6
+shadow_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 576, -24 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 2 )

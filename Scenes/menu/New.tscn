@@ -1,0 +1,142 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/Fog_of_war.tscn" type="PackedScene" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+export(NodePath) var btn_start
+export(NodePath) var btn_back
+export(NodePath) var label
+
+
+export (String, FILE, \"*.tscn\") var next_scene
+
+
+func random_dir_exists(path : String) -> bool:
+	var dir = Directory.new()
+	return dir.dir_exists(\"user://\" + path)
+
+
+func get_random_name() -> String:
+	var res : String = \"\"
+	var alp = \"123456789abcdefghkmnpqrst\"
+	var indmax : = len(alp)
+	randomize()
+	for _i in range(8):
+		res += alp[randi() % indmax]
+	return res
+
+
+func save_file() -> String:
+	# Get unique game_id
+	var game_id : String = get_random_name()
+	while random_dir_exists(game_id):
+		game_id = get_random_name()
+	GLOBAL.loaded = game_id
+	# Save stage #0
+	PROP.save(\"stage\", \"0\")
+	return game_id
+
+
+func append_text(game_id : String) -> void:
+	# Add [ok]
+	get_node(label).bbcode_text += (game_id + \"             [[color=green]OK[/color]]\")
+	# Add info about stage
+	get_node(label).bbcode_text += \"\\n* Этап #1: Воспоминания и иллюзии   [[color=yellow]Waiting[/color]]\"
+
+
+func _ready() -> void:
+	# Create game file
+	var game_id : = save_file()
+	append_text(game_id)
+	# Activate buttons
+	get_node(btn_start).disabled = false
+
+
+func _start_game():
+	FX.btn_click()
+	SCENES.load_scene(next_scene)
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+btn_start = NodePath("ColorRect/MarginContainer/VBoxContainer/BtnStart")
+label = NodePath("ColorRect/MarginContainer/VBoxContainer/Label")
+next_scene = "res://Scenes/Chapter1/01.date1.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Noise" parent="ColorRect/MarginContainer" instance=ExtResource( 2 )]
+vect = Vector2( 10, 6 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 1030.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="RichTextLabel" parent="ColorRect/MarginContainer/VBoxContainer"]
+margin_right = 1820.0
+margin_bottom = 776.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.67
+bbcode_enabled = true
+bbcode_text = "[center]Welcome to net manager[/center]
+
+
+
+
+
+[color=gray][user@of] $ tail ~/user.log [/color]
+
+* Создаем файл сохранения...        [[color=green]OK[/color]]
+* Номер файла: "
+text = "Welcome to net manager
+
+
+
+
+
+[user@of] $ tail ~/user.log 
+
+* Создаем файл сохранения...        [OK]
+* Номер файла: "
+scroll_active = false
+
+[node name="BtnStart" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource( 1 )]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_top = 780.0
+margin_right = 1820.0
+margin_bottom = 980.0
+rect_min_size = Vector2( 80, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+btn_text = "START"
+[connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/BtnStart" to="." method="_start_game"]

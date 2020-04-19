@@ -1,0 +1,176 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CenterContainer
+
+
+func close():
+	if has_node(\"/root/Node2D/Body\"):
+		get_node(\"/root/Node2D/Body\").unlock()
+	UI.remove_child(self)
+"
+
+[node name="CenterContainer" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="."]
+margin_left = 210.0
+margin_top = 290.0
+margin_right = 1710.0
+margin_bottom = 790.0
+rect_min_size = Vector2( 1500, 500 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_constants/margin_right = 50
+custom_constants/margin_top = 75
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+margin_left = 50.0
+margin_top = 75.0
+margin_right = 1450.0
+margin_bottom = 450.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+margin_right = 1400.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "Касса"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 1400.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 80 )
+custom_constants/separation = 50
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 24.0
+margin_right = 400.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 400, 0 )
+text = "Направление"
+
+[node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 450.0
+margin_top = 24.0
+margin_right = 850.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 400, 0 )
+text = "Стоимость"
+
+[node name="Label3" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 900.0
+margin_top = 24.0
+margin_right = 1300.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 400, 0 )
+text = "Покупка"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 1400.0
+margin_bottom = 228.0
+custom_constants/separation = 50
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 400.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 400, 60 )
+text = "Город N"
+valign = 1
+
+[node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 450.0
+margin_right = 850.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 400, 60 )
+text = "3000 руб"
+valign = 1
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 900.0
+margin_right = 1300.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 400, 60 )
+text = "Купить"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+margin_top = 232.0
+margin_right = 1400.0
+margin_bottom = 352.0
+custom_constants/margin_top = 20
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/VBoxContainer/MarginContainer"]
+margin_top = 20.0
+margin_right = 1400.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 100, 100 )
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/MarginContainer/ColorRect/HBoxContainer3"]
+margin_left = 275.0
+margin_top = 20.0
+margin_right = 675.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 400, 60 )
+text = "Наличные:"
+valign = 1
+
+[node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/MarginContainer/ColorRect/HBoxContainer3"]
+margin_left = 725.0
+margin_top = 20.0
+margin_right = 1125.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 400, 60 )
+text = "15 руб"
+valign = 1
+
+[node name="Button" type="Button" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -75.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 75, 75 )
+text = "x"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Control/Button" to="." method="close"]

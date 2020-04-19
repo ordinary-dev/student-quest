@@ -1,0 +1,207 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+export (int) var dialog_number
+export (String) var person = \"Мистер человек\"
+export (bool) var load_scene = false
+export (String, FILE, \"*.tscn\") var scene_path
+onready var effect = $Tween
+onready var text_name = $ColorRect3
+onready var text_btn = $ColorRect2
+onready var btn = $Button
+var start : = Color(1, 1, 1, 0)
+var end : = Color(1, 1, 1, 1)
+var time : float = 0.3
+var used = false
+var button_pressed = false
+
+
+func _process(_delta):
+	if Input.is_action_pressed(\"dialog_start\") or button_pressed:
+		button_pressed = false
+		if load_scene:
+			DIALOG.show_dialog(dialog_number, \"/root/SCENES\", \"load_scene\", scene_path)
+		else:
+			DIALOG.show_dialog(dialog_number)
+		hide_ui()
+		used = true
+		set_process(false)
+
+
+func show_ui():
+	btn.visible = true
+	text_name.visible = true
+	text_btn.visible = true
+	effect.interpolate_property(text_name, \"modulate\",
+		start, end, time, 
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.interpolate_property(text_btn, \"modulate\",
+		start, end, time, 
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.start()
+	
+
+func hide_ui():
+	effect.interpolate_property(text_name, \"modulate\",
+		end, start, time, 
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.interpolate_property(text_btn, \"modulate\",
+		end, start, time, 
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.start()
+	yield(get_tree().create_timer(time*2), \"timeout\")
+	text_name.visible = false
+	text_btn.visible = false
+	btn.visible = false
+
+
+func _on_Area2D_body_entered(body):
+	if \"Body\" in body.name && !used:
+		show_ui()
+		set_process(true)
+
+
+func _on_Area2D_body_exited(body):
+	if \"Body\" in body.name && !used:
+		hide_ui()
+		set_process(false)
+
+func _ready():
+	text_name.set_visible(false)
+	text_btn.set_visible(false)
+	btn.set_visible(false)
+	get_node(\"ColorRect3/MarginContainer/ColorRect/MarginContainer/Label\").text = person
+	set_process(false)
+	text_name.modulate = start
+	text_btn.modulate = start
+
+
+func _on_Button_pressed():
+	button_pressed = true
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 92.6027, 28.092 )
+
+[node name="Area2D" type="Area2D"]
+z_index = 8
+collision_layer = 0
+collision_mask = 1024
+script = SubResource( 1 )
+person = "STRANGER"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -27.3024, 68.8249 )
+shape = SubResource( 2 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 13.0
+margin_top = -53.0
+margin_right = 333.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect3/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 317.0
+margin_bottom = 82.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect3/MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect3/MarginContainer/ColorRect/MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 304.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+text = "Dialog"
+autowrap = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 22.0
+margin_top = 22.0
+margin_right = 82.0
+margin_bottom = 59.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 3
+custom_constants/margin_top = 3
+custom_constants/margin_left = 3
+custom_constants/margin_bottom = 3
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 57.0
+margin_bottom = 34.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect2/MarginContainer/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 2 )
+text = "e"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_top = -55.0
+margin_right = 350.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 350, 120 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

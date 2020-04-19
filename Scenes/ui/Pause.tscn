@@ -1,0 +1,194 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/icons/pause.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/menu/Settings.tscn" type="PackedScene" id=3]
+
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+var enabled : bool = false
+var show_joystick := false
+export (String, FILE, \"*.tscn\") var menu_scene
+export (String, FILE, \"*.tscn\") var quit_scene
+
+
+func _process(_delta):
+	if Input.is_action_just_pressed(\"ui_cancel\"):
+		switch()
+
+
+func _ready() -> void:
+	get_node(\"MarginContainer\").visible = false
+	get_node(\"ColorRect\").visible = false
+
+
+func switch():
+	if enabled:
+		_return_to_game()
+	else:
+		_on_Pause_pressed()
+
+
+# Кнопка паузы
+func _on_Pause_pressed() -> void:
+	enabled = true
+	FX.btn_click()
+	get_node(\"MarginContainer\").visible = true
+	get_node(\"ColorRect\").visible = true
+	get_node(\"Pause\").visible = false
+	if UI.get_node(\"Joystick\").visible:
+		UI_INIT.hide_joystick()
+		show_joystick = true
+	if (has_node(\"/root/Node2D/Body\")):
+		get_node(\"/root/Node2D/Body\").lock()
+
+
+# Кнопка возврата в игру
+func _return_to_game(play_sound : bool = true) -> void:
+	enabled = false
+	if play_sound:
+		FX.btn_click()
+	get_node(\"MarginContainer\").visible = false
+	get_node(\"ColorRect\").visible = false
+	get_node(\"Pause\").visible = true
+	if (has_node(\"/root/Node2D/Body\")):
+		get_node(\"/root/Node2D/Body\").unlock()
+	if show_joystick:
+		UI_INIT.show_joystick()
+	show_joystick = false
+
+
+# Кнопка возврата в меню
+func _to_menu() -> void:
+	FX.btn_click()
+	SCENES.load_scene(menu_scene)
+	yield(get_tree().create_timer(SCENES.time), \"timeout\")
+	# Убрать паузу
+	_return_to_game(false)
+
+
+# Выход из игры
+func _quit_game():
+	# Сохранить данные
+	GLOBAL.write_settings()
+	# Закрыть игру
+	SCENES.load_scene(quit_scene)
+
+
+func _settings():
+	FX.btn_click()
+	get_node(\"MarginContainer/HBoxContainer/Settings\").visible = !get_node(\"MarginContainer/HBoxContainer/Settings\").visible
+"
+
+[node name="Control" type="Control"]
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+mouse_filter = 2
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu_scene = "res://Scenes/menu/menu.tscn"
+quit_scene = "res://Scenes/quit.tscn"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.905882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pause" type="Button" parent="."]
+light_mask = 0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -60.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 60.0
+icon = ExtResource( 1 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_constants/margin_right = 100
+custom_constants/margin_top = 100
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 1820.0
+margin_bottom = 980.0
+custom_constants/separation = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+light_mask = 0
+margin_right = 750.0
+margin_bottom = 880.0
+rect_min_size = Vector2( 750, 0 )
+custom_constants/separation = 25
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 202.0
+margin_right = 750.0
+margin_bottom = 302.0
+rect_min_size = Vector2( 80, 100 )
+btn_text = "RETURN"
+
+[node name="Settings" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 327.0
+margin_right = 750.0
+margin_bottom = 427.0
+rect_min_size = Vector2( 80, 100 )
+btn_text = "SETTINGS"
+
+[node name="Menu" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 452.0
+margin_right = 750.0
+margin_bottom = 552.0
+rect_min_size = Vector2( 80, 100 )
+btn_text = "MENU"
+
+[node name="Quit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 577.0
+margin_right = 750.0
+margin_bottom = 677.0
+rect_min_size = Vector2( 80, 100 )
+btn_text = "QUIT"
+
+[node name="Settings" parent="MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+visible = false
+margin_left = 850.0
+margin_top = 210.0
+margin_right = 1700.0
+margin_bottom = 880.0
+rect_min_size = Vector2( 850, 670 )
+[connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Return" to="." method="_return_to_game"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings" to="." method="_settings"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Menu" to="." method="_to_menu"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_quit_game"]

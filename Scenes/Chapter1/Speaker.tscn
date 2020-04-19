@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/backgrounds/Scene.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/backgrounds/Speaker.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/light.png" type="Texture" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.tscn\") var fac_0
+export (String, FILE, \"*.tscn\") var fac_1
+export (String, FILE, \"*.tscn\") var fac_2
+export (int) var dialog
+
+
+func load_scene():
+	var n = PROP.get(\"facility\")
+	if n == \"0\":
+		SCENES.load_scene(fac_0)
+	elif n == \"1\":
+		SCENES.load_scene(fac_1)
+	else:
+		SCENES.load_scene(fac_2)
+
+
+func _ready():
+	DIALOG.show_dialog(dialog, \"/root/Node2D/Background\", \"load_scene\")
+"
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 472, 600, 1360, 600, 1360, 816, 472, 816 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 848, 504, 848, 360, 872, 360, 872, 264, 944, 264, 944, 360, 968, 360, 968, 504, 944, 504, 944, 576, 872, 576, 872, 504 )
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+fac_0 = "res://Scenes/1.beggining/MathBlackout.tscn"
+fac_1 = "res://Scenes/1.beggining/NsBlackout.tscn"
+fac_2 = "res://Scenes/1.beggining/HmBlackout.tscn"
+dialog = 8
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.784314 )
+position = Vector2( 920, 416 )
+scale = Vector2( 24, 24 )
+texture = ExtResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 746.623, 159.049 )
+texture = ExtResource( 3 )
+texture_scale = 34.33
+energy = 0.5
+shadow_enabled = true
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 792, 80 )
+texture = ExtResource( 3 )
+texture_scale = 34.33
+energy = 0.5
+shadow_enabled = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+modulate = Color( 0.843137, 0.843137, 0.843137, 1 )
+position = Vector2( 848, 264 )
+scale = Vector2( 24, 24 )
+texture = ExtResource( 2 )
+centered = false
