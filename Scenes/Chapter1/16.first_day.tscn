@@ -10,7 +10,6 @@
 [ext_resource path="res://Sprites/outside/Old guide.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/triggers/Tickets.tscn" type="PackedScene" id=10]
 
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
@@ -101,7 +100,7 @@ collision_layer = 1025
 collision_mask = 0
 
 [node name="Store_Trigger" parent="." instance=ExtResource( 6 )]
-position = Vector2( 384, 448 )
+position = Vector2( 552, 216 )
 label = "STORE"
 object_name = NodePath("..")
 function_name = "to_store"

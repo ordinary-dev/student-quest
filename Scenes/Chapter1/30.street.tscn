@@ -107,7 +107,7 @@ show_time = true
 time = "9:45"
 
 [node name="Store" parent="." instance=ExtResource( 1 )]
-position = Vector2( 384, 456 )
+position = Vector2( 552, 224 )
 label = "STORE"
 object_name = NodePath("..")
 function_name = "store"
