@@ -20,9 +20,10 @@ const speed = 400
 # Directions
 enum {DOWN, UP, LEFT, RIGHT}
 
-func distance_from_player() -> float:
-	var dx = player.position.x - position.x
-	var dy = player.position.y - position.y
+
+func distance_between(obj1, obj2) -> float:
+	var dx = obj1.position.x - obj2.position.x
+	var dy = obj1.position.y - obj2.position.y
 	return sqrt(dx*dx+dy*dy)
 
 
@@ -31,7 +32,7 @@ func not_equal(x:float, y:float) -> bool:
 
 
 func _process(delta):
-	if distance_from_player() < max_distance:
+	if distance_between(player, self) < max_distance or distance_between(self, target) > distance_between(player, target):
 		var changed = false
 		
 		if not_equal(position.x, target.position.x):
