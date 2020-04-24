@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/backgrounds/background.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+next_scene = "res://Scenes/Chapter2/3.House.tscn"
+delay = 2.0
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 955.508, 535.687 )
+scale = Vector2( 11, 11 )
+texture = ExtResource( 1 )

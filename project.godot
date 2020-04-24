@@ -102,7 +102,7 @@ pointing/emulate_touch_from_mouse=true
 [locale]
 
 test="en"
-translations=PoolStringArray( "res://strings.ru.translation", "res://strings.en.translation" )
+translations=PoolStringArray( "res://Translations/chapter2.en.translation", "res://Translations/chapter2.ru.translation", "res://Translations/strings.en.translation", "res://Translations/strings.ru.translation" )
 
 [physics]
 
