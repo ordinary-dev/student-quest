@@ -3,3 +3,5 @@
 .idea
 *.exe
 *.pck
+*.zip
+*.x86_64

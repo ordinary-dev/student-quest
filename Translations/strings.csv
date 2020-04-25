@@ -19,7 +19,7 @@ CONFIRM,Do you really want to quit?,Вы действительно хотите
 SITE,Open site,Открыть сайт
 GODOT,Created with Godot Engine,Создано при помощи Godot Engine
 CHANGELOG,Changelog:,Список изменений:
-CHANGES,-The new look of the store and the hostel,-Новый облик магазина и общаги
+CHANGES,-Beginning of the second chapter,-Начало второй главы
 AUTHORS,Authors:,Авторы:
 JOYSTICK,Joystick script:,Скрипт джойстика:
 MUSIC,Music:,Музыка:
@@ -39,7 +39,7 @@ STRANGER,Stranger,Незнакомец
 MRD,Mr. Dudec,Мистер Дудец
 D21,"Oh hello, I'm Mr. Dudec","О, привет, я Мистер Дудец"
 D22,I have not often been noticed recently,Меня не часто замечают в последнее время
-D23,"I think we'll meet again. Do not be late.","Я думаю, мы еще встретимся. Не опаздывай."
+D23,I think we'll meet again. Do not be late.,"Я думаю, мы еще встретимся. Не опаздывай."
 BYE,Goodbye,Прощай
 D41,"Чу-чух, чу-чух; чу-чух, чу-чух...","Чу-чух, чу-чух; чу-чух, чу-чух..."
 D42,"Hey hey look, it's already morning, we'll be there soon","Эй, эй, смотри, уже утро, мы скоро приедем"
@@ -52,17 +52,17 @@ D71,"Hi, are you from the Faculty of Humanities?","Привет, ты же с г
 D72,You need the lowest building,Тебе нужно в самое нижнее здание
 ABSSTRANGER,Absolute stranger,Абсолютный незнакомец
 D81,"Congratulations, you have risen a notch","Поздравляю вас, вы поднялись на ступеньку выше"
-D82,"Now it's time to climb to the very top","Теперь самое время поднятся на самый верх"
-D83,"Go ahead without looking at failure","Идите вперед, не оглядываясь на неудачи"
+D82,Now it's time to climb to the very top,Теперь самое время поднятся на самый верх
+D83,Go ahead without looking at failure,"Идите вперед, не оглядываясь на неудачи"
 SECURITY,Security guard,Охранник
 D101,"Sorry, the turnstiles are not working","Простите, турникеты не работают"
 D102,All bypass so far,Все пока идут в обход
 D111,Stairs? Lower?,Лестница? Еще ниже?
-D121,"Hey do you know me?","Эй, ты меня знаешь?"
+D121,Hey do you know me?,"Эй, ты меня знаешь?"
 D122,"Not sure, maybe I heard somewhere about you","Не уверен, может я слышал где-то о Вас"
 D123,"Ahh, they call me Mr. Dudec","Ааа, меня называют Мистер Дудец"
 D124,"But I’ll tell you later about myself, you’re already late","Но я как-нибудь потом расскажу о себе, ты и так опаздываешь"
-D131,"Maybe I saw him somewhere on the Internet?","Может быть я видел его где-то в интернете?"
+D131,Maybe I saw him somewhere on the Internet?,Может быть я видел его где-то в интернете?
 START,Start,Начать
 NIGHT,Night,Ночь
 MORNING,Early morning,Раннее утро
@@ -73,7 +73,7 @@ MATH,Faculty of Mechanics and Mathematics,Механико-математиче�
 NS,Faculty of Natural Sciences,Факультет естественных наук
 HM,Faculty of Humanities,Гуманитарный факультет
 FUNKNOWN,No faculty selected,Факультет не выбран
-STORE,"Supermarket 'Chetverochka'","Магазин 'Четверочка'"
+STORE,Supermarket 'Chetverochka',Магазин 'Четверочка'
 TICKETS,Ticket window,Касса
 HOSTEL,Enter the hostel,Зайти в общагу
 SEPTEMBER1,First of september,Первое сентября
