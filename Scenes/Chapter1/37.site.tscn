@@ -31,7 +31,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_scene = "res://Scenes/menu/Menu.tscn"
+next_scene = "res://Scenes/Chapter2/1.Intro.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
