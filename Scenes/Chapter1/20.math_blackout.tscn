@@ -4,9 +4,9 @@
 [ext_resource path="res://Scenes/templates/Math_map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sprites/light.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Guard.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/PlayMusic.gd" type="Script" id=8]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -74,32 +74,6 @@ hidden_room = "res://Scenes/Chapter1/23.stairs.tscn"
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
 
-[node name="Lights" type="Node2D" parent="."]
-
-[node name="Light2D" type="Light2D" parent="Lights"]
-position = Vector2( 143.112, 45.2781 )
-texture = ExtResource( 5 )
-texture_scale = 20.0
-energy = 0.4
-range_z_max = 10
-shadow_enabled = true
-
-[node name="Light2D2" type="Light2D" parent="Lights"]
-position = Vector2( -478.409, 194.102 )
-texture = ExtResource( 5 )
-texture_scale = 15.0
-energy = 0.4
-range_z_max = 10
-shadow_enabled = true
-
-[node name="Light2D3" type="Light2D" parent="Lights"]
-position = Vector2( 469.587, 1873.79 )
-texture = ExtResource( 5 )
-texture_scale = 15.0
-energy = 0.4
-range_z_max = 10
-shadow_enabled = true
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 543.53, 236.144 )
 
@@ -162,3 +136,8 @@ function_name = "adventure_begins"
 [node name="restore_state" type="Node2D" parent="."]
 script = SubResource( 4 )
 player = NodePath("../Body")
+
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource( 8 )
+file = "res://Audio/music/Suspense.ogg"
+delay = 5.0

@@ -19,6 +19,7 @@ visible = false
 [node name="Notifications" type="VBoxContainer" parent="."]
 margin_right = 550.0
 margin_bottom = 300.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

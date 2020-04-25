@@ -5,13 +5,13 @@
 [ext_resource path="res://Scenes/templates/Flat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 const scene = \"res://Scenes/Chapter1/28.black_screen.tscn\"
 
 func _ready():
+	MUSIC.stop()
 	yield(get_tree().create_timer(5), \"timeout\")
 	SCENES.load_scene(scene)
 "

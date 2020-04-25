@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/templates/Flat.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -57,5 +58,7 @@ position = Vector2( 471.698, 225.201 )
 label = "OPENCHAT"
 object_name = NodePath("..")
 function_name = "internet"
+
+[node name="EnableUI" parent="." instance=ExtResource( 5 )]
 
 [editable path="Body"]

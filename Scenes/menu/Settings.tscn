@@ -349,7 +349,7 @@ custom_constants/separation = 20
 margin_right = 659.0
 btn_text = "OPENSITE"
 
-[node name="Label" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Site" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 100.0
 margin_right = 659.0
 margin_bottom = 178.0
@@ -363,7 +363,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Godot" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 198.0
 margin_right = 659.0
 margin_bottom = 222.0
@@ -375,7 +375,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label3" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Changelog" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 242.0
 margin_right = 659.0
 margin_bottom = 266.0
@@ -387,7 +387,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label4" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Changes" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 286.0
 margin_right = 659.0
 margin_bottom = 310.0
@@ -399,7 +399,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label5" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Authors" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 330.0
 margin_right = 659.0
 margin_bottom = 354.0
@@ -411,7 +411,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label6" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Nicks" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 374.0
 margin_right = 659.0
 margin_bottom = 452.0
@@ -425,7 +425,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label7" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Joystick" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 472.0
 margin_right = 659.0
 margin_bottom = 496.0
@@ -437,7 +437,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label8" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Gonkee" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 516.0
 margin_right = 659.0
 margin_bottom = 648.0
@@ -451,7 +451,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label11" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Songs" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+margin_top = 516.0
+margin_right = 659.0
+margin_bottom = 648.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+text = "Some sounds were downloaded from freesound.org/people/klankbeeld
+
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contact" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 945.0
 margin_right = 659.0
 margin_bottom = 969.0
@@ -463,7 +477,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label12" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Mail" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 989.0
 margin_right = 659.0
 margin_bottom = 1013.0
@@ -475,7 +489,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label13" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="SupportUs" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 1033.0
 margin_right = 659.0
 margin_bottom = 1057.0
@@ -487,7 +501,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label14" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Btc" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 1077.0
 margin_right = 659.0
 margin_bottom = 1128.0
@@ -500,7 +514,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label15" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Legal" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 1148.0
 margin_right = 659.0
 margin_bottom = 1172.0
@@ -512,7 +526,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label16" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Copyright" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 1192.0
 margin_right = 659.0
 margin_bottom = 1216.0

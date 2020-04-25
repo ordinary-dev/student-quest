@@ -5,7 +5,6 @@
 [ext_resource path="res://Sprites/light.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=4]
 
-
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( -31.9164, -20.7375, 31.5676, -20.4989, 31.499, 20.5356, -31.4903, 20.7146 )
 

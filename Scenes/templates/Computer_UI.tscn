@@ -1,0 +1,298 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+onready var s1 = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer
+onready var s2 = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2
+onready var s3 = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3
+onready var stop_button = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3/VBoxContainer/ResetBtn
+onready var reset_button = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3/VBoxContainer/StopBtn
+export (NodePath) var text_line
+export (NodePath) var text_console
+
+
+func _ready():
+	s1.visible = false
+	s2.visible = false
+	s3.visible = false
+
+
+func _on_Logs_pressed():
+	FX.btn_click()
+	s1.visible = true
+	s2.visible = false
+	s3.visible = false
+
+
+func _on_Progress_pressed():
+	FX.btn_click()
+	s1.visible = false
+	s2.visible = true
+	s3.visible = false
+
+
+func _on_Settings_pressed():
+	FX.btn_click()
+	s1.visible = false
+	s2.visible = false
+	s3.visible = true
+
+
+func _on_Close_pressed():
+	if has_node(\"/root/Node2D/Body\"):
+		get_node(\"/root/Node2D/Body\").unlock()
+	self.get_parent().remove_child(self)
+
+
+func _on_ResetBtn_pressed():
+	if has_node(\"/root/Node2D\"):
+		get_node(\"/root/Node2D\").next()
+	self.get_parent().remove_child(self)
+
+
+func _on_StopBtn_pressed():
+	_on_ResetBtn_pressed()
+
+
+func _on_cmd_pressed():
+	var txt = get_node(text_line).text
+	get_node(text_line).text = \"\"
+	# TODO: Add logic
+	if txt == \"help\":
+		get_node(text_console).text += \"TODO: write something\\n\"
+	elif txt == \"ls\":
+		get_node(text_console).text += \"empty\\n\"
+	elif txt == \"ls /\":
+		get_node(text_console).text += \"/bin /etc /home /usr\\n\"
+	elif txt == \"ls /bin\":
+		get_node(text_console).text += \"empty\\n\"
+	elif txt == \"ls /etc\":
+		get_node(text_console).text += \"empty\\n\"
+	elif txt == \"ls /home\":
+		get_node(text_console).text += \"empty\\n\"
+	elif txt == \"ls /usr\":
+		get_node(text_console).text += \"empty\\n\"
+	else:
+		get_node(text_console).text += \"Unknown command: \" + txt + \"\\n\"
+
+
+
+func _on_TextEdit_text_changed():
+	if len(get_node(text_line).text) > 0:
+		if get_node(text_line).text[-1] == \"\\n\":
+			get_node(text_line).text = get_node(text_line).text.left(len(get_node(text_line).text) - 1)
+			_on_cmd_pressed()
+"
+
+[node name="Computer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+text_line = NodePath("MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/HBoxContainer/TextEdit")
+text_console = NodePath("MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/ScrollContainer/Label2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 1920, 1080 )
+color = Color( 0, 0, 0, 0.784314 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 1
+custom_constants/margin_right = 100
+custom_constants/margin_top = 100
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 1654.0
+margin_bottom = 972.0
+rect_min_size = Vector2( 1554, 872 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 1654.0
+margin_bottom = 972.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 450.0
+margin_bottom = 872.0
+
+[node name="Logs" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 450.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 450, 140 )
+btn_text = "LOGS"
+
+[node name="Progress" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 144.0
+margin_right = 450.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 450, 140 )
+btn_text = "CMD"
+
+[node name="Settings" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 288.0
+margin_right = 450.0
+margin_bottom = 428.0
+rect_min_size = Vector2( 450, 140 )
+btn_text = "SETTINGS"
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 432.0
+margin_right = 450.0
+margin_bottom = 872.0
+custom_constants/margin_top = 300
+
+[node name="Close" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer" instance=ExtResource( 1 )]
+margin_top = 300.0
+margin_right = 450.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 450, 140 )
+btn_text = "X"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+margin_left = 454.0
+margin_right = 1554.0
+margin_bottom = 872.0
+mouse_filter = 1
+custom_constants/margin_top = 0
+custom_constants/margin_left = 100
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+visible = false
+margin_left = 100.0
+margin_right = 1100.0
+margin_bottom = 872.0
+rect_min_size = Vector2( 1000, 0 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer"]
+margin_right = 700.0
+margin_bottom = 487.0
+rect_min_size = Vector2( 700, 0 )
+text = "[10:30] System Init
+[10:31] Checking system
+[10:31] Tests passed
+[10:32] Configuration done
+[10:32] Waiting for input...
+[10:33] Checking input
+[10:33] Computing codes
+[10:33] Waiting for confirmation"
+autowrap = true
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+margin_left = 100.0
+margin_right = 1100.0
+margin_bottom = 872.0
+rect_min_size = Vector2( 1000, 0 )
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2"]
+margin_right = 804.0
+margin_bottom = 788.0
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer"]
+margin_right = 804.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+text = "Command line"
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer"]
+margin_top = 104.0
+margin_right = 804.0
+margin_bottom = 704.0
+rect_min_size = Vector2( 804, 600 )
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/ScrollContainer"]
+margin_right = 804.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 804, 600 )
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/ScrollContainer/Label2"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.172549, 0.164706, 0.196078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer"]
+margin_top = 708.0
+margin_right = 804.0
+margin_bottom = 788.0
+
+[node name="TextEdit" type="TextEdit" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/HBoxContainer"]
+margin_right = 500.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 500, 0 )
+caret_block_mode = true
+caret_blink = true
+
+[node name="cmd" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 504.0
+margin_right = 804.0
+rect_min_size = Vector2( 300, 80 )
+btn_text = "Enter"
+
+[node name="ScrollContainer3" type="ScrollContainer" parent="MarginContainer/HBoxContainer/MarginContainer2"]
+visible = false
+margin_left = 100.0
+margin_right = 1100.0
+margin_bottom = 872.0
+rect_min_size = Vector2( 1000, 0 )
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3"]
+margin_right = 600.0
+margin_bottom = 310.0
+custom_constants/separation = 30
+
+[node name="ResetBtn" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3/VBoxContainer" instance=ExtResource( 1 )]
+margin_right = 600.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 600, 140 )
+btn_text = "Reset system"
+
+[node name="StopBtn" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 170.0
+margin_right = 600.0
+margin_bottom = 310.0
+rect_min_size = Vector2( 600, 140 )
+btn_text = "Stop execution"
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Logs" to="." method="_on_Logs_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Progress" to="." method="_on_Progress_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Close" to="." method="_on_Close_pressed"]
+[connection signal="text_changed" from="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/HBoxContainer/cmd" to="." method="_on_cmd_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3/VBoxContainer/ResetBtn" to="." method="_on_ResetBtn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3/VBoxContainer/StopBtn" to="." method="_on_StopBtn_pressed"]
