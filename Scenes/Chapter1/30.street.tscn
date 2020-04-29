@@ -130,7 +130,7 @@ object_name = NodePath("..")
 function_name = "ns"
 
 [node name="MATH" parent="." instance=ExtResource( 1 )]
-position = Vector2( 894.571, 5633.75 )
+position = Vector2( 1280, 6336 )
 label = "MATH"
 object_name = NodePath("..")
 function_name = "math"
