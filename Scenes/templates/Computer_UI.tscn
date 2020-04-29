@@ -48,9 +48,13 @@ func _on_Close_pressed():
 
 
 func _on_ResetBtn_pressed():
+	if has_node(\"/root/Node2D/Body\"):
+		get_node(\"/root/Node2D/Body\").unlock()
 	if has_node(\"/root/Node2D\"):
 		get_node(\"/root/Node2D\").next()
 	self.get_parent().remove_child(self)
+	
+	
 
 
 func _on_StopBtn_pressed():
