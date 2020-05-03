@@ -13,4 +13,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: The ${{ github.event_name }} event triggered first step. Something was pushed to the repo.
+        args: Beep beep, I'm a bot\nWhat's my purpose?\nTell everyone that we have a new release\Oh my god
