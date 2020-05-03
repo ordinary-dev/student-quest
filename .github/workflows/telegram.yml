@@ -1,6 +1,7 @@
 name: Telegram Notify
 uses: appleboy/telegram-action@0.0.3
-on: [release]
+on:
+  release
 
 jobs:
   build:
