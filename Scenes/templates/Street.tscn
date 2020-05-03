@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Sprites/outside/store.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
@@ -53,30 +53,33 @@ extents = Vector2( 350, 32 )
 extents = Vector2( 51, 41 )
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 2, 0.5 )
+extents = Vector2( 71.2734, 152.86 )
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 105, 40 )
+extents = Vector2( 2, 0.5 )
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 122.299, 34.3445 )
+extents = Vector2( 105, 40 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 7.60245, 3.04993 )
+extents = Vector2( 122.299, 34.3445 )
 
 [sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 110, 40.5405 )
+extents = Vector2( 7.60245, 3.04993 )
 
 [sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 2.47217, 0.605347 )
+extents = Vector2( 110, 40.5405 )
 
 [sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 110.472, 44.2568 )
+extents = Vector2( 2.47217, 0.605347 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 71.6269, 119.08 )
+extents = Vector2( 110.472, 44.2568 )
 
 [sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 71.6269, 119.08 )
+
+[sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 2.33614, 0.415588 )
 
 [node name="Node2D" type="Node2D"]
@@ -609,12 +612,12 @@ texture = ExtResource( 20 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ns_house/StaticBody2D"]
-position = Vector2( -3.34219, -6.79358 )
+position = Vector2( -3.34219, 1.00626 )
 shape = SubResource( 9 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ns_house/StaticBody2D"]
 position = Vector2( -92.4014, 8.48972 )
-shape = SubResource( 9 )
+shape = SubResource( 10 )
 
 [node name="eni_house" type="Sprite" parent="."]
 position = Vector2( 3520, 5304 )
@@ -627,12 +630,12 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="eni_house/StaticBody2D"]
 position = Vector2( 14.4, 69.6 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="eni_house"]
 position = Vector2( -20.2815, -43.0983 )
 frames = ExtResource( 21 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="eni_show" parent="." instance=ExtResource( 5 )]
@@ -654,15 +657,15 @@ texture = ExtResource( 23 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hm_house/StaticBody2D"]
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hm_house/StaticBody2D"]
 position = Vector2( -31.5087, 47.9441 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="hm_house/StaticBody2D"]
 position = Vector2( 36.5153, 47.9494 )
-shape = SubResource( 12 )
+shape = SubResource( 13 )
 
 [node name="hm_show" parent="." instance=ExtResource( 5 )]
 visible = false
@@ -683,11 +686,11 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="phys_house/StaticBody2D"]
 position = Vector2( -16.5195, -44.396 )
-shape = SubResource( 13 )
+shape = SubResource( 14 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="phys_house/StaticBody2D"]
 position = Vector2( 110.555, -12.558 )
-shape = SubResource( 14 )
+shape = SubResource( 15 )
 
 [node name="phys_show" parent="." instance=ExtResource( 5 )]
 visible = false
@@ -708,11 +711,11 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chem_house/StaticBody2D"]
 position = Vector2( 3.99448, 52.3282 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="chem_house/StaticBody2D"]
 position = Vector2( 3.99451, -78.4397 )
-shape = SubResource( 15 )
+shape = SubResource( 16 )
 
 [node name="chem_show_1" parent="." instance=ExtResource( 5 )]
 visible = false
@@ -741,11 +744,11 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="law_house/StaticBody2D"]
 position = Vector2( 3.37395, 14.3303 )
-shape = SubResource( 16 )
+shape = SubResource( 17 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="law_house/StaticBody2D"]
 position = Vector2( 92.4519, 8.56714 )
-shape = SubResource( 17 )
+shape = SubResource( 18 )
 
 [node name="law_show" parent="." instance=ExtResource( 5 )]
 visible = false
