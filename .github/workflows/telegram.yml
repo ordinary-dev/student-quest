@@ -1,6 +1,6 @@
 name: Telegram Notify
 on:
-  push
+  release
 
 jobs:
   build:
@@ -13,4 +13,4 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        args: "Beep beep, I'm a bot. What's my purpose?\nTell everyone that we have a new release\nOh my god"
+        args: "Beep beep. I'm a bot. What's my purpose?\nTell everyone that we have a new release\nOh my god"
