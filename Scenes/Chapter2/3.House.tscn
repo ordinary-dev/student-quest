@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Tilemaps/house/house.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Sprites/light.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=8]
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 export (NodePath) var player
@@ -26,25 +26,28 @@ func _ready():
 		get_node(player).position = TEMP.get(\"house_player_pos\")
 "
 
-[sub_resource type="OccluderPolygon2D" id=1]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 288.099, 645.752, 608.017, 645.704, 608, 672, 288, 672 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 2 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
 radius = 16.0
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 8, 8 )
 
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 40, 112 )
+
 [node name="Node2D" type="Node2D"]
-script = SubResource( 5 )
+script = SubResource( 1 )
 player = NodePath("Body")
 street_scene = "res://Scenes/Chapter2/4.Street.tscn"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 1 )
+occluder = SubResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -83,7 +86,7 @@ texture = ExtResource( 4 )
 [node name="StaticBody2D" type="StaticBody2D" parent="tv"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tv/StaticBody2D"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="table" type="Sprite" parent="."]
 position = Vector2( 1440, 528 )
@@ -94,7 +97,7 @@ texture = ExtResource( 5 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table/StaticBody2D"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="furniture" type="Sprite" parent="."]
 position = Vector2( 1872, 976 )
@@ -105,7 +108,7 @@ texture = ExtResource( 6 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/StaticBody2D"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="furniture2" type="Sprite" parent="."]
 position = Vector2( 1872, 832 )
@@ -116,7 +119,7 @@ texture = ExtResource( 6 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture2/StaticBody2D"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="furniture3" type="Sprite" parent="."]
 position = Vector2( 1728, 976 )
@@ -127,7 +130,7 @@ texture = ExtResource( 6 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture3/StaticBody2D"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="furniture4" type="Sprite" parent="."]
 position = Vector2( 1584, 976 )
@@ -138,7 +141,7 @@ texture = ExtResource( 6 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture4/StaticBody2D"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="furniture5" type="Sprite" parent="."]
 position = Vector2( 1440, 976 )
@@ -149,12 +152,18 @@ texture = ExtResource( 6 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture5/StaticBody2D"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="Area2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 128, 136 )
 label = "GOOUT"
 object_name = NodePath("..")
 function_name = "street"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 88, 232 )
+shape = SubResource( 6 )
 
 [editable path="Body"]
