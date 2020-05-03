@@ -66,6 +66,10 @@ func en():
 
 func ru():
 	TranslationServer.set_locale(\"ru\")
+
+
+func youtube():
+	OS.shell_open(\"https://www.youtube.com/channel/UCMd8rzjki6JPX97jX217IVQ\")
 "
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -334,14 +338,14 @@ scroll_horizontal_enabled = false
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/INFO/ScrollContainer"]
 margin_right = 690.0
-margin_bottom = 1118.0
+margin_bottom = 1360.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/INFO/ScrollContainer/MarginContainer"]
 margin_right = 670.0
-margin_bottom = 1118.0
+margin_bottom = 1360.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
@@ -424,6 +428,36 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Testers" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+margin_top = 374.0
+margin_right = 659.0
+margin_bottom = 452.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+text = "TESTERS"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TestersNicks" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+margin_top = 374.0
+margin_right = 659.0
+margin_bottom = 452.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 5 )
+text = "- wheasy
+- kijy
+"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wheasy" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_right = 659.0
+btn_text = "Wheasy - Youtube"
 
 [node name="Joystick" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 472.0
@@ -549,3 +583,4 @@ __meta__ = {
 [connection signal="toggled" from="TabContainer/GRAPHICS/VBoxContainer/CheckButton" to="TabContainer/GRAPHICS" method="toggle_vsync"]
 [connection signal="toggled" from="TabContainer/GRAPHICS/VBoxContainer/CheckButton2" to="TabContainer/GRAPHICS" method="toggle_fullscreen"]
 [connection signal="pressed" from="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer/ColorRect" to="." method="open_site"]
+[connection signal="pressed" from="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer/Wheasy" to="." method="youtube"]
