@@ -1,37 +1,4 @@
 id,en,ru
-LOADING,Loading,Загрузка
-NEW_GAME,New game,Новая игра
-LOAD_GAME,Load game,Загрузить игру
-SETTINGS,Settings,Настройки
-QUIT,Quit,Выйти
-YES,Yes,Да
-NO,No,Нет
-MUSIC_VOLUME,Music volume,Громкость музыки
-EFFECTS_VOLUME,Effects volume,Громкость эффектов
-RESET,Reset,Сбросить
-LANG,Lang,Язык
-AUDIO,Audio,Аудио
-GRAPHICS,Graphics,Графика
-INFO,Info,Инфо
-VSYNC,Vsync,Верт. син.
-FULLSCREEN,Fullscreen,Полный экран
-CONFIRM,Do you really want to quit?,Вы действительно хотите выйти?
-SITE,Open site,Открыть сайт
-GODOT,Created with Godot Engine,Создано при помощи Godot Engine
-CHANGELOG,Changelog:,Список изменений:
-CHANGES,-New building sprites,-Новые спрайты зданий
-AUTHORS,Authors:,Авторы:
-JOYSTICK,Joystick script:,Скрипт джойстика:
-MUSIC,Music:,Музыка:
-CONTACT,Contact us:,Свяжитесь с нами:
-SUPPORT,"Support us, we are hungry:","Поддержите нас, мы голодные:"
-LEGAL,Every character is just the result of our imagination,Каждый персонаж всего лишь результат нашего воображения
-DELETE,Delete,Удалить
-NIGHT,Night,Ночь
-CHOICE,Choice,Выбор
-FIRSTDAY,First day,Первый день
-SECONDDAY,Second day?,Второй день?
-END,End of the day,Конец дня
 MAN,Man,Человек
 D11,"Everything is fine with the documents, it remains only to choose the right direction","С документами все хорошо, осталось лишь выбрать нужное направление"
 D12,Choose wisely,Выбирайте с умом

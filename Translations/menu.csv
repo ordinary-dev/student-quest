@@ -1,0 +1,29 @@
+id,en,ru
+NEW_GAME,New game,Новая игра
+LOAD_GAME,Load game,Загрузить игру
+SETTINGS,Settings,Настройки
+QUIT,Quit,Выйти
+CONFIRM,Do you really want to quit?,Вы действительно хотите выйти?
+YES,Yes,Да
+NO,No,Нет
+LANG,Lang,Язык
+AUDIO,Audio,Аудио
+GRAPHICS,Graphics,Графика
+INFO,Info,Инфо
+MUSIC_VOLUME,Music volume,Громкость музыки
+EFFECTS_VOLUME,Effects volume,Громкость эффектов
+RESET,Reset,Сбросить
+VSYNC,Vsync,Верт. син.
+FULLSCREEN,Fullscreen,Полный экран
+SITE,Open site,Открыть сайт
+GODOT,Created with Godot Engine,Создано при помощи Godot Engine
+CHANGELOG,Changelog:,Список изменений:
+CHANGES,-New building sprites,-Новые спрайты зданий
+AUTHORS,Authors:,Авторы:
+JOYSTICK,Joystick script:,Скрипт джойстика:
+MUSIC,Music:,Музыка:
+CONTACT,Contact us:,Свяжитесь с нами:
+SUPPORT,"Support us, we are hungry:","Поддержите нас, мы голодные:"
+LEGAL,Every character is just the result of our imagination,Каждый персонаж всего лишь результат нашего воображения
+LOADING,Loading,Загрузка
+DELETE,Delete,Удалить
