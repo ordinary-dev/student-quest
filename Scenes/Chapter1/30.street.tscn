@@ -124,7 +124,7 @@ hframes = 3
 frame = 8
 
 [node name="NS" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4166.05, 3520.83 )
+position = Vector2( 4144, 3448 )
 label = "NS"
 object_name = NodePath("..")
 function_name = "ns"
@@ -136,7 +136,7 @@ object_name = NodePath("..")
 function_name = "math"
 
 [node name="HM" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4794.79, 11068 )
+position = Vector2( 3872, 7816 )
 label = "HM"
 object_name = NodePath("..")
 function_name = "hm"

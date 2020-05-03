@@ -334,14 +334,14 @@ scroll_horizontal_enabled = false
 
 [node name="MarginContainer" type="MarginContainer" parent="TabContainer/INFO/ScrollContainer"]
 margin_right = 690.0
-margin_bottom = 939.0
+margin_bottom = 1118.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/INFO/ScrollContainer/MarginContainer"]
 margin_right = 670.0
-margin_bottom = 939.0
+margin_bottom = 1118.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
@@ -357,7 +357,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "studentquest.github.io
 
-v 3.2"
+v 3.3"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

@@ -20,5 +20,5 @@ __meta__ = {
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
 text_1 = "CHAPTER2"
-text_2 = "SECRETSOC"
+text_2 = "SECRETS"
 next_scene = "res://Scenes/Chapter2/2.Road.tscn"

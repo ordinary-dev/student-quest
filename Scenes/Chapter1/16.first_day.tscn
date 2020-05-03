@@ -112,13 +112,13 @@ object_name = NodePath("..")
 function_name = "math"
 
 [node name="NS" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4216, 3520 )
+position = Vector2( 4144, 3488 )
 label = "NS"
 object_name = NodePath("..")
 function_name = "ns"
 
 [node name="HM" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4800, 11072 )
+position = Vector2( 3872, 7816 )
 label = "HM"
 object_name = NodePath("..")
 function_name = "hum"
