@@ -9,7 +9,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-
+export (String, FILE, \"*.json\") var dialog_path
 export (String, FILE, \"*.tscn\") var next
 
 
@@ -18,7 +18,7 @@ func _next_scene():
 
 
 func _ready():
-	DIALOG.show_dialog(4, \"/root/Node2D\", \"_next_scene\")
+	DIALOG.show_dialog(dialog_path, \"/root/Node2D\", \"_next_scene\")
 "
 
 [sub_resource type="OccluderPolygon2D" id=2]
@@ -46,6 +46,7 @@ tracks/0/keys = {
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
+dialog_path = "res://Dialogs/chapter1/train.json"
 next = "res://Scenes/Chapter1/08.hall.tscn"
 
 [node name="Sprite2" type="Sprite" parent="."]

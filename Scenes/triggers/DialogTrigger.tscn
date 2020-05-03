@@ -5,7 +5,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Area2D
 
-export (int) var dialog_number
+export (String, FILE, \"*.json\") var dialog_path
 export (String) var person = \"Мистер человек\"
 export (bool) var load_scene = false
 export (String, FILE, \"*.tscn\") var scene_path
@@ -24,9 +24,9 @@ func _process(_delta):
 	if Input.is_action_pressed(\"dialog_start\") or button_pressed:
 		button_pressed = false
 		if load_scene:
-			DIALOG.show_dialog(dialog_number, \"/root/SCENES\", \"load_scene\", scene_path)
+			DIALOG.show_dialog(dialog_path, \"/root/SCENES\", \"load_scene\", scene_path)
 		else:
-			DIALOG.show_dialog(dialog_number)
+			DIALOG.show_dialog(dialog_path)
 		hide_ui()
 		used = true
 		set_process(false)

@@ -3,13 +3,14 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
+export(String, FILE, \"*.json\") var dialog_path
 export(String, FILE, \"*.tscn\") var next_scene
 
 func _on_dialog_over():
 	SCENES.load_scene(next_scene)
 
 func _ready():
-	DIALOG.show_dialog(3, \"/root/Control\", \"_on_dialog_over\")
+	DIALOG.show_dialog(dialog_path, \"/root/Control\", \"_on_dialog_over\")
 "
 
 [node name="Control" type="Control"]
@@ -21,4 +22,5 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+dialog_path = "res://Dialogs/chapter1/bye.json"
 next_scene = "res://Scenes/Chapter1/04.date2.tscn"

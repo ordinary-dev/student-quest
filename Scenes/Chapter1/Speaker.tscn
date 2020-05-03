@@ -10,7 +10,7 @@ script/source = "extends Node2D
 export (String, FILE, \"*.tscn\") var fac_0
 export (String, FILE, \"*.tscn\") var fac_1
 export (String, FILE, \"*.tscn\") var fac_2
-export (int) var dialog
+export (String, FILE, \"*.json\") var dialog_path
 
 
 func load_scene():
@@ -24,7 +24,7 @@ func load_scene():
 
 
 func _ready():
-	DIALOG.show_dialog(dialog, \"/root/Node2D/Background\", \"load_scene\")
+	DIALOG.show_dialog(dialog_path, \"/root/Node2D/Background\", \"load_scene\")
 "
 
 [sub_resource type="OccluderPolygon2D" id=2]
@@ -38,7 +38,7 @@ script = SubResource( 1 )
 fac_0 = "res://Scenes/1.beggining/MathBlackout.tscn"
 fac_1 = "res://Scenes/1.beggining/NsBlackout.tscn"
 fac_2 = "res://Scenes/1.beggining/HmBlackout.tscn"
-dialog = 8
+dialog_path = "res://Dialogs/8.json"
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 occluder = SubResource( 2 )

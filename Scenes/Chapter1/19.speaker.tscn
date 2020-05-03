@@ -9,3 +9,4 @@ position = Vector2( 56, 120 )
 fac_0 = "res://Scenes/Chapter1/20.math_blackout.tscn"
 fac_1 = "res://Scenes/Chapter1/21.ns_blackout.tscn"
 fac_2 = "res://Scenes/Chapter1/22.hm_blackout.tscn"
+dialog_path = "res://Dialogs/chapter1/speaker.json"

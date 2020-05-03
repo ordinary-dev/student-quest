@@ -102,7 +102,7 @@ shape = SubResource( 7 )
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 906.715, 382.892 )
 z_index = 2
-dialog_number = 1
+dialog_path = "res://Dialogs/chapter1/rector.json"
 person = "RECTOR"
 load_scene = true
 scene_path = "res://Scenes/Chapter1/12.faculty_choice.tscn"

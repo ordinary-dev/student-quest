@@ -17,19 +17,24 @@ export (String, FILE, \"*.tscn\") var store_scene
 export (String, FILE, \"*.tscn\") var speaker_scene
 onready var rs = $restore_state
 var mr_singer_act := false
-var dialog_number = 12
 export(NodePath) var player
+export (String, FILE, \"*.json\") var dialog_v1
+export (String, FILE, \"*.json\") var dialog_v2
+export (String, FILE, \"*.json\") var dialog_2
 
 
 func dialog():
-	if mr_singer_act and dialog_number == 12:
-		DIALOG.show_dialog(13)
+	if mr_singer_act and PROP.get(\"day1_dialog\") == \"0\":
+		DIALOG.show_dialog(dialog_2)
 		mr_singer_act = false
 
 
 func mr_singer():
 	mr_singer_act = true
-	DIALOG.show_dialog(dialog_number)
+	if PROP.get(\"day1_dialog\") == \"0\":
+		DIALOG.show_dialog(dialog_v1)
+	else:
+		DIALOG.show_dialog(dialog_v2)
 
 
 func store():
@@ -75,8 +80,6 @@ func _ready():
 		mr_singer_act = TEMP.get(\"day2_dialog_used\")
 	else:
 		get_node(player).position = Vector2(-452, 2798)
-	if PROP.get(\"day1_dialog\") == \"0\":
-		dialog_number = 2
 "
 
 [node name="Node2D" type="Node2D"]
@@ -84,6 +87,9 @@ script = SubResource( 1 )
 store_scene = "res://Scenes/Chapter1/31.store.tscn"
 speaker_scene = "res://Scenes/Chapter1/31.2.date.tscn"
 player = NodePath("Body")
+dialog_v1 = "res://Dialogs/chapter1/stranger.json"
+dialog_v2 = "res://Dialogs/chapter1/stranger_v2.json"
+dialog_2 = "res://Dialogs/chapter1/memories.json"
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
 

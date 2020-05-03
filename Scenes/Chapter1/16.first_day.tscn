@@ -92,7 +92,7 @@ position = Vector2( 23.1483, 370.225 )
 [node name="Mr_Singer_Dialog" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56, 352 )
 z_index = 2
-dialog_number = 2
+dialog_path = "res://Dialogs/chapter1/stranger.json"
 
 [node name="Body" parent="." instance=ExtResource( 4 )]
 position = Vector2( -365, 488 )

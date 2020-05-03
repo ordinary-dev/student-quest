@@ -6,17 +6,20 @@
 script/source = "extends Node2D
 
 
-func get_dialog_number() -> int:
+export (Array, String, FILE, \"*.json\") var dialogs
+
+
+func get_dialog_number() -> String:
 	if GLOBAL.loaded != \"-1\":
 		var fac = PROP.get(\"facility\")
 		if fac == \"0\":
-			return 5
+			return dialogs[0]
 		if fac == \"1\":
-			return 6
+			return dialogs[1]
 		if fac == \"2\":
-			return 7
+			return dialogs[2]
 	NOTIFY.show(\"NOTLOADED\")
-	return -1
+	return \"-1\"
 
 
 func activate() -> void:
@@ -25,6 +28,7 @@ func activate() -> void:
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
+dialogs = [ "res://Dialogs/chapter1/guideMath.json", "res://Dialogs/chapter1/guideNS.json", "res://Dialogs/chapter1/guideHM.json" ]
 
 [node name="Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 120, -40 )

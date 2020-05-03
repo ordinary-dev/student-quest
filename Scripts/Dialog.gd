@@ -63,10 +63,10 @@ func show_next() -> void:
 		btn.connect("pressed", self, "hide_dialog")
 
 
-func show_dialog(num : int, obj:String = "", fnc:String = "", argv:String="") -> void:
+func show_dialog(path:String, obj:String = "", fnc:String = "", argv:String="") -> void:
 	# Открыть файл
 	var fl : = File.new()
-	var state : = fl.open("res://Dialogs/" + str(num) + ".json", File.READ)
+	var state : = fl.open(path, File.READ)
 	if (state != OK):
 		NOTIFY.show("Не могу загрузить диалог")
 		return
