@@ -67,6 +67,8 @@ func _on_Area2D_body_exited(body):
 func _ready():
 	text_name.set_visible(false)
 	text_btn.set_visible(false)
+	if OS.get_name() == \"Android\":
+		text_btn.text = \"~\"
 	btn.set_visible(false)
 	get_node(\"ColorRect3/MarginContainer/ColorRect/MarginContainer/Label\").text = label
 	set_process(false)
