@@ -110,6 +110,8 @@ vect = Vector2( 4, 39 )
 
 [node name="Base16" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
+z_index = 1
+z_as_relative = false
 tile_set = ExtResource( 4 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -125,11 +127,15 @@ object = NodePath("../Railways16")
 [node name="hostel2" type="Sprite" parent="."]
 position = Vector2( -928, 2648 )
 scale = Vector2( 5, 5 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 17 )
 
 [node name="store" type="Sprite" parent="."]
 position = Vector2( 544, 152 )
 scale = Vector2( 5, 5 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 1 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="store"]
@@ -141,6 +147,8 @@ shape = SubResource( 1 )
 
 [node name="Overlay16" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
+z_index = 2
+z_as_relative = false
 tile_set = ExtResource( 16 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -148,7 +156,8 @@ tile_data = PoolIntArray( -524288, -536870908, 0, -524287, -1073741820, 0, -5242
 
 [node name="Railways16" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
-z_index = 2
+z_index = 3
+z_as_relative = false
 tile_set = ExtResource( 16 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 0
@@ -158,36 +167,41 @@ tile_data = PoolIntArray( 393215, -536870907, 0, 327680, -536870908, 0, 327681, 
 
 [node name="Trees32" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
-z_index = 4
+z_index = 3
+z_as_relative = false
 tile_set = ExtResource( 15 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -327678, 12, 0, -327667, 12, 0, -327664, 12, 0, -327661, 12, 0, -262140, 1, 0, -262139, 12, 0, -262136, 1, 0, -262135, 12, 0, -262122, 12, 0, -262103, 1, 0, -262099, 12, 0, -262096, 1, 0, -262093, 12, 0, -196605, 12, 0, -196602, 0, 0, -196601, 12, 0, -196597, 0, 0, -196593, 12, 0, -196592, 1, 0, -196590, 12, 0, -196569, 12, 0, -196563, 1, 0, -196561, 12, 0, -196559, 12, 0, -196555, 1, 0, -196550, 0, 0, -131070, 0, 0, -131063, 1, 0, -131033, 1, 0, -131028, 12, 0, -131022, 0, 0, -65527, 12, 0, -65523, 12, 0, -65522, 1, 0, -65519, 31, 0, -65518, 1, 0, -65496, 12, 0, -65493, 1, 0, -65488, 1, 0, -65480, 1, 0, 8, 0, 0, 11, 12, 0, 12, 1, 0, 15, 12, 0, 16, 0, 0, 19, 12, 0, 41, 0, 0, 46, 1, 0, 54, 0, 0, 60, 1, 0, 262159, 12, 0, 262192, 1, 0, 262196, 1, 0, 262200, 1, 0, 327686, 12, 0, 327739, 1, 0, 393266, 0, 0, 393270, 0, 0, 458800, 1, 0, 524344, 1, 0, 524349, 0, 0, 589830, 1, 0, 589840, 12, 0, 589876, 0, 0, 655409, 0, 0, 655414, 1, 0, 655419, 0, 0, 786448, 12, 0, 786494, 1, 0, 851971, 0, 0, 917564, 0, 0, 1048592, 12, 0, 1048600, 1, 0, 1048606, 0, 0, 1114139, 1, 0, 1179673, 0, 0, 1179677, 1, 0, 1179707, 1, 0, 1245205, 1, 0, 1310727, 0, 0, 1310732, 1, 0, 1310736, 12, 0, 1310748, 0, 0, 1310751, 1, 0, 1376265, 1, 0, 1376276, 0, 0, 1376317, 0, 0, 1441815, 0, 0, 1441851, 0, 0, 1507339, 0, 0, 1507349, 1, 0, 1507353, 1, 0, 1507358, 1, 0, 1572870, 1, 0, 1572880, 12, 0, 1638461, 1, 0, 1769482, 1, 0, 1835015, 1, 0, 1835024, 12, 0, 1900569, 1, 0, 1900575, 0, 0, 1900605, 0, 0, 1966086, 1, 0, 1966091, 0, 0, 1966101, 0, 0, 1966139, 1, 0, 2031645, 1, 0, 2097161, 0, 0, 2097168, 12, 0, 2097174, 1, 0, 2097183, 0, 0, 2162694, 1, 0, 2162715, 0, 0, 2228244, 1, 0, 2228253, 1, 0, 2228277, 1, 0, 2228285, 0, 0, 2293770, 1, 0, 2293785, 0, 0, 2359303, 0, 0, 2359312, 12, 0, 2359327, 1, 0, 2424855, 0, 0, 2424858, 0, 0, 2424860, 0, 0, 2424883, 1, 0, 2424894, 1, 0, 2490422, 0, 0, 2490428, 0, 0, 2687035, 1, 0, 2818096, 0, 0, 2818100, 1, 0 )
 
 [node name="Fountain" parent="." instance=ExtResource( 7 )]
+z_index = 5
+z_as_relative = false
 
-[node name="FtoF" type="Node2D" parent="."]
+[node name="Crossings" type="Node2D" parent="."]
+z_index = 5
+z_as_relative = false
 
-[node name="Transition_area" parent="FtoF" instance=ExtResource( 5 )]
+[node name="Transition_area" parent="Crossings" instance=ExtResource( 5 )]
 position = Vector2( 2240, 6088 )
 scale = Vector2( 38.44, 20.08 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../Transition")
+object = NodePath("../../Crossings/Transition")
 
-[node name="Transition_area2" parent="FtoF" instance=ExtResource( 5 )]
+[node name="Transition_area2" parent="Crossings" instance=ExtResource( 5 )]
 position = Vector2( 4849.49, 5873.62 )
 scale = Vector2( 38.44, 20.08 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../Transition2")
+object = NodePath("../../Crossings/Transition2")
 
-[node name="Transition" type="Sprite" parent="FtoF"]
+[node name="Crossins" type="Sprite" parent="Crossings"]
 position = Vector2( 2248, 6112 )
 scale = Vector2( 8.6, 7 )
 texture = ExtResource( 19 )
 
-[node name="Transition2" type="Sprite" parent="FtoF"]
+[node name="Crossing2" type="Sprite" parent="Crossings"]
 position = Vector2( 4820.74, 5909.34 )
 scale = Vector2( 8.6, 7 )
 z_index = 3
@@ -196,11 +210,15 @@ texture = ExtResource( 26 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -264, -96 )
 scale = Vector2( 4, 4 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 position = Vector2( -360, -80 )
 scale = Vector2( 4, 4 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -242,6 +260,7 @@ polygon = PoolVector2Array( -324.68, 2866.56, -324.68, 2802.56, -260.68, 2802.56
 position = Vector2( 704, 1496 )
 scale = Vector2( 8, 8 )
 z_index = 5
+z_as_relative = false
 texture = ExtResource( 8 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="House"]
@@ -252,10 +271,14 @@ polygon = PoolVector2Array( -5, 16, 3.00339, 16.1866, 10.0263, 14.1513, 10.1051,
 
 [node name="Water" parent="." instance=ExtResource( 9 )]
 position = Vector2( 1216, 1216 )
+z_index = 2
+z_as_relative = false
 dim = Vector2( 4, 15 )
 
 [node name="Water2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 384, 2176 )
+z_index = 2
+z_as_relative = false
 dim = Vector2( 17, 4 )
 
 [node name="Waypoints" type="Node2D" parent="."]
@@ -554,14 +577,20 @@ nodes = [ NodePath("../Position2D14"), NodePath("../Position2D7"), NodePath("../
 [node name="Bridge" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1216, 1176 )
 scale = Vector2( 4, 6 )
+z_index = 3
+z_as_relative = false
 
 [node name="Bridge2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1216, 1592 )
 scale = Vector2( 4, 6 )
+z_index = 3
+z_as_relative = false
 
 [node name="rocks" type="Sprite" parent="."]
 position = Vector2( 1456, 2360 )
 scale = Vector2( 8, 8 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 13 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rocks"]
@@ -573,6 +602,8 @@ polygon = PoolVector2Array( -12, 14, -13, 5, -7, -4, -5, -9, -4, -14, 5, -15, 9,
 [node name="rocks2" type="Sprite" parent="."]
 position = Vector2( 1288, 2408 )
 scale = Vector2( 8, 8 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 14 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="rocks2"]
@@ -584,7 +615,8 @@ polygon = PoolVector2Array( -15, 14, -15, 5, -13, 2, -10, 1, -10, -3, -7, -6, -2
 [node name="Math_Building" type="Sprite" parent="."]
 position = Vector2( 1344.05, 5869.25 )
 scale = Vector2( 10, 10 )
-z_index = 3
+z_index = 5
+z_as_relative = false
 texture = ExtResource( 18 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Math_Building"]
@@ -605,7 +637,8 @@ object = NodePath("../Math_Building")
 [node name="ns_house" type="Sprite" parent="."]
 position = Vector2( 5083.83, 3622.39 )
 scale = Vector2( 10, 10 )
-z_index = 3
+z_index = 5
+z_as_relative = false
 texture = ExtResource( 20 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ns_house"]
@@ -623,6 +656,7 @@ shape = SubResource( 10 )
 position = Vector2( 3520, 5304 )
 scale = Vector2( 10, 10 )
 z_index = 5
+z_as_relative = false
 texture = ExtResource( 22 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="eni_house"]
@@ -635,7 +669,7 @@ shape = SubResource( 11 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="eni_house"]
 position = Vector2( -20.2815, -43.0983 )
 frames = ExtResource( 21 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="eni_show" parent="." instance=ExtResource( 5 )]
@@ -650,7 +684,8 @@ mod_color = Color( 1, 1, 1, 0.588235 )
 [node name="hm_house" type="Sprite" parent="."]
 position = Vector2( 3935.1, 7525.53 )
 scale = Vector2( 10, 10 )
-z_index = 3
+z_index = 5
+z_as_relative = false
 texture = ExtResource( 23 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="hm_house"]
@@ -678,7 +713,8 @@ object = NodePath("../hm_house")
 [node name="phys_house" type="Sprite" parent="."]
 position = Vector2( 6286.92, 6445.72 )
 scale = Vector2( 10, 10 )
-z_index = 4
+z_index = 5
+z_as_relative = false
 texture = ExtResource( 24 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="phys_house"]
@@ -703,7 +739,8 @@ object = NodePath("../phys_house")
 [node name="chem_house" type="Sprite" parent="."]
 position = Vector2( 3701.21, 608.398 )
 scale = Vector2( 10, 10 )
-z_index = 3
+z_index = 5
+z_as_relative = false
 texture = ExtResource( 25 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="chem_house"]
@@ -736,7 +773,8 @@ object = NodePath("../chem_house")
 [node name="law_house" type="Sprite" parent="."]
 position = Vector2( 1127.52, 8088.21 )
 scale = Vector2( 10, 10 )
-z_index = 3
+z_index = 5
+z_as_relative = false
 texture = ExtResource( 27 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="law_house"]

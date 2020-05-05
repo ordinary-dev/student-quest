@@ -4,8 +4,6 @@
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Teleport.gd" type="Script" id=4]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 64 )
 
@@ -30,6 +28,8 @@ street_path = "res://Scenes/1.beggining/Day1.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
+z_index = 1
+z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -39,34 +39,40 @@ tile_data = PoolIntArray( -196621, 2, 0, -196620, 2, 0, -196619, 2, 0, -196618, 
 
 [node name="tp_floor_1_2" parent="teleports" instance=ExtResource( 3 )]
 position = Vector2( 448, 512 )
-z_index = 50
+z_index = 6
+z_as_relative = false
 label = "2 этаж"
 object_name = NodePath("../..")
 function_name = "floor_2"
 
 [node name="tp_floor_2_3" parent="teleports" instance=ExtResource( 3 )]
 position = Vector2( 256, 1696 )
-z_index = 50
+z_index = 6
+z_as_relative = false
 label = "1 этаж"
 object_name = NodePath("../..")
 function_name = "floor_1"
 
 [node name="tp_floor_3_2" parent="teleports" instance=ExtResource( 3 )]
 position = Vector2( 336, 3136 )
+z_index = 6
+z_as_relative = false
 label = "2 этаж"
 object_name = NodePath("../..")
 function_name = "floor_2"
 
 [node name="tp_floor_2_1" parent="teleports" instance=ExtResource( 3 )]
 position = Vector2( 512, 1696 )
-z_index = 50
+z_index = 6
+z_as_relative = false
 label = "3 этаж"
 object_name = NodePath("../..")
 function_name = "floor_3"
 
 [node name="tp_outside" parent="teleports" instance=ExtResource( 3 )]
 position = Vector2( 448, -64 )
-z_index = 50
+z_index = 6
+z_as_relative = false
 label = "Улица"
 object_name = NodePath("../..")
 function_name = "street"

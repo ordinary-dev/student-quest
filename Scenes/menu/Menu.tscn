@@ -208,7 +208,6 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 3
 playing = true
 
 [node name="Particles2D" parent="." instance=ExtResource( 12 )]

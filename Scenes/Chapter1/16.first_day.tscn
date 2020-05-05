@@ -88,43 +88,58 @@ singer = NodePath("Mr_Singer_Dialog")
 
 [node name="Mr_singer" parent="." instance=ExtResource( 2 )]
 position = Vector2( 23.1483, 370.225 )
+z_index = 2
+z_as_relative = false
 
 [node name="Mr_Singer_Dialog" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56, 352 )
-z_index = 2
+z_index = 6
+z_as_relative = false
 dialog_path = "res://Dialogs/chapter1/stranger.json"
 
 [node name="Body" parent="." instance=ExtResource( 4 )]
 position = Vector2( -365, 488 )
+z_index = 4
+z_as_relative = false
 collision_layer = 1025
 collision_mask = 0
 
 [node name="Store_Trigger" parent="." instance=ExtResource( 6 )]
 position = Vector2( 552, 216 )
+z_index = 6
+z_as_relative = false
 label = "STORE"
 object_name = NodePath("..")
 function_name = "to_store"
 
 [node name="MATH" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1280, 6328 )
+z_index = 6
+z_as_relative = false
 label = "MATH"
 object_name = NodePath("..")
 function_name = "math"
 
 [node name="NS" parent="." instance=ExtResource( 6 )]
 position = Vector2( 4144, 3488 )
+z_index = 6
+z_as_relative = false
 label = "NS"
 object_name = NodePath("..")
 function_name = "ns"
 
 [node name="HM" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3872, 7816 )
+z_index = 6
+z_as_relative = false
 label = "HM"
 object_name = NodePath("..")
 function_name = "hum"
 
 [node name="GHouse" parent="." instance=ExtResource( 6 )]
 position = Vector2( 608, 1552 )
+z_index = 6
+z_as_relative = false
 label = "GHOUSE"
 object_name = NodePath("..")
 function_name = "enter_house"
@@ -135,7 +150,8 @@ position = Vector2( 2056, 488 )
 [node name="Guide" type="Sprite" parent="."]
 position = Vector2( 2192, 528 )
 scale = Vector2( 2.99999, 3 )
-z_index = 3
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 8 )
 region_enabled = true
 region_rect = Rect2( 40, 72, 16, 33 )
@@ -146,3 +162,5 @@ time = "9:45"
 
 [node name="Area2D" parent="." instance=ExtResource( 10 )]
 position = Vector2( -392.383, -103.691 )
+z_index = 6
+z_as_relative = false

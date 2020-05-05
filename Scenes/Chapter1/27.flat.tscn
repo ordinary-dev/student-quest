@@ -52,6 +52,8 @@ script = SubResource( 1 )
 position = Vector2( 598.561, 165.215 )
 rotation = 1.5708
 scale = Vector2( 3, 3 )
+z_index = 4
+z_as_relative = false
 texture = ExtResource( 1 )
 hframes = 2
 frame = 1
@@ -59,6 +61,8 @@ frame = 1
 [node name="blanket" type="Sprite" parent="."]
 position = Vector2( 526.776, 165.809 )
 scale = Vector2( 6, 4 )
+z_index = 5
+z_as_relative = false
 texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

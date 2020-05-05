@@ -42,19 +42,19 @@ func _ready():
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 288.099, 645.752, 608.017, 645.704, 608, 672, 288, 672 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 10 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 16, 2 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=5]
 radius = 16.0
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 40, 112 )
 
 [sub_resource type="RectangleShape2D" id=8]
@@ -71,6 +71,8 @@ occluder = SubResource( 2 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
+z_index = 1
+z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -79,17 +81,21 @@ tile_data = PoolIntArray( -65534, 12, 0, -65533, 12, 0, -65532, 12, 0, -65531, 1
 [node name="Scene" type="Sprite" parent="."]
 position = Vector2( 608, 96 )
 scale = Vector2( 8, 8 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 9 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Scene"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Scene/StaticBody2D"]
-shape = SubResource( 7 )
+shape = SubResource( 3 )
 
 [node name="speaker" type="Sprite" parent="."]
 position = Vector2( 608, 184 )
 scale = Vector2( 3, 3 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 11 )
 
 [node name="Body" parent="." instance=ExtResource( 2 )]
@@ -110,85 +116,96 @@ editor_draw_limits = true
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 448, 640 )
 texture = ExtResource( 14 )
-texture_scale = 7.98
+texture_scale = 8.0
 color = Color( 0.239216, 0.505882, 0.792157, 1 )
 shadow_enabled = true
 
 [node name="tv" type="Sprite" parent="."]
 position = Vector2( 448, 656 )
 scale = Vector2( 10, 10 )
+z_index = 2
 texture = ExtResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="tv"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tv/StaticBody2D"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="table" type="Sprite" parent="."]
 position = Vector2( 1440, 528 )
 scale = Vector2( 8, 8 )
+z_index = 2
 texture = ExtResource( 5 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="table"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table/StaticBody2D"]
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="furniture" type="Sprite" parent="."]
 position = Vector2( 1872, 976 )
 scale = Vector2( 9, 9 )
+z_index = 2
 texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="furniture"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture/StaticBody2D"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="furniture2" type="Sprite" parent="."]
 position = Vector2( 1872, 832 )
 scale = Vector2( 9, 9 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="furniture2"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture2/StaticBody2D"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="furniture3" type="Sprite" parent="."]
 position = Vector2( 1728, 976 )
 scale = Vector2( 9, 9 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="furniture3"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture3/StaticBody2D"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="furniture4" type="Sprite" parent="."]
 position = Vector2( 1584, 976 )
 scale = Vector2( 9, 9 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="furniture4"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture4/StaticBody2D"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="furniture5" type="Sprite" parent="."]
 position = Vector2( 1440, 976 )
 scale = Vector2( 9, 9 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="furniture5"]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="furniture5/StaticBody2D"]
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="Area2D" parent="." instance=ExtResource( 8 )]
 position = Vector2( 128, 136 )
@@ -206,7 +223,7 @@ function_name = "second_floor"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 88, 232 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="Area2D3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 640, 128 )
@@ -215,6 +232,7 @@ person = "Speaker"
 [node name="NPC1" type="Sprite" parent="."]
 position = Vector2( 352, 472 )
 scale = Vector2( 3, 3 )
+z_index = 2
 texture = ExtResource( 12 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="NPC1"]
@@ -226,11 +244,11 @@ shape = SubResource( 8 )
 [node name="NPC2" type="Sprite" parent="."]
 position = Vector2( 448, 440 )
 scale = Vector2( 3, 3 )
+z_index = 2
 texture = ExtResource( 13 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="NPC2"]
 position = Vector2( -7.62939e-06, 0 )
-scale = Vector2( 1, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC2/StaticBody2D2"]
 position = Vector2( 0, 13.3333 )

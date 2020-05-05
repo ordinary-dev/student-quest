@@ -33,6 +33,7 @@ first_floor_scene = "res://Scenes/Chapter2/3.House.tscn"
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
+z_index = 1
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
@@ -49,16 +50,19 @@ function_name = "first_floor"
 [node name="Door" type="Sprite" parent="."]
 position = Vector2( 296, 816 )
 scale = Vector2( 5, 5 )
+z_index = 2
 texture = ExtResource( 5 )
 
 [node name="Door2" type="Sprite" parent="."]
 position = Vector2( 624, 816 )
 scale = Vector2( 5, 5 )
+z_index = 2
 texture = ExtResource( 5 )
 
 [node name="Door3" type="Sprite" parent="."]
 position = Vector2( 944, 816 )
 scale = Vector2( 5, 5 )
+z_index = 2
 texture = ExtResource( 5 )
 
 [node name="Closed" parent="." instance=ExtResource( 3 )]

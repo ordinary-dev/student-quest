@@ -4,7 +4,6 @@
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=3]
 
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
@@ -20,6 +19,8 @@ date30 = "res://Scenes/Chapter1/15.date.tscn"
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 498.842, 125.599 )
+z_index = 6
+z_as_relative = false
 label = "SLEEP"
 object_name = NodePath("..")
 function_name = "sleep"
@@ -28,6 +29,8 @@ function_name = "sleep"
 
 [node name="Body" parent="." instance=ExtResource( 2 )]
 position = Vector2( 470, 560 )
+z_index = 4
+z_as_relative = false
 collision_layer = 1025
 collision_mask = 0
 

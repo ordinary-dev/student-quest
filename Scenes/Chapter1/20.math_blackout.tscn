@@ -68,7 +68,7 @@ func _ready():
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-cm = NodePath("ColorRect")
+cm = NodePath("CanvasLayer/ColorRect")
 tw = NodePath("Tween")
 hidden_room = "res://Scenes/Chapter1/23.stairs.tscn"
 
@@ -90,19 +90,24 @@ shape = SubResource( 3 )
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
 position = Vector2( 344, 1560 )
+z_index = 4
+z_as_relative = false
 collision_layer = 1025
 default_state = 0
 
 [node name="Guide" type="Sprite" parent="."]
 position = Vector2( 472, 312 )
 scale = Vector2( 3, 3 )
+z_index = 4
+z_as_relative = false
 texture = ExtResource( 7 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -1364.0
-margin_top = -671.0
-margin_right = 2928.0
-margin_bottom = 4453.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 1920.0
+margin_bottom = 1080.0
 mouse_filter = 1
 color = Color( 0.733333, 0.733333, 0.733333, 0 )
 __meta__ = {
@@ -119,14 +124,12 @@ function_name = "next_facility"
 
 [node name="Guard" parent="." instance=ExtResource( 6 )]
 position = Vector2( 568, 216 )
-z_index = 50
 dialog_path = "res://Dialogs/chapter1/guard.json"
 person = "Охранник"
 
 [node name="Secret" parent="." instance=ExtResource( 4 )]
 light_mask = 0
 position = Vector2( -576, 128 )
-z_index = 50
 label = "Путь?"
 object_name = NodePath("..")
 function_name = "adventure_begins"

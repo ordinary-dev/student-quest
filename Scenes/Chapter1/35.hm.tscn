@@ -31,7 +31,6 @@ extents = Vector2( 16, 16 )
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-cm = NodePath("ColorRect")
 hidden_room = "res://Scenes/1.beggining/Stairs.tscn"
 
 [node name="Node2D" parent="." instance=ExtResource( 7 )]
@@ -72,24 +71,17 @@ shape = SubResource( 2 )
 
 [node name="Body" parent="." instance=ExtResource( 4 )]
 position = Vector2( 344, 1560 )
+z_index = 4
+z_as_relative = false
 collision_layer = 1025
 default_state = 0
 
 [node name="Guide" type="Sprite" parent="."]
 position = Vector2( 472, 312 )
 scale = Vector2( 3, 3 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 3 )
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -1364.0
-margin_top = -671.0
-margin_right = 2928.0
-margin_bottom = 4453.0
-mouse_filter = 1
-color = Color( 0.733333, 0.733333, 0.733333, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Area2D3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -528, 1248 )

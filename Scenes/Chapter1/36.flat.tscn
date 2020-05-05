@@ -35,6 +35,8 @@ occluder = SubResource( 2 )
 
 [node name="Body" parent="." instance=ExtResource( 2 )]
 position = Vector2( 475.044, 554.511 )
+z_index = 4
+z_as_relative = false
 collision_layer = 1025
 collision_mask = 0
 default_state = 3
