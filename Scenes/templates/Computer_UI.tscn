@@ -62,26 +62,41 @@ func _on_StopBtn_pressed():
 
 
 func _on_cmd_pressed():
-	var txt = get_node(text_line).text
+	var txt : String = get_node(text_line).text
 	get_node(text_line).text = \"\"
-	# TODO: Add logic
-	if txt == \"help\":
-		get_node(text_console).text += \"TODO: write something\\n\"
-	elif txt == \"ls\":
-		get_node(text_console).text += \"empty\\n\"
-	elif txt == \"ls /\":
-		get_node(text_console).text += \"/bin /etc /home /usr\\n\"
-	elif txt == \"ls /bin\":
-		get_node(text_console).text += \"empty\\n\"
-	elif txt == \"ls /etc\":
-		get_node(text_console).text += \"empty\\n\"
-	elif txt == \"ls /home\":
-		get_node(text_console).text += \"empty\\n\"
-	elif txt == \"ls /usr\":
-		get_node(text_console).text += \"empty\\n\"
+	var cmd := txt.split(\" \", false)
+	if cmd[0] == \"help\":
+		get_node(text_console).text += \"sh v1.0\"
+	elif cmd[0] == \"ls\":
+		if cmd.size() == 1:
+			get_node(text_console).text += \"bin etc home usr\"
+		else:
+			if cmd[1] == \"/\":
+				get_node(text_console).text += \"bin etc home usr\"
+			elif cmd[1] == \"/bin\" or cmd[1] == \"/usr/bin\":
+				get_node(text_console).text += \"cat exit help ls reboot shutdown\"
+			elif cmd[1] == \"/etc\":
+				get_node(text_console).text += \"config.conf\"
+			elif cmd[1] == \"/home\":
+				get_node(text_console).text += \"fl\"
+			elif cmd[1] == \"/usr\":
+				get_node(text_console).text += \"bin\"
+			else:
+				get_node(text_console).text += \"ls: cannot access: No such file or directory\"
+	elif cmd[0] == \"cat\":
+		if cmd.size() == 1:
+			get_node(text_console).text += \"cat: Specify a file\"
+		elif cmd[1] == \"/etc/config.conf\":
+			get_node(text_console).text += \"/etc/config.conf:\\n\\n[user]\\nusername=\\\"FL\\\"\"
+		else:
+			get_node(text_console).text += \"cat: No such file or directory\"
+	elif cmd[0] == \"exit\":
+		_on_Close_pressed()
+	elif cmd[0] == \"reboot\" or cmd[0] == \"shutdown\":
+		_on_ResetBtn_pressed()
 	else:
-		get_node(text_console).text += \"Unknown command: \" + txt + \"\\n\"
-
+		get_node(text_console).text += \"sh: command not found: \" + txt
+	get_node(text_console).text += \"\\n\"
 
 
 func _on_TextEdit_text_changed():
@@ -239,6 +254,7 @@ __meta__ = {
 margin_right = 804.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 804, 600 )
+autowrap = true
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/ScrollContainer/Label2"]
 show_behind_parent = true
