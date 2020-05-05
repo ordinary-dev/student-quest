@@ -9,7 +9,6 @@ export (bool) var transition_out = true
 
 
 func _ready():
-	PROP.save("stage", 6)
 	yield(get_tree().create_timer(delay), "timeout")
 	SCENES.load_scene(
 		next_scene, transition_in, transition_out)

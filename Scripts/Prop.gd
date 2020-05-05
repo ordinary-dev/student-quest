@@ -1,13 +1,13 @@
 extends Node
 
-# Работает с чем угодно
-# Способен загрузить это и сохранить
+# Able to load and save game data
 # user://game_id/param
 
 
-# Получить параметр игры
+# Get game parameter
+# Returns -1 on error
 func get(param : String, game_id : String = "null") -> String:
-	# Открыть файл
+	# Open file
 	var fp : = File.new()
 	if game_id == "null":
 		game_id = GLOBAL.loaded
@@ -18,16 +18,14 @@ func get(param : String, game_id : String = "null") -> String:
 		var path : = "user://" + game_id + "/" + param
 		var state : = fp.open(path, File.READ)
 		if state != OK:
-			#NOTIFY.show("NOTEXIST")
 			return "-1"
-		
-		# Прочитать
+		# Read it
 		var val : = fp.get_line()
 		fp.close()
 		return val
 
 
-# Сохранить параметр игры
+# Save Game Parameter
 func save(param : String, value) -> void:
 	var game_id := GLOBAL.loaded
 	if game_id == "-1":
@@ -38,12 +36,12 @@ func save(param : String, value) -> void:
 	var dir : = Directory.new()
 	var dir_path : = "user://" + game_id
 	
-	# Создать папку, если ее нет
+	# Create folder if not present
 	if not dir.dir_exists(dir_path):
 		var state : = dir.make_dir(dir_path)
 		assert(state == OK)
 	
-	# Записать значение
+	# Write value to file
 	var fp : = File.new()
 	var state : = fp.open(dir_path + "/" + param, File.WRITE)
 	assert(state == OK)

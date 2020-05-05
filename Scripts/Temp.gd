@@ -1,7 +1,6 @@
 extends Node
 
 # Save values in a dictionary globally
-# Avaiable at /root/temp
 
 var dict : Dictionary
 
