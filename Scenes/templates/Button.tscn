@@ -6,45 +6,65 @@ script/source = "extends Button
 # Button template
 
 export (String) var btn_text
-export (bool) var use_animation = true
+export (bool) var enable_animation = true
+export (Array, NodePath) var text_fields
+
 onready var effect = $Tween
 onready var mrg = $MarginContainer
 onready var label = $Label
 
-export (Color) var light_color = \"#ffffff\"
-export (Color) var dark_color = \"#1e1e1e\"
+const gaps := 7
+const light_color := Color(\"#ffffff\")
+const dark_color := Color(\"#1e1e1e\")
 
-export (Array, NodePath) var text_fields
-
-var gaps : int = 7
+var time : float
 
 
 func _ready():
+	time = mrg.rect_size.x / 3000
 	label.text = btn_text
-	if use_animation:
+	if enable_animation:
 		mrg.add_constant_override(\"margin_right\", rect_size.x - gaps)
 	else:
 		mrg.visible = false
 
 
+# Called when the pause window closes
+# Otherwise, the button is displayed with a white background
+# When the player reopens the pause window
+func _hide():
+	if enable_animation:
+		# Background
+		mrg.add_constant_override(\"margin_right\", rect_size.x - gaps)
+		# Text
+		label.add_color_override(\"font_color\", light_color)
+		for i in text_fields:
+			get_node(i).add_color_override(\"font_color\", light_color)
+
+
 func _on_Mouse_Enter():
-	if use_animation:
+	if enable_animation:
+		# Background
 		effect.interpolate_property(
 			mrg, \"custom_constants/margin_right\",
-			rect_size.x - gaps, gaps, 0.25, 
+			rect_size.x - gaps, gaps, time, 
 			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		effect.start()
+		# Text
 		label.add_color_override(\"font_color\", dark_color)
 		for i in text_fields:
 			get_node(i).add_color_override(\"font_color\", dark_color)
 
+
 func _on_Mouse_Exit():
-	if use_animation:
+	if enable_animation:
+		# Background
 		effect.interpolate_property(
 			mrg, \"custom_constants/margin_right\",
-			gaps, rect_size.x - gaps, 0.25, 
+			gaps, rect_size.x - gaps, time, 
 			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		effect.start()
+		# Text
 		label.add_color_override(\"font_color\", light_color)
 		for i in text_fields:
 			get_node(i).add_color_override(\"font_color\", light_color)

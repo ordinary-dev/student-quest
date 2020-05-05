@@ -12,6 +12,7 @@ var enabled : bool = false
 var show_joystick := false
 export (String, FILE, \"*.tscn\") var menu_scene
 export (String, FILE, \"*.tscn\") var quit_scene
+export (Array, NodePath) var buttons
 
 
 func _process(_delta):
@@ -31,7 +32,6 @@ func switch():
 		_on_Pause_pressed()
 
 
-# Кнопка паузы
 func _on_Pause_pressed() -> void:
 	enabled = true
 	FX.btn_click()
@@ -45,7 +45,6 @@ func _on_Pause_pressed() -> void:
 		get_node(\"/root/Node2D/Body\").lock()
 
 
-# Кнопка возврата в игру
 func _return_to_game(play_sound : bool = true) -> void:
 	enabled = false
 	if play_sound:
@@ -53,6 +52,8 @@ func _return_to_game(play_sound : bool = true) -> void:
 	get_node(\"MarginContainer\").visible = false
 	get_node(\"ColorRect\").visible = false
 	get_node(\"Pause\").visible = true
+	for i in buttons:
+		get_node(i)._hide()
 	if (has_node(\"/root/Node2D/Body\")):
 		get_node(\"/root/Node2D/Body\").unlock()
 	if show_joystick:
@@ -94,6 +95,7 @@ __meta__ = {
 }
 menu_scene = "res://Scenes/menu/Menu.tscn"
 quit_scene = "res://Scenes/quit.tscn"
+buttons = [ NodePath("MarginContainer/HBoxContainer/VBoxContainer/Return"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Settings"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Menu"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Quit") ]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
