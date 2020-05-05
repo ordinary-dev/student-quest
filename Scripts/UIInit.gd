@@ -18,6 +18,7 @@ func hide_time() -> void:
 func hide_joystick() -> void:
 	UI.get_node("Joystick").visible = false
 
+
 func show_joystick() -> void:
 	UI.get_node("Joystick").visible = true
 
@@ -26,8 +27,11 @@ func enable_ui() -> void:
 	if OS.get_name() == "Android" or SHOW_CONTROLS:
 		UI.get_node("Joystick").visible = true
 	UI.get_node("Pause").visible = true
+	UI.get_node("Inventory").visible = true
+	UI.get_node("Inventory").update_inv()
 
 
 func disable_ui() -> void:
 	UI.get_node("Joystick").visible = false
 	UI.get_node("Pause").visible = false
+	UI.get_node("Inventory").visible = false

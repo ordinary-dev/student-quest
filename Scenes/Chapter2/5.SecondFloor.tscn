@@ -20,8 +20,12 @@ func first_floor():
 
 
 func third_floor():
-	#SCENES.load_scene(third_floor_scene)
-	pass
+	if INVENTORY.has_item(\"key\"):
+#		SCENES.load_scene(third_floor_scene)
+		NOTIFY.show(\"Opened\")
+		INVENTORY.remove_item(\"key\")
+	else:
+		NOTIFY.show(\"Closed\")
 
 # Called when player tries to open the door
 func door():

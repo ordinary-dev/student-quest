@@ -43,6 +43,7 @@ func on_Del_Pressed(game_id : String) -> void:
 func btn_load_scene(name : String, game_id : String) -> void:
 	FX.btn_click()
 	GLOBAL.loaded = game_id
+	INVENTORY._load()
 	SCENES.load_scene(\"res://Scenes/\" + name)
 
 

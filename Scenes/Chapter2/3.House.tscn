@@ -18,8 +18,11 @@
 script/source = "extends Node2D
 
 export (NodePath) var player
+export (NodePath) var key_popup
 export (String, FILE, \"*.tscn\") var street_scene 
 export (String, FILE, \"*.tscn\") var second_floor_scene 
+
+var key_added = false
 
 # Load scenes
 
@@ -35,8 +38,18 @@ func street():
 
 # Restore saved position
 func _ready():
+	if INVENTORY.has_item(\"key\"):
+		remove_child(get_node(key_popup))
+		key_added = true
 	if TEMP.is_saved(\"house_player_pos\"):
 		get_node(player).position = TEMP.get(\"house_player_pos\")
+
+
+# Add key to inventory
+func get_key():
+	if !key_added:
+		INVENTORY.add_item(\"key\")
+		key_added = true
 "
 
 [sub_resource type="OccluderPolygon2D" id=2]
@@ -63,6 +76,7 @@ extents = Vector2( 5.33334, 2.66667 )
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 player = NodePath("Body")
+key_popup = NodePath("Key")
 street_scene = "res://Scenes/Chapter2/4.Street.tscn"
 second_floor_scene = "res://Scenes/Chapter2/5.SecondFloor.tscn"
 
@@ -262,5 +276,11 @@ person = "Classmates"
 position = Vector2( 1440, 528 )
 texture = ExtResource( 14 )
 texture_scale = 12.0
+
+[node name="Key" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1608, 776 )
+label = "Key"
+object_name = NodePath("..")
+function_name = "get_key"
 
 [editable path="Body"]

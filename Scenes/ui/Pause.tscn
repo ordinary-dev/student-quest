@@ -39,6 +39,7 @@ func _on_Pause_pressed() -> void:
 	get_node(\"MarginContainer\").visible = true
 	get_node(\"ColorRect\").visible = true
 	get_node(\"Pause\").visible = false
+	UI.get_node(\"Inventory\").visible = false
 	if UI.get_node(\"Joystick\").visible:
 		UI_INIT.hide_joystick()
 		show_joystick = true
@@ -56,6 +57,7 @@ func _return_to_game(play_sound : bool = true) -> void:
 	get_node(\"ColorRect\").visible = false
 	# Show pause button
 	get_node(\"Pause\").visible = true
+	UI.get_node(\"Inventory\").visible = true
 	# Hide white background
 	for i in buttons:
 		get_node(i)._hide()
@@ -72,6 +74,9 @@ func _return_to_game(play_sound : bool = true) -> void:
 
 func _to_menu() -> void:
 	FX.btn_click()
+	# Save inventory
+	INVENTORY._write()
+	GLOBAL.loaded = \"-1\"
 	SCENES.load_scene(menu_scene)
 	yield(get_tree().create_timer(SCENES.time), \"timeout\")
 	# Hide this scene
@@ -81,6 +86,8 @@ func _to_menu() -> void:
 func _quit_game() -> void:
 	# Save settings
 	GLOBAL.write_settings()
+	# Save inventory
+	INVENTORY._write()
 	# Quit game
 	SCENES.load_scene(quit_scene)
 

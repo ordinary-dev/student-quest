@@ -28,7 +28,7 @@ func get(param : String, game_id : String = "null") -> String:
 
 
 # Сохранить параметр игры
-func save(param : String, value : String) -> void:
+func save(param : String, value) -> void:
 	var game_id := GLOBAL.loaded
 	if game_id == "-1":
 		NOTIFY.show("NOTLOADED")
@@ -47,5 +47,13 @@ func save(param : String, value : String) -> void:
 	var fp : = File.new()
 	var state : = fp.open(dir_path + "/" + param, File.WRITE)
 	assert(state == OK)
-	fp.store_line(value)
+	fp.store_line(str(value))
 	fp.close()
+
+
+func has(param : String) -> bool:
+	var game_id := GLOBAL.loaded
+	var path : = "user://" + game_id + "/" + param
+	var fp : = File.new()
+	var state : = fp.open(path, File.READ)
+	return state == OK
