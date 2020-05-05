@@ -1,7 +1,7 @@
 extends Node
 
 
-const SHOW_CONTROLS = false
+const SHOW_CONTROLS = true
 
 
 func show_time(time) -> void:
