@@ -140,7 +140,8 @@ tracks/0/keys = {
 extents = Vector2( 15, 10 )
 
 [node name="Node2D" type="Node2D"]
-z_index = 1
+z_index = 5
+z_as_relative = false
 script = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

@@ -167,7 +167,7 @@ tile_data = PoolIntArray( 393215, -536870907, 0, 327680, -536870908, 0, 327681, 
 
 [node name="Trees32" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
-z_index = 3
+z_index = 5
 z_as_relative = false
 tile_set = ExtResource( 15 )
 cell_size = Vector2( 32, 32 )
@@ -669,6 +669,7 @@ shape = SubResource( 11 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="eni_house"]
 position = Vector2( -20.2815, -43.0983 )
 frames = ExtResource( 21 )
+frame = 3
 playing = true
 
 [node name="eni_show" parent="." instance=ExtResource( 5 )]
