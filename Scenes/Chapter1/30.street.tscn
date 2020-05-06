@@ -95,8 +95,6 @@ dialog_2 = "res://Dialogs/chapter1/memories.json"
 
 [node name="Body" parent="." instance=ExtResource( 8 )]
 position = Vector2( -452, 2798 )
-z_index = 4
-z_as_relative = false
 collision_layer = 1025
 collision_mask = 0
 
@@ -117,8 +115,6 @@ time = "9:45"
 
 [node name="Store" parent="." instance=ExtResource( 1 )]
 position = Vector2( 552, 224 )
-z_index = 6
-z_as_relative = false
 label = "STORE"
 object_name = NodePath("..")
 function_name = "store"
@@ -139,38 +135,28 @@ frame = 8
 
 [node name="NS" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4144, 3448 )
-z_index = 6
-z_as_relative = false
 label = "NS"
 object_name = NodePath("..")
 function_name = "ns"
 
 [node name="MATH" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1280, 6336 )
-z_index = 6
-z_as_relative = false
 label = "MATH"
 object_name = NodePath("..")
 function_name = "math"
 
 [node name="HM" parent="." instance=ExtResource( 1 )]
 position = Vector2( 3872, 7816 )
-z_index = 6
-z_as_relative = false
 label = "HM"
 object_name = NodePath("..")
 function_name = "hm"
 
 [node name="Ticket_window" parent="." instance=ExtResource( 3 )]
 position = Vector2( -383.391, -104.215 )
-z_index = 6
-z_as_relative = false
 object_name = NodePath("../Ticket_window/Node2D")
 
 [node name="Mr_Dudec" parent="." instance=ExtResource( 1 )]
 position = Vector2( -38.3696, 356.368 )
-z_index = 6
-z_as_relative = false
 label = "STRANGER"
 object_name = NodePath("..")
 function_name = "mr_singer"

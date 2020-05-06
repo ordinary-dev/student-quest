@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CanvasLayer
+
+# Skip scene
+
+export (NodePath) var obj
+export (String) var method
+onready var btn = $Canvas/Button
+onready var timer = $Canvas/Timer
+
+
+func _ready():
+	btn.visible = false
+
+
+# Keyboard
+func _unhandled_key_input(_event):
+	if Input.is_action_pressed('skip_scene'):
+		if timer.is_stopped():
+			timer.start(1.5)
+			btn.visible = true
+		else:
+			_on_Button_pressed()
+
+
+# Mouse
+func _on_Control_gui_input(event):
+	if event is InputEventMouseButton and event.pressed:
+		timer.start(1.5)
+		btn.visible = true
+
+
+# Hide button
+func _on_Timer_timeout():
+	btn.visible = false
+
+
+# Skip scene
+func _on_Button_pressed():
+	get_node(obj).call(method)
+"
+
+[node name="Skip" type="CanvasLayer"]
+layer = 8
+script = SubResource( 1 )
+
+[node name="Canvas" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" parent="Canvas" instance=ExtResource( 1 )]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -256.0
+margin_top = -100.0
+margin_right = 0.0
+margin_bottom = 0.0
+rect_min_size = Vector2( 256, 100 )
+btn_text = "SKIP"
+
+[node name="Timer" type="Timer" parent="Canvas"]
+one_shot = true
+[connection signal="gui_input" from="Canvas" to="." method="_on_Control_gui_input"]
+[connection signal="pressed" from="Canvas/Button" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Canvas/Timer" to="Canvas" method="_on_Timer_timeout"]
