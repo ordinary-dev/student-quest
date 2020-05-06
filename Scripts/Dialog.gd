@@ -36,7 +36,7 @@ func hide_dialog():
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("dialog_next"):
 		if s_key != "-1":
 			show_next()
 		else:
