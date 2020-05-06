@@ -108,3 +108,4 @@ load_scene = true
 scene_path = "res://Scenes/Chapter1/12.faculty_choice.tscn"
 
 [node name="EnableUI" parent="." instance=ExtResource( 6 )]
+joystick = true

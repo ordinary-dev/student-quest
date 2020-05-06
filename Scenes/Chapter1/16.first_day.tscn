@@ -143,6 +143,7 @@ region_enabled = true
 region_rect = Rect2( 40, 72, 16, 33 )
 
 [node name="EnableUI" parent="." instance=ExtResource( 7 )]
+joystick = true
 show_time = true
 time = "9:45"
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/train/inside_the_train.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/train/field-no-clouds.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/train/cloud.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Shake.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -98,3 +99,5 @@ texture = ExtResource( 4 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "background_anim"
 anims/background_anim = SubResource( 4 )
+
+[node name="DisableUI" parent="." instance=ExtResource( 6 )]

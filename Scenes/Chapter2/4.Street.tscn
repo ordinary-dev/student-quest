@@ -110,6 +110,7 @@ collision_mask = 1024
 object = NodePath("../House")
 
 [node name="EnableUI" parent="." instance=ExtResource( 7 )]
+joystick = true
 
 [node name="house" type="Sprite" parent="."]
 position = Vector2( 360, -752 )

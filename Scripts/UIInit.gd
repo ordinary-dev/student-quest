@@ -23,10 +23,11 @@ func show_joystick() -> void:
 	UI.get_node("Joystick").visible = true
 
 
-func enable_ui() -> void:
-	if OS.get_name() == "Android" or SHOW_CONTROLS:
+func enable_ui(joystick := false) -> void:
+	if joystick and (OS.get_name() == "Android" or SHOW_CONTROLS):
 		UI.get_node("Joystick").visible = true
 	UI.get_node("Pause").visible = true
+	UI.get_node("Pause").set_process(true)
 	UI.get_node("Inventory").visible = true
 	UI.get_node("Inventory").update_inv()
 
@@ -34,4 +35,5 @@ func enable_ui() -> void:
 func disable_ui() -> void:
 	UI.get_node("Joystick").visible = false
 	UI.get_node("Pause").visible = false
+	UI.get_node("Pause").set_process(false)
 	UI.get_node("Inventory").visible = false

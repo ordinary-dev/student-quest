@@ -56,3 +56,4 @@ position = Vector2( -288, 3072 )
 position = Vector2( -896, 3136 )
 
 [node name="EnableUI" parent="." instance=ExtResource( 5 )]
+joystick = true

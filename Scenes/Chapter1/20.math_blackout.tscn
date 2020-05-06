@@ -90,8 +90,6 @@ shape = SubResource( 3 )
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
 position = Vector2( 344, 1560 )
-z_index = 4
-z_as_relative = false
 collision_layer = 1025
 default_state = 0
 
@@ -135,6 +133,7 @@ object_name = NodePath("..")
 function_name = "adventure_begins"
 
 [node name="EnableUI" parent="." instance=ExtResource( 3 )]
+joystick = true
 
 [node name="restore_state" type="Node2D" parent="."]
 script = SubResource( 4 )

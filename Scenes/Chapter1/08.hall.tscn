@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/backgrounds/hall.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/PlaySound.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -22,3 +23,5 @@ file = "res://Audio/music/Ambient.ogg"
 [node name="Skip" parent="." instance=ExtResource( 4 )]
 obj = NodePath("..")
 method = "load_scene"
+
+[node name="EnableUI" parent="." instance=ExtResource( 5 )]

@@ -126,6 +126,7 @@ limit_bottom = 1086
 editor_draw_limits = true
 
 [node name="EnableUI" parent="." instance=ExtResource( 3 )]
+joystick = true
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 448, 640 )

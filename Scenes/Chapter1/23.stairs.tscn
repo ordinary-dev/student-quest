@@ -51,7 +51,6 @@ tile_data = PoolIntArray( 1, 2, 0, 2, -1610612732, 0, 3, -2147483643, 0, 4, -214
 [node name="Body" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.333333, 0.333333, 0.333333, 1 )
 position = Vector2( 104, 120 )
-z_index = 4
 collision_layer = 1025
 default_state = 0
 
@@ -97,3 +96,4 @@ range_z_max = 10
 shadow_enabled = true
 
 [node name="EnableUI" parent="." instance=ExtResource( 5 )]
+joystick = true
