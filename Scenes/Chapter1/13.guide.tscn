@@ -24,15 +24,11 @@ flat_scene = "res://Scenes/Chapter1/14.flat.tscn"
 
 [node name="Body" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2318.63, 4387.53 )
-z_index = 4
-z_as_relative = false
 collision_layer = 1025
 collision_mask = 0
 
 [node name="HOSTEL" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1136, 2880 )
-z_index = 6
-z_as_relative = false
 label = "HOSTEL"
 object_name = NodePath("..")
 function_name = "flat"

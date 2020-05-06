@@ -50,8 +50,6 @@ texture = ExtResource( 1 )
 
 [node name="Body" parent="." instance=ExtResource( 2 )]
 position = Vector2( 639.396, 457.809 )
-z_index = 4
-z_as_relative = false
 collision_layer = 1024
 
 [node name="Light2D" type="Light2D" parent="."]
@@ -104,8 +102,6 @@ shape = SubResource( 6 )
 
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 906.715, 382.892 )
-z_index = 6
-z_as_relative = false
 dialog_path = "res://Dialogs/chapter1/rector.json"
 person = "RECTOR"
 load_scene = true
