@@ -9,7 +9,7 @@ script/source = "extends Node2D
 export(Vector2) var dim = Vector2(1, 1)
 export(String, FILE, \"*.tscn\") var ss
 export (NodePath) var sb
-
+export (NodePath) var player_path
 
 func _ready():
 	remove_child(get_child(0))
@@ -28,14 +28,14 @@ func _ready():
 
 func _on_body_entered(body):
 	if \"Body\" in body.name:
-		if has_node(\"/root/Node2D/Body\"):
-			get_node(\"/root/Node2D/Body\").enable_water()
+		if has_node(player_path):
+			get_node(player_path).enable_water()
 
 
 func _on_body_exited(body):
 	if \"Body\" in body.name:
-		if has_node(\"/root/Node2D/Body\"):
-			get_node(\"/root/Node2D/Body\").disable_water()
+		if has_node(player_path):
+			get_node(player_path).disable_water()
 "
 
 [sub_resource type="RectangleShape2D" id=2]

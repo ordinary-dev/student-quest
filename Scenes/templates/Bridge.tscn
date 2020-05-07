@@ -2,26 +2,25 @@
 
 [ext_resource path="res://Sprites/outside/bridge_half.png" type="Texture" id=1]
 
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 export (NodePath) var upper
 export (NodePath) var lower
-
+export (NodePath) var player_path
 
 func _on_body_entered(body):
 	if \"Body\" in body.name:
-		if has_node(\"/root/Node2D/Body\"):
-			get_node(\"/root/Node2D/Body\").water_protection = true
+		if has_node(player_path):
+			get_node(player_path).water_protection = true
 		get_node(upper).disabled = false
 		get_node(lower).disabled = true
 
 
 func _on_body_exited(body):
 	if \"Body\" in body.name:
-		if has_node(\"/root/Node2D/Body\"):
-			get_node(\"/root/Node2D/Body\").water_protection = false
+		if has_node(player_path):
+			get_node(player_path).water_protection = false
 		get_node(upper).disabled = true
 		get_node(lower).disabled = false
 "
@@ -35,7 +34,7 @@ lower = NodePath("StaticBody2D/lower")
 texture = ExtResource( 1 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 44, 0 )
+position = Vector2( 43.7741, 0 )
 texture = ExtResource( 1 )
 flip_h = true
 
