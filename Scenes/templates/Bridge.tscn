@@ -39,6 +39,7 @@ texture = ExtResource( 1 )
 flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
@@ -63,6 +64,6 @@ collision_mask = 1024
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 visible = false
-polygon = PoolVector2Array( -26.9788, 5.73478, -15.8204, 1.47282, -5.32805, -1.97468, 11.4598, -5.27229, 32.1448, -5.42218, 49.5322, -2.27446, 59.2751, 1.47282, 71.4695, 7.00437, 71.4695, 11.6211, 57.1766, 5.51988, 49.3823, 3.42141, 32.1448, 1.17303, 11.7596, 1.32293, -4.87838, 3.12162, -15.071, 6.41923, -27.0598, 12.0524 )
+polygon = PoolVector2Array( -26.8639, 4.56378, -16.1917, 0.616511, -6.0311, -2.89217, 11.5123, -6.32775, 31.7603, -6.54705, 50.4733, -2.81908, 60.3415, 0.689608, 71.4695, 7.00437, 71.4753, 14.3237, 56.3211, 6.61051, 47.257, 4.1983, 31.1025, 2.51705, 12.2433, 2.59015, -3.39959, 4.27139, -13.5602, 7.56078, -26.5715, 13.5548 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]

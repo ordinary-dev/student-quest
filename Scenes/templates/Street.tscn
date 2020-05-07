@@ -29,7 +29,7 @@
 [ext_resource path="res://Sprites/outside/law_house.png" type="Texture" id=27]
 [ext_resource path="res://Scenes/templates/Tree_type_1.tscn" type="PackedScene" id=28]
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 192, 32 )
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -50,16 +50,16 @@ extents = Vector2( 350, 32 )
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 71.6269, 119.08 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 2.33614, 0.415588 )
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 110, 40.5405 )
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 2.47217, 0.605347 )
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 122.299, 34.3445 )
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -74,7 +74,7 @@ extents = Vector2( 51, 41 )
 [sub_resource type="RectangleShape2D" id=15]
 extents = Vector2( 71.2734, 152.86 )
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=16]
 extents = Vector2( 2, 0.5 )
 
 [sub_resource type="RectangleShape2D" id=17]
@@ -129,7 +129,7 @@ z_index = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="invisible_walls"]
 position = Vector2( 59.32, -21.4361 )
-shape = SubResource( 19 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="invisible_walls"]
 position = Vector2( 379.32, 386.564 )
@@ -530,7 +530,7 @@ shape = SubResource( 7 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort_global/Buildings/law_house/StaticBody2D"]
 position = Vector2( 92.4519, 8.56714 )
-shape = SubResource( 20 )
+shape = SubResource( 8 )
 
 [node name="law_show" parent="YSort_global/Buildings" instance=ExtResource( 5 )]
 visible = false
@@ -553,11 +553,11 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort_global/Buildings/phys_house/StaticBody2D"]
 position = Vector2( -16.5194, -14.9708 )
-shape = SubResource( 21 )
+shape = SubResource( 9 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort_global/Buildings/phys_house/StaticBody2D"]
 position = Vector2( 110.555, -12.558 )
-shape = SubResource( 22 )
+shape = SubResource( 10 )
 
 [node name="phys_show" parent="YSort_global/Buildings" instance=ExtResource( 5 )]
 position = Vector2( 6117.01, 5493.77 )
@@ -577,7 +577,7 @@ texture = ExtResource( 23 )
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort_global/Buildings/hm_house/StaticBody2D"]
-shape = SubResource( 23 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort_global/Buildings/hm_house/StaticBody2D"]
 position = Vector2( -31.5087, 47.9441 )
@@ -663,7 +663,7 @@ shape = SubResource( 15 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="YSort_global/Buildings/ns_house/StaticBody2D"]
 position = Vector2( -92.4014, 8.48972 )
-shape = SubResource( 24 )
+shape = SubResource( 16 )
 
 [node name="chem_house" type="Sprite" parent="YSort_global/Buildings"]
 position = Vector2( 3685.72, -418.905 )
