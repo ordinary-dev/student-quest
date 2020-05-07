@@ -101,7 +101,7 @@ position = Vector2( 966.617, 501.166 )
 shape = SubResource( 6 )
 
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
-position = Vector2( 906.715, 382.892 )
+position = Vector2( 896.167, 428.602 )
 dialog_path = "res://Dialogs/chapter1/rector.json"
 person = "RECTOR"
 load_scene = true

@@ -9,6 +9,7 @@ script/source = "extends Sprite
 
 onready var anim = $AnimationPlayer
 export (Array, NodePath) var nodes
+export (NodePath) var player_path
 const max_distance = 250
 var player
 var target
@@ -79,8 +80,8 @@ func _process(delta):
 
 
 func _ready():
-	if has_node(\"/root/Node2D/Body\"):
-		player = get_node(\"/root/Node2D/Body\")
+	if has_node(player_path):
+		player = get_node(player_path)
 	target = get_node(nodes[ind])
 		
 "
