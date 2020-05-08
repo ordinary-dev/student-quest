@@ -34,12 +34,12 @@ func _ready():
 					tmp.flip_v = true
 				tmp.playing = true
 	# StaticBody2D
-	if use_static_body:
-		var stat_body = get_node(sb)
-		stat_body.position = Vector2(96*vect.x, 96*vect.y)
-		stat_body.scale = Vector2(vect.x, vect.y)
-	else:
-		remove_child(get_node(sb))
+	#if use_static_body:
+#		var stat_body = get_node(sb)
+#		stat_body.position = Vector2(96*vect.x, 96*vect.y)
+#		stat_body.scale = Vector2(vect.x, vect.y)
+#	else:
+#		remove_child(get_node(sb))
 "
 
 [sub_resource type="RectangleShape2D" id=2]
