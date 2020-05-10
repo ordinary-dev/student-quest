@@ -36,9 +36,8 @@ player_path = NodePath("../../../Body")
 [node name="Bridge1" parent="Street_scene/Bridges" index="1"]
 player_path = NodePath("../../../Body")
 
-
 [node name="AnimatedSprite" parent="Street_scene/YSort_global/Buildings/eni_house" index="1"]
-frame = 2
+frame = 1
 
 [node name="HOSTEL" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1136, 2880 )
