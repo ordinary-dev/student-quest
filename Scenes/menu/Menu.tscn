@@ -3,7 +3,7 @@
 [ext_resource path="res://Sprites/menu_background/Old_screen.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/menu_background/8bit-background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/menu/Settings.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/menu/Load.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/menu/LoadGameScene/Load.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/menu/Confirm.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/menu_background/8bit-foreground.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=7]
@@ -37,6 +37,7 @@ func _new_game():
 # Show saved games
 func _load_game():
 	FX.btn_click()
+	get_node(load_scene).get_node(\"Control\")._refresh()
 	get_node(load_scene).visible = !get_node(load_scene).visible
 	get_node(settings_scene).visible = false
 	get_node(confirm_scene).visible = false
@@ -208,7 +209,7 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Particles2D" parent="." instance=ExtResource( 12 )]
@@ -308,13 +309,13 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Load" parent="Menu/Right" instance=ExtResource( 4 )]
-visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 100.0
 margin_top = 150.0
 margin_right = 858.0
 margin_bottom = 930.0
+
+[node name="Control" parent="Menu/Right/Load" index="0"]
+mode = 0
 
 [node name="Animation" type="Tween" parent="."]
 script = SubResource( 2 )
@@ -331,3 +332,5 @@ person_2 = ExtResource( 13 )
 [connection signal="pressed" from="Menu/Left/VBox/BtnLoad" to="." method="_load_game"]
 [connection signal="pressed" from="Menu/Left/VBox/BtnSettings" to="." method="_toggle_settings"]
 [connection signal="pressed" from="Menu/Left/VBox/BtnQuit" to="." method="_quit"]
+
+[editable path="Menu/Right/Load"]

@@ -40,6 +40,9 @@ upper = NodePath("StaticBody2D/upper")
 lower = NodePath("StaticBody2D/lower")
 player_path = NodePath("../../../Body")
 
+[node name="AnimatedSprite" parent="Street_scene/YSort_global/Buildings/eni_house" index="1"]
+frame = 3
+
 [node name="HOSTEL" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1136, 2880 )
 label = "HOSTEL"

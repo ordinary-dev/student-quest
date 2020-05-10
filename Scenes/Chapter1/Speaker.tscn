@@ -14,7 +14,7 @@ export (String, FILE, \"*.json\") var dialog_path
 
 
 func load_scene():
-	var n = PROP.get(\"facility\")
+	var n = TEMP.get(\"facility\")
 	if n == \"0\":
 		SCENES.load_scene(fac_0)
 	elif n == \"1\":

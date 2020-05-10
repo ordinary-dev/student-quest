@@ -11,7 +11,7 @@ export (Array, String, FILE, \"*.json\") var dialogs
 
 func get_dialog_number() -> String:
 	if GLOBAL.loaded != \"-1\":
-		var fac = PROP.get(\"facility\")
+		var fac = TEMP.get(\"facility\")
 		if fac == \"0\":
 			return dialogs[0]
 		if fac == \"1\":
@@ -32,8 +32,6 @@ dialogs = [ "res://Dialogs/chapter1/guideMath.json", "res://Dialogs/chapter1/gui
 
 [node name="Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 120, -40 )
-z_index = 6
-z_as_relative = false
 label = "GUIDE"
 object_name = NodePath("..")
 function_name = "activate"

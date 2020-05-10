@@ -39,15 +39,6 @@ func has_item(item : String) -> bool:
 	return inventory.has(item)
 
 
-func _load() -> void:
-	# GLOBAL.loaded should be set
-	if PROP.has("inventory"):
-		var result_json = JSON.parse(PROP.get("inventory"))
-		if result_json.error == OK:
-			inventory = result_json.result
+func _load(inv : Dictionary) -> void:
+	inventory = inv
 	UI.get_node("Inventory").update_inv()
-
-
-func _write() -> void:
-	# GLOBAL.loaded should be set
-	PROP.save("inventory", to_json(inventory))

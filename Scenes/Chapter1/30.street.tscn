@@ -24,14 +24,14 @@ export (String, FILE, \"*.json\") var dialog_2
 
 
 func dialog():
-	if mr_singer_act and PROP.get(\"day1_dialog\") == \"0\":
+	if mr_singer_act and TEMP.get(\"day1_dialog\") == \"0\":
 		DIALOG.show_dialog(dialog_2)
 		mr_singer_act = false
 
 
 func mr_singer():
 	mr_singer_act = true
-	if PROP.get(\"day1_dialog\") == \"0\":
+	if TEMP.get(\"day1_dialog\") == \"0\":
 		DIALOG.show_dialog(dialog_v1)
 	else:
 		DIALOG.show_dialog(dialog_v2)
@@ -50,7 +50,7 @@ func save():
 
 
 func enter(id:String) -> void:
-	if PROP.get(\"facility\") == id:
+	if TEMP.get(\"facility\") == id:
 		save()
 		SCENES.load_scene(speaker_scene)
 	else:
@@ -74,7 +74,6 @@ func hm():
 
 func _ready():
 	MUSIC.fade_out()
-	PROP.save(\"stage\", \"3\")
 	if TEMP.is_saved(\"day2_player_pos\"):
 		get_node(player).position = TEMP.get(\"day2_player_pos\")
 		mr_singer_act = TEMP.get(\"day2_dialog_used\")

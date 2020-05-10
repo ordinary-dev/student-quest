@@ -27,9 +27,9 @@ func save():
 	TEMP.save(\"street_singer_dialog_used\", 
 		get_node(singer).used)
 	if get_node(singer).used:
-		PROP.save(\"day1_dialog\", \"1\")
+		TEMP.save(\"day1_dialog\", \"1\")
 	else:
-		PROP.save(\"day1_dialog\", \"0\")
+		TEMP.save(\"day1_dialog\", \"0\")
 
 
 # Перейти в магазин
@@ -39,7 +39,7 @@ func to_store() -> void:
 
 
 func enter(id:String) -> void:
-	if PROP.get(\"facility\") == id:
+	if TEMP.get(\"facility\") == id:
 		save()
 		SCENES.load_scene(next_scene)
 	else:
@@ -67,8 +67,6 @@ func enter_house():
 
 
 func _ready():
-	# Update stage
-	PROP.save(\"stage\", \"2\")
 	if TEMP.is_saved(\"street_player_pos\"):
 		get_node(player).position = TEMP.get(\"street_player_pos\")
 		get_node(singer).used = TEMP.get(\"street_singer_dialog_used\")

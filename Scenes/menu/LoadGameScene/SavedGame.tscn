@@ -1,0 +1,143 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Button
+
+onready var textureObj = $HBoxContainer/MarginContainer/VBoxContainer/TextureRect
+onready var date = $HBoxContainer/MarginContainer/VBoxContainer/Date
+onready var gameName = $HBoxContainer/MarginContainer/VBoxContainer/Name
+var saved_path : String
+
+
+# Delete button pressed
+func delete() -> void:
+	FX.btn_click()
+	
+	# Delete folder
+	var dir : = Directory.new()
+	var path_to_dir = saved_path
+	var state = dir.open(path_to_dir)
+	assert(state == OK)
+	
+	# Delete every file
+	state = dir.list_dir_begin(true)
+	assert(state == OK)
+	var cur : = dir.get_next()
+	while cur != \"\":
+		state = dir.remove(path_to_dir + \"/\" + cur)
+		assert(state == OK)
+		cur = dir.get_next()
+	dir.list_dir_end()
+	
+	# Delete folder
+	state = dir.remove(path_to_dir)
+	assert(state == OK)
+	queue_free()
+
+
+static func _read_img(direction : String) -> Image:
+	var path := ProjectSettings.globalize_path(direction)
+	var img : Image = Image.new()
+	img.load(path)
+	return img
+
+
+# Load screenshot, date and name from the given folder
+# screenshot.png is a screenshot of a game taken when the save button was pressed
+# config.json contains date and name
+# data.json contains saved values, such as scene to load, items, etc
+# Returns if this folder is valid or not
+func parseFolder(path : String) -> bool:
+	saved_path = path
+	# Check if files exist
+	var f = File.new()
+	var screenshotExists = f.file_exists(path + \"/screenshot.png\")
+	var configExists = f.file_exists(path + \"/config.json\")
+	var dataExists = f.file_exists(path + \"/data.json\")
+	if !screenshotExists or !configExists or !dataExists:
+		queue_free()
+		return false
+	# Texture
+	var img = _read_img(path + \"/screenshot.png\")
+	var tex = ImageTexture.new()
+	tex.create_from_image(img)
+	textureObj.texture = tex
+	# Date and name
+	f.open(path + \"/config.json\", File.READ)
+	var jsonString = f.get_as_text()
+	var jsonContent = JSON.parse(jsonString)
+	date.text = jsonContent.result[\"date\"]
+	gameName.text = jsonContent.result[\"name\"]
+	return true
+"
+
+[node name="Control" type="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1320.0
+margin_bottom = -580.0
+rect_min_size = Vector2( 600, 500 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+margin_right = 520.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 520, 0 )
+mouse_filter = 2
+custom_constants/margin_right = 30
+custom_constants/margin_top = 30
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 30
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 490.0
+margin_bottom = 470.0
+mouse_filter = 2
+custom_constants/separation = 20
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 460.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 100, 300 )
+mouse_filter = 2
+expand = true
+
+[node name="Date" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 320.0
+margin_right = 460.0
+margin_bottom = 344.0
+custom_fonts/font = ExtResource( 1 )
+text = "2020-01-01 00:01"
+
+[node name="Name" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 364.0
+margin_right = 460.0
+margin_bottom = 412.0
+custom_fonts/font = ExtResource( 2 )
+text = "Name"
+
+[node name="Delete" parent="HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 524.0
+margin_right = 604.0
+margin_bottom = 500.0
+btn_text = "D"
+[connection signal="pressed" from="HBoxContainer/Delete" to="." method="delete"]
