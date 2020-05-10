@@ -9,8 +9,8 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-
 export (String,FILE,\"*.tscn\") var scene
+
 
 func internet():
 	SCENES.load_scene(scene)

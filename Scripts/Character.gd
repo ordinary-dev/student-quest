@@ -3,7 +3,7 @@ extends KinematicBody2D
 # State types
 enum states {DOWN, UP, LEFT, RIGHT}
 export (states) var default_state = states.UP
-
+export (bool) var restore_position = false
 const speed := 500
 
 # Objects
@@ -220,6 +220,12 @@ func _physics_process(_delta) -> void:
 
 
 func _ready():
+	if restore_position:
+		if TEMP.get("player_pos_id") == SCENES.last_scene_path:
+			if TEMP.is_saved("player_pos_x"):
+				position.x = TEMP.get("player_pos_x")
+				position.y = TEMP.get("player_pos_y")
+	GLOBAL.player_path = get_path()
 	# Set starting direction
 	if default_state == states.UP:
 		character.frame = frames.UP_STILL

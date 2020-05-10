@@ -43,8 +43,6 @@ func store():
 
 
 func save():
-	TEMP.save(\"day2_player_pos\", 
-		get_node(player).position)
 	TEMP.save(\"day2_dialog_used\", 
 		mr_singer_act)
 
@@ -74,11 +72,8 @@ func hm():
 
 func _ready():
 	MUSIC.fade_out()
-	if TEMP.is_saved(\"day2_player_pos\"):
-		get_node(player).position = TEMP.get(\"day2_player_pos\")
+	if TEMP.is_saved(\"day2_dialog_used\"):
 		mr_singer_act = TEMP.get(\"day2_dialog_used\")
-	else:
-		get_node(player).position = Vector2(-452, 2798)
 "
 
 [node name="Node2D" type="Node2D"]
@@ -96,6 +91,7 @@ dialog_2 = "res://Dialogs/chapter1/memories.json"
 position = Vector2( -452, 2798 )
 collision_layer = 1025
 collision_mask = 0
+restore_position = true
 
 [node name="Mr_singer" parent="." instance=ExtResource( 9 )]
 position = Vector2( 28.4698, 371.671 )

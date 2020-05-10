@@ -53,8 +53,8 @@ func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool =
 		yield(get_tree().create_timer(time), \"timeout\")
 	
 	# Scene loading
+	GLOBAL.player_path = \"\"
 	assert(get_tree().change_scene(scene_name) == OK)
-	
 	
 	# Fade out
 	if anim_end:

@@ -11,6 +11,7 @@ const file_path : = "user://config.json"
 var loaded : String = "-1"
 var maxId := 0
 var screenshot
+var player_path : String
 
 # Create a dictionary to save
 func gen_dict() -> Dictionary:

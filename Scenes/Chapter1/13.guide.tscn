@@ -31,17 +31,13 @@ player_path = NodePath("../../../Body")
 [node name="Bridge2" parent="Street_scene/Bridges" index="0"]
 z_index = 4
 z_as_relative = true
-upper = NodePath("StaticBody2D/upper")
-lower = NodePath("StaticBody2D/lower")
 player_path = NodePath("../../../Body")
 
 [node name="Bridge1" parent="Street_scene/Bridges" index="1"]
-upper = NodePath("StaticBody2D/upper")
-lower = NodePath("StaticBody2D/lower")
 player_path = NodePath("../../../Body")
 
 [node name="AnimatedSprite" parent="Street_scene/YSort_global/Buildings/eni_house" index="1"]
-frame = 3
+frame = 2
 
 [node name="HOSTEL" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1136, 2880 )
@@ -60,6 +56,7 @@ player_path = NodePath("../Body")
 [node name="Body" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2346.58, 4576.63 )
 collision_layer = 1025
+restore_position = true
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 2464.44, 885.778 )

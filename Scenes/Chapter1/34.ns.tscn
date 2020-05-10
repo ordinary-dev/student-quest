@@ -18,8 +18,8 @@ export (String, FILE, \"*.tscn\") var hidden_room
 
 
 func adventure_begins():
-	get_node(\"restore_state\").save()
 	SCENES.load_scene(hidden_room)
+	
 
 func next_facility():
 	NOTIFY.show(\"У вас нет доступа\")
