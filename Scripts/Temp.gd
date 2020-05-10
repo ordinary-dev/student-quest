@@ -14,7 +14,9 @@ func save(key:String, data) -> void:
 
 
 func get(key):
-	return dict[key]
+	if dict.has(key):
+		return dict[key]
+	return "-1"
 
 
 func remove_key(key) -> void:

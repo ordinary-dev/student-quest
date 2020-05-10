@@ -31,27 +31,14 @@ player_path = NodePath("../../YSort_global/Body")
 [node name="Bridge2" parent="Street_scene/Bridges" index="0"]
 z_index = 4
 z_as_relative = true
-upper = NodePath("StaticBody2D/upper")
-lower = NodePath("StaticBody2D/lower")
-player_path = NodePath("../../YSort_global/Body")
+player_path = NodePath("../../../Body")
 
 [node name="Bridge1" parent="Street_scene/Bridges" index="1"]
-upper = NodePath("StaticBody2D/upper")
-lower = NodePath("StaticBody2D/lower")
-player_path = NodePath("../../YSort_global/Body")
+player_path = NodePath("../../../Body")
 
-[node name="CollisionShape2D2" parent="Street_scene/YSort_global/Buildings/phys_house/StaticBody2D" index="1"]
-position = Vector2( 110.474, 17.1716 )
 
 [node name="AnimatedSprite" parent="Street_scene/YSort_global/Buildings/eni_house" index="1"]
-frame = 0
-
-[node name="math_show" parent="Street_scene/YSort_global/Buildings" index="10"]
-position = Vector2( 1322.91, 5430.18 )
-
-[node name="Body" parent="Street_scene/YSort_global" index="6" instance=ExtResource( 3 )]
-position = Vector2( 2346.58, 4576.63 )
-collision_layer = 1025
+frame = 2
 
 [node name="HOSTEL" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1136, 2880 )
@@ -65,7 +52,12 @@ scale = Vector2( 3, 3 )
 z_index = 2
 z_as_relative = false
 nodes = [ NodePath("../Position2D"), NodePath("../Position2D2"), NodePath("../Position2D3"), NodePath("../Position2D4"), NodePath("../Position2D5") ]
-player_path = NodePath("../Street_scene/YSort_global/Body")
+player_path = NodePath("../Body")
+
+[node name="Body" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2346.58, 4576.63 )
+collision_layer = 1025
+restore_position = true
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 2464.44, 885.778 )

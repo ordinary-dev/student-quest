@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Guard.png" type="Texture" id=3]
@@ -44,29 +44,6 @@ extents = Vector2( 128, 16 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 16, 16 )
 
-[sub_resource type="GDScript" id=4]
-script/source = "extends Node2D
-
-export (NodePath) var player
-
-
-func save():
-	TEMP.save(\"ns_player_pos\", get_node(player).position)
-
-
-func restore():
-	# Свет должен быть выключен в любом случае
-	get_parent().turn_lights_off_now()
-	get_node(player).position = TEMP.get(\"ns_player_pos\")
-
-
-func _ready():
-	if TEMP.is_saved(\"ns_player_pos\"):
-		restore()
-	else:
-		get_parent().turn_lights_off()
-"
-
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 cm = NodePath("CanvasLayer/ColorRect")
@@ -93,6 +70,7 @@ shape = SubResource( 3 )
 position = Vector2( 344, 1560 )
 collision_layer = 1025
 default_state = 0
+restore_position = true
 
 [node name="Guide" type="Sprite" parent="."]
 position = Vector2( 472, 312 )
@@ -135,10 +113,6 @@ function_name = "adventure_begins"
 
 [node name="EnableUI" parent="." instance=ExtResource( 5 )]
 joystick = true
-
-[node name="restore_state" type="Node2D" parent="."]
-script = SubResource( 4 )
-player = NodePath("../Body")
 
 [node name="Audio" type="Node2D" parent="."]
 script = ExtResource( 8 )

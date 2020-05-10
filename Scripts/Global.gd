@@ -9,7 +9,9 @@ const file_path : = "user://config.json"
 
 # Id of currently loaded game
 var loaded : String = "-1"
-
+var maxId := 0
+var screenshot
+var player_path : String
 
 # Create a dictionary to save
 func gen_dict() -> Dictionary:
@@ -18,7 +20,8 @@ func gen_dict() -> Dictionary:
 		"fx" : FX.volume,
 		"fullscreen" : str(OS.window_fullscreen),
 		"vsync" : str(OS.vsync_enabled),
-		"lang" : TranslationServer.get_locale()
+		"lang" : TranslationServer.get_locale(),
+		"maxId" : maxId
 	}
 	return dict
 
@@ -50,6 +53,10 @@ func restore(content : Dictionary) -> void:
 	# Language
 	if content.has("lang"):
 		TranslationServer.set_locale(content["lang"])
+	
+	# Save
+	if content.has("maxId"):
+		maxId = content["maxId"]
 
 
 # Read settings file

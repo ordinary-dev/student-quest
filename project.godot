@@ -32,7 +32,6 @@ UI="*res://Scenes/ui/ui.tscn"
 NOTIFY="*res://Scripts/Notify.gd"
 EVENTS="*res://Scripts/Events.gd"
 TEMP="*res://Scripts/Temp.gd"
-PROP="*res://Scripts/Prop.gd"
 INVENTORY="*res://Scripts/Inventory.gd"
 
 [display]

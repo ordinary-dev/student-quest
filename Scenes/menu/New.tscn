@@ -15,11 +15,6 @@ export(NodePath) var label
 export (String, FILE, \"*.tscn\") var next_scene
 
 
-func random_dir_exists(path : String) -> bool:
-	var dir = Directory.new()
-	return dir.dir_exists(\"user://\" + path)
-
-
 func get_random_name() -> String:
 	var res : String = \"\"
 	var alp = \"123456789abcdefghkmnpqrst\"
@@ -28,17 +23,6 @@ func get_random_name() -> String:
 	for _i in range(8):
 		res += alp[randi() % indmax]
 	return res
-
-
-func save_file() -> String:
-	# Get unique game_id
-	var game_id : String = get_random_name()
-	while random_dir_exists(game_id):
-		game_id = get_random_name()
-	GLOBAL.loaded = game_id
-	# Save stage #0
-	PROP.save(\"stage\", \"0\")
-	return game_id
 
 
 func append_text(game_id : String) -> void:
@@ -50,7 +34,7 @@ func append_text(game_id : String) -> void:
 
 func _ready() -> void:
 	# Create game file
-	var game_id : = save_file()
+	var game_id : = get_random_name()
 	append_text(game_id)
 	# Activate buttons
 	get_node(btn_start).disabled = false

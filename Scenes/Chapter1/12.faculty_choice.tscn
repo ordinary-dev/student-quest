@@ -35,7 +35,7 @@ func set_active(n : int):
 
 func load_next():
 	FX.btn_click()
-	PROP.save(\"facility\", str(active))
+	TEMP.save(\"facility\", str(active))
 	SCENES.load_scene(scene)
 "
 

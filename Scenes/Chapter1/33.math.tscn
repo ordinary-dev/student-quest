@@ -18,8 +18,8 @@ export (String, FILE, \"*.tscn\") var hidden_room
 
 
 func adventure_begins():
-	get_node(\"restore_state\").save()
 	SCENES.load_scene(hidden_room)
+
 
 func next_facility():
 	NOTIFY.show(\"У вас нет доступа\")
@@ -73,6 +73,7 @@ shape = SubResource( 2 )
 position = Vector2( 344, 1560 )
 collision_layer = 1025
 default_state = 0
+restore_position = true
 
 [node name="Guide" type="Sprite" parent="."]
 position = Vector2( 472, 312 )

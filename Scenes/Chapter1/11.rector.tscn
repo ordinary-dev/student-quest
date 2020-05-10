@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/facility_selection/facility-selection.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=2]
@@ -8,32 +8,22 @@
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/templates/Fog_of_war.tscn" type="PackedScene" id=7]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-
-func _ready():
-	# Save the game
-	PROP.save(\"stage\", \"1\")
-"
-
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 948.705, 561.721, 902.126, 535.877, 902.098, 525.922, 962.118, 525.914, 962.166, 515.814, 972.071, 515.848, 972.07, 505.852, 982.107, 505.872, 982.087, 485.94, 1018.93, 539.288 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 1021.7, 535.589, 1022.09, 425.91, 1096.72, 496.198, 1080.43, 545.069 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 10, 170 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 310, 8.44852 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 100, 150 )
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 1 )
 
 [node name="Noise" parent="." instance=ExtResource( 7 )]
 position = Vector2( 21.4758, 45.2079 )
@@ -62,10 +52,10 @@ range_layer_max = 1
 shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource( 2 )
+occluder = SubResource( 1 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-occluder = SubResource( 3 )
+occluder = SubResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="."]
 light_mask = 2
@@ -82,23 +72,23 @@ z_as_relative = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 531.968, 508.255 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1191.83, 509.76 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 854.723, 337.302 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 864.625, 674.861 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 966.617, 501.166 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 896.167, 428.602 )
