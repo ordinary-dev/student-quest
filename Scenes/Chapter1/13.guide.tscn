@@ -23,10 +23,10 @@ flat_scene = "res://Scenes/Chapter1/14.flat.tscn"
 [node name="Street_scene" parent="." instance=ExtResource( 1 )]
 
 [node name="Water1" parent="Street_scene/Water" index="0"]
-player_path = NodePath("../../../Body")
+player_path = NodePath("../../YSort_global/Body")
 
 [node name="Water2" parent="Street_scene/Water" index="1"]
-player_path = NodePath("../../../Body")
+player_path = NodePath("../../YSort_global/Body")
 
 [node name="Bridge2" parent="Street_scene/Bridges" index="0"]
 z_index = 4
@@ -35,6 +35,7 @@ player_path = NodePath("../../../Body")
 
 [node name="Bridge1" parent="Street_scene/Bridges" index="1"]
 player_path = NodePath("../../../Body")
+
 
 [node name="AnimatedSprite" parent="Street_scene/YSort_global/Buildings/eni_house" index="1"]
 frame = 2
@@ -77,6 +78,8 @@ position = Vector2( -896, 3136 )
 joystick = true
 
 [editable path="Street_scene"]
+
+[editable path="Street_scene/Noise/NoiseBorders/Noise"]
 
 [editable path="Street_scene/Bridges/Bridge2"]
 
