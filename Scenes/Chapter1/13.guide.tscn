@@ -53,21 +53,6 @@ position = Vector2( 1322.91, 5430.18 )
 position = Vector2( 2346.58, 4576.63 )
 collision_layer = 1025
 
-[node name="Crossins" parent="Street_scene/Crossings" index="0"]
-position = Vector2( 0.453676, 42.7687 )
-scale = Vector2( 1.03362, 1 )
-
-[node name="Transition_area" parent="Street_scene/Crossings" index="1"]
-position = Vector2( -1.83972, -9.28729 )
-collision_layer = 1
-
-[node name="Crossing2" parent="Street_scene/Crossings" index="2"]
-position = Vector2( 298.399, 22.1759 )
-offset = Vector2( 0, -50 )
-
-[node name="Transition_area2" parent="Street_scene/Crossings" index="3"]
-collision_layer = 1
-
 [node name="HOSTEL" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1136, 2880 )
 label = "HOSTEL"
