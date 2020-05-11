@@ -30,7 +30,6 @@ UI_INIT="*res://Scripts/UIInit.gd"
 SCENES="*res://Scenes/global/SceneLoader.tscn"
 UI="*res://Scenes/ui/ui.tscn"
 NOTIFY="*res://Scripts/Notify.gd"
-EVENTS="*res://Scripts/Events.gd"
 TEMP="*res://Scripts/Temp.gd"
 INVENTORY="*res://Scripts/Inventory.gd"
 
