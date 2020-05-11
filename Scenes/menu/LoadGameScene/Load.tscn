@@ -116,6 +116,9 @@ margin_right = 600.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 600, 600 )
 scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Control" type="VBoxContainer" parent="."]
 margin_right = 600.0

@@ -99,6 +99,7 @@ margin_top = 1000.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 disabled = true
+text = "SELECT"
 btn_text = "SELECT"
 
 [node name="DisableUI" parent="." instance=ExtResource( 3 )]

@@ -1,8 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/icons/Trash.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
@@ -75,12 +85,15 @@ func parseFolder(path : String) -> bool:
 	return true
 "
 
-[node name="Control" type="Button"]
+[node name="Button" type="Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1320.0
 margin_bottom = -580.0
 rect_min_size = Vector2( 600, 500 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
 script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -134,10 +147,12 @@ margin_right = 460.0
 margin_bottom = 412.0
 custom_fonts/font = ExtResource( 2 )
 text = "Name"
+clip_text = true
 
 [node name="Delete" parent="HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 524.0
 margin_right = 604.0
 margin_bottom = 500.0
-btn_text = "D"
+icon = ExtResource( 4 )
+expand_icon = true
 [connection signal="pressed" from="HBoxContainer/Delete" to="." method="delete"]
