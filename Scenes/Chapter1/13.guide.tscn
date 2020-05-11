@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/GuideAI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
 
@@ -34,11 +33,6 @@ scale = Vector2( 3, 3 )
 z_index = 2
 z_as_relative = false
 nodes = [ NodePath("../Position2D"), NodePath("../Position2D2"), NodePath("../Position2D3"), NodePath("../Position2D4"), NodePath("../Position2D5") ]
-player_path = NodePath("../Body")
-
-[node name="Body" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2346.58, 4576.63 )
-restore_position = true
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 2464.44, 885.778 )

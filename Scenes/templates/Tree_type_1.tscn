@@ -8,7 +8,7 @@ extents = Vector2( 4.97201, 3.01912 )
 [node name="Tree_t_1_n_0" type="Sprite"]
 position = Vector2( -1.33051, 0.941624 )
 scale = Vector2( 4.38242, 4.15647 )
-z_index = 5
+z_index = 4
 texture = ExtResource( 1 )
 offset = Vector2( 0, -20 )
 region_enabled = true

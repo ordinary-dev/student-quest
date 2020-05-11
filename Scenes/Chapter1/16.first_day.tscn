@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Mr_singer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Chapter1/Guide.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=7]
@@ -15,8 +14,6 @@ script/source = "extends Node2D
 
 export (String, FILE, \"*.tscn\") var next_scene
 export (String, FILE, \"*.tscn\") var store_scene
-# Игрок
-export (NodePath) var player
 # Триггер диалога Мистера Дудца
 export (NodePath) var singer
 
@@ -75,7 +72,6 @@ func _ready():
 script = SubResource( 1 )
 next_scene = "res://Scenes/Chapter1/18.date.tscn"
 store_scene = "res://Scenes/Chapter1/17.store.tscn"
-player = NodePath("Body")
 singer = NodePath("Mr_Singer_Dialog")
 
 [node name="Street" parent="." instance=ExtResource( 1 )]
@@ -88,11 +84,6 @@ z_as_relative = false
 [node name="Mr_Singer_Dialog" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56, 352 )
 dialog_path = "res://Dialogs/chapter1/stranger.json"
-
-[node name="Body" parent="." instance=ExtResource( 4 )]
-position = Vector2( -365, 488 )
-collision_layer = 1025
-restore_position = true
 
 [node name="Store_Trigger" parent="." instance=ExtResource( 6 )]
 position = Vector2( 552, 216 )
