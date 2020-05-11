@@ -92,7 +92,6 @@ dialog_path = "res://Dialogs/chapter1/stranger.json"
 [node name="Body" parent="." instance=ExtResource( 4 )]
 position = Vector2( -365, 488 )
 collision_layer = 1025
-collision_mask = 0
 restore_position = true
 
 [node name="Store_Trigger" parent="." instance=ExtResource( 6 )]

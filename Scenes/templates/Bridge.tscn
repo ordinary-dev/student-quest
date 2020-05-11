@@ -5,30 +5,21 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-export (NodePath) var upper
-export (NodePath) var lower
-export (NodePath) var player_path
 
 func _on_body_entered(body):
 	if \"Body\" in body.name:
-		if has_node(player_path):
-			get_node(player_path).water_protection = true
-		get_node(upper).disabled = false
-		get_node(lower).disabled = true
+		if has_node(GLOBAL.player_path):
+			get_node(GLOBAL.player_path).water_protection = true
 
 
 func _on_body_exited(body):
 	if \"Body\" in body.name:
-		if has_node(player_path):
-			get_node(player_path).water_protection = false
-		get_node(upper).disabled = true
-		get_node(lower).disabled = false
+		if has_node(GLOBAL.player_path):
+			get_node(GLOBAL.player_path).water_protection = false
 "
 
 [node name="Bridge" type="Node2D"]
 script = SubResource( 1 )
-upper = NodePath("StaticBody2D/upper")
-lower = NodePath("StaticBody2D/lower")
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -39,24 +30,18 @@ texture = ExtResource( 1 )
 flip_h = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_mask = 0
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-polygon = PoolVector2Array( -21.7829, 10.1365, -11.9253, 4.6858, 1.80129, 1.87228, 14.1011, 1.30794, 29.6223, 1.30794, 41.4412, 2.16232, 54.9988, 4.51529, 65.6487, 9.99414, 65.7911, 12.1301, 59.4379, 9.725, 44.1769, 5.57403, 31.8461, 4.59733, 17.3533, 5.85217, 1.31081, 5.00195, -12.3495, 8.38204, -22.0677, 12.2725 )
-
-[node name="upper" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
-position = Vector2( 40.7691, -17.4259 )
-rotation = 3.14159
-polygon = PoolVector2Array( -23.7558, 2.09147, -19.9096, 3.14042, -4.69979, 5.41315, 10.51, 5.41315, 24.4438, 5.50009, 39.5948, 5.50009, 54.4753, 5.36481, 65.0269, 1.98289, 65.3131, -3.83401, 54.3557, 0.224291, 39.7582, 0.142403, 24.8864, 0.0713634, 10.3399, 0.144461, -4.63304, -0.0645485, -19.8799, -1.32894, -23.658, -3.16227 )
-disabled = true
+collision_layer = 0
+collision_mask = 1024
 
 [node name="lower" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
-position = Vector2( 40.7691, -17.4259 )
+polygon = PoolVector2Array( -21.9647, 10.256, -11.9092, 5.0602, 2.08892, 2.06496, 14.0393, 1.0258, 29.8407, 1.0258, 41.7605, 2.06497, 55.7587, 5.0602, 65.8753, 10.1643, 65.7911, 12.1301, 59.4379, 9.725, 44.1769, 5.57403, 31.8461, 4.59733, 17.3533, 5.85217, 1.31081, 5.00195, -12.3495, 8.38204, -22.0677, 12.2725 )
+
+[node name="upper" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 40.7691, -21.6035 )
 rotation = 3.14159
-polygon = PoolVector2Array( -24.997, -15.1865, -18.3702, -12.5042, -5.43223, -8.7175, 9.55689, -5.24634, 24.7038, -5.08856, 39.0618, -7.61304, 55.3132, -11.7153, 62.7288, -14.7132, 62.8866, -16.9221, 55.3132, -14.082, 39.0618, -9.34863, 24.546, -6.82414, 9.55689, -6.98192, -5.27446, -10.1375, -18.3702, -14.5554, -25.1548, -17.3954 )
+polygon = PoolVector2Array( -25.1051, -15.5827, -18.1801, -11.4277, -5.09948, -8.58066, 8.82756, -5.34893, 28.5255, -5.34888, 42.6064, -8.42665, 55.6871, -11.4275, 62.766, -15.2747, 62.7193, -22.5972, 55.1579, -18.3699, 39.7969, -14.3809, 28.7622, -12.3807, 8.8525, -12.3807, -6.24944, -15.4917, -19.2586, -19.2813, -25.0279, -22.9578 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
@@ -64,6 +49,6 @@ collision_mask = 1024
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 visible = false
-polygon = PoolVector2Array( -26.8639, 4.56378, -16.1917, 0.616511, -6.0311, -2.89217, 11.5123, -6.32775, 31.7603, -6.54705, 50.4733, -2.81908, 60.3415, 0.689608, 71.4695, 7.00437, 71.4753, 14.3237, 56.3211, 6.61051, 47.257, 4.1983, 31.1025, 2.51705, 12.2433, 2.59015, -3.39959, 4.27139, -13.5602, 7.56078, -26.5715, 13.5548 )
+polygon = PoolVector2Array( -26.0512, 2.58999, -14.5639, -4.14088, -5.23043, -6.83322, 12.0006, -9.97429, 31.4752, -9.97429, 50.0524, -6.47424, 60.0141, -3.06394, 69.4373, 1.33356, 69.7065, 12.1927, 50.4114, 3.75667, 31.0265, 1.87202, 12.4493, 1.69254, -3.70477, 3.66692, -14.4741, 6.71825, -26.2307, 12.2824 )
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
