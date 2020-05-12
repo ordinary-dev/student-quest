@@ -650,7 +650,6 @@ shape = SubResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort_global/Buildings/eni_house"]
 position = Vector2( -22.0841, -89.2427 )
 frames = ExtResource( 21 )
-frame = 1
 playing = true
 
 [node name="eni_show" parent="YSort_global/Buildings" instance=ExtResource( 5 )]
