@@ -67,10 +67,6 @@ func reset_effects_volume() -> void:
 	update_text(0, fx_text)
 
 
-func tab_changed(_tab):
-	FX.btn_click()
-
-
 # Sync
 func _ready() -> void:
 	update_text(FX.volume, fx_text)
@@ -92,6 +88,10 @@ func ru():
 
 func youtube():
 	OS.shell_open(\"https://www.youtube.com/channel/UCMd8rzjki6JPX97jX217IVQ\")
+
+
+func _on_TabContainer_tab_changed(tab):
+	FX.btn_click()
 "
 
 [sub_resource type="GDScript" id=5]
@@ -576,5 +576,16 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[connection signal="tab_changed" from="." to="." method="_on_TabContainer_tab_changed"]
+[connection signal="pressed" from="LANG/VBoxContainer/English" to="." method="en"]
+[connection signal="pressed" from="LANG/VBoxContainer/Russian" to="." method="ru"]
+[connection signal="pressed" from="AUDIO/Audio/Music/HBoxContainer/ResetMusic" to="." method="reset_music_volume"]
+[connection signal="pressed" from="AUDIO/Audio/Music/HBoxContainer/M-" to="." method="music" binds= [ -5 ]]
+[connection signal="pressed" from="AUDIO/Audio/Music/HBoxContainer/M+" to="." method="music" binds= [ 5 ]]
+[connection signal="pressed" from="AUDIO/Audio/Effects/HBoxContainer/ResetEffects" to="." method="reset_effects_volume"]
+[connection signal="pressed" from="AUDIO/Audio/Effects/HBoxContainer/E-" to="." method="effects" binds= [ -5 ]]
+[connection signal="pressed" from="AUDIO/Audio/Effects/HBoxContainer/E+" to="." method="effects" binds= [ 5 ]]
 [connection signal="toggled" from="GRAPHICS/VBoxContainer/CheckButton" to="GRAPHICS" method="toggle_vsync"]
 [connection signal="toggled" from="GRAPHICS/VBoxContainer/CheckButton2" to="GRAPHICS" method="toggle_fullscreen"]
+[connection signal="pressed" from="INFO/ScrollContainer/MarginContainer/VBoxContainer/ColorRect" to="." method="open_site"]
+[connection signal="pressed" from="INFO/ScrollContainer/MarginContainer/VBoxContainer/Wheasy" to="." method="youtube"]
