@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Sprites/backgrounds/hall.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/PlaySound.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/PlayMusic.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
 
