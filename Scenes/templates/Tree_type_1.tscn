@@ -10,14 +10,15 @@ position = Vector2( -1.33051, 0.941624 )
 scale = Vector2( 4.38242, 4.15647 )
 z_index = 4
 texture = ExtResource( 1 )
-offset = Vector2( 0, -20 )
+offset = Vector2( 0, -32 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 46, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0.303602, -2.15125 )
 collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 1.07302, 9.16888 )
+position = Vector2( 0.303602, -0.226544 )
 shape = SubResource( 1 )

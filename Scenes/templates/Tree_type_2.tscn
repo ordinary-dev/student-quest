@@ -6,18 +6,19 @@
 extents = Vector2( 4.82759, 4.16392 )
 
 [node name="Tree_t_2_n_0" type="Sprite"]
-position = Vector2( -0.621185, 1.022 )
+position = Vector2( -7.10543e-15, 1.14441e-05 )
 scale = Vector2( 4.17415, 4.19891 )
 z_index = 4
 texture = ExtResource( 1 )
-offset = Vector2( 0, -20 )
+offset = Vector2( 0, -32 )
 region_enabled = true
 region_rect = Rect2( 64, 0, 48, 64 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1.70225e-15, -3.81051 )
 collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0.122783, 7.72642 )
+position = Vector2( -7.45058e-09, 2.38419e-07 )
 shape = SubResource( 1 )

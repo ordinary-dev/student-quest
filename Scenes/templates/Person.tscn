@@ -144,16 +144,18 @@ z_index = 4
 z_as_relative = false
 script = SubResource( 1 )
 
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 0, -48.9753 )
+rect = Rect2( -50, -60, 100, 120 )
+process_parent = true
+physics_process_parent = true
+
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.307358, -51.0823 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 3
-
-[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-rect = Rect2( -50, -60, 100, 120 )
-process_parent = true
-physics_process_parent = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/down = SubResource( 2 )
@@ -161,7 +163,7 @@ anims/side = SubResource( 3 )
 anims/up = SubResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 0, 40 )
+position = Vector2( 0, -9.85287 )
 collision_layer = 0
 collision_mask = 1024
 

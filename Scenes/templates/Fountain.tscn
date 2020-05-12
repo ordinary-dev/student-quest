@@ -22,34 +22,36 @@ extents = Vector2( 7.02901, 1.989 )
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 7.46201, 1.2415 )
 
-[node name="Fountain" type="AnimatedSprite"]
-position = Vector2( 3008, 3520 )
+[node name="Node2D" type="Node2D"]
+
+[node name="Fountain" type="AnimatedSprite" parent="."]
+position = Vector2( -16, -128 )
 scale = Vector2( 16, 16 )
 z_index = 4
 frames = ExtResource( 1 )
 script = SubResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="Fountain"]
 collision_layer = 0
 collision_mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fountain/StaticBody2D"]
 position = Vector2( 0.971, 3.989 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Fountain/StaticBody2D"]
 position = Vector2( 0.971, 3.989 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fountain/StaticBody2D"]
 position = Vector2( 0.971, 3.989 )
 shape = SubResource( 4 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Fountain/StaticBody2D"]
 position = Vector2( 0.537992, 3.7415 )
 shape = SubResource( 5 )
 
-[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="Fountain"]
 pause_animations = false
 freeze_bodies = false
 pause_particles = false
