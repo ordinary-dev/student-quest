@@ -76,6 +76,8 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 637.0
 margin_bottom = 996.0
+focus_neighbour_right = NodePath("../MarginContainer2")
+focus_neighbour_bottom = NodePath("../../ColorRect")
 fac = "MATH"
 
 [node name="MarginContainer2" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
@@ -84,6 +86,9 @@ anchor_bottom = 0.0
 margin_left = 641.0
 margin_right = 1278.0
 margin_bottom = 996.0
+focus_neighbour_left = NodePath("../MarginContainer")
+focus_neighbour_right = NodePath("../MarginContainer3")
+focus_neighbour_bottom = NodePath("../../ColorRect")
 fac = "NS"
 
 [node name="MarginContainer3" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
@@ -92,12 +97,16 @@ anchor_bottom = 0.0
 margin_left = 1282.0
 margin_right = 1920.0
 margin_bottom = 996.0
+focus_neighbour_left = NodePath("../MarginContainer2")
+focus_neighbour_bottom = NodePath("../../ColorRect")
 fac = "HM"
 
 [node name="ColorRect" parent="ColorRect/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 1000.0
 margin_right = 1920.0
 margin_bottom = 1080.0
+focus_neighbour_top = NodePath("../HBoxContainer/MarginContainer2")
+focus_mode = 2
 disabled = true
 text = "SELECT"
 

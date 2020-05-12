@@ -54,15 +54,17 @@ alignment = 1
 margin_right = 300.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 300, 300 )
+focus_neighbour_right = NodePath("../Button_Yes2")
+focus_mode = 2
 text = "NO"
-btn_text = "NO"
 
 [node name="Button_Yes2" parent="HBoxContainer" instance=ExtResource( 1 )]
 margin_left = 330.0
 margin_right = 630.0
 margin_bottom = 300.0
 rect_min_size = Vector2( 300, 300 )
+focus_neighbour_left = NodePath("../Button_No")
+focus_mode = 2
 text = "YES"
-btn_text = "YES"
 [connection signal="pressed" from="HBoxContainer/Button_No" to="." method="_return"]
 [connection signal="pressed" from="HBoxContainer/Button_Yes2" to="." method="_quit"]

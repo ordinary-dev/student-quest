@@ -17,6 +17,7 @@ export (Array, NodePath) var buttons
 export (NodePath) var settings_node
 export (NodePath) var load_node
 export (NodePath) var save_node
+export (NodePath) var return_btn
 
 
 func _process(_delta) -> void:
@@ -50,8 +51,9 @@ func _on_Pause_pressed() -> void:
 	if UI.get_node(\"Joystick\").visible:
 		UI_INIT.hide_joystick()
 		show_joystick = true
-	if (has_node(\"/root/Node2D/Body\")):
-		get_node(\"/root/Node2D/Body\").lock()
+	if (has_node(GLOBAL.player_path)):
+		get_node(GLOBAL.player_path).lock()
+	get_node(return_btn).grab_focus()
 
 
 func _return_to_game(play_sound : bool = true) -> void:
@@ -66,8 +68,8 @@ func _return_to_game(play_sound : bool = true) -> void:
 	get_node(\"Pause\").visible = true
 	UI.get_node(\"Inventory\").visible = true
 	# Unlock player's movement if it exists
-	if (has_node(\"/root/Node2D/Body\")):
-		get_node(\"/root/Node2D/Body\").unlock()
+	if (has_node(GLOBAL.player_path)):
+		get_node(GLOBAL.player_path).unlock()
 	# Enable joystick again if it was hidden
 	if show_joystick:
 		UI_INIT.show_joystick()
@@ -137,6 +139,7 @@ buttons = [ NodePath("MarginContainer/HBoxContainer/VBoxContainer/Return"), Node
 settings_node = NodePath("MarginContainer/HBoxContainer/CanvasLayer/Settings")
 load_node = NodePath("MarginContainer/HBoxContainer/CanvasLayer/Load")
 save_node = NodePath("MarginContainer/HBoxContainer/CanvasLayer/Save")
+return_btn = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Return")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -200,6 +203,9 @@ margin_top = 77.0
 margin_right = 750.0
 margin_bottom = 177.0
 rect_min_size = Vector2( 80, 100 )
+focus_neighbour_bottom = NodePath("../Load")
+focus_next = NodePath("../Load")
+focus_mode = 2
 text = "RETURN"
 
 [node name="Load" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
@@ -207,6 +213,11 @@ margin_top = 202.0
 margin_right = 750.0
 margin_bottom = 302.0
 rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Return")
+focus_neighbour_bottom = NodePath("../Save")
+focus_next = NodePath("../Save")
+focus_previous = NodePath("../Return")
+focus_mode = 2
 text = "LOAD"
 
 [node name="Save" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
@@ -214,6 +225,9 @@ margin_top = 327.0
 margin_right = 750.0
 margin_bottom = 427.0
 rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Load")
+focus_neighbour_bottom = NodePath("../Settings")
+focus_mode = 2
 text = "SAVE"
 
 [node name="Settings" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
@@ -221,6 +235,9 @@ margin_top = 452.0
 margin_right = 750.0
 margin_bottom = 552.0
 rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Save")
+focus_neighbour_bottom = NodePath("../Menu")
+focus_mode = 2
 text = "SETTINGS"
 
 [node name="Menu" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
@@ -228,6 +245,9 @@ margin_top = 577.0
 margin_right = 750.0
 margin_bottom = 677.0
 rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Settings")
+focus_neighbour_bottom = NodePath("../Quit")
+focus_mode = 2
 text = "MENU"
 
 [node name="Quit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
@@ -235,6 +255,8 @@ margin_top = 702.0
 margin_right = 750.0
 margin_bottom = 802.0
 rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Menu")
+focus_mode = 2
 text = "QUIT"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer/HBoxContainer"]

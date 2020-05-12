@@ -22,8 +22,8 @@ func hide_dialog():
 	UI.remove_child(dialog_obj)
 	set_process(false)
 	# Unlock character movement
-	if has_node("/root/Node2D/Body"):
-		get_node("/root/Node2D/Body").unlock()
+	if has_node(GLOBAL.player_path):
+		get_node(GLOBAL.player_path).unlock()
 	# Call a method if necessary
 	if call_after and has_node(glob_obj):
 		if glob_argv == "":
@@ -69,8 +69,8 @@ func show_dialog(path:String, obj:String = "", fnc:String = "", argv:String="") 
 		NOTIFY.show("I can not load the dialog")
 		return
 	# Lock character movement
-	if has_node("/root/Node2D/Body"):
-		get_node("/root/Node2D/Body").lock()
+	if has_node(GLOBAL.player_path):
+		get_node(GLOBAL.player_path).lock()
 	# Disable the interface, if enabled, and remember this
 	if UI.get_node("Pause").visible:
 		UI_INIT.disable_ui()

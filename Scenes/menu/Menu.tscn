@@ -26,6 +26,7 @@ export (String, FILE, \"*.tscn\") var new_game
 export (NodePath) var settings_scene
 export (NodePath) var load_scene
 export (NodePath) var confirm_scene
+export (NodePath) var new_game_btn
 
 
 # Create new game
@@ -63,6 +64,8 @@ func _quit():
 
 
 func _ready() -> void:
+	# Focus
+	get_node(new_game_btn).grab_focus()
 	# Disable scenes
 	get_node(settings_scene).visible = false
 	get_node(load_scene).visible = false
@@ -143,6 +146,7 @@ new_game = "res://Scenes/menu/New.tscn"
 settings_scene = NodePath("Menu/Right/Settings")
 load_scene = NodePath("Menu/Right/Load")
 confirm_scene = NodePath("Menu/Right/Confirm")
+new_game_btn = NodePath("Menu/Left/VBox/BtnNew")
 
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color( 0.533333, 0.533333, 0.533333, 1 )
@@ -256,33 +260,41 @@ align = 1
 margin_top = 104.0
 margin_right = 758.0
 margin_bottom = 270.0
+focus_neighbour_bottom = NodePath("../BtnLoad")
+focus_mode = 2
 size_flags_vertical = 3
 text = "NEW_GAME"
-btn_text = "NEW_GAME"
 
 [node name="BtnLoad" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 274.0
 margin_right = 758.0
 margin_bottom = 440.0
+focus_neighbour_top = NodePath("../BtnNew")
+focus_neighbour_bottom = NodePath("../BtnSettings")
+focus_mode = 2
 size_flags_vertical = 3
 text = "LOAD_GAME"
-btn_text = "LOAD_GAME"
 
 [node name="BtnSettings" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 444.0
 margin_right = 758.0
 margin_bottom = 610.0
+focus_neighbour_top = NodePath("../BtnLoad")
+focus_neighbour_right = NodePath("../../../Right/Settings")
+focus_neighbour_bottom = NodePath("../BtnQuit")
+focus_mode = 2
 size_flags_vertical = 3
 text = "SETTINGS"
-btn_text = "SETTINGS"
 
 [node name="BtnQuit" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 614.0
 margin_right = 758.0
 margin_bottom = 780.0
+focus_neighbour_top = NodePath("../BtnSettings")
+focus_neighbour_right = NodePath("../../../Right/Confirm")
+focus_mode = 2
 size_flags_vertical = 3
 text = "QUIT"
-btn_text = "QUIT"
 
 [node name="Right" type="MarginContainer" parent="Menu"]
 margin_left = 962.0
@@ -309,8 +321,8 @@ margin_left = 100.0
 margin_top = 150.0
 margin_right = 858.0
 margin_bottom = 930.0
+focus_neighbour_left = NodePath("../../Left/VBox/BtnSettings")
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Load" parent="Menu/Right" instance=ExtResource( 4 )]
 margin_left = 100.0
