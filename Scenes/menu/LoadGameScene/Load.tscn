@@ -77,7 +77,8 @@ func _save(num : int, saveName := \"\") -> void:
 	config.store_string(to_json(configDict))
 	config.close()
 	# screenshot.png
-	GLOBAL.screenshot.save_png(path + \"/screenshot.png\")
+	if OS.get_name() != \"Android\":
+		GLOBAL.screenshot.save_png(path + \"/screenshot.png\")
 	NOTIFY.show(\"Saved\")
 
 

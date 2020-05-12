@@ -5,16 +5,16 @@
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/icons/Trash.png" type="Texture" id=4]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.113725, 0.113725, 0.113725, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 
-[sub_resource type="GDScript" id=1]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Button
 
 onready var textureObj = $HBoxContainer/MarginContainer/VBoxContainer/TextureRect
@@ -65,17 +65,18 @@ func parseFolder(path : String) -> bool:
 	saved_path = path
 	# Check if files exist
 	var f = File.new()
-	var screenshotExists = f.file_exists(path + \"/screenshot.png\")
+	var screenshotExists = f.file_exists(path + \"/screenshot.png\") or OS.get_name() == \"Android\"
 	var configExists = f.file_exists(path + \"/config.json\")
 	var dataExists = f.file_exists(path + \"/data.json\")
 	if !screenshotExists or !configExists or !dataExists:
 		queue_free()
 		return false
 	# Texture
-	var img = _read_img(path + \"/screenshot.png\")
-	var tex = ImageTexture.new()
-	tex.create_from_image(img)
-	textureObj.texture = tex
+	if OS.get_name() != \"Android\":
+		var img = _read_img(path + \"/screenshot.png\")
+		var tex = ImageTexture.new()
+		tex.create_from_image(img)
+		textureObj.texture = tex
 	# Date and name
 	f.open(path + \"/config.json\", File.READ)
 	var jsonString = f.get_as_text()
@@ -91,10 +92,10 @@ anchor_bottom = 1.0
 margin_right = -1320.0
 margin_bottom = -580.0
 rect_min_size = Vector2( 600, 500 )
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 4 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-script = SubResource( 1 )
+script = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

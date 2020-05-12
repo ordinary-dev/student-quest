@@ -35,6 +35,7 @@ func switch():
 	else:
 		var img = get_viewport().get_texture().get_data()
 		img.flip_y()
+		print(\"Save screenshot now\")
 		GLOBAL.screenshot = img
 		_on_Pause_pressed()
 

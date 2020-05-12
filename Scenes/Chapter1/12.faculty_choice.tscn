@@ -100,7 +100,6 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 disabled = true
 text = "SELECT"
-btn_text = "SELECT"
 
 [node name="DisableUI" parent="." instance=ExtResource( 3 )]
 [connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer" to="." method="set_active" binds= [ 0 ]]
