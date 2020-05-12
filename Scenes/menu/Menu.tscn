@@ -209,7 +209,7 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Particles2D" parent="." instance=ExtResource( 12 )]
@@ -257,6 +257,7 @@ margin_top = 104.0
 margin_right = 758.0
 margin_bottom = 270.0
 size_flags_vertical = 3
+text = "NEW_GAME"
 btn_text = "NEW_GAME"
 
 [node name="BtnLoad" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
@@ -264,6 +265,7 @@ margin_top = 274.0
 margin_right = 758.0
 margin_bottom = 440.0
 size_flags_vertical = 3
+text = "LOAD_GAME"
 btn_text = "LOAD_GAME"
 
 [node name="BtnSettings" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
@@ -271,6 +273,7 @@ margin_top = 444.0
 margin_right = 758.0
 margin_bottom = 610.0
 size_flags_vertical = 3
+text = "SETTINGS"
 btn_text = "SETTINGS"
 
 [node name="BtnQuit" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
@@ -278,6 +281,7 @@ margin_top = 614.0
 margin_right = 758.0
 margin_bottom = 780.0
 size_flags_vertical = 3
+text = "QUIT"
 btn_text = "QUIT"
 
 [node name="Right" type="MarginContainer" parent="Menu"]

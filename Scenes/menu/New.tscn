@@ -122,5 +122,6 @@ margin_bottom = 980.0
 rect_min_size = Vector2( 80, 200 )
 size_flags_horizontal = 3
 size_flags_vertical = 0
+text = "START"
 btn_text = "START"
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/BtnStart" to="." method="_start_game"]

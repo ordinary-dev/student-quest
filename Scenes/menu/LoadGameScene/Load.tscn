@@ -77,7 +77,8 @@ func _save(num : int, saveName := \"\") -> void:
 	config.store_string(to_json(configDict))
 	config.close()
 	# screenshot.png
-	GLOBAL.screenshot.save_png(path + \"/screenshot.png\")
+	if OS.get_name() != \"Android\":
+		GLOBAL.screenshot.save_png(path + \"/screenshot.png\")
 	NOTIFY.show(\"Saved\")
 
 
@@ -116,6 +117,9 @@ margin_right = 600.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 600, 600 )
 scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Control" type="VBoxContainer" parent="."]
 margin_right = 600.0

@@ -20,6 +20,7 @@ export(String, FILE, \"*.tscn\") var next_scene
 
 
 func _ready():
+	MUSIC.stop()
 	audio.play()
 	audio.seek(7)
 	effect.interpolate_property(

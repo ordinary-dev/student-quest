@@ -77,7 +77,7 @@ content_margin_left = 15.0
 content_margin_right = 15.0
 content_margin_top = 15.0
 content_margin_bottom = 15.0
-bg_color = Color( 0.0588235, 0.0588235, 0.0588235, 1 )
+bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 15.0
@@ -87,7 +87,7 @@ content_margin_bottom = 15.0
 bg_color = Color( 0.129412, 0.129412, 0.129412, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.0605469, 0.0605469, 0.0605469, 1 )
+bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
@@ -163,13 +163,13 @@ margin_bottom = 364.0
 
 [node name="English" parent="TabContainer/LANG/VBoxContainer" instance=ExtResource( 6 )]
 margin_right = 690.0
-btn_text = "English"
+text = "English"
 
 [node name="Russian" parent="TabContainer/LANG/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 84.0
 margin_right = 690.0
 margin_bottom = 164.0
-btn_text = "Russian"
+text = "Russian"
 
 [node name="AUDIO" type="MarginContainer" parent="TabContainer"]
 visible = false
@@ -213,12 +213,12 @@ custom_constants/separation = 50
 [node name="ResetMusic" parent="TabContainer/AUDIO/Audio/Music/HBoxContainer" instance=ExtResource( 6 )]
 margin_right = 285.0
 rect_min_size = Vector2( 285, 80 )
-btn_text = "RESET"
+text = "RESET"
 
 [node name="M-" parent="TabContainer/AUDIO/Audio/Music/HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 335.0
 margin_right = 415.0
-btn_text = "-"
+text = "-"
 
 [node name="Label" type="Label" parent="TabContainer/AUDIO/Audio/Music/HBoxContainer"]
 margin_left = 465.0
@@ -232,7 +232,7 @@ text = "100%"
 [node name="M+" parent="TabContainer/AUDIO/Audio/Music/HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 611.0
 margin_right = 691.0
-btn_text = "+"
+text = "+"
 
 [node name="Effects" type="VBoxContainer" parent="TabContainer/AUDIO/Audio"]
 margin_top = 197.0
@@ -259,12 +259,12 @@ custom_constants/separation = 50
 [node name="ResetEffects" parent="TabContainer/AUDIO/Audio/Effects/HBoxContainer" instance=ExtResource( 6 )]
 margin_right = 285.0
 rect_min_size = Vector2( 285, 80 )
-btn_text = "RESET"
+text = "RESET"
 
 [node name="E-" parent="TabContainer/AUDIO/Audio/Effects/HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 335.0
 margin_right = 415.0
-btn_text = "-"
+text = "-"
 
 [node name="Label" type="Label" parent="TabContainer/AUDIO/Audio/Effects/HBoxContainer"]
 margin_left = 465.0
@@ -278,7 +278,7 @@ text = "78%"
 [node name="E+" parent="TabContainer/AUDIO/Audio/Effects/HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 611.0
 margin_right = 691.0
-btn_text = "+"
+text = "+"
 
 [node name="GRAPHICS" type="MarginContainer" parent="TabContainer"]
 visible = false
@@ -351,7 +351,7 @@ custom_constants/separation = 20
 
 [node name="ColorRect" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
 margin_right = 659.0
-btn_text = "OPENSITE"
+text = "OPENSITE"
 
 [node name="Site" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
 margin_top = 100.0
@@ -361,7 +361,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "studentquest.github.io
 
-v 3.4"
+v 3.5"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -430,9 +430,9 @@ __meta__ = {
 }
 
 [node name="Testers" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 374.0
+margin_top = 472.0
 margin_right = 659.0
-margin_bottom = 452.0
+margin_bottom = 496.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "TESTERS"
@@ -442,9 +442,9 @@ __meta__ = {
 }
 
 [node name="TestersNicks" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 374.0
+margin_top = 516.0
 margin_right = 659.0
-margin_bottom = 452.0
+margin_bottom = 594.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "- wheasy
@@ -456,13 +456,15 @@ __meta__ = {
 }
 
 [node name="Wheasy" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 614.0
 margin_right = 659.0
-btn_text = "Wheasy - Youtube"
+margin_bottom = 694.0
+text = "Wheasy - Youtube"
 
 [node name="Joystick" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 472.0
+margin_top = 714.0
 margin_right = 659.0
-margin_bottom = 496.0
+margin_bottom = 738.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "JOYSTICK"
@@ -472,9 +474,9 @@ __meta__ = {
 }
 
 [node name="Gonkee" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 516.0
+margin_top = 758.0
 margin_right = 659.0
-margin_bottom = 648.0
+margin_bottom = 890.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "Gonkee - https://youtu.be/uGyEP2LUFPg
@@ -486,9 +488,9 @@ __meta__ = {
 }
 
 [node name="Songs" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 516.0
+margin_top = 910.0
 margin_right = 659.0
-margin_bottom = 648.0
+margin_bottom = 1069.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "Some sounds were downloaded from freesound.org/people/klankbeeld
@@ -500,9 +502,9 @@ __meta__ = {
 }
 
 [node name="Contact" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 945.0
+margin_top = 1089.0
 margin_right = 659.0
-margin_bottom = 969.0
+margin_bottom = 1113.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "CONTACT"
@@ -512,9 +514,9 @@ __meta__ = {
 }
 
 [node name="Mail" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 989.0
+margin_top = 1133.0
 margin_right = 659.0
-margin_bottom = 1013.0
+margin_bottom = 1157.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "our@mail.com"
@@ -524,9 +526,9 @@ __meta__ = {
 }
 
 [node name="SupportUs" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 1033.0
+margin_top = 1177.0
 margin_right = 659.0
-margin_bottom = 1057.0
+margin_bottom = 1201.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "SUPPORT"
@@ -536,9 +538,9 @@ __meta__ = {
 }
 
 [node name="Btc" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 1077.0
+margin_top = 1221.0
 margin_right = 659.0
-margin_bottom = 1128.0
+margin_bottom = 1272.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "btc: ...
@@ -549,9 +551,9 @@ __meta__ = {
 }
 
 [node name="Legal" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 1148.0
+margin_top = 1292.0
 margin_right = 659.0
-margin_bottom = 1172.0
+margin_bottom = 1316.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "LEGAL"
@@ -561,9 +563,9 @@ __meta__ = {
 }
 
 [node name="Copyright" type="Label" parent="TabContainer/INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 1192.0
+margin_top = 1336.0
 margin_right = 659.0
-margin_bottom = 1216.0
+margin_bottom = 1360.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "© 2020"
