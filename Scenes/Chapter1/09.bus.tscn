@@ -1,106 +1,115 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Sprites/backgrounds/city1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Leaves.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/backgrounds/city2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/backgrounds/bus_station/building-1.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/backgrounds/bus_station/building-2.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/backgrounds/bus_station/building-3.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/backgrounds/bus_station/building-4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/light_new.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/backgrounds/bus_station/bus_station.png" type="Texture" id=9]
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 156, 276, 1090.63, 274.755, 1090.11, 672.081, 156, 673 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 456.935, 97.337, 1397.95, 94.4342, 1392.6, -432.044, 449.076, -438.551 )
+
+[node name="Control" type="Node2D"]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 next_scene = "res://Scenes/Chapter1/10.city.tscn"
-delay = 1.508
+delay = 1.5
 transition_in = false
 transition_out = false
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -105.0
-margin_right = 2055.0
-margin_bottom = 1080.0
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 983.163, 537.938 )
+scale = Vector2( 17.2391, 17.2391 )
 texture = ExtResource( 1 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Particles2D" type="CPUParticles2D" parent="."]
-position = Vector2( 671.808, 271.882 )
-amount = 20
-lifetime = 4.0
-preprocess = 60.0
-speed_scale = 0.37
-randomness = 1.0
+[node name="building-3" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 932.382, 243.644 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 6 )
+
+[node name="building-6" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 932.382, -146.485 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 7 )
+
+[node name="building-4" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 1915.28, 246.734 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 6 )
+
+[node name="building-5" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( -221.18, 239.145 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 6 )
+
+[node name="building-1" type="Sprite" parent="."]
+light_mask = 3
+position = Vector2( 445.651, 386.165 )
+scale = Vector2( 9, 9 )
 texture = ExtResource( 3 )
-emission_shape = 2
-emission_rect_extents = Vector2( 200, 1 )
-gravity = Vector2( 180, 98 )
-scale_amount = 2.0
-color = Color( 0.898039, 1, 1, 0.85098 )
-hue_variation = 0.05
-hue_variation_random = 1.0
 
-[node name="Particles2D4" type="CPUParticles2D" parent="."]
-position = Vector2( 125.358, 195.986 )
-amount = 10
-lifetime = 4.0
-preprocess = 60.0
-speed_scale = 0.37
-randomness = 1.0
-texture = ExtResource( 3 )
-emission_shape = 2
-emission_rect_extents = Vector2( 200, 1 )
-gravity = Vector2( 180, 98 )
-scale_amount = 2.0
-color = Color( 0.898039, 1, 1, 0.85098 )
-hue_variation = 0.05
-hue_variation_random = 1.0
-
-[node name="Particles2D2" type="CPUParticles2D" parent="."]
-position = Vector2( 1252.77, 365.374 )
-amount = 15
-lifetime = 4.0
-preprocess = 60.0
-speed_scale = 0.37
-randomness = 1.0
-texture = ExtResource( 3 )
-emission_shape = 2
-emission_rect_extents = Vector2( 200, 1 )
-gravity = Vector2( 200, 98 )
-scale_amount = 2.0
-color = Color( 0.898039, 1, 1, 0.85098 )
-hue_variation = 0.05
-hue_variation_random = 1.0
-
-[node name="Particles2D3" type="CPUParticles2D" parent="."]
-position = Vector2( 1547.89, 195.657 )
-amount = 20
-lifetime = 4.0
-preprocess = 60.0
-speed_scale = 0.37
-randomness = 1.0
-texture = ExtResource( 3 )
-emission_shape = 2
-emission_rect_extents = Vector2( 200, 1 )
-gravity = Vector2( 200, 98 )
-scale_amount = 2.0
-color = Color( 0.898039, 1, 1, 0.85098 )
-hue_variation = 0.05
-hue_variation_random = 1.0
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-margin_left = -105.0
-margin_right = 2055.0
-margin_bottom = 1080.0
+[node name="building-2" type="Sprite" parent="."]
+light_mask = 3
+position = Vector2( 1376.46, 383.229 )
+scale = Vector2( 9, 9 )
 texture = ExtResource( 4 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 324.531, -740.635 )
+texture = ExtResource( 8 )
+texture_scale = 50.0
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 2
+
+[node name="Light2D3" type="Light2D" parent="."]
+position = Vector2( 1348.54, -583.095 )
+texture = ExtResource( 8 )
+texture_scale = 50.0
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 2
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+z_index = -1
+occluder = SubResource( 1 )
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+light_mask = 3
+position = Vector2( 753.452, 0 )
+z_index = -1
+occluder = SubResource( 1 )
+light_mask = 3
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+light_mask = 2
+z_index = -1
+occluder = SubResource( 2 )
+light_mask = 2
+
+[node name="Light2D2" type="Light2D" parent="."]
+position = Vector2( 70.3776, 78.8193 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 8 )
+texture_scale = 50.0
+energy = 0.6
+shadow_enabled = true
+
+[node name="bus_station" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 927.455, 654.397 )
+scale = Vector2( 30, 30 )
+texture = ExtResource( 9 )
 
 [node name="Skip" parent="." instance=ExtResource( 5 )]
 obj = NodePath("..")
