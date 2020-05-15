@@ -4,68 +4,43 @@
 [ext_resource path="res://Scenes/templates/Math_map.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Blackout.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Guard.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/PlayMusic.gd" type="Script" id=8]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-# Turn off the lights
-
-export (NodePath) var cm
-export (NodePath) var tw
-export (String, FILE, \"*.tscn\") var hidden_room 
-
-
-func adventure_begins():
-	SCENES.load_scene(hidden_room)
-
-
-func next_facility():
-	NOTIFY.show(\"У вас нет доступа\")
-
-
-func turn_lights_off():
-	yield(get_tree().create_timer(2), \"timeout\")
-	get_node(tw).interpolate_property(
-		get_node(cm), \"color\",
-		Color(\"#00080808\"), Color(\"#ee080808\"), 1,
-		Tween.TRANS_BOUNCE, Tween.EASE_IN_OUT)
-	get_node(tw).start()
-
-
-func turn_lights_off_now():
-	get_node(cm).color = Color(\"#ee080808\")
-"
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 128, 16 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16, 16 )
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 1 )
-cm = NodePath("CanvasLayer/ColorRect")
-tw = NodePath("Tween")
+script = ExtResource( 5 )
 hidden_room = "res://Scenes/Chapter1/23.stairs.tscn"
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
+street_path = "res://Scenes/menu/Menu.tscn"
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Pass" type="StaticBody2D" parent="."]
 position = Vector2( 543.53, 236.144 )
+z_index = 1
+collision_layer = 0
+collision_mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pass"]
 position = Vector2( 0.470337, 3.8562 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2( 471.33, 340.644 )
+z_index = 1
+collision_layer = 0
+collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2( 0.470337, 3.8562 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
 position = Vector2( 344, 1560 )
@@ -94,21 +69,21 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Area2D3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1513.32, 1602.49 )
-label = "Естественно-научный факультет"
+[node name="NS" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1376, 1600 )
+label = "NS"
 object_name = NodePath("..")
 function_name = "next_facility"
 
 [node name="Guard" parent="." instance=ExtResource( 6 )]
-position = Vector2( 568, 216 )
+position = Vector2( 504, 288 )
 dialog_path = "res://Dialogs/chapter1/guard.json"
-person = "Охранник"
+person = "GUARD"
 
 [node name="Secret" parent="." instance=ExtResource( 4 )]
 light_mask = 0
 position = Vector2( -576, 128 )
-label = "Путь?"
+label = "PATH"
 object_name = NodePath("..")
 function_name = "adventure_begins"
 
@@ -119,3 +94,9 @@ joystick = true
 script = ExtResource( 8 )
 file = "res://Audio/music/Suspense.ogg"
 delay = 5.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="turn_lights_on"]
