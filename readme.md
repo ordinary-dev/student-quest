@@ -1,6 +1,4 @@
 # Student Quest
-![Screenshot](Screenshots/1.jpg)
-![Screenshot](Screenshots/2.jpg)
 A pixel art game created on the [Godot engine](https://godotengine.org/).
 We open the source code of the game so that anyone can help us with the development. It is possible you will come across a lot of bad code and even more bad sprites.
 ## How to open a project in editor:
