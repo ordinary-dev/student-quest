@@ -31,7 +31,6 @@
 [ext_resource path="res://Scenes/templates/Bush_type_1.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=30]
 
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
@@ -651,6 +650,7 @@ shape = SubResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort_global/Buildings/eni_house"]
 position = Vector2( -22.0841, -89.2427 )
 frames = ExtResource( 21 )
+frame = 3
 playing = true
 
 [node name="eni_show" parent="YSort_global/Buildings" instance=ExtResource( 5 )]
@@ -822,7 +822,7 @@ collision_mask = 1024
 object = NodePath("../Crossing2")
 
 [node name="Fountain" parent="YSort_global" instance=ExtResource( 7 )]
-position = Vector2( 3008, 3712 )
+position = Vector2( 3010, 3600 )
 z_as_relative = false
 
 [node name="Trees_park_1" type="YSort" parent="YSort_global"]
