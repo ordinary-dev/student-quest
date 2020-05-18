@@ -7,7 +7,7 @@
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=6]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 15.0
 content_margin_right = 15.0
 content_margin_top = 15.0
@@ -18,19 +18,19 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=2]
 content_margin_left = 15.0
 content_margin_right = 15.0
 content_margin_top = 15.0
 content_margin_bottom = 15.0
 bg_color = Color( 0.129412, 0.129412, 0.129412, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=4]
 script/source = "extends TabContainer
 
 # Labels
@@ -133,11 +133,11 @@ custom_icons/increment_highlight = ExtResource( 2 )
 custom_icons/increment = ExtResource( 2 )
 custom_icons/decrement_highlight = ExtResource( 3 )
 custom_icons/decrement = ExtResource( 3 )
-custom_styles/tab_fg = SubResource( 2 )
-custom_styles/tab_bg = SubResource( 3 )
-custom_styles/panel = SubResource( 4 )
+custom_styles/tab_fg = SubResource( 1 )
+custom_styles/tab_bg = SubResource( 2 )
+custom_styles/panel = SubResource( 3 )
 tab_align = 0
-script = SubResource( 6 )
+script = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -364,7 +364,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "studentquest.github.io
 
-v 3.5"
+v 4.0"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -426,6 +426,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "- mcraw
 - friday13
+- HisMaj3sty
 "
 autowrap = true
 __meta__ = {
