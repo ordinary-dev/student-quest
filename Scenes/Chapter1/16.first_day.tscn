@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Mr_singer.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Scenes/Chapter1/Guide.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/outside/Old guide.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/triggers/Tickets.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GDScript" id=1]
@@ -117,15 +116,7 @@ function_name = "enter_house"
 
 [node name="Guide_Dialog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2056, 488 )
-
-[node name="Guide" type="Sprite" parent="."]
-position = Vector2( 2192, 528 )
-scale = Vector2( 2.99999, 3 )
-z_index = 2
-z_as_relative = false
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 40, 72, 16, 33 )
+z_index = 5
 
 [node name="EnableUI" parent="." instance=ExtResource( 7 )]
 joystick = true

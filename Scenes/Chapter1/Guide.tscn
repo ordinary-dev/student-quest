@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/outside/Old guide.png" type="Texture" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -26,6 +27,9 @@ func activate() -> void:
 	DIALOG.show_dialog(get_dialog_number())
 "
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5.33333, 2.66667 )
+
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 dialogs = [ "res://Dialogs/chapter1/guideMath.json", "res://Dialogs/chapter1/guideNS.json", "res://Dialogs/chapter1/guideHM.json" ]
@@ -35,3 +39,19 @@ position = Vector2( 120, -40 )
 label = "GUIDE"
 object_name = NodePath("..")
 function_name = "activate"
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 88, 32 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+vframes = 3
+hframes = 3
+frame = 8
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+position = Vector2( -5.72205e-06, 13.3333 )
+shape = SubResource( 2 )
