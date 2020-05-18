@@ -1,19 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Blackout.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Guard.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/templates/Ns_map.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/templates/FacultyMaps/Ns_map.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/PlayMusic.gd" type="Script" id=8]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 128, 16 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 16 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,39 +13,7 @@ hidden_room = "res://Scenes/Chapter1/23.stairs.tscn"
 
 [node name="Node2D" parent="." instance=ExtResource( 7 )]
 street_path = "res://Scenes/menu/Menu.tscn"
-
-[node name="Pass" type="StaticBody2D" parent="."]
-position = Vector2( 543.53, 236.144 )
-z_index = 1
-collision_layer = 0
-collision_mask = 1024
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pass"]
-position = Vector2( 0.470337, 3.8562 )
-shape = SubResource( 1 )
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 471.33, 340.644 )
-z_index = 1
-collision_layer = 0
-collision_mask = 1024
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 0.470337, 3.8562 )
-shape = SubResource( 2 )
-
-[node name="Body" parent="." instance=ExtResource( 4 )]
-position = Vector2( 344, 1560 )
-collision_layer = 1025
-default_state = 0
-restore_position = true
-
-[node name="Guide" type="Sprite" parent="."]
-position = Vector2( 472, 312 )
-scale = Vector2( 3, 3 )
-z_index = 2
-z_as_relative = false
-texture = ExtResource( 3 )
+block_turnstile = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5

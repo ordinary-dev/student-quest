@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/templates/Bridge.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sprites/outside/rocks/rocks.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/outside/rocks/rocks2.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/templates/Tree_type_2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/templates/Trees/Tree_type_2.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Tilemaps/street/Overlay16.tres" type="TileSet" id=16]
 [ext_resource path="res://Sprites/outside/hostel.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/outside/house.png" type="Texture" id=18]
@@ -27,9 +27,10 @@
 [ext_resource path="res://Sprites/outside/chem_house.png" type="Texture" id=25]
 [ext_resource path="res://Sprites/outside/Transition2.png" type="Texture" id=26]
 [ext_resource path="res://Sprites/outside/law_house.png" type="Texture" id=27]
-[ext_resource path="res://Scenes/templates/Tree_type_1.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/templates/Trees/Tree_type_1.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/templates/Bush_type_1.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=30]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D

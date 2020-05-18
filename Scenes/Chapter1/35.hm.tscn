@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/light.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Guard.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/templates/Hm_map.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/templates/FacultyMaps/Hm_map.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -25,9 +24,6 @@ func next_facility():
 	NOTIFY.show(\"У вас нет доступа\")
 
 "
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 16 )
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
@@ -62,24 +58,10 @@ energy = 0.4
 range_z_max = 10
 shadow_enabled = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 471.33, 340.644 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 0.470337, 3.8562 )
-shape = SubResource( 2 )
-
 [node name="Body" parent="." instance=ExtResource( 4 )]
 position = Vector2( 344, 1560 )
 collision_layer = 1025
 default_state = 0
-
-[node name="Guide" type="Sprite" parent="."]
-position = Vector2( 472, 312 )
-scale = Vector2( 3, 3 )
-z_index = 2
-z_as_relative = false
-texture = ExtResource( 3 )
 
 [node name="Area2D3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -528, 1248 )

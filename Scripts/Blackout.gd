@@ -6,8 +6,8 @@ export (String, FILE, "*.tscn") var hidden_room
 
 onready var color_rect = $CanvasLayer/ColorRect
 onready var tween = $Tween
-onready var collision = $Pass/CollisionShape2D
 onready var guard = $Guard
+onready var map = $Node2D
 
 const c1 := Color("#00080808")
 const c2 := Color("#ee080808")
@@ -42,7 +42,7 @@ func turn_lights_on():
 		c2, c1, 1,
 		Tween.TRANS_BOUNCE, Tween.EASE_IN_OUT)
 	tween.start()
-	collision.disabled = true
+	map.block_turnstile = false
 	guard.used = true
 
 
