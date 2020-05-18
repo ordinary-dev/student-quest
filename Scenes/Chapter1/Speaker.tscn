@@ -14,7 +14,7 @@ export (String, FILE, \"*.json\") var dialog_path
 
 
 func load_scene():
-	var n = PROP.get(\"facility\")
+	var n = TEMP.get(\"facility\")
 	if n == \"0\":
 		SCENES.load_scene(fac_0)
 	elif n == \"1\":
@@ -47,6 +47,8 @@ occluder = SubResource( 2 )
 modulate = Color( 1, 1, 1, 0.784314 )
 position = Vector2( 920, 416 )
 scale = Vector2( 24, 24 )
+z_index = 1
+z_as_relative = false
 texture = ExtResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
@@ -70,5 +72,7 @@ occluder = SubResource( 3 )
 modulate = Color( 0.843137, 0.843137, 0.843137, 1 )
 position = Vector2( 848, 264 )
 scale = Vector2( 24, 24 )
+z_index = 2
+z_as_relative = false
 texture = ExtResource( 2 )
 centered = false

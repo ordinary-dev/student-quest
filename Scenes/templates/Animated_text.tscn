@@ -65,9 +65,11 @@ func _ready() -> void:
 	)
 	effect.start()
 	yield(get_tree().create_timer(get_delay()), \"timeout\")
-	SCENES.load_scene(next_scene, fade_in, fade_out)
+	load_scene()
 
-"
+
+func load_scene() -> void:
+	SCENES.load_scene(next_scene, fade_in, fade_out)"
 
 [node name="Control" type="Control"]
 anchor_right = 1.0

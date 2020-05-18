@@ -1,0 +1,132 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends VBoxContainer
+
+var entry = load(\"res://Scenes/menu/LoadGameScene/SavedGame.tscn\")
+enum modes {Load, Save}
+export (modes) var mode = modes.Load
+var savedGamesCount := 0
+
+
+func add_node(dir_name : String) -> void:
+	var btn = entry.instance()
+	btn.name = dir_name
+	add_child(btn)
+	var entry = get_node(dir_name)
+	var isFolderValid = entry.parseFolder(\"user://\" + dir_name)
+	if isFolderValid:
+		savedGamesCount += 1
+		if mode == modes.Load:
+			entry.connect(\"pressed\", self, \"load_game\", [dir_name])
+		else:
+			entry.connect(\"pressed\", self, \"replace_game\", [dir_name])
+
+
+func load_game(dir_name : String) -> void:
+	var data = File.new()
+	data.open(\"user://\" + dir_name + \"/data.json\", File.READ)
+	var jsonString = data.get_as_text()
+	var jsonContent = JSON.parse(jsonString).result
+	INVENTORY._load(jsonContent[\"inventory\"])
+	TEMP.dict = jsonContent[\"temp\"]
+	SCENES.load_scene(jsonContent[\"scene\"])
+
+
+func newSave(num : int) -> void:
+	_save(num)
+	add_node(\"save\" + str(num))
+	get_node(\"btnNew\").switch()
+
+
+func replace_game(dir_name : String) -> void:
+	var saveName = get_node(dir_name + \"/HBoxContainer/MarginContainer/VBoxContainer/Name\").text
+	_save(int(dir_name.substr(4)), saveName)
+	get_node(dir_name).parseFolder(\"user://\" + dir_name)
+
+
+func _save(num : int, saveName := \"\") -> void:
+	if GLOBAL.player_path != \"\":
+		TEMP.save(\"player_pos_id\", SCENES.last_scene_path)
+		TEMP.save(\"player_pos_x\", get_node(GLOBAL.player_path).position.x)
+		TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y)
+	var dataDict = {
+		\"scene\" : SCENES.last_scene_path,
+		\"inventory\": INVENTORY.inventory,
+		\"temp\": TEMP.dict
+	}
+	var date = OS.get_datetime()
+	var dateString = str(date[\"year\"]) + \"-\" + str(date[\"month\"]) + \"-\" + str(date[\"day\"]) 
+	dateString += \" \" + str(date[\"hour\"]) + \":\" + str(date[\"minute\"])
+	if saveName == \"\":
+		saveName = get_node(\"btnNew/VBoxContainer/TextEdit\").text
+	var configDict = {
+		\"date\" : dateString,
+		\"name\" : saveName
+	}
+	var path := \"user://save\" + str(num)
+	Directory.new().make_dir(path)
+	# data.json
+	var data = File.new()
+	data.open(path + \"/data.json\", File.WRITE)
+	data.store_string(to_json(dataDict))
+	data.close()
+	# config.json
+	var config = File.new()
+	config.open(path + \"/config.json\", File.WRITE)
+	config.store_string(to_json(configDict))
+	config.close()
+	# screenshot.png
+	if OS.get_name() != \"Android\":
+		GLOBAL.screenshot.save_png(path + \"/screenshot.png\")
+	NOTIFY.show(\"Saved\")
+
+
+func _refresh() -> void:
+	for i in get_children():
+		remove_child(i)
+	# add button
+	if mode == modes.Save:
+		var btnNew = load(\"res://Scenes/menu/LoadGameScene/NewSave.tscn\").instance()
+		btnNew.name = \"btnNew\"
+		add_child(btnNew)
+		var btnPlus = get_node(\"btnNew\")
+		var okBtn = btnPlus.get_node(\"VBoxContainer/HBoxContainer/OK\")
+		GLOBAL.maxId += 1
+		okBtn.connect(\"pressed\", self, \"newSave\", [GLOBAL.maxId])
+	var dir = Directory.new()
+	dir.open(\"user://\")
+	dir.list_dir_begin(true, true)
+	var dir_name : String = dir.get_next()
+	# For every saved game
+	while dir_name != \"\":
+		if dir_name != \"config.json\":
+			add_node(dir_name)
+		dir_name = dir.get_next()
+	dir.list_dir_end()
+	
+	if mode == modes.Load:
+		if savedGamesCount == 0:
+			var lb = Label.new()
+			lb.text = \"No saved games\"
+			add_child(lb)
+"
+
+[node name="ScrollContainer" type="ScrollContainer"]
+margin_right = 600.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 600, 600 )
+follow_focus = true
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="VBoxContainer" parent="."]
+margin_right = 600.0
+rect_min_size = Vector2( 600, 0 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+mode = 1

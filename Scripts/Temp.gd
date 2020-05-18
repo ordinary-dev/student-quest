@@ -1,7 +1,6 @@
 extends Node
 
 # Save values in a dictionary globally
-# Avaiable at /root/temp
 
 var dict : Dictionary
 
@@ -15,7 +14,9 @@ func save(key:String, data) -> void:
 
 
 func get(key):
-	return dict[key]
+	if dict.has(key):
+		return dict[key]
+	return "-1"
 
 
 func remove_key(key) -> void:

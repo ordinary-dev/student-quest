@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/light.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sprites/Guard.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/templates/Math_map.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/templates/FacultyMaps/Math_map.tscn" type="PackedScene" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -18,20 +16,16 @@ export (String, FILE, \"*.tscn\") var hidden_room
 
 
 func adventure_begins():
-	get_node(\"restore_state\").save()
 	SCENES.load_scene(hidden_room)
+
 
 func next_facility():
 	NOTIFY.show(\"У вас нет доступа\")
 
 "
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 16, 16 )
-
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-cm = NodePath("ColorRect")
 hidden_room = "res://Scenes/1.beggining/Stairs.tscn"
 
 [node name="Node2D" parent="." instance=ExtResource( 6 )]
@@ -63,34 +57,6 @@ energy = 0.4
 range_z_max = 10
 shadow_enabled = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2( 471.33, 340.644 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2( 0.470337, 3.8562 )
-shape = SubResource( 2 )
-
-[node name="Body" parent="." instance=ExtResource( 4 )]
-position = Vector2( 344, 1560 )
-collision_layer = 1025
-default_state = 0
-
-[node name="Guide" type="Sprite" parent="."]
-position = Vector2( 472, 312 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 3 )
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -1364.0
-margin_top = -671.0
-margin_right = 2928.0
-margin_bottom = 4453.0
-mouse_filter = 1
-color = Color( 0.733333, 0.733333, 0.733333, 0 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Area2D3" parent="." instance=ExtResource( 2 )]
 position = Vector2( -528, 1248 )
 label = "Естественно-научный факультет"
@@ -98,3 +64,4 @@ object_name = NodePath("..")
 function_name = "next_facility"
 
 [node name="EnableUI" parent="." instance=ExtResource( 5 )]
+joystick = true

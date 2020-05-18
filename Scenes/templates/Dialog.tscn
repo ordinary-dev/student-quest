@@ -34,7 +34,6 @@ const c_right_to : = 1870
 func anim_template(left_from : int, left_to : int, 
 					right_from : int, right_to : int, 
 					animate_form : bool, atext:bool = true) -> void:
-	# Анимация формы
 	if animate_form:
 		tween.interpolate_property(
 			get_node(body_bg), \"margin_left\",
@@ -115,7 +114,7 @@ body_bg = NodePath("Dialog/Border")
 body_fg = NodePath("Dialog/Main")
 person_name = NodePath("Dialog/Main/Margin/HBox/VBox/Name")
 main_text = NodePath("Dialog/Main/Margin/HBox/VBox/Text")
-next_button = NodePath("Dialog/Main/Margin/HBox/Button")
+next_button = NodePath("Button")
 
 [node name="Dialog" type="MarginContainer" parent="."]
 light_mask = 0
@@ -183,14 +182,14 @@ __meta__ = {
 
 [node name="VBox" type="VBoxContainer" parent="Dialog/Main/Margin/HBox"]
 light_mask = 0
-margin_right = 1610.0
+margin_right = 1744.0
 margin_bottom = 134.0
 size_flags_horizontal = 3
 alignment = 1
 
 [node name="Name" type="Label" parent="Dialog/Main/Margin/HBox/VBox"]
 light_mask = 0
-margin_right = 1610.0
+margin_right = 1744.0
 margin_bottom = 65.0
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
@@ -200,7 +199,7 @@ valign = 1
 [node name="Text" type="Label" parent="Dialog/Main/Margin/HBox/VBox"]
 light_mask = 0
 margin_top = 69.0
-margin_right = 1610.0
+margin_right = 1744.0
 margin_bottom = 134.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -209,15 +208,16 @@ valign = 1
 autowrap = true
 percent_visible = 0.0
 
-[node name="Button" type="Button" parent="Dialog/Main/Margin/HBox"]
+[node name="Button" type="Button" parent="."]
 light_mask = 0
-margin_left = 1614.0
-margin_right = 1744.0
-margin_bottom = 134.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_min_size = Vector2( 130, 130 )
 focus_mode = 0
 enabled_focus_mode = 0
-text = ">"
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Tween" type="Tween" parent="."]

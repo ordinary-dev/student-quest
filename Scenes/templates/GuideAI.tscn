@@ -79,8 +79,8 @@ func _process(delta):
 
 
 func _ready():
-	if has_node(\"/root/Node2D/Body\"):
-		player = get_node(\"/root/Node2D/Body\")
+	if has_node(GLOBAL.player_path):
+		player = get_node(GLOBAL.player_path)
 	target = get_node(nodes[ind])
 		
 "
@@ -135,7 +135,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 5, 3 )
+extents = Vector2( 6.682, 16.5 )
 
 [node name="Guide" type="Sprite"]
 texture = ExtResource( 1 )
@@ -150,7 +150,9 @@ anims/side = SubResource( 3 )
 anims/up = SubResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( -0.314026, 11.9177 )
+collision_layer = 0
+collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.284794, -0.569584 )
 shape = SubResource( 5 )

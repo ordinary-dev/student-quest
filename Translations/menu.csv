@@ -18,7 +18,7 @@ FULLSCREEN,Fullscreen,Полный экран
 SITE,Open site,Открыть сайт
 GODOT,Created with Godot Engine,Создано при помощи Godot Engine
 CHANGELOG,Changelog:,Список изменений:
-CHANGES,-New building sprites,-Новые спрайты зданий
+CHANGES,"-New save system, reordered layers, inventory, ability to skip scenes","-Новая система сохранений, измененный порядок слоев, инвентарь, возможность пропускать сцены"
 AUTHORS,Authors:,Авторы:
 JOYSTICK,Joystick script:,Скрипт джойстика:
 MUSIC,Music:,Музыка:
@@ -28,3 +28,13 @@ LEGAL,Every character is just the result of our imagination,Каждый пер�
 LOADING,Loading,Загрузка
 DELETE,Delete,Удалить
 TESTERS,Testers:,Тестеры:
+TICKETWINDOW,Ticket window,Окно кассы
+DIRECTION,Direction,Направление
+COST,Cost,Стоимость
+CITYN,City N,Город N
+3000RUB,3000 Rub,3000 Руб
+CASH,Cash:,Наличные:
+PURCHASE,Purchase,Покупка
+BUY,Buy,Купить
+LOAD,Load,Загрузить
+SAVE,Save,Сохранить

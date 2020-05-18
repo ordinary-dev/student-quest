@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/train/train_cropped.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/train/field.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=4]
 [ext_resource path="res://Audio/fx/Train.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Shake.gd" type="Script" id=7]
 
 [sub_resource type="GDScript" id=1]
@@ -18,6 +20,7 @@ export(String, FILE, \"*.tscn\") var next_scene
 
 
 func _ready():
+	MUSIC.stop()
 	audio.play()
 	audio.seek(7)
 	effect.interpolate_property(
@@ -32,6 +35,10 @@ func _ready():
 		time, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	effect.start()
 	yield(get_tree().create_timer(time), \"timeout\")
+	load_scene()
+
+
+func load_scene() -> void:
 	SCENES.load_scene(next_scene)
 "
 
@@ -87,3 +94,9 @@ occluder = SubResource( 2 )
 stream = ExtResource( 5 )
 volume_db = -17.0
 bus = "Ambient"
+
+[node name="Skip" parent="." instance=ExtResource( 2 )]
+obj = NodePath("..")
+method = "load_scene"
+
+[node name="EnableUI" parent="." instance=ExtResource( 6 )]

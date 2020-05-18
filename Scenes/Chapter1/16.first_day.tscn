@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Mr_singer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Chapter1/Guide.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/outside/Old guide.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/triggers/Tickets.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GDScript" id=1]
@@ -15,21 +13,17 @@ script/source = "extends Node2D
 
 export (String, FILE, \"*.tscn\") var next_scene
 export (String, FILE, \"*.tscn\") var store_scene
-# Игрок
-export (NodePath) var player
 # Триггер диалога Мистера Дудца
 export (NodePath) var singer
 
 
 func save():
-	TEMP.save(\"street_player_pos\", 
-		get_node(player).position)
 	TEMP.save(\"street_singer_dialog_used\", 
 		get_node(singer).used)
 	if get_node(singer).used:
-		PROP.save(\"day1_dialog\", \"1\")
+		TEMP.save(\"day1_dialog\", \"1\")
 	else:
-		PROP.save(\"day1_dialog\", \"0\")
+		TEMP.save(\"day1_dialog\", \"0\")
 
 
 # Перейти в магазин
@@ -39,7 +33,7 @@ func to_store() -> void:
 
 
 func enter(id:String) -> void:
-	if PROP.get(\"facility\") == id:
+	if TEMP.get(\"facility\") == id:
 		save()
 		SCENES.load_scene(next_scene)
 	else:
@@ -67,13 +61,9 @@ func enter_house():
 
 
 func _ready():
-	# Update stage
-	PROP.save(\"stage\", \"2\")
-	if TEMP.is_saved(\"street_player_pos\"):
-		get_node(player).position = TEMP.get(\"street_player_pos\")
+	if TEMP.is_saved(\"street_singer_dialog_used\"):
 		get_node(singer).used = TEMP.get(\"street_singer_dialog_used\")
 	else:
-		get_node(player).position = Vector2(-452, 2798)
 		get_node(singer).used = false
 "
 
@@ -81,23 +71,18 @@ func _ready():
 script = SubResource( 1 )
 next_scene = "res://Scenes/Chapter1/18.date.tscn"
 store_scene = "res://Scenes/Chapter1/17.store.tscn"
-player = NodePath("Body")
 singer = NodePath("Mr_Singer_Dialog")
 
 [node name="Street" parent="." instance=ExtResource( 1 )]
 
 [node name="Mr_singer" parent="." instance=ExtResource( 2 )]
 position = Vector2( 23.1483, 370.225 )
+z_index = 2
+z_as_relative = false
 
 [node name="Mr_Singer_Dialog" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56, 352 )
-z_index = 2
 dialog_path = "res://Dialogs/chapter1/stranger.json"
-
-[node name="Body" parent="." instance=ExtResource( 4 )]
-position = Vector2( -365, 488 )
-collision_layer = 1025
-collision_mask = 0
 
 [node name="Store_Trigger" parent="." instance=ExtResource( 6 )]
 position = Vector2( 552, 216 )
@@ -131,16 +116,10 @@ function_name = "enter_house"
 
 [node name="Guide_Dialog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 2056, 488 )
-
-[node name="Guide" type="Sprite" parent="."]
-position = Vector2( 2192, 528 )
-scale = Vector2( 2.99999, 3 )
-z_index = 3
-texture = ExtResource( 8 )
-region_enabled = true
-region_rect = Rect2( 40, 72, 16, 33 )
+z_index = 5
 
 [node name="EnableUI" parent="." instance=ExtResource( 7 )]
+joystick = true
 show_time = true
 time = "9:45"
 

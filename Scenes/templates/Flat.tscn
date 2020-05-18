@@ -10,6 +10,8 @@ extents = Vector2( 32, 64 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
+z_index = 1
+z_as_relative = false
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1

@@ -5,14 +5,15 @@ var dialog_scene : = load("res://Scenes/templates/Dialog.tscn")
 var s_content : Dictionary
 var s_key : String
 
-# Опционально вызвать функцию fnc у объекта obj
+# Call the method after the dialog
 var call_after:bool
 var glob_obj:String
 var glob_fnc:String
 var glob_argv:String
 
-# Нужно ли вернуть интерфейс
+# Enable the interface?
 var return_ui : bool
+var return_joystick : bool
 
 
 func hide_dialog():
@@ -21,12 +22,10 @@ func hide_dialog():
 	yield(get_tree().create_timer(dialog_obj.shape_time), "timeout")
 	UI.remove_child(dialog_obj)
 	set_process(false)
-	# Разблокировать персонажа
-	if has_node("/root/Node2D/Body"):
-		get_node("/root/Node2D/Body").unlock()
-	# Отправить сигнал
-	# Нужен некоторым скриптам для того,
-	# Чтобы продолжить сразу после диалога
+	# Unlock character movement
+	if has_node(GLOBAL.player_path):
+		get_node(GLOBAL.player_path).unlock()
+	# Call a method if necessary
 	if call_after and has_node(glob_obj):
 		if glob_argv == "":
 			get_node(glob_obj).call(glob_fnc)
@@ -34,11 +33,11 @@ func hide_dialog():
 			get_node(glob_obj).call(glob_fnc, glob_argv)
 	glob_obj = ""
 	if return_ui:
-		UI_INIT.enable_ui()
+		UI_INIT.enable_ui(return_joystick)
 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("dialog_next"):
 		if s_key != "-1":
 			show_next()
 		else:
@@ -64,24 +63,26 @@ func show_next() -> void:
 
 
 func show_dialog(path:String, obj:String = "", fnc:String = "", argv:String="") -> void:
-	# Открыть файл
+	# Open file
 	var fl : = File.new()
 	var state : = fl.open(path, File.READ)
 	if (state != OK):
-		NOTIFY.show("Не могу загрузить диалог")
+		NOTIFY.show("I can not load the dialog")
 		return
-	# Заблокировать персонажа
-	if has_node("/root/Node2D/Body"):
-		get_node("/root/Node2D/Body").lock()
+	# Lock character movement
+	if has_node(GLOBAL.player_path):
+		get_node(GLOBAL.player_path).lock()
+	# Disable the interface, if enabled, and remember this
 	if UI.get_node("Pause").visible:
 		UI_INIT.disable_ui()
 		return_ui = true
 	else:
 		return_ui = false
-	# Звук
+	return_joystick = UI.get_node("Joystick").visible
+	# Sound
 	FX.dialog()
 	
-	# Сохранить значения
+	# Save arguments
 	if obj != "":
 		call_after = true
 		glob_obj = obj
@@ -90,19 +91,19 @@ func show_dialog(path:String, obj:String = "", fnc:String = "", argv:String="") 
 	else:
 		call_after = false
 	
-	# Подготовить интерфейс
+	# Prepare interface
 	var tmp = dialog_scene.instance()
 	tmp.name = "dialog"
 	UI.add_child(tmp)
-	# Прочитать файл
+	# Read file
 	var content = parse_json(fl.get_as_text())
 	fl.close()
-	# Активировать отслеживание кнопки
+	# Activate button tracking
 	set_process(true)
-	# Сохранить значения
+	# Save values
 	s_content = content
 	s_key = "0"
-	# Показать диалог
+	# Show first phrase
 	show_next()
 
 

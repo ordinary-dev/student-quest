@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/icons/pause.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/menu/Settings.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/menu/LoadGameScene/Load.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -12,9 +13,14 @@ var enabled : bool = false
 var show_joystick := false
 export (String, FILE, \"*.tscn\") var menu_scene
 export (String, FILE, \"*.tscn\") var quit_scene
+export (Array, NodePath) var buttons
+export (NodePath) var settings_node
+export (NodePath) var load_node
+export (NodePath) var save_node
+export (NodePath) var return_btn
 
 
-func _process(_delta):
+func _process(_delta) -> void:
 	if Input.is_action_just_pressed(\"ui_cancel\"):
 		switch()
 
@@ -28,58 +34,93 @@ func switch():
 	if enabled:
 		_return_to_game()
 	else:
+		var img = get_viewport().get_texture().get_data()
+		img.flip_y()
+		print(\"Save screenshot now\")
+		GLOBAL.screenshot = img
 		_on_Pause_pressed()
 
 
-# Кнопка паузы
 func _on_Pause_pressed() -> void:
 	enabled = true
 	FX.btn_click()
 	get_node(\"MarginContainer\").visible = true
 	get_node(\"ColorRect\").visible = true
 	get_node(\"Pause\").visible = false
+	UI.get_node(\"Inventory\").visible = false
 	if UI.get_node(\"Joystick\").visible:
 		UI_INIT.hide_joystick()
 		show_joystick = true
-	if (has_node(\"/root/Node2D/Body\")):
-		get_node(\"/root/Node2D/Body\").lock()
+	if (has_node(GLOBAL.player_path)):
+		get_node(GLOBAL.player_path).lock()
+	get_node(return_btn).grab_focus()
 
 
-# Кнопка возврата в игру
 func _return_to_game(play_sound : bool = true) -> void:
 	enabled = false
 	if play_sound:
 		FX.btn_click()
+	# Hide buttons
 	get_node(\"MarginContainer\").visible = false
+	# Hide semi-transparent black background
 	get_node(\"ColorRect\").visible = false
+	# Show pause button
 	get_node(\"Pause\").visible = true
-	if (has_node(\"/root/Node2D/Body\")):
-		get_node(\"/root/Node2D/Body\").unlock()
+	UI.get_node(\"Inventory\").visible = true
+	# Unlock player's movement if it exists
+	if (has_node(GLOBAL.player_path)):
+		get_node(GLOBAL.player_path).unlock()
+	# Enable joystick again if it was hidden
 	if show_joystick:
 		UI_INIT.show_joystick()
 	show_joystick = false
+	# Hide windows
+	get_node(settings_node).visible = false
+	get_node(load_node).visible = false
+	get_node(save_node).visible = false
 
 
-# Кнопка возврата в меню
 func _to_menu() -> void:
 	FX.btn_click()
 	SCENES.load_scene(menu_scene)
 	yield(get_tree().create_timer(SCENES.time), \"timeout\")
-	# Убрать паузу
+	# Hide this scene
 	_return_to_game(false)
 
 
-# Выход из игры
-func _quit_game():
-	# Сохранить данные
+func _quit_game() -> void:
+	# Save settings
 	GLOBAL.write_settings()
-	# Закрыть игру
+	# Quit game
 	SCENES.load_scene(quit_scene)
 
 
-func _settings():
+# Show or hide settings
+func _settings() -> void:
 	FX.btn_click()
-	get_node(\"MarginContainer/HBoxContainer/Settings\").visible = !get_node(\"MarginContainer/HBoxContainer/Settings\").visible
+	get_node(settings_node).visible = !get_node(settings_node).visible
+	get_node(load_node).visible = false
+	get_node(save_node).visible = false
+
+
+# Load
+func _load() -> void:
+	FX.btn_click()
+	var ln = get_node(load_node)
+	ln.get_node(\"Control\")._refresh()
+	ln.visible = !ln.visible
+	get_node(settings_node).visible = false
+	get_node(save_node).visible = false
+
+
+# Save
+func _save() -> void:
+	FX.btn_click()
+	var ln = get_node(save_node)
+	ln.get_node(\"Control\")._refresh()
+	ln.visible = !ln.visible
+	get_node(settings_node).visible = false
+	get_node(load_node).visible = false
 "
 
 [node name="Control" type="Control"]
@@ -94,6 +135,11 @@ __meta__ = {
 }
 menu_scene = "res://Scenes/menu/Menu.tscn"
 quit_scene = "res://Scenes/quit.tscn"
+buttons = [ NodePath("MarginContainer/HBoxContainer/VBoxContainer/Return"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Settings"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Menu"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Quit"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Load"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Save") ]
+settings_node = NodePath("MarginContainer/HBoxContainer/CanvasLayer/Settings")
+load_node = NodePath("MarginContainer/HBoxContainer/CanvasLayer/Load")
+save_node = NodePath("MarginContainer/HBoxContainer/CanvasLayer/Save")
+return_btn = NodePath("MarginContainer/HBoxContainer/VBoxContainer/Return")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -153,42 +199,97 @@ __meta__ = {
 }
 
 [node name="Return" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 77.0
+margin_right = 750.0
+margin_bottom = 177.0
+rect_min_size = Vector2( 80, 100 )
+focus_neighbour_bottom = NodePath("../Load")
+focus_next = NodePath("../Load")
+focus_mode = 2
+text = "RETURN"
+
+[node name="Load" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 202.0
 margin_right = 750.0
 margin_bottom = 302.0
 rect_min_size = Vector2( 80, 100 )
-btn_text = "RETURN"
+focus_neighbour_top = NodePath("../Return")
+focus_neighbour_bottom = NodePath("../Save")
+focus_next = NodePath("../Save")
+focus_previous = NodePath("../Return")
+focus_mode = 2
+text = "LOAD"
 
-[node name="Settings" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Save" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 327.0
 margin_right = 750.0
 margin_bottom = 427.0
 rect_min_size = Vector2( 80, 100 )
-btn_text = "SETTINGS"
+focus_neighbour_top = NodePath("../Load")
+focus_neighbour_bottom = NodePath("../Settings")
+focus_mode = 2
+text = "SAVE"
 
-[node name="Menu" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Settings" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 452.0
 margin_right = 750.0
 margin_bottom = 552.0
 rect_min_size = Vector2( 80, 100 )
-btn_text = "MENU"
+focus_neighbour_top = NodePath("../Save")
+focus_neighbour_bottom = NodePath("../Menu")
+focus_mode = 2
+text = "SETTINGS"
 
-[node name="Quit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+[node name="Menu" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
 margin_top = 577.0
 margin_right = 750.0
 margin_bottom = 677.0
 rect_min_size = Vector2( 80, 100 )
-btn_text = "QUIT"
+focus_neighbour_top = NodePath("../Settings")
+focus_neighbour_bottom = NodePath("../Quit")
+focus_mode = 2
+text = "MENU"
 
-[node name="Settings" parent="MarginContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="Quit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 702.0
+margin_right = 750.0
+margin_bottom = 802.0
+rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Menu")
+focus_mode = 2
+text = "QUIT"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="MarginContainer/HBoxContainer"]
+layer = 12
+
+[node name="Settings" parent="MarginContainer/HBoxContainer/CanvasLayer" instance=ExtResource( 3 )]
 visible = false
-margin_left = 850.0
-margin_top = 210.0
-margin_right = 1700.0
-margin_bottom = 880.0
+margin_left = 950.0
+margin_top = 310.0
+margin_right = 1800.0
+margin_bottom = 980.0
 rect_min_size = Vector2( 850, 670 )
+
+[node name="Load" parent="MarginContainer/HBoxContainer/CanvasLayer" instance=ExtResource( 4 )]
+visible = false
+margin_left = 1000.0
+margin_top = 200.0
+
+[node name="Control" parent="MarginContainer/HBoxContainer/CanvasLayer/Load" index="0"]
+mode = 0
+
+[node name="Save" parent="MarginContainer/HBoxContainer/CanvasLayer" instance=ExtResource( 4 )]
+visible = false
+margin_left = 1000.0
+margin_top = 200.0
 [connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Return" to="." method="_return_to_game"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Load" to="." method="_load"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Save" to="." method="_save"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Settings" to="." method="_settings"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Menu" to="." method="_to_menu"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_quit_game"]
+
+[editable path="MarginContainer/HBoxContainer/CanvasLayer/Load"]
+
+[editable path="MarginContainer/HBoxContainer/CanvasLayer/Save"]

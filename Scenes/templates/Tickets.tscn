@@ -1,13 +1,30 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends CenterContainer
+
+export (NodePath) var curAmount
+
+
+func _ready():
+	var money : String = TEMP.get(\"money\")
+	if money == \"-1\":
+		TEMP.save(\"money\", \"0\")
+		money = \"0\"
+	get_node(curAmount).text = money
+	
 
 
 func close():
 	if has_node(\"/root/Node2D/Body\"):
 		get_node(\"/root/Node2D/Body\").unlock()
 	UI.remove_child(self)
+
+
+func _on_Button_pressed():
+	NOTIFY.show(\"Not enough money\")
 "
 
 [node name="CenterContainer" type="CenterContainer"]
@@ -18,6 +35,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+curAmount = NodePath("Control/MarginContainer/VBoxContainer/MarginContainer/ColorRect/HBoxContainer3/Label2")
 
 [node name="Control" type="Control" parent="."]
 margin_left = 210.0
@@ -25,6 +43,7 @@ margin_top = 290.0
 margin_right = 1710.0
 margin_bottom = 790.0
 rect_min_size = Vector2( 1500, 500 )
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -62,7 +81,7 @@ __meta__ = {
 margin_right = 1400.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
-text = "Касса"
+text = "TICKETWINDOW"
 align = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
@@ -77,7 +96,7 @@ margin_top = 24.0
 margin_right = 400.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 400, 0 )
-text = "Направление"
+text = "DIRECTION"
 
 [node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 450.0
@@ -85,7 +104,7 @@ margin_top = 24.0
 margin_right = 850.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 400, 0 )
-text = "Стоимость"
+text = "COST"
 
 [node name="Label3" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
 margin_left = 900.0
@@ -93,40 +112,41 @@ margin_top = 24.0
 margin_right = 1300.0
 margin_bottom = 56.0
 rect_min_size = Vector2( 400, 0 )
-text = "Покупка"
+text = "PURCHASE"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 margin_top = 168.0
 margin_right = 1400.0
-margin_bottom = 228.0
+margin_bottom = 248.0
 custom_constants/separation = 50
 
 [node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 10.0
 margin_right = 400.0
-margin_bottom = 60.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 400, 60 )
-text = "Город N"
+text = "CITYN"
 valign = 1
 
 [node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 450.0
+margin_top = 10.0
 margin_right = 850.0
-margin_bottom = 60.0
+margin_bottom = 70.0
 rect_min_size = Vector2( 400, 60 )
-text = "3000 руб"
+text = "3000RUB"
 valign = 1
 
-[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button" parent="Control/MarginContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 1 )]
 margin_left = 900.0
-margin_right = 1300.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 400, 60 )
-text = "Купить"
+margin_right = 1200.0
+rect_min_size = Vector2( 300, 80 )
+text = "BUY"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
-margin_top = 232.0
+margin_top = 252.0
 margin_right = 1400.0
-margin_bottom = 352.0
+margin_bottom = 372.0
 custom_constants/margin_top = 20
 
 [node name="ColorRect" type="ColorRect" parent="Control/MarginContainer/VBoxContainer/MarginContainer"]
@@ -151,7 +171,7 @@ margin_top = 20.0
 margin_right = 675.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 400, 60 )
-text = "Наличные:"
+text = "CASH"
 valign = 1
 
 [node name="Label2" type="Label" parent="Control/MarginContainer/VBoxContainer/MarginContainer/ColorRect/HBoxContainer3"]
@@ -160,17 +180,14 @@ margin_top = 20.0
 margin_right = 1125.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 400, 60 )
-text = "15 руб"
+text = "0"
 valign = 1
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Close" parent="Control" instance=ExtResource( 1 )]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -75.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 75, 75 )
+margin_left = -80.0
+margin_right = 0.0
 text = "x"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-[connection signal="pressed" from="Control/Button" to="." method="close"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Close" to="." method="close"]

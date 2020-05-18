@@ -5,12 +5,13 @@ script/source = "extends Node2D
 
 # Enale ui at load
 
+export (bool) var joystick = false
 export (bool) var show_time = false
 export (String) var time = \"10:00\"
 
 
 func _ready() -> void:
-	UI_INIT.enable_ui()
+	UI_INIT.enable_ui(joystick)
 	if show_time:
 		UI_INIT.show_time(time)
 "

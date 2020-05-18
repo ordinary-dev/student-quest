@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/triggers/Tickets.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Chapter1/Guide.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Sprites/outside/Old guide.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/templates/Mr_singer.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=10]
 
@@ -17,21 +15,20 @@ export (String, FILE, \"*.tscn\") var store_scene
 export (String, FILE, \"*.tscn\") var speaker_scene
 onready var rs = $restore_state
 var mr_singer_act := false
-export(NodePath) var player
 export (String, FILE, \"*.json\") var dialog_v1
 export (String, FILE, \"*.json\") var dialog_v2
 export (String, FILE, \"*.json\") var dialog_2
 
 
 func dialog():
-	if mr_singer_act and PROP.get(\"day1_dialog\") == \"0\":
+	if mr_singer_act and TEMP.get(\"day1_dialog\") == \"0\":
 		DIALOG.show_dialog(dialog_2)
 		mr_singer_act = false
 
 
 func mr_singer():
 	mr_singer_act = true
-	if PROP.get(\"day1_dialog\") == \"0\":
+	if TEMP.get(\"day1_dialog\") == \"0\":
 		DIALOG.show_dialog(dialog_v1)
 	else:
 		DIALOG.show_dialog(dialog_v2)
@@ -43,14 +40,12 @@ func store():
 
 
 func save():
-	TEMP.save(\"day2_player_pos\", 
-		get_node(player).position)
 	TEMP.save(\"day2_dialog_used\", 
 		mr_singer_act)
 
 
 func enter(id:String) -> void:
-	if PROP.get(\"facility\") == id:
+	if TEMP.get(\"facility\") == id:
 		save()
 		SCENES.load_scene(speaker_scene)
 	else:
@@ -74,33 +69,24 @@ func hm():
 
 func _ready():
 	MUSIC.fade_out()
-	PROP.save(\"stage\", \"3\")
-	if TEMP.is_saved(\"day2_player_pos\"):
-		get_node(player).position = TEMP.get(\"day2_player_pos\")
+	if TEMP.is_saved(\"day2_dialog_used\"):
 		mr_singer_act = TEMP.get(\"day2_dialog_used\")
-	else:
-		get_node(player).position = Vector2(-452, 2798)
 "
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 store_scene = "res://Scenes/Chapter1/31.store.tscn"
 speaker_scene = "res://Scenes/Chapter1/31.2.date.tscn"
-player = NodePath("Body")
 dialog_v1 = "res://Dialogs/chapter1/stranger.json"
 dialog_v2 = "res://Dialogs/chapter1/stranger_v2.json"
 dialog_2 = "res://Dialogs/chapter1/memories.json"
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
 
-[node name="Body" parent="." instance=ExtResource( 8 )]
-position = Vector2( -452, 2798 )
-z_index = 1
-collision_layer = 1025
-collision_mask = 0
-
 [node name="Mr_singer" parent="." instance=ExtResource( 9 )]
 position = Vector2( 28.4698, 371.671 )
+z_index = 2
+z_as_relative = false
 
 [node name="Call" parent="." instance=ExtResource( 10 )]
 position = Vector2( 896, 448 )
@@ -109,6 +95,7 @@ obj = NodePath("..")
 method = "dialog"
 
 [node name="EnableUI" parent="." instance=ExtResource( 7 )]
+joystick = true
 show_time = true
 time = "9:45"
 
@@ -119,15 +106,8 @@ object_name = NodePath("..")
 function_name = "store"
 
 [node name="Guide" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1890.31, 421.16 )
-
-[node name="Old guide" type="Sprite" parent="Guide"]
-position = Vector2( 129.325, 88.6293 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 5 )
-vframes = 3
-hframes = 3
-frame = 8
+position = Vector2( 2000, 496 )
+z_as_relative = false
 
 [node name="NS" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4144, 3448 )

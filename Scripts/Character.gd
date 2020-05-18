@@ -3,8 +3,8 @@ extends KinematicBody2D
 # State types
 enum states {DOWN, UP, LEFT, RIGHT}
 export (states) var default_state = states.UP
-
-const speed := 30000
+export (bool) var restore_position = false
+const speed := 500
 
 # Objects
 onready var character = $Character
@@ -44,6 +44,7 @@ enum frames {DOWN_1, UP_1, SIDE_1,
 var water_level := 0
 var water_protection := false setget set_water_protection
 
+
 func set_water_protection(val):
 	water_protection = val
 	if !water_protection:
@@ -53,6 +54,7 @@ func set_water_protection(val):
 	else:
 		water_sprite.visible = false
 		water_sprite.playing = false
+
 
 # Lock input
 func lock() -> void:
@@ -144,36 +146,35 @@ func check_for_col_disable_btn():
 		get_node("CollisionShape2D").disabled = !get_node("CollisionShape2D").disabled
 
 
-# Input processing
-func get_input() -> bool:
-	side_used = false
-	any_button_pressed = false
-	if use_joystick:
-		velocity = joystick.get_value()
-		if velocity.length() > 0:
-			if abs(velocity.x) > abs(velocity.y):
-				if velocity.x > 0:
-					go_right()
-				else:
-					go_left()
+func joystick_processing() -> bool:
+	velocity = joystick.get_value()
+	if velocity.length() > 0:
+		if abs(velocity.x) > abs(velocity.y):
+			if velocity.x > 0:
+				go_right()
 			else:
-				if velocity.y > 0:
-					go_down()
-				else:
-					go_up()
-			velocity = joystick.get_value() * 25000
-			return true
+				go_left()
 		else:
-			if !idle:
-				idle = true
-				anim.stop()
-				if type == states.UP:
-					character.frame = frames.UP_STILL
-				elif type == states.DOWN:
-					character.frame = frames.DOWN_STILL
-				else:
-					character.frame = frames.SIDE_STILL
-			return false
+			if velocity.y > 0:
+				go_down()
+			else:
+				go_up()
+		velocity = joystick.get_value() * speed
+		return true
+	else:
+		if !idle:
+			idle = true
+			anim.stop()
+			if type == states.UP:
+				character.frame = frames.UP_STILL
+			elif type == states.DOWN:
+				character.frame = frames.DOWN_STILL
+			else:
+				character.frame = frames.SIDE_STILL
+		return false
+
+
+func process_buttons() -> bool:
 	# Reset variables
 	velocity = Vector2()
 	check_for_col_disable_btn()
@@ -202,14 +203,29 @@ func get_input() -> bool:
 	return true
 
 
+# Input processing
+func get_input() -> bool:
+	side_used = false
+	any_button_pressed = false
+	if use_joystick:
+		return joystick_processing()
+	return process_buttons()
+
+
 # Invoked constantly
-func _physics_process(delta) -> void:
+func _physics_process(_delta) -> void:
 	# If at least one key has been pressed
 	if get_input():
-		move_and_slide(velocity * delta)
+		velocity = move_and_slide(velocity)
 
 
 func _ready():
+	if restore_position:
+		if TEMP.get("player_pos_id") == SCENES.last_scene_path:
+			if TEMP.is_saved("player_pos_x"):
+				position.x = TEMP.get("player_pos_x")
+				position.y = TEMP.get("player_pos_y")
+	GLOBAL.player_path = get_path()
 	# Set starting direction
 	if default_state == states.UP:
 		character.frame = frames.UP_STILL

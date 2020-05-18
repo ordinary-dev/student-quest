@@ -1,4 +1,4 @@
 {
-    "0": { "name": "MAN", "text": "D11", "next": "1" },
-    "1": { "name": "MAN", "text": "D12" }
+    "0": { "name": "RECTOR", "text": "D11", "next": "1" },
+    "1": { "name": "RECTOR", "text": "D12" }
 }

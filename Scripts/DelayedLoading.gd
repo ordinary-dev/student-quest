@@ -8,7 +8,11 @@ export (bool) var transition_in = true
 export (bool) var transition_out = true
 
 
-func _ready():
-	yield(get_tree().create_timer(delay), "timeout")
+func load_scene() -> void:
 	SCENES.load_scene(
 		next_scene, transition_in, transition_out)
+
+
+func _ready():
+	yield(get_tree().create_timer(delay), "timeout")
+	load_scene()

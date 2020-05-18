@@ -10,7 +10,6 @@ export(Vector2) var dim = Vector2(1, 1)
 export(String, FILE, \"*.tscn\") var ss
 export (NodePath) var sb
 
-
 func _ready():
 	remove_child(get_child(0))
 	var temp = load(ss)
@@ -28,14 +27,14 @@ func _ready():
 
 func _on_body_entered(body):
 	if \"Body\" in body.name:
-		if has_node(\"/root/Node2D/Body\"):
-			get_node(\"/root/Node2D/Body\").enable_water()
+		if has_node(GLOBAL.player_path):
+			get_node(GLOBAL.player_path).enable_water()
 
 
 func _on_body_exited(body):
 	if \"Body\" in body.name:
-		if has_node(\"/root/Node2D/Body\"):
-			get_node(\"/root/Node2D/Body\").disable_water()
+		if has_node(GLOBAL.player_path):
+			get_node(GLOBAL.player_path).disable_water()
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -50,6 +49,8 @@ sb = NodePath("StaticBody2D")
 
 [node name="StaticBody2D" type="Area2D" parent="."]
 monitorable = false
+collision_layer = 0
+collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource( 2 )

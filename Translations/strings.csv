@@ -8,7 +8,6 @@ D21,"Oh hello, I'm Mr. Dudec","О, привет, я Мистер Дудец"
 D22,I have not often been noticed recently,Меня не часто замечают в последнее время
 D23,I think we'll meet again. Do not be late.,"Я думаю, мы еще встретимся. Не опаздывай."
 BYE,Goodbye,Прощай
-D41,"Чу-чух, чу-чух; чу-чух, чу-чух...","Чу-чух, чу-чух; чу-чух, чу-чух..."
 D42,"Hey hey look, it's already morning, we'll be there soon","Эй, эй, смотри, уже утро, мы скоро приедем"
 GUIDE,Guide,Гид
 D51,"Hi, are you from the Faculty of Mechanics and Mathematics?","Привет, ты же с механико-математического факультета?"
@@ -61,3 +60,7 @@ MESSAGE1,"Do not forget, tomorrow we have initiation into students! The bus will
 MESSAGE2,"Yes, be sure to come, last year was a lot of fun!","Да, обязательно приходите, в прошлом году было очень весело!"
 CLOSED,Closed,Заперто
 NOENTER,You cannot come here,Вы не можете сюда зайти
+1ST_FLOOR,1st floor,1 этаж
+2ND_FLOOR,2nd floor,2 этаж
+3RD_FLOOR,3rd floor,3 этаж
+EXITBUILDING,Exit building,Выйти из здания

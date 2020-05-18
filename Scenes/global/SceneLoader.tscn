@@ -3,7 +3,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Tween
 
-
+var last_scene_path : String
 const time := 0.5
 const start := Color(0, 0, 0, 0)
 const end := Color(0, 0, 0, 1)
@@ -40,17 +40,21 @@ func fade_out() -> void:
 
 # Load any scene by path
 func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool = true) -> void:
+	# Check
+	var file_exists := Directory.new().file_exists(scene_name)
+	if (!file_exists):
+		NOTIFY.show(\"Can't find scene\")
+		return
+	
+	last_scene_path = scene_name
 	# Fade in
 	if anim_start:
 		fade_in()
 		yield(get_tree().create_timer(time), \"timeout\")
 	
 	# Scene loading
-	var file_exists := Directory.new().file_exists(scene_name)
-	if (file_exists):
-		assert(get_tree().change_scene(scene_name) == OK)
-	else:
-		NOTIFY.show(\"Can't find scene\")
+	GLOBAL.player_path = \"\"
+	assert(get_tree().change_scene(scene_name) == OK)
 	
 	# Fade out
 	if anim_end:

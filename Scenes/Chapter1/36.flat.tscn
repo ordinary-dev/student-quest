@@ -9,8 +9,8 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-
 export (String,FILE,\"*.tscn\") var scene
+
 
 func internet():
 	SCENES.load_scene(scene)
@@ -18,7 +18,6 @@ func internet():
 
 func _ready():
 	MUSIC.fade_out()
-	PROP.save(\"stage\", \"4\")
 "
 
 [sub_resource type="OccluderPolygon2D" id=2]
@@ -60,5 +59,6 @@ object_name = NodePath("..")
 function_name = "internet"
 
 [node name="EnableUI" parent="." instance=ExtResource( 5 )]
+joystick = true
 
 [editable path="Body"]

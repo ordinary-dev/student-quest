@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=1]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -6,8 +8,10 @@ script/source = "extends Control
 export(String, FILE, \"*.json\") var dialog_path
 export(String, FILE, \"*.tscn\") var next_scene
 
+
 func _on_dialog_over():
 	SCENES.load_scene(next_scene)
+
 
 func _ready():
 	DIALOG.show_dialog(dialog_path, \"/root/Control\", \"_on_dialog_over\")
@@ -24,3 +28,5 @@ __meta__ = {
 }
 dialog_path = "res://Dialogs/chapter1/bye.json"
 next_scene = "res://Scenes/Chapter1/04.date2.tscn"
+
+[node name="DisableUI" parent="." instance=ExtResource( 1 )]
