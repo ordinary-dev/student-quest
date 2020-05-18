@@ -32,12 +32,14 @@ export (NodePath) var new_game_btn
 # Create new game
 func _new_game():
 	FX.btn_click()
+	GLOBAL.write_settings()
 	SCENES.load_scene(new_game)
 
 
 # Show saved games
 func _load_game():
 	FX.btn_click()
+	GLOBAL.write_settings()
 	get_node(load_scene).get_node(\"Control\")._refresh()
 	get_node(load_scene).visible = !get_node(load_scene).visible
 	get_node(settings_scene).visible = false
@@ -213,7 +215,7 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Particles2D" parent="." instance=ExtResource( 12 )]
