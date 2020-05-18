@@ -13,6 +13,7 @@ var glob_argv:String
 
 # Enable the interface?
 var return_ui : bool
+var return_joystick : bool
 
 
 func hide_dialog():
@@ -32,7 +33,7 @@ func hide_dialog():
 			get_node(glob_obj).call(glob_fnc, glob_argv)
 	glob_obj = ""
 	if return_ui:
-		UI_INIT.enable_ui()
+		UI_INIT.enable_ui(return_joystick)
 
 
 func _process(_delta):
@@ -77,6 +78,7 @@ func show_dialog(path:String, obj:String = "", fnc:String = "", argv:String="") 
 		return_ui = true
 	else:
 		return_ui = false
+	return_joystick = UI.get_node("Joystick").visible
 	# Sound
 	FX.dialog()
 	
