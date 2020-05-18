@@ -29,12 +29,6 @@ __meta__ = {
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="NS" parent="." instance=ExtResource( 2 )]
-position = Vector2( -528, 1248 )
-label = "NS"
-object_name = NodePath("..")
-function_name = "next_facility"
-
 [node name="Guard" parent="." instance=ExtResource( 6 )]
 position = Vector2( 512, 288 )
 dialog_path = "res://Dialogs/chapter1/guard.json"

@@ -79,6 +79,7 @@ function_name = "street"
 
 [node name="block_floor_0" type="StaticBody2D" parent="collision"]
 position = Vector2( 1160, 448 )
+z_index = 1
 collision_layer = 0
 collision_mask = 1024
 
@@ -166,3 +167,9 @@ collision_mask = 1024
 position = Vector2( 540.49, 234.164 )
 z_index = 1
 shape = SubResource( 6 )
+
+[node name="MATH" parent="." instance=ExtResource( 3 )]
+position = Vector2( -902.909, 1631.98 )
+label = "MATH"
+object_name = NodePath("..")
+function_name = "blocked"

@@ -20,6 +20,10 @@ func get_block() -> bool:
 	return block_turnstile
 
 
+func blocked() -> void:
+	NOTIFY.show("NOENTER")
+
+
 func teleport(node : String) -> void:
 	SCENES.fade_in()
 	yield(get_tree().create_timer(SCENES.time), "timeout")

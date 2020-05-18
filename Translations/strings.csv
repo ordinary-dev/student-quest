@@ -60,3 +60,6 @@ MESSAGE1,"Do not forget, tomorrow we have initiation into students! The bus will
 MESSAGE2,"Yes, be sure to come, last year was a lot of fun!","Да, обязательно приходите, в прошлом году было очень весело!"
 CLOSED,Closed,Заперто
 NOENTER,You cannot come here,Вы не можете сюда зайти
+1ST_FLOOR,1st floor,1 этаж
+2ND_FLOOR,2nd floor,2 этаж
+3RD_FLOOR,3rd floor,3 этаж

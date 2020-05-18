@@ -17,10 +17,6 @@ func adventure_begins():
 	SCENES.load_scene(hidden_room)
 
 
-func next_facility():
-	NOTIFY.show("У вас нет доступа")
-
-
 func turn_lights_off():
 	yield(get_tree().create_timer(2), "timeout")
 	TEMP.save("LIGHTS_OFF", true)
