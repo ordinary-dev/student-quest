@@ -1,18 +1,18 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/fireworks/fireworks.tres" type="Texture" id=1]
-[ext_resource path="res://Sprites/character.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/character_main.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/light.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/backgrounds/Sky.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/backgrounds/Grass.png" type="Texture" id=7]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 
-var fw = load(\"res://Audio/fx/Firework_explosion.wav\")
-
-
+var fw = preload(\"res://Audio/fx/Firework_explosion.wav\")
 export (String, FILE, \"*.tscn\") var next_scene
 
 
@@ -150,7 +150,15 @@ func _ready():
 script = SubResource( 1 )
 next_scene = "res://Scenes/Chapter1/03.dialog1.tscn"
 
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+light_mask = 0
+position = Vector2( 987.723, 605.678 )
+scale = Vector2( 38.8549, 38.8549 )
+texture = ExtResource( 6 )
+
 [node name="AnimatedSprite" type="Sprite" parent="."]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
 light_mask = 2
 position = Vector2( 462.073, 501.133 )
 scale = Vector2( 8, 8 )
@@ -159,6 +167,7 @@ vframes = 12
 hframes = 13
 
 [node name="AnimatedSprite2" type="Sprite" parent="."]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
 light_mask = 2
 position = Vector2( 1279.37, 698.113 )
 scale = Vector2( 8, 8 )
@@ -168,6 +177,7 @@ vframes = 12
 hframes = 13
 
 [node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
 position = Vector2( 856.547, 1028.28 )
 scale = Vector2( 8.98045, 8.98045 )
 z_index = 5
@@ -177,17 +187,13 @@ hframes = 3
 frame = 7
 region_rect = Rect2( 0, 0, 18, 36 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-modulate = Color( 0, 0, 0, 0.980392 )
-light_mask = 2
-position = Vector2( 854.575, 1016.44 )
-scale = Vector2( 7.9637, 7.82004 )
-z_index = 5
-texture = ExtResource( 2 )
-vframes = 3
-hframes = 3
-frame = 7
-region_rect = Rect2( 0, 0, 18, 36 )
+[node name="Grass" type="Sprite" parent="."]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+light_mask = 0
+position = Vector2( 959.37, 787.146 )
+scale = Vector2( 38.8549, 38.8549 )
+z_index = 6
+texture = ExtResource( 7 )
 
 [node name="Light2D2" type="Light2D" parent="."]
 position = Vector2( 848.941, 559.133 )
@@ -195,7 +201,6 @@ scale = Vector2( 6, 6 )
 texture = ExtResource( 3 )
 texture_scale = 2.17
 energy = 2.59
-mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/camera = SubResource( 2 )
