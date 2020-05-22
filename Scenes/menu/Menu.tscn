@@ -231,8 +231,9 @@ __meta__ = {
 }
 
 [node name="Left" type="MarginContainer" parent="Menu"]
-margin_right = 958.0
+margin_right = 960.0
 margin_bottom = 1080.0
+rect_min_size = Vector2( 960, 0 )
 size_flags_horizontal = 3
 custom_constants/margin_right = 100
 custom_constants/margin_top = 150
@@ -243,7 +244,7 @@ custom_constants/margin_bottom = 150
 modulate = Color( 0.992157, 0.843137, 0.823529, 0.886275 )
 margin_left = 100.0
 margin_top = 150.0
-margin_right = 858.0
+margin_right = 860.0
 margin_bottom = 930.0
 size_flags_horizontal = 3
 __meta__ = {
@@ -251,7 +252,7 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Menu/Left/VBox"]
-margin_right = 758.0
+margin_right = 760.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
 custom_fonts/font = ExtResource( 9 )
@@ -260,7 +261,7 @@ align = 1
 
 [node name="BtnNew" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 104.0
-margin_right = 758.0
+margin_right = 760.0
 margin_bottom = 270.0
 focus_neighbour_bottom = NodePath("../BtnLoad")
 focus_mode = 2
@@ -269,7 +270,7 @@ text = "NEW_GAME"
 
 [node name="BtnLoad" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 274.0
-margin_right = 758.0
+margin_right = 760.0
 margin_bottom = 440.0
 focus_neighbour_top = NodePath("../BtnNew")
 focus_neighbour_bottom = NodePath("../BtnSettings")
@@ -279,7 +280,7 @@ text = "LOAD_GAME"
 
 [node name="BtnSettings" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 444.0
-margin_right = 758.0
+margin_right = 760.0
 margin_bottom = 610.0
 focus_neighbour_top = NodePath("../BtnLoad")
 focus_neighbour_right = NodePath("../../../Right/Settings")
@@ -290,7 +291,7 @@ text = "SETTINGS"
 
 [node name="BtnQuit" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
 margin_top = 614.0
-margin_right = 758.0
+margin_right = 760.0
 margin_bottom = 780.0
 focus_neighbour_top = NodePath("../BtnSettings")
 focus_neighbour_right = NodePath("../../../Right/Confirm")
@@ -299,37 +300,33 @@ size_flags_vertical = 3
 text = "QUIT"
 
 [node name="Right" type="MarginContainer" parent="Menu"]
-margin_left = 962.0
-margin_right = 1920.0
+margin_left = 964.0
+margin_right = 1924.0
 margin_bottom = 1080.0
+rect_min_size = Vector2( 960, 0 )
 size_flags_horizontal = 3
 custom_constants/margin_right = 100
 custom_constants/margin_top = 150
-custom_constants/margin_left = 100
 custom_constants/margin_bottom = 150
 
 [node name="Confirm" parent="Menu/Right" instance=ExtResource( 5 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 100.0
 margin_top = 150.0
-margin_right = 858.0
+margin_right = 860.0
 margin_bottom = 930.0
 
 [node name="Settings" parent="Menu/Right" instance=ExtResource( 3 )]
 visible = false
-margin_left = 100.0
 margin_top = 150.0
-margin_right = 858.0
 margin_bottom = 930.0
 focus_neighbour_left = NodePath("../../Left/VBox/BtnSettings")
 size_flags_horizontal = 3
 
 [node name="Load" parent="Menu/Right" instance=ExtResource( 4 )]
-margin_left = 100.0
 margin_top = 150.0
-margin_right = 858.0
+margin_right = 860.0
 margin_bottom = 930.0
 
 [node name="Control" parent="Menu/Right/Load" index="0"]
