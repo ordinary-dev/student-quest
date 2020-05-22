@@ -18,7 +18,7 @@ polygon = PoolVector2Array( 456.935, 97.337, 1397.95, 94.4342, 1392.6, -432.044,
 
 [node name="Control" type="Node2D"]
 script = ExtResource( 2 )
-next_scene = "res://Scenes/Chapter1/10.city.tscn"
+next_scene = "res://Scenes/Beginning/11.city.tscn"
 delay = 1.5
 transition_in = false
 transition_out = false
@@ -99,7 +99,6 @@ light_mask = 2
 
 [node name="Light2D2" type="Light2D" parent="."]
 position = Vector2( 70.3776, 78.8193 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 8 )
 texture_scale = 50.0
 energy = 0.6

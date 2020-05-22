@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/FTemplate.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/Faculties/math.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Faculties/ns.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Faculties/hm.png" type="Texture" id=6]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
 
-onready var t = [$ColorRect/VBoxContainer/HBoxContainer/MarginContainer, 
-	$ColorRect/VBoxContainer/HBoxContainer/MarginContainer2, 
-	$ColorRect/VBoxContainer/HBoxContainer/MarginContainer3]
-onready var btn = $ColorRect/VBoxContainer/ColorRect
+onready var t = [$ColorRect/VBoxContainer/HBoxContainer/Math, 
+	$ColorRect/VBoxContainer/HBoxContainer/Ns, 
+	$ColorRect/VBoxContainer/HBoxContainer/Hm]
+onready var btn = $ColorRect/VBoxContainer/Button
 var active : int = -1
 export (String, FILE, \"*.tscn\") var scene
 
@@ -71,18 +74,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 637.0
+[node name="Math" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
 margin_bottom = 996.0
 focus_neighbour_right = NodePath("../MarginContainer2")
 focus_neighbour_bottom = NodePath("../../ColorRect")
 fac = "MATH"
+image = ExtResource( 4 )
 
-[node name="MarginContainer2" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Ns" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
 margin_left = 641.0
 margin_right = 1278.0
 margin_bottom = 996.0
@@ -90,18 +89,18 @@ focus_neighbour_left = NodePath("../MarginContainer")
 focus_neighbour_right = NodePath("../MarginContainer3")
 focus_neighbour_bottom = NodePath("../../ColorRect")
 fac = "NS"
+image = ExtResource( 5 )
 
-[node name="MarginContainer3" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Hm" parent="ColorRect/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
 margin_left = 1282.0
 margin_right = 1920.0
 margin_bottom = 996.0
 focus_neighbour_left = NodePath("../MarginContainer2")
 focus_neighbour_bottom = NodePath("../../ColorRect")
 fac = "HM"
+image = ExtResource( 6 )
 
-[node name="ColorRect" parent="ColorRect/VBoxContainer" instance=ExtResource( 1 )]
+[node name="Button" parent="ColorRect/VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 1000.0
 margin_right = 1920.0
 margin_bottom = 1080.0
@@ -111,7 +110,7 @@ disabled = true
 text = "SELECT"
 
 [node name="DisableUI" parent="." instance=ExtResource( 3 )]
-[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer" to="." method="set_active" binds= [ 0 ]]
-[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer2" to="." method="set_active" binds= [ 1 ]]
-[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/MarginContainer3" to="." method="set_active" binds= [ 2 ]]
-[connection signal="pressed" from="ColorRect/VBoxContainer/ColorRect" to="." method="load_next"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/Math" to="." method="set_active" binds= [ 0 ]]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/Ns" to="." method="set_active" binds= [ 1 ]]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/Hm" to="." method="set_active" binds= [ 2 ]]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Button" to="." method="load_next"]

@@ -23,31 +23,31 @@ func _ready():
 	MUSIC.stop()
 "
 
-[sub_resource type="OccluderPolygon2D" id=5]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 741.348, 839.909, 740.491, 863.916, 869.097, 862.201, 867.382, 840.766 )
 
-[sub_resource type="OccluderPolygon2D" id=7]
+[sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( 739.111, 838.135, 740.74, 868.271, 1026.63, 876.416, 867.803, 838.949 )
 
-[sub_resource type="OccluderPolygon2D" id=8]
+[sub_resource type="OccluderPolygon2D" id=4]
 polygon = PoolVector2Array( 735.492, 837.28, 628.227, 860.141, 867.765, 858.1, 866.584, 837.28 )
 
-[sub_resource type="OccluderPolygon2D" id=6]
+[sub_resource type="OccluderPolygon2D" id=5]
 polygon = PoolVector2Array( 977.126, 838.194, 976.269, 858.771, 989.987, 857.914, 989.987, 837.337 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 8.0152, 7.04756 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 8.17197, 7.01263 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 135, 30 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 9.16904, 7.86975 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6.62711, 6.79636 )
 
 [node name="Node2D" type="Node2D"]
@@ -77,29 +77,29 @@ range_z_max = 4
 shadow_enabled = true
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
-occluder = SubResource( 5 )
+occluder = SubResource( 2 )
 
 [node name="LightOccluder2D5" type="LightOccluder2D" parent="."]
 position = Vector2( 344.584, -1.75806 )
-occluder = SubResource( 7 )
+occluder = SubResource( 3 )
 
 [node name="LightOccluder2D6" type="LightOccluder2D" parent="."]
 position = Vector2( -337.552, -3.51611 )
-occluder = SubResource( 8 )
+occluder = SubResource( 4 )
 
 [node name="LightOccluder2D4" type="LightOccluder2D" parent="."]
-occluder = SubResource( 6 )
+occluder = SubResource( 5 )
 
 [node name="LightOccluder2D7" type="LightOccluder2D" parent="."]
 position = Vector2( -339.31, 1.75806 )
-occluder = SubResource( 6 )
+occluder = SubResource( 5 )
 
 [node name="Dialog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 808.866, 494.028 )
 dialog_path = "res://Dialogs/chapter1/rector.json"
 person = "RECTOR"
 load_scene = true
-scene_path = "res://Scenes/Chapter1/12.faculty_choice.tscn"
+scene_path = "res://Scenes/Beginning/13.faculty_choice.tscn"
 
 [node name="EnableUI" parent="." instance=ExtResource( 6 )]
 joystick = true
@@ -134,7 +134,7 @@ collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table-2/StaticBody2D"]
 position = Vector2( 0, -0.116394 )
-shape = SubResource( 11 )
+shape = SubResource( 6 )
 
 [node name="table-4" type="Sprite" parent="."]
 position = Vector2( 1216.58, 332.318 )
@@ -147,7 +147,7 @@ collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table-4/StaticBody2D"]
-shape = SubResource( 12 )
+shape = SubResource( 7 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -158,7 +158,7 @@ collision_mask = 1024
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -1.70648, -1.1376 )
 z_index = 2
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -179,7 +179,7 @@ collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/rector/StaticBody2D"]
 position = Vector2( -1.08987, -6.71381 )
-shape = SubResource( 4 )
+shape = SubResource( 9 )
 
 [node name="table" type="Sprite" parent="YSort"]
 light_mask = 2
@@ -210,4 +210,4 @@ collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/chair/StaticBody2D"]
 position = Vector2( -1.55301, -6.80939 )
-shape = SubResource( 13 )
+shape = SubResource( 10 )

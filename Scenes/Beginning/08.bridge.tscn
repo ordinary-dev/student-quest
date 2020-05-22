@@ -48,7 +48,7 @@ func load_scene() -> void:
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/Chapter1/08.hall.tscn"
+next_scene = "res://Scenes/Beginning/09.hall.tscn"
 start_pos = Vector2( 125, 596 )
 end_pos = Vector2( 1500, 596 )
 time = 3.0
