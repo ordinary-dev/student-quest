@@ -46,7 +46,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 dialog_path = "res://Dialogs/Beginning/Night.json"
-next_scene = "res://Scenes/Chapter1/04.date2.tscn"
+next_scene = "res://Scenes/Beginning/04.date.tscn"
 
 [node name="DisableUI" parent="." instance=ExtResource( 1 )]
 

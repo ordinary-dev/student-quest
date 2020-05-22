@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light_new.png-4c671235099abe04b7da02d840f3086d.stex"
+path="res://.import/sky.png-1f8a7c936cb053a133b931fe97f37b36.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/light_new.png"
-dest_files=[ "res://.import/light_new.png-4c671235099abe04b7da02d840f3086d.stex" ]
+source_file="res://Sprites/train/background/sky.png"
+dest_files=[ "res://.import/sky.png-1f8a7c936cb053a133b931fe97f37b36.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
