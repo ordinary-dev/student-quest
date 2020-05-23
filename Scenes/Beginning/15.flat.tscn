@@ -15,7 +15,7 @@ func sleep():
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-date30 = "res://Scenes/Chapter1/15.date.tscn"
+date30 = "res://Scenes/Beginning/16.date.tscn"
 
 [node name="Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 494.741, 111.245 )

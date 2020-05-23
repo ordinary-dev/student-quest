@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Mr_singer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Chapter1/Guide.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/triggers/Tickets.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Chapter1/Guide.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/triggers/Tickets.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -24,35 +24,14 @@ func save():
 		TEMP.save(\"day1_dialog\", \"1\")
 	else:
 		TEMP.save(\"day1_dialog\", \"0\")
+	# Player position
+	$Street._save()
 
 
 # Перейти в магазин
 func to_store() -> void:
 	save()
 	SCENES.load_scene(store_scene)
-
-
-func enter(id:String) -> void:
-	if TEMP.get(\"facility\") == id:
-		save()
-		SCENES.load_scene(next_scene)
-	else:
-		NOTIFY.show(\"NOENTER\")
-
-
-# Вход в мехмат
-func math():
-	enter(\"0\")
-
-
-# Вход в естественно-научный факультет
-func ns():
-	enter(\"1\")
-
-
-# Вход в гуманитарный факультет
-func hum():
-	enter(\"2\")
 
 
 # Войти в дом садовника
@@ -69,11 +48,11 @@ func _ready():
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/Chapter1/18.date.tscn"
-store_scene = "res://Scenes/Chapter1/17.store.tscn"
+next_scene = "res://Scenes/Beginning/19.date.tscn"
+store_scene = "res://Scenes/Beginning/18.store.tscn"
 singer = NodePath("Mr_Singer_Dialog")
 
-[node name="Street" parent="." instance=ExtResource( 1 )]
+[node name="Street" parent="." instance=ExtResource( 7 )]
 
 [node name="Mr_singer" parent="." instance=ExtResource( 2 )]
 position = Vector2( 23.1483, 370.225 )
@@ -84,44 +63,27 @@ z_as_relative = false
 position = Vector2( 56, 352 )
 dialog_path = "res://Dialogs/chapter1/stranger.json"
 
-[node name="Store_Trigger" parent="." instance=ExtResource( 6 )]
+[node name="Store_Trigger" parent="." instance=ExtResource( 1 )]
 position = Vector2( 552, 216 )
 label = "STORE"
 object_name = NodePath("..")
 function_name = "to_store"
 
-[node name="MATH" parent="." instance=ExtResource( 6 )]
-position = Vector2( 1280, 6328 )
-label = "MATH"
-object_name = NodePath("..")
-function_name = "math"
-
-[node name="NS" parent="." instance=ExtResource( 6 )]
-position = Vector2( 4144, 3488 )
-label = "NS"
-object_name = NodePath("..")
-function_name = "ns"
-
-[node name="HM" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3872, 7816 )
-label = "HM"
-object_name = NodePath("..")
-function_name = "hum"
-
-[node name="GHouse" parent="." instance=ExtResource( 6 )]
+[node name="GHouse" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 1552 )
 label = "GHOUSE"
 object_name = NodePath("..")
 function_name = "enter_house"
 
-[node name="Guide_Dialog" parent="." instance=ExtResource( 5 )]
+[node name="Guide_Dialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2056, 488 )
 z_index = 5
 
-[node name="EnableUI" parent="." instance=ExtResource( 7 )]
+[node name="EnableUI" parent="." instance=ExtResource( 5 )]
 joystick = true
 show_time = true
 time = "9:45"
 
-[node name="Area2D" parent="." instance=ExtResource( 10 )]
+[node name="Tickets" parent="." instance=ExtResource( 6 )]
 position = Vector2( -392.383, -103.691 )
+object_name = NodePath("../Tickets/Node2D")

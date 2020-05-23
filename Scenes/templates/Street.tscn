@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Sprites/outside/store.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
@@ -30,9 +30,12 @@
 [ext_resource path="res://Scenes/templates/Trees/Tree_type_1.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/templates/Bush_type_1.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=31]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
+
+# Position
 
 enum positions {HOSTEL, FOUNTAIN}
 export (positions) var initial_position = positions.HOSTEL
@@ -40,12 +43,74 @@ export (positions) var initial_position = positions.HOSTEL
 const hostel_pos = Vector2(-313, 2363)
 const fountain_pos = Vector2(2337, 3958)
 
-func _ready():
-	if TEMP.get(\"player_pos_id\") != SCENES.last_scene_path or !TEMP.is_saved(\"player_pos_x\"):
-		if initial_position == positions.HOSTEL:
+# Scenes
+
+export (bool) var allow_entrance = true
+export (String, FILE, \"*.tscn\") var math_scene
+export (String, FILE, \"*.tscn\") var ns_scene
+export (String, FILE, \"*.tscn\") var hm_scene
+
+# Position
+
+func _save() -> void:
+	TEMP.save(\"player_pos_id\", SCENES.last_scene_path)
+	TEMP.save(\"player_pos_x\", get_node(GLOBAL.player_path).position.x)
+	TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y) 
+
+
+func init() -> void:
+	match initial_position:
+		positions.HOSTEL:
 			get_node(GLOBAL.player_path).position = hostel_pos
-		else:
-			get_node(GLOBAL.player_path).position = fountain_pos
+		positions.FOUNTAIN:
+			get_node(GLOBAL.player_path).position = fountain_pos			
+
+
+func restore() -> void:
+	get_node(GLOBAL.player_path).position.x = TEMP.get(\"player_pos_x\")
+	get_node(GLOBAL.player_path).position.y = TEMP.get(\"player_pos_y\")
+
+
+func is_position_saved() -> bool:
+	return(TEMP.get(\"player_pos_id\") == SCENES.last_scene_path 
+		and TEMP.is_saved(\"player_pos_x\")
+		and TEMP.is_saved(\"player_pos_y\"))
+
+
+func _ready() -> void:
+	if is_position_saved():
+		restore()
+	else:
+		init()
+	# Buildings
+	if !allow_entrance:
+		remove_child($Faculties)
+
+# Buildings
+
+func enter(id : String) -> void:
+	if TEMP.get(\"facility\") == id:
+		match id:
+			\"0\":
+				SCENES.load_scene(math_scene)
+			\"1\":
+				SCENES.load_scene(ns_scene)
+			\"2\":
+				SCENES.load_scene(hm_scene)
+	else:
+		NOTIFY.show(\"NOENTER\")
+
+ 
+func math():
+	enter(\"0\")
+
+ 
+func ns():
+	enter(\"1\")
+
+ 
+func hum():
+	enter(\"2\")
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -2378,3 +2443,23 @@ scale = Vector2( 4, 4 )
 [node name="Body" parent="YSort_global" instance=ExtResource( 30 )]
 position = Vector2( -313, 2363 )
 restore_position = true
+
+[node name="Faculties" type="Node2D" parent="."]
+
+[node name="NS" parent="Faculties" instance=ExtResource( 31 )]
+position = Vector2( 4146.18, 3483.57 )
+label = "NS"
+object_name = NodePath("../..")
+function_name = "ns"
+
+[node name="MATH" parent="Faculties" instance=ExtResource( 31 )]
+position = Vector2( 1279.6, 6345.17 )
+label = "NS"
+object_name = NodePath("../..")
+function_name = "math"
+
+[node name="HM" parent="Faculties" instance=ExtResource( 31 )]
+position = Vector2( 3869.03, 7822.18 )
+label = "NS"
+object_name = NodePath("../..")
+function_name = "hm"

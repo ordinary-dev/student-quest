@@ -5,4 +5,4 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="map" parent="." instance=ExtResource( 1 )]
-street_scene = "res://Scenes/Chapter1/16.first_day.tscn"
+street_scene = "res://Scenes/Beginning/17.first_day.tscn"
