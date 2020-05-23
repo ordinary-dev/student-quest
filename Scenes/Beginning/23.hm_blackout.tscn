@@ -12,7 +12,7 @@ script = ExtResource( 1 )
 hidden_room = "res://Scenes/Chapter1/23.stairs.tscn"
 
 [node name="Node2D" parent="." instance=ExtResource( 7 )]
-street_path = "res://Scenes/menu/Menu.tscn"
+street_path = "res://Scenes/Ignoring/1.Lifeguards.tscn"
 block_turnstile = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
