@@ -10,4 +10,5 @@ __meta__ = {
 }
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
+next_scene_path = "res://Scenes/Ignoring/4.Date.tscn"
 messages = [ "CHAT_1", "CHAT_2", "CHAT_3", "CHAT_4", "CHAT_5", "CHAT_6", "CHAT_7" ]
