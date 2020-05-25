@@ -140,12 +140,6 @@ func go_up() -> void:
 	velocity.y -= 1
 
 
-# Disable collisions when the HOME button is pressed
-func check_for_col_disable_btn():
-	if Input.is_action_just_pressed("ui_home"):
-		get_node("CollisionShape2D").disabled = !get_node("CollisionShape2D").disabled
-
-
 func joystick_processing() -> bool:
 	velocity = joystick.get_value()
 	if velocity.length() > 0:
@@ -177,7 +171,6 @@ func joystick_processing() -> bool:
 func process_buttons() -> bool:
 	# Reset variables
 	velocity = Vector2()
-	check_for_col_disable_btn()
 	# Process 4 directions
 	if Input.is_action_pressed('ui_right'):
 		go_right()
