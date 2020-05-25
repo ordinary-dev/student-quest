@@ -6,25 +6,24 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-
 export (Array, String, FILE, \"*.json\") var dialogs
 
 
-func get_dialog_number() -> String:
-	if GLOBAL.loaded != \"-1\":
-		var fac = TEMP.get(\"facility\")
-		if fac == \"0\":
+func get_dialog_path() -> String:
+	var fac = TEMP.get(\"facility\")
+	match fac:
+		\"0\":
 			return dialogs[0]
-		if fac == \"1\":
+		\"1\":
 			return dialogs[1]
-		if fac == \"2\":
+		\"2\":
 			return dialogs[2]
 	NOTIFY.show(\"NOTLOADED\")
 	return \"-1\"
 
 
 func activate() -> void:
-	DIALOG.show_dialog(get_dialog_number())
+	DIALOG.show_dialog(get_dialog_path())
 "
 
 [sub_resource type="RectangleShape2D" id=2]
