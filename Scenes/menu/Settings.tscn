@@ -146,7 +146,6 @@ ost_text = NodePath("AUDIO/Audio/Music/HBoxContainer/Label")
 fx_text = NodePath("AUDIO/Audio/Effects/HBoxContainer/Label")
 
 [node name="LANG" type="MarginContainer" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 62.0
@@ -159,7 +158,7 @@ custom_constants/margin_bottom = 50
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 810.0
-margin_bottom = 384.0
+margin_bottom = 214.0
 
 [node name="English" parent="LANG/VBoxContainer" instance=ExtResource( 6 )]
 margin_right = 760.0
@@ -177,6 +176,7 @@ focus_mode = 2
 text = "Russian"
 
 [node name="AUDIO" type="MarginContainer" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 62.0
@@ -303,7 +303,7 @@ fullscreen_toggle = NodePath("../GRAPHICS/VBoxContainer/CheckButton2")
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 810.0
-margin_bottom = 384.0
+margin_bottom = 214.0
 
 [node name="CheckButton" type="CheckButton" parent="GRAPHICS/VBoxContainer"]
 margin_right = 691.0
@@ -338,7 +338,7 @@ custom_constants/margin_bottom = 50
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 810.0
-margin_bottom = 384.0
+margin_bottom = 214.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
@@ -367,7 +367,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "studentquest.github.io
 
-v 4.0"
+v 4.1"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
