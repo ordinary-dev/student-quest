@@ -34,5 +34,5 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_scene = "res://Scenes/Chapter1/27.flat.tscn"
+next_scene = "res://Scenes/menu/Menu.tscn"
 [connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]
