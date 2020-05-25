@@ -44,29 +44,6 @@ func save():
 		mr_singer_act)
 
 
-func enter(id:String) -> void:
-	if TEMP.get(\"facility\") == id:
-		save()
-		SCENES.load_scene(speaker_scene)
-	else:
-		NOTIFY.show(\"NOENTER\")
-
-
-# Вход в мехмат
-func math():
-	enter(\"0\")
-
-
-# Вход в естественно-научный факультет
-func ns():
-	enter(\"1\")
-
-
-# Вход в гуманитарный факультет
-func hm():
-	enter(\"2\")
-
-
 func _ready():
 	MUSIC.fade_out()
 	if TEMP.is_saved(\"day2_dialog_used\"):
@@ -82,6 +59,9 @@ dialog_v2 = "res://Dialogs/chapter1/stranger_v2.json"
 dialog_2 = "res://Dialogs/chapter1/memories.json"
 
 [node name="Node2D" parent="." instance=ExtResource( 2 )]
+math_scene = "res://Scenes/Chapter1/31.2.date.tscn"
+ns_scene = "res://Scenes/Chapter1/31.2.date.tscn"
+hm_scene = "res://Scenes/Chapter1/31.2.date.tscn"
 
 [node name="Mr_singer" parent="." instance=ExtResource( 9 )]
 position = Vector2( 28.4698, 371.671 )
@@ -108,24 +88,6 @@ function_name = "store"
 [node name="Guide" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2000, 496 )
 z_as_relative = false
-
-[node name="NS" parent="." instance=ExtResource( 1 )]
-position = Vector2( 4144, 3448 )
-label = "NS"
-object_name = NodePath("..")
-function_name = "ns"
-
-[node name="MATH" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1280, 6336 )
-label = "MATH"
-object_name = NodePath("..")
-function_name = "math"
-
-[node name="HM" parent="." instance=ExtResource( 1 )]
-position = Vector2( 3872, 7816 )
-label = "HM"
-object_name = NodePath("..")
-function_name = "hm"
 
 [node name="Ticket_window" parent="." instance=ExtResource( 3 )]
 position = Vector2( -383.391, -104.215 )
