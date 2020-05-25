@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/train/field-no-clouds.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/train/cloud.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/light_new.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Shake.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/train/inside_the_train.png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.json\") var dialog_path
+export (String, FILE, \"*.tscn\") var next
+
+
+func _next_scene():
+	SCENES.load_scene(next)
+
+
+func _ready():
+	DIALOG.show_dialog(dialog_path, \"/root/Node2D\", \"_next_scene\")
+"
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 990.03, 310.03, 989.999, 279.986, 1000.05, 279.986, 1000.09, 260.058, 1010.05, 260.058, 1010.05, 250.003, 1019.89, 250.033, 1019.99, 230.013, 1030.03, 230.045, 1030.06, 210.002, 1039.97, 209.873, 1040, 199.932, 1049.91, 199.964, 1050, 170.033, 1060.02, 169.999, 1060.02, 149.985, 1069.95, 149.951, 1070.01, 139.995, 1080.04, 139.961, 1080.04, 130.004, 1090, 130.038, 1090.03, 120.014, 1100.05, 120.014, 1099.95, 110.024, 1120, 109.888, 1119.86, 99.9993, 1261.15, 100.004, 1264.25, 269.933, 1249.94, 269.856, 1249.94, 260.007, 1240.09, 260.007, 1240.01, 249.927, 1229.7, 249.85, 1229.78, 240.001, 1220.04, 239.985, 1220.11, 249.987, 1199.95, 250.064, 1199.88, 259.99, 1180.02, 260.067, 1179.95, 269.916, 1160.02, 270.07, 1159.94, 280.15, 1150.02, 279.996, 1150.09, 289.845, 1130.09, 289.999, 1129.93, 299.925, 1120.01, 300.002, 1119.93, 309.928, 1110.24, 309.932, 1110.24, 305.187, 1100.53, 304.961, 1100.56, 295.098, 1089.68, 295.02, 1089.27, 285.899, 1070.48, 285.983, 1070.04, 295.934, 1049.97, 295.934, 1050.38, 305.133, 1030.73, 305.969, 1030.31, 309.998 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 890.067, 310.051, 889.888, 280.048, 880.016, 280.033, 880.067, 270.122, 870.054, 270.041, 870.137, 249.914, 860.182, 249.938, 860.068, 229.983, 850.22, 230.015, 850.137, 209.914, 839.989, 209.912, 840.068, 189.845, 830.027, 189.809, 829.998, 169.985, 819.886, 169.976, 819.999, 159.985, 810.104, 160.104, 809.999, 150.193, 800.052, 150.142, 799.999, 139.916, 790.091, 140.001, 790.069, 129.986, 779.95, 129.949, 779.93, 119.986, 759.936, 119.988, 759.93, 109.917, 615.385, 110.137, 618.959, 290.196, 629.699, 290.296, 629.824, 279.922, 639.842, 279.755, 640.07, 259.942, 660.028, 259.966, 660.155, 250.113, 669.98, 250.255, 669.972, 259.668, 689.961, 259.796, 689.96, 269.91, 710.039, 269.764, 710.005, 280, 740.004, 280.113, 739.951, 290.014, 760.065, 289.939, 759.884, 300.122, 780.143, 300.191, 780.143, 309.89 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "background_anim"
+length = 4.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sky:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 3, 60, 35 ), Rect2( 90, 3, 60, 35 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+dialog_path = "res://Dialogs/chapter1/train.json"
+next = "res://Scenes/Beginning/08.bridge.tscn"
+
+[node name="Sky" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.14902 )
+position = Vector2( 990.056, 334.16 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 90, 3, 60, 35 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 940.073, 380 )
+scale = Vector2( 5, 5 )
+z_index = 1
+texture = ExtResource( 6 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+z_index = 1
+occluder = SubResource( 2 )
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+z_index = 1
+occluder = SubResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 960, 540 )
+current = true
+script = ExtResource( 4 )
+max_diff = 2.0
+
+[node name="cloud" type="Sprite" parent="Camera2D"]
+modulate = Color( 1, 1, 1, 0.141176 )
+light_mask = 0
+position = Vector2( -71.0071, -220.881 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="Camera2D"]
+position = Vector2( -64.4423, -462.298 )
+scale = Vector2( 30, 30 )
+z_index = 1
+texture = ExtResource( 3 )
+energy = 1.2
+shadow_enabled = true
+shadow_gradient_length = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "background_anim"
+anims/background_anim = SubResource( 4 )
+
+[node name="DisableUI" parent="." instance=ExtResource( 5 )]

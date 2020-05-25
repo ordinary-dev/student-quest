@@ -122,8 +122,9 @@ func _ready() -> void:
 "
 
 [node name="TabContainer" type="TabContainer"]
-margin_right = 790.0
-margin_bottom = 476.0
+margin_right = 860.0
+margin_bottom = 326.0
+rect_min_size = Vector2( 860, 0 )
 rect_clip_content = true
 focus_neighbour_bottom = NodePath("LANG/VBoxContainer/English")
 focus_mode = 2
@@ -156,11 +157,11 @@ custom_constants/margin_bottom = 50
 [node name="VBoxContainer" type="VBoxContainer" parent="LANG"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 740.0
-margin_bottom = 364.0
+margin_right = 810.0
+margin_bottom = 214.0
 
 [node name="English" parent="LANG/VBoxContainer" instance=ExtResource( 6 )]
-margin_right = 690.0
+margin_right = 760.0
 focus_neighbour_top = NodePath("../../..")
 focus_neighbour_bottom = NodePath("../Russian")
 focus_mode = 2
@@ -168,7 +169,7 @@ text = "English"
 
 [node name="Russian" parent="LANG/VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 84.0
-margin_right = 690.0
+margin_right = 760.0
 margin_bottom = 164.0
 focus_neighbour_top = NodePath("../English")
 focus_mode = 2
@@ -187,18 +188,18 @@ custom_constants/margin_bottom = 50
 [node name="Audio" type="VBoxContainer" parent="AUDIO"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 741.0
+margin_right = 810.0
 margin_bottom = 384.0
 custom_constants/separation = 60
 
 [node name="Music" type="VBoxContainer" parent="AUDIO/Audio"]
-margin_right = 691.0
+margin_right = 760.0
 margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 25
 
 [node name="Label" type="Label" parent="AUDIO/Audio/Music"]
-margin_right = 691.0
+margin_right = 760.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
@@ -208,7 +209,7 @@ valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="AUDIO/Audio/Music"]
 margin_top = 57.0
-margin_right = 691.0
+margin_right = 760.0
 margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 50
@@ -226,26 +227,27 @@ text = "-"
 [node name="Label" type="Label" parent="AUDIO/Audio/Music/HBoxContainer"]
 margin_left = 465.0
 margin_top = 28.0
-margin_right = 561.0
+margin_right = 630.0
 margin_bottom = 52.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "100%"
+align = 1
 
 [node name="M+" parent="AUDIO/Audio/Music/HBoxContainer" instance=ExtResource( 6 )]
-margin_left = 611.0
-margin_right = 691.0
+margin_left = 680.0
+margin_right = 760.0
 text = "+"
 
 [node name="Effects" type="VBoxContainer" parent="AUDIO/Audio"]
 margin_top = 197.0
-margin_right = 691.0
+margin_right = 760.0
 margin_bottom = 334.0
 size_flags_vertical = 3
 custom_constants/separation = 25
 
 [node name="Label" type="Label" parent="AUDIO/Audio/Effects"]
-margin_right = 691.0
+margin_right = 760.0
 margin_bottom = 32.0
 size_flags_vertical = 7
 text = "EFFECTS_VOLUME"
@@ -254,7 +256,7 @@ valign = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="AUDIO/Audio/Effects"]
 margin_top = 57.0
-margin_right = 691.0
+margin_right = 760.0
 margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 50
@@ -272,15 +274,16 @@ text = "-"
 [node name="Label" type="Label" parent="AUDIO/Audio/Effects/HBoxContainer"]
 margin_left = 465.0
 margin_top = 28.0
-margin_right = 561.0
+margin_right = 630.0
 margin_bottom = 52.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "78%"
+align = 1
 
 [node name="E+" parent="AUDIO/Audio/Effects/HBoxContainer" instance=ExtResource( 6 )]
-margin_left = 611.0
-margin_right = 691.0
+margin_left = 680.0
+margin_right = 760.0
 text = "+"
 
 [node name="GRAPHICS" type="MarginContainer" parent="."]
@@ -299,8 +302,8 @@ fullscreen_toggle = NodePath("../GRAPHICS/VBoxContainer/CheckButton2")
 [node name="VBoxContainer" type="VBoxContainer" parent="GRAPHICS"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 740.0
-margin_bottom = 364.0
+margin_right = 810.0
+margin_bottom = 214.0
 
 [node name="CheckButton" type="CheckButton" parent="GRAPHICS/VBoxContainer"]
 margin_right = 691.0
@@ -334,21 +337,21 @@ custom_constants/margin_bottom = 50
 [node name="ScrollContainer" type="ScrollContainer" parent="INFO"]
 margin_left = 50.0
 margin_top = 50.0
-margin_right = 740.0
-margin_bottom = 364.0
+margin_right = 810.0
+margin_bottom = 214.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="MarginContainer" type="MarginContainer" parent="INFO/ScrollContainer"]
-margin_right = 690.0
-margin_bottom = 1360.0
+margin_right = 760.0
+margin_bottom = 1387.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
 
 [node name="VBoxContainer" type="VBoxContainer" parent="INFO/ScrollContainer/MarginContainer"]
-margin_right = 670.0
-margin_bottom = 1360.0
+margin_right = 740.0
+margin_bottom = 1387.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
@@ -364,7 +367,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "studentquest.github.io
 
-v 4.0"
+v 4.1"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

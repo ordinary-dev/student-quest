@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Sprites/character_head.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/blanket.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/templates/Flat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/templates/Flat/Flat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=5]
 
@@ -52,11 +52,12 @@ tracks/1/keys = {
 script = SubResource( 1 )
 
 [node name="flat" parent="." instance=ExtResource( 3 )]
+character_enabled = false
 
 [node name="character_main" type="Sprite" parent="."]
-position = Vector2( 598.561, 165.215 )
+position = Vector2( 571.212, 128.876 )
 rotation = 1.5708
-scale = Vector2( 3, 3 )
+scale = Vector2( 2.5, 2.5 )
 z_index = 4
 z_as_relative = false
 texture = ExtResource( 1 )
@@ -64,14 +65,14 @@ hframes = 2
 frame = 1
 
 [node name="blanket" type="Sprite" parent="."]
-position = Vector2( 526.776, 165.809 )
-scale = Vector2( 6, 4 )
+position = Vector2( 503.078, 127.733 )
+scale = Vector2( 6, 2.7483 )
 z_index = 5
 z_as_relative = false
 texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 598.427, 160.517 )
+position = Vector2( 561.683, 128.783 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 

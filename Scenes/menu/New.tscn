@@ -6,43 +6,18 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
-
-export(NodePath) var btn_start
-export(NodePath) var btn_back
-export(NodePath) var label
-
-
+export (String, FILE, \"*.tscn\") var menu
 export (String, FILE, \"*.tscn\") var next_scene
-
-
-func get_random_name() -> String:
-	var res : String = \"\"
-	var alp = \"123456789abcdefghkmnpqrst\"
-	var indmax : = len(alp)
-	randomize()
-	for _i in range(8):
-		res += alp[randi() % indmax]
-	return res
-
-
-func append_text(game_id : String) -> void:
-	# Add [ok]
-	get_node(label).bbcode_text += (game_id + \"             [[color=green]OK[/color]]\")
-	# Add info about stage
-	get_node(label).bbcode_text += \"\\n* Этап #1: Воспоминания и иллюзии   [[color=yellow]Waiting[/color]]\"
-
-
-func _ready() -> void:
-	# Create game file
-	var game_id : = get_random_name()
-	append_text(game_id)
-	# Activate buttons
-	get_node(btn_start).disabled = false
 
 
 func _start_game():
 	FX.btn_click()
 	SCENES.load_scene(next_scene)
+
+
+func _on_Return_pressed():
+	FX.btn_click()
+	SCENES.load_scene(menu)
 "
 
 [node name="Control" type="Control"]
@@ -52,9 +27,8 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-btn_start = NodePath("ColorRect/MarginContainer/VBoxContainer/BtnStart")
-label = NodePath("ColorRect/MarginContainer/VBoxContainer/Label")
-next_scene = "res://Scenes/Chapter1/01.date1.tscn"
+menu = "res://Scenes/menu/Menu.tscn"
+next_scene = "res://Scenes/Beginning/01.date.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -98,20 +72,24 @@ bbcode_text = "[center]Welcome to net manager[/center]
 
 
 
-[color=gray][user@of] $ tail ~/user.log [/color]
+[color=gray][st@pt] $ ./init.sh [/color]
 
-* Создаем файл сохранения...        [[color=green]OK[/color]]
-* Номер файла: "
+* Init                [[color=green]OK[/color]]
+* Customize objects   [[color=green]OK[/color]]
+* Prepare the scene   [[color=green]OK[/color]]
+* Waiting for user    [[color=yellow]..[/color]]"
 text = "Welcome to net manager
 
 
 
 
 
-[user@of] $ tail ~/user.log 
+[st@pt] $ ./init.sh 
 
-* Создаем файл сохранения...        [OK]
-* Номер файла: "
+* Init                [OK]
+* Customize objects   [OK]
+* Prepare the scene   [OK]
+* Waiting for user    [..]"
 scroll_active = false
 
 [node name="BtnStart" parent="ColorRect/MarginContainer/VBoxContainer" instance=ExtResource( 1 )]
@@ -123,5 +101,14 @@ rect_min_size = Vector2( 80, 200 )
 size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "START"
-btn_text = "START"
+
+[node name="Return" parent="ColorRect" instance=ExtResource( 1 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
+margin_right = 0.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+text = "x"
 [connection signal="pressed" from="ColorRect/MarginContainer/VBoxContainer/BtnStart" to="." method="_start_game"]
+[connection signal="pressed" from="ColorRect/Return" to="." method="_on_Return_pressed"]

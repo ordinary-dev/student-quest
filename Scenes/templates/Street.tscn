@@ -1,8 +1,8 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Sprites/outside/store.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/templates/Fog_of_war.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/templates/Fog_of_war_sprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilemaps/street/street16.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/triggers/ObjectSwitcher.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/outside/tickets_store/block.png" type="Texture" id=6]
@@ -30,9 +30,12 @@
 [ext_resource path="res://Scenes/templates/Trees/Tree_type_1.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/templates/Bush_type_1.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=31]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
+
+# Position
 
 enum positions {HOSTEL, FOUNTAIN}
 export (positions) var initial_position = positions.HOSTEL
@@ -40,12 +43,74 @@ export (positions) var initial_position = positions.HOSTEL
 const hostel_pos = Vector2(-313, 2363)
 const fountain_pos = Vector2(2337, 3958)
 
-func _ready():
-	if TEMP.get(\"player_pos_id\") != SCENES.last_scene_path or !TEMP.is_saved(\"player_pos_x\"):
-		if initial_position == positions.HOSTEL:
+# Scenes
+
+export (bool) var allow_entrance = true
+export (String, FILE, \"*.tscn\") var math_scene
+export (String, FILE, \"*.tscn\") var ns_scene
+export (String, FILE, \"*.tscn\") var hm_scene
+
+# Position
+
+func _save() -> void:
+	TEMP.save(\"player_pos_id\", SCENES.last_scene_path)
+	TEMP.save(\"player_pos_x\", get_node(GLOBAL.player_path).position.x)
+	TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y) 
+
+
+func init() -> void:
+	match initial_position:
+		positions.HOSTEL:
 			get_node(GLOBAL.player_path).position = hostel_pos
-		else:
-			get_node(GLOBAL.player_path).position = fountain_pos
+		positions.FOUNTAIN:
+			get_node(GLOBAL.player_path).position = fountain_pos			
+
+
+func restore() -> void:
+	get_node(GLOBAL.player_path).position.x = TEMP.get(\"player_pos_x\")
+	get_node(GLOBAL.player_path).position.y = TEMP.get(\"player_pos_y\")
+
+
+func is_position_saved() -> bool:
+	return(TEMP.get(\"player_pos_id\") == SCENES.last_scene_path 
+		and TEMP.is_saved(\"player_pos_x\")
+		and TEMP.is_saved(\"player_pos_y\"))
+
+
+func _ready() -> void:
+	if is_position_saved():
+		restore()
+	else:
+		init()
+	# Buildings
+	if !allow_entrance:
+		remove_child($Faculties)
+
+# Buildings
+
+func enter(id : String) -> void:
+	if TEMP.get(\"facility\") == id:
+		match id:
+			\"0\":
+				SCENES.load_scene(math_scene)
+			\"1\":
+				SCENES.load_scene(ns_scene)
+			\"2\":
+				SCENES.load_scene(hm_scene)
+	else:
+		NOTIFY.show(\"NOENTER\")
+
+ 
+func math():
+	enter(\"0\")
+
+ 
+func ns():
+	enter(\"1\")
+
+ 
+func hum():
+	enter(\"2\")
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -188,19 +253,275 @@ polygon = PoolVector2Array( -324.68, 2866.56, -324.68, 2802.56, -260.68, 2802.56
 
 [node name="Noise" type="Node2D" parent="."]
 
-[node name="NoiseBorders" type="Node2D" parent="Noise"]
+[node name="AnimatedSprite" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2464, 9952 )
 
-[node name="Noise" parent="Noise/NoiseBorders" instance=ExtResource( 3 )]
-position = Vector2( 8482.46, 52.3619 )
-vect = Vector2( 6, 73 )
+[node name="AnimatedSprite7" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2656, 9952 )
 
-[node name="Noise2" parent="Noise/NoiseBorders" instance=ExtResource( 3 )]
-position = Vector2( -3264, -1088 )
-vect = Vector2( 69, 3 )
+[node name="AnimatedSprite8" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2848, 9952 )
 
-[node name="Noise5" parent="Noise/NoiseBorders" instance=ExtResource( 3 )]
-position = Vector2( -832, 6272 )
-vect = Vector2( 4, 39 )
+[node name="AnimatedSprite62" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2464, 10144 )
+
+[node name="AnimatedSprite61" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2656, 10144 )
+
+[node name="AnimatedSprite60" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2848, 10144 )
+
+[node name="AnimatedSprite9" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3040, 9952 )
+
+[node name="AnimatedSprite35" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4576, 9952 )
+
+[node name="AnimatedSprite34" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4768, 9952 )
+
+[node name="AnimatedSprite33" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4960, 9952 )
+
+[node name="AnimatedSprite45" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6496, 9952 )
+
+[node name="AnimatedSprite44" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6688, 9952 )
+
+[node name="AnimatedSprite43" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6880, 9952 )
+
+[node name="AnimatedSprite84" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3040, 10144 )
+
+[node name="AnimatedSprite83" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4576, 10144 )
+
+[node name="AnimatedSprite82" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4768, 10144 )
+
+[node name="AnimatedSprite81" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4960, 10144 )
+
+[node name="AnimatedSprite80" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6496, 10144 )
+
+[node name="AnimatedSprite79" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6688, 10144 )
+
+[node name="AnimatedSprite78" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6880, 10144 )
+
+[node name="AnimatedSprite2" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2272, 9952 )
+
+[node name="AnimatedSprite3" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2080, 9952 )
+
+[node name="AnimatedSprite4" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1888, 9952 )
+
+[node name="AnimatedSprite59" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2272, 10144 )
+
+[node name="AnimatedSprite58" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 2080, 10144 )
+
+[node name="AnimatedSprite57" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1888, 10144 )
+
+[node name="AnimatedSprite25" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3808, 9952 )
+
+[node name="AnimatedSprite24" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4000, 9952 )
+
+[node name="AnimatedSprite23" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4192, 9952 )
+
+[node name="AnimatedSprite22" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4384, 9952 )
+
+[node name="AnimatedSprite21" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3616, 9952 )
+
+[node name="AnimatedSprite20" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3424, 9952 )
+
+[node name="AnimatedSprite19" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3232, 9952 )
+
+[node name="AnimatedSprite32" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5728, 9952 )
+
+[node name="AnimatedSprite31" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5920, 9952 )
+
+[node name="AnimatedSprite30" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6112, 9952 )
+
+[node name="AnimatedSprite29" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6304, 9952 )
+
+[node name="AnimatedSprite28" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5536, 9952 )
+
+[node name="AnimatedSprite27" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5344, 9952 )
+
+[node name="AnimatedSprite26" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5152, 9952 )
+
+[node name="AnimatedSprite77" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3808, 10144 )
+
+[node name="AnimatedSprite76" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4000, 10144 )
+
+[node name="AnimatedSprite75" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4192, 10144 )
+
+[node name="AnimatedSprite74" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 4384, 10144 )
+
+[node name="AnimatedSprite73" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3616, 10144 )
+
+[node name="AnimatedSprite72" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3424, 10144 )
+
+[node name="AnimatedSprite71" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 3232, 10144 )
+
+[node name="AnimatedSprite70" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5728, 10144 )
+
+[node name="AnimatedSprite69" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5920, 10144 )
+
+[node name="AnimatedSprite68" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6112, 10144 )
+
+[node name="AnimatedSprite67" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 6304, 10144 )
+
+[node name="AnimatedSprite66" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5536, 10144 )
+
+[node name="AnimatedSprite65" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5344, 10144 )
+
+[node name="AnimatedSprite64" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 5152, 10144 )
+
+[node name="AnimatedSprite42" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7648, 9952 )
+
+[node name="AnimatedSprite41" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7840, 9952 )
+
+[node name="AnimatedSprite40" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 8032, 9952 )
+
+[node name="AnimatedSprite39" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 8224, 9952 )
+
+[node name="AnimatedSprite38" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7456, 9952 )
+
+[node name="AnimatedSprite37" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7264, 9952 )
+
+[node name="AnimatedSprite90" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7648, 10144 )
+
+[node name="AnimatedSprite89" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7840, 10144 )
+
+[node name="AnimatedSprite88" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 8032, 10144 )
+
+[node name="AnimatedSprite87" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 8224, 10144 )
+
+[node name="AnimatedSprite86" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7456, 10144 )
+
+[node name="AnimatedSprite85" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7264, 10144 )
+
+[node name="AnimatedSprite36" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7072, 9952 )
+
+[node name="AnimatedSprite63" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 7072, 10144 )
+
+[node name="AnimatedSprite5" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1696, 9952 )
+
+[node name="AnimatedSprite6" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1504, 9952 )
+
+[node name="AnimatedSprite18" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 736, 9952 )
+
+[node name="AnimatedSprite17" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 928, 9952 )
+
+[node name="AnimatedSprite16" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1120, 9952 )
+
+[node name="AnimatedSprite15" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1312, 9952 )
+
+[node name="AnimatedSprite14" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 544, 9952 )
+
+[node name="AnimatedSprite13" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 352, 9952 )
+
+[node name="AnimatedSprite12" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 160, 9952 )
+
+[node name="AnimatedSprite11" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( -32, 9952 )
+
+[node name="AnimatedSprite10" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( -224, 9952 )
+
+[node name="AnimatedSprite56" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1696, 10144 )
+
+[node name="AnimatedSprite55" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1504, 10144 )
+
+[node name="AnimatedSprite54" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 736, 10144 )
+
+[node name="AnimatedSprite53" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 928, 10144 )
+
+[node name="AnimatedSprite52" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1120, 10144 )
+
+[node name="AnimatedSprite51" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 1312, 10144 )
+
+[node name="AnimatedSprite50" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 544, 10144 )
+
+[node name="AnimatedSprite49" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 352, 10144 )
+
+[node name="AnimatedSprite48" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( 160, 10144 )
+
+[node name="AnimatedSprite47" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( -32, 10144 )
+
+[node name="AnimatedSprite46" parent="Noise" instance=ExtResource( 3 )]
+position = Vector2( -224, 10144 )
 
 [node name="Water" type="Node2D" parent="."]
 
@@ -650,7 +971,7 @@ shape = SubResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort_global/Buildings/eni_house"]
 position = Vector2( -22.0841, -89.2427 )
 frames = ExtResource( 21 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="eni_show" parent="YSort_global/Buildings" instance=ExtResource( 5 )]
@@ -2378,3 +2699,23 @@ scale = Vector2( 4, 4 )
 [node name="Body" parent="YSort_global" instance=ExtResource( 30 )]
 position = Vector2( -313, 2363 )
 restore_position = true
+
+[node name="Faculties" type="Node2D" parent="."]
+
+[node name="NS" parent="Faculties" instance=ExtResource( 31 )]
+position = Vector2( 4146.18, 3483.57 )
+label = "NS"
+object_name = NodePath("../..")
+function_name = "ns"
+
+[node name="MATH" parent="Faculties" instance=ExtResource( 31 )]
+position = Vector2( 1279.6, 6345.17 )
+label = "NS"
+object_name = NodePath("../..")
+function_name = "math"
+
+[node name="HM" parent="Faculties" instance=ExtResource( 31 )]
+position = Vector2( 3869.03, 7822.18 )
+label = "NS"
+object_name = NodePath("../..")
+function_name = "hm"

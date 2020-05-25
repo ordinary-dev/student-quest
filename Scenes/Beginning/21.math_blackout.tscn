@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/templates/FacultyMaps/Math_map.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Blackout.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/PlayMusic.gd" type="Script" id=8]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+hidden_room = "res://Scenes/Chapter1/23.stairs.tscn"
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+street_path = "res://Scenes/Ignoring/1.Lifeguards.tscn"
+block_turnstile = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 1
+color = Color( 0.733333, 0.733333, 0.733333, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Guard" parent="." instance=ExtResource( 6 )]
+position = Vector2( 504, 288 )
+dialog_path = "res://Dialogs/chapter1/guard.json"
+person = "GUARD"
+
+[node name="Secret" parent="." instance=ExtResource( 4 )]
+light_mask = 0
+position = Vector2( -576, 128 )
+label = "PATH"
+object_name = NodePath("..")
+function_name = "adventure_begins"
+
+[node name="EnableUI" parent="." instance=ExtResource( 3 )]
+joystick = true
+
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource( 8 )
+file = "res://Audio/music/Suspense.ogg"
+delay = 5.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="turn_lights_on"]

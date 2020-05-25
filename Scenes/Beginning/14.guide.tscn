@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/GuideAI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.tscn\") var flat_scene
+
+func flat():
+	MUSIC.fade_out()
+	SCENES.load_scene(flat_scene)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+flat_scene = "res://Scenes/Beginning/15.flat.tscn"
+
+[node name="Street_scene" parent="." instance=ExtResource( 1 )]
+initial_position = 1
+allow_entrance = false
+
+[node name="HOSTEL" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1136, 2880 )
+label = "HOSTEL"
+object_name = NodePath("..")
+function_name = "flat"
+
+[node name="Guide" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2307.01, 4238.06 )
+scale = Vector2( 3, 3 )
+z_index = 2
+z_as_relative = false
+nodes = [ NodePath("../Position2D"), NodePath("../Position2D2"), NodePath("../Position2D3"), NodePath("../Position2D4"), NodePath("../Position2D5") ]
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 2464.44, 885.778 )
+
+[node name="Position2D2" type="Position2D" parent="."]
+position = Vector2( 2466.52, 483.163 )
+
+[node name="Position2D3" type="Position2D" parent="."]
+position = Vector2( -261.62, 505.479 )
+
+[node name="Position2D4" type="Position2D" parent="."]
+position = Vector2( -288, 3072 )
+
+[node name="Position2D5" type="Position2D" parent="."]
+position = Vector2( -896, 3136 )
+
+[node name="EnableUI" parent="." instance=ExtResource( 5 )]
+joystick = true

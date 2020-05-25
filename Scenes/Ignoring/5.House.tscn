@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/templates/House/House.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource( 1 )]
+second_floor_active = false
+street_scene = "res://Scenes/Ignoring/6.Street.tscn"

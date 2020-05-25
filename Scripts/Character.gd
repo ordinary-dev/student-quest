@@ -140,12 +140,6 @@ func go_up() -> void:
 	velocity.y -= 1
 
 
-# Disable collisions when the HOME button is pressed
-func check_for_col_disable_btn():
-	if Input.is_action_just_pressed("ui_home"):
-		get_node("CollisionShape2D").disabled = !get_node("CollisionShape2D").disabled
-
-
 func joystick_processing() -> bool:
 	velocity = joystick.get_value()
 	if velocity.length() > 0:
@@ -165,19 +159,19 @@ func joystick_processing() -> bool:
 		if !idle:
 			idle = true
 			anim.stop()
-			if type == states.UP:
-				character.frame = frames.UP_STILL
-			elif type == states.DOWN:
-				character.frame = frames.DOWN_STILL
-			else:
-				character.frame = frames.SIDE_STILL
+			match type:
+				states.UP:
+					character.frame = frames.UP_STILL
+				states.DOWN:
+					character.frame = frames.DOWN_STILL
+				_:
+					character.frame = frames.SIDE_STILL
 		return false
 
 
 func process_buttons() -> bool:
 	# Reset variables
 	velocity = Vector2()
-	check_for_col_disable_btn()
 	# Process 4 directions
 	if Input.is_action_pressed('ui_right'):
 		go_right()
@@ -191,12 +185,13 @@ func process_buttons() -> bool:
 	if !idle && !any_button_pressed:
 		idle = true
 		anim.stop()
-		if type == states.UP:
-			character.frame = frames.UP_STILL
-		elif type == states.DOWN:
-			character.frame = frames.DOWN_STILL
-		else:
-			character.frame = frames.SIDE_STILL
+		match type:
+			states.UP:
+				character.frame = frames.UP_STILL
+			states.DOWN:
+				character.frame = frames.DOWN_STILL
+			_:
+				character.frame = frames.SIDE_STILL
 		return false
 	mult = 4 if Input.is_action_pressed("speed_up") else 1
 	velocity = velocity.normalized() * speed * mult
@@ -227,15 +222,16 @@ func _ready():
 				position.y = TEMP.get("player_pos_y")
 	GLOBAL.player_path = get_path()
 	# Set starting direction
-	if default_state == states.UP:
-		character.frame = frames.UP_STILL
-	elif default_state == states.DOWN:
-		character.frame = frames.DOWN_STILL
-	elif default_state == states.RIGHT:
-		character.frame = frames.SIDE_STILL
-	else:
-		character.flip_h = true
-		character.frame = frames.SIDE_STILL
+	match default_state:
+		states.UP:
+			character.frame = frames.UP_STILL
+		states.DOWN:
+			character.frame = frames.DOWN_STILL
+		states.RIGHT:
+			character.frame = frames.SIDE_STILL
+		states.LEFT:
+			character.flip_h = true
+			character.frame = frames.SIDE_STILL
 	use_joystick = OS.get_name() == "Android" or UI_INIT.SHOW_CONTROLS
 	if use_joystick:
 		joystick = UI.get_node("Joystick/Button")
