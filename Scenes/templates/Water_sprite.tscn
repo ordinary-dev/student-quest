@@ -3,5 +3,7 @@
 [ext_resource path="res://Sprites/water/water.tres" type="SpriteFrames" id=1]
 
 [node name="Sprite" type="AnimatedSprite"]
-scale = Vector2( 4, 4 )
+scale = Vector2( 12, 12 )
 frames = ExtResource( 1 )
+frame = 3
+playing = true

@@ -22,6 +22,7 @@ texture = ExtResource( 2 )
 texture_scale = 2.0
 color = Color( 0.933333, 0.917647, 0.701961, 1 )
 energy = 0.75
+shadow_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="streetlight2"]
 collision_layer = 0

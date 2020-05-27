@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/house-bottom.png-8c85f9ada5c845d29fee22f862053d21.stex"
+path="res://.import/trees-2.png-42c9eeb10285dcc661147a89a8716916.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/house/house-bottom.png"
-dest_files=[ "res://.import/house-bottom.png-8c85f9ada5c845d29fee22f862053d21.stex" ]
+source_file="res://Tilemaps/trees/trees-2.png"
+dest_files=[ "res://.import/trees-2.png-42c9eeb10285dcc661147a89a8716916.stex" ]
 
 [params]
 
