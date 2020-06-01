@@ -54,8 +54,6 @@ singer = NodePath("Mr_Singer_Dialog")
 
 [node name="Street" parent="." instance=ExtResource( 7 )]
 math_scene = "res://Scenes/Beginning/19.date.tscn"
-ns_scene = "res://Scenes/Beginning/19.date.tscn"
-hm_scene = "res://Scenes/Beginning/19.date.tscn"
 
 [node name="Mr_singer" parent="." instance=ExtResource( 2 )]
 position = Vector2( 23.1483, 370.225 )

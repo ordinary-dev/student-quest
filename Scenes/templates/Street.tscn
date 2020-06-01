@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://Sprites/outside/store.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Scenes/templates/Bush_type_1.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/triggers/Label.tscn" type="PackedScene" id=32]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -47,8 +48,6 @@ const fountain_pos = Vector2(2337, 3958)
 
 export (bool) var allow_entrance = true
 export (String, FILE, \"*.tscn\") var math_scene
-export (String, FILE, \"*.tscn\") var ns_scene
-export (String, FILE, \"*.tscn\") var hm_scene
 
 # Position
 
@@ -84,33 +83,11 @@ func _ready() -> void:
 		init()
 	# Buildings
 	if !allow_entrance:
-		remove_child($Faculties)
-
-# Buildings
-
-func enter(id : String) -> void:
-	if TEMP.get(\"facility\") == id:
-		match id:
-			\"0\":
-				SCENES.load_scene(math_scene)
-			\"1\":
-				SCENES.load_scene(ns_scene)
-			\"2\":
-				SCENES.load_scene(hm_scene)
-	else:
-		NOTIFY.show(\"NOENTER\")
+			remove_child($Faculties)
 
  
 func math():
-	enter(\"0\")
-
- 
-func ns():
-	enter(\"1\")
-
- 
-func hum():
-	enter(\"2\")
+	SCENES.load_scene(math_scene)
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -529,13 +506,11 @@ position = Vector2( -224, 10144 )
 position = Vector2( 1216, 1216 )
 z_index = 2
 z_as_relative = false
-dim = Vector2( 4, 15 )
 
 [node name="Water2" parent="Water" instance=ExtResource( 9 )]
 position = Vector2( 384, 2176 )
 z_index = 2
 z_as_relative = false
-dim = Vector2( 17, 4 )
 
 [node name="Bridges" type="Node2D" parent="."]
 
@@ -2702,20 +2677,16 @@ restore_position = true
 
 [node name="Faculties" type="Node2D" parent="."]
 
-[node name="NS" parent="Faculties" instance=ExtResource( 31 )]
-position = Vector2( 4146.18, 3483.57 )
+[node name="NS" parent="Faculties" instance=ExtResource( 32 )]
+position = Vector2( 4144, 3480 )
 label = "NS"
-object_name = NodePath("../..")
-function_name = "ns"
+
+[node name="HM" parent="Faculties" instance=ExtResource( 32 )]
+position = Vector2( 3880, 7848 )
+label = "HM"
 
 [node name="MATH" parent="Faculties" instance=ExtResource( 31 )]
 position = Vector2( 1279.6, 6345.17 )
 label = "NS"
 object_name = NodePath("../..")
 function_name = "math"
-
-[node name="HM" parent="Faculties" instance=ExtResource( 31 )]
-position = Vector2( 3869.03, 7822.18 )
-label = "NS"
-object_name = NodePath("../..")
-function_name = "hm"
