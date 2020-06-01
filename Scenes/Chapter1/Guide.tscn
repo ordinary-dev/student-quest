@@ -6,24 +6,11 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-export (Array, String, FILE, \"*.json\") var dialogs
-
-
-func get_dialog_path() -> String:
-	var fac = TEMP.get(\"facility\")
-	match fac:
-		\"0\":
-			return dialogs[0]
-		\"1\":
-			return dialogs[1]
-		\"2\":
-			return dialogs[2]
-	NOTIFY.show(\"NOTLOADED\")
-	return \"-1\"
+export (String, FILE, \"*.json\") var dialog_path
 
 
 func activate() -> void:
-	DIALOG.show_dialog(get_dialog_path())
+	DIALOG.show_dialog(dialog_path)
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -31,7 +18,7 @@ extents = Vector2( 5.33333, 2.66667 )
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-dialogs = [ "res://Dialogs/chapter1/guideMath.json", "res://Dialogs/chapter1/guideNS.json", "res://Dialogs/chapter1/guideHM.json" ]
+dialog_path = "res://Dialogs/chapter1/guideMath.json"
 
 [node name="Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 120, -40 )
