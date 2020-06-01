@@ -1,3 +1,10 @@
 id,en,ru
 D_NIGHT_BYE,Goodbye,Прощай
 D_NIGHT_NEW_LIFE,Now I will have a new life in which there will no longer be old friends.,"Теперь у меня будет новая жизнь, в которой уже не будет старых друзей."
+D_RECTOR_MECHMAT,Faculty of Mathematics?,Мехмат?
+D_RECTOR_YES,Yes,Да
+D_RECTOR_DOCS,"Okay, everything is fine with the documents. Are you from another city?","Ладно, с документами все хорошо. Вы же из другого города?"
+D_RECTOR_TRUE,Right,Верно
+D_RECTOR_CABINET,"Then go to cabinet 225, they will help you there","Тогда зайдите еще в 225 кабинет, вам там помогут"
+D_GUIDE_HI,"Hi, I'm here to help with the settlement.","Привет, я тут помогаю с заселением."
+D_GUIDE_ROOM,"Come on, I'll show you your room","Пойдем, я покажу тебе твою комнату"

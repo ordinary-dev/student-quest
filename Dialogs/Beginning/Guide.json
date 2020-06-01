@@ -1,0 +1,5 @@
+{
+    "0": {"name":"GUIDE", "text":"D_GUIDE_HI", "next":"1"},
+    "1": {"name":"-", "text":"...", "next":"2"},
+    "2": {"name":"GUIDE", "text":"D_GUIDE_ROOM"}
+}
