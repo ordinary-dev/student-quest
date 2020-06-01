@@ -31,7 +31,7 @@ __meta__ = {
 
 [node name="Guard" parent="." instance=ExtResource( 6 )]
 position = Vector2( 504, 288 )
-dialog_path = "res://Dialogs/chapter1/guard.json"
+dialog_path = "res://Dialogs/Beginning/Guard.json"
 person = "GUARD"
 
 [node name="Secret" parent="." instance=ExtResource( 4 )]

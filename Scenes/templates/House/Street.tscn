@@ -18,12 +18,19 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
+enum modes {Open, Locked}
+export (modes) var house_door = modes.Locked
+export (String, FILE, \"*.tscn\") var sleep_scene
 export (String, FILE, \"*.tscn\") var house_scene
 
 
 func open_door() -> void:
-	yield(get_tree().create_timer(0.3), \"timeout\")
-	NOTIFY.show(\"No key\")
+	match (house_door):
+		modes.Open:
+			SCENES.load_scene(sleep_scene)
+		modes.Locked:
+			yield(get_tree().create_timer(0.3), \"timeout\")
+			NOTIFY.show(\"No key\")
 
 
 func house() -> void:
@@ -741,14 +748,14 @@ position = Vector2( 3056, -8 )
 shape = SubResource( 5 )
 
 [node name="OpenTheDoor" parent="." instance=ExtResource( 4 )]
-position = Vector2( 192, -568 )
+position = Vector2( 176, -520 )
 script = SubResource( 2 )
 label = "Open the door"
 object_name = NodePath("..")
 function_name = "open_door"
 
 [node name="OpenTheDoor2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 896, -568 )
+position = Vector2( 880, -520 )
 script = SubResource( 2 )
 label = "Open the door"
 object_name = NodePath("..")

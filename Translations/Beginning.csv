@@ -10,3 +10,5 @@ D_GUIDE_HI,"Hi, I'm here to help with the settlement.","Привет, я тут 
 D_GUIDE_ROOM,"Come on, I'll show you your room","Пойдем, я покажу тебе твою комнату"
 D_SPEAKER_CONGRATULATIONS,"Congratulations, you have risen a notch.","Поздравляю вас, вы поднялись на ступеньку выше."
 D_SPEAKER_GO_FORWARD,Do not look back at failures and always go forward!,Не оглядывайтесь на неудачи и идите всегда вперед!
+D_GUARD_NO_WAY,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
+D_GUARD_FIND_ANOTHER,Maybe there is another way?,Может есть другой путь?
