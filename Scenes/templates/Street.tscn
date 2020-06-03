@@ -541,573 +541,574 @@ z_as_relative = false
 [node name="Sprite" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1216 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite2" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1216 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite3" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1216 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite4" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1216 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite8" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1280 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite7" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1280 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite6" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1280 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite5" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1280 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite12" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1344 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite11" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1344 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite10" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1344 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite9" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1344 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite16" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1408 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite15" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1408 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite14" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1408 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite13" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1408 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite20" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1472 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite19" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1472 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite18" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1472 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite17" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1472 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite24" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1536 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite23" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1536 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite22" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1536 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite21" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1536 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite28" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1952 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite27" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1952 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite26" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1952 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite25" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1952 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite52" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 2016 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite51" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 2016 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite50" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 2016 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite49" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 2016 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Sprite56" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite55" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite54" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite53" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite60" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite59" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite58" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite57" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite64" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite63" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite62" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite61" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite80" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 960, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite79" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1024, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite78" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1088, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite77" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1152, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite76" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 960, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite75" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1024, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite74" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1088, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite73" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1152, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite72" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 960, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite71" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1024, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite70" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1088, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite69" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1152, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite68" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 960, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite67" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1024, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite66" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1088, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite65" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1152, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite96" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 704, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite95" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 768, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite94" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 832, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite93" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 896, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite92" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 704, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite91" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 768, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite90" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 832, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite89" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 896, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite88" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 704, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite87" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 768, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite86" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 832, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite85" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 896, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite84" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 704, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite83" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 768, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite82" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 832, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite81" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 896, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite112" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 448, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite116" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 384, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite111" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 512, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite110" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 576, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite109" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 640, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite108" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 448, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite115" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 384, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite107" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 512, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite106" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 576, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite105" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 640, 2080 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite104" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 448, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite114" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 384, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite103" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 512, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite102" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 576, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite101" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 640, 2144 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite100" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 448, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite113" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 384, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite99" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 512, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite98" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 576, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite97" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 640, 2208 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite32" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1888 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite31" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1888 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite30" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1888 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite29" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1888 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite36" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1824 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite35" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1824 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite34" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1824 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite33" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1824 )
 scale = Vector2( 4, 4 )
-frame = 2
+frame = 1
 
 [node name="Sprite40" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1760 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite39" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1760 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite38" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1760 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite37" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1760 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite44" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1696 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite43" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1696 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite42" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1696 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite41" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1696 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite48" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1632 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite47" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1632 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite46" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1632 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite45" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1632 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Bridges" type="Node2D" parent="."]
 
@@ -1433,7 +1434,7 @@ shape = SubResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort_global/Buildings/eni_house"]
 position = Vector2( -22.0841, -89.2427 )
 frames = ExtResource( 21 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="eni_show" parent="YSort_global/Buildings" instance=ExtResource( 5 )]
@@ -3245,38 +3246,23 @@ scale = Vector2( 4, 4 )
 [node name="Streetlight" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
 position = Vector2( 2144, 1160 )
 
-[node name="Streetlight2" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
-position = Vector2( 2144, 1472 )
-
 [node name="Streetlight3" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
 position = Vector2( 2144, 1792 )
-
-[node name="Streetlight4" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
-position = Vector2( 2144, 2112 )
 
 [node name="Streetlight5" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
 position = Vector2( 2144, 2432 )
 
-[node name="Streetlight6" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
-position = Vector2( 2144, 2752 )
-
 [node name="Streetlight7" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
 position = Vector2( 2144, 3072 )
-
-[node name="Streetlight8" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
-position = Vector2( 2144, 3392 )
 
 [node name="Streetlight9" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
 position = Vector2( 2144, 3712 )
 
-[node name="Streetlight10" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
-position = Vector2( 2144, 4032 )
-
 [node name="Streetlight11" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
-position = Vector2( 2144, 4352 )
+position = Vector2( 2144, 4288 )
 
 [node name="Streetlight12" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
-position = Vector2( 2144, 4672 )
+position = Vector2( 2144, 4936 )
 
 [node name="Streetlight13" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
 position = Vector2( 1248, 6464 )
