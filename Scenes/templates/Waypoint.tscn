@@ -21,7 +21,7 @@ func _ready():
 	# Make sure that the object can work correctly
 	assert (nodes.size() >= 2)
 	# NPC generation
-	if TEMP.get(\"npc_disabled\") == \"-1\" and randi() % 2 > 0.5:
+	if get_parent().get_parent().get_parent().enable_npc == true and randi() % 2 > 0.5:
 		var temp = person.instance()
 		temp.prev_target_path = get_path()
 		temp.target_path = nodes[randi() % len(nodes)]

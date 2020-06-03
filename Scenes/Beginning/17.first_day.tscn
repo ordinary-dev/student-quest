@@ -53,6 +53,7 @@ singer = NodePath("Mr_Singer_Dialog")
 
 [node name="Street" parent="." instance=ExtResource( 7 )]
 math_scene = "res://Scenes/Beginning/19.date.tscn"
+enable_lights = false
 
 [node name="Mr_Singer_Dialog" parent="." instance=ExtResource( 3 )]
 position = Vector2( 56, 352 )

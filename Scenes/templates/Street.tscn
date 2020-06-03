@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Sprites/outside/store.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
@@ -33,6 +33,7 @@
 [ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scenes/triggers/Label.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/templates/Water_sprite.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/Chapter2/Streetlight.tscn" type="PackedScene" id=34]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -47,6 +48,12 @@ export (String, FILE, \"*.tscn\") var math_scene
 
 export (bool) var show_singer = true
 onready var singer = $Mr_singer
+
+# Lights
+export (bool) var enable_lights = true
+
+# NPC
+export (bool) var enable_npc = true
 
 # Position
 const hostel_pos = Vector2(-313, 2363)
@@ -88,6 +95,12 @@ func _ready() -> void:
 	# Singer
 	if !show_singer:
 		remove_child(singer)
+	# Lights
+	if !enable_lights:
+		var arr = $YSort_global/Streetlights.get_children()
+		for i in arr:
+			i.enable_light = false
+	
 
  
 func math():
@@ -533,17 +546,17 @@ frame = 1
 [node name="Sprite2" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1216 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite3" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1216 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite4" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1216 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite8" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1280 )
@@ -979,22 +992,22 @@ scale = Vector2( 4, 4 )
 [node name="Sprite32" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1888 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite31" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1888 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite30" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1888 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite29" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1888 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 0
 
 [node name="Sprite36" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1824 )
@@ -1019,22 +1032,18 @@ frame = 0
 [node name="Sprite40" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1760 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite39" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1760 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite38" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1760 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite37" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1760 )
 scale = Vector2( 4, 4 )
-frame = 0
 
 [node name="Sprite44" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1696 )
@@ -1396,7 +1405,6 @@ shape = SubResource( 14 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort_global/Buildings/eni_house"]
 position = Vector2( -22.0841, -89.2427 )
 frames = ExtResource( 21 )
-frame = 1
 playing = true
 
 [node name="eni_show" parent="YSort_global/Buildings" instance=ExtResource( 5 )]
@@ -3202,6 +3210,44 @@ scale = Vector2( 4, 4 )
 [node name="Bush_t_1_n_29" parent="YSort_global/Bushes_park_2" instance=ExtResource( 29 )]
 position = Vector2( 1184, 920 )
 scale = Vector2( 4, 4 )
+
+[node name="Streetlights" type="YSort" parent="YSort_global"]
+
+[node name="Streetlight" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 1160 )
+
+[node name="Streetlight2" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 1472 )
+
+[node name="Streetlight3" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 1792 )
+
+[node name="Streetlight4" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 2112 )
+
+[node name="Streetlight5" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 2432 )
+
+[node name="Streetlight6" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 2752 )
+
+[node name="Streetlight7" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 3072 )
+
+[node name="Streetlight8" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 3392 )
+
+[node name="Streetlight9" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 3712 )
+
+[node name="Streetlight10" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 4032 )
+
+[node name="Streetlight11" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 4352 )
+
+[node name="Streetlight12" parent="YSort_global/Streetlights" instance=ExtResource( 34 )]
+position = Vector2( 2144, 4672 )
 
 [node name="Body" parent="YSort_global" instance=ExtResource( 30 )]
 position = Vector2( -313, 2363 )

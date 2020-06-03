@@ -22,6 +22,7 @@ flat_scene = "res://Scenes/Beginning/15.flat.tscn"
 [node name="Street_scene" parent="." instance=ExtResource( 1 )]
 initial_position = 1
 allow_entrance = false
+enable_lights = false
 
 [node name="HOSTEL" parent="." instance=ExtResource( 4 )]
 position = Vector2( -1136, 2880 )
