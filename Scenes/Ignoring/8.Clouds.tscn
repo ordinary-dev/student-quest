@@ -10,7 +10,8 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-delay = 1.0
+next_scene = "res://Scenes/Ignoring/9.Speach.tscn"
+delay = 3.0
 
 [node name="Clouds" type="Sprite" parent="."]
 position = Vector2( 968.974, 545.691 )

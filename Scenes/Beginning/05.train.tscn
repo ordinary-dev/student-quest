@@ -22,6 +22,8 @@ export var offset_start : = Vector2(20, 80)
 export var offset_end : = Vector2(170, 80)
 # Animation duration
 export (float, 7, 12) var time = 9
+export (bool) var fade_in = false
+export (bool) var fade_out = false
 
 onready var obj = $Train
 onready var cam = $Camera2D
@@ -41,7 +43,7 @@ func _ready() -> void:
 
 
 func load_scene() -> void:
-	SCENES.load_scene(next_scene, false, false)
+	SCENES.load_scene(next_scene, fade_in, fade_out)
 "
 
 [node name="Node2D" type="Node2D"]
