@@ -18,7 +18,7 @@ FULLSCREEN,Fullscreen,Полный экран
 SITE,Open site,Открыть сайт
 GODOT,Created with Godot Engine,Создано при помощи Godot Engine
 CHANGELOG,Changelog:,Список изменений:
-CHANGES,"-Corrections in the code, changes in the structure of some scenes, new sprites and scenes","-Исправления в коде, изменения в структуре некоторых сцен, новые спрайты и сцены"
+CHANGES,-New events,-Новые события
 AUTHORS,Authors:,Авторы:
 JOYSTICK,Joystick script:,Скрипт джойстика:
 MUSIC,Music:,Музыка:
