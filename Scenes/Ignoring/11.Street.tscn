@@ -10,6 +10,7 @@ extents = Vector2( 23.3559, 51.8205 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Street_scene" parent="." instance=ExtResource( 1 )]
+show_singer = false
 
 [node name="character" type="Sprite" parent="."]
 position = Vector2( -296, 264 )
