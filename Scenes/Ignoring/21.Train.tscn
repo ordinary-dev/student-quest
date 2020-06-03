@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Beginning/05.train.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Train" parent="." instance=ExtResource( 1 )]
+next_scene = "res://Scenes/Ignoring/22.Station.tscn"
+fade_in = true
+fade_out = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -288.0
+margin_right = 2128.0
+margin_bottom = 1160.0
+color = Color( 0.0313726, 0.0313726, 0.0745098, 0.862745 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DisableUI" parent="." instance=ExtResource( 2 )]

@@ -367,7 +367,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "studentquest.github.io
 
-v 4.1"
+v 4.2"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

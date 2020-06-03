@@ -5,4 +5,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
+house_door = 0
+sleep_scene = "res://Scenes/Ignoring/7.Date.tscn"
 house_scene = "res://Scenes/Ignoring/5.House.tscn"

@@ -1,0 +1,6 @@
+{
+    "0": {"name":"SPEAKER", "text":"D_SPEAKER_SORRY", "next":"1"},
+    "1": {"name":"SPEAKER", "text":"D_SPEAKER_NOTHING", "next":"2"},
+    "2": {"name":"SPEAKER", "text":"D_SPEAKER_END", "next":"3"},
+    "3": {"name":"SPEAKER", "text":"D_SPEAKER_SLEEP"}
+} 

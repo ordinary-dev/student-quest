@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/templates/House/House.tscn" type="PackedScene" id=1]
 
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.json\") var dialog_path
+
+func _ready():
+	DIALOG.show_dialog(dialog_path)
+
+"
+
 [node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+dialog_path = "res://Dialogs/Ignoring/Speaker.json"
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
 second_floor_active = false

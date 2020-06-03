@@ -6,16 +6,27 @@ script/source = "extends Position2D
 # Waypoint object template
 
 export (Array, NodePath) var nodes
+var person = preload(\"res://Scenes/templates/Person.tscn\")
 
 
 # Returns a random point other than the current one
 func get_random_point_ex(ex : String) -> String:
-	if nodes.size() < 2:
-		return \"\"
 	var res = nodes[randi() % nodes.size()]
 	while ex == res:
 		res = nodes[randi() % nodes.size()]
 	return res
+
+
+func _ready():
+	# Make sure that the object can work correctly
+	assert (nodes.size() >= 2)
+	# NPC generation
+	if get_parent().get_parent().get_parent().enable_npc == true and randi() % 2 > 0.5:
+		var temp = person.instance()
+		temp.prev_target_path = get_path()
+		temp.target_path = nodes[randi() % len(nodes)]
+		temp.position = position
+		get_parent().call_deferred(\"add_child\", temp)
 "
 
 [node name="Position2D" type="Position2D"]

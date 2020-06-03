@@ -1,0 +1,7 @@
+{
+    "0": { "name": "RECTOR", "text": "D_RECTOR_MECHMAT", "next": "1" },
+    "1": { "name": "-", "text": "D_RECTOR_YES", "next": "2" },
+    "2": { "name": "RECTOR", "text": "D_RECTOR_DOCS", "next": "3"},
+    "3": { "name": "-", "text": "D_RECTOR_TRUE", "next": "4"},
+    "4": { "name": "RECTOR", "text": "D_RECTOR_CABINET"}
+}

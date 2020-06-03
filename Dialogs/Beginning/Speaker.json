@@ -1,0 +1,4 @@
+{
+    "0":{"name":"ABSSTRANGER", "text":"D_SPEAKER_CONGRATULATIONS", "next":"1"},
+    "1":{"name":"ABSSTRANGER", "text":"D_SPEAKER_GO_FORWARD"}
+}

@@ -7,37 +7,29 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-export (String, FILE, \"*.tscn\") var fac_0
-export (String, FILE, \"*.tscn\") var fac_1
-export (String, FILE, \"*.tscn\") var fac_2
+export (String, FILE, \"*.tscn\") var fac_path
 export (String, FILE, \"*.json\") var dialog_path
+export (bool) var show_dialog = true
 
 
 func load_scene():
-	var n = TEMP.get(\"facility\")
-	if n == \"0\":
-		SCENES.load_scene(fac_0)
-	elif n == \"1\":
-		SCENES.load_scene(fac_1)
-	else:
-		SCENES.load_scene(fac_2)
+	SCENES.load_scene(fac_path)
+
 
 
 func _ready():
-	DIALOG.show_dialog(dialog_path, \"/root/Node2D/Background\", \"load_scene\")
+	if show_dialog:
+		DIALOG.show_dialog(dialog_path, get_path(), \"load_scene\")
 "
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( 472, 600, 1360, 600, 1360, 816, 472, 816 )
+polygon = PoolVector2Array( 464.1, 608.108, 1353.13, 608.108, 1351.99, 728.694, 464.1, 727.556 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
-polygon = PoolVector2Array( 848, 504, 848, 360, 872, 360, 872, 264, 944, 264, 944, 360, 968, 360, 968, 504, 944, 504, 944, 576, 872, 576, 872, 504 )
+polygon = PoolVector2Array( 832, 504, 832.121, 494.017, 821.929, 494.167, 821.871, 423.791, 831.73, 423.907, 832.194, 393.752, 842.168, 393.636, 842.168, 384.125, 851.911, 383.893, 852.027, 374.035, 861.769, 374.035, 861.769, 364.176, 851.679, 364.06, 851.795, 354.086, 841.871, 354.173, 841.871, 294.09, 851.815, 293.881, 851.71, 284.251, 861.864, 283.937, 861.759, 273.993, 871.912, 273.888, 872, 264, 941.803, 263.942, 941.803, 273.482, 952.34, 273.909, 952.34, 283.735, 962.165, 283.735, 962.593, 293.56, 972.133, 293.702, 972.119, 353.72, 961.776, 354.17, 961.776, 364.062, 952.033, 364.212, 952.033, 373.655, 961.776, 373.955, 961.626, 384.148, 971.969, 383.998, 972.269, 393.891, 981.862, 393.741, 982.311, 424.018, 992, 424, 991.904, 494.167, 982.161, 494.167, 982.311, 504.21, 961.776, 504.06, 961.626, 514.252, 952.033, 514.252, 952.183, 594.144, 861.65, 593.694, 861.65, 513.953, 851.757, 513.653, 851.607, 503.76 )
 
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
-fac_0 = "res://Scenes/1.beggining/MathBlackout.tscn"
-fac_1 = "res://Scenes/1.beggining/NsBlackout.tscn"
-fac_2 = "res://Scenes/1.beggining/HmBlackout.tscn"
 dialog_path = "res://Dialogs/8.json"
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
@@ -56,6 +48,7 @@ position = Vector2( 746.623, 159.049 )
 texture = ExtResource( 3 )
 texture_scale = 34.33
 energy = 0.5
+range_z_max = 2
 shadow_enabled = true
 
 [node name="Light2D2" type="Light2D" parent="."]
@@ -63,6 +56,7 @@ position = Vector2( 792, 80 )
 texture = ExtResource( 3 )
 texture_scale = 34.33
 energy = 0.5
+range_z_max = 2
 shadow_enabled = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
@@ -70,9 +64,10 @@ occluder = SubResource( 3 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 modulate = Color( 0.843137, 0.843137, 0.843137, 1 )
-position = Vector2( 848, 264 )
-scale = Vector2( 24, 24 )
-z_index = 2
+light_mask = 0
+position = Vector2( 752, 264 )
+scale = Vector2( 10, 10 )
+z_index = 4
 z_as_relative = false
 texture = ExtResource( 2 )
 centered = false

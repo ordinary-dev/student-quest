@@ -1,0 +1,6 @@
+{
+    "0": {"name":"TEACHER", "text":"D_MATH_RESEARCH", "next":"1"},
+    "1": {"name":"TEACHER", "text":"D_MATH_INTERCONNECTION", "next":"2"},
+    "2": {"name":"TEACHER", "text":"D_MATH_FORMULA", "next":"3"},
+    "3": {"name":"TEACHER", "text":"D_MATH_DISCOVERY"}
+}  
