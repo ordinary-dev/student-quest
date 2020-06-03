@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://Sprites/outside/store.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://Sprites/outside/Building_in_garden.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/templates/Water.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/templates/Waypoint.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/templates/Person.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/templates/Bridge.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sprites/outside/rocks/rocks.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/outside/rocks/rocks2.png" type="Texture" id=14]
@@ -529,116 +528,6 @@ z_index = 4
 
 [node name="Waypoints" type="YSort" parent="YSort_global"]
 position = Vector2( 160, -24 )
-
-[node name="Node2D" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 1888, 1048 )
-prev_target_path = NodePath("../Position2D")
-target_path = NodePath("../Position2D2")
-
-[node name="Node2D2" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 2336, 1048 )
-prev_target_path = NodePath("../Position2D3")
-target_path = NodePath("../Position2D4")
-
-[node name="Node2D8" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 1696, 536 )
-prev_target_path = NodePath("../Position2D35")
-target_path = NodePath("../Position2D34")
-
-[node name="Node2D22" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 1256.77, 467.676 )
-prev_target_path = NodePath("../Position2D32")
-target_path = NodePath("../Position2D34")
-
-[node name="Node2D23" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 2221.71, 411.595 )
-prev_target_path = NodePath("../Position2D30")
-target_path = NodePath("../Position2D31")
-
-[node name="Node2D3" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 2336, 4888 )
-prev_target_path = NodePath("../Position2D11")
-target_path = NodePath("../Position2D9")
-
-[node name="Node2D4" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 1120, 5208 )
-prev_target_path = NodePath("../Position2D8")
-target_path = NodePath("../Position2D20")
-
-[node name="Node2D21" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 997.43, 3971.16 )
-prev_target_path = NodePath("../Position2D46")
-target_path = NodePath("../Position2D45")
-
-[node name="Node2D6" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 2976, 5528 )
-prev_target_path = NodePath("../Position2D17")
-target_path = NodePath("../Position2D18")
-
-[node name="Node2D7" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 4960, 5528 )
-prev_target_path = NodePath("../Position2D16")
-target_path = NodePath("../Position2D17")
-
-[node name="Node2D9" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 2139.52, 8079.36 )
-prev_target_path = NodePath("../Position2D24")
-target_path = NodePath("../Position2D23")
-
-[node name="Node2D10" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 2142.38, 5542.45 )
-prev_target_path = NodePath("../Position2D18")
-target_path = NodePath("../Position2D19")
-
-[node name="Node2D20" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 1403.39, 5514.49 )
-prev_target_path = NodePath("../Position2D19")
-target_path = NodePath("../Position2D22")
-
-[node name="Node2D11" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 4075.71, 5378.68 )
-prev_target_path = NodePath("../Position2D17")
-target_path = NodePath("../Position2D15")
-
-[node name="Node2D12" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 5655.81, 5391.95 )
-prev_target_path = NodePath("../Position2D16")
-target_path = NodePath("../Position2D14")
-
-[node name="Node2D13" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 5733.22, 1927.52 )
-prev_target_path = NodePath("../Position2D13")
-target_path = NodePath("../Position2D12")
-
-[node name="Node2D14" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 4060.64, 1922.86 )
-prev_target_path = NodePath("../Position2D6")
-target_path = NodePath("../Position2D7")
-
-[node name="Node2D15" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 2326.57, 1898.77 )
-prev_target_path = NodePath("../Position2D11")
-target_path = NodePath("../Position2D4")
-
-[node name="Node2D16" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 2836.57, 1759.68 )
-prev_target_path = NodePath("../Position2D5")
-target_path = NodePath("../Position2D4")
-
-[node name="Node2D17" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 1393.91, 1774.72 )
-prev_target_path = NodePath("../Position2D42")
-target_path = NodePath("../Position2D43")
-
-[node name="Node2D18" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 935.164, 1407.07 )
-prev_target_path = NodePath("../Position2D40")
-target_path = NodePath("../Position2D39")
-
-[node name="Node2D19" parent="YSort_global/Waypoints" instance=ExtResource( 11 )]
-position = Vector2( 1207.28, 2583.39 )
-prev_target_path = NodePath("../Position2D44")
-target_path = NodePath("../Position2D45")
 
 [node name="Position2D" parent="YSort_global/Waypoints" instance=ExtResource( 10 )]
 position = Vector2( 1824, 1112 )
