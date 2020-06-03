@@ -78,14 +78,6 @@ label = "Вниз"
 object_name = NodePath("..")
 function_name = "go"
 
-[node name="Light2D" type="Light2D" parent="."]
-position = Vector2( 128, -16 )
-texture = ExtResource( 4 )
-texture_scale = 14.0
-energy = 1.8
-range_z_max = 10
-shadow_enabled = true
-
 [node name="Light2D2" type="Light2D" parent="."]
 position = Vector2( 128, 528 )
 texture = ExtResource( 4 )
