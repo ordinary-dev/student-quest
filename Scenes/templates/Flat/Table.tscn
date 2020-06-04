@@ -8,17 +8,17 @@ extents = Vector2( 10, 13.3 )
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -6.0219, -28.9697, -5.99691, -8.0101, -8, -8, -8.02044, -28.9947 )
 
-[node name="Table" type="Sprite"]
+[node name="Table-Template_Sprite" type="Sprite"]
 scale = Vector2( 6, 6 )
 z_index = 4
 texture = ExtResource( 1 )
 offset = Vector2( 0, -16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Collider_StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="Collider_StaticBody2D"]
 visible = false
 position = Vector2( 0, -13.3333 )
 shape = SubResource( 1 )

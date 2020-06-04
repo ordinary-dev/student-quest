@@ -69,9 +69,10 @@ func _ready() -> void:
 
 
 func load_scene() -> void:
-	SCENES.load_scene(next_scene, fade_in, fade_out)"
+	SCENES.load_scene(next_scene, fade_in, fade_out)
+"
 
-[node name="Control" type="Control"]
+[node name="Animated-text-Template_Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
@@ -81,7 +82,7 @@ __meta__ = {
 text_1 = "28.06.20"
 text_2 = "Утро. Поезд"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BackgroundColor_ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
@@ -89,7 +90,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBox" type="VBoxContainer" parent="ColorRect"]
+[node name="ContentContainer_VBox" type="VBoxContainer" parent="BackgroundColor_ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
@@ -97,7 +98,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect/VBox"]
+[node name="TitleText_Label" type="Label" parent="BackgroundColor_ColorRect/ContentContainer_VBox"]
 margin_top = 438.0
 margin_right = 1920.0
 margin_bottom = 538.0
@@ -106,7 +107,7 @@ text = "Sample text"
 align = 1
 valign = 1
 
-[node name="Label2" type="Label" parent="ColorRect/VBox"]
+[node name="Text_Label" type="Label" parent="BackgroundColor_ColorRect/ContentContainer_VBox"]
 margin_top = 542.0
 margin_right = 1920.0
 margin_bottom = 642.0

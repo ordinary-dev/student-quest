@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/PlayMusic.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/backgrounds/hall.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=5]
+
+[node name="Hall-Scene" type="Node2D"]
+script = ExtResource( 2 )
+next_scene = "res://Scenes/Beginning/10.bus.tscn"
+delay = 2.5
+
+[node name="Main_Sprite" type="Sprite" parent="."]
+position = Vector2( 983.564, 526.23 )
+scale = Vector2( 12.8893, 12.8893 )
+texture = ExtResource( 4 )
+
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource( 1 )
+file = "res://Audio/music/Ambient.ogg"
+
+[node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 5 )]
+obj = NodePath("../../hall-Scene")
+method = "load_scene"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 3 )]

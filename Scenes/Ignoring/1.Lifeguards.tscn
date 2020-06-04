@@ -17,17 +17,17 @@ func _ready():
 	DIALOG.show_dialog(dialog_path, get_path(), \"next_scene\")
 "
 
-[node name="Node2D" type="Node2D"]
+[node name="Lifeguards-Scene" type="Node2D"]
 script = SubResource( 1 )
 dialog_path = "res://Dialogs/Ignoring/Lifeguards.json"
 next_scene_path = "res://Scenes/Ignoring/2.Flat.tscn"
 
-[node name="Sky" type="Sprite" parent="."]
+[node name="Sky-Sprite" type="Sprite" parent="."]
 position = Vector2( 986.726, 543.697 )
 scale = Vector2( 50, 50 )
 texture = ExtResource( 2 )
 
-[node name="Lifeguards" type="Sprite" parent="."]
+[node name="Lifeguards_Sprite" type="Sprite" parent="."]
 position = Vector2( 1449.07, 629.317 )
 scale = Vector2( 30, 30 )
 texture = ExtResource( 1 )

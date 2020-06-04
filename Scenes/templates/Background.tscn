@@ -8,7 +8,7 @@ resource_name = "transparency"
 length = 6.0
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite2:modulate")
+tracks/0/path = NodePath("BlurryBackground2_Sprite:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -20,14 +20,14 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Background" type="Node2D"]
+[node name="Background-Template" type="Node2D"]
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="BlurryBackground1_Sprite" type="Sprite" parent="."]
 position = Vector2( 955.094, 540.444 )
 scale = Vector2( 26, 26 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="."]
+[node name="BlurryBackground2_Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 955.094, 540.444 )
 scale = Vector2( 26, 26 )

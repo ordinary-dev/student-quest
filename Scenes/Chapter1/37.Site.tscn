@@ -1,0 +1,175 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+export(String, FILE, \"*.tscn\") var next_scene
+
+onready var mc1 = $ColorRect/VBoxContainer/MarginContainer
+onready var mc2 = $ColorRect/VBoxContainer/MarginContainer2
+
+
+func _on_Button_pressed():
+	SCENES.load_scene(next_scene)
+
+
+func _ready():
+	yield(get_tree().create_timer(1.5),\"timeout\")
+	mc1.visible = true
+	yield(get_tree().create_timer(2.5),\"timeout\")
+	mc2.visible = true
+	
+"
+
+[node name="Site-Scene_Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene = "res://Scenes/Chapter2/1.Intro.tscn"
+
+[node name="Background_ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.929412, 0.964706, 0.980392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeaderContainer_VBoxContainer" type="VBoxContainer" parent="Background_ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeaderBackground_ColorRect" type="ColorRect" parent="Background_ColorRect/HeaderContainer_VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+color = Color( 0.313726, 0.552941, 0.929412, 1 )
+
+[node name="HeaderContainer_MarginContainer" type="MarginContainer" parent="Background_ColorRect/HeaderContainer_VBoxContainer/HeaderBackground_ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeaderContainer_HBoxContainer" type="HBoxContainer" parent="Background_ColorRect/HeaderContainer_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 150.0
+
+[node name="Header_Label" type="Label" parent="Background_ColorRect/HeaderContainer_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_MarginContainer/HeaderContainer_HBoxContainer"]
+margin_top = 26.0
+margin_right = 1716.0
+margin_bottom = 74.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 2 )
+text = "CHAT"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseChat_Button" type="Button" parent="Background_ColorRect/HeaderContainer_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_MarginContainer/HeaderContainer_HBoxContainer"]
+margin_left = 1720.0
+margin_right = 1820.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+text = "X"
+flat = true
+
+[node name="Message_MarginContainer_1" type="MarginContainer" parent="Background_ColorRect/HeaderContainer_VBoxContainer"]
+visible = false
+margin_top = 204.0
+margin_right = 1920.0
+margin_bottom = 454.0
+custom_constants/margin_right = 900
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+
+[node name="MessageBackground_ColorRect" type="ColorRect" parent="Background_ColorRect/HeaderContainer_VBoxContainer/Message_MarginContainer_1"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1020.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 600, 200 )
+color = Color( 0.729412, 0.729412, 0.729412, 1 )
+
+[node name="MessageContainer_MarginContainer" type="MarginContainer" parent="Background_ColorRect/HeaderContainer_VBoxContainer/Message_MarginContainer_1/MessageBackground_ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MessageText_Label" type="Label" parent="Background_ColorRect/HeaderContainer_VBoxContainer/Message_MarginContainer_1/MessageBackground_ColorRect/MessageContainer_MarginContainer"]
+margin_left = 20.0
+margin_top = 84.0
+margin_right = 950.0
+margin_bottom = 116.0
+custom_colors/font_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+text = "MESSAGE1"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message_MarginContainer_2" type="MarginContainer" parent="Background_ColorRect/HeaderContainer_VBoxContainer"]
+visible = false
+margin_top = 204.0
+margin_right = 1920.0
+margin_bottom = 454.0
+custom_constants/margin_right = 900
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+
+[node name="MessageBackground_ColorRect2" type="ColorRect" parent="Background_ColorRect/HeaderContainer_VBoxContainer/Message_MarginContainer_2"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1020.0
+margin_bottom = 250.0
+rect_min_size = Vector2( 600, 200 )
+color = Color( 0.729412, 0.729412, 0.729412, 1 )
+
+[node name="MessageContainer_MarginContainer" type="MarginContainer" parent="Background_ColorRect/HeaderContainer_VBoxContainer/Message_MarginContainer_2/MessageBackground_ColorRect2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MessageText_Label" type="Label" parent="Background_ColorRect/HeaderContainer_VBoxContainer/Message_MarginContainer_2/MessageBackground_ColorRect2/MessageContainer_MarginContainer"]
+margin_left = 20.0
+margin_top = 84.0
+margin_right = 950.0
+margin_bottom = 116.0
+custom_colors/font_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+text = "MESSAGE2"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Disable-UI" parent="." instance=ExtResource( 1 )]
+[connection signal="pressed" from="Background_ColorRect/HeaderContainer_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_MarginContainer/HeaderContainer_HBoxContainer/CloseChat_Button" to="." method="_on_Button_pressed"]

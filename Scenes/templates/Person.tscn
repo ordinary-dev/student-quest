@@ -92,7 +92,7 @@ resource_name = "down"
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PersonTexture_Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -108,7 +108,7 @@ tracks/0/keys = {
 length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PersonTexture_Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -124,7 +124,7 @@ tracks/0/keys = {
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("PersonTexture_Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -139,7 +139,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 15, 10 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Person-Template_0" type="Node2D"]
 z_index = 4
 z_as_relative = false
 script = SubResource( 1 )
@@ -150,22 +150,22 @@ rect = Rect2( -50, -60, 100, 120 )
 process_parent = true
 physics_process_parent = true
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="PersonTexture_Sprite" type="Sprite" parent="."]
 position = Vector2( -0.307358, -51.0823 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
 vframes = 3
 hframes = 3
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="WalkCycle_AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/down = SubResource( 2 )
 anims/side = SubResource( 3 )
 anims/up = SubResource( 4 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Collider_StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 0, -9.85287 )
 collision_layer = 0
 collision_mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="Collider_StaticBody2D"]
 shape = SubResource( 5 )

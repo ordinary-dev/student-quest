@@ -81,7 +81,7 @@ func _ready():
 	get_node(label_path).percent_visible = 0
 "
 
-[node name="Control" type="Control"]
+[node name="Notification_Control" type="Control"]
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -93,12 +93,12 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-label_path = NodePath("MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer/Label")
-mc = NodePath("MarginContainer")
+label_path = NodePath("../Notification_Control/MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer/Label")
+mc = NodePath("../Notification_Control/MarginContainer")
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MainContainer_MarginContainer" type="MarginContainer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 550, 150 )
@@ -107,7 +107,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+[node name="Border_ColorRect" type="ColorRect" parent="MainContainer_MarginContainer"]
 light_mask = 0
 margin_right = 550.0
 margin_bottom = 100.0
@@ -117,7 +117,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect"]
+[node name="MessageContainer_MarginContainer" type="MarginContainer" parent="MainContainer_MarginContainer/Border_ColorRect"]
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -129,7 +129,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer/ColorRect/MarginContainer"]
+[node name="Background_ColorRect" type="ColorRect" parent="MainContainer_MarginContainer/Border_ColorRect/MessageContainer_MarginContainer"]
 light_mask = 0
 margin_left = 10.0
 margin_top = 10.0
@@ -137,7 +137,7 @@ margin_right = 540.0
 margin_bottom = 90.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/ColorRect/MarginContainer/ColorRect"]
+[node name="TextContainer_MarginContainer" type="MarginContainer" parent="MainContainer_MarginContainer/Border_ColorRect/MessageContainer_MarginContainer/Background_ColorRect"]
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -149,7 +149,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer"]
+[node name="Message_Label" type="Label" parent="MainContainer_MarginContainer/Border_ColorRect/MessageContainer_MarginContainer/Background_ColorRect/TextContainer_MarginContainer"]
 light_mask = 0
 margin_left = 10.0
 margin_top = 24.0

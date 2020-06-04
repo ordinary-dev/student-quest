@@ -4,15 +4,15 @@
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/triggers/LoadOnEnter.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/templates/Fog_of_war_sprite.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/ui/enable_ui.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/templates/Noise_sprite.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 16 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Stairs-Scene" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Map_TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
@@ -22,12 +22,12 @@ tile_data = PoolIntArray( 5, -1610612732, 0, 6, -1610612731, 0, 7, -1610612731, 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Moonlight_Light2D" type="Light2D" parent="."]
 position = Vector2( 480, -32 )
 texture = ExtResource( 2 )
 texture_scale = 50.0
 
-[node name="Node2D" parent="." instance=ExtResource( 4 )]
+[node name="LoadOnEnter-Trigger" parent="." instance=ExtResource( 4 )]
 position = Vector2( 480, 1272 )
 scale = Vector2( 16, 4 )
 scene = "res://Scenes/menu/Menu.tscn"
@@ -36,112 +36,112 @@ scene = "res://Scenes/menu/Menu.tscn"
 position = Vector2( 472, 96 )
 default_state = 0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="ExitCollider_StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="ExitCollider_CollisionShape2D" type="CollisionShape2D" parent="ExitCollider_StaticBody2D"]
 visible = false
 position = Vector2( 480, -16 )
 shape = SubResource( 1 )
 
 [node name="Noise" type="Node2D" parent="."]
 
-[node name="AnimatedSprite" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 416, -96 )
 
-[node name="AnimatedSprite2" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_2" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 608, -96 )
 
-[node name="AnimatedSprite4" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_4" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 800, -96 )
 
-[node name="AnimatedSprite3" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_3" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 992, -96 )
 
-[node name="AnimatedSprite32" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_32" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 416, -288 )
 
-[node name="AnimatedSprite31" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_31" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 608, -288 )
 
-[node name="AnimatedSprite30" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_30" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 800, -288 )
 
-[node name="AnimatedSprite29" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_29" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 992, -288 )
 
-[node name="AnimatedSprite6" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_6" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 736, 96 )
 
-[node name="AnimatedSprite5" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_5" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 928, 96 )
 
-[node name="AnimatedSprite8" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_8" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 736, 288 )
 
-[node name="AnimatedSprite7" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_7" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 928, 288 )
 
-[node name="AnimatedSprite10" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_10" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 736, 480 )
 
-[node name="AnimatedSprite9" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_9" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 928, 480 )
 
-[node name="AnimatedSprite12" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_12" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 736, 672 )
 
-[node name="AnimatedSprite11" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_11" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 928, 672 )
 
-[node name="AnimatedSprite14" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_14" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 736, 864 )
 
-[node name="AnimatedSprite13" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_13" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 928, 864 )
 
-[node name="AnimatedSprite16" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_16" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 32, 864 )
 
-[node name="AnimatedSprite15" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_15" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 224, 864 )
 
-[node name="AnimatedSprite18" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_18" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 32, 672 )
 
-[node name="AnimatedSprite17" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_17" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 224, 672 )
 
-[node name="AnimatedSprite20" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_20" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 32, 480 )
 
-[node name="AnimatedSprite19" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_19" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 224, 480 )
 
-[node name="AnimatedSprite22" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_22" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 32, 288 )
 
-[node name="AnimatedSprite21" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_21" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 224, 288 )
 
-[node name="AnimatedSprite24" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_24" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 32, 96 )
 
-[node name="AnimatedSprite23" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_23" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 224, 96 )
 
-[node name="AnimatedSprite26" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_26" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 32, -96 )
 
-[node name="AnimatedSprite25" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_25" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 224, -96 )
 
-[node name="AnimatedSprite28" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_28" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 32, -288 )
 
-[node name="AnimatedSprite27" parent="Noise" instance=ExtResource( 5 )]
+[node name="Noise-Sprite-Template_AnimatedSprite_27" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 224, -288 )
 
-[node name="EnableUI" parent="." instance=ExtResource( 6 )]
+[node name="Enable-UI" parent="." instance=ExtResource( 6 )]
 joystick = true

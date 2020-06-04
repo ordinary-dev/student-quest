@@ -11,7 +11,7 @@ func _ready():
 	get_tree().quit()
 "
 
-[node name="Control" type="Control"]
+[node name="quit-Scene_Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )

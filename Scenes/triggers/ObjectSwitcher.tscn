@@ -43,13 +43,13 @@ func _on_Area2D_body_exited(body):
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[node name="Area2D" type="Area2D"]
+[node name="ObjectSwitcher-Trigger_Area2D_0" type="Area2D"]
 linear_damp = 0.0
 angular_damp = 0.0
 script = SubResource( 1 )
 mod_color = Color( 1, 1, 1, 0.352941 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TriggeringCollider_CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]

@@ -10,7 +10,7 @@ func _ready() -> void:
 	$ColorRect/MarginContainer/Label.text = text
 "
 
-[node name="Control" type="Control"]
+[node name="Message-Template_Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1270.0
@@ -21,7 +21,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="MessageBackground_ColorRect" type="ColorRect" parent="."]
 margin_left = 50.0
 margin_top = 25.0
 margin_right = 650.0
@@ -32,7 +32,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+[node name="MessageContainer_MarginContainer" type="MarginContainer" parent="MessageBackground_ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 30
@@ -43,7 +43,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect/MarginContainer"]
+[node name="MessageText_Label" type="Label" parent="MessageBackground_ColorRect/MessageContainer_MarginContainer"]
 margin_left = 30.0
 margin_top = 34.0
 margin_right = 870.0

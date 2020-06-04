@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/templates/Guide.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/triggers/Tickets.tscn" type="PackedScene" id=6]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.tscn\") var next_scene
+export (String, FILE, \"*.tscn\") var store_scene
+# Триггер диалога Мистера Дудца
+export (NodePath) var singer
+
+
+func save():
+	TEMP.save(\"street_singer_dialog_used\", 
+		get_node(singer).used)
+	if get_node(singer).used:
+		TEMP.save(\"day1_dialog\", \"1\")
+	else:
+		TEMP.save(\"day1_dialog\", \"0\")
+	# Player position
+	$Street._save()
+
+
+# Перейти в магазин
+func to_store() -> void:
+	save()
+	SCENES.load_scene(store_scene)
+
+
+# Войти в дом садовника
+func enter_house():
+	NOTIFY.show(\"CLOSED\")
+
+
+func _ready():
+	if TEMP.is_saved(\"street_singer_dialog_used\"):
+		get_node(singer).used = TEMP.get(\"street_singer_dialog_used\")
+	else:
+		get_node(singer).used = false
+"
+
+[node name="First-day-Scene" type="Node2D"]
+script = SubResource( 1 )
+next_scene = "res://Scenes/Beginning/19.date.tscn"
+store_scene = "res://Scenes/Beginning/18.store.tscn"
+singer = NodePath("../first-day-Scene/Mr_Singer_Dialog")
+
+[node name="Street-Template" parent="." instance=ExtResource( 5 )]
+math_scene = "res://Scenes/Beginning/19.date.tscn"
+enable_lights = false
+
+[node name="MrSingerDialog;DialogTrigger-Trigger_Area2D_0" parent="." instance=ExtResource( 4 )]
+position = Vector2( 56, 352 )
+dialog_path = "res://Dialogs/chapter1/stranger.json"
+
+[node name="StoreTrigger;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 552, 216 )
+label = "STORE"
+object_name = NodePath("../../first-day-Scene")
+function_name = "to_store"
+
+[node name="GHouse;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 1552 )
+label = "GHOUSE"
+object_name = NodePath("../../first-day-Scene")
+function_name = "enter_house"
+
+[node name="Guide-Template" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2056, 488 )
+z_index = 5
+
+[node name="Enable-UI" parent="." instance=ExtResource( 2 )]
+joystick = true
+show_time = true
+time = "9:45"
+
+[node name="Tickets-Trigger_Area2D" parent="." instance=ExtResource( 6 )]
+position = Vector2( -392.383, -103.691 )
+object_name = NodePath("../Tickets/Node2D")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/PlayMusic.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/templates/Animated_text.tscn" type="PackedScene" id=2]
+
+[node name="Date-Scene_Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+file = "res://Audio/fx/Train.ogg"
+
+[node name="Text;Animated-text-Template_Control" parent="." instance=ExtResource( 2 )]
+text_1 = "29.06.20"
+text_2 = "MORNING"
+next_scene = "res://Scenes/Beginning/05.train.tscn"
+fade_in = false
+fade_out = false
+wait_for = 0.2
