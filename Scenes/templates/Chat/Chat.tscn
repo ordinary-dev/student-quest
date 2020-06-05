@@ -8,7 +8,7 @@ export (Array, String) var messages
 
 var message = load(\"res://Scenes/templates/Chat/Message.tscn\")
 
-onready var cont = $VBoxContainer/Body/VBoxContainer
+onready var cont = $Main_VBoxContainer/BodyBackground_ColorRect/BodyContainer_VBoxContainer
 
 
 func next_scene() -> void:

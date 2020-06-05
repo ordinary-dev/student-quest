@@ -25,7 +25,7 @@ export (float, 7, 12) var time = 9
 export (bool) var fade_in = false
 export (bool) var fade_out = false
 
-onready var obj = $Train
+onready var obj = $\"Train-Object\"
 onready var cam = $Camera2D
 onready var effect = $Tween
 
@@ -48,7 +48,7 @@ func load_scene() -> void:
 
 [node name="Train-Scene" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/Beginning/06.train_window.tscn"
+next_scene = "res://Scenes/Beginning/06.Train_window.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = -1

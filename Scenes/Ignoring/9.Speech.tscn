@@ -14,7 +14,7 @@ func _load_scene():
 
 
 func _ready():
-	DIALOG.show_dialog(dialog_path, \"/root/Control\", \"_load_scene\")
+	DIALOG.show_dialog(dialog_path, get_path(), \"_load_scene\")
 "
 
 [node name="Speech-Scene_Control" type="Control"]

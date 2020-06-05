@@ -9,8 +9,8 @@ script/source = "extends Node2D
 
 export (NodePath) var prev_target_path
 export (NodePath) var target_path
-onready var sp = $Sprite
-onready var anim = $AnimationPlayer
+onready var sp = $PersonTexture_Sprite
+onready var anim = $WalkCycle_AnimationPlayer
 var speed = 250
 const e = 1
 var cdir = -1

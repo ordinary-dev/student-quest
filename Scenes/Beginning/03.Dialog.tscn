@@ -15,7 +15,7 @@ func _on_dialog_over():
 
 
 func _ready():
-	DIALOG.show_dialog(dialog_path, \"/root/Control\", \"_on_dialog_over\")
+	DIALOG.show_dialog(dialog_path, get_path(), \"_on_dialog_over\")
 "
 
 [node name="Dialog-Scene_Control" type="Control"]
@@ -28,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 dialog_path = "res://Dialogs/Beginning/Night.json"
-next_scene = "res://Scenes/Beginning/04.date.tscn"
+next_scene = "res://Scenes/Beginning/04.Date.tscn"
 
 [node name="Disable-UI" parent="." instance=ExtResource( 1 )]
 

@@ -110,11 +110,11 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-body_bg = NodePath("../Dialog-Template_Control_0/Dialog/Border")
-body_fg = NodePath("../Dialog-Template_Control_0/Dialog/Main")
-person_name = NodePath("../Dialog-Template_Control_0/Dialog/Main/Margin/HBox/VBox/Name")
-main_text = NodePath("../Dialog-Template_Control_0/Dialog/Main/Margin/HBox/VBox/Text")
-next_button = NodePath("../Dialog-Template_Control_0/Button")
+body_bg = NodePath("Dialog_MarginContainer/Border_ColorRect")
+body_fg = NodePath("Dialog_MarginContainer/Main_MarginContainer")
+person_name = NodePath("Dialog_MarginContainer/Main_MarginContainer/Text_MarginContainer/Text_HBoxContainer/Text_VBoxContainer/Name_Label")
+main_text = NodePath("Dialog_MarginContainer/Main_MarginContainer/Text_MarginContainer/Text_HBoxContainer/Text_VBoxContainer/Text_Label")
+next_button = NodePath("Next_Button")
 
 [node name="Dialog_MarginContainer" type="MarginContainer" parent="."]
 light_mask = 0

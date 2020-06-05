@@ -5,4 +5,4 @@
 [node name="Store-Scene" type="Node2D"]
 
 [node name="Store-Template" parent="." instance=ExtResource( 1 )]
-street_scene = "res://Scenes/Beginning/17.first_day.tscn"
+street_scene = "res://Scenes/Beginning/17.First_day.tscn"

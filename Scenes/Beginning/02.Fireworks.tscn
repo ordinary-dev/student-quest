@@ -121,7 +121,7 @@ tracks/6/keys = {
 
 [node name="Fireworks-Scene" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/Beginning/03.dialog.tscn"
+next_scene = "res://Scenes/Beginning/03.Dialog.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 0

@@ -25,7 +25,7 @@ export (float, 2, 12) var time = 9
 export (bool) var fade_in = false
 export (bool) var fade_out = false
 
-onready var obj = $Train
+onready var obj = $\"Train-Object\"
 onready var cam = $Camera2D
 onready var effect = $Tween
 
@@ -48,7 +48,7 @@ func load_scene() -> void:
 
 [node name="Bridge-Scene" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/Beginning/09.hall.tscn"
+next_scene = "res://Scenes/Beginning/09.Hall.tscn"
 start_pos = Vector2( 125, 596 )
 end_pos = Vector2( 1500, 596 )
 time = 3.0

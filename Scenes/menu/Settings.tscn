@@ -142,8 +142,8 @@ script = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-ost_text = NodePath("../Settings-Menu_TabContainer/AUDIO/Audio/Music/HBoxContainer/Label")
-fx_text = NodePath("../Settings-Menu_TabContainer/AUDIO/Audio/Effects/HBoxContainer/Label")
+ost_text = NodePath("Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer/VolumePersentage_Label")
+fx_text = NodePath("Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer/VolumePercentage_Label")
 
 [node name="Lang_MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -296,8 +296,8 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 script = SubResource( 5 )
-vsync_toggle = NodePath("../GRAPHICS/VBoxContainer/CheckButton")
-fullscreen_toggle = NodePath("../GRAPHICS/VBoxContainer/CheckButton2")
+vsync_toggle = NodePath("Buttons_VBoxContainer/VSync_CheckButton")
+fullscreen_toggle = NodePath("Buttons_VBoxContainer/Fullscreen_CheckButton")
 
 [node name="Buttons_VBoxContainer" type="VBoxContainer" parent="Graphics_MarginContainer"]
 margin_left = 50.0

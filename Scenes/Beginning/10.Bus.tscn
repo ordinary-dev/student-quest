@@ -18,7 +18,7 @@ polygon = PoolVector2Array( 456.935, 97.337, 1397.95, 94.4342, 1392.6, -432.044,
 
 [node name="Bus-Scene" type="Node2D"]
 script = ExtResource( 1 )
-next_scene = "res://Scenes/Beginning/11.city.tscn"
+next_scene = "res://Scenes/Beginning/11.City.tscn"
 delay = 1.5
 transition_in = false
 transition_out = false

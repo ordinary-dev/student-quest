@@ -15,12 +15,12 @@ func sleep():
 
 [node name="Flat-Scene" type="Node2D"]
 script = SubResource( 1 )
-date30 = "res://Scenes/Beginning/16.date.tscn"
+date30 = "res://Scenes/Beginning/16.Date.tscn"
 
 [node name="Sleep;FunctionCaller-Trigger_Area2D_0" parent="." instance=ExtResource( 1 )]
 position = Vector2( 494.741, 111.245 )
 label = "SLEEP"
-object_name = NodePath("../../flat-Scene")
+object_name = NodePath("..")
 function_name = "sleep"
 
 [node name="Flat-Template" parent="." instance=ExtResource( 3 )]

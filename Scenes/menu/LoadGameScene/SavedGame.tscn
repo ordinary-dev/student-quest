@@ -17,9 +17,9 @@ bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 [sub_resource type="GDScript" id=4]
 script/source = "extends Button
 
-onready var textureObj = $HBoxContainer/MarginContainer/VBoxContainer/TextureRect
-onready var date = $HBoxContainer/MarginContainer/VBoxContainer/Date
-onready var gameName = $HBoxContainer/MarginContainer/VBoxContainer/Name
+onready var textureObj = $MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer/SaveImage_TextureRect
+onready var date = $MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer/Date_Label
+onready var gameName = $MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer/Name_Label
 var saved_path : String
 
 

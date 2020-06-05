@@ -26,8 +26,8 @@ func _process(_delta) -> void:
 
 
 func _ready() -> void:
-	get_node(\"MarginContainer\").visible = false
-	get_node(\"ColorRect\").visible = false
+	$MainContainer_MarginContainer.visible = false
+	$Background_ColorRect.visible = false
 
 
 func switch():
@@ -135,11 +135,11 @@ __meta__ = {
 }
 menu_scene = "res://Scenes/menu/Menu.tscn"
 quit_scene = "res://Scenes/quit.tscn"
-buttons = [ NodePath("MarginContainer/HBoxContainer/VBoxContainer/Return"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Settings"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Menu"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Quit"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Load"), NodePath("MarginContainer/HBoxContainer/VBoxContainer/Save") ]
-settings_node = NodePath("../PauseMenu-UI_Control/MarginContainer/HBoxContainer/CanvasLayer/Settings")
-load_node = NodePath("../PauseMenu-UI_Control/MarginContainer/HBoxContainer/CanvasLayer/Load")
-save_node = NodePath("../PauseMenu-UI_Control/MarginContainer/HBoxContainer/CanvasLayer/Save")
-return_btn = NodePath("../PauseMenu-UI_Control/MarginContainer/HBoxContainer/VBoxContainer/Return")
+buttons = [ NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Return;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Load;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Save;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Settings;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Menu;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Quit;Button-Template_Control") ]
+settings_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Settings-Menu_TabContainer")
+load_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Load-Menu_ScrollContainer")
+save_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Save;Load-Menu_ScrollContainer")
+return_btn = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Return;Button-Template_Control")
 
 [node name="Background_ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -269,8 +269,6 @@ margin_top = 310.0
 margin_right = 1800.0
 margin_bottom = 980.0
 rect_min_size = Vector2( 850, 670 )
-ost_text = NodePath("../../../../../PauseMenu-UI_Control/MarginContainer/HBoxContainer/CanvasLayer/Settings/AUDIO/Audio/Music/HBoxContainer/Label")
-fx_text = NodePath("../../../../../PauseMenu-UI_Control/MarginContainer/HBoxContainer/CanvasLayer/Settings/AUDIO/Audio/Effects/HBoxContainer/Label")
 
 [node name="Load-Menu_ScrollContainer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer" instance=ExtResource( 4 )]
 visible = false

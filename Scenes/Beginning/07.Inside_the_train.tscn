@@ -19,7 +19,7 @@ func _next_scene():
 
 
 func _ready():
-	DIALOG.show_dialog(dialog_path, \"/root/Node2D\", \"_next_scene\")
+	DIALOG.show_dialog(dialog_path, get_path(), \"_next_scene\")
 "
 
 [sub_resource type="OccluderPolygon2D" id=2]
@@ -48,7 +48,7 @@ tracks/0/keys = {
 [node name="Inside-the-train-Scene" type="Node2D"]
 script = SubResource( 1 )
 dialog_path = "res://Dialogs/chapter1/train.json"
-next = "res://Scenes/Beginning/08.bridge.tscn"
+next = "res://Scenes/Beginning/08.Bridge.tscn"
 
 [node name="Sky_Sprite" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.14902 )

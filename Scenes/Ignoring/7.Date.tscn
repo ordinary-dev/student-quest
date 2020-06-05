@@ -11,7 +11,7 @@ const dates = [\"1:00\", \"6:00\", \"12:00\", \"18:00\", \"0:00\", \"6:00\", \"1
 
 func _ready():
 	for i in dates:
-		$Label.text = i
+		$Text_Label.text = i
 		yield(get_tree().create_timer(0.3), \"timeout\")
 	SCENES.load_scene(next_scene)
 "

@@ -7,9 +7,9 @@ export (bool) var restore_position = false
 const speed := 500
 
 # Objects
-onready var character = $Character
-onready var water_sprite = $Character/Water
-onready var anim = $AnimationPlayer
+onready var character = $Character_Sprite
+onready var water_sprite = $Character_Sprite/Water_AnimatedSprite
+onready var anim = $WalkCycle_AnimationPlayer
 
 # Get input from joystick
 # Otherwise use the keyboard

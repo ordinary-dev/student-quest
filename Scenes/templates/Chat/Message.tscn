@@ -7,7 +7,7 @@ export (String) var text
 
 
 func _ready() -> void:
-	$ColorRect/MarginContainer/Label.text = text
+	$MessageBackground_ColorRect/MessageContainer_MarginContainer/MessageText_Label.text = text
 "
 
 [node name="Message-Template_Control" type="Control"]

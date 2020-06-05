@@ -9,7 +9,7 @@ script/source = "extends Control
 
 export (PackedScene) var icon
 export (Texture) var key_icon
-onready var hc = $MarginContainer/HBoxContainer
+onready var hc = $Inventory_MarginContainer/Inventory_HBoxContainer
 
 
 func update_inv() -> void:

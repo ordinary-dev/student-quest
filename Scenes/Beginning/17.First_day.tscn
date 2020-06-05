@@ -24,7 +24,7 @@ func save():
 	else:
 		TEMP.save(\"day1_dialog\", \"0\")
 	# Player position
-	$Street._save()
+	$\"Street-Template\"._save()
 
 
 # Перейти в магазин
@@ -47,12 +47,12 @@ func _ready():
 
 [node name="First-day-Scene" type="Node2D"]
 script = SubResource( 1 )
-next_scene = "res://Scenes/Beginning/19.date.tscn"
-store_scene = "res://Scenes/Beginning/18.store.tscn"
-singer = NodePath("../first-day-Scene/Mr_Singer_Dialog")
+next_scene = "res://Scenes/Beginning/19.Date.tscn"
+store_scene = "res://Scenes/Beginning/18.Store.tscn"
+singer = NodePath("MrSingerDialog;DialogTrigger-Trigger_Area2D_0")
 
 [node name="Street-Template" parent="." instance=ExtResource( 5 )]
-math_scene = "res://Scenes/Beginning/19.date.tscn"
+math_scene = "res://Scenes/Beginning/19.Date.tscn"
 enable_lights = false
 
 [node name="MrSingerDialog;DialogTrigger-Trigger_Area2D_0" parent="." instance=ExtResource( 4 )]
@@ -62,13 +62,13 @@ dialog_path = "res://Dialogs/chapter1/stranger.json"
 [node name="StoreTrigger;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 552, 216 )
 label = "STORE"
-object_name = NodePath("../../first-day-Scene")
+object_name = NodePath("..")
 function_name = "to_store"
 
 [node name="GHouse;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 1552 )
 label = "GHOUSE"
-object_name = NodePath("../../first-day-Scene")
+object_name = NodePath("..")
 function_name = "enter_house"
 
 [node name="Guide-Template" parent="." instance=ExtResource( 3 )]
@@ -82,4 +82,4 @@ time = "9:45"
 
 [node name="Tickets-Trigger_Area2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( -392.383, -103.691 )
-object_name = NodePath("../Tickets/Node2D")
+object_name = NodePath(".")

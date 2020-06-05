@@ -12,7 +12,7 @@ __meta__ = {
 
 [node name="Text;Animated-text-Template_Control" parent="." instance=ExtResource( 2 )]
 text_2 = "NIGHT"
-next_scene = "res://Scenes/Beginning/02.fireworks.tscn"
+next_scene = "res://Scenes/Beginning/02.Fireworks.tscn"
 
 [node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 1 )]
 obj = NodePath("../../Scene_Control/Control")

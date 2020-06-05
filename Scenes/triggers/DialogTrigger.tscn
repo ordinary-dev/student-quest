@@ -10,9 +10,10 @@ export (String) var person = \"Мистер человек\"
 export (bool) var load_scene = false
 export (String, FILE, \"*.tscn\") var scene_path
 onready var effect = $Tween
-onready var text_name = $ColorRect3
-onready var text_btn = $ColorRect2
-onready var btn = $Button
+onready var text_name = $DialogFrame_ColorRect
+onready var text_btn = $ButtonHintFrame_ColorRect
+onready var btn = $DialogButton_Button
+onready var label = $DialogFrame_ColorRect/Dialog_MarginContainer/DialogBackground_ColorRect/TextContainer_MarginContainer/Text_Label
 var start : = Color(1, 1, 1, 0)
 var end : = Color(1, 1, 1, 1)
 var time : float = 0.3
@@ -74,7 +75,7 @@ func _ready():
 	text_name.set_visible(false)
 	text_btn.set_visible(false)
 	btn.set_visible(false)
-	get_node(\"ColorRect3/MarginContainer/ColorRect/MarginContainer/Label\").text = person
+	label.text = person
 	set_process(false)
 	text_name.modulate = start
 	text_btn.modulate = start

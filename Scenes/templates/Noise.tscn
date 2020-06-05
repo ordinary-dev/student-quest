@@ -47,8 +47,8 @@ extents = Vector2( 96, 96 )
 
 [node name="Noise-Template_0" type="Node2D"]
 script = SubResource( 1 )
-dub = "res://Scenes/templates/Fog_of_war_sprite.tscn"
-sb = NodePath("../Noise-Template_0/StaticBody2D")
+dub = "res://Scenes/templates/Noise_sprite.tscn"
+sb = NodePath("Noise_StaticBody2D")
 
 [node name="Noise-Sprite-Template_AnimatedSprite" parent="." instance=ExtResource( 1 )]
 

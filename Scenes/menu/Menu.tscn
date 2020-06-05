@@ -40,7 +40,7 @@ func _new_game():
 func _load_game():
 	FX.btn_click()
 	GLOBAL.write_settings()
-	get_node(load_scene).get_node(\"Control\")._refresh()
+	get_node(load_scene).get_node(\"Control_VBoxContainer\")._refresh()
 	get_node(load_scene).visible = !get_node(load_scene).visible
 	get_node(settings_scene).visible = false
 	get_node(confirm_scene).visible = false
@@ -144,11 +144,11 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-new_game = "res://Scenes/menu/New.tscn"
-settings_scene = NodePath("../Menu-Menu_Control/Menu/Right/Settings")
-load_scene = NodePath("../Menu-Menu_Control/Menu/Right/Load")
-confirm_scene = NodePath("../Menu-Menu_Control/Menu/Right/Confirm")
-new_game_btn = NodePath("../Menu-Menu_Control/Menu/Left/VBox/BtnNew")
+new_game = "res://Scenes/menu/NewGame.tscn"
+settings_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Settings-Menu_TabContainer")
+load_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Load-Menu_ScrollContainer")
+confirm_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Confirm-Menu_VBoxContainer")
+new_game_btn = NodePath("Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/NewGame;Button-Template_Control")
 
 [node name="Background_TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.533333, 0.533333, 0.533333, 1 )
@@ -215,7 +215,7 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="Rain-Template_Particles2D" parent="." instance=ExtResource( 12 )]
@@ -323,8 +323,6 @@ margin_top = 150.0
 margin_bottom = 930.0
 focus_neighbour_left = NodePath("../../Left/VBox/BtnSettings")
 size_flags_horizontal = 3
-ost_text = NodePath("../../../../Menu-Menu_Control/Menu/Right/Settings/AUDIO/Audio/Music/HBoxContainer/Label")
-fx_text = NodePath("../../../../Menu-Menu_Control/Menu/Right/Settings/AUDIO/Audio/Effects/HBoxContainer/Label")
 
 [node name="Load-Menu_ScrollContainer" parent="Menu_HBoxContainer/Right_MarginContainer" instance=ExtResource( 4 )]
 margin_top = 150.0
@@ -333,11 +331,11 @@ margin_bottom = 930.0
 
 [node name="Animation" type="Tween" parent="."]
 script = SubResource( 2 )
-train = NodePath("../../Menu-Menu_Control/Train")
-person = NodePath("../../Menu-Menu_Control/Person")
-foreground = NodePath("../../Menu-Menu_Control/Foreground")
-background = NodePath("../../Menu-Menu_Control/Background")
-rain = NodePath("../../Menu-Menu_Control/Particles2D")
+train = NodePath("../Train_TextureRect")
+person = NodePath("../Person_TextureRect")
+foreground = NodePath("../Foreground_TextureRect")
+background = NodePath("../Background_TextureRect")
+rain = NodePath("../Rain-Template_Particles2D")
 person_1 = ExtResource( 14 )
 person_2 = ExtResource( 13 )
 

@@ -14,12 +14,12 @@ func load_scene():
 
 [node name="Path-to-cabinet-Scene" type="Node2D"]
 script = SubResource( 1 )
-scene_path = "res://Scenes/Beginning/13.2.dialog.tscn"
+scene_path = "res://Scenes/Beginning/13.2.Dialog.tscn"
 
 [node name="Math-map-Template" parent="." instance=ExtResource( 2 )]
 
 [node name="FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 1376 )
 label = "ENTER"
-object_name = NodePath("../../path-to-cabinet-Scene")
+object_name = NodePath("..")
 function_name = "load_scene"

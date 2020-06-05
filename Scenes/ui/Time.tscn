@@ -56,7 +56,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-label = NodePath("../Time-UI_Control/MarginContainer/Label")
+label = NodePath("Text_MarginContainer/TimeText_Label")
 
 [node name="Text_MarginContainer" type="MarginContainer" parent="."]
 anchor_left = 0.5

@@ -47,7 +47,7 @@ export (bool) var allow_entrance = true
 export (String, FILE, \"*.tscn\") var math_scene
 
 export (bool) var show_singer = true
-onready var singer = $Mr_singer
+onready var singer = $\"Mr-singer-Template_AnimatedSprite\"
 
 # Lights
 export (bool) var enable_lights = true
@@ -97,7 +97,7 @@ func _ready() -> void:
 		remove_child(singer)
 	# Lights
 	if !enable_lights:
-		var arr = $YSort_global/Streetlights.get_children()
+		var arr = $YSort/Streetlights_YSort.get_children()
 		for i in arr:
 			i.enable_light = false
 	
@@ -209,7 +209,7 @@ position = Vector2( 64.0668, 448.356 )
 scale = Vector2( 17.071, 12.8 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../Street-Template/CoveredRailway/Railways16")
+object = NodePath("../Railways_TileMap")
 
 [node name="InvisibleWalls_StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( -315.32, -50.5639 )
@@ -538,537 +538,573 @@ z_as_relative = false
 [node name="Water-sprite-Template_AnimatedSprite_" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1216 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_2" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1216 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_3" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1216 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_4" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1216 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_8" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1280 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_7" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1280 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_6" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1280 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_5" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1280 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_12" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1344 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_11" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1344 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_10" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1344 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_9" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1344 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_16" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1408 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_15" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1408 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_14" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1408 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_13" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1408 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_20" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1472 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_19" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1472 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_18" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1472 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_17" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1472 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_24" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1536 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_23" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1536 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_22" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1536 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_21" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1536 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_28" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1952 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_27" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1952 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_26" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1952 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_25" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1952 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_52" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_51" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_50" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_49" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 2016 )
 scale = Vector2( 4, 4 )
-frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_56" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_55" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_54" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_53" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_60" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_59" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_58" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_57" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_64" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_63" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_62" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_61" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_80" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 960, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_79" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1024, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_78" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1088, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_77" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1152, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_76" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 960, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_75" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1024, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_74" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1088, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_73" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1152, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_72" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 960, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_71" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1024, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_70" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1088, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_69" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1152, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_68" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 960, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_67" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1024, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_66" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1088, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_65" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1152, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_96" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 704, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_95" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 768, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_94" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 832, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_93" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 896, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_92" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 704, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_91" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 768, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_90" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 832, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_89" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 896, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_88" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 704, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_87" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 768, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_86" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 832, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_85" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 896, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_84" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 704, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_83" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 768, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_82" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 832, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_81" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 896, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_112" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 448, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_116" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 384, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_111" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 512, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_110" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 576, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_109" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 640, 2016 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_108" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 448, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_115" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 384, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_107" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 512, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_106" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 576, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_105" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 640, 2080 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_104" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 448, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_114" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 384, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_103" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 512, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_102" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 576, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_101" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 640, 2144 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_100" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 448, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_113" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 384, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_99" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 512, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_98" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 576, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_97" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 640, 2208 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_32" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1888 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_31" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1888 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_30" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1888 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_29" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1888 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_36" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1824 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_35" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1824 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_34" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1824 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_33" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1824 )
 scale = Vector2( 4, 4 )
-frame = 1
+frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_40" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1760 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_39" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1760 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_38" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1760 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_37" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1760 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_44" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1696 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_43" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1696 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_42" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1696 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_41" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1696 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_48" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1216, 1632 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_47" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1280, 1632 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_46" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1344, 1632 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_45" parent="Water" instance=ExtResource( 33 )]
 position = Vector2( 1408, 1632 )
 scale = Vector2( 4, 4 )
+frame = 2
 
 [node name="Bridges" type="Node2D" parent="."]
 
@@ -1090,183 +1126,183 @@ position = Vector2( 160, -24 )
 
 [node name="Waypoint-Template_Position2D_" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1824, 1112 )
-nodes = [ NodePath("../Position2D2"), NodePath("../Position2D8") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_2"), NodePath("../Waypoint-Template_Position2D_8") ]
 
 [node name="Waypoint-Template_Position2D_8" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1824, 5208 )
-nodes = [ NodePath("../Position2D9"), NodePath("../Position2D"), NodePath("../Position2D19"), NodePath("../Position2D20"), NodePath("../Position2D46") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_9"), NodePath("../Waypoint-Template_Position2D_"), NodePath("../Waypoint-Template_Position2D_19"), NodePath("../Waypoint-Template_Position2D_20"), NodePath("../Waypoint-Template_Position2D_46") ]
 
 [node name="Waypoint-Template_Position2D_20" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 416, 5208 )
-nodes = [ NodePath("../Position2D8"), NodePath("../Position2D21"), NodePath("../Position2D46") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_8"), NodePath("../Waypoint-Template_Position2D_21"), NodePath("../Waypoint-Template_Position2D_46") ]
 
 [node name="Waypoint-Template_Position2D_21" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 352, 5368 )
-nodes = [ NodePath("../Position2D20"), NodePath("../Position2D22") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_20"), NodePath("../Waypoint-Template_Position2D_22") ]
 
 [node name="Waypoint-Template_Position2D_22" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 832, 5528 )
-nodes = [ NodePath("../Position2D19"), NodePath("../Position2D21") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_19"), NodePath("../Waypoint-Template_Position2D_21") ]
 
 [node name="Waypoint-Template_Position2D_9" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2336, 5144 )
-nodes = [ NodePath("../Position2D8"), NodePath("../Position2D10"), NodePath("../Position2D18"), NodePath("../Position2D15") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_8"), NodePath("../Waypoint-Template_Position2D_10"), NodePath("../Waypoint-Template_Position2D_18"), NodePath("../Waypoint-Template_Position2D_15") ]
 
 [node name="Waypoint-Template_Position2D_10" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 3872, 3608 )
-nodes = [ NodePath("../Position2D9"), NodePath("../Position2D11") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_9"), NodePath("../Waypoint-Template_Position2D_11") ]
 
 [node name="Waypoint-Template_Position2D_11" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2336, 2072 )
-nodes = [ NodePath("../Position2D4"), NodePath("../Position2D7"), NodePath("../Position2D10"), NodePath("../Position2D9") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_4"), NodePath("../Waypoint-Template_Position2D_7"), NodePath("../Waypoint-Template_Position2D_10"), NodePath("../Waypoint-Template_Position2D_9") ]
 
 [node name="Waypoint-Template_Position2D_2" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2080, 920 )
-nodes = [ NodePath("../Position2D"), NodePath("../Position2D3"), NodePath("../Position2D35") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_"), NodePath("../Waypoint-Template_Position2D_3"), NodePath("../Waypoint-Template_Position2D_35") ]
 
 [node name="Waypoint-Template_Position2D_3" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2336, 920 )
-nodes = [ NodePath("../Position2D2"), NodePath("../Position2D4"), NodePath("../Position2D30") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_2"), NodePath("../Waypoint-Template_Position2D_4"), NodePath("../Waypoint-Template_Position2D_30") ]
 
 [node name="Waypoint-Template_Position2D_30" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2336, 408 )
-nodes = [ NodePath("../Position2D3"), NodePath("../Position2D31") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_3"), NodePath("../Waypoint-Template_Position2D_31") ]
 
 [node name="Waypoint-Template_Position2D_31" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2080, 408 )
-nodes = [ NodePath("../Position2D30"), NodePath("../Position2D35"), NodePath("../Position2D32") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_30"), NodePath("../Waypoint-Template_Position2D_35"), NodePath("../Waypoint-Template_Position2D_32") ]
 
 [node name="Waypoint-Template_Position2D_32" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1248, 408 )
-nodes = [ NodePath("../Position2D31"), NodePath("../Position2D33"), NodePath("../Position2D34") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_31"), NodePath("../Waypoint-Template_Position2D_33"), NodePath("../Waypoint-Template_Position2D_34") ]
 
 [node name="Waypoint-Template_Position2D_33" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 288, 536 )
-nodes = [ NodePath("../Position2D32"), NodePath("../Position2D34") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_32"), NodePath("../Waypoint-Template_Position2D_34") ]
 
 [node name="Waypoint-Template_Position2D_34" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1248, 536 )
-nodes = [ NodePath("../Position2D33"), NodePath("../Position2D36"), NodePath("../Position2D32"), NodePath("../Position2D35") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_33"), NodePath("../Waypoint-Template_Position2D_36"), NodePath("../Waypoint-Template_Position2D_32"), NodePath("../Waypoint-Template_Position2D_35") ]
 
 [node name="Waypoint-Template_Position2D_36" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1240, 1048 )
-nodes = [ NodePath("../Position2D34"), NodePath("../Position2D39"), NodePath("../Position2D37") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_34"), NodePath("../Waypoint-Template_Position2D_39"), NodePath("../Waypoint-Template_Position2D_37") ]
 
 [node name="Waypoint-Template_Position2D_37" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1376, 1216 )
-nodes = [ NodePath("../Position2D36"), NodePath("../Position2D48"), NodePath("../Position2D42") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_36"), NodePath("../Waypoint-Template_Position2D_48"), NodePath("../Waypoint-Template_Position2D_42") ]
 
 [node name="Waypoint-Template_Position2D_38" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1152, 1136 )
-nodes = [ NodePath("../Position2D47"), NodePath("../Position2D48") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_47"), NodePath("../Waypoint-Template_Position2D_48") ]
 
 [node name="Waypoint-Template_Position2D_47" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1032, 1144 )
-nodes = [ NodePath("../Position2D38"), NodePath("../Position2D39") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_38"), NodePath("../Waypoint-Template_Position2D_39") ]
 
 [node name="Waypoint-Template_Position2D_48" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1264, 1152 )
-nodes = [ NodePath("../Position2D38"), NodePath("../Position2D37") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_38"), NodePath("../Waypoint-Template_Position2D_37") ]
 
 [node name="Waypoint-Template_Position2D_39" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 928, 1208 )
-nodes = [ NodePath("../Position2D36"), NodePath("../Position2D47"), NodePath("../Position2D40") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_36"), NodePath("../Waypoint-Template_Position2D_47"), NodePath("../Waypoint-Template_Position2D_40") ]
 
 [node name="Waypoint-Template_Position2D_40" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 928, 1624 )
-nodes = [ NodePath("../Position2D39"), NodePath("../Position2D49") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_39"), NodePath("../Waypoint-Template_Position2D_49") ]
 
 [node name="Waypoint-Template_Position2D_41" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1144, 1560 )
-nodes = [ NodePath("../Position2D49"), NodePath("../Position2D50") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_49"), NodePath("../Waypoint-Template_Position2D_50") ]
 
 [node name="Waypoint-Template_Position2D_49" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1032, 1568 )
-nodes = [ NodePath("../Position2D40"), NodePath("../Position2D41") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_40"), NodePath("../Waypoint-Template_Position2D_41") ]
 
 [node name="Waypoint-Template_Position2D_50" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1256, 1568 )
-nodes = [ NodePath("../Position2D41"), NodePath("../Position2D42") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_41"), NodePath("../Waypoint-Template_Position2D_42") ]
 
 [node name="Waypoint-Template_Position2D_42" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1376, 1632 )
-nodes = [ NodePath("../Position2D37"), NodePath("../Position2D50"), NodePath("../Position2D43") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_37"), NodePath("../Waypoint-Template_Position2D_50"), NodePath("../Waypoint-Template_Position2D_43") ]
 
 [node name="Waypoint-Template_Position2D_43" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1400, 1888 )
-nodes = [ NodePath("../Position2D42"), NodePath("../Position2D44") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_42"), NodePath("../Waypoint-Template_Position2D_44") ]
 
 [node name="Waypoint-Template_Position2D_44" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1432, 2584 )
-nodes = [ NodePath("../Position2D43"), NodePath("../Position2D45") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_43"), NodePath("../Waypoint-Template_Position2D_45") ]
 
 [node name="Waypoint-Template_Position2D_45" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 992, 2592 )
-nodes = [ NodePath("../Position2D44"), NodePath("../Position2D46") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_44"), NodePath("../Waypoint-Template_Position2D_46") ]
 
 [node name="Waypoint-Template_Position2D_46" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 992, 5080 )
-nodes = [ NodePath("../Position2D8"), NodePath("../Position2D20"), NodePath("../Position2D45") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_8"), NodePath("../Waypoint-Template_Position2D_20"), NodePath("../Waypoint-Template_Position2D_45") ]
 
 [node name="Waypoint-Template_Position2D_35" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2080, 536 )
-nodes = [ NodePath("../Position2D31"), NodePath("../Position2D34"), NodePath("../Position2D2") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_31"), NodePath("../Waypoint-Template_Position2D_34"), NodePath("../Waypoint-Template_Position2D_2") ]
 
 [node name="Waypoint-Template_Position2D_4" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2336, 1752 )
-nodes = [ NodePath("../Position2D3"), NodePath("../Position2D5"), NodePath("../Position2D11") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_3"), NodePath("../Waypoint-Template_Position2D_5"), NodePath("../Waypoint-Template_Position2D_11") ]
 
 [node name="Waypoint-Template_Position2D_5" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 3456, 1752 )
-nodes = [ NodePath("../Position2D4"), NodePath("../Position2D6") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_4"), NodePath("../Waypoint-Template_Position2D_6") ]
 
 [node name="Waypoint-Template_Position2D_6" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 4064, 1752 )
-nodes = [ NodePath("../Position2D5"), NodePath("../Position2D7"), NodePath("../Position2D13") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_5"), NodePath("../Waypoint-Template_Position2D_7"), NodePath("../Waypoint-Template_Position2D_13") ]
 
 [node name="Waypoint-Template_Position2D_13" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 5728, 1752 )
-nodes = [ NodePath("../Position2D6"), NodePath("../Position2D12") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_6"), NodePath("../Waypoint-Template_Position2D_12") ]
 
 [node name="Waypoint-Template_Position2D_7" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 4064, 2072 )
-nodes = [ NodePath("../Position2D6"), NodePath("../Position2D11"), NodePath("../Position2D12"), NodePath("../Position2D15") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_6"), NodePath("../Waypoint-Template_Position2D_11"), NodePath("../Waypoint-Template_Position2D_12"), NodePath("../Waypoint-Template_Position2D_15") ]
 
 [node name="Waypoint-Template_Position2D_12" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 5728, 2072 )
-nodes = [ NodePath("../Position2D7"), NodePath("../Position2D13"), NodePath("../Position2D13") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_7"), NodePath("../Waypoint-Template_Position2D_13"), NodePath("../Waypoint-Template_Position2D_14") ]
 
 [node name="Waypoint-Template_Position2D_14" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 5728, 5208 )
-nodes = [ NodePath("../Position2D15"), NodePath("../Position2D12"), NodePath("../Position2D16") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_15"), NodePath("../Waypoint-Template_Position2D_12"), NodePath("../Waypoint-Template_Position2D_16") ]
 
 [node name="Waypoint-Template_Position2D_16" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 5528, 5528 )
-nodes = [ NodePath("../Position2D14"), NodePath("../Position2D17") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_14"), NodePath("../Waypoint-Template_Position2D_17") ]
 
 [node name="Waypoint-Template_Position2D_17" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 4064, 5528 )
-nodes = [ NodePath("../Position2D16"), NodePath("../Position2D15"), NodePath("../Position2D18") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_16"), NodePath("../Waypoint-Template_Position2D_15"), NodePath("../Waypoint-Template_Position2D_18") ]
 
 [node name="Waypoint-Template_Position2D_18" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2336, 5528 )
-nodes = [ NodePath("../Position2D17"), NodePath("../Position2D9"), NodePath("../Position2D19"), NodePath("../Position2D24") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_17"), NodePath("../Waypoint-Template_Position2D_9"), NodePath("../Waypoint-Template_Position2D_19"), NodePath("../Waypoint-Template_Position2D_24") ]
 
 [node name="Waypoint-Template_Position2D_19" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1888, 5528 )
-nodes = [ NodePath("../Position2D8"), NodePath("../Position2D18"), NodePath("../Position2D22"), NodePath("../Position2D23") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_8"), NodePath("../Waypoint-Template_Position2D_18"), NodePath("../Waypoint-Template_Position2D_22"), NodePath("../Waypoint-Template_Position2D_23") ]
 
 [node name="Waypoint-Template_Position2D_23" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 1888, 8064 )
-nodes = [ NodePath("../Position2D19"), NodePath("../Position2D24") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_19"), NodePath("../Waypoint-Template_Position2D_24") ]
 
 [node name="Waypoint-Template_Position2D_24" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 2336, 8064 )
-nodes = [ NodePath("../Position2D18"), NodePath("../Position2D23") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_18"), NodePath("../Waypoint-Template_Position2D_23") ]
 
 [node name="Waypoint-Template_Position2D_15" parent="YSort/Waypoints_YSort" instance=ExtResource( 10 )]
 position = Vector2( 4064, 5216 )
-nodes = [ NodePath("../Position2D14"), NodePath("../Position2D7"), NodePath("../Position2D9"), NodePath("../Position2D17") ]
+nodes = [ NodePath("../Waypoint-Template_Position2D_14"), NodePath("../Waypoint-Template_Position2D_7"), NodePath("../Waypoint-Template_Position2D_9"), NodePath("../Waypoint-Template_Position2D_17") ]
 
 [node name="Buildings_YSort" type="YSort" parent="YSort"]
 
@@ -1313,7 +1349,7 @@ position = Vector2( 1165.83, 6918.24 )
 scale = Vector2( 73.68, 12.56 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../Street-Template/YSort_global/Buildings/law_house")
+object = NodePath("../LawHouse_Sprite")
 
 [node name="PhysHouse_Sprite" type="Sprite" parent="YSort/Buildings_YSort"]
 position = Vector2( 6272, 6320 )
@@ -1341,7 +1377,7 @@ position = Vector2( 6099.39, 5505.52 )
 scale = Vector2( 110.72, 10 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../Street-Template/YSort_global/Buildings/phys_house")
+object = NodePath("../PhysHouse_Sprite")
 
 [node name="HmHouse_Sprite" type="Sprite" parent="YSort/Buildings_YSort"]
 position = Vector2( 3930.34, 7535.15 )
@@ -1373,7 +1409,7 @@ position = Vector2( 3936.29, 7058.72 )
 scale = Vector2( 127, 14 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../Street-Template/YSort_global/Buildings/hm_house")
+object = NodePath("../HmHouse_Sprite")
 
 [node name="ENIHouse_Sprite" type="Sprite" parent="YSort/Buildings_YSort"]
 position = Vector2( 3528, 5808 )
@@ -1403,7 +1439,7 @@ position = Vector2( 3656, 5272 )
 scale = Vector2( 110, 35 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../Street-Template/YSort_global/Buildings/eni_house")
+object = NodePath("../ENIHouse_Sprite")
 mod_color = Color( 1, 1, 1, 0.588235 )
 
 [node name="MathHouse_Sprite" type="Sprite" parent="YSort/Buildings_YSort"]
@@ -1427,7 +1463,7 @@ position = Vector2( 1333.34, 5428.1 )
 scale = Vector2( 55, 15 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../Street-Template/YSort_global/Buildings/Math_Building")
+object = NodePath("../MathHouse_Sprite")
 
 [node name="NSHouse_Sprite" type="Sprite" parent="YSort/Buildings_YSort"]
 position = Vector2( 5088, 3744 )
@@ -1478,7 +1514,7 @@ position = Vector2( 2931.37, 444.429 )
 scale = Vector2( 33.16, 13.68 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../Street-Template/YSort_global/Buildings/chem_house")
+object = NodePath("../ChemHouse_Sprite")
 
 [node name="ChemShow;ObjectSwitcher-Trigger_Area2D_2" parent="YSort/Buildings_YSort" instance=ExtResource( 5 )]
 visible = false
@@ -1486,7 +1522,7 @@ position = Vector2( 4550.57, 444.429 )
 scale = Vector2( 33.16, 13.68 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../Street-Template/YSort_global/Buildings/chem_house")
+object = NodePath("../ChemHouse_Sprite")
 
 [node name="Dormitory_Sprite" type="Sprite" parent="YSort/Buildings_YSort"]
 position = Vector2( -928, 2648 )
@@ -1551,7 +1587,7 @@ position = Vector2( -1.97357, -3.40637 )
 scale = Vector2( 4.46977, 2.86857 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../../Street-Template/YSort_global/Buildings/Crossings/Crossins")
+object = NodePath("../Math-ENI-Crossing_Sprite")
 
 [node name="ENI-Phys-Crossing_Sprite" type="Sprite" parent="YSort/Buildings_YSort/UniversirtyCrossings_YSort"]
 position = Vector2( 299.156, -28.9514 )
@@ -1564,7 +1600,7 @@ position = Vector2( 302.499, -34.0543 )
 scale = Vector2( 4.46977, 2.86857 )
 collision_layer = 0
 collision_mask = 1024
-object = NodePath("../../../../../Street-Template/YSort_global/Buildings/Crossings/Crossing2")
+object = NodePath("../ENI-Phys-Crossing_Sprite")
 
 [node name="Fountain-Template" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 3010, 3600 )

@@ -5,8 +5,8 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
-onready var inp = $VBoxContainer
-onready var btnAdd = $ColorRect
+onready var inp = $MainContainer_VBoxContainer
+onready var btnAdd = $\"AddSave;Button-Template_Control\"
 
 
 func _ready():

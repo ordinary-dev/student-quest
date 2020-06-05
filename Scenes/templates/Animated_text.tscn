@@ -22,9 +22,9 @@ const animation_duration = 0.05
 
 # Scene objects
 # First label
-onready var label = $ColorRect/VBox/Label
+onready var label = $BackgroundColor_ColorRect/ContentContainer_VBox/TitleText_Label
 # Second label
-onready var label2 = $ColorRect/VBox/Label2
+onready var label2 = $BackgroundColor_ColorRect/ContentContainer_VBox/Text_Label
 # Tween
 onready var effect = $Tween
 

@@ -17,7 +17,7 @@ func flat():
 
 [node name="Guide-Scene" type="Node2D"]
 script = SubResource( 1 )
-flat_scene = "res://Scenes/Beginning/15.flat.tscn"
+flat_scene = "res://Scenes/Beginning/15.Flat.tscn"
 
 [node name="Street-Template" parent="." instance=ExtResource( 4 )]
 initial_position = 1
@@ -27,7 +27,7 @@ enable_lights = false
 [node name="Hostel;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( -1136, 2880 )
 label = "HOSTEL"
-object_name = NodePath("../../guide-Scene")
+object_name = NodePath("..")
 function_name = "flat"
 
 [node name="Guide-AI-Template_Sprite" parent="." instance=ExtResource( 3 )]
@@ -35,7 +35,7 @@ position = Vector2( 2307.01, 4238.06 )
 scale = Vector2( 3, 3 )
 z_index = 2
 z_as_relative = false
-nodes = [ NodePath("../Position2D"), NodePath("../Position2D2"), NodePath("../Position2D3"), NodePath("../Position2D4"), NodePath("../Position2D5") ]
+nodes = [ NodePath("../GuideWaypoint_Position2D_1"), NodePath("../GuideWaypoint_Position2D_2"), NodePath("../GuideWaypoint_Position2D_3"), NodePath("../GuideWaypoint_Position2D_4"), NodePath("../GuideWaypoint_Position2D_5") ]
 
 [node name="GuideWaypoint_Position2D_1" type="Position2D" parent="."]
 position = Vector2( 2464.44, 885.778 )

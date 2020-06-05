@@ -7,7 +7,7 @@ script/source = "extends Sprite
 
 # TODO: remove animation from script!
 
-onready var anim = $AnimationPlayer
+onready var anim = $WalkCycle_AnimationPlayer
 export (Array, NodePath) var nodes
 const max_distance = 250
 var player

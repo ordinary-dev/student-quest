@@ -28,9 +28,9 @@ extents = Vector2( 134.269, 25.8883 )
 
 [node name="Math-map-Template" type="Node2D"]
 script = ExtResource( 4 )
-p1 = NodePath("../Math-map_Template/floor_pos/floor_1")
-p2 = NodePath("../Math-map_Template/floor_pos/floor_2")
-p3 = NodePath("../Math-map_Template/floor_pos/floor_3")
+p1 = NodePath("FloorPositions/Floor1_Position2D")
+p2 = NodePath("FloorPositions/Floor2_Position2D")
+p3 = NodePath("FloorPositions/Floor3_Position2D")
 street_path = "res://Scenes/1.beggining/Day1.tscn"
 
 [node name="Map_TileMap" type="TileMap" parent="."]
@@ -55,31 +55,31 @@ texture = ExtResource( 7 )
 [node name="TpFloor1-2;FunctionCaller-Trigger_Area2D" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 448, 544 )
 label = "2ND_FLOOR"
-object_name = NodePath("../../../Math-map_Template")
+object_name = NodePath("../..")
 function_name = "floor_2"
 
 [node name="TpFloor2-3;FunctionCaller-Trigger_Area2D" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 288, 1728 )
 label = "1ST_FLOOR"
-object_name = NodePath("../../../Math-map_Template")
+object_name = NodePath("../..")
 function_name = "floor_1"
 
 [node name="TpFloor3-2;FunctionCaller-Trigger_Area2D" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 336, 3136 )
 label = "2ND_FLOOR"
-object_name = NodePath("../../../Math-map_Template")
+object_name = NodePath("../..")
 function_name = "floor_2"
 
 [node name="TpFloor2-1;FunctionCaller-Trigger_Area2D" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 480, 1728 )
 label = "3RD_FLOOR"
-object_name = NodePath("../../../Math-map_Template")
+object_name = NodePath("../..")
 function_name = "floor_3"
 
 [node name="TpOutside;FunctionCaller-Trigger_Area2D" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 448, -64 )
 label = "STREET"
-object_name = NodePath("../../../Math-map_Template")
+object_name = NodePath("../..")
 function_name = "street"
 
 [node name="Colliders" type="Node2D" parent="."]

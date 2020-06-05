@@ -9,8 +9,8 @@ script/source = "extends CanvasLayer
 
 export (NodePath) var obj
 export (String) var method
-onready var btn = $Canvas/Button
-onready var timer = $Canvas/Timer
+onready var btn = $\"Canvas_Control/Skip;Button-Template_Control\"
+onready var timer = $Canvas_Control/Timer
 
 
 func _ready():

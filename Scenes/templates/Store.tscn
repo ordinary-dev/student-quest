@@ -48,7 +48,7 @@ tile_data = PoolIntArray( -589820, 1610612738, 0, -589819, -1073741821, 0, -5898
 [node name="Exit;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 476.2, -126.7 )
 label = "EXITBUILDING"
-object_name = NodePath("../../Store-Template_0")
+object_name = NodePath("..")
 function_name = "load_street"
 
 [node name="Light2D" type="Light2D" parent="."]

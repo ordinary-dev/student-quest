@@ -7,7 +7,8 @@ script/source = "extends Area2D
 
 export (String) var label = \"Label\"
 onready var effect = $Tween
-onready var text_name = $ColorRect3
+onready var text_name = $Frame_ColorRect
+onready var label_obj = $Frame_ColorRect/LabelContainer_MarginContainer/Background_ColorRect/Text_MarginContainer/LabelText_Label
 var start : = Color(1, 1, 1, 0)
 var end : = Color(1, 1, 1, 1)
 var time : float = 0.3
@@ -42,7 +43,7 @@ func _on_Area2D_body_exited(body):
 
 func _ready():
 	text_name.set_visible(false)
-	get_node(\"ColorRect3/MarginContainer/ColorRect/MarginContainer/Label\").text = label
+	label_obj.text = label
 	set_process(false)
 	text_name.modulate = start
 "

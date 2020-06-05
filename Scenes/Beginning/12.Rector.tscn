@@ -99,7 +99,7 @@ position = Vector2( 808.866, 494.028 )
 dialog_path = "res://Dialogs/Beginning/Rector.json"
 person = "RECTOR"
 load_scene = true
-scene_path = "res://Scenes/Beginning/13.1.path_to_cabinet.tscn"
+scene_path = "res://Scenes/Beginning/13.1.Path_to_cabinet.tscn"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 6 )]
 joystick = true

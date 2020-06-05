@@ -91,7 +91,7 @@ func _refresh() -> void:
 		btnNew.name = \"btnNew\"
 		add_child(btnNew)
 		var btnPlus = get_node(\"btnNew\")
-		var okBtn = btnPlus.get_node(\"VBoxContainer/HBoxContainer/OK\")
+		var okBtn = btnPlus.get_node(\"MainContainer_VBoxContainer/ButtonsContainer_HBoxContainer/OK;Button-Template_Control\")
 		GLOBAL.maxId += 1
 		okBtn.connect(\"pressed\", self, \"newSave\", [GLOBAL.maxId])
 	var dir = Directory.new()

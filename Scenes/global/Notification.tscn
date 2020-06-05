@@ -93,8 +93,8 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-label_path = NodePath("../Notification_Control/MarginContainer/ColorRect/MarginContainer/ColorRect/MarginContainer/Label")
-mc = NodePath("../Notification_Control/MarginContainer")
+label_path = NodePath("MainContainer_MarginContainer/Border_ColorRect/MessageContainer_MarginContainer/Background_ColorRect/TextContainer_MarginContainer/Message_Label")
+mc = NodePath("MainContainer_MarginContainer")
 
 [node name="Tween" type="Tween" parent="."]
 

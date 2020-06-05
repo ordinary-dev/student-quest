@@ -6,5 +6,5 @@
 
 [node name="Speaker-Template" parent="." instance=ExtResource( 1 )]
 position = Vector2( 56, 120 )
-fac_path = "res://Scenes/Beginning/21.math_blackout.tscn"
+fac_path = "res://Scenes/Beginning/21.Math_blackout.tscn"
 dialog_path = "res://Dialogs/Beginning/Speaker.json"

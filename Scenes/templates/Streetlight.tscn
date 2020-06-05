@@ -10,7 +10,7 @@ export (bool) var enable_light = true setget setlight, getlight
 
 
 func setlight(val:bool) -> void:
-	$streetlight2/Light2D.visible = val
+	$Streetlight_Sprite/LightSource_Light2D.visible = val
 
 
 func getlight() -> bool:

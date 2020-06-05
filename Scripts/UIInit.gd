@@ -5,35 +5,35 @@ const SHOW_CONTROLS = false
 
 
 func show_time(time) -> void:
-	UI.get_node("Time").set_time(time)
-	UI.get_node("Time").start()
-	UI.get_node("Time").visible = true
+	UI.get_node("Time-UI_Control").set_time(time)
+	UI.get_node("Time-UI_Control").start()
+	UI.get_node("Time-UI_Control").visible = true
 
 
 func hide_time() -> void:
-	UI.get_node("Time").stop()
-	UI.get_node("Time").visible = false
+	UI.get_node("Time-UI_Control").stop()
+	UI.get_node("Time-UI_Control").visible = false
 
 
 func hide_joystick() -> void:
-	UI.get_node("Joystick").visible = false
+	UI.get_node("Joystick-UI_Sprite").visible = false
 
 
 func show_joystick() -> void:
-	UI.get_node("Joystick").visible = true
+	UI.get_node("Joystick-UI_Sprite").visible = true
 
 
 func enable_ui(joystick := false) -> void:
 	if joystick and (OS.get_name() == "Android" or SHOW_CONTROLS):
-		UI.get_node("Joystick").visible = true
-	UI.get_node("Pause").visible = true
-	UI.get_node("Pause").set_process(true)
-	UI.get_node("Inventory").visible = true
-	UI.get_node("Inventory").update_inv()
+		UI.get_node("Joystick-UI_Sprite").visible = true
+	UI.get_node("PauseMenu-UI_Control").visible = true
+	UI.get_node("PauseMenu-UI_Control").set_process(true)
+	UI.get_node("Inventory-UI_Control").visible = true
+	UI.get_node("Inventory-UI_Control").update_inv()
 
 
 func disable_ui() -> void:
-	UI.get_node("Joystick").visible = false
-	UI.get_node("Pause").visible = false
-	UI.get_node("Pause").set_process(false)
-	UI.get_node("Inventory").visible = false
+	UI.get_node("Joystick-UI_Sprite").visible = false
+	UI.get_node("PauseMenu-UI_Control").visible = false
+	UI.get_node("PauseMenu-UI_Control").set_process(false)
+	UI.get_node("Inventory-UI_Control").visible = false

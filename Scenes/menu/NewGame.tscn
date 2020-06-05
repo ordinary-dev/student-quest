@@ -28,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 menu = "res://Scenes/menu/Menu.tscn"
-next_scene = "res://Scenes/Beginning/01.date.tscn"
+next_scene = "res://Scenes/Beginning/01.Date.tscn"
 
 [node name="BackGround_ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

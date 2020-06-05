@@ -30,7 +30,7 @@ func load_scene() -> void:
 [node name="Train-window-Scene" type="Node2D"]
 script = SubResource( 1 )
 time = 4.0
-next_scene = "res://Scenes/Beginning/07.inside_the_train.tscn"
+next_scene = "res://Scenes/Beginning/07.Inside_the_train.tscn"
 
 [node name="Reflection_Sprite" type="Sprite" parent="."]
 position = Vector2( 1086, 577 )

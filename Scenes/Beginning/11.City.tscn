@@ -7,7 +7,7 @@
 
 [node name="City-Scene" type="Node2D"]
 script = ExtResource( 1 )
-next_scene = "res://Scenes/Beginning/12.rector.tscn"
+next_scene = "res://Scenes/Beginning/12.Rector.tscn"
 delay = 2.0
 
 [node name="Background_Sprite" type="Sprite" parent="."]

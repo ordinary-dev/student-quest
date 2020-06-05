@@ -10,7 +10,7 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_scene = "res://Scenes/Ignoring/9.Speach.tscn"
+next_scene = "res://Scenes/Ignoring/9.Speech.tscn"
 delay = 3.0
 
 [node name="Clouds_Sprite" type="Sprite" parent="."]
