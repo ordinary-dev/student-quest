@@ -66,12 +66,12 @@ func _on_Accept_pressed():
 	emit_once(\"dialog_start\")
 "
 
-[node name="Sprite" type="Sprite"]
+[node name="Joystick-UI_Sprite" type="Sprite"]
 light_mask = 0
 position = Vector2( 200, 880 )
 texture = ExtResource( 3 )
 
-[node name="Button" type="Button" parent="."]
+[node name="Tap_Button" type="Button" parent="."]
 light_mask = 0
 margin_right = 76.0
 margin_bottom = 70.0
@@ -82,7 +82,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Accept" type="Button" parent="."]
+[node name="Accept_Button" type="Button" parent="."]
 light_mask = 0
 anchor_left = 1.0
 anchor_top = 1.0
@@ -98,4 +98,4 @@ script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Accept" to="Accept" method="_on_Accept_pressed"]
+[connection signal="pressed" from="Accept_Button" to="Accept_Button" method="_on_Accept_pressed"]

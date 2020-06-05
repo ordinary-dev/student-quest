@@ -1,24 +1,24 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Chapter1/Speaker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/templates/Speaker.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/templates/Background.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/character_main.png" type="Texture" id=4]
 
-[node name="Node2D" type="Node2D"]
+[node name="Graduation-Scene" type="Node2D"]
 script = ExtResource( 1 )
 next_scene = "res://Scenes/Ignoring/14.Face.tscn"
 delay = 4.0
 transition_in = false
 transition_out = false
 
-[node name="Background" parent="." instance=ExtResource( 3 )]
+[node name="Background-Template" parent="." instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 1, 0.545098 )
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
+[node name="Speaker-Template" parent="." instance=ExtResource( 2 )]
 show_dialog = false
 
-[node name="character_main" type="Sprite" parent="."]
+[node name="MainCharacter_Sprite" type="Sprite" parent="."]
 position = Vector2( 904, 760 )
 scale = Vector2( 12, 12 )
 z_index = 4

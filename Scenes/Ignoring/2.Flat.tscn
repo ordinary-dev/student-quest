@@ -13,14 +13,14 @@ func chat() -> void:
 	SCENES.load_scene(chat_scene)
 "
 
-[node name="Node2D" type="Node2D"]
+[node name="Flat-Scene" type="Node2D"]
 script = SubResource( 1 )
 chat_scene = "res://Scenes/Ignoring/3.Chat.tscn"
 
-[node name="Map" parent="." instance=ExtResource( 1 )]
+[node name="Flat-Template" parent="." instance=ExtResource( 1 )]
 
-[node name="Chat" parent="." instance=ExtResource( 2 )]
+[node name="Chat;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 495.654, 225.198 )
 label = "CHAT"
-object_name = NodePath("..")
+object_name = NodePath("../../Flat-Scene")
 function_name = "chat"

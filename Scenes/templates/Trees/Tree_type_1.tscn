@@ -5,18 +5,18 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.97201, 3.01912 )
 
-[node name="Tree_t_1_n_0" type="Sprite"]
+[node name="Tree-type-1-Template_Sprite_0" type="Sprite"]
 position = Vector2( -1.33051, 0.941624 )
 scale = Vector2( 4.38242, 4.15647 )
 z_index = 4
 texture = ExtResource( 1 )
 offset = Vector2( 0, -32 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Tree_StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 0.303602, -2.15125 )
 collision_layer = 0
 collision_mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0.303602, -0.226544 )
+[node name="Tree_CollisionShape2D" type="CollisionShape2D" parent="Tree_StaticBody2D"]
+position = Vector2( -4.17393, -0.862054 )
 shape = SubResource( 1 )

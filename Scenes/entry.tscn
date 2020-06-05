@@ -13,7 +13,7 @@ func _ready():
 	SCENES.load_scene(menu)
 "
 
-[node name="Control" type="Control"]
+[node name="entry-Scene_Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
@@ -22,7 +22,7 @@ __meta__ = {
 }
 menu = "res://Scenes/menu/Menu.tscn"
 
-[node name="Label" type="Label" parent="."]
+[node name="LoadingText_Label" type="Label" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 text = "LOADING"

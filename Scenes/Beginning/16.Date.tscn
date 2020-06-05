@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/templates/Animated_text.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=2]
+
+[node name="Date-Scene" type="Control"]
+rect_min_size = Vector2( 1920, 1080 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animated-text-Template_Control" parent="." instance=ExtResource( 1 )]
+text_1 = "SEPTEMBER1"
+text_2 = "BUSSTOP"
+next_scene = "res://Scenes/Beginning/17.first_day.tscn"
+
+[node name="Disable-UI" parent="." instance=ExtResource( 2 )]

@@ -14,7 +14,7 @@
 [ext_resource path="res://Scenes/templates/Rain.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Sprites/menu_background/8bit-person-2.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/menu_background/8bit-person-1.png" type="Texture" id=14]
-[ext_resource path="res://Scenes/ui/disable_ui.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=15]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
@@ -137,7 +137,7 @@ func _ready():
 	get_node(person).texture = person_2
 "
 
-[node name="Menu" type="Control"]
+[node name="Menu-Menu_Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = SubResource( 1 )
@@ -145,12 +145,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 new_game = "res://Scenes/menu/New.tscn"
-settings_scene = NodePath("Menu/Right/Settings")
-load_scene = NodePath("Menu/Right/Load")
-confirm_scene = NodePath("Menu/Right/Confirm")
-new_game_btn = NodePath("Menu/Left/VBox/BtnNew")
+settings_scene = NodePath("../Menu-Menu_Control/Menu/Right/Settings")
+load_scene = NodePath("../Menu-Menu_Control/Menu/Right/Load")
+confirm_scene = NodePath("../Menu-Menu_Control/Menu/Right/Confirm")
+new_game_btn = NodePath("../Menu-Menu_Control/Menu/Left/VBox/BtnNew")
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background_TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.533333, 0.533333, 0.533333, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -163,7 +163,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Person" type="TextureRect" parent="."]
+[node name="Person_TextureRect" type="TextureRect" parent="."]
 visible = false
 margin_left = 1427.44
 margin_top = 724.909
@@ -175,7 +175,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Train" type="TextureRect" parent="."]
+[node name="Train_TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -189,7 +189,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Foreground" type="TextureRect" parent="."]
+[node name="Foreground_TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.533333, 0.533333, 0.533333, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -202,7 +202,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Vignette" type="TextureRect" parent="."]
+[node name="Vignette_TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 texture = ExtResource( 1 )
@@ -210,27 +210,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Noise" type="AnimatedSprite" parent="."]
+[node name="Noise_AnimatedSprite" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 3
+frame = 2
 playing = true
 
-[node name="Particles2D" parent="." instance=ExtResource( 12 )]
+[node name="Rain-Template_Particles2D" parent="." instance=ExtResource( 12 )]
 modulate = Color( 1, 1, 1, 0.352941 )
 position = Vector2( 1006.84, -10.4977 )
 emitting = false
 
-[node name="Menu" type="HBoxContainer" parent="."]
+[node name="Menu_HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Left" type="MarginContainer" parent="Menu"]
+[node name="Left_MarginContainer" type="MarginContainer" parent="Menu_HBoxContainer"]
 margin_right = 960.0
 margin_bottom = 1080.0
 rect_min_size = Vector2( 960, 0 )
@@ -240,7 +240,7 @@ custom_constants/margin_top = 150
 custom_constants/margin_left = 100
 custom_constants/margin_bottom = 150
 
-[node name="VBox" type="VBoxContainer" parent="Menu/Left"]
+[node name="Column_VBoxContainer" type="VBoxContainer" parent="Menu_HBoxContainer/Left_MarginContainer"]
 modulate = Color( 0.992157, 0.843137, 0.823529, 0.886275 )
 margin_left = 100.0
 margin_top = 150.0
@@ -251,7 +251,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Menu/Left/VBox"]
+[node name="GameName_Label" type="Label" parent="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer"]
 margin_right = 760.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 0, 100 )
@@ -259,7 +259,7 @@ custom_fonts/font = ExtResource( 9 )
 text = "Student quest"
 align = 1
 
-[node name="BtnNew" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
+[node name="NewGame;Button-Template_Control" parent="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 104.0
 margin_right = 760.0
 margin_bottom = 270.0
@@ -268,7 +268,7 @@ focus_mode = 2
 size_flags_vertical = 3
 text = "NEW_GAME"
 
-[node name="BtnLoad" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
+[node name="LoadGame;Button-Template_Control" parent="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 274.0
 margin_right = 760.0
 margin_bottom = 440.0
@@ -278,7 +278,7 @@ focus_mode = 2
 size_flags_vertical = 3
 text = "LOAD_GAME"
 
-[node name="BtnSettings" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
+[node name="Settings;Button-Template_Control" parent="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 444.0
 margin_right = 760.0
 margin_bottom = 610.0
@@ -289,7 +289,7 @@ focus_mode = 2
 size_flags_vertical = 3
 text = "SETTINGS"
 
-[node name="BtnQuit" parent="Menu/Left/VBox" instance=ExtResource( 7 )]
+[node name="Quit;Button-Template_Control" parent="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer" instance=ExtResource( 7 )]
 margin_top = 614.0
 margin_right = 760.0
 margin_bottom = 780.0
@@ -299,7 +299,7 @@ focus_mode = 2
 size_flags_vertical = 3
 text = "QUIT"
 
-[node name="Right" type="MarginContainer" parent="Menu"]
+[node name="Right_MarginContainer" type="MarginContainer" parent="Menu_HBoxContainer"]
 margin_left = 964.0
 margin_right = 1924.0
 margin_bottom = 1080.0
@@ -309,7 +309,7 @@ custom_constants/margin_right = 100
 custom_constants/margin_top = 150
 custom_constants/margin_bottom = 150
 
-[node name="Confirm" parent="Menu/Right" instance=ExtResource( 5 )]
+[node name="Confirm-Menu_VBoxContainer" parent="Menu_HBoxContainer/Right_MarginContainer" instance=ExtResource( 5 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -317,35 +317,32 @@ margin_top = 150.0
 margin_right = 860.0
 margin_bottom = 930.0
 
-[node name="Settings" parent="Menu/Right" instance=ExtResource( 3 )]
+[node name="Settings-Menu_TabContainer" parent="Menu_HBoxContainer/Right_MarginContainer" instance=ExtResource( 3 )]
 visible = false
 margin_top = 150.0
 margin_bottom = 930.0
 focus_neighbour_left = NodePath("../../Left/VBox/BtnSettings")
 size_flags_horizontal = 3
+ost_text = NodePath("../../../../Menu-Menu_Control/Menu/Right/Settings/AUDIO/Audio/Music/HBoxContainer/Label")
+fx_text = NodePath("../../../../Menu-Menu_Control/Menu/Right/Settings/AUDIO/Audio/Effects/HBoxContainer/Label")
 
-[node name="Load" parent="Menu/Right" instance=ExtResource( 4 )]
+[node name="Load-Menu_ScrollContainer" parent="Menu_HBoxContainer/Right_MarginContainer" instance=ExtResource( 4 )]
 margin_top = 150.0
 margin_right = 860.0
 margin_bottom = 930.0
 
-[node name="Control" parent="Menu/Right/Load" index="0"]
-mode = 0
-
 [node name="Animation" type="Tween" parent="."]
 script = SubResource( 2 )
-train = NodePath("../Train")
-person = NodePath("../Person")
-foreground = NodePath("../Foreground")
-background = NodePath("../Background")
-rain = NodePath("../Particles2D")
+train = NodePath("../../Menu-Menu_Control/Train")
+person = NodePath("../../Menu-Menu_Control/Person")
+foreground = NodePath("../../Menu-Menu_Control/Foreground")
+background = NodePath("../../Menu-Menu_Control/Background")
+rain = NodePath("../../Menu-Menu_Control/Particles2D")
 person_1 = ExtResource( 14 )
 person_2 = ExtResource( 13 )
 
-[node name="DisableUI" parent="." instance=ExtResource( 15 )]
-[connection signal="pressed" from="Menu/Left/VBox/BtnNew" to="." method="_new_game"]
-[connection signal="pressed" from="Menu/Left/VBox/BtnLoad" to="." method="_load_game"]
-[connection signal="pressed" from="Menu/Left/VBox/BtnSettings" to="." method="_toggle_settings"]
-[connection signal="pressed" from="Menu/Left/VBox/BtnQuit" to="." method="_quit"]
-
-[editable path="Menu/Right/Load"]
+[node name="Disable-UI" parent="." instance=ExtResource( 15 )]
+[connection signal="pressed" from="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/NewGame;Button-Template_Control" to="." method="_new_game"]
+[connection signal="pressed" from="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/LoadGame;Button-Template_Control" to="." method="_load_game"]
+[connection signal="pressed" from="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/Settings;Button-Template_Control" to="." method="_toggle_settings"]
+[connection signal="pressed" from="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/Quit;Button-Template_Control" to="." method="_quit"]

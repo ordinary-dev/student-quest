@@ -29,5 +29,5 @@ func _ready():
 		get_parent().call_deferred(\"add_child\", temp)
 "
 
-[node name="Position2D" type="Position2D"]
+[node name="Waypoint-Template_Position2D_0" type="Position2D"]
 script = SubResource( 1 )

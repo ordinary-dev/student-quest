@@ -50,20 +50,20 @@ func _ready():
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 96, 60.9999 )
 
-[node name="Area2D" type="Area2D"]
+[node name="Label-Trigger_Area2D_0" type="Area2D"]
 z_index = 6
 z_as_relative = false
 collision_layer = 0
 collision_mask = 1024
 script = SubResource( 1 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TriggeringCollider_CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 96, 96 )
 shape = SubResource( 2 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="Frame_ColorRect" type="ColorRect" parent="."]
 margin_left = 96.0
 margin_top = -48.0
 margin_right = 416.0
@@ -73,7 +73,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect3"]
+[node name="LabelContainer_MarginContainer" type="MarginContainer" parent="Frame_ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 3
@@ -84,7 +84,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect3/MarginContainer"]
+[node name="Background_ColorRect" type="ColorRect" parent="Frame_ColorRect/LabelContainer_MarginContainer"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 317.0
@@ -94,7 +94,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect3/MarginContainer/ColorRect"]
+[node name="Text_MarginContainer" type="MarginContainer" parent="Frame_ColorRect/LabelContainer_MarginContainer/Background_ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 10
@@ -105,7 +105,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect3/MarginContainer/ColorRect/MarginContainer"]
+[node name="LabelText_Label" type="Label" parent="Frame_ColorRect/LabelContainer_MarginContainer/Background_ColorRect/Text_MarginContainer"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 304.0
@@ -120,7 +120,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
+[node name="Dismiss_Button" type="Button" parent="."]
 margin_left = 80.0
 margin_top = -55.0
 margin_right = 430.0
@@ -131,4 +131,4 @@ __meta__ = {
 }
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Dismiss_Button" to="." method="_on_Button_pressed"]
