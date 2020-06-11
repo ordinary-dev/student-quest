@@ -51,19 +51,20 @@ func _ready():
 
 [node name="Street-Scene" type="Node2D"]
 script = SubResource( 1 )
-store_scene = "res://Scenes/Chapter1/31.store.tscn"
-speaker_scene = "res://Scenes/Chapter1/31.2.date.tscn"
+store_scene = "res://Scenes/QuickBeginning/7.Store.tscn"
+speaker_scene = "res://Scenes/QuickBeginning/8.Date.tscn"
 dialog_v1 = "res://Dialogs/chapter1/stranger.json"
 dialog_v2 = "res://Dialogs/chapter1/stranger_v2.json"
 dialog_2 = "res://Dialogs/chapter1/memories.json"
 
 [node name="Street-Template" parent="." instance=ExtResource( 5 )]
-math_scene = "res://Scenes/Chapter1/31.2.date.tscn"
+math_scene = "res://Scenes/QuickBeginning/8.Date.tscn"
+enable_lights = false
 
 [node name="Call;CallFunctionOnEnter-Trigger" parent="." instance=ExtResource( 4 )]
 position = Vector2( 896, 448 )
 scale = Vector2( 8, 16 )
-obj = NodePath("../../street-Scene")
+obj = NodePath("..")
 method = "dialog"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 2 )]
@@ -83,10 +84,10 @@ z_as_relative = false
 
 [node name="TicketWindow;Tickets-Trigger_Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( -383.391, -104.215 )
-object_name = NodePath("../Ticket_window/Node2D")
+object_name = NodePath("..")
 
 [node name="MrDudec;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( -38.3696, 356.368 )
 label = "STRANGER"
-object_name = NodePath("../../street-Scene")
+object_name = NodePath("..")
 function_name = "mr_singer"

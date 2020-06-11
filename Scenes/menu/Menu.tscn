@@ -22,6 +22,7 @@ script/source = "extends Control
 
 # Path to the scene with new game
 export (String, FILE, \"*.tscn\") var new_game
+export (String, FILE, \"*.tscn\") var redirect
 
 export (NodePath) var settings_scene
 export (NodePath) var load_scene
@@ -33,7 +34,10 @@ export (NodePath) var new_game_btn
 func _new_game():
 	FX.btn_click()
 	GLOBAL.write_settings()
-	SCENES.load_scene(new_game)
+	if TEMP.get(\"new_game_redirect\") != \"1\":
+		SCENES.load_scene(new_game)
+	else:
+		SCENES.load_scene(redirect)
 
 
 # Show saved games
@@ -68,6 +72,8 @@ func _quit():
 func _ready() -> void:
 	if TEMP.get(\"new_game_redirect\") == \"1\":
 		remove_child($Animation)
+	else:
+		$Animation._start()
 	# Focus
 	get_node(new_game_btn).grab_focus()
 	# Disable scenes
@@ -88,7 +94,7 @@ export (StreamTexture) var person_1
 export (StreamTexture) var person_2
 
 
-func _ready():
+func _start():
 	# Прибытие поезда
 	interpolate_property(
 		get_node(train), \"rect_position\",
@@ -147,6 +153,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 new_game = "res://Scenes/menu/NewGame.tscn"
+redirect = "res://Scenes/QuickBeginning/1.Fireworks.tscn"
 settings_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Settings-Menu_TabContainer")
 load_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Load-Menu_ScrollContainer")
 confirm_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Confirm-Menu_VBoxContainer")

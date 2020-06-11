@@ -55,8 +55,10 @@ SELECT,Select,Выбрать
 SLEEP,Go to sleep,Лечь спать
 CHAT,Chat,Чат
 OPENCHAT,Open chat,Открыть чат
-MESSAGE1,"Do not forget, tomorrow we have initiation into students! The bus will take you to the place of celebration","Не забудьте, у нас завтра посвящение в студенты! Автобус доставит вас до места праздника"
-MESSAGE2,"Yes, be sure to come, last year was a lot of fun!","Да, обязательно приходите, в прошлом году было очень весело!"
+MESSAGE1,Do not forget!,Не забудьте!
+MESSAGE2,Tomorrow we have initiation into students,У нас завтра посвящение в студенты
+MESSAGE3,The bus will take you to the place of celebration,Автобус доставит вас до места праздника
+MESSAGE4,"Yes, be sure to come, last year was a lot of fun!","Да, обязательно приходите, в прошлом году было очень весело!"
 CLOSED,Closed,Заперто
 NOENTER,You cannot come here,Вы не можете сюда зайти
 1ST_FLOOR,1st floor,1 этаж

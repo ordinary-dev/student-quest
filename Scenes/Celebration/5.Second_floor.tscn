@@ -21,12 +21,7 @@ func first_floor():
 
 
 func third_floor():
-	if INVENTORY.has_item(\"key\"):
-#		SCENES.load_scene(third_floor_scene)
-		NOTIFY.show(\"Opened\")
-		INVENTORY.remove_item(\"key\")
-	else:
-		NOTIFY.show(\"Closed\")
+	NOTIFY.show(\"Closed\")
 
 # Called when player tries to open the door
 func door():
@@ -36,7 +31,7 @@ func door():
 [node name="Second-floor-Scene" type="Node2D"]
 position = Vector2( 0, -8 )
 script = SubResource( 1 )
-first_floor_scene = "res://Scenes/Chapter2/3.House.tscn"
+first_floor_scene = "res://Scenes/Celebration/3.House.tscn"
 
 [node name="Map_TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -132,18 +127,18 @@ texture_scale = 10.0
 visible = false
 position = Vector2( 288, 920 )
 scale = Vector2( 3, 3 )
-object = NodePath("../../Second-floor-Scene/Light2D")
+object = NodePath("../DoorLight_Light2D_1")
 
 [node name="IntantlyEnableObject-Trigger_Area2D_2" parent="." instance=ExtResource( 7 )]
 visible = false
 position = Vector2( 632, 920 )
 scale = Vector2( 3, 3 )
-object = NodePath("../../Second-floor-Scene/Light2D2")
+object = NodePath("../DoorLight_Light2D_2")
 
 [node name="IntantlyEnableObject-Trigger_Area2D_3" parent="." instance=ExtResource( 7 )]
 visible = false
 position = Vector2( 952, 920 )
 scale = Vector2( 3, 3 )
-object = NodePath("../../Second-floor-Scene/Light2D3")
+object = NodePath("../DoorLight_Light2D_3")
 
 [editable path="Body"]

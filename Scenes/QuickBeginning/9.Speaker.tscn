@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Scenes/templates/Speaker.tscn" type="PackedScene" id=1]
 
-[node name="Speaker-Scene" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Speaker-Template" parent="." instance=ExtResource( 1 )]
-position = Vector2( 40, 80 )
-dialog_path = "res://Dialogs/chapter1/speaker.json"
+fac_path = "res://Scenes/QuickBeginning/10.Math.tscn"
+dialog_path = "res://Dialogs/Beginning/Speaker.json"

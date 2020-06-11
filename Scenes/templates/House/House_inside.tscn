@@ -23,35 +23,18 @@ onready var street_trigger = $Street
 
 
 func street() -> void:
-	save()
+	var pl = get_node(GLOBAL.player_path)
+	pl._save()
 	SCENES.load_scene(street_scene)
 
 
 func second_floor() -> void:
-	save()
+	var pl = get_node(GLOBAL.player_path)
+	pl._save()
 	SCENES.load_scene(second_floor_scene)
 
 
-func save() -> void:
-	TEMP.save(\"player_pos_id\", SCENES.last_scene_path)
-	TEMP.save(\"player_pos_x\", get_node(GLOBAL.player_path).position.x)
-	TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y) 
-
-
-func restore() -> void:
-	get_node(GLOBAL.player_path).position.x = TEMP.get(\"player_pos_x\")
-	get_node(GLOBAL.player_path).position.y = TEMP.get(\"player_pos_y\")
-
-
-func is_position_saved() -> bool:
-	return(TEMP.get(\"player_pos_id\") == SCENES.last_scene_path 
-		and TEMP.is_saved(\"player_pos_x\")
-		and TEMP.is_saved(\"player_pos_y\"))
-
-
 func _ready() -> void:
-	if is_position_saved():
-		restore()
 	if !second_floor_active:
 		remove_child(second_floor_trigger)
 	if !street_active:
@@ -130,6 +113,7 @@ position = Vector2( 576, 88 )
 
 [node name="Body" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 656, 456 )
+restore_position = true
 
 [node name="SecondFloor_Area2D" parent="." instance=ExtResource( 6 )]
 position = Vector2( 152, 672 )

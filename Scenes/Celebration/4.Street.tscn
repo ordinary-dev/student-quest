@@ -20,10 +20,10 @@ func door():
 
 [node name="Street-Scene" type="Node2D"]
 script = SubResource( 1 )
-house_scene = "res://Scenes/Chapter2/3.House.tscn"
+house_scene = "res://Scenes/Celebration/3.House.tscn"
 
 [node name="Street-Template" parent="." instance=ExtResource( 1 )]
-house_scene = "res://Scenes/Chapter2/3.House.tscn"
+house_scene = "res://Scenes/Celebration/3.House.tscn"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 7 )]
 joystick = true

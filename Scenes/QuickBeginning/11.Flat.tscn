@@ -21,7 +21,7 @@ func _ready():
 
 [node name="Flat-Scene" type="Node2D"]
 script = SubResource( 1 )
-scene = "res://Scenes/Chapter1/37.site.tscn"
+scene = "res://Scenes/QuickBeginning/12.Site.tscn"
 
 [node name="Flat-Template" parent="." instance=ExtResource( 3 )]
 
@@ -35,7 +35,7 @@ shadow_enabled = true
 [node name="FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 471.698, 225.201 )
 label = "OPENCHAT"
-object_name = NodePath("../../flat-Scene")
+object_name = NodePath("..")
 function_name = "internet"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 2 )]
