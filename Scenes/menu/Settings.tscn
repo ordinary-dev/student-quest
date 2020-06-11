@@ -71,6 +71,10 @@ func reset_effects_volume() -> void:
 func _ready() -> void:
 	update_text(FX.volume, fx_text)
 	update_text(MUSIC.volume, ost_text)
+	set_tab_title(0, \"LANG\")
+	set_tab_title(1, \"AUDIO\")
+	set_tab_title(2, \"GRAPHICS\")
+	set_tab_title(3, \"INFO\")
 
 
 
