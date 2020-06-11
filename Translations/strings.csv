@@ -23,7 +23,6 @@ D83,Go ahead without looking at failure,"Идите вперед, не огля�
 SECURITY,Security guard,Охранник
 D101,"Sorry, the turnstiles are not working","Простите, турникеты не работают"
 D102,All bypass so far,Все пока идут в обход
-D111,Stairs? Lower?,Лестница? Еще ниже?
 D121,Hey do you know me?,"Эй, ты меня знаешь?"
 D122,"Not sure, maybe I heard somewhere about you","Не уверен, может я слышал где-то о Вас"
 D123,"Ahh, they call me Mr. Dudec","Ааа, меня называют Мистер Дудец"
@@ -56,8 +55,10 @@ SELECT,Select,Выбрать
 SLEEP,Go to sleep,Лечь спать
 CHAT,Chat,Чат
 OPENCHAT,Open chat,Открыть чат
-MESSAGE1,"Do not forget, tomorrow we have initiation into students! The bus will take you to the place of celebration","Не забудьте, у нас завтра посвящение в студенты! Автобус доставит вас до места праздника"
-MESSAGE2,"Yes, be sure to come, last year was a lot of fun!","Да, обязательно приходите, в прошлом году было очень весело!"
+MESSAGE1,Do not forget!,Не забудьте!
+MESSAGE2,Tomorrow we have initiation into students,У нас завтра посвящение в студенты
+MESSAGE3,The bus will take you to the place of celebration,Автобус доставит вас до места праздника
+MESSAGE4,"Yes, be sure to come, last year was a lot of fun!","Да, обязательно приходите, в прошлом году было очень весело!"
 CLOSED,Closed,Заперто
 NOENTER,You cannot come here,Вы не можете сюда зайти
 1ST_FLOOR,1st floor,1 этаж

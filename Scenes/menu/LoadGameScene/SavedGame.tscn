@@ -17,9 +17,9 @@ bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
 [sub_resource type="GDScript" id=4]
 script/source = "extends Button
 
-onready var textureObj = $HBoxContainer/MarginContainer/VBoxContainer/TextureRect
-onready var date = $HBoxContainer/MarginContainer/VBoxContainer/Date
-onready var gameName = $HBoxContainer/MarginContainer/VBoxContainer/Name
+onready var textureObj = $MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer/SaveImage_TextureRect
+onready var date = $MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer/Date_Label
+onready var gameName = $MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer/Name_Label
 var saved_path : String
 
 
@@ -86,7 +86,7 @@ func parseFolder(path : String) -> bool:
 	return true
 "
 
-[node name="Button" type="Button"]
+[node name="SavedGame-Menu_Button_0" type="Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1320.0
@@ -100,14 +100,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="MainContainer_HBoxContainer" type="HBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+[node name="Container_MarginContainer" type="MarginContainer" parent="MainContainer_HBoxContainer"]
 margin_right = 780.0
 margin_bottom = 577.0
 rect_min_size = Vector2( 780, 0 )
@@ -120,7 +120,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+[node name="TextContainer_VBoxContainer" type="VBoxContainer" parent="MainContainer_HBoxContainer/Container_MarginContainer"]
 margin_left = 30.0
 margin_top = 30.0
 margin_right = 750.0
@@ -128,21 +128,21 @@ margin_bottom = 547.0
 mouse_filter = 2
 custom_constants/separation = 20
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="SaveImage_TextureRect" type="TextureRect" parent="MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer"]
 margin_right = 720.0
 margin_bottom = 405.0
 rect_min_size = Vector2( 720, 405 )
 mouse_filter = 2
 expand = true
 
-[node name="Date" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Date_Label" type="Label" parent="MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 425.0
 margin_right = 720.0
 margin_bottom = 449.0
 custom_fonts/font = ExtResource( 1 )
 text = "2020-01-01 00:01"
 
-[node name="Name" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="Name_Label" type="Label" parent="MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 469.0
 margin_right = 720.0
 margin_bottom = 517.0
@@ -150,10 +150,10 @@ custom_fonts/font = ExtResource( 2 )
 text = "Name"
 clip_text = true
 
-[node name="Delete" parent="HBoxContainer" instance=ExtResource( 3 )]
+[node name="Delete;Button-Template_Control" parent="MainContainer_HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 784.0
 margin_right = 864.0
 margin_bottom = 577.0
 icon = ExtResource( 4 )
 expand_icon = true
-[connection signal="pressed" from="HBoxContainer/Delete" to="." method="delete"]
+[connection signal="pressed" from="MainContainer_HBoxContainer/Delete;Button-Template_Control" to="." method="delete"]

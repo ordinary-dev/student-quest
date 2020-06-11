@@ -1,0 +1,195 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/fireworks/fireworks.tres" type="Texture" id=1]
+[ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/fireworks/Sky.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/fireworks/Grass.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/character_main.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/fireworks/Grass2.png" type="Texture" id=8]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+var fw = preload(\"res://Audio/fx/Firework_explosion.wav\")
+export (String, FILE, \"*.tscn\") var next_scene
+
+
+func _ready() -> void:
+	yield(get_tree().create_timer(1.4), \"timeout\")
+	FX.play_sound(fw)
+	
+	yield(get_tree().create_timer(2), \"timeout\")
+	FX.play_sound(fw)
+
+
+func _on_AnimationPlayer_animation_finished(_anim_name) -> void:
+	load_scene()
+
+
+func load_scene() -> void:
+	SCENES.load_scene(next_scene)
+"
+
+[sub_resource type="Animation" id=2]
+length = 9.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 9.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 200 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Camera2D:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 9.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Fireworks_AnimatedSprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.7, 6.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 155 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Fireworks2_AnimatedSprite:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 2.7, 8.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 155 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Fireworks_AnimatedSprite:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.7, 2.5, 3.4, 4.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 462.073, 501.133 ), Vector2( 482.419, 427.013 ), Vector2( 532.412, 423.609 ), Vector2( 557.016, 425.348 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Fireworks2_AnimatedSprite:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 2.7, 3.7, 4.3, 5.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1279.37, 698.113 ), Vector2( 1299.04, 691.078 ), Vector2( 1275.72, 611.419 ), Vector2( 1218, 547.552 ) ]
+}
+
+[node name="Fireworks-Scene" type="Node2D"]
+script = SubResource( 1 )
+next_scene = "res://Scenes/Beginning/03.Dialog.tscn"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="Background_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="Background_Sprite" type="Sprite" parent="ParallaxBackground/Background_ParallaxLayer"]
+modulate = Color( 0.54902, 0.54902, 0.54902, 1 )
+light_mask = 0
+position = Vector2( 956.537, 463.283 )
+scale = Vector2( 1.98247, 1.98247 )
+texture = ExtResource( 4 )
+
+[node name="Character_Sprite" type="Sprite" parent="ParallaxBackground/Background_ParallaxLayer"]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+position = Vector2( 862.099, 911.691 )
+scale = Vector2( 12, 12 )
+texture = ExtResource( 7 )
+vframes = 3
+hframes = 3
+frame = 7
+region_rect = Rect2( 0, 0, 18, 36 )
+
+[node name="Grass1_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.7, 0.7 )
+
+[node name="Grass1_Sprite" type="Sprite" parent="ParallaxBackground/Grass1_ParallaxLayer"]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+light_mask = 0
+position = Vector2( 964.532, 1184.65 )
+scale = Vector2( 38.8549, 38.8549 )
+z_index = 6
+texture = ExtResource( 6 )
+
+[node name="Grass2_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.1, 1.1 )
+
+[node name="Grass2_Sprite" type="Sprite" parent="ParallaxBackground/Grass2_ParallaxLayer"]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+light_mask = 0
+position = Vector2( 1031.64, 1349.84 )
+scale = Vector2( 38.8549, 38.8549 )
+z_index = 6
+texture = ExtResource( 8 )
+
+[node name="Fireworks_AnimatedSprite" type="Sprite" parent="."]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+light_mask = 2
+position = Vector2( 557.016, 425.348 )
+scale = Vector2( 8, 8 )
+z_index = 4
+texture = ExtResource( 1 )
+vframes = 12
+hframes = 13
+frame = 155
+
+[node name="Fireworks2_AnimatedSprite" type="Sprite" parent="."]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+light_mask = 2
+position = Vector2( 1218, 547.552 )
+scale = Vector2( 8, 8 )
+z_index = 4
+texture = ExtResource( 1 )
+flip_h = true
+vframes = 12
+hframes = 13
+frame = 155
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "camera"
+anims/camera = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.9, 0.9 )
+
+[node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 3 )]
+obj = NodePath("..")
+method = "load_scene"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 5 )]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

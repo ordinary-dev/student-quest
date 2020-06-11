@@ -9,8 +9,8 @@ script/source = "extends CanvasLayer
 
 export (NodePath) var obj
 export (String) var method
-onready var btn = $Canvas/Button
-onready var timer = $Canvas/Timer
+onready var btn = $\"Canvas_Control/Skip;Button-Template_Control\"
+onready var timer = $Canvas_Control/Timer
 
 
 func _ready():
@@ -44,11 +44,11 @@ func _on_Button_pressed():
 	get_node(obj).call(method)
 "
 
-[node name="Skip" type="CanvasLayer"]
+[node name="Skip-UI_CanvasLayer" type="CanvasLayer"]
 layer = 8
 script = SubResource( 1 )
 
-[node name="Canvas" type="Control" parent="."]
+[node name="Canvas_Control" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1920, 1080 )
@@ -56,7 +56,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" parent="Canvas" instance=ExtResource( 1 )]
+[node name="Skip;Button-Template_Control" parent="Canvas_Control" instance=ExtResource( 1 )]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -68,8 +68,8 @@ margin_bottom = 0.0
 rect_min_size = Vector2( 256, 100 )
 text = "SKIP"
 
-[node name="Timer" type="Timer" parent="Canvas"]
+[node name="Timer" type="Timer" parent="Canvas_Control"]
 one_shot = true
-[connection signal="gui_input" from="Canvas" to="." method="_on_Control_gui_input"]
-[connection signal="pressed" from="Canvas/Button" to="." method="_on_Button_pressed"]
-[connection signal="timeout" from="Canvas/Timer" to="Canvas" method="_on_Timer_timeout"]
+[connection signal="gui_input" from="Canvas_Control" to="." method="_on_Control_gui_input"]
+[connection signal="pressed" from="Canvas_Control/Skip;Button-Template_Control" to="." method="_on_Button_pressed"]
+[connection signal="timeout" from="Canvas_Control/Timer" to="Canvas_Control" method="_on_Timer_timeout"]

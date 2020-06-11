@@ -71,11 +71,15 @@ func reset_effects_volume() -> void:
 func _ready() -> void:
 	update_text(FX.volume, fx_text)
 	update_text(MUSIC.volume, ost_text)
+	set_tab_title(0, \"LANG\")
+	set_tab_title(1, \"AUDIO\")
+	set_tab_title(2, \"GRAPHICS\")
+	set_tab_title(3, \"INFO\")
 
 
 
 func open_site():
-	OS.shell_open(\"https://studentquest.github.io\")
+	OS.shell_open(\"https://pixeltrain.itch.io/student-quest\")
 
 
 func en():
@@ -92,6 +96,18 @@ func youtube():
 
 func _on_TabContainer_tab_changed(tab):
 	FX.btn_click()
+
+
+func free_sound():
+	OS.shell_open(\"https://freesound.org/\")
+
+
+func zapsplat():
+	OS.shell_open(\"https://www.zapsplat.com/\")
+
+
+func outgoing_hikikomori():
+	OS.shell_open(\"https://www.youtube.com/channel/UC3yRCpfOE2zfTQsOHCH8wZw\")
 "
 
 [sub_resource type="GDScript" id=5]
@@ -121,7 +137,7 @@ func _ready() -> void:
 	get_node(fullscreen_toggle).pressed = OS.window_fullscreen
 "
 
-[node name="TabContainer" type="TabContainer"]
+[node name="Settings-Menu_TabContainer" type="TabContainer"]
 margin_right = 860.0
 margin_bottom = 326.0
 rect_min_size = Vector2( 860, 0 )
@@ -142,10 +158,10 @@ script = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-ost_text = NodePath("AUDIO/Audio/Music/HBoxContainer/Label")
-fx_text = NodePath("AUDIO/Audio/Effects/HBoxContainer/Label")
+ost_text = NodePath("Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer/VolumePersentage_Label")
+fx_text = NodePath("Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer/VolumePercentage_Label")
 
-[node name="LANG" type="MarginContainer" parent="."]
+[node name="Lang_MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 62.0
@@ -154,20 +170,20 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="LANG"]
+[node name="Buttons_VBoxContainer" type="VBoxContainer" parent="Lang_MarginContainer"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 810.0
 margin_bottom = 214.0
 
-[node name="English" parent="LANG/VBoxContainer" instance=ExtResource( 6 )]
+[node name="English;Button-Template_Control" parent="Lang_MarginContainer/Buttons_VBoxContainer" instance=ExtResource( 6 )]
 margin_right = 760.0
 focus_neighbour_top = NodePath("../../..")
 focus_neighbour_bottom = NodePath("../Russian")
 focus_mode = 2
 text = "English"
 
-[node name="Russian" parent="LANG/VBoxContainer" instance=ExtResource( 6 )]
+[node name="Russian;Button-Template_Control" parent="Lang_MarginContainer/Buttons_VBoxContainer" instance=ExtResource( 6 )]
 margin_top = 84.0
 margin_right = 760.0
 margin_bottom = 164.0
@@ -175,7 +191,7 @@ focus_neighbour_top = NodePath("../English")
 focus_mode = 2
 text = "Russian"
 
-[node name="AUDIO" type="MarginContainer" parent="."]
+[node name="Audio_MarginContainer" type="MarginContainer" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -185,20 +201,20 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 
-[node name="Audio" type="VBoxContainer" parent="AUDIO"]
+[node name="Audio_VBoxContainer" type="VBoxContainer" parent="Audio_MarginContainer"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 810.0
 margin_bottom = 384.0
 custom_constants/separation = 60
 
-[node name="Music" type="VBoxContainer" parent="AUDIO/Audio"]
+[node name="Music_VBoxContainer" type="VBoxContainer" parent="Audio_MarginContainer/Audio_VBoxContainer"]
 margin_right = 760.0
 margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 25
 
-[node name="Label" type="Label" parent="AUDIO/Audio/Music"]
+[node name="Volume_Label" type="Label" parent="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer"]
 margin_right = 760.0
 margin_bottom = 32.0
 size_flags_horizontal = 3
@@ -207,24 +223,24 @@ text = "MUSIC_VOLUME"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="AUDIO/Audio/Music"]
+[node name="Buttons_HBoxContainer" type="HBoxContainer" parent="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer"]
 margin_top = 57.0
 margin_right = 760.0
 margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
-[node name="ResetMusic" parent="AUDIO/Audio/Music/HBoxContainer" instance=ExtResource( 6 )]
+[node name="ResetMusic;Button-Template_Control" parent="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer" instance=ExtResource( 6 )]
 margin_right = 285.0
 rect_min_size = Vector2( 285, 80 )
 text = "RESET"
 
-[node name="M-" parent="AUDIO/Audio/Music/HBoxContainer" instance=ExtResource( 6 )]
+[node name="M-;Button-Template_Control" parent="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 335.0
 margin_right = 415.0
 text = "-"
 
-[node name="Label" type="Label" parent="AUDIO/Audio/Music/HBoxContainer"]
+[node name="VolumePersentage_Label" type="Label" parent="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer"]
 margin_left = 465.0
 margin_top = 28.0
 margin_right = 630.0
@@ -234,19 +250,19 @@ custom_fonts/font = ExtResource( 5 )
 text = "100%"
 align = 1
 
-[node name="M+" parent="AUDIO/Audio/Music/HBoxContainer" instance=ExtResource( 6 )]
+[node name="M+;Button-Template_Control" parent="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 680.0
 margin_right = 760.0
 text = "+"
 
-[node name="Effects" type="VBoxContainer" parent="AUDIO/Audio"]
+[node name="Effects_VBoxContainer" type="VBoxContainer" parent="Audio_MarginContainer/Audio_VBoxContainer"]
 margin_top = 197.0
 margin_right = 760.0
 margin_bottom = 334.0
 size_flags_vertical = 3
 custom_constants/separation = 25
 
-[node name="Label" type="Label" parent="AUDIO/Audio/Effects"]
+[node name="EffectsVolume_Label" type="Label" parent="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer"]
 margin_right = 760.0
 margin_bottom = 32.0
 size_flags_vertical = 7
@@ -254,24 +270,24 @@ text = "EFFECTS_VOLUME"
 align = 1
 valign = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="AUDIO/Audio/Effects"]
+[node name="Buttons_HBoxContainer" type="HBoxContainer" parent="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer"]
 margin_top = 57.0
 margin_right = 760.0
 margin_bottom = 137.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 
-[node name="ResetEffects" parent="AUDIO/Audio/Effects/HBoxContainer" instance=ExtResource( 6 )]
+[node name="ResetEffects;Button-Template_Control" parent="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer" instance=ExtResource( 6 )]
 margin_right = 285.0
 rect_min_size = Vector2( 285, 80 )
 text = "RESET"
 
-[node name="E-" parent="AUDIO/Audio/Effects/HBoxContainer" instance=ExtResource( 6 )]
+[node name="E-;Button-Template_Control" parent="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 335.0
 margin_right = 415.0
 text = "-"
 
-[node name="Label" type="Label" parent="AUDIO/Audio/Effects/HBoxContainer"]
+[node name="VolumePercentage_Label" type="Label" parent="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer"]
 margin_left = 465.0
 margin_top = 28.0
 margin_right = 630.0
@@ -281,12 +297,12 @@ custom_fonts/font = ExtResource( 5 )
 text = "78%"
 align = 1
 
-[node name="E+" parent="AUDIO/Audio/Effects/HBoxContainer" instance=ExtResource( 6 )]
+[node name="E+;Button-Template_Control" parent="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer" instance=ExtResource( 6 )]
 margin_left = 680.0
 margin_right = 760.0
 text = "+"
 
-[node name="GRAPHICS" type="MarginContainer" parent="."]
+[node name="Graphics_MarginContainer" type="MarginContainer" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -296,17 +312,17 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 script = SubResource( 5 )
-vsync_toggle = NodePath("../GRAPHICS/VBoxContainer/CheckButton")
-fullscreen_toggle = NodePath("../GRAPHICS/VBoxContainer/CheckButton2")
+vsync_toggle = NodePath("Buttons_VBoxContainer/VSync_CheckButton")
+fullscreen_toggle = NodePath("Buttons_VBoxContainer/Fullscreen_CheckButton")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GRAPHICS"]
+[node name="Buttons_VBoxContainer" type="VBoxContainer" parent="Graphics_MarginContainer"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 810.0
 margin_bottom = 214.0
 
-[node name="CheckButton" type="CheckButton" parent="GRAPHICS/VBoxContainer"]
-margin_right = 691.0
+[node name="VSync_CheckButton" type="CheckButton" parent="Graphics_MarginContainer/Buttons_VBoxContainer"]
+margin_right = 760.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
@@ -314,9 +330,9 @@ custom_icons/off = ExtResource( 1 )
 custom_icons/on = ExtResource( 4 )
 text = "VSYNC"
 
-[node name="CheckButton2" type="CheckButton" parent="GRAPHICS/VBoxContainer"]
+[node name="Fullscreen_CheckButton" type="CheckButton" parent="Graphics_MarginContainer/Buttons_VBoxContainer"]
 margin_top = 84.0
-margin_right = 691.0
+margin_right = 760.0
 margin_bottom = 164.0
 rect_min_size = Vector2( 0, 80 )
 size_flags_horizontal = 3
@@ -324,7 +340,7 @@ custom_icons/off = ExtResource( 1 )
 custom_icons/on = ExtResource( 4 )
 text = "FULLSCREEN"
 
-[node name="INFO" type="MarginContainer" parent="."]
+[node name="Info_MarginContainer" type="MarginContainer" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -334,7 +350,7 @@ custom_constants/margin_top = 50
 custom_constants/margin_left = 50
 custom_constants/margin_bottom = 50
 
-[node name="ScrollContainer" type="ScrollContainer" parent="INFO"]
+[node name="TextContainer_ScrollContainer" type="ScrollContainer" parent="Info_MarginContainer"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 810.0
@@ -342,40 +358,40 @@ margin_bottom = 214.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
-[node name="MarginContainer" type="MarginContainer" parent="INFO/ScrollContainer"]
+[node name="TextContainer_MarginContainer" type="MarginContainer" parent="Info_MarginContainer/TextContainer_ScrollContainer"]
 margin_right = 760.0
-margin_bottom = 1387.0
+margin_bottom = 1741.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="INFO/ScrollContainer/MarginContainer"]
+[node name="TextContainer_VBoxContainer" type="VBoxContainer" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer"]
 margin_right = 740.0
-margin_bottom = 1387.0
+margin_bottom = 1741.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
-[node name="ColorRect" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
-margin_right = 659.0
+[node name="OpenSite;Button-Template_Control" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer" instance=ExtResource( 6 )]
+margin_right = 728.0
 text = "OPENSITE"
 
-[node name="Site" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Site_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 100.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 178.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
-text = "studentquest.github.io
+text = "pixeltrain.itch.io/student-quest
 
-v 4.2"
+v 4.3"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Godot" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Godot_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 198.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 222.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -385,9 +401,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Changelog" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Changelog_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 242.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 266.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -397,9 +413,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Changes" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Changes_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 286.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 310.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -409,9 +425,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Authors" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Authors_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 330.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 354.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -421,10 +437,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Nicks" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Nicks_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 374.0
-margin_right = 659.0
-margin_bottom = 452.0
+margin_right = 728.0
+margin_bottom = 479.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "- mcraw
@@ -436,10 +452,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Testers" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 472.0
-margin_right = 659.0
-margin_bottom = 496.0
+[node name="Testers_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
+margin_top = 499.0
+margin_right = 728.0
+margin_bottom = 523.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "TESTERS"
@@ -448,10 +464,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TestersNicks" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 516.0
-margin_right = 659.0
-margin_bottom = 594.0
+[node name="TestersNicks_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
+margin_top = 543.0
+margin_right = 728.0
+margin_bottom = 621.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "- wheasy
@@ -462,16 +478,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Wheasy" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource( 6 )]
-margin_top = 614.0
-margin_right = 659.0
-margin_bottom = 694.0
+[node name="Wheasy;Button-Template_Control" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 641.0
+margin_right = 728.0
+margin_bottom = 721.0
 text = "Wheasy - Youtube"
 
-[node name="Joystick" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 714.0
-margin_right = 659.0
-margin_bottom = 738.0
+[node name="Joystick_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
+margin_top = 741.0
+margin_right = 728.0
+margin_bottom = 765.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "JOYSTICK"
@@ -480,9 +496,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Gonkee" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
-margin_top = 758.0
-margin_right = 659.0
+[node name="Gonkee_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
+margin_top = 785.0
+margin_right = 728.0
 margin_bottom = 890.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -494,23 +510,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Songs" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Songs_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 910.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 1069.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
-text = "Some sounds were downloaded from freesound.org/people/klankbeeld
-
-"
+text = "Some sounds were downloaded from freesound.org/people/klankbeeld and zapsplat.com
+Music:
+- Outgoing Hikikomori:
+1. Falling Down
+2. Last Bus Home"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Contact" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="FreeSound;Button" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 641.0
+margin_right = 728.0
+margin_bottom = 721.0
+text = "FreeSound"
+
+[node name="Zapsplat;Button" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 641.0
+margin_right = 728.0
+margin_bottom = 721.0
+text = "Zapsplat"
+
+[node name="OH;Button" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 641.0
+margin_right = 728.0
+margin_bottom = 721.0
+text = "Outgoing Hikikomori"
+
+[node name="Contact_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 1089.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 1113.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -520,9 +556,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Mail" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Mail_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 1133.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 1157.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -532,9 +568,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SupportUs" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="SupportUs_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 1177.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 1201.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -544,9 +580,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Btc" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Btc_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 1221.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 1272.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -557,9 +593,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Legal" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Legal_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 1292.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 1316.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -569,9 +605,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Copyright" type="Label" parent="INFO/ScrollContainer/MarginContainer/VBoxContainer"]
+[node name="Copyright_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 1336.0
-margin_right = 659.0
+margin_right = 728.0
 margin_bottom = 1360.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
@@ -581,15 +617,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="tab_changed" from="." to="." method="_on_TabContainer_tab_changed"]
-[connection signal="pressed" from="LANG/VBoxContainer/English" to="." method="en"]
-[connection signal="pressed" from="LANG/VBoxContainer/Russian" to="." method="ru"]
-[connection signal="pressed" from="AUDIO/Audio/Music/HBoxContainer/ResetMusic" to="." method="reset_music_volume"]
-[connection signal="pressed" from="AUDIO/Audio/Music/HBoxContainer/M-" to="." method="music" binds= [ -5 ]]
-[connection signal="pressed" from="AUDIO/Audio/Music/HBoxContainer/M+" to="." method="music" binds= [ 5 ]]
-[connection signal="pressed" from="AUDIO/Audio/Effects/HBoxContainer/ResetEffects" to="." method="reset_effects_volume"]
-[connection signal="pressed" from="AUDIO/Audio/Effects/HBoxContainer/E-" to="." method="effects" binds= [ -5 ]]
-[connection signal="pressed" from="AUDIO/Audio/Effects/HBoxContainer/E+" to="." method="effects" binds= [ 5 ]]
-[connection signal="toggled" from="GRAPHICS/VBoxContainer/CheckButton" to="GRAPHICS" method="toggle_vsync"]
-[connection signal="toggled" from="GRAPHICS/VBoxContainer/CheckButton2" to="GRAPHICS" method="toggle_fullscreen"]
-[connection signal="pressed" from="INFO/ScrollContainer/MarginContainer/VBoxContainer/ColorRect" to="." method="open_site"]
-[connection signal="pressed" from="INFO/ScrollContainer/MarginContainer/VBoxContainer/Wheasy" to="." method="youtube"]
+[connection signal="pressed" from="Lang_MarginContainer/Buttons_VBoxContainer/English;Button-Template_Control" to="." method="en"]
+[connection signal="pressed" from="Lang_MarginContainer/Buttons_VBoxContainer/Russian;Button-Template_Control" to="." method="ru"]
+[connection signal="pressed" from="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer/ResetMusic;Button-Template_Control" to="." method="reset_music_volume"]
+[connection signal="pressed" from="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer/M-;Button-Template_Control" to="." method="music" binds= [ -5 ]]
+[connection signal="pressed" from="Audio_MarginContainer/Audio_VBoxContainer/Music_VBoxContainer/Buttons_HBoxContainer/M+;Button-Template_Control" to="." method="music" binds= [ 5 ]]
+[connection signal="pressed" from="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer/ResetEffects;Button-Template_Control" to="." method="reset_effects_volume"]
+[connection signal="pressed" from="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer/E-;Button-Template_Control" to="." method="effects" binds= [ -5 ]]
+[connection signal="pressed" from="Audio_MarginContainer/Audio_VBoxContainer/Effects_VBoxContainer/Buttons_HBoxContainer/E+;Button-Template_Control" to="." method="effects" binds= [ 5 ]]
+[connection signal="toggled" from="Graphics_MarginContainer/Buttons_VBoxContainer/VSync_CheckButton" to="Graphics_MarginContainer" method="toggle_vsync"]
+[connection signal="toggled" from="Graphics_MarginContainer/Buttons_VBoxContainer/Fullscreen_CheckButton" to="Graphics_MarginContainer" method="toggle_fullscreen"]
+[connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/OpenSite;Button-Template_Control" to="." method="open_site"]
+[connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/Wheasy;Button-Template_Control" to="." method="youtube"]
+[connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/FreeSound;Button" to="." method="free_sound"]
+[connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/Zapsplat;Button" to="." method="zapsplat"]
+[connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/OH;Button" to="." method="outgoing_hikikomori"]

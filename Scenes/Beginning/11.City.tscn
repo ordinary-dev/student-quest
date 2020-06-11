@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/menu_background/8bit-foreground.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/menu_background/8bit-background.png" type="Texture" id=4]
+
+[node name="City-Scene" type="Node2D"]
+script = ExtResource( 1 )
+next_scene = "res://Scenes/Beginning/12.Rector.tscn"
+delay = 2.0
+
+[node name="Background_Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 4 )
+
+[node name="Railroad_Sprite" type="Sprite" parent="."]
+position = Vector2( 960, 540 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+
+[node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 2 )]
+obj = NodePath("..")
+method = "load_scene"

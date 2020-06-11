@@ -15,11 +15,11 @@ func show():
 	UI.add_child(inst)
 "
 
-[node name="Area2D" instance=ExtResource( 1 )]
+[node name="Tickets-Trigger_Area2D" instance=ExtResource( 1 )]
 label = "TICKETS"
-object_name = NodePath("Node2D")
+object_name = NodePath("../Tickets-Trigger_Area2D/Node2D")
 function_name = "show"
 
-[node name="Node2D" type="Node2D" parent="." index="5"]
+[node name="TicketsScript" type="Node2D" parent="." index="5"]
 script = SubResource( 1 )
 tscn = "res://Scenes/templates/Tickets.tscn"

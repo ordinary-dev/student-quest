@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+func _on_body_entered(body):
+	if \"Body\" in body.name:
+		if has_node(GLOBAL.player_path):
+			get_node(GLOBAL.player_path).enable_water()
+
+
+func _on_body_exited(body):
+	if \"Body\" in body.name:
+		if has_node(GLOBAL.player_path):
+			get_node(GLOBAL.player_path).disable_water()
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="Water-collider-Template_0" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Water_StaticBody2D" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 0
+collision_mask = 1024
+
+[node name="Water_CollisionShape2D" type="CollisionShape2D" parent="Water_StaticBody2D"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Water_StaticBody2D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Water_StaticBody2D" to="." method="_on_body_exited"]

@@ -50,7 +50,7 @@ func fade_out():
 	volume_db = vol
 "
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+[node name="Music-Global_AudioStreamPlayer" type="AudioStreamPlayer"]
 bus = "OST"
 script = SubResource( 1 )
 

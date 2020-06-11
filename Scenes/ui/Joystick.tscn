@@ -1,15 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/joystick/button.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/joystick/main.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
 
 # Gonkee's joystick script for Godot 3 from https://youtu.be/uGyEP2LUFPg
 
-var radius = Vector2(32, 32)
-var boundary = 64
+var radius = Vector2(64, 64)
+var boundary = 128
 
 var ongoing_drag = -1
 
@@ -50,6 +54,10 @@ func get_value() -> Vector2:
 	return Vector2(0, 0)
 "
 
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
 [sub_resource type="GDScript" id=2]
 script/source = "extends Button
 
@@ -66,15 +74,18 @@ func _on_Accept_pressed():
 	emit_once(\"dialog_start\")
 "
 
-[node name="Sprite" type="Sprite"]
+[node name="Joystick-UI_Sprite" type="Sprite"]
 light_mask = 0
 position = Vector2( 200, 880 )
 texture = ExtResource( 3 )
 
-[node name="Button" type="Button" parent="."]
+[node name="Tap_Button" type="Button" parent="."]
 light_mask = 0
-margin_right = 76.0
-margin_bottom = 70.0
+margin_right = 140.0
+margin_bottom = 134.0
+rect_min_size = Vector2( 128, 128 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
 icon = ExtResource( 1 )
 flat = true
 script = SubResource( 1 )
@@ -82,20 +93,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Accept" type="Button" parent="."]
+[node name="Accept_Button" type="Button" parent="."]
 light_mask = 0
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1372.0
-margin_top = -134.0
-margin_right = 1448.0
-margin_bottom = -64.0
+margin_left = 1186.07
+margin_top = -319.944
+margin_right = 1326.07
+margin_bottom = -185.944
+rect_min_size = Vector2( 128, 128 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
 icon = ExtResource( 1 )
 flat = true
 script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Accept" to="Accept" method="_on_Accept_pressed"]
+[connection signal="pressed" from="Accept_Button" to="Accept_Button" method="_on_Accept_pressed"]

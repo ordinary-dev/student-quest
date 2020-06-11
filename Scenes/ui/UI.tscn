@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/ui/PauseMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Joystick.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ui/Time.tscn" type="PackedScene" id=3]
+
+[node name="UI-UI_CanvasLayer" type="CanvasLayer"]
+layer = 11
+
+[node name="PauseMenu-UI_Control" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="Joystick-UI_Sprite" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="Time-UI_Control" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="Notifications" type="VBoxContainer" parent="."]
+margin_right = 550.0
+margin_bottom = 300.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}

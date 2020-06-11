@@ -28,7 +28,6 @@ func load_game(dir_name : String) -> void:
 	data.open(\"user://\" + dir_name + \"/data.json\", File.READ)
 	var jsonString = data.get_as_text()
 	var jsonContent = JSON.parse(jsonString).result
-	INVENTORY._load(jsonContent[\"inventory\"])
 	TEMP.dict = jsonContent[\"temp\"]
 	SCENES.load_scene(jsonContent[\"scene\"])
 
@@ -40,7 +39,7 @@ func newSave(num : int) -> void:
 
 
 func replace_game(dir_name : String) -> void:
-	var saveName = get_node(dir_name + \"/HBoxContainer/MarginContainer/VBoxContainer/Name\").text
+	var saveName = get_node(dir_name + \"/MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer/Name_Label\").text
 	_save(int(dir_name.substr(4)), saveName)
 	get_node(dir_name).parseFolder(\"user://\" + dir_name)
 
@@ -52,14 +51,13 @@ func _save(num : int, saveName := \"\") -> void:
 		TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y)
 	var dataDict = {
 		\"scene\" : SCENES.last_scene_path,
-		\"inventory\": INVENTORY.inventory,
 		\"temp\": TEMP.dict
 	}
 	var date = OS.get_datetime()
 	var dateString = str(date[\"year\"]) + \"-\" + str(date[\"month\"]) + \"-\" + str(date[\"day\"]) 
 	dateString += \" \" + str(date[\"hour\"]) + \":\" + str(date[\"minute\"])
 	if saveName == \"\":
-		saveName = get_node(\"btnNew/VBoxContainer/TextEdit\").text
+		saveName = get_node(\"btnNew/MainContainer_VBoxContainer/SaveName_TextEdit\").text
 	var configDict = {
 		\"date\" : dateString,
 		\"name\" : saveName
@@ -91,7 +89,7 @@ func _refresh() -> void:
 		btnNew.name = \"btnNew\"
 		add_child(btnNew)
 		var btnPlus = get_node(\"btnNew\")
-		var okBtn = btnPlus.get_node(\"VBoxContainer/HBoxContainer/OK\")
+		var okBtn = btnPlus.get_node(\"MainContainer_VBoxContainer/ButtonsContainer_HBoxContainer/OK;Button-Template_Control\")
 		GLOBAL.maxId += 1
 		okBtn.connect(\"pressed\", self, \"newSave\", [GLOBAL.maxId])
 	var dir = Directory.new()
@@ -112,7 +110,7 @@ func _refresh() -> void:
 			add_child(lb)
 "
 
-[node name="ScrollContainer" type="ScrollContainer"]
+[node name="Load-Menu_ScrollContainer" type="ScrollContainer"]
 margin_right = 600.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 860, 600 )
@@ -122,7 +120,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="VBoxContainer" parent="."]
+[node name="Control_VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 600.0
 rect_min_size = Vector2( 600, 0 )
 script = SubResource( 1 )

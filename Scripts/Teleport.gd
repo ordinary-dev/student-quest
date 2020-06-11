@@ -7,7 +7,7 @@ export (NodePath) var p3
 export (String, FILE, "*.tscn") var street_path
 
 export (bool) var block_turnstile = false setget set_block, get_block
-onready var turnstile = $Turnstile/CollisionShape2D
+onready var turnstile = $Turnstiles_StaticBody2D/Turnstiles_CollisionShape2D
 
 
 func set_block(value : bool) -> void:

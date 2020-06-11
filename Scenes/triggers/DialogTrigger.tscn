@@ -10,9 +10,10 @@ export (String) var person = \"Мистер человек\"
 export (bool) var load_scene = false
 export (String, FILE, \"*.tscn\") var scene_path
 onready var effect = $Tween
-onready var text_name = $ColorRect3
-onready var text_btn = $ColorRect2
-onready var btn = $Button
+onready var text_name = $DialogFrame_ColorRect
+onready var text_btn = $ButtonHintFrame_ColorRect
+onready var btn = $DialogButton_Button
+onready var label = $DialogFrame_ColorRect/Dialog_MarginContainer/DialogBackground_ColorRect/TextContainer_MarginContainer/Text_Label
 var start : = Color(1, 1, 1, 0)
 var end : = Color(1, 1, 1, 1)
 var time : float = 0.3
@@ -74,7 +75,7 @@ func _ready():
 	text_name.set_visible(false)
 	text_btn.set_visible(false)
 	btn.set_visible(false)
-	get_node(\"ColorRect3/MarginContainer/ColorRect/MarginContainer/Label\").text = person
+	label.text = person
 	set_process(false)
 	text_name.modulate = start
 	text_btn.modulate = start
@@ -87,7 +88,7 @@ func _on_Button_pressed():
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 92.6027, 28.092 )
 
-[node name="Area2D" type="Area2D"]
+[node name="DialogTrigger-Trigger_Area2D_0" type="Area2D"]
 z_index = 6
 z_as_relative = false
 collision_layer = 0
@@ -95,11 +96,11 @@ collision_mask = 1024
 script = SubResource( 1 )
 person = "STRANGER"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TriggeringCollider_CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -27.3024, 68.8249 )
 shape = SubResource( 2 )
 
-[node name="ColorRect3" type="ColorRect" parent="."]
+[node name="DialogFrame_ColorRect" type="ColorRect" parent="."]
 margin_left = 13.0
 margin_top = -53.0
 margin_right = 333.0
@@ -109,7 +110,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect3"]
+[node name="Dialog_MarginContainer" type="MarginContainer" parent="DialogFrame_ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 3
@@ -120,7 +121,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect3/MarginContainer"]
+[node name="DialogBackground_ColorRect" type="ColorRect" parent="DialogFrame_ColorRect/Dialog_MarginContainer"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 317.0
@@ -130,7 +131,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect3/MarginContainer/ColorRect"]
+[node name="TextContainer_MarginContainer" type="MarginContainer" parent="DialogFrame_ColorRect/Dialog_MarginContainer/DialogBackground_ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 10
@@ -141,7 +142,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="ColorRect3/MarginContainer/ColorRect/MarginContainer"]
+[node name="Text_Label" type="Label" parent="DialogFrame_ColorRect/Dialog_MarginContainer/DialogBackground_ColorRect/TextContainer_MarginContainer"]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 304.0
@@ -156,7 +157,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="ButtonHintFrame_ColorRect" type="ColorRect" parent="."]
 margin_left = 22.0
 margin_top = 22.0
 margin_right = 82.0
@@ -166,7 +167,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect2"]
+[node name="HintTextContainer_MarginContainer" type="MarginContainer" parent="ButtonHintFrame_ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 3
@@ -174,14 +175,14 @@ custom_constants/margin_top = 3
 custom_constants/margin_left = 3
 custom_constants/margin_bottom = 3
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2/MarginContainer"]
+[node name="HintTextBackground_ColorRect" type="ColorRect" parent="ButtonHintFrame_ColorRect/HintTextContainer_MarginContainer"]
 margin_left = 3.0
 margin_top = 3.0
 margin_right = 57.0
 margin_bottom = 34.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="Label" type="Label" parent="ColorRect2/MarginContainer/ColorRect"]
+[node name="ButtonHintText_Label" type="Label" parent="ButtonHintFrame_ColorRect/HintTextContainer_MarginContainer/HintTextBackground_ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = ExtResource( 2 )
@@ -192,7 +193,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
+[node name="DialogButton_Button" type="Button" parent="."]
 margin_top = -55.0
 margin_right = 350.0
 margin_bottom = 65.0
@@ -205,4 +206,4 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Area2D_body_exited"]
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="DialogButton_Button" to="." method="_on_Button_pressed"]

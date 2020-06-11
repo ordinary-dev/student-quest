@@ -4,16 +4,17 @@ extends Node2D
 
 export (String, FILE, "*.tscn") var hidden_room 
 
-onready var color_rect = $CanvasLayer/ColorRect
+onready var color_rect = $CanvasLayer/Blackout_ColorRect
 onready var tween = $Tween
-onready var guard = $Guard
-onready var map = $Node2D
+onready var guard = $"GuardDialog;DialogTrigger-Trigger_Area2D"
+onready var map = $"Math-map-Template"
 
 const c1 := Color("#00080808")
 const c2 := Color("#ee080808")
 
 
 func adventure_begins():
+	get_node(GLOBAL.player_path)._save()
 	SCENES.load_scene(hidden_room)
 
 

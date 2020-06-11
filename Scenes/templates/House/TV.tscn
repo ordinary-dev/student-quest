@@ -9,26 +9,26 @@ extents = Vector2( 16, 2 )
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 288.099, 645.752, 608.017, 645.704, 608, 672, 288, 672 )
 
-[node name="TV" type="Node2D"]
+[node name="TV-Template" type="Node2D"]
 
-[node name="tv" type="Sprite" parent="."]
+[node name="TV_Sprite" type="Sprite" parent="."]
 position = Vector2( 3.05176e-05, 3.05176e-05 )
 scale = Vector2( 10, 10 )
 z_index = 2
 texture = ExtResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="tv"]
+[node name="TVCollider_StaticBody2D" type="StaticBody2D" parent="TV_Sprite"]
 collision_layer = 0
 collision_mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tv/StaticBody2D"]
+[node name="TV_CollisionShape2D" type="CollisionShape2D" parent="TV_Sprite/TVCollider_StaticBody2D"]
 shape = SubResource( 1 )
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+[node name="TV_LightOccluder2D" type="LightOccluder2D" parent="."]
 position = Vector2( -448, -656 )
 occluder = SubResource( 2 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="TV_Light2D" type="Light2D" parent="."]
 position = Vector2( 0, -16 )
 texture = ExtResource( 2 )
 texture_scale = 8.0

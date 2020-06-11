@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/templates/House/House.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/House/House_inside.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=2]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -12,10 +13,13 @@ func _ready():
 
 "
 
-[node name="Node2D" type="Node2D"]
+[node name="House-Scene" type="Node2D"]
 script = SubResource( 1 )
 dialog_path = "res://Dialogs/Ignoring/Speaker.json"
 
-[node name="Map" parent="." instance=ExtResource( 1 )]
+[node name="House-inside-Template" parent="." instance=ExtResource( 1 )]
 second_floor_active = false
 street_scene = "res://Scenes/Ignoring/6.Street.tscn"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 2 )]
+joystick = true

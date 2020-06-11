@@ -13,16 +13,16 @@ func _ready():
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 111.588, 75.31 )
 
-[node name="Mr_singer" type="AnimatedSprite"]
+[node name="Mr-singer-Template_AnimatedSprite" type="AnimatedSprite"]
 scale = Vector2( 0.650735, 0.650735 )
 frames = ExtResource( 1 )
 script = SubResource( 1 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Collider_StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 1024
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="Collider_StaticBody2D"]
 shape = SubResource( 2 )
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]

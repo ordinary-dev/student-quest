@@ -73,8 +73,8 @@ func show_dialog(path:String, obj:String = "", fnc:String = "", argv:String="") 
 	if has_node(GLOBAL.player_path):
 		get_node(GLOBAL.player_path).lock()
 	# Disable the interface, if enabled, and remember this
-	return_joystick = UI.get_node("Joystick").visible
-	if UI.get_node("Pause").visible:
+	return_joystick = UI.get_node("Joystick-UI_Sprite").visible
+	if UI.get_node("PauseMenu-UI_Control").visible:
 		UI_INIT.disable_ui()
 		return_ui = true
 	else:

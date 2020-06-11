@@ -7,9 +7,9 @@ export (bool) var restore_position = false
 const speed := 500
 
 # Objects
-onready var character = $Character
-onready var water_sprite = $Character/Water
-onready var anim = $AnimationPlayer
+onready var character = $Character_Sprite
+onready var water_sprite = $Character_Sprite/Water_AnimatedSprite
+onready var anim = $WalkCycle_AnimationPlayer
 
 # Get input from joystick
 # Otherwise use the keyboard
@@ -214,12 +214,20 @@ func _physics_process(_delta) -> void:
 		velocity = move_and_slide(velocity)
 
 
+func _save() -> void:
+	TEMP.save("player_pos_id", SCENES.last_scene_path)
+	TEMP.save("player_pos_x", get_node(GLOBAL.player_path).position.x)
+	TEMP.save("player_pos_y", get_node(GLOBAL.player_path).position.y) 
+
+
 func _ready():
 	if restore_position:
 		if TEMP.get("player_pos_id") == SCENES.last_scene_path:
 			if TEMP.is_saved("player_pos_x"):
 				position.x = TEMP.get("player_pos_x")
 				position.y = TEMP.get("player_pos_y")
+		else:
+			print("Restore position failed")
 	GLOBAL.player_path = get_path()
 	# Set starting direction
 	match default_state:
@@ -234,4 +242,4 @@ func _ready():
 			character.frame = frames.SIDE_STILL
 	use_joystick = OS.get_name() == "Android" or UI_INIT.SHOW_CONTROLS
 	if use_joystick:
-		joystick = UI.get_node("Joystick/Button")
+		joystick = UI.get_node("Joystick-UI_Sprite/Tap_Button")

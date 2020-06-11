@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/train/bridge.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Beginning/Objects/Train.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/train/water.png" type="Texture" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+export (String, FILE, \"*.tscn\") var next_scene
+# The initial coordinates of the train
+export var start_pos : = Vector2(-1300, -60)
+# The final coordinates of the train
+export var end_pos : = Vector2(9500, -60)
+# The initial coordinates of the camera
+export var offset_start : = Vector2(20, 80)
+# The final coordinates of the camera
+export var offset_end : = Vector2(170, 80)
+# Animation duration
+export (float, 2, 12) var time = 9
+# Fade in/out
+export (bool) var fade_in = false
+export (bool) var fade_out = false
+
+onready var obj = $\"Train-Object\"
+onready var cam = $Camera2D
+onready var effect = $Tween
+
+
+func _ready() -> void:
+	# Train animation
+	effect.interpolate_property(obj, \"position\",
+		start_pos, end_pos, time, Tween.TRANS_LINEAR)
+	# Camera animation
+	effect.interpolate_property(cam, \"offset\",
+		offset_start, offset_end, time, Tween.TRANS_LINEAR)
+	effect.start()
+	yield(get_tree().create_timer(time-1), \"timeout\")
+	load_scene()
+
+
+func load_scene() -> void:
+	SCENES.load_scene(next_scene, fade_in, fade_out)
+"
+
+[node name="Bridge-Scene" type="Node2D"]
+script = SubResource( 1 )
+next_scene = "res://Scenes/Beginning/09.Hall.tscn"
+start_pos = Vector2( 125, 596 )
+end_pos = Vector2( 1500, 596 )
+time = 3.0
+fade_in = true
+fade_out = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+
+[node name="Sky_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sky_Sprite" type="Sprite" parent="ParallaxBackground/Sky_ParallaxLayer"]
+modulate = Color( 0.843137, 0.839216, 0.843137, 1 )
+position = Vector2( 961.126, 541.858 )
+scale = Vector2( 17, 17 )
+texture = ExtResource( 5 )
+
+[node name="Railroad_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.4, 1 )
+
+[node name="Railroad_Sprite" type="Sprite" parent="ParallaxBackground/Railroad_ParallaxLayer"]
+position = Vector2( 868.179, 541.858 )
+scale = Vector2( 17, 17 )
+texture = ExtResource( 3 )
+
+[node name="Train-Object" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1300, 596 )
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 20, 80 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.9, 0.9 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 2 )]
+obj = NodePath("..")
+method = "load_scene"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 1 )]

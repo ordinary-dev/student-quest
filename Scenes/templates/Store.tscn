@@ -20,10 +20,10 @@ func load_street():
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 80, 15 )
 
-[node name="Node2D" type="Node2D"]
+[node name="Store-Template" type="Node2D"]
 script = SubResource( 1 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Map_TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 z_index = 1
 z_as_relative = false
@@ -36,7 +36,7 @@ tile_data = PoolIntArray( -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 
 position = Vector2( 574.758, -129.762 )
 collision_layer = 1025
 
-[node name="TileMap2" type="TileMap" parent="."]
+[node name="Walls_TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
 z_index = 2
 z_as_relative = false
@@ -45,7 +45,7 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -589820, 1610612738, 0, -589819, -1073741821, 0, -589818, -1073741821, 0, -589817, -1073741821, 0, -589816, -1073741821, 0, -589815, -1073741821, 0, -589814, -1073741821, 0, -589813, -1073741821, 0, -589812, -1073741821, 0, -589811, -1073741822, 0, -524284, 1610612739, 0, -524275, 3, 0, -458748, 1610612739, 0, -458739, 3, 0, -393212, 1610612739, 0, -393203, 3, 0, -327676, 1610612739, 0, -327667, 3, 0, -262140, 1610612739, 0, -262131, 3, 0, -196604, 1610612739, 0, -196595, 3, 0, -131068, 1610612739, 0, -131059, 3, 0, -65532, -1610612734, 0, -65531, -1610612733, 0, -65530, -1610612733, 0, -65529, -1610612733, 0, -65526, -1610612733, 0, -65525, -1610612733, 0, -65524, -1610612733, 0, -65523, 2, 0 )
 
-[node name="Exit" parent="." instance=ExtResource( 3 )]
+[node name="Exit;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 476.2, -126.7 )
 label = "EXITBUILDING"
 object_name = NodePath("..")
@@ -58,8 +58,8 @@ texture_scale = 25.0
 energy = 0.6
 shadow_enabled = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Collider_StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 576, -24 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="Collider_StaticBody2D"]
 shape = SubResource( 2 )
