@@ -28,12 +28,9 @@ func enable_ui(joystick := false) -> void:
 		UI.get_node("Joystick-UI_Sprite").visible = true
 	UI.get_node("PauseMenu-UI_Control").visible = true
 	UI.get_node("PauseMenu-UI_Control").set_process(true)
-	UI.get_node("Inventory-UI_Control").visible = true
-	UI.get_node("Inventory-UI_Control").update_inv()
 
 
 func disable_ui() -> void:
 	UI.get_node("Joystick-UI_Sprite").visible = false
 	UI.get_node("PauseMenu-UI_Control").visible = false
 	UI.get_node("PauseMenu-UI_Control").set_process(false)
-	UI.get_node("Inventory-UI_Control").visible = false

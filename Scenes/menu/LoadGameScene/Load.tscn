@@ -28,7 +28,6 @@ func load_game(dir_name : String) -> void:
 	data.open(\"user://\" + dir_name + \"/data.json\", File.READ)
 	var jsonString = data.get_as_text()
 	var jsonContent = JSON.parse(jsonString).result
-	INVENTORY._load(jsonContent[\"inventory\"])
 	TEMP.dict = jsonContent[\"temp\"]
 	SCENES.load_scene(jsonContent[\"scene\"])
 
@@ -52,7 +51,6 @@ func _save(num : int, saveName := \"\") -> void:
 		TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y)
 	var dataDict = {
 		\"scene\" : SCENES.last_scene_path,
-		\"inventory\": INVENTORY.inventory,
 		\"temp\": TEMP.dict
 	}
 	var date = OS.get_datetime()

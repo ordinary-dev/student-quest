@@ -31,7 +31,6 @@ SCENES="*res://Scenes/global/SceneLoader.tscn"
 UI="*res://Scenes/ui/UI.tscn"
 NOTIFY="*res://Scripts/Notify.gd"
 TEMP="*res://Scripts/Temp.gd"
-INVENTORY="*res://Scripts/Inventory.gd"
 
 [display]
 
