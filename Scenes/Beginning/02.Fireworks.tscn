@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/fireworks/fireworks.tres" type="Texture" id=1]
-[ext_resource path="res://Sprites/fireworks/Sky2.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/ui/Skip.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/fireworks/Sky.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=5]
@@ -106,18 +105,6 @@ tracks/5/keys = {
 "update": 0,
 "values": [ Vector2( 1279.37, 698.113 ), Vector2( 1299.04, 691.078 ), Vector2( 1275.72, 611.419 ), Vector2( 1218, 547.552 ) ]
 }
-tracks/6/type = "value"
-tracks/6/path = NodePath("ParallaxBackground/Background_ParallaxLayer/BackgroundBlurred_Sprite:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0, 2, 4, 6, 8, 9.1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 0.368627, 0.368627, 0.368627, 0 ), Color( 0.368627, 0.368627, 0.368627, 0.584314 ), Color( 0.368627, 0.368627, 0.368627, 0 ), Color( 0.368627, 0.368627, 0.368627, 0.580392 ), Color( 0.368627, 0.368627, 0.368627, 0 ), Color( 0.368627, 0.368627, 0.368627, 0.219608 ) ]
-}
 
 [node name="Fireworks-Scene" type="Node2D"]
 script = SubResource( 1 )
@@ -130,18 +117,11 @@ layer = 0
 motion_scale = Vector2( 0.5, 0.5 )
 
 [node name="Background_Sprite" type="Sprite" parent="ParallaxBackground/Background_ParallaxLayer"]
-modulate = Color( 0.368627, 0.368627, 0.368627, 1 )
+modulate = Color( 0.54902, 0.54902, 0.54902, 1 )
 light_mask = 0
-position = Vector2( 981.702, 563.53 )
-scale = Vector2( 11.5, 11.5 )
+position = Vector2( 956.537, 463.283 )
+scale = Vector2( 1.98247, 1.98247 )
 texture = ExtResource( 4 )
-
-[node name="BackgroundBlurred_Sprite" type="Sprite" parent="ParallaxBackground/Background_ParallaxLayer"]
-modulate = Color( 0.368627, 0.368627, 0.368627, 0.219608 )
-light_mask = 0
-position = Vector2( 981.702, 563.53 )
-scale = Vector2( 11.5, 11.5 )
-texture = ExtResource( 2 )
 
 [node name="Character_Sprite" type="Sprite" parent="ParallaxBackground/Background_ParallaxLayer"]
 modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
@@ -203,9 +183,9 @@ autoplay = "camera"
 anims/camera = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 0, 200 )
 anchor_mode = 0
 current = true
+zoom = Vector2( 0.9, 0.9 )
 
 [node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 3 )]
 obj = NodePath("../../Fireworks_Scene")
