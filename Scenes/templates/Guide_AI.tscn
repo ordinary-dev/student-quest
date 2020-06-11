@@ -16,7 +16,7 @@ var ind = 0
 # Current position
 var cdir = -1
 const e = 3
-const speed = 400
+const speed = 500
 # Directions
 enum {DOWN, UP, LEFT, RIGHT}
 
