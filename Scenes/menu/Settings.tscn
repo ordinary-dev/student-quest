@@ -96,6 +96,18 @@ func youtube():
 
 func _on_TabContainer_tab_changed(tab):
 	FX.btn_click()
+
+
+func free_sound():
+	OS.shell_open(\"https://freesound.org/\")
+
+
+func zapsplat():
+	OS.shell_open(\"https://www.zapsplat.com/\")
+
+
+func outgoing_hikikomori():
+	OS.shell_open(\"https://www.youtube.com/channel/UC3yRCpfOE2zfTQsOHCH8wZw\")
 "
 
 [sub_resource type="GDScript" id=5]
@@ -504,13 +516,33 @@ margin_right = 728.0
 margin_bottom = 1069.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
-text = "Some sounds were downloaded from freesound.org/people/klankbeeld
-
-"
+text = "Some sounds were downloaded from freesound.org/people/klankbeeld and zapsplat.com
+Music:
+- Outgoing Hikikomori:
+1. Falling Down
+2. Last Bus Home"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="FreeSound;Button" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 641.0
+margin_right = 728.0
+margin_bottom = 721.0
+text = "FreeSound"
+
+[node name="Zapsplat;Button" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 641.0
+margin_right = 728.0
+margin_bottom = 721.0
+text = "Zapsplat"
+
+[node name="OH;Button" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer" instance=ExtResource( 6 )]
+margin_top = 641.0
+margin_right = 728.0
+margin_bottom = 721.0
+text = "Outgoing Hikikomori"
 
 [node name="Contact_Label" type="Label" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer"]
 margin_top = 1089.0
@@ -597,3 +629,6 @@ __meta__ = {
 [connection signal="toggled" from="Graphics_MarginContainer/Buttons_VBoxContainer/Fullscreen_CheckButton" to="Graphics_MarginContainer" method="toggle_fullscreen"]
 [connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/OpenSite;Button-Template_Control" to="." method="open_site"]
 [connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/Wheasy;Button-Template_Control" to="." method="youtube"]
+[connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/FreeSound;Button" to="." method="free_sound"]
+[connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/Zapsplat;Button" to="." method="zapsplat"]
+[connection signal="pressed" from="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer/TextContainer_VBoxContainer/OH;Button" to="." method="outgoing_hikikomori"]
