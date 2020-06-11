@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/templates/Chat/Chat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=2]
 
 [node name="Chat-Scene_Control" type="Control"]
 anchor_right = 1.0
@@ -12,3 +13,5 @@ __meta__ = {
 [node name="Chat-Template_Control" parent="." instance=ExtResource( 1 )]
 next_scene_path = "res://Scenes/Ignoring/4.Date.tscn"
 messages = [ "CHAT_1", "CHAT_2", "CHAT_3", "CHAT_4", "CHAT_5", "CHAT_6", "CHAT_7" ]
+
+[node name="Disable-UI" parent="." instance=ExtResource( 2 )]
