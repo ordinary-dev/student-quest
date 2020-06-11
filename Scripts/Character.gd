@@ -214,12 +214,20 @@ func _physics_process(_delta) -> void:
 		velocity = move_and_slide(velocity)
 
 
+func _save() -> void:
+	TEMP.save("player_pos_id", SCENES.last_scene_path)
+	TEMP.save("player_pos_x", get_node(GLOBAL.player_path).position.x)
+	TEMP.save("player_pos_y", get_node(GLOBAL.player_path).position.y) 
+
+
 func _ready():
 	if restore_position:
 		if TEMP.get("player_pos_id") == SCENES.last_scene_path:
 			if TEMP.is_saved("player_pos_x"):
 				position.x = TEMP.get("player_pos_x")
 				position.y = TEMP.get("player_pos_y")
+		else:
+			print("Restore position failed")
 	GLOBAL.player_path = get_path()
 	# Set starting direction
 	match default_state:

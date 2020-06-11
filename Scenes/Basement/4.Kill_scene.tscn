@@ -10,6 +10,9 @@ export (String, FILE, \"*.tscn\") var next_scene
 
 
 func _ready():
+	# When you try to start a new game, this storyline continues
+	TEMP.save(\"new_game_redirect\", \"1\")
+	# Play video
 	play()
 
 

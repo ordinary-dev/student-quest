@@ -12,7 +12,7 @@ func load_next():
 	SCENES.load_scene(corridor)
 
 func _ready():
-	DIALOG.show_dialog(dialog_path, \"/root/Control\", \"load_next\")
+	DIALOG.show_dialog(dialog_path, get_path(), \"load_next\")
 	
 "
 
@@ -23,7 +23,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-corridor = "res://Scenes/Chapter1/25.secret.tscn"
-dialog_path = "res://Dialogs/chapter1/stairs.json"
+corridor = "res://Scenes/Basement/3.Secret.tscn"
+dialog_path = "res://Dialogs/Basement/stairs.json"
 
 [node name="Disable-UI" parent="." instance=ExtResource( 1 )]

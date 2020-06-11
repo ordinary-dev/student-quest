@@ -34,9 +34,9 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
-math = "res://Scenes/Chapter1/20.math_blackout.tscn"
-dialog = "res://Scenes/Chapter1/24.dialog.tscn"
-secret = "res://Scenes/Chapter1/25.secret.tscn"
+math = "res://Scenes/Beginning/21.Math_blackout.tscn"
+dialog = "res://Scenes/Basement/2.Dialog.tscn"
+secret = "res://Scenes/Basement/3.Secret.tscn"
 
 [node name="Map_TileMap" type="TileMap" parent="."]
 modulate = Color( 0.333333, 0.333333, 0.333333, 1 )
@@ -68,23 +68,22 @@ shape = SubResource( 2 )
 
 [node name="Entry;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, -64 )
-label = "Вернуться"
-object_name = NodePath("../../stairs-Scene")
+label = "GO_BACK"
+object_name = NodePath("..")
 function_name = "return_back"
 
 [node name="Exit;FunctionCaller-Trigger_Area2D_" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 352 )
-label = "Вниз"
-object_name = NodePath("../../stairs-Scene")
+label = "GO_DOWN"
+object_name = NodePath("..")
 function_name = "go"
 
 [node name="DownstairsLight_Light2D" type="Light2D" parent="."]
 position = Vector2( 128, 528 )
 texture = ExtResource( 5 )
-texture_scale = 13.5
-color = Color( 0.505882, 0.0705882, 0.0901961, 1 )
-energy = 1.74
-range_z_max = 10
+texture_scale = 33.58
+mode = 3
+range_z_max = 3
 shadow_enabled = true
 
 [node name="Enable-UI" parent="." instance=ExtResource( 4 )]

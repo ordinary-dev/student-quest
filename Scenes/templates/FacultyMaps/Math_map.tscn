@@ -215,6 +215,7 @@ position = Vector2( 436.297, 3075.05 )
 position = Vector2( 288, 1643 )
 scale = Vector2( 0.9, 0.9 )
 default_state = 0
+restore_position = true
 
 [node name="Turnstile-Template_Sprite_0" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 481.758, 262.635 )

@@ -66,6 +66,8 @@ func _quit():
 
 
 func _ready() -> void:
+	if TEMP.get(\"new_game_redirect\") == \"1\":
+		remove_child($Animation)
 	# Focus
 	get_node(new_game_btn).grab_focus()
 	# Disable scenes
@@ -215,7 +217,6 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 3
 playing = true
 
 [node name="Rain-Template_Particles2D" parent="." instance=ExtResource( 12 )]

@@ -183,6 +183,7 @@ occluder = SubResource( 2 )
 [node name="Water_AnimatedSprite" type="AnimatedSprite" parent="Character_Sprite"]
 visible = false
 modulate = Color( 0.901961, 0.901961, 0.901961, 1 )
+show_behind_parent = true
 position = Vector2( -1.55816, 14.5416 )
 scale = Vector2( 1.7, 1.7 )
 frames = ExtResource( 5 )

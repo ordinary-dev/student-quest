@@ -5,11 +5,11 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
-onready var s1 = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer
-onready var s2 = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2
-onready var s3 = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3
-onready var stop_button = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3/VBoxContainer/ResetBtn
-onready var reset_button = $MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer3/VBoxContainer/StopBtn
+onready var s1 = $ComputerContainer_MarginContainer/Interface_HBoxContainer/MarginContainer2/Text_ScrollContainer
+onready var s2 = $ComputerContainer_MarginContainer/Interface_HBoxContainer/MarginContainer2/CommandLine_ScrollContainer
+onready var s3 = $ComputerContainer_MarginContainer/Interface_HBoxContainer/MarginContainer2/Desicion_ScrollContainer
+onready var stop_button = $\"ComputerContainer_MarginContainer/Interface_HBoxContainer/MarginContainer2/Desicion_ScrollContainer/Desicion_VBoxContainer/Stop;Button-Template_Control\"
+onready var reset_button = $\"ComputerContainer_MarginContainer/Interface_HBoxContainer/MarginContainer2/Desicion_ScrollContainer/Desicion_VBoxContainer/Reset;Button-Template_Control\"
 export (NodePath) var text_line
 export (NodePath) var text_console
 
@@ -42,19 +42,16 @@ func _on_Settings_pressed():
 
 
 func _on_Close_pressed():
-	if has_node(\"/root/Node2D/Body\"):
-		get_node(\"/root/Node2D/Body\").unlock()
+	if has_node(GLOBAL.player_path):
+		get_node(GLOBAL.player_path).unlock()
 	self.get_parent().remove_child(self)
 
 
 func _on_ResetBtn_pressed():
-	if has_node(\"/root/Node2D/Body\"):
-		get_node(\"/root/Node2D/Body\").unlock()
-	if has_node(\"/root/Node2D\"):
-		get_node(\"/root/Node2D\").next()
+	if has_node(GLOBAL.player_path):
+		get_node(GLOBAL.player_path).unlock()
+	get_tree().get_current_scene().next()
 	self.get_parent().remove_child(self)
-	
-	
 
 
 func _on_StopBtn_pressed():
@@ -114,8 +111,8 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-text_line = NodePath("../Computer-UI-Template_Control_0/MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/HBoxContainer/TextEdit")
-text_console = NodePath("../Computer-UI-Template_Control_0/MarginContainer/HBoxContainer/MarginContainer2/ScrollContainer2/VBoxContainer/ScrollContainer/Label2")
+text_line = NodePath("ComputerContainer_MarginContainer/Interface_HBoxContainer/MarginContainer2/CommandLine_ScrollContainer/CommandLine_VBoxContainer/Command_HBoxContainer/Command_TextEdit")
+text_console = NodePath("ComputerContainer_MarginContainer/Interface_HBoxContainer/MarginContainer2/CommandLine_ScrollContainer/CommandLine_VBoxContainer/Body_ScrollContainer/Body_Label")
 
 [node name="Background_ColorRect" type="ColorRect" parent="."]
 margin_right = 1920.0
@@ -163,18 +160,21 @@ margin_bottom = 872.0
 margin_right = 450.0
 margin_bottom = 140.0
 rect_min_size = Vector2( 450, 140 )
+text = "LOGS"
 
 [node name="Progress;Button-Template_Control" parent="ComputerContainer_MarginContainer/Interface_HBoxContainer/LeftColumn_VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 144.0
 margin_right = 450.0
 margin_bottom = 284.0
 rect_min_size = Vector2( 450, 140 )
+text = "CMD"
 
 [node name="Settings;Button-Template_Control" parent="ComputerContainer_MarginContainer/Interface_HBoxContainer/LeftColumn_VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 288.0
 margin_right = 450.0
 margin_bottom = 428.0
 rect_min_size = Vector2( 450, 140 )
+text = "SETTINGS"
 
 [node name="TrailingContainer_MarginContainer" type="MarginContainer" parent="ComputerContainer_MarginContainer/Interface_HBoxContainer/LeftColumn_VBoxContainer"]
 margin_top = 432.0
@@ -187,6 +187,7 @@ margin_top = 300.0
 margin_right = 450.0
 margin_bottom = 440.0
 rect_min_size = Vector2( 450, 140 )
+text = "CLOSE"
 
 [node name="MarginContainer2" type="MarginContainer" parent="ComputerContainer_MarginContainer/Interface_HBoxContainer"]
 margin_left = 454.0
@@ -295,12 +296,14 @@ custom_constants/separation = 30
 margin_right = 600.0
 margin_bottom = 140.0
 rect_min_size = Vector2( 600, 140 )
+text = "RESET"
 
 [node name="Stop;Button-Template_Control" parent="ComputerContainer_MarginContainer/Interface_HBoxContainer/MarginContainer2/Desicion_ScrollContainer/Desicion_VBoxContainer" instance=ExtResource( 1 )]
 margin_top = 170.0
 margin_right = 600.0
 margin_bottom = 310.0
 rect_min_size = Vector2( 600, 140 )
+text = "STOP"
 [connection signal="pressed" from="ComputerContainer_MarginContainer/Interface_HBoxContainer/LeftColumn_VBoxContainer/Logs;Button-Template_Control" to="." method="_on_Logs_pressed"]
 [connection signal="pressed" from="ComputerContainer_MarginContainer/Interface_HBoxContainer/LeftColumn_VBoxContainer/Progress;Button-Template_Control" to="." method="_on_Progress_pressed"]
 [connection signal="pressed" from="ComputerContainer_MarginContainer/Interface_HBoxContainer/LeftColumn_VBoxContainer/Settings;Button-Template_Control" to="." method="_on_Settings_pressed"]

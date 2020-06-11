@@ -9,7 +9,7 @@
 
 [node name="Math-blackout-Scene" type="Node2D"]
 script = ExtResource( 4 )
-hidden_room = "res://Scenes/Chapter1/23.stairs.tscn"
+hidden_room = "res://Scenes/Basement/1.Stairs.tscn"
 
 [node name="Math-map-Template" parent="." instance=ExtResource( 6 )]
 street_path = "res://Scenes/Ignoring/1.Lifeguards.tscn"
@@ -38,7 +38,7 @@ person = "GUARD"
 light_mask = 0
 position = Vector2( -576, 128 )
 label = "PATH"
-object_name = NodePath("../../math-blackout-Scene")
+object_name = NodePath("..")
 function_name = "adventure_begins"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 3 )]
