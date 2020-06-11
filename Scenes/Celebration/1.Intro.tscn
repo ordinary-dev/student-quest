@@ -16,5 +16,5 @@ text_2 = "SECRETS"
 next_scene = "res://Scenes/Celebration/2.Road.tscn"
 
 [node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 2 )]
-obj = NodePath("../../Intro-Scene/Control")
+obj = NodePath("..")
 method = "load_scene"

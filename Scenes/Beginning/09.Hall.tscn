@@ -21,7 +21,7 @@ script = ExtResource( 1 )
 file = "res://Audio/music/Ambient.ogg"
 
 [node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 5 )]
-obj = NodePath("../../hall-Scene")
+obj = NodePath("..")
 method = "load_scene"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 3 )]

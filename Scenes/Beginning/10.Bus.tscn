@@ -111,5 +111,5 @@ scale = Vector2( 30, 30 )
 texture = ExtResource( 6 )
 
 [node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 3 )]
-obj = NodePath("../../bus-Scene")
+obj = NodePath("..")
 method = "load_scene"

@@ -188,7 +188,7 @@ current = true
 zoom = Vector2( 0.9, 0.9 )
 
 [node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 3 )]
-obj = NodePath("../../Fireworks_Scene")
+obj = NodePath("..")
 method = "load_scene"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 5 )]

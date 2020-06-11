@@ -70,7 +70,7 @@ volume_db = -17.0
 bus = "Ambient"
 
 [node name="Skip-UI_CanvasLayer" parent="." instance=ExtResource( 2 )]
-obj = NodePath("../../train-window-Scene")
+obj = NodePath("..")
 method = "load_scene"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 6 )]
