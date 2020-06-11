@@ -79,7 +79,7 @@ func _ready() -> void:
 
 
 func open_site():
-	OS.shell_open(\"https://studentquest.github.io\")
+	OS.shell_open(\"https://pixeltrain.itch.io/student-quest\")
 
 
 func en():
@@ -360,14 +360,14 @@ scroll_horizontal_enabled = false
 
 [node name="TextContainer_MarginContainer" type="MarginContainer" parent="Info_MarginContainer/TextContainer_ScrollContainer"]
 margin_right = 760.0
-margin_bottom = 1360.0
+margin_bottom = 1741.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
 
 [node name="TextContainer_VBoxContainer" type="VBoxContainer" parent="Info_MarginContainer/TextContainer_ScrollContainer/TextContainer_MarginContainer"]
 margin_right = 740.0
-margin_bottom = 1360.0
+margin_bottom = 1741.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
@@ -381,9 +381,9 @@ margin_right = 728.0
 margin_bottom = 178.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
-text = "studentquest.github.io
+text = "pixeltrain.itch.io/student-quest
 
-v 4.2"
+v 4.3"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
