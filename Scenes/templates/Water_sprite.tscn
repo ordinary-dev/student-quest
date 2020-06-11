@@ -1,8 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Sprites/water/water.tres" type="SpriteFrames" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends AnimatedSprite
+
+
+func _ready():
+	playing = true
+"
 
 [node name="Water-sprite-Template_AnimatedSprite_0" type="AnimatedSprite"]
 scale = Vector2( 12, 12 )
 frames = ExtResource( 1 )
-playing = true
+script = SubResource( 1 )
