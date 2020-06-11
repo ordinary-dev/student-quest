@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/templates/Trees/Tree_type_2.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/templates/Noise_sprite.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/templates/House/Bench.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/templates/Water_coast.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Audio/fx/OceanWaves.ogg" type="AudioStream" id=15]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -37,7 +38,7 @@ func house() -> void:
 	SCENES.load_scene(house_scene)
 "
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 script/source = "extends Area2D
 
 # Target
@@ -78,10 +79,10 @@ func _on_Area2D_body_exited(body):
 		effect.start()
 "
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 2480, 112 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 112, 1792 )
 
 [node name="Street-Template" type="Node2D"]
@@ -640,7 +641,7 @@ scale = Vector2( 22.391, 15.096 )
 z_index = 1
 collision_layer = 0
 collision_mask = 1024
-script = SubResource( 3 )
+script = SubResource( 2 )
 object = NodePath("../YSort/Houses_Ysort/House-expanded-Template")
 
 [node name="Borders_StaticBody2D" type="StaticBody2D" parent="."]
@@ -650,22 +651,22 @@ collision_mask = 1024
 [node name="Border_CollisionShape2D_1" type="CollisionShape2D" parent="Borders_StaticBody2D"]
 visible = false
 position = Vector2( 512, 1616 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Border_CollisionShape2D_2" type="CollisionShape2D" parent="Borders_StaticBody2D"]
 visible = false
 position = Vector2( 496, -1776 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Border_CollisionShape2D_3" type="CollisionShape2D" parent="Borders_StaticBody2D"]
 visible = false
 position = Vector2( -1968, -8 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Border_CollisionShape2D_4" type="CollisionShape2D" parent="Borders_StaticBody2D"]
 visible = false
 position = Vector2( 3056, -8 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="OpenTheDoor_Area2D_1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176, -520 )
@@ -788,203 +789,185 @@ position = Vector2( -1856, 1472 )
 
 [node name="Water-sprite-Template_AnimatedSprite_1" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 96, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_2" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 96, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_4" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 288, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_3" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 288, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_6" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 480, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_5" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 480, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_8" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 672, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_7" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 672, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_16" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 864, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_15" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 864, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_14" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1056, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_13" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1056, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_12" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1248, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_11" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1248, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_10" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1440, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_9" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1440, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_24" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1632, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_23" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1632, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_22" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1824, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_21" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 1824, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_20" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2016, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_19" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2016, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_18" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2208, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_17" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2208, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_32" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2400, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_31" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2400, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_30" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2592, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_29" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2592, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_28" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2784, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_27" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2784, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_26" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2976, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_25" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 2976, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_40" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3168, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_39" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3168, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_38" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3360, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_37" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3360, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_36" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3552, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_35" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3552, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_34" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3744, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_33" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3744, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_48" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3936, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_47" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 3936, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_46" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 4128, 96 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_45" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 4128, 288 )
-frame = 3
 
 [node name="Water-sprite-Template_AnimatedSprite_44" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 4320, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_43" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 4320, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_42" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 4512, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_41" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 4512, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_50" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 4704, 96 )
-frame = 1
+frame = 2
 
 [node name="Water-sprite-Template_AnimatedSprite_49" parent="Water" instance=ExtResource( 11 )]
 position = Vector2( 4704, 288 )
-frame = 1
+frame = 2
 
 [node name="Water-collider-Template_1" parent="." instance=ExtResource( 9 )]
 position = Vector2( 576, 1664 )
@@ -998,117 +981,132 @@ scale = Vector2( 12, 12 )
 
 [node name="Water-coast-Template_Sprite_51" parent="CoastalWater" instance=ExtResource( 14 )]
 scale = Vector2( 1, 1 )
+frame = 2
 
 [node name="Water-coast-Template_Sprite_52" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 16, 0 )
 scale = Vector2( 1, 1 )
+frame = 2
 
 [node name="Water-coast-Template_Sprite_54" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 32, 0 )
 scale = Vector2( 1, 1 )
+frame = 2
 
 [node name="Water-coast-Template_Sprite_53" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 48, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_56" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 64, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_55" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 80, 0 )
 scale = Vector2( 1, 1 )
-frame = 3
+frame = 0
 
 [node name="Water-coast-Template_Sprite_58" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 96, 0 )
 scale = Vector2( 1, 1 )
-frame = 3
+frame = 0
 
 [node name="Water-coast-Template_Sprite_57" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 112, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_60" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 128, 0 )
 scale = Vector2( 1, 1 )
-frame = 3
+frame = 0
 
 [node name="Water-coast-Template_Sprite_59" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 144, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_62" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 160, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_61" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 176, 0 )
 scale = Vector2( 1, 1 )
+frame = 2
 
 [node name="Water-coast-Template_Sprite_64" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 192, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_63" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 208, 0 )
 scale = Vector2( 1, 1 )
+frame = 2
 
 [node name="Water-coast-Template_Sprite_66" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 224, 0 )
 scale = Vector2( 1, 1 )
+frame = 2
 
 [node name="Water-coast-Template_Sprite_65" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 240, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_68" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 256, 0 )
 scale = Vector2( 1, 1 )
+frame = 2
 
 [node name="Water-coast-Template_Sprite_67" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 272, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_70" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 288, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_69" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 304, 0 )
 scale = Vector2( 1, 1 )
-frame = 3
+frame = 0
 
 [node name="Water-coast-Template_Sprite_72" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 320, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_71" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 336, 0 )
 scale = Vector2( 1, 1 )
-frame = 3
+frame = 0
 
 [node name="Water-coast-Template_Sprite_74" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 352, 0 )
 scale = Vector2( 1, 1 )
-frame = 2
+frame = 3
 
 [node name="Water-coast-Template_Sprite_73" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 368, 0 )
 scale = Vector2( 1, 1 )
-frame = 3
+frame = 0
 
 [node name="Water-coast-Template_Sprite_76" parent="CoastalWater" instance=ExtResource( 14 )]
 position = Vector2( 384, 0 )
 scale = Vector2( 1, 1 )
-frame = 3
+frame = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2( 312, 1816 )
+stream = ExtResource( 15 )
+volume_db = -10.0
+autoplay = true
+attenuation = 1.41421
+bus = "FX"
