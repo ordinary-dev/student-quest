@@ -1,13 +1,26 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/templates/Animated_text.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=2]
 
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+export (String, FILE, \"*.ogg\") var music_path
+
+
+func _ready() -> void:
+	yield(get_tree().create_timer(1), \"timeout\")
+	MUSIC.play_sound(music_path)
+"
+
 [node name="Date-Scene" type="Control"]
 rect_min_size = Vector2( 1920, 1080 )
+script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+music_path = "res://Audio/music/FallingDown.ogg"
 
 [node name="Animated-text-Template_Control" parent="." instance=ExtResource( 1 )]
 text_1 = "SEPTEMBER1"
