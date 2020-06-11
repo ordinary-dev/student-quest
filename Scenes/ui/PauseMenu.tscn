@@ -44,11 +44,10 @@ func switch():
 func _on_Pause_pressed() -> void:
 	enabled = true
 	FX.btn_click()
-	get_node(\"MarginContainer\").visible = true
-	get_node(\"ColorRect\").visible = true
-	get_node(\"Pause\").visible = false
-	UI.get_node(\"Inventory\").visible = false
-	if UI.get_node(\"Joystick\").visible:
+	get_node(\"MainContainer_MarginContainer\").visible = true
+	get_node(\"Background_ColorRect\").visible = true
+	get_node(\"Pause_Button\").visible = false
+	if UI.get_node(\"Joystick-UI_Sprite\").visible:
 		UI_INIT.hide_joystick()
 		show_joystick = true
 	if (has_node(GLOBAL.player_path)):
@@ -61,12 +60,11 @@ func _return_to_game(play_sound : bool = true) -> void:
 	if play_sound:
 		FX.btn_click()
 	# Hide buttons
-	get_node(\"MarginContainer\").visible = false
+	get_node(\"MainContainer_MarginContainer\").visible = false
 	# Hide semi-transparent black background
-	get_node(\"ColorRect\").visible = false
+	get_node(\"Background_ColorRect\").visible = false
 	# Show pause button
-	get_node(\"Pause\").visible = true
-	UI.get_node(\"Inventory\").visible = true
+	get_node(\"Pause_Button\").visible = true
 	# Unlock player's movement if it exists
 	if (has_node(GLOBAL.player_path)):
 		get_node(GLOBAL.player_path).unlock()
@@ -107,7 +105,7 @@ func _settings() -> void:
 func _load() -> void:
 	FX.btn_click()
 	var ln = get_node(load_node)
-	ln.get_node(\"Control\")._refresh()
+	ln.get_node(\"Control_VBoxContainer\")._refresh()
 	ln.visible = !ln.visible
 	get_node(settings_node).visible = false
 	get_node(save_node).visible = false
@@ -117,7 +115,7 @@ func _load() -> void:
 func _save() -> void:
 	FX.btn_click()
 	var ln = get_node(save_node)
-	ln.get_node(\"Control\")._refresh()
+	ln.get_node(\"Control_VBoxContainer\")._refresh()
 	ln.visible = !ln.visible
 	get_node(settings_node).visible = false
 	get_node(load_node).visible = false
@@ -275,6 +273,9 @@ visible = false
 margin_left = 1000.0
 margin_top = 200.0
 
+[node name="Control_VBoxContainer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Load-Menu_ScrollContainer" index="0"]
+mode = 0
+
 [node name="Save;Load-Menu_ScrollContainer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer" instance=ExtResource( 4 )]
 visible = false
 margin_left = 1000.0
@@ -286,3 +287,5 @@ margin_top = 200.0
 [connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Settings;Button-Template_Control" to="." method="_settings"]
 [connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Menu;Button-Template_Control" to="." method="_to_menu"]
 [connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Quit;Button-Template_Control" to="." method="_quit_game"]
+
+[editable path="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Load-Menu_ScrollContainer"]

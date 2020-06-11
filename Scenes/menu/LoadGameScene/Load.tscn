@@ -39,7 +39,7 @@ func newSave(num : int) -> void:
 
 
 func replace_game(dir_name : String) -> void:
-	var saveName = get_node(dir_name + \"/HBoxContainer/MarginContainer/VBoxContainer/Name\").text
+	var saveName = get_node(dir_name + \"/MainContainer_HBoxContainer/Container_MarginContainer/TextContainer_VBoxContainer/Name_Label\").text
 	_save(int(dir_name.substr(4)), saveName)
 	get_node(dir_name).parseFolder(\"user://\" + dir_name)
 
@@ -57,7 +57,7 @@ func _save(num : int, saveName := \"\") -> void:
 	var dateString = str(date[\"year\"]) + \"-\" + str(date[\"month\"]) + \"-\" + str(date[\"day\"]) 
 	dateString += \" \" + str(date[\"hour\"]) + \":\" + str(date[\"minute\"])
 	if saveName == \"\":
-		saveName = get_node(\"btnNew/VBoxContainer/TextEdit\").text
+		saveName = get_node(\"btnNew/MainContainer_VBoxContainer/SaveName_TextEdit\").text
 	var configDict = {
 		\"date\" : dateString,
 		\"name\" : saveName

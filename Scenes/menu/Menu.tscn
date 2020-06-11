@@ -329,6 +329,9 @@ margin_top = 150.0
 margin_right = 860.0
 margin_bottom = 930.0
 
+[node name="Control_VBoxContainer" parent="Menu_HBoxContainer/Right_MarginContainer/Load-Menu_ScrollContainer" index="0"]
+mode = 0
+
 [node name="Animation" type="Tween" parent="."]
 script = SubResource( 2 )
 train = NodePath("../Train_TextureRect")
@@ -344,3 +347,5 @@ person_2 = ExtResource( 13 )
 [connection signal="pressed" from="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/LoadGame;Button-Template_Control" to="." method="_load_game"]
 [connection signal="pressed" from="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/Settings;Button-Template_Control" to="." method="_toggle_settings"]
 [connection signal="pressed" from="Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/Quit;Button-Template_Control" to="." method="_quit"]
+
+[editable path="Menu_HBoxContainer/Right_MarginContainer/Load-Menu_ScrollContainer"]
