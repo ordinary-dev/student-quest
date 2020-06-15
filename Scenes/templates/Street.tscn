@@ -60,10 +60,6 @@ export (bool) var enable_npc = true
 onready var hostel_pos = $Positions/Hostel_Position2D
 onready var fountain_pos = $Positions/Fountain_Position2D
 
-func _save() -> void:
-	var pl = get_node(GLOBAL.player_path)
-	pl._save()
-
 
 func init() -> void:
 	match initial_position:
@@ -73,21 +69,10 @@ func init() -> void:
 			get_node(GLOBAL.player_path).position = fountain_pos.position
 
 
-func restore() -> void:
-	get_node(GLOBAL.player_path).position.x = TEMP.get(\"player_pos_x\")
-	get_node(GLOBAL.player_path).position.y = TEMP.get(\"player_pos_y\")
-
-
-func is_position_saved() -> bool:
-	return(TEMP.get(\"player_pos_id\") == SCENES.last_scene_path 
-		and TEMP.is_saved(\"player_pos_x\")
-		and TEMP.is_saved(\"player_pos_y\"))
-
 
 func _ready() -> void:
-	if is_position_saved():
-		restore()
-	else:
+	# Do not overwrite position if it was saved
+	if get_node(GLOBAL.player_path).restored_position == false:
 		init()
 	# Buildings
 	if !allow_entrance:
@@ -1406,7 +1391,6 @@ shape = SubResource( 18 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Buildings_YSort/ENIHouse_Sprite"]
 position = Vector2( -22.0841, -89.2427 )
 frames = ExtResource( 21 )
-frame = 1
 playing = true
 
 [node name="ENIShow;ObjectSwitcher-Trigger_Area2D" parent="YSort/Buildings_YSort" instance=ExtResource( 5 )]

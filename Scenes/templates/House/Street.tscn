@@ -686,6 +686,7 @@ function_name = "open_door"
 modulate = Color( 0.666667, 0.666667, 0.666667, 1 )
 position = Vector2( -128, 80 )
 default_state = 2
+restore_position = true
 
 [node name="Streetlights_YSort" type="YSort" parent="YSort"]
 

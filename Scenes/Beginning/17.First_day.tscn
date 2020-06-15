@@ -23,8 +23,6 @@ func save():
 		TEMP.save(\"day1_dialog\", \"1\")
 	else:
 		TEMP.save(\"day1_dialog\", \"0\")
-	# Player position
-	$\"Street-Template\"._save()
 
 
 # Перейти в магазин

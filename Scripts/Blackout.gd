@@ -14,7 +14,6 @@ const c2 := Color("#ee080808")
 
 
 func adventure_begins():
-	get_node(GLOBAL.player_path)._save()
 	SCENES.load_scene(hidden_room)
 
 

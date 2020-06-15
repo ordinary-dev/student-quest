@@ -46,14 +46,18 @@ func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool =
 		NOTIFY.show(\"Can't find scene\")
 		return
 	
-	last_scene_path = scene_name
 	# Fade in
 	if anim_start:
 		fade_in()
 		yield(get_tree().create_timer(time), \"timeout\")
 	
-	# Scene loading
-	GLOBAL.player_path = \"\"
+	# Save position
+	if has_node(GLOBAL.player_path):
+		var pl = get_node(GLOBAL.player_path)
+		if pl.restore_position:
+			pl._save()
+	# Load scene
+	last_scene_path = scene_name
 	assert(get_tree().change_scene(scene_name) == OK)
 	
 	# Fade out
@@ -63,7 +67,7 @@ func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool =
 			UI.get_node(\"transition\").color = end
 		fade_out()
 	elif anim_start:
-			UI.remove_child(UI.get_node(\"transition\"))
+		UI.remove_child(UI.get_node(\"transition\"))
 
 
 "
