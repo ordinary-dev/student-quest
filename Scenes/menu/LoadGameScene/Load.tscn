@@ -28,7 +28,12 @@ func load_game(dir_name : String) -> void:
 	data.open(\"user://\" + dir_name + \"/data.json\", File.READ)
 	var jsonString = data.get_as_text()
 	var jsonContent = JSON.parse(jsonString).result
+	# Data
 	TEMP.dict = jsonContent[\"temp\"]
+	# Music
+	if jsonContent[\"is_music_playing\"]:
+		MUSIC.play_sound(jsonContent[\"music_path\"])
+		MUSIC.seek(jsonContent[\"playback_position\"])
 	SCENES.load_scene(jsonContent[\"scene\"])
 
 
@@ -51,7 +56,11 @@ func _save(num : int, saveName := \"\") -> void:
 		TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y)
 	var dataDict = {
 		\"scene\" : SCENES.last_scene_path,
-		\"temp\": TEMP.dict
+		\"temp\": TEMP.dict,
+		# Music
+		\"is_music_playing\": MUSIC.playing,
+		\"music_path\": MUSIC.path,
+		\"playback_position\": MUSIC.get_playback_position()
 	}
 	var date = OS.get_datetime()
 	var dateString = str(date[\"year\"]) + \"-\" + str(date[\"month\"]) + \"-\" + str(date[\"day\"]) 
