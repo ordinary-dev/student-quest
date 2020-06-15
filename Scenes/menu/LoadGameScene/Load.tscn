@@ -50,10 +50,10 @@ func replace_game(dir_name : String) -> void:
 
 
 func _save(num : int, saveName := \"\") -> void:
-	if GLOBAL.player_path != \"\":
-		TEMP.save(\"player_pos_id\", SCENES.last_scene_path)
-		TEMP.save(\"player_pos_x\", get_node(GLOBAL.player_path).position.x)
-		TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y)
+	if has_node(GLOBAL.player_path):
+		var pl = get_node(GLOBAL.player_path)
+		if pl.restore_position:
+			pl._save()
 	var dataDict = {
 		\"scene\" : SCENES.last_scene_path,
 		\"temp\": TEMP.dict,
