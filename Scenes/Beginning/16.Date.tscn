@@ -10,7 +10,7 @@ export (String, FILE, \"*.ogg\") var music_path
 
 
 func _ready() -> void:
-	yield(get_tree().create_timer(1), \"timeout\")
+	yield(get_tree().create_timer(.7), \"timeout\")
 	MUSIC.play_sound(music_path)
 "
 
