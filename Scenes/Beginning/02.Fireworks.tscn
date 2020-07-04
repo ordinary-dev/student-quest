@@ -13,9 +13,10 @@ script/source = "extends Node2D
 
 var fw = preload(\"res://Audio/fx/Firework_explosion.wav\")
 export (String, FILE, \"*.tscn\") var next_scene
-
+export (String, FILE, \"*.ogg\") var audio
 
 func _ready() -> void:
+	MUSIC.play_sound(audio)
 	yield(get_tree().create_timer(1.4), \"timeout\")
 	FX.play_sound(fw)
 	
@@ -109,6 +110,7 @@ tracks/5/keys = {
 [node name="Fireworks-Scene" type="Node2D"]
 script = SubResource( 1 )
 next_scene = "res://Scenes/Beginning/03.Dialog.tscn"
+audio = "res://Audio/music/Technicolor Midnight.ogg"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 0
