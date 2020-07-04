@@ -12,8 +12,14 @@ script/source = "extends Node2D
 
 export (String, FILE, \"*.tscn\") var scene_path
 
+
 func move() -> void:
 	$AnimationPlayer.play(\"pen\")
+
+
+func _process(delta) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		move()
 
 
 func _on_animation_finished(anim_name):

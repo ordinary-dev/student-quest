@@ -14,6 +14,11 @@ export (String, FILE, \"*.tscn\") var scene_path
 
 func turn_off() -> void:
 	SCENES.load_scene(scene_path, false, false)
+
+
+func _process(delta) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		turn_off()
 "
 
 [sub_resource type="Animation" id=2]

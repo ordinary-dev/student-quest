@@ -22,11 +22,16 @@ func move() -> void:
 		tween.interpolate_property(
 			cam, \"position\",
 			Vector2(x, y_pos), Vector2(x, y_pos-300),
-			1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			0.4, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 		tween.start()
 		count += 1
 	else:
 		SCENES.load_scene(scene_path)
+
+
+func _process(delta) -> void:
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		move()
 
 
 func _ready() -> void:
