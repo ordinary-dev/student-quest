@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Sprites/outside/store.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
@@ -35,6 +35,8 @@
 [ext_resource path="res://Scenes/templates/Water_sprite.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Scenes/templates/Streetlight.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Scenes/triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Sprites/gardener.png" type="Texture" id=36]
+[ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=37]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -47,8 +49,16 @@ export (positions) var initial_position = positions.HOSTEL
 export (bool) var allow_entrance = true
 export (String, FILE, \"*.tscn\") var math_scene
 
+# Singer
 export (bool) var show_singer = true
 onready var singer = $\"Mr-singer-Template_AnimatedSprite\"
+
+# Gardener
+export (bool) var show_gardener = true
+export (bool) var enable_gardener_dialog = false
+export (String, FILE, \"*.json\") var gardener_dialog_path = \"\"
+onready var gardener = $YSort/Gardener
+onready var gardener_dialog_trigger = $\"GardenerDialogTrigger-Trigger_Area2D_0\"
 
 # Lights
 export (bool) var enable_lights = true
@@ -80,6 +90,13 @@ func _ready() -> void:
 	# Singer
 	if !show_singer:
 		remove_child(singer)
+	# Gardener
+	if !show_gardener:
+		remove_child(gardener)
+	if !enable_gardener_dialog:
+		remove_child(gardener_dialog_trigger)
+	else:
+		gardener_dialog_trigger.dialog_path = gardener_dialog_path
 	# Lights
 	if !enable_lights:
 		var arr = $YSort/Streetlights_YSort.get_children()
@@ -167,7 +184,10 @@ extents = Vector2( 14, 4 )
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 14, 2 )
 
-[sub_resource type="GDScript" id=27]
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 8, 2.66675 )
+
+[sub_resource type="GDScript" id=28]
 script/source = "extends Node2D
 
 
@@ -215,6 +235,10 @@ tile_data = PoolIntArray( -1769493, 2, 0, -1769492, 2, 0, -1769491, 2, 0, -17694
 
 [node name="Mr-singer-Template_AnimatedSprite" parent="." instance=ExtResource( 11 )]
 position = Vector2( 64, 368 )
+
+[node name="GardenerDialogTrigger-Trigger_Area2D_0" parent="." instance=ExtResource( 37 )]
+position = Vector2( 1048, 2560 )
+person = "GARDENER"
 
 [node name="CoveredRailway" type="Node2D" parent="."]
 
@@ -3166,6 +3190,20 @@ position = Vector2( -128, 288 )
 position = Vector2( -313, 2363 )
 restore_position = true
 
+[node name="Gardener" type="Sprite" parent="YSort"]
+position = Vector2( 968, 2584 )
+scale = Vector2( 3, 3 )
+z_index = 4
+texture = ExtResource( 36 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="YSort/Gardener"]
+position = Vector2( 0, 13.3334 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Gardener/StaticBody2D"]
+shape = SubResource( 29 )
+
 [node name="Faculties" type="Node2D" parent="."]
 
 [node name="NS;Label-Trigger_Area2D" parent="Faculties" instance=ExtResource( 32 )]
@@ -3183,7 +3221,7 @@ object_name = NodePath("../../../Street-Template")
 function_name = "math"
 
 [node name="Teleports" type="Node2D" parent="."]
-script = SubResource( 27 )
+script = SubResource( 28 )
 
 [node name="Right-Trigger_0" parent="Teleports" instance=ExtResource( 35 )]
 position = Vector2( 9664, 448 )
