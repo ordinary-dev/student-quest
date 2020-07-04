@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Ignoring/Templates/Girlfriend.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+next_scene = "res://Scenes/Ignoring/24.Date.tscn"
+delay = 4.0
+
+[node name="AnimatedSprite" parent="Node2D" index="1"]
+visible = false
+
+[editable path="Node2D"]

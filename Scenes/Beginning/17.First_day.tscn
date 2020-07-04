@@ -51,6 +51,8 @@ singer = NodePath("MrSingerDialog;DialogTrigger-Trigger_Area2D_0")
 
 [node name="Street-Template" parent="." instance=ExtResource( 5 )]
 math_scene = "res://Scenes/Beginning/19.Date.tscn"
+enable_gardener_dialog = true
+gardener_dialog_path = "res://Dialogs/Beginning/Gardener.json"
 enable_lights = false
 
 [node name="MrSingerDialog;DialogTrigger-Trigger_Area2D_0" parent="." instance=ExtResource( 4 )]
