@@ -35,8 +35,8 @@ __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
 math = "res://Scenes/Beginning/21.Math_blackout.tscn"
-dialog = "res://Scenes/Basement/2.Dialog.tscn"
-secret = "res://Scenes/Basement/3.Secret.tscn"
+dialog = "res://Scenes/Basement/3.Dialog.tscn"
+secret = "res://Scenes/Basement/4.Secret.tscn"
 
 [node name="Map_TileMap" type="TileMap" parent="."]
 modulate = Color( 0.333333, 0.333333, 0.333333, 1 )
@@ -65,12 +65,6 @@ position = Vector2( 128, 496 )
 
 [node name="ExitWallCollider_CollisionShape2D" type="CollisionShape2D" parent="ExitWallCollider_StaticBody2D"]
 shape = SubResource( 2 )
-
-[node name="Entry;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 32, -64 )
-label = "GO_BACK"
-object_name = NodePath("..")
-function_name = "return_back"
 
 [node name="Exit;FunctionCaller-Trigger_Area2D_" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 352 )
