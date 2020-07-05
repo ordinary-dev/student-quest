@@ -23,6 +23,14 @@ func move() -> void:
 			cam, \"position\",
 			Vector2(x, y_pos), Vector2(x, y_pos-300),
 			0.4, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		tween.interpolate_property(
+			cam, \"zoom\",
+			Vector2(0.55, 0.55), Vector2(0.6, 0.6),
+			0.2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+		tween.interpolate_property(
+			cam, \"zoom\",
+			Vector2(0.6, 0.6), Vector2(0.55, 0.55),
+			0.2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 0.2)
 		tween.start()
 		count += 1
 	else:
@@ -81,16 +89,15 @@ texture = ExtResource( 1 )
 color = Color( 0.494118, 0.494118, 0.494118, 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 464, 440 )
-anchor_mode = 0
+position = Vector2( 968, 760 )
 current = true
-zoom = Vector2( 0.5, 0.5 )
+zoom = Vector2( 0.55, 0.55 )
 
 [node name="Button" type="Button" parent="Camera2D"]
-margin_left = -56.0
-margin_top = -8.0
-margin_right = 968.0
-margin_bottom = 552.0
+margin_left = -592.0
+margin_top = -344.0
+margin_right = 584.0
+margin_bottom = 352.0
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false
