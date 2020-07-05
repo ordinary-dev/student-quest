@@ -10,7 +10,6 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-export (String, FILE, \"*.tscn\") var store_scene
 export (String, FILE, \"*.tscn\") var speaker_scene
 onready var rs = $restore_state
 var mr_singer_act := false
@@ -33,25 +32,18 @@ func mr_singer():
 		DIALOG.show_dialog(dialog_v2)
 
 
-func store():
-	save()
-	SCENES.load_scene(store_scene)
-
-
 func save():
 	TEMP.save(\"day2_dialog_used\", 
 		mr_singer_act)
 
 
 func _ready():
-	MUSIC.fade_out()
 	if TEMP.is_saved(\"day2_dialog_used\"):
 		mr_singer_act = TEMP.get(\"day2_dialog_used\")
 "
 
 [node name="Street-Scene" type="Node2D"]
 script = SubResource( 1 )
-store_scene = "res://Scenes/QuickBeginning/7.Store.tscn"
 speaker_scene = "res://Scenes/QuickBeginning/8.Date.tscn"
 dialog_v1 = "res://Dialogs/chapter1/stranger.json"
 dialog_v2 = "res://Dialogs/chapter1/stranger_v2.json"
@@ -72,18 +64,12 @@ joystick = true
 show_time = true
 time = "9:45"
 
-[node name="Store;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 552, 224 )
-label = "STORE"
-object_name = NodePath("../../street-Scene")
-function_name = "store"
-
 [node name="Guide-Template" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2000, 496 )
 z_as_relative = false
 
 [node name="TicketWindow;Tickets-Trigger_Area2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( -383.391, -104.215 )
+position = Vector2( -262.302, -121.033 )
 object_name = NodePath("..")
 
 [node name="MrDudec;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]

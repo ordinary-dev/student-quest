@@ -5,6 +5,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Date-Scene" parent="." instance=ExtResource( 1 )]
+play = false
 
 [node name="Animated-text-Template_Control" parent="Date-Scene" index="0"]
 next_scene = "res://Scenes/QuickBeginning/6.Street.tscn"
