@@ -44,7 +44,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 9.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 250 ), Vector2( 0, -50 ) ]
+"values": [ Vector2( 0, 250 ), Vector2( 0, -150 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Camera2D:zoom")
@@ -129,7 +129,7 @@ texture = ExtResource( 4 )
 motion_scale = Vector2( 0.6, 0.6 )
 
 [node name="Grass1_Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+modulate = Color( 0.262745, 0.262745, 0.262745, 1 )
 light_mask = 0
 position = Vector2( 964.532, 1184.65 )
 scale = Vector2( 38.8549, 38.8549 )
@@ -137,7 +137,7 @@ z_index = 6
 texture = ExtResource( 6 )
 
 [node name="Character_Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
 position = Vector2( 862.099, 911.691 )
 scale = Vector2( 12, 12 )
 texture = ExtResource( 7 )
@@ -149,13 +149,13 @@ region_rect = Rect2( 0, 0, 18, 36 )
 [node name="Fireworks_AnimatedSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
 light_mask = 2
-position = Vector2( 466.594, 484.662 )
+position = Vector2( 463.203, 497.015 )
 scale = Vector2( 8, 8 )
 z_index = 4
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 13
-frame = 10
+frame = 3
 
 [node name="Fireworks2_AnimatedSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
@@ -169,10 +169,10 @@ vframes = 12
 hframes = 13
 
 [node name="Grass2_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.2, 1.2 )
+motion_scale = Vector2( 1.4, 1.4 )
 
 [node name="Grass2_Sprite" type="Sprite" parent="ParallaxBackground/Grass2_ParallaxLayer"]
-modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+modulate = Color( 0.305882, 0.305882, 0.305882, 1 )
 light_mask = 0
 position = Vector2( 1031.64, 1349.84 )
 scale = Vector2( 38.8549, 38.8549 )
