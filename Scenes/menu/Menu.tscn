@@ -40,6 +40,7 @@ func _new_game():
 		SCENES.load_scene(new_game)
 	else:
 		SCENES.load_scene(redirect)
+		TEMP.save(\"new_game_redirect\", \"0\")
 
 
 # Show saved games
@@ -228,7 +229,6 @@ modulate = Color( 1, 1, 1, 0.137255 )
 position = Vector2( 960, 540 )
 scale = Vector2( 40, 40 )
 frames = ExtResource( 8 )
-frame = 2
 playing = true
 
 [node name="Rain-Template_Particles2D" parent="." instance=ExtResource( 12 )]
