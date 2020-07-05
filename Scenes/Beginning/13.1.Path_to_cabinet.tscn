@@ -17,6 +17,7 @@ script = SubResource( 1 )
 scene_path = "res://Scenes/Beginning/13.2.Dialog.tscn"
 
 [node name="Math-map-Template" parent="." instance=ExtResource( 2 )]
+initial_pos = 0
 
 [node name="FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 240, 1376 )
