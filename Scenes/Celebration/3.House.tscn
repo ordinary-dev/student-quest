@@ -1,55 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/templates/House/House_inside.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Sprites/house/NPC1.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/house/NPC2.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.33334, 2.66667 )
-
-[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 40, 112 )
 
 [node name="House-Scene" type="Node2D"]
 
 [node name="House-inside-Template" parent="." instance=ExtResource( 1 )]
 street_scene = "res://Scenes/Celebration/4.Street.tscn"
-
-[node name="YSort" type="YSort" parent="."]
-
-[node name="NPC_Sprite_1" type="Sprite" parent="YSort"]
-position = Vector2( 336, 432 )
-scale = Vector2( 3, 3 )
-z_index = 4
-z_as_relative = false
-texture = ExtResource( 12 )
-
-[node name="Collider_StaticBody2D" type="StaticBody2D" parent="YSort/NPC_Sprite_1"]
-collision_layer = 0
-collision_mask = 1024
-
-[node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC_Sprite_1/Collider_StaticBody2D"]
-position = Vector2( 0, 13.3333 )
-shape = SubResource( 1 )
-
-[node name="NPC_Sprite_2" type="Sprite" parent="YSort"]
-position = Vector2( 440, 384 )
-scale = Vector2( 3, 3 )
-z_index = 4
-z_as_relative = false
-texture = ExtResource( 13 )
-
-[node name="Collider_StaticBody2D2" type="StaticBody2D" parent="YSort/NPC_Sprite_2"]
-position = Vector2( -7.62939e-06, 0 )
-collision_layer = 0
-collision_mask = 1024
-
-[node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="YSort/NPC_Sprite_2/Collider_StaticBody2D2"]
-position = Vector2( 0, 13.3333 )
-shape = SubResource( 1 )
 
 [node name="Enable-UI" parent="." instance=ExtResource( 3 )]
 joystick = true
@@ -60,15 +21,7 @@ collision_mask = 1024
 
 [node name="ExitCollider_CollisionShape2D" type="CollisionShape2D" parent="ExitCollider_StaticBody2D"]
 position = Vector2( 88, 232 )
-shape = SubResource( 2 )
-
-[node name="StageManDialog;DialogTrigger-Trigger_Area2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 632, 192 )
-person = "Speaker"
-
-[node name="NPCDialog;DialogTrigger-Trigger_Area2D" parent="." instance=ExtResource( 10 )]
-position = Vector2( 488, 408 )
-person = "Classmates"
+shape = SubResource( 1 )
 
 [node name="TableLight_Light2D" type="Light2D" parent="."]
 position = Vector2( 1440, 528 )
