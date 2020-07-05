@@ -43,7 +43,7 @@
 script/source = "extends Node2D
 
 # Position
-enum positions {HOSTEL, FOUNTAIN}
+enum positions {HOSTEL, FOUNTAIN, FACULTY}
 export (positions) var initial_position = positions.HOSTEL
 
 # Scenes
@@ -70,7 +70,7 @@ export (bool) var enable_npc = true
 # Position
 onready var hostel_pos = $Positions/Hostel_Position2D
 onready var fountain_pos = $Positions/Fountain_Position2D
-
+onready var faculty_pos = $Positions/Faculty_Position2D
 
 func init() -> void:
 	match initial_position:
@@ -78,6 +78,8 @@ func init() -> void:
 			get_node(GLOBAL.player_path).position = hostel_pos.position
 		positions.FOUNTAIN:
 			get_node(GLOBAL.player_path).position = fountain_pos.position
+		positions.FACULTY:
+			get_node(GLOBAL.player_path).position = faculty_pos.position
 
 
 
@@ -3299,3 +3301,6 @@ position = Vector2( -960, 3080 )
 
 [node name="Fountain_Position2D" type="Position2D" parent="Positions"]
 position = Vector2( 2312, 3712 )
+
+[node name="Faculty_Position2D" type="Position2D" parent="Positions"]
+position = Vector2( 1376, 6464 )

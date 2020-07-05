@@ -5,4 +5,4 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Math-map-Template" parent="." instance=ExtResource( 1 )]
-street_path = "res://Scenes/QuickBeginning/11.Flat.tscn"
+street_path = "res://Scenes/QuickBeginning/11.Girlfriend.tscn"

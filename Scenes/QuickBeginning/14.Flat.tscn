@@ -21,7 +21,7 @@ func _ready():
 
 [node name="Flat-Scene" type="Node2D"]
 script = SubResource( 1 )
-scene = "res://Scenes/QuickBeginning/12.Site.tscn"
+scene = "res://Scenes/QuickBeginning/15.Site.tscn"
 
 [node name="Flat-Template" parent="." instance=ExtResource( 3 )]
 
