@@ -30,7 +30,7 @@ texture_scale = 50.0
 [node name="LoadOnEnter-Trigger" parent="." instance=ExtResource( 4 )]
 position = Vector2( 480, 1272 )
 scale = Vector2( 16, 4 )
-scene = "res://Scenes/menu/Menu.tscn"
+scene = "res://Scenes/Basement/1.Stairs.tscn"
 
 [node name="Body" parent="." instance=ExtResource( 3 )]
 position = Vector2( 472, 96 )

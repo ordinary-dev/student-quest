@@ -44,7 +44,7 @@ extents = Vector2( 64, 608 )
 
 [node name="Station-Scene" type="Node2D"]
 script = SubResource( 1 )
-next_scene_path = "res://Scenes/Ignoring/23.Stairs.tscn"
+next_scene_path = "res://Scenes/Ignoring/30.Stairs.tscn"
 
 [node name="Map_TileMap" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
