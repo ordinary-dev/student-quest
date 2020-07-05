@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=67 format=2]
 
 [ext_resource path="res://Sprites/outside/store.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/outside/tickets_store/Store.png" type="Texture" id=2]
@@ -37,6 +37,7 @@
 [ext_resource path="res://Scenes/triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Sprites/gardener.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Scenes/templates/Rock_type_3.tscn" type="PackedScene" id=38]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -184,7 +185,7 @@ extents = Vector2( 14, 4 )
 [sub_resource type="RectangleShape2D" id=26]
 extents = Vector2( 14, 2 )
 
-[sub_resource type="RectangleShape2D" id=29]
+[sub_resource type="RectangleShape2D" id=27]
 extents = Vector2( 8, 2.66675 )
 
 [sub_resource type="GDScript" id=28]
@@ -1415,6 +1416,7 @@ shape = SubResource( 18 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Buildings_YSort/ENIHouse_Sprite"]
 position = Vector2( -22.0841, -89.2427 )
 frames = ExtResource( 21 )
+frame = 3
 playing = true
 
 [node name="ENIShow;ObjectSwitcher-Trigger_Area2D" parent="YSort/Buildings_YSort" instance=ExtResource( 5 )]
@@ -2066,6 +2068,33 @@ scale = Vector2( 1.08594, 1.08594 )
 [node name="Rock-type-1-Template_Sprite_3" parent="YSort/Rocks_YSort" instance=ExtResource( 13 )]
 position = Vector2( -41, -38 )
 scale = Vector2( 1.25, 1.25 )
+
+[node name="rocks3" parent="YSort/Rocks_YSort" instance=ExtResource( 38 )]
+position = Vector2( -47, -14 )
+rotation = 0.109956
+
+[node name="rocks4" parent="YSort/Rocks_YSort" instance=ExtResource( 38 )]
+position = Vector2( -74, -16 )
+
+[node name="rocks5" parent="YSort/Rocks_YSort" instance=ExtResource( 38 )]
+position = Vector2( -103, -14 )
+rotation = -0.109956
+
+[node name="rocks6" parent="YSort/Rocks_YSort" instance=ExtResource( 38 )]
+position = Vector2( -110, -47 )
+rotation = -0.111701
+
+[node name="rocks7" parent="YSort/Rocks_YSort" instance=ExtResource( 38 )]
+position = Vector2( -3, -51 )
+rotation = 1.64061
+
+[node name="rocks8" parent="YSort/Rocks_YSort" instance=ExtResource( 38 )]
+position = Vector2( -3, -76 )
+rotation = 1.48353
+
+[node name="rocks13" parent="YSort/Rocks_YSort" instance=ExtResource( 38 )]
+position = Vector2( -33, -76 )
+rotation = 1.5708
 
 [node name="BushesPark1_YSort" type="YSort" parent="YSort"]
 
@@ -3202,7 +3231,7 @@ collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Gardener/StaticBody2D"]
-shape = SubResource( 29 )
+shape = SubResource( 27 )
 
 [node name="Faculties" type="Node2D" parent="."]
 

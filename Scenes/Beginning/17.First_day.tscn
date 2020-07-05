@@ -37,6 +37,7 @@ func _ready():
 "
 
 [node name="First-day-Scene" type="Node2D"]
+modulate = Color( 0.882353, 0.870588, 0.815686, 1 )
 script = SubResource( 1 )
 next_scene = "res://Scenes/Beginning/19.Date.tscn"
 singer = NodePath("MrSingerDialog;DialogTrigger-Trigger_Area2D_0")
@@ -45,7 +46,6 @@ singer = NodePath("MrSingerDialog;DialogTrigger-Trigger_Area2D_0")
 math_scene = "res://Scenes/Beginning/19.Date.tscn"
 enable_gardener_dialog = true
 gardener_dialog_path = "res://Dialogs/Beginning/Gardener.json"
-enable_lights = false
 
 [node name="MrSingerDialog;DialogTrigger-Trigger_Area2D_0" parent="." instance=ExtResource( 4 )]
 position = Vector2( 56, 352 )
