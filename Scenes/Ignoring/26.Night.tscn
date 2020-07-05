@@ -18,7 +18,7 @@ color = Color( 0.184314, 0.172549, 0.301961, 1 )
 [node name="LoadOnEnter-Trigger" parent="." instance=ExtResource( 2 )]
 position = Vector2( -160.167, 448 )
 scale = Vector2( 10, 13 )
-scene = "res://Scenes/Ignoring/21.Train.tscn"
+scene = "res://Scenes/Basement/1.Stairs.tscn"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 3 )]
 joystick = true
