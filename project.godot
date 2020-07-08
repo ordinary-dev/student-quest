@@ -122,7 +122,8 @@ pointing/emulate_touch_from_mouse=true
 [locale]
 
 test="en"
-translations=PoolStringArray( "res://Translations/chapter2.en.translation", "res://Translations/chapter2.ru.translation", "res://Translations/strings.en.translation", "res://Translations/strings.ru.translation", "res://Translations/menu.en.translation", "res://Translations/menu.ru.translation", "res://Translations/chapters.en.translation", "res://Translations/chapters.ru.translation", "res://Translations/Beginning.en.translation", "res://Translations/Beginning.ru.translation", "res://Translations/Ignoring.en.translation", "res://Translations/Ignoring.ru.translation", "res://Translations/Basement.en.translation", "res://Translations/Basement.ru.translation" )
+fallback="ru"
+translations=PoolStringArray( "res://Translations/chapter2.en.translation", "res://Translations/chapter2.ru.translation", "res://Translations/strings.en.translation", "res://Translations/strings.ru.translation", "res://Translations/menu.en.translation", "res://Translations/menu.ru.translation", "res://Translations/Beginning.en.translation", "res://Translations/Beginning.ru.translation", "res://Translations/Ignoring.en.translation", "res://Translations/Ignoring.ru.translation", "res://Translations/Basement.en.translation", "res://Translations/Basement.ru.translation", "res://Translations/Celebration.ru.translation", "res://Translations/Celebration.en.translation", "res://Translations/QuickBeginning.en.translation", "res://Translations/QuickBeginning.ru.translation", "res://Translations/Disappearance.en.translation", "res://Translations/Disappearance.ru.translation" )
 
 [physics]
 

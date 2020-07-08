@@ -4,6 +4,7 @@ extends KinematicBody2D
 enum states {DOWN, UP, LEFT, RIGHT}
 export (states) var default_state = states.UP
 export (bool) var restore_position = false
+var restored_position = false
 const speed := 500
 
 # Objects
@@ -215,19 +216,22 @@ func _physics_process(_delta) -> void:
 
 
 func _save() -> void:
-	TEMP.save("player_pos_id", SCENES.last_scene_path)
-	TEMP.save("player_pos_x", get_node(GLOBAL.player_path).position.x)
-	TEMP.save("player_pos_y", get_node(GLOBAL.player_path).position.y) 
+	var dict = {
+		"player_pos_x": position.x,
+		"player_pos_y": position.y
+	}
+	TEMP.save(SCENES.last_scene_path, dict)
 
 
 func _ready():
 	if restore_position:
-		if TEMP.get("player_pos_id") == SCENES.last_scene_path:
-			if TEMP.is_saved("player_pos_x"):
-				position.x = TEMP.get("player_pos_x")
-				position.y = TEMP.get("player_pos_y")
+		if TEMP.is_saved(SCENES.last_scene_path):
+			var pos = TEMP.get(SCENES.last_scene_path)
+			position.x = pos["player_pos_x"]
+			position.y = pos["player_pos_y"]
+			restored_position = true
 		else:
-			print("Restore position failed")
+			print("Not saved")
 	GLOBAL.player_path = get_path()
 	# Set starting direction
 	match default_state:

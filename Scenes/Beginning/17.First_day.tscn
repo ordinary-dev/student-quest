@@ -11,8 +11,7 @@
 script/source = "extends Node2D
 
 export (String, FILE, \"*.tscn\") var next_scene
-export (String, FILE, \"*.tscn\") var store_scene
-# Триггер диалога Мистера Дудца
+# Dialog trigger
 export (NodePath) var singer
 
 
@@ -23,17 +22,9 @@ func save():
 		TEMP.save(\"day1_dialog\", \"1\")
 	else:
 		TEMP.save(\"day1_dialog\", \"0\")
-	# Player position
-	$\"Street-Template\"._save()
 
 
-# Перейти в магазин
-func to_store() -> void:
-	save()
-	SCENES.load_scene(store_scene)
-
-
-# Войти в дом садовника
+# Gardener's house
 func enter_house():
 	NOTIFY.show(\"CLOSED\")
 
@@ -46,24 +37,19 @@ func _ready():
 "
 
 [node name="First-day-Scene" type="Node2D"]
+modulate = Color( 0.882353, 0.870588, 0.815686, 1 )
 script = SubResource( 1 )
 next_scene = "res://Scenes/Beginning/19.Date.tscn"
-store_scene = "res://Scenes/Beginning/18.Store.tscn"
 singer = NodePath("MrSingerDialog;DialogTrigger-Trigger_Area2D_0")
 
 [node name="Street-Template" parent="." instance=ExtResource( 5 )]
 math_scene = "res://Scenes/Beginning/19.Date.tscn"
-enable_lights = false
+enable_gardener_dialog = true
+gardener_dialog_path = "res://Dialogs/Beginning/Gardener.json"
 
 [node name="MrSingerDialog;DialogTrigger-Trigger_Area2D_0" parent="." instance=ExtResource( 4 )]
 position = Vector2( 56, 352 )
 dialog_path = "res://Dialogs/chapter1/stranger.json"
-
-[node name="StoreTrigger;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 552, 216 )
-label = "STORE"
-object_name = NodePath("..")
-function_name = "to_store"
 
 [node name="GHouse;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 608, 1552 )
@@ -81,5 +67,5 @@ show_time = true
 time = "9:45"
 
 [node name="Tickets-Trigger_Area2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( -392.383, -103.691 )
+position = Vector2( -271.157, -123.895 )
 object_name = NodePath(".")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/templates/Flat/Flat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/light.png" type="Texture" id=4]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String,FILE,\"*.tscn\") var scene
+
+
+func internet():
+	SCENES.load_scene(scene)
+
+
+func _ready():
+	MUSIC.fade_out()
+"
+
+[node name="Flat-Scene" type="Node2D"]
+script = SubResource( 1 )
+scene = "res://Scenes/QuickBeginning/15.Site.tscn"
+
+[node name="Flat-Template" parent="." instance=ExtResource( 3 )]
+
+[node name="CeilingLight_Light2D" type="Light2D" parent="."]
+position = Vector2( 496, 304 )
+texture = ExtResource( 4 )
+texture_scale = 5.0
+color = Color( 0.368627, 0.509804, 0.894118, 1 )
+shadow_enabled = true
+
+[node name="FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 471.698, 225.201 )
+label = "OPENCHAT"
+object_name = NodePath("..")
+function_name = "internet"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 2 )]
+joystick = true

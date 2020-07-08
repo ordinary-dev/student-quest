@@ -7,11 +7,12 @@
 script/source = "extends Control
 
 export (String, FILE, \"*.ogg\") var music_path
-
+export (bool) var play = true
 
 func _ready() -> void:
-	yield(get_tree().create_timer(1), \"timeout\")
-	MUSIC.play_sound(music_path)
+	if play:
+		yield(get_tree().create_timer(.7), \"timeout\")
+		MUSIC.play_sound(music_path)
 "
 
 [node name="Date-Scene" type="Control"]

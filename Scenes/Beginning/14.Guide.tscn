@@ -11,7 +11,6 @@ script/source = "extends Node2D
 export (String, FILE, \"*.tscn\") var flat_scene
 
 func flat():
-	MUSIC.fade_out()
 	SCENES.load_scene(flat_scene)
 "
 
@@ -22,6 +21,7 @@ flat_scene = "res://Scenes/Beginning/15.Flat.tscn"
 [node name="Street-Template" parent="." instance=ExtResource( 4 )]
 initial_position = 1
 allow_entrance = false
+show_singer = false
 enable_lights = false
 
 [node name="Hostel;FunctionCaller-Trigger_Area2D" parent="." instance=ExtResource( 1 )]

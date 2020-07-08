@@ -13,35 +13,35 @@ onready var btn = $\"Canvas_Control/Skip;Button-Template_Control\"
 onready var timer = $Canvas_Control/Timer
 
 
-func _ready():
-	btn.visible = false
+#func _ready():
+#	btn.visible = false
 
 
 # Keyboard
-func _unhandled_key_input(_event):
-	if Input.is_action_pressed('skip_scene'):
-		if timer.is_stopped():
-			timer.start(1.5)
-			btn.visible = true
-		else:
-			_on_Button_pressed()
+#func _unhandled_key_input(_event):
+#	if Input.is_action_pressed('skip_scene'):
+#		if timer.is_stopped():
+#			timer.start(1.5)
+#			btn.visible = true
+#		else:
+#			_on_Button_pressed()
 
 
 # Mouse
-func _on_Control_gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
-		timer.start(1.5)
-		btn.visible = true
+#func _on_Control_gui_input(event):
+#	if event is InputEventMouseButton and event.pressed:
+#		timer.start(1.5)
+#		btn.visible = true
 
 
 # Hide button
-func _on_Timer_timeout():
-	btn.visible = false
+#func _on_Timer_timeout():
+#	btn.visible = false
 
 
 # Skip scene
-func _on_Button_pressed():
-	get_node(obj).call(method)
+#func _on_Button_pressed():
+#	get_node(obj).call(method)
 "
 
 [node name="Skip-UI_CanvasLayer" type="CanvasLayer"]
@@ -49,6 +49,7 @@ layer = 8
 script = SubResource( 1 )
 
 [node name="Canvas_Control" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1920, 1080 )

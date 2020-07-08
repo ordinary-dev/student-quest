@@ -23,6 +23,8 @@ script = SubResource( 1 )
 house_scene = "res://Scenes/Celebration/3.House.tscn"
 
 [node name="Street-Template" parent="." instance=ExtResource( 1 )]
+house_door = 0
+sleep_scene = "res://Scenes/Celebration/5.Second_floor.tscn"
 house_scene = "res://Scenes/Celebration/3.House.tscn"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 7 )]

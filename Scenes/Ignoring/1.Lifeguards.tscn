@@ -15,6 +15,7 @@ func next_scene() -> void:
 
 
 func _ready():
+	MUSIC.stop()
 	DIALOG.show_dialog(dialog_path, get_path(), \"next_scene\")
 "
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sprites/menu_background/Old_screen.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/menu_background/8bit-background.png" type="Texture" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Sprites/menu_background/8bit-person-2.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/menu_background/8bit-person-1.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sprites/menu_background/8bit-background-night.png" type="Texture" id=16]
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"
@@ -29,6 +30,7 @@ export (NodePath) var load_scene
 export (NodePath) var confirm_scene
 export (NodePath) var new_game_btn
 
+export (StreamTexture) var night_texture
 
 # Create new game
 func _new_game():
@@ -38,6 +40,7 @@ func _new_game():
 		SCENES.load_scene(new_game)
 	else:
 		SCENES.load_scene(redirect)
+		TEMP.save(\"new_game_redirect\", \"0\")
 
 
 # Show saved games
@@ -72,6 +75,7 @@ func _quit():
 func _ready() -> void:
 	if TEMP.get(\"new_game_redirect\") == \"1\":
 		remove_child($Animation)
+		$Background_TextureRect.texture = night_texture
 	else:
 		$Animation._start()
 	# Focus
@@ -158,6 +162,7 @@ settings_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Settings-Men
 load_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Load-Menu_ScrollContainer")
 confirm_scene = NodePath("Menu_HBoxContainer/Right_MarginContainer/Confirm-Menu_VBoxContainer")
 new_game_btn = NodePath("Menu_HBoxContainer/Left_MarginContainer/Column_VBoxContainer/NewGame;Button-Template_Control")
+night_texture = ExtResource( 16 )
 
 [node name="Background_TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.533333, 0.533333, 0.533333, 1 )

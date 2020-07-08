@@ -6,6 +6,9 @@ export (NodePath) var p2
 export (NodePath) var p3
 export (String, FILE, "*.tscn") var street_path
 
+enum pos {first, second, third}
+export (pos) var initial_pos = pos.second
+
 export (bool) var block_turnstile = false setget set_block, get_block
 onready var turnstile = $Turnstiles_StaticBody2D/Turnstiles_CollisionShape2D
 
@@ -52,3 +55,8 @@ func _ready():
 	# the first time because the variable is not ready
 	# The state changes here manually
 	turnstile.disabled = !block_turnstile
+	# Initial position
+	if initial_pos == pos.first:
+		teleport(p1)
+	elif initial_pos == pos.third:
+		teleport(p3)

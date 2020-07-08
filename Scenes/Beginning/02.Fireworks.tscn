@@ -13,9 +13,10 @@ script/source = "extends Node2D
 
 var fw = preload(\"res://Audio/fx/Firework_explosion.wav\")
 export (String, FILE, \"*.tscn\") var next_scene
-
+export (String, FILE, \"*.ogg\") var audio
 
 func _ready() -> void:
+	MUSIC.play_sound(audio)
 	yield(get_tree().create_timer(1.4), \"timeout\")
 	FX.play_sound(fw)
 	
@@ -43,7 +44,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 9.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 200 ) ]
+"values": [ Vector2( 0, 250 ), Vector2( 0, -150 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Camera2D:zoom")
@@ -58,31 +59,31 @@ tracks/1/keys = {
 "values": [ Vector2( 0.9, 0.9 ), Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Fireworks_AnimatedSprite:frame")
+tracks/2/path = NodePath("ParallaxBackground/ParallaxLayer/Fireworks_AnimatedSprite:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.7, 6.8 ),
+"times": PoolRealArray( 0.7, 5.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 155 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Fireworks2_AnimatedSprite:frame")
+tracks/3/path = NodePath("ParallaxBackground/ParallaxLayer/Fireworks2_AnimatedSprite:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 2.7, 8.3 ),
+"times": PoolRealArray( 2.7, 6.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0, 155 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Fireworks_AnimatedSprite:position")
+tracks/4/path = NodePath("ParallaxBackground/ParallaxLayer/Fireworks_AnimatedSprite:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -94,7 +95,7 @@ tracks/4/keys = {
 "values": [ Vector2( 462.073, 501.133 ), Vector2( 482.419, 427.013 ), Vector2( 532.412, 423.609 ), Vector2( 557.016, 425.348 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Fireworks2_AnimatedSprite:position")
+tracks/5/path = NodePath("ParallaxBackground/ParallaxLayer/Fireworks2_AnimatedSprite:position")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -109,12 +110,13 @@ tracks/5/keys = {
 [node name="Fireworks-Scene" type="Node2D"]
 script = SubResource( 1 )
 next_scene = "res://Scenes/Beginning/03.Dialog.tscn"
+audio = "res://Audio/music/Technicolor Midnight.ogg"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 0
 
 [node name="Background_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.5, 0.5 )
+motion_scale = Vector2( 0.1, 0.1 )
 
 [node name="Background_Sprite" type="Sprite" parent="ParallaxBackground/Background_ParallaxLayer"]
 modulate = Color( 0.54902, 0.54902, 0.54902, 1 )
@@ -123,8 +125,19 @@ position = Vector2( 956.537, 463.283 )
 scale = Vector2( 1.98247, 1.98247 )
 texture = ExtResource( 4 )
 
-[node name="Character_Sprite" type="Sprite" parent="ParallaxBackground/Background_ParallaxLayer"]
-modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 0.6 )
+
+[node name="Grass1_Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 1 )
+light_mask = 0
+position = Vector2( 964.532, 1184.65 )
+scale = Vector2( 38.8549, 38.8549 )
+z_index = 6
+texture = ExtResource( 6 )
+
+[node name="Character_Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
 position = Vector2( 862.099, 911.691 )
 scale = Vector2( 12, 12 )
 texture = ExtResource( 7 )
@@ -133,56 +146,45 @@ hframes = 3
 frame = 7
 region_rect = Rect2( 0, 0, 18, 36 )
 
-[node name="Grass1_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.7, 0.7 )
-
-[node name="Grass1_Sprite" type="Sprite" parent="ParallaxBackground/Grass1_ParallaxLayer"]
-modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
-light_mask = 0
-position = Vector2( 964.532, 1184.65 )
-scale = Vector2( 38.8549, 38.8549 )
-z_index = 6
-texture = ExtResource( 6 )
-
-[node name="Grass2_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.1, 1.1 )
-
-[node name="Grass2_Sprite" type="Sprite" parent="ParallaxBackground/Grass2_ParallaxLayer"]
-modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
-light_mask = 0
-position = Vector2( 1031.64, 1349.84 )
-scale = Vector2( 38.8549, 38.8549 )
-z_index = 6
-texture = ExtResource( 8 )
-
-[node name="Fireworks_AnimatedSprite" type="Sprite" parent="."]
+[node name="Fireworks_AnimatedSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
 light_mask = 2
-position = Vector2( 557.016, 425.348 )
+position = Vector2( 463.203, 497.015 )
 scale = Vector2( 8, 8 )
 z_index = 4
 texture = ExtResource( 1 )
 vframes = 12
 hframes = 13
-frame = 155
+frame = 3
 
-[node name="Fireworks2_AnimatedSprite" type="Sprite" parent="."]
+[node name="Fireworks2_AnimatedSprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
 light_mask = 2
-position = Vector2( 1218, 547.552 )
+position = Vector2( 1279.37, 698.113 )
 scale = Vector2( 8, 8 )
 z_index = 4
 texture = ExtResource( 1 )
 flip_h = true
 vframes = 12
 hframes = 13
-frame = 155
+
+[node name="Grass2_ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.4, 1.4 )
+
+[node name="Grass2_Sprite" type="Sprite" parent="ParallaxBackground/Grass2_ParallaxLayer"]
+modulate = Color( 0.305882, 0.305882, 0.305882, 1 )
+light_mask = 0
+position = Vector2( 1031.64, 1349.84 )
+scale = Vector2( 38.8549, 38.8549 )
+z_index = 6
+texture = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "camera"
 anims/camera = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, 250 )
 anchor_mode = 0
 current = true
 zoom = Vector2( 0.9, 0.9 )

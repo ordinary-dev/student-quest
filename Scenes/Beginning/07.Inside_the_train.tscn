@@ -19,6 +19,7 @@ func _next_scene():
 
 
 func _ready():
+	yield(get_tree().create_timer(1.5), \"timeout\")
 	DIALOG.show_dialog(dialog_path, get_path(), \"_next_scene\")
 "
 
@@ -47,7 +48,7 @@ tracks/0/keys = {
 
 [node name="Inside-the-train-Scene" type="Node2D"]
 script = SubResource( 1 )
-dialog_path = "res://Dialogs/chapter1/train.json"
+dialog_path = "res://Dialogs/Beginning/Train.json"
 next = "res://Scenes/Beginning/08.Bridge.tscn"
 
 [node name="Sky_Sprite" type="Sprite" parent="."]

@@ -32,13 +32,11 @@ func hide_ui():
 
 
 func _on_Area2D_body_entered(body):
-	if \"Body\" in body.name:
-		show_ui()
+	show_ui()
 
 
 func _on_Area2D_body_exited(body):
-	if \"Body\" in body.name:
-		hide_ui()
+	hide_ui()
 
 
 func _ready():

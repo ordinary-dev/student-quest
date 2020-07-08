@@ -3,12 +3,35 @@ D_NIGHT_BYE,Goodbye,Прощай
 D_NIGHT_NEW_LIFE,Now I will have a new life in which there will no longer be old friends.,"Теперь у меня будет новая жизнь, в которой уже не будет старых друзей."
 D_RECTOR_MECHMAT,Faculty of Mathematics?,Мехмат?
 D_RECTOR_YES,Yes,Да
-D_RECTOR_DOCS,"Okay, everything is fine with the documents. Are you from another city?","Ладно, с документами все хорошо. Вы же из другого города?"
+D_RECTOR_DOCS,"… okay, everything is fine with the documents. Are you from another city?","… ладно, с документами все хорошо. Вы же из другого города?"
 D_RECTOR_TRUE,Right,Верно
 D_RECTOR_CABINET,"Then go to cabinet 225, they will help you there","Тогда зайдите еще в 225 кабинет, вам там помогут"
 D_GUIDE_HI,"Hi, I'm here to help with the settlement.","Привет, я тут помогаю с заселением."
 D_GUIDE_ROOM,"Come on, I'll show you your room","Пойдем, я покажу тебе твою комнату"
-D_SPEAKER_CONGRATULATIONS,"Congratulations, you have risen a notch.","Поздравляю вас, вы поднялись на ступеньку выше."
+D_SPEAKER_CONGRATULATIONS,"Congratulations, you have chosen the right path.","Поздравляю вас, вы выбрали правильный путь."
 D_SPEAKER_GO_FORWARD,Do not look back at failures and always go forward!,Не оглядывайтесь на неудачи и идите всегда вперед!
-D_GUARD_NO_WAY,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
-D_GUARD_FIND_ANOTHER,Maybe there is another way?,Может есть другой путь?
+D_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
+D_GUARD_2,Maybe there is another way?,Может есть другой путь?
+D_GUARD_3,"I will be fined if I release you all like that. Sorry, sorry.","Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите."
+D_GUARD_4,There is still no electricity ...,Электричества все еще нет...
+D_STAIRS_1,I'd rather wait ...,Я лучше подожду...
+D_TRAIN_1,You're sad today,Ты какой-то грустный сегодня
+D_TRAIN_2,Really?,Разве?
+D_TRAIN_3,I can’t be fooled. What's the matter?,Меня не обмануть. Что с тобой?
+D_TRAIN_4,"We all went to this for a long 11 years, and now we have succeeded. Aren't you glad?","Мы все шли к этому долгие 11 лет, и теперь у нас все получилось. Разве ты не рад?"
+D_TRAIN_5,"Yes, I'm just tired ...",Да я просто устал...
+D_TRAIN_6,"It's too early to relax, look, we'll be there soon!","Рано расслабляться, смотри, мы уже скоро приедем!"
+D_GARDENER_1,I do not like the first of September.,Не люблю я первое сентября.
+D_GARDENER_2,Why so? Back to work?,Почему же? Снова на работу?
+D_GARDENER_3,"No, the garden should always be monitored. Do you really want to know?","Да нет, за садом всегда нужно следить. Действительно хочешь знать?"
+D_GARDENER_4,Tell,Расскажите
+D_GARDENER_5,"What can I tell, you yourself will someday understand.","Да что тут рассказывать, сам когда-нибудь поймешь."
+D_GARDENER_6,These people are happy because they entered here.,"Эти люди счастливы, потому что они поступили сюда."
+D_GARDENER_7,"But most of them will not even reach the end, they don’t need it.","Но большая часть даже не дойдет до конца, им это и не нужно."
+D_GARDENER_8,There are only a few people who came here of their own free will.,"Людей, которые пришли сюда по собственному желанию - единицы. "
+D_GARDENER_9,It’s just that not everyone admit this even to themselves.,Просто не все в этом признаются даже самим себе.
+D_GARDENER_10,And half of those who really wanted to come here will be disappointed sooner or later.,"А половина из тех, кто действительно хотел сюда поступить, разочаруются рано или поздно."
+D_GARDENER_11,Somehow too pessimistic ...,Как-то уж слишком пессимистично...
+D_GARDENER_12,"It’s better that way than to deceive yourself. Come to me again, let's talk.","Уж лучше так, чем обманывать самого себя. Ты заглядывай ко мне ещё, поговорим."
+D_GARDENER_13,I'll try ... bye.,Я попробую... До свидания.
+D_GARDENER_14,See you later.,Увидимся.

@@ -28,7 +28,12 @@ func load_game(dir_name : String) -> void:
 	data.open(\"user://\" + dir_name + \"/data.json\", File.READ)
 	var jsonString = data.get_as_text()
 	var jsonContent = JSON.parse(jsonString).result
+	# Data
 	TEMP.dict = jsonContent[\"temp\"]
+	# Music
+	if jsonContent[\"is_music_playing\"]:
+		MUSIC.play_sound(jsonContent[\"music_path\"])
+		MUSIC.seek(jsonContent[\"playback_position\"])
 	SCENES.load_scene(jsonContent[\"scene\"])
 
 
@@ -45,13 +50,17 @@ func replace_game(dir_name : String) -> void:
 
 
 func _save(num : int, saveName := \"\") -> void:
-	if GLOBAL.player_path != \"\":
-		TEMP.save(\"player_pos_id\", SCENES.last_scene_path)
-		TEMP.save(\"player_pos_x\", get_node(GLOBAL.player_path).position.x)
-		TEMP.save(\"player_pos_y\", get_node(GLOBAL.player_path).position.y)
+	if has_node(GLOBAL.player_path):
+		var pl = get_node(GLOBAL.player_path)
+		if pl.restore_position:
+			pl._save()
 	var dataDict = {
 		\"scene\" : SCENES.last_scene_path,
-		\"temp\": TEMP.dict
+		\"temp\": TEMP.dict,
+		# Music
+		\"is_music_playing\": MUSIC.playing,
+		\"music_path\": MUSIC.path,
+		\"playback_position\": MUSIC.get_playback_position()
 	}
 	var date = OS.get_datetime()
 	var dateString = str(date[\"year\"]) + \"-\" + str(date[\"month\"]) + \"-\" + str(date[\"day\"]) 

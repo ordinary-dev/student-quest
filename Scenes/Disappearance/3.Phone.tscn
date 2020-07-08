@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Sprites/phone/phone.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Sprite
+
+
+func _ready():
+	TEMP.save(\"sv_phone\", \"yes\")
+"
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+next_scene = "res://Scenes/Disappearance/4.Buttons.tscn"
+delay = 4.0
+
+[node name="phone" type="Sprite" parent="."]
+position = Vector2( 989.047, 769.657 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+script = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 861.0
+margin_top = 573.0
+margin_right = 1365.0
+margin_bottom = 602.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.486275, 0.568627, 0.803922, 1 )
+text = "Was online 2 hours ago"
+__meta__ = {
+"_edit_use_anchors_": false
+}

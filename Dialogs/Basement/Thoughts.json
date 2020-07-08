@@ -1,0 +1,11 @@
+{
+    "0": {"name":"-", "text":"D_BSM_THOUGHTS_1", "next":"1"},
+    "1": {"name":"-", "text":"D_BSM_THOUGHTS_2", "next":"2"},
+    "2": {"name":"-", "text":"D_BSM_THOUGHTS_3", "next":"3"},
+    "3": {"name":"-", "text":"D_BSM_THOUGHTS_4", "next":"4"},
+    "4": {"name":"-", "text":"D_BSM_THOUGHTS_5", "next":"5"},
+    "5": {"name":"-", "text":"D_BSM_THOUGHTS_6", "next":"6"},
+    "6": {"name":"-", "text":"D_BSM_THOUGHTS_7", "next":"7"},
+    "7": {"name":"-", "text":"D_BSM_THOUGHTS_8", "next":"8"},
+    "8": {"name":"-", "text":"D_BSM_THOUGHTS_9"}
+} 
