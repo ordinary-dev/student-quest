@@ -1418,7 +1418,7 @@ shape = SubResource( 18 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="YSort/Buildings_YSort/ENIHouse_Sprite"]
 position = Vector2( -22.0841, -89.2427 )
 frames = ExtResource( 21 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ENIShow;ObjectSwitcher-Trigger_Area2D" parent="YSort/Buildings_YSort" instance=ExtResource( 5 )]
