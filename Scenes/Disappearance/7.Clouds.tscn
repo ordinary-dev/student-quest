@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Ignoring/11.Clouds.tscn" type="PackedScene" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Clouds-Scene_Control" parent="." instance=ExtResource( 1 )]
+next_scene = "res://Scenes/Disappearance/8.Alarm.tscn"
