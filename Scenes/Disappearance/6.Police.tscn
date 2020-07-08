@@ -10,6 +10,8 @@ script = ExtResource( 3 )
 dialog_path = "res://Dialogs/Disappearance/Police.json"
 enable_delay = true
 delay = 1.0
+load_scene = true
+scene_path = "res://Scenes/Disappearance/7.Clouds.tscn"
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.772549, 0.772549, 0.772549, 1 )

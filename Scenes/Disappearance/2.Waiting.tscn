@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/outside/hm_house.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/character_main.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=3]
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 
@@ -15,8 +16,7 @@ func load_scene(_val) -> void:
 	add_child(tmp)
 "
 
-[sub_resource type="Animation" id=1]
-resource_name = "cam"
+[sub_resource type="Animation" id=2]
 length = 7.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera2D:zoom")
@@ -32,7 +32,7 @@ tracks/0/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 2 )
+script = SubResource( 1 )
 next_scene_path = "res://Scenes/Disappearance/0.Choice.tscn"
 
 [node name="hm_house" type="Sprite" parent="."]
@@ -54,5 +54,7 @@ zoom = Vector2( 0.7, 0.7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "cam"
-anims/cam = SubResource( 1 )
+anims/cam = SubResource( 2 )
+
+[node name="Disable-UI" parent="." instance=ExtResource( 3 )]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="load_scene"]

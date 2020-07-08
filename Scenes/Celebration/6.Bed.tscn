@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/flat/bed.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Light_2.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/flat/carpet.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/character_main.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Camera"
@@ -120,3 +121,5 @@ anims/Camera = SubResource( 1 )
 position = Vector2( 960, 540 )
 current = true
 zoom = Vector2( 0.96, 0.96 )
+
+[node name="Disable-UI" parent="." instance=ExtResource( 6 )]

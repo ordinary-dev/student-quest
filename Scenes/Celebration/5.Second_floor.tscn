@@ -27,6 +27,7 @@ func closed_door():
 
 
 func opened_door():
+	MUSIC.stop()
 	SCENES.load_scene(next_scene_path)
 "
 

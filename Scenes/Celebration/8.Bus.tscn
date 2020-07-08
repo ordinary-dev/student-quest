@@ -25,6 +25,7 @@ func _ready() -> void:
 [node name="Node2D" type="Node2D"]
 script = SubResource( 1 )
 dialog_path = "res://Dialogs/Celebration/bus.json"
+scene_path = "res://Scenes/Disappearance/1.Street.tscn"
 
 [node name="background" type="Sprite" parent="."]
 modulate = Color( 0.666667, 0.67451, 0.784314, 1 )
