@@ -13,22 +13,22 @@ load_scene = true
 scene_path = "res://Scenes/QuickBeginning/14.Flat.tscn"
 
 [node name="Sunset" type="Sprite" parent="."]
-position = Vector2( 991.05, 494.188 )
+position = Vector2( 975.05, 266.188 )
 scale = Vector2( 0.529698, 0.512821 )
 texture = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -123.0
-margin_top = 1054.0
-margin_right = 2014.0
-margin_bottom = 1138.0
+margin_left = -87.0
+margin_top = 706.0
+margin_right = 2050.0
+margin_bottom = 790.0
 color = Color( 0.25098, 0.321569, 0.427451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="character_main" type="Sprite" parent="."]
-position = Vector2( 690.348, 1060.4 )
+position = Vector2( 726.348, 712.4 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 3 )
 vframes = 3
@@ -36,9 +36,28 @@ hframes = 3
 frame = 7
 
 [node name="character" type="Sprite" parent="."]
-position = Vector2( 1181.75, 1053.83 )
+position = Vector2( 1217.75, 705.83 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 3
 frame = 7
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 312.0
+rect_min_size = Vector2( 1920, 320 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_top = 752.0
+margin_right = 1920.0
+margin_bottom = 1072.0
+rect_min_size = Vector2( 1920, 320 )
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

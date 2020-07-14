@@ -15,6 +15,8 @@
 [ext_resource path="res://Sprites/rector/table-3.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/rector/chair.png" type="Texture" id=14]
 
+
+
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 

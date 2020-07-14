@@ -6,9 +6,12 @@ export (bool) var enable_delay = false
 export (float) var delay = 2.0
 export (bool) var load_scene = false
 export (String, FILE, "*.tscn") var scene_path
+export (float) var loading_delay = 0.0
 
 
 func load_next_scene() -> void:
+	if loading_delay > 0:
+		yield(get_tree().create_timer(loading_delay), "timeout")
 	SCENES.load_scene(scene_path)
 
 

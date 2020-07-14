@@ -39,6 +39,8 @@
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/templates/Rock_type_3.tscn" type="PackedScene" id=38]
 
+
+
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
