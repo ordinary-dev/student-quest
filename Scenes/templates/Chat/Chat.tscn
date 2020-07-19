@@ -3,6 +3,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
+export (String) var title = \"Chat\"
 export (String, FILE, \"*.tscn\") var next_scene_path
 export (Array, String) var messages
 
@@ -23,6 +24,7 @@ func add_message(text : String) -> void:
 
 
 func _ready() -> void:
+	$Main_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_HBoxContainer/HeaderText_Label.text = title
 	for i in messages:
 		add_message(i)
 		var time := rand_range(1.0, 3.0)

@@ -5,7 +5,8 @@ export (NodePath) var p1
 export (NodePath) var p2
 export (NodePath) var p3
 export (String, FILE, "*.tscn") var street_path
-
+enum directions{UP, DOWN, LEFT, RIGHT}
+export (directions) var player_direction = directions.DOWN
 enum pos {first, second, third}
 export (pos) var initial_pos = pos.second
 
@@ -60,3 +61,10 @@ func _ready():
 		teleport(p1)
 	elif initial_pos == pos.third:
 		teleport(p3)
+	match player_direction:
+		directions.UP:
+			$YSort/Body.go_up()
+		directions.RIGHT:
+			$YSort/Body.go_right()
+		directions.LEFT:
+			$YSort/Body.go_left()

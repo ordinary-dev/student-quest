@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/explosion.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Sprite
+
+
+func _ready():
+	var time = rand_range(0.0, 0.5)
+	yield(get_tree().create_timer(time),\"timeout\")
+	visible = true
+	time = rand_range(0.08, 0.3)
+	yield(get_tree().create_timer(time),\"timeout\")
+	queue_free()
+"
+
+[node name="explosion" type="Sprite"]
+visible = false
+scale = Vector2( 2, 2 )
+z_index = 4
+texture = ExtResource( 1 )
+script = SubResource( 1 )

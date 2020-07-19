@@ -9,6 +9,7 @@
 
 [node name="Math-blackout-Scene" type="Node2D"]
 script = ExtResource( 4 )
+next_scene = "res://Scenes/Beginning/22.Explosion.tscn"
 hidden_room = "res://Scenes/Basement/1.Stairs.tscn"
 dialog_1 = "res://Dialogs/Beginning/Guard_1.json"
 dialog_2 = "res://Dialogs/Beginning/Guard_2.json"
@@ -22,8 +23,10 @@ block_turnstile = true
 layer = 5
 
 [node name="Blackout_ColorRect" type="ColorRect" parent="CanvasLayer"]
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_left = -167.0
+margin_top = -84.0
+margin_right = 1993.0
+margin_bottom = 1152.0
 mouse_filter = 1
 color = Color( 0.733333, 0.733333, 0.733333, 0 )
 __meta__ = {

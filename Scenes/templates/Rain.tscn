@@ -4,7 +4,7 @@
 
 [node name="Rain-Template_Particles2D" type="CPUParticles2D"]
 position = Vector2( 983.083, -31.9593 )
-amount = 1000
+amount = 500
 lifetime = 5.0
 preprocess = 20.0
 speed_scale = 1.4

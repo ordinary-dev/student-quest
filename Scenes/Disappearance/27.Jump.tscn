@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+next_scene = "res://Scenes/SS/1.House.tscn"
+delay = 2.0
+
+[node name="Label" type="Label" parent="."]
+margin_right = 1872.0
+margin_bottom = 1072.0
+text = "Work in progress"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
