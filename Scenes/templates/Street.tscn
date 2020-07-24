@@ -39,14 +39,16 @@
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/templates/Rock_type_3.tscn" type="PackedScene" id=38]
 
-
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 # Position
-enum positions {HOSTEL, FOUNTAIN, FACULTY}
+enum positions {HOSTEL, FOUNTAIN, FACULTY, SOUTH_ENTRANCE}
 export (positions) var initial_position = positions.HOSTEL
+export (bool) var use_alex_texture = false
+# Directions
+enum dirs {UP, DOWN, LEFT, RIGHT}
+export (dirs) var init_dir = dirs.RIGHT
 
 # Scenes
 export (bool) var allow_entrance = true
@@ -73,22 +75,40 @@ export (bool) var enable_npc = true
 onready var hostel_pos = $Positions/Hostel_Position2D
 onready var fountain_pos = $Positions/Fountain_Position2D
 onready var faculty_pos = $Positions/Faculty_Position2D
+onready var south_entrance = $Positions/South_Entrance_Position2D
+
 
 func init() -> void:
+	var player = get_node(GLOBAL.player_path)
 	match initial_position:
 		positions.HOSTEL:
-			get_node(GLOBAL.player_path).position = hostel_pos.position
+			player.position = hostel_pos.position
 		positions.FOUNTAIN:
-			get_node(GLOBAL.player_path).position = fountain_pos.position
+			player.position = fountain_pos.position
 		positions.FACULTY:
-			get_node(GLOBAL.player_path).position = faculty_pos.position
+			player.position = faculty_pos.position
+		positions.SOUTH_ENTRANCE:
+			player.position = south_entrance.position
 
 
 
 func _ready() -> void:
+	var player = get_node(GLOBAL.player_path)
+	if use_alex_texture:
+		player.sprite_sheet = player.sprites.ALEX
 	# Do not overwrite position if it was saved
-	if get_node(GLOBAL.player_path).restored_position == false:
+	if player.restored_position == false:
 		init()
+	# Direction
+	match init_dir:
+		dirs.UP:
+			player.go_up()
+		dirs.DOWN:
+			player.go_down()
+		dirs.RIGHT:
+			player.go_right()
+		dirs.LEFT:
+			player.go_left()
 	# Buildings
 	if !allow_entrance:
 			remove_child($Faculties)
@@ -3306,3 +3326,6 @@ position = Vector2( 2312, 3712 )
 
 [node name="Faculty_Position2D" type="Position2D" parent="Positions"]
 position = Vector2( 1376, 6464 )
+
+[node name="South_Entrance_Position2D" type="Position2D" parent="Positions"]
+position = Vector2( 2496, 9728 )

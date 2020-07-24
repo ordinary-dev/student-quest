@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/npc_5_still.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.json\") var dialog_path
+export (String, FILE, \"*.tscn\") var scene_path
+
+
+func load_scene() -> void:
+	SCENES.load_scene(scene_path, false, false)
+
+
+func activate_dialog() -> void:
+	var player = get_node(GLOBAL.player_path)
+	player.lock()
+	player.go_left()
+	DIALOG.show_dialog(dialog_path, get_path(), \"load_scene\")
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.56537, 16.4753 )
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 2 )
+dialog_path = "res://Dialogs/Despair/stranger.json"
+scene_path = "res://Scenes/Despair/18.Train.tscn"
+
+[node name="Street-Template" parent="." instance=ExtResource( 1 )]
+initial_position = 3
+use_alex_texture = true
+init_dir = 0
+allow_entrance = false
+
+[node name="npc_5_still" type="Sprite" parent="."]
+position = Vector2( 2452.25, 8130.5 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="npc_5_still"]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="npc_5_still/StaticBody2D"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="CallFunctionOnEnter-Trigger_0" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2495.27, 8166.18 )
+scale = Vector2( 7.2, 1.4 )
+call_one_time = true
+obj = NodePath("..")
+method = "activate_dialog"

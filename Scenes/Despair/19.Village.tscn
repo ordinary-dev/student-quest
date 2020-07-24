@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/triggers/LoadOnEnter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/Village.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+
+[node name="LoadOnEnter-Trigger_0" parent="." instance=ExtResource( 1 )]
+position = Vector2( 143.454, 1152.38 )
+scale = Vector2( 5.88, 10.32 )
+scene = "res://Scenes/Despair/20.Bridge.tscn"

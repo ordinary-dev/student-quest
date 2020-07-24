@@ -1,0 +1,223 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Sprites/Bridge_2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/garden/Sky_01.jpg" type="Texture" id=2]
+[ext_resource path="res://Scenes/templates/Body.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tilemaps/Snow/Snow.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/friend_1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/singer.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/blood.tres" type="SpriteFrames" id=8]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func enable() -> void:
+	var player = get_node(GLOBAL.player_path)
+	player.go_left()
+	player.lock()
+	$friend_1.enable_ai()
+"
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1069.86, 98.0671 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 37.9747, 26.9374 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Sprite
+
+var posx = 800
+var speed = 250
+const delay = 18
+var cf = 0
+
+export (String, FILE, \"*.json\") var dialog_path
+
+
+func _ready() -> void:
+	set_process(false)
+
+
+func blood() -> void:
+	position.x += 10
+	$AnimatedSprite.visible = true
+	$AnimatedSprite.play()
+
+
+func show_singer() -> void:
+	get_node(\"../singer\").enable_ai()
+
+
+func enable_ai() -> void:
+	set_process(true)
+	visible = true
+	
+
+func _process(delta):
+	if position.x < posx:
+		position.x += delta * speed
+		if cf < delay:
+			cf += 1
+		else:
+			cf = 0
+			if frame == 2:
+				frame = 5
+			else:
+				frame = 2
+	else:
+		frame = 8
+		set_process(false)
+		DIALOG.show_dialog(dialog_path, get_path(), \"show_singer\")
+"
+
+[sub_resource type="GDScript" id=5]
+script/source = "extends Sprite
+
+var posx = 600
+var speed = 250
+const delay = 13
+var cf = 0
+
+export (String, FILE, \"*.json\") var dialog_path
+export (String, FILE, \"*.tscn\") var scene_path
+
+
+func _ready() -> void:
+	set_process(false)
+	
+
+func enable_ai() -> void:
+	set_process(true)
+	visible = true
+	
+
+func _process(delta):
+	if position.x < posx:
+		position.x += delta * speed
+		if cf < delay:
+			cf += 1
+		else:
+			cf = 0
+			if frame == 0:
+				frame = 1
+			else:
+				frame = 0
+	else:
+		frame = 8
+		set_process(false)
+		get_node(\"../friend_1\").flip_h = true
+		DIALOG.show_dialog(dialog_path, get_path(), \"shot\")
+
+
+func shot() -> void:
+	yield(get_tree().create_timer(2), \"timeout\")
+	frame = 2
+	yield(get_tree().create_timer(1), \"timeout\")
+	get_node(\"../friend_1\").blood()
+	yield(get_tree().create_timer(2), \"timeout\")
+	SCENES.load_scene(scene_path, false, false)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 3 )
+
+[node name="Sky_01" type="Sprite" parent="."]
+position = Vector2( 961.758, 528.881 )
+scale = Vector2( 1, 1.1393 )
+texture = ExtResource( 2 )
+flip_v = true
+
+[node name="Body" parent="." instance=ExtResource( 3 )]
+position = Vector2( 162.072, 812.7 )
+default_state = 3
+
+[node name="Camera2D" parent="Body/Character_Sprite" index="0"]
+limit_left = 0
+limit_top = 0
+limit_right = 1300
+limit_bottom = 1080
+editor_draw_limits = true
+
+[node name="Bridge_2" type="Sprite" parent="."]
+position = Vector2( 1023.67, 695.379 )
+scale = Vector2( 20, 20 )
+z_index = 4
+texture = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2( 3, 3 )
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 1024
+format = 1
+tile_data = PoolIntArray( 1179647, -1073741824, 0, 1114112, -1073741824, 0, 1114113, -1073741824, 0, 1114114, -1073741824, 0, 1114115, -1073741824, 0, 1114116, -1073741824, 0, 1114117, -1073741824, 0, 1114118, -1073741824, 0, 1114119, -1073741824, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114143, 0, 0, 1114144, 0, 0, 1114145, 0, 0, 1114146, 0, 0, 1114147, 0, 0, 1114148, 0, 0, 1114149, 0, 0, 1114150, 0, 0, 1114151, 0, 0, 1114152, 0, 0, 1114153, 0, 0, 1245183, -1073741824, 0, 1179648, -1073741824, 0, 1179649, -1073741824, 0, 1179650, -1073741824, 0, 1179651, -1073741824, 0, 1179652, -1073741824, 0, 1179653, -1073741824, 0, 1179654, -1073741824, 0, 1179655, -1073741824, 0, 1179656, 0, 0, 1179657, 0, 0, 1179680, 0, 0, 1179681, 0, 0, 1179682, 0, 0, 1179683, 0, 0, 1179684, 0, 0, 1179685, 0, 0, 1179686, 0, 0, 1179687, 0, 0, 1179688, 0, 0, 1179689, 0, 0, 1310719, -1073741824, 0, 1245184, -1073741824, 0, 1245185, -1073741824, 0, 1245186, -1073741824, 0, 1245187, -1073741824, 0, 1245188, -1073741824, 0, 1245189, -1073741824, 0, 1245190, -1073741824, 0, 1245191, -1073741824, 0, 1245192, 0, 0, 1245217, 0, 0, 1245218, 0, 0, 1245219, 0, 0, 1245220, 0, 0, 1245221, 0, 0, 1245222, 0, 0, 1245223, 0, 0, 1245224, 0, 0, 1245225, 0, 0, 1376255, -1073741824, 0, 1310720, -1073741824, 0, 1310721, -1073741824, 0, 1310722, -1073741824, 0, 1310723, -1073741824, 0, 1310724, -1073741824, 0, 1310725, -1073741824, 0, 1310726, -1073741824, 0, 1310727, -1073741824, 0, 1310728, 0, 0, 1310753, 0, 0, 1310754, 0, 0, 1310755, 0, 0, 1310756, 0, 0, 1310757, 0, 0, 1310758, 0, 0, 1310759, 0, 0, 1310760, 0, 0, 1310761, 0, 0, 1441791, -1073741824, 0, 1376256, -1073741824, 0, 1376257, -1073741824, 0, 1376258, -1073741824, 0, 1376259, -1073741824, 0, 1376260, -1073741824, 0, 1376261, -1073741824, 0, 1376262, -1073741824, 0, 1376263, -1073741824, 0, 1376290, 0, 0, 1376291, 0, 0, 1376292, 0, 0, 1376293, 0, 0, 1376294, 0, 0, 1376295, 0, 0, 1376296, 0, 0, 1376297, 0, 0, 1507327, -1073741824, 0, 1441792, -1073741824, 0, 1441793, -1073741824, 0, 1441794, -1073741824, 0, 1441795, -1073741824, 0, 1441796, -1073741824, 0, 1441797, -1073741824, 0, 1441798, -1073741824, 0, 1441799, -1073741824, 0, 1441826, 0, 0, 1441827, 0, 0, 1441828, 0, 0, 1441829, 0, 0, 1441830, 0, 0, 1441831, 0, 0, 1441832, 0, 0, 1441833, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 963.898, 701.825 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 949.643, 912.177 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 1149.74, 804.575 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 46.9906, 807.572 )
+shape = SubResource( 4 )
+
+[node name="CallFunctionOnEnter-Trigger_0" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1072.54, 805.293 )
+scale = Vector2( 5.39399, -1.91329 )
+call_one_time = true
+obj = NodePath("..")
+method = "enable"
+
+[node name="friend_1" type="Sprite" parent="."]
+visible = false
+position = Vector2( -1.30209, 775.886 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+vframes = 3
+hframes = 3
+frame = 2
+script = SubResource( 2 )
+dialog_path = "res://Dialogs/Despair/bridge.json"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="friend_1"]
+visible = false
+position = Vector2( 18.0123, 2.98892 )
+scale = Vector2( 3, 3 )
+frames = ExtResource( 8 )
+
+[node name="singer" type="Sprite" parent="."]
+visible = false
+position = Vector2( 58.1903, 764.517 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+hframes = 3
+script = SubResource( 5 )
+dialog_path = "res://Dialogs/Despair/bridge_2.json"
+scene_path = "res://Scenes/Despair/21.Black.tscn"
+
+[editable path="Body"]
