@@ -383,7 +383,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 5 )
 text = "pixeltrain.itch.io/student-quest
 
-v 4.4"
+v 4.5"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
