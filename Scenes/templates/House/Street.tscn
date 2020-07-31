@@ -14,11 +14,12 @@
 [ext_resource path="res://Scenes/templates/Noise_sprite.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/templates/House/Bench.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/templates/Water_coast.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Audio/fx/OceanWaves.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Audio/FX/OceanWaves.ogg" type="AudioStream" id=15]
 [ext_resource path="res://Sprites/fire.tres" type="SpriteFrames" id=16]
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/friend_1.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/friend_2.png" type="Texture" id=19]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D

@@ -1,6 +1,6 @@
 id,en,ru
-NEW_GAME,New game,Новая игра
-LOAD_GAME,Load game,Загрузить игру
+LOADING,Loading,Загрузка
+D_ALTERNATE_SCENE,"Well, let's start","Хорошо, начнём"
 SETTINGS,Settings,Настройки
 QUIT,Quit,Выйти
 CONFIRM,Do you really want to quit?,Вы действительно хотите выйти?
@@ -25,7 +25,7 @@ MUSIC,Music:,Музыка:
 CONTACT,Contact us:,Свяжитесь с нами:
 SUPPORT,"Support us, we are hungry:","Поддержите нас, мы голодные:"
 LEGAL,Every character is just the result of our imagination,Каждый персонаж всего лишь результат нашего воображения
-LOADING,Loading,Загрузка
+NEW_GAME,New game,Новая игра
 DELETE,Delete,Удалить
 TESTERS,Testers:,Тестеры:
 TICKETWINDOW,Ticket window,Окно кассы
@@ -38,3 +38,4 @@ PURCHASE,Purchase,Покупка
 BUY,Buy,Купить
 LOAD,Load,Загрузить
 SAVE,Save,Сохранить
+LOAD_GAME,Load game,Загрузить игру

@@ -13,6 +13,8 @@ var maxId := 0
 var screenshot
 var player_path : String
 
+var first_run = false
+
 # Create a dictionary to save
 func gen_dict() -> Dictionary:
 	var dict = {
@@ -72,11 +74,12 @@ func read_settings() -> void:
 		restore(content)
 	else:
 		# Default values
+		first_run = true
 		MUSIC.volume = 0
 		FX.volume = 0
 		OS.vsync_enabled = true
 		OS.window_fullscreen = true
-		TranslationServer.set_locale("en")
+		TranslationServer.set_locale("ru")
 
 
 func str_to_bool(val : String) -> bool:

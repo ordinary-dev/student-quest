@@ -136,7 +136,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 menu_scene = "res://Scenes/menu/Menu.tscn"
-quit_scene = "res://Scenes/quit.tscn"
+quit_scene = "res://Scenes/Quit.tscn"
 buttons = [ NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Return;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Load;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Save;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Settings;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Menu;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Quit;Button-Template_Control") ]
 settings_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Settings-Menu_TabContainer")
 load_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Load-Menu_ScrollContainer")

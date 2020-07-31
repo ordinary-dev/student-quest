@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/menu/Confirm.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/menu_background/8bit-foreground.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Sprites/noise_frames/noise.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://Sprites/Noise/Noise.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=9]
 [ext_resource path="res://Sprites/menu_background/8bit-train.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/menu_background/8bit-person.png" type="Texture" id=11]
@@ -16,6 +16,9 @@
 [ext_resource path="res://Sprites/menu_background/8bit-person-1.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Sprites/menu_background/8bit-background-night.png" type="Texture" id=16]
+
+
+
 
 [sub_resource type="GDScript" id=1]
 resource_name = "Main"

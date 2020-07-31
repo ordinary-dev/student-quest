@@ -31,7 +31,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-quit_scene = "res://Scenes/quit.tscn"
+quit_scene = "res://Scenes/Quit.tscn"
 
 [node name="ConfirmationText_Label" type="Label" parent="."]
 margin_right = 630.0

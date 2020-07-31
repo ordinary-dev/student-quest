@@ -2,9 +2,10 @@
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/character_main.png" type="Texture" id=2]
-[ext_resource path="res://Audio/fx/steps/footstep1.wav" type="AudioStream" id=3]
-[ext_resource path="res://Audio/fx/steps/footstep2.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/FX/steps/footstep1.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/FX/steps/footstep2.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sprites/water/player_in_water.tres" type="SpriteFrames" id=5]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.9665, 5.43987 )
