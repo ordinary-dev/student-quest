@@ -2,8 +2,6 @@
 
 [ext_resource path="res://Tilemaps/store/store_atlas.png" type="Texture" id=1]
 
-
-
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 

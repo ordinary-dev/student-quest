@@ -4,7 +4,5 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
-next_scene = "res://Scenes/Hope/1.Field.tscn"
+next_scene = "res://Scenes/Hope/12.Street.tscn"
 delay = 2.0
-transition_in = false
-transition_out = false

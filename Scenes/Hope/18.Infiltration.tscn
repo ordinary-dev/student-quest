@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/Officer.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Street-Template" parent="." instance=ExtResource( 1 )]
+init_dir = 0
+math_scene = "res://Scenes/Hope/20.Building.tscn"
+show_singer = false
+show_gardener = false
+enable_npc = false
+
+[node name="AnimatedSprite" parent="Street-Template/YSort/Buildings_YSort/ENIHouse_Sprite" index="1"]
+frame = 1
+
+[node name="Body" parent="Street-Template/YSort" index="10"]
+restore_position = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.411765, 0.47451, 0.615686, 1 )
+
+[node name="Character" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1376, 496 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../Street-Template/BottomDown")
+scene_ind = 1
+
+[node name="Character2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1536, 504 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../Street-Template/BottomDown")
+scene_ind = 1
+
+[node name="Character3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1696, 504 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../Street-Template/BottomDown")
+scene_ind = 1
+
+[editable path="Street-Template"]

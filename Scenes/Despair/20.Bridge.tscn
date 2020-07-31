@@ -9,7 +9,7 @@
 [ext_resource path="res://Sprites/singer.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/blood.tres" type="SpriteFrames" id=8]
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 
@@ -26,13 +26,13 @@ func enable() -> void:
 	$friend_1.enable_ai()
 "
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1069.86, 98.0671 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 37.9747, 26.9374 )
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Sprite
 
 var posx = 800
@@ -128,7 +128,7 @@ func shot() -> void:
 "
 
 [node name="Node2D" type="Node2D"]
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="Sky_01" type="Sprite" parent="."]
 position = Vector2( 961.758, 528.881 )
@@ -169,22 +169,22 @@ collision_mask = 1024
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 position = Vector2( 963.898, 701.825 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 position = Vector2( 949.643, 912.177 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 position = Vector2( 1149.74, 804.575 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
 position = Vector2( 46.9906, 807.572 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="CallFunctionOnEnter-Trigger_0" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1072.54, 805.293 )
@@ -201,7 +201,7 @@ texture = ExtResource( 6 )
 vframes = 3
 hframes = 3
 frame = 2
-script = SubResource( 2 )
+script = SubResource( 4 )
 dialog_path = "res://Dialogs/Despair/bridge.json"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="friend_1"]

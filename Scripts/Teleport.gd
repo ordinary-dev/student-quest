@@ -28,11 +28,13 @@ func blocked() -> void:
 	NOTIFY.show("NOENTER")
 
 
-func teleport(node : String) -> void:
-	SCENES.fade_in()
-	yield(get_tree().create_timer(SCENES.time), "timeout")
+func teleport(node : String, fade = true) -> void:
+	if fade:
+		SCENES.fade_in()
+		yield(get_tree().create_timer(SCENES.time), "timeout")
 	get_node(GLOBAL.player_path).position = get_node(node).position
-	SCENES.fade_out()
+	if fade:
+		SCENES.fade_out()
 
 
 func floor_1():
@@ -58,9 +60,9 @@ func _ready():
 	turnstile.disabled = !block_turnstile
 	# Initial position
 	if initial_pos == pos.first:
-		teleport(p1)
+		teleport(p1, false)
 	elif initial_pos == pos.third:
-		teleport(p3)
+		teleport(p3, false)
 	match player_direction:
 		directions.UP:
 			$YSort/Body.go_up()

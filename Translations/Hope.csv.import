@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://Translations/Hope.en.translation", "res://Translations/Hope.ru.translation" ]
+
+source_file="res://Translations/Hope.csv"
+dest_files=[ "res://Translations/Hope.en.translation", "res://Translations/Hope.ru.translation" ]
+
+[params]
+
+compress=true
+delimiter=0
