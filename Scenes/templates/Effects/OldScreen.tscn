@@ -13,6 +13,7 @@ __meta__ = {
 }
 
 [node name="Texture" type="TextureRect" parent="."]
+modulate = Color( 0.943137, 0.943137, 0.943137, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
