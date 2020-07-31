@@ -8,9 +8,8 @@ export (bool) var fade_in = true
 export (bool) var fade_out = true
 
 
-func _on_Area_body_entered(body):
-	if \"Body\" in body.name:
-		SCENES.load_scene(scene, fade_in, fade_out)
+func _on_Area_body_entered(_body):
+	SCENES.load_scene(scene, fade_in, fade_out)
 "
 
 [sub_resource type="RectangleShape2D" id=2]

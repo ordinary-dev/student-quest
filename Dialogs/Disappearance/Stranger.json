@@ -1,0 +1,10 @@
+{
+    "0":{"name":"-", "text":"D_DSP_STRANGER_1", "next":"1"},
+    "1":{"name":"-", "text":"D_DSP_STRANGER_2", "next":"2"},
+    "2":{"name":"-", "text":"D_DSP_STRANGER_3", "next":"3"},
+    "3":{"name":"-", "text":"D_DSP_STRANGER_4", "next":"4"},
+    "4":{"name":"-", "text":"D_DSP_STRANGER_5", "next":"5"},
+    "5":{"name":"-", "text":"D_DSP_STRANGER_6", "next":"6"},
+    "6":{"name":"-", "text":"D_DSP_STRANGER_7", "next":"7"},
+    "7":{"name":"-", "text":"D_DSP_STRANGER_8"}
+} 

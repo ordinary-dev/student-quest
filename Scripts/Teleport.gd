@@ -5,7 +5,8 @@ export (NodePath) var p1
 export (NodePath) var p2
 export (NodePath) var p3
 export (String, FILE, "*.tscn") var street_path
-
+enum directions{UP, DOWN, LEFT, RIGHT}
+export (directions) var player_direction = directions.DOWN
 enum pos {first, second, third}
 export (pos) var initial_pos = pos.second
 
@@ -27,11 +28,13 @@ func blocked() -> void:
 	NOTIFY.show("NOENTER")
 
 
-func teleport(node : String) -> void:
-	SCENES.fade_in()
-	yield(get_tree().create_timer(SCENES.time), "timeout")
+func teleport(node : String, fade = true) -> void:
+	if fade:
+		SCENES.fade_in()
+		yield(get_tree().create_timer(SCENES.time), "timeout")
 	get_node(GLOBAL.player_path).position = get_node(node).position
-	SCENES.fade_out()
+	if fade:
+		SCENES.fade_out()
 
 
 func floor_1():
@@ -57,6 +60,13 @@ func _ready():
 	turnstile.disabled = !block_turnstile
 	# Initial position
 	if initial_pos == pos.first:
-		teleport(p1)
+		teleport(p1, false)
 	elif initial_pos == pos.third:
-		teleport(p3)
+		teleport(p3, false)
+	match player_direction:
+		directions.UP:
+			$YSort/Body.go_up()
+		directions.RIGHT:
+			$YSort/Body.go_right()
+		directions.LEFT:
+			$YSort/Body.go_left()

@@ -2,6 +2,7 @@ extends Node2D
 
 # Turn off the lights
 
+export (String, FILE, "*.tscn") var next_scene
 export (String, FILE, "*.tscn") var hidden_room 
 
 export (String, FILE, "*.json") var dialog_1
@@ -41,15 +42,15 @@ func turn_lights_off():
 
 
 func turn_lights_on():
-	tween.interpolate_property(
-		color_rect, "color",
-		c2, c1, 1,
-		Tween.TRANS_BOUNCE, Tween.EASE_IN_OUT)
-	tween.start()
-	map.block_turnstile = false
-	remove_child(trigger_1)
-	remove_child(trigger_2)
-
+	#tween.interpolate_property(
+	#	color_rect, "color",
+	#	c2, c1, 1,
+	#	Tween.TRANS_BOUNCE, Tween.EASE_IN_OUT)
+	#tween.start()
+	#map.block_turnstile = false
+	#remove_child(trigger_1)
+	#remove_child(trigger_2)
+	SCENES.load_scene(next_scene)
 
 func _ready():
 	turn_lights_off()

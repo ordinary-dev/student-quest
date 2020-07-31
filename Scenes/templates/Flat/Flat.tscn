@@ -16,11 +16,23 @@ script/source = "extends Node2D
 
 
 export (bool) var character_enabled = true
+enum positions {DOOR, COMPUTER, BED}
+export (positions) var init_pos = positions.DOOR
 
 
 func _ready():
 	if !character_enabled:
 		remove_child($YSort/Body)
+	else:
+		var player = get_node(GLOBAL.player_path)
+		match init_pos:
+			positions.DOOR:
+				player.position = $Positions/Door_Position2D.position
+			positions.COMPUTER:
+				player.position = $Positions/Computer_Position2D.position
+			positions.BED:
+				player.position = $Positions/Bed_Position2D.position
+	
 "
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -255,3 +267,14 @@ scale = Vector2( 5, 5 )
 
 [node name="Sofa-Template_Sprite" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 966.915, 726.793 )
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Door_Position2D" type="Position2D" parent="Positions"]
+position = Vector2( 511.945, 678.115 )
+
+[node name="Computer_Position2D" type="Position2D" parent="Positions"]
+position = Vector2( 595.864, 370.527 )
+
+[node name="Bed_Position2D" type="Position2D" parent="Positions"]
+position = Vector2( 592.864, 222.527 )

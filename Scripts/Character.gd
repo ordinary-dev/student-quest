@@ -2,9 +2,12 @@ extends KinematicBody2D
 
 # State types
 enum states {DOWN, UP, LEFT, RIGHT}
+enum sprites {MAIN, ALEX}
 export (states) var default_state = states.UP
+export (sprites) var sprite_sheet = sprites.MAIN setget set_sprite
 export (bool) var restore_position = false
 var restored_position = false
+const alex_texture = "res://Sprites/friend_1.png"
 const speed := 500
 
 # Objects
@@ -221,6 +224,14 @@ func _save() -> void:
 		"player_pos_y": position.y
 	}
 	TEMP.save(SCENES.last_scene_path, dict)
+
+
+func set_sprite(val) -> void:
+	sprite_sheet = val
+	if val == sprites.ALEX:
+		character.texture = load(alex_texture)
+	# else
+	# ...
 
 
 func _ready():

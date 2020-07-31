@@ -11,6 +11,7 @@ const end := Color(0, 0, 0, 1)
 
 func create_color_rect() -> void:
 	var tmp := ColorRect.new()
+	tmp.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	tmp.color = start
 	tmp.name = \"transition\"
 	tmp.rect_min_size = Vector2(1920, 1080)

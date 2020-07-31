@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Show_dialog.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/templates/Basement/Stairs.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/triggers/LoadOnEnter.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+dialog_path = "res://Dialogs/Hope/Stairs.json"
+
+[node name="LoadOnEnter-Trigger_0" parent="." instance=ExtResource( 3 )]
+position = Vector2( 122.974, 450.655 )
+scale = Vector2( 10.52, 3.2 )
+z_index = 2
+scene = "res://Scenes/Hope/7.Basement.tscn"

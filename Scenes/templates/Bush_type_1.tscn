@@ -2,6 +2,8 @@
 
 [ext_resource path="res://Tilemaps/street/Overlay16.png" type="Texture" id=1]
 
+
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.00613, 5.07315 )
 

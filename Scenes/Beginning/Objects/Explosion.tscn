@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.tscn\") var inst_path
+var inst
+export (String, FILE, \"*.tscn\") var next_scene_path
+
+func redraw(radius):
+	var x = 0
+	while x <= radius:
+		# x^2 + y^2 = r^2
+		# y^2 = r^2 - x^2
+		# y = sqrt ( r^2 - x^2 )
+		var y = sqrt(radius*radius - x*x)
+		if randi() % 5 != 0:
+			var tmp = inst.instance()
+			tmp.position = Vector2(x, y)
+			add_child(tmp)
+		if randi() % 5 != 0:
+			var tmp = inst.instance()
+			tmp.position = Vector2(-x, y)
+			add_child(tmp)
+		if randi() % 5 != 0:
+			var tmp = inst.instance()
+			tmp.position = Vector2(x, -y)
+			add_child(tmp)
+		if randi() % 5 != 0:
+			var tmp = inst.instance()
+			tmp.position = Vector2(-x, -y)
+			add_child(tmp)
+		x += 16
+
+
+func _ready():
+	inst = load(inst_path)
+	var radius = 0.0
+	for j in range(30):
+		radius += 16
+		redraw(radius)
+		yield(get_tree().create_timer(.06), \"timeout\")
+	yield(get_tree().create_timer(2), \"timeout\")
+	SCENES.load_scene(next_scene_path)
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+inst_path = "res://Scenes/Beginning/Objects/explosion_pixel.tscn"

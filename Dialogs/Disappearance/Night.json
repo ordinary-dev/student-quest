@@ -1,0 +1,6 @@
+{
+    "0":{"name":"-", "text":"D_DSP_NIGHT_1", "next":"1"},
+    "1":{"name":"-", "text":"D_DSP_NIGHT_1", "next":"2"},
+    "2":{"name":"-", "text":"D_DSP_NIGHT_2", "next":"3"},
+    "3":{"name":"-", "text":"D_DSP_NIGHT_3"}
+} 
