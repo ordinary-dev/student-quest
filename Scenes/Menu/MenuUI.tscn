@@ -1,156 +1,34 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Scenes/Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Menu/LoadGameScene/Load.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Menu/Settings.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Menu/Confirm.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Menu/Settings/Settings.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Menu/Confirmation.tscn" type="PackedScene" id=7]
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
-[sub_resource type="StyleBoxFlat" id=14]
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-content_margin_left = 15.0
-content_margin_right = 15.0
-content_margin_top = 15.0
-content_margin_bottom = 15.0
-bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-
-[sub_resource type="StyleBoxFlat" id=8]
-content_margin_left = 15.0
-content_margin_right = 15.0
-content_margin_top = 15.0
-content_margin_bottom = 15.0
-bg_color = Color( 0.129412, 0.129412, 0.129412, 1 )
-
-[sub_resource type="StyleBoxFlat" id=9]
-bg_color = Color( 0.0823529, 0.0823529, 0.0823529, 1 )
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="GDScript" id=10]
-script/source = "extends TabContainer
-
-# Labels
-export (NodePath) var ost_text
-export (NodePath) var fx_text
-
-
-# Update labels
-func update_text(val : float, obj : String) -> void:
-	get_node(obj).text = str(round((val+35)/35*100)) + \"%\"
-
-
-func music(delta : int) -> void:
-	FX.btn_click()
-	MUSIC.volume += delta
-	update_text(MUSIC.volume, ost_text)
-
-
-func effects(delta : int) -> void:
-	FX.btn_click()
-	FX.volume += delta
-	update_text(FX.volume, fx_text)
-
-
-func reset_music_volume() -> void:
-	FX.btn_click()
-	MUSIC.volume = 0
-	update_text(0, ost_text)
-
-
-func reset_effects_volume() -> void:
-	FX.btn_click()
-	FX.volume = 0
-	update_text(0, fx_text)
-
-
-# Sync
-func _ready() -> void:
-	update_text(FX.volume, fx_text)
-	update_text(MUSIC.volume, ost_text)
-	set_tab_title(0, \"LANG\")
-	set_tab_title(1, \"AUDIO\")
-	set_tab_title(2, \"GRAPHICS\")
-	set_tab_title(3, \"INFO\")
-
-
-
-func open_site():
-	OS.shell_open(\"https://pixeltrain.itch.io/student-quest\")
-
-
-func en():
-	TranslationServer.set_locale(\"en\")
-
-
-func ru():
-	TranslationServer.set_locale(\"ru\")
-
-
-func youtube():
-	OS.shell_open(\"https://www.youtube.com/channel/UCMd8rzjki6JPX97jX217IVQ\")
-
-
-func _on_TabContainer_tab_changed(tab):
-	FX.btn_click()
-
-
-func free_sound():
-	OS.shell_open(\"https://freesound.org/\")
-
-
-func zapsplat():
-	OS.shell_open(\"https://www.zapsplat.com/\")
-
-
-func outgoing_hikikomori():
-	OS.shell_open(\"https://www.youtube.com/channel/UC3yRCpfOE2zfTQsOHCH8wZw\")
-"
-
-[sub_resource type="GDScript" id=6]
-script/source = "extends Control
-
-export (String, FILE, \"*.tscn\") var quit_scene
-
-# Return to menu
-func _return() -> void:
-	FX.btn_click()
-	# Hide scene
-	if has_node(\"/root/Menu\"):
-		get_node(\"/root/Menu\")._quit()
-
-
-# Quit from game
-func _quit() -> void:
-	FX.btn_click()
-	SCENES.load_scene(quit_scene)
-"
 
 [node name="Menu" type="HBoxContainer"]
 anchor_right = 1.0
@@ -162,7 +40,7 @@ __meta__ = {
 new_game_scene = "res://Scenes/Menu/NewGame.tscn"
 game_loading_scene_path = NodePath("Right/LoadMenu")
 settings_scene_path = NodePath("Right/Settings")
-confirmation_scene_path = NodePath("Right/Confirm")
+confirmation_scene_path = NodePath("Right/Confirmation")
 new_game_btn = NodePath("Left/Column/NewGame")
 
 [node name="Left" type="MarginContainer" parent="."]
@@ -199,12 +77,14 @@ margin_top = 104.0
 margin_right = 760.0
 margin_bottom = 270.0
 focus_neighbour_bottom = NodePath("../BtnLoad")
+focus_mode = 1
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 14 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
+enabled_focus_mode = 1
 text = "NEW_GAME"
 
 [node name="LoadGame" parent="Left/Column" instance=ExtResource( 5 )]
@@ -214,10 +94,10 @@ margin_bottom = 440.0
 focus_neighbour_top = NodePath("../BtnNew")
 focus_neighbour_bottom = NodePath("../BtnSettings")
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 14 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "LOAD_GAME"
 
@@ -229,10 +109,10 @@ focus_neighbour_top = NodePath("../BtnLoad")
 focus_neighbour_right = NodePath("../../../Right/Settings")
 focus_neighbour_bottom = NodePath("../BtnQuit")
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 14 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "SETTINGS"
 
@@ -243,10 +123,10 @@ margin_bottom = 780.0
 focus_neighbour_top = NodePath("../BtnSettings")
 focus_neighbour_right = NodePath("../../../Right/Confirm")
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 11 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = SubResource( 13 )
-custom_styles/disabled = SubResource( 14 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "QUIT"
 
@@ -269,21 +149,14 @@ margin_bottom = 930.0
 visible = false
 margin_top = 150.0
 margin_bottom = 930.0
-focus_neighbour_left = NodePath("../../Left/VBox/BtnSettings")
-size_flags_horizontal = 3
-custom_styles/tab_fg = SubResource( 7 )
-custom_styles/tab_bg = SubResource( 8 )
-custom_styles/panel = SubResource( 9 )
-script = SubResource( 10 )
 
-[node name="Confirm" parent="Right" instance=ExtResource( 7 )]
+[node name="Confirmation" parent="Right" instance=ExtResource( 7 )]
 visible = false
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 150.0
 margin_right = 860.0
 margin_bottom = 930.0
-script = SubResource( 6 )
 [connection signal="pressed" from="Left/Column/NewGame" to="." method="_new_game"]
 [connection signal="pressed" from="Left/Column/LoadGame" to="." method="_load_game"]
 [connection signal="pressed" from="Left/Column/Settings" to="." method="_settings"]

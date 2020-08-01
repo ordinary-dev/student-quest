@@ -3,7 +3,7 @@ LOADING,Loading,Загрузка
 D_ALTERNATE_SCENE,"Well, let's start","Хорошо, начнём"
 SETTINGS,Settings,Настройки
 QUIT,Quit,Выйти
-CONFIRM,Do you really want to quit?,Вы действительно хотите выйти?
+QUIT_CONFIRMATION,Do you really want to quit?,Вы действительно хотите выйти?
 YES,Yes,Да
 NO,No,Нет
 LANG,Lang,Язык
