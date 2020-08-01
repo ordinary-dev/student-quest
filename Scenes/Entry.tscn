@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-menu_scene_path = "res://Scenes/menu/Menu.tscn"
+menu_scene_path = "res://Scenes/Menu/Menu.tscn"
 alternate_scene_path = "res://Scenes/AlternateScene.tscn"
 
 [node name="LoadingText" type="Label" parent="."]

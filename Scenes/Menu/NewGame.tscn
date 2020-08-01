@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/templates/Noise.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+export (String, FILE, \"*.tscn\") var menu
+export (String, FILE, \"*.tscn\") var next_scene
+
+
+func _start_game():
+	FX.btn_click()
+	SCENES.load_scene(next_scene)
+
+
+func _on_Return_pressed():
+	FX.btn_click()
+	SCENES.load_scene(menu)
+"
+
+[node name="NewGame-Menu_Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu = "res://Scenes/menu/Menu.tscn"
+next_scene = "res://Scenes/Beginning/00.Date.tscn"
+
+[node name="BackGround_ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="MainContainer_MarginContainer" type="MarginContainer" parent="BackGround_ColorRect"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_vertical = 3
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Noise-Template" parent="BackGround_ColorRect/MainContainer_MarginContainer" instance=ExtResource( 1 )]
+vect = Vector2( 10, 6 )
+
+[node name="Container_VBoxContainer" type="VBoxContainer" parent="BackGround_ColorRect/MainContainer_MarginContainer"]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 1030.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text_RichTextLabel" type="RichTextLabel" parent="BackGround_ColorRect/MainContainer_MarginContainer/Container_VBoxContainer"]
+margin_right = 1820.0
+margin_bottom = 776.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.67
+bbcode_enabled = true
+bbcode_text = "[center]Welcome to net manager[/center]
+
+
+
+
+
+[color=gray][st@pt] $ ./init.sh [/color]
+
+* Init                [[color=green]OK[/color]]
+* Customize objects   [[color=green]OK[/color]]
+* Prepare the scene   [[color=green]OK[/color]]
+* Waiting for user    [[color=yellow]..[/color]]"
+text = "Welcome to net manager
+
+
+
+
+
+[st@pt] $ ./init.sh 
+
+* Init                [OK]
+* Customize objects   [OK]
+* Prepare the scene   [OK]
+* Waiting for user    [..]"
+scroll_active = false
+
+[node name="Start;Button-Template_Control" parent="BackGround_ColorRect/MainContainer_MarginContainer/Container_VBoxContainer" instance=ExtResource( 2 )]
+modulate = Color( 1, 1, 1, 0.784314 )
+margin_top = 780.0
+margin_right = 1820.0
+margin_bottom = 980.0
+rect_min_size = Vector2( 80, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 0
+text = "START"
+
+[node name="Return;Button-Template_Control" parent="BackGround_ColorRect" instance=ExtResource( 2 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
+margin_right = 0.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 100, 100 )
+text = "x"
+[connection signal="pressed" from="BackGround_ColorRect/MainContainer_MarginContainer/Container_VBoxContainer/Start;Button-Template_Control" to="." method="_start_game"]
+[connection signal="pressed" from="BackGround_ColorRect/Return;Button-Template_Control" to="." method="_on_Return_pressed"]

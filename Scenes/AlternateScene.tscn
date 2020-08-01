@@ -16,7 +16,7 @@ __meta__ = {
 }
 dialog_path = "res://Dialogs/AlternateScene.json"
 text_file_path = "res://Scripts/Scenes/ConsoleText.txt"
-menu_scene_path = "res://Scenes/menu/Menu.tscn"
+menu_scene_path = "res://Scenes/Menu/Menu.tscn"
 
 [node name="OldScreen" parent="." instance=ExtResource( 2 )]
 
