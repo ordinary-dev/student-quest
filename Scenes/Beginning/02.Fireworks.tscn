@@ -11,7 +11,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
-var fw = preload(\"res://Audio/fx/Firework_explosion.wav\")
+var fw = preload(\"res://Audio/FX/Firework_explosion.wav\")
 export (String, FILE, \"*.tscn\") var next_scene
 export (String, FILE, \"*.ogg\") var audio
 

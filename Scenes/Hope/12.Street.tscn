@@ -15,7 +15,7 @@ show_gardener = false
 enable_npc = false
 
 [node name="AnimatedSprite" parent="Street-Template/YSort/Buildings_YSort/ENIHouse_Sprite" index="1"]
-frame = 2
+frame = 1
 
 [node name="Body" parent="Street-Template/YSort" index="10"]
 restore_position = false

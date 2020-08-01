@@ -27,6 +27,7 @@ bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 
 [node name="Languages" type="MarginContainer"]
+light_mask = -2147483648
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 62.0
@@ -40,6 +41,7 @@ __meta__ = {
 }
 
 [node name="Buttons" type="VBoxContainer" parent="."]
+light_mask = -2147483648
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 1870.0

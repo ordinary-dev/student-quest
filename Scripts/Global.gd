@@ -15,6 +15,8 @@ var player_path : String
 
 var first_run = false
 
+var progress : int = 1
+
 # Create a dictionary to save
 func gen_dict() -> Dictionary:
 	var dict = {

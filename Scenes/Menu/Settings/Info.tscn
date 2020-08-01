@@ -28,6 +28,7 @@ bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
 bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 
 [node name="Info" type="MarginContainer"]
+light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 62.0
@@ -41,6 +42,7 @@ __meta__ = {
 }
 
 [node name="Scroll" type="ScrollContainer" parent="."]
+light_mask = 0
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 1870.0
@@ -49,6 +51,7 @@ size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Scroll"]
+light_mask = 0
 margin_right = 1808.0
 margin_bottom = 1391.0
 mouse_filter = 1
@@ -56,6 +59,7 @@ size_flags_horizontal = 3
 custom_constants/margin_right = 20
 
 [node name="TextContainer" type="VBoxContainer" parent="Scroll/MarginContainer"]
+light_mask = 0
 margin_right = 1788.0
 margin_bottom = 1391.0
 size_flags_horizontal = 3
@@ -71,6 +75,7 @@ custom_styles/normal = SubResource( 5 )
 text = "OPENSITE"
 
 [node name="Link" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 100.0
 margin_right = 1788.0
 margin_bottom = 178.0
@@ -85,6 +90,7 @@ __meta__ = {
 }
 
 [node name="Godot" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 198.0
 margin_right = 1788.0
 margin_bottom = 222.0
@@ -97,6 +103,7 @@ __meta__ = {
 }
 
 [node name="ChangelogTitle" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 242.0
 margin_right = 1788.0
 margin_bottom = 266.0
@@ -109,6 +116,7 @@ __meta__ = {
 }
 
 [node name="Changes" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 286.0
 margin_right = 1788.0
 margin_bottom = 310.0
@@ -121,6 +129,7 @@ __meta__ = {
 }
 
 [node name="Authors" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 330.0
 margin_right = 1788.0
 margin_bottom = 354.0
@@ -133,6 +142,7 @@ __meta__ = {
 }
 
 [node name="Nicknames" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 374.0
 margin_right = 1788.0
 margin_bottom = 479.0
@@ -148,6 +158,7 @@ __meta__ = {
 }
 
 [node name="Testers" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 499.0
 margin_right = 1788.0
 margin_bottom = 523.0
@@ -160,6 +171,7 @@ __meta__ = {
 }
 
 [node name="TestersNicks_Label" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 543.0
 margin_right = 1788.0
 margin_bottom = 621.0
@@ -174,6 +186,7 @@ __meta__ = {
 }
 
 [node name="Joystick" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 641.0
 margin_right = 1788.0
 margin_bottom = 665.0
@@ -186,6 +199,7 @@ __meta__ = {
 }
 
 [node name="Gonkee" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 685.0
 margin_right = 1788.0
 margin_bottom = 763.0
@@ -200,6 +214,7 @@ __meta__ = {
 }
 
 [node name="Songs" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 783.0
 margin_right = 1788.0
 margin_bottom = 915.0
@@ -249,6 +264,7 @@ custom_styles/normal = SubResource( 5 )
 text = "Outgoing Hikikomori"
 
 [node name="Contact" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 1235.0
 margin_right = 1788.0
 margin_bottom = 1259.0
@@ -261,6 +277,7 @@ __meta__ = {
 }
 
 [node name="Mail" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 1279.0
 margin_right = 1788.0
 margin_bottom = 1303.0
@@ -273,6 +290,7 @@ __meta__ = {
 }
 
 [node name="Legal" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 1323.0
 margin_right = 1788.0
 margin_bottom = 1347.0
@@ -285,6 +303,7 @@ __meta__ = {
 }
 
 [node name="Copyright" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
 margin_top = 1367.0
 margin_right = 1788.0
 margin_bottom = 1391.0

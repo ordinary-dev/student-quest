@@ -14,5 +14,6 @@ __meta__ = {
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
 [node name="Menu" parent="." instance=ExtResource( 2 )]
+light_mask = 0
 
 [node name="Disable-UI" parent="." instance=ExtResource( 15 )]
