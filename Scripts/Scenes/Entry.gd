@@ -12,7 +12,7 @@ export (String, FILE, "*.tscn") var menu_scene_path
 export (String, FILE, "*.tscn") var alternate_scene_path
 
 onready var loading_text := $LoadingText
-onready var audio_sources := [$Click1, $Click2, $Click3]
+onready var audio_src = $Click
 
 const delay : float = 0.7
 
@@ -26,7 +26,8 @@ func _ready() -> void:
 		for i in range(3):
 			yield(get_tree().create_timer(delay), "timeout")
 			loading_text.text = message + ".".repeat(i + 1)
-			audio_sources[i].play()
+			# Play random sound
+			audio_src.play()
 		# Load alternate scene
 		yield(get_tree().create_timer(delay), "timeout")
 		SCENES.load_scene(alternate_scene_path)

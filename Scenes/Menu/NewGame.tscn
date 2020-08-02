@@ -1,41 +1,201 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/templates/Noise.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/Noise_sprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Scenes/Menu/NewGame.gd" type="Script" id=3]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Control
-
-export (String, FILE, \"*.tscn\") var menu
-export (String, FILE, \"*.tscn\") var next_scene
-
-
-func _start_game():
-	FX.btn_click()
-	SCENES.load_scene(next_scene)
-
-
-func _on_Return_pressed():
-	FX.btn_click()
-	SCENES.load_scene(menu)
-"
-
-[node name="NewGame-Menu_Control" type="Control"]
+[node name="NewGame" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 1 )
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-menu = "res://Scenes/menu/Menu.tscn"
-next_scene = "res://Scenes/Beginning/00.Date.tscn"
+menu = "res://Scenes/Menu/Menu.tscn"
+next_scene = "res://Scenes/Chapter1/1-Beginning/00.Date.tscn"
 
-[node name="BackGround_ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+[node name="Noise" type="Node2D" parent="."]
 
-[node name="MainContainer_MarginContainer" type="MarginContainer" parent="BackGround_ColorRect"]
+[node name="Noise-Sprite-Template_AnimatedSprite_0" parent="Noise" instance=ExtResource( 1 )]
+
+[node name="Noise-Sprite-Template_AnimatedSprite_1" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 96, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_2" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 288, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_3" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 288, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_4" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 480, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_5" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 480, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_6" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 672, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_7" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 672, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_8" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 864, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_9" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 864, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_10" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1056, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_11" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1056, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_12" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1248, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_13" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1248, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_14" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1440, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_15" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1440, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_16" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1632, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_17" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1632, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_18" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1824, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_19" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1824, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_20" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 96, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_21" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 96, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_22" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 288, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_23" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 288, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_24" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 480, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_25" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 480, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_26" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 672, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_27" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 672, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_28" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 864, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_29" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 864, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_30" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1056, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_31" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1056, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_32" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1248, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_33" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1248, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_34" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1440, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_35" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1440, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_36" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1632, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_37" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1632, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_38" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1824, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_39" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1824, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_40" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 96, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_41" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 96, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_42" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 288, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_43" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 288, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_44" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 480, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_45" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 480, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_46" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 672, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_47" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 672, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_48" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 864, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_49" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 864, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_50" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1056, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_51" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1056, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_52" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1248, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_53" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1248, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_54" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1440, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_55" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1440, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_56" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1632, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_57" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1632, 1056 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_58" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1824, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_59" parent="Noise" instance=ExtResource( 1 )]
+position = Vector2( 1824, 1056 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
 margin_right = 1920.0
 margin_bottom = 1080.0
 size_flags_vertical = 3
@@ -47,10 +207,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Noise-Template" parent="BackGround_ColorRect/MainContainer_MarginContainer" instance=ExtResource( 1 )]
-vect = Vector2( 10, 6 )
-
-[node name="Container_VBoxContainer" type="VBoxContainer" parent="BackGround_ColorRect/MainContainer_MarginContainer"]
+[node name="Container" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 50.0
 margin_top = 50.0
 margin_right = 1870.0
@@ -59,7 +216,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Text_RichTextLabel" type="RichTextLabel" parent="BackGround_ColorRect/MainContainer_MarginContainer/Container_VBoxContainer"]
+[node name="Text" type="RichTextLabel" parent="MarginContainer/Container"]
 margin_right = 1820.0
 margin_bottom = 776.0
 size_flags_horizontal = 3
@@ -72,7 +229,7 @@ bbcode_text = "[center]Welcome to net manager[/center]
 
 
 
-[color=gray][st@pt] $ ./init.sh [/color]
+[color=gray][sq@pt] $ ./init.sh [/color]
 
 * Init                [[color=green]OK[/color]]
 * Customize objects   [[color=green]OK[/color]]
@@ -84,7 +241,7 @@ text = "Welcome to net manager
 
 
 
-[st@pt] $ ./init.sh 
+[sq@pt] $ ./init.sh 
 
 * Init                [OK]
 * Customize objects   [OK]
@@ -92,7 +249,7 @@ text = "Welcome to net manager
 * Waiting for user    [..]"
 scroll_active = false
 
-[node name="Start;Button-Template_Control" parent="BackGround_ColorRect/MainContainer_MarginContainer/Container_VBoxContainer" instance=ExtResource( 2 )]
+[node name="Start" parent="MarginContainer/Container" instance=ExtResource( 2 )]
 modulate = Color( 1, 1, 1, 0.784314 )
 margin_top = 780.0
 margin_right = 1820.0
@@ -102,7 +259,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 0
 text = "START"
 
-[node name="Return;Button-Template_Control" parent="BackGround_ColorRect" instance=ExtResource( 2 )]
+[node name="Return" parent="." instance=ExtResource( 2 )]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -100.0
@@ -110,5 +267,5 @@ margin_right = 0.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
 text = "x"
-[connection signal="pressed" from="BackGround_ColorRect/MainContainer_MarginContainer/Container_VBoxContainer/Start;Button-Template_Control" to="." method="_start_game"]
-[connection signal="pressed" from="BackGround_ColorRect/Return;Button-Template_Control" to="." method="_on_Return_pressed"]
+[connection signal="pressed" from="MarginContainer/Container/Start" to="." method="_start_game"]
+[connection signal="pressed" from="Return" to="." method="_on_Return_pressed"]

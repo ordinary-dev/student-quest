@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Chapter1/1-Beginning/02.Fireworks.tscn" type="PackedScene" id=1]
+
+
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Fireworks-Scene" parent="." instance=ExtResource( 1 )]
+next_scene = "res://Scenes/QuickBeginning/2.Dialog.tscn"

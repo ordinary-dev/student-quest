@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Scenes/Disappearance/20.Noise.tscn" type="PackedScene" id=1]
-
-[node name="Node2D" type="Node2D"]
-
-[node name="Node2D" parent="." instance=ExtResource( 1 )]
-next_scene = "res://Scenes/Disappearance/25.Street.tscn"

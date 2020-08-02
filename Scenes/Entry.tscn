@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Scenes/Entry.gd" type="Script" id=1]
-[ext_resource path="res://Audio/FX/Typewriter/Single-key-type-1.wav" type="AudioStream" id=2]
-[ext_resource path="res://Audio/FX/Typewriter/Single-key-type-2.wav" type="AudioStream" id=3]
-[ext_resource path="res://Audio/FX/Typewriter/Single-key-type-3.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/templates/Sounds/Click.tscn" type="PackedScene" id=2]
 
 [node name="EntryScene" type="Control"]
 anchor_right = 1.0
@@ -34,17 +32,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Click1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
-volume_db = -7.0
-bus = "FX"
-
-[node name="Click2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = -7.0
-bus = "FX"
-
-[node name="Click3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
-volume_db = -7.0
-bus = "FX"
+[node name="Click" parent="." instance=ExtResource( 2 )]

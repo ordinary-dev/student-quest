@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sprites/fireworks/fireworks.tres" type="Texture" id=1]
+[ext_resource path="res://Animations/Fireworks.tres" type="Animation" id=2]
+[ext_resource path="res://Audio/FX/Fireworks/firework.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/fireworks/Sky.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/fireworks/Grass.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/character_main.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/fireworks/Grass2.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Scenes/Chapter1/1-Beginning/02.Fireworks.gd" type="Script" id=9]
+
+[node name="Fireworks" type="Node2D"]
+script = ExtResource( 9 )
+next_scene = "res://Scenes/Chapter1/1-Beginning/03.Dialog.tscn"
+audio = "res://Audio/music/Technicolor Midnight.ogg"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = 0
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.1 )
+
+[node name="BackgroundSprite" type="Sprite" parent="ParallaxBackground/Background"]
+modulate = Color( 0.54902, 0.54902, 0.54902, 1 )
+light_mask = 0
+position = Vector2( 956.537, 463.283 )
+scale = Vector2( 1.98247, 1.98247 )
+texture = ExtResource( 4 )
+
+[node name="Main" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.6, 0.6 )
+
+[node name="Grass1" type="Sprite" parent="ParallaxBackground/Main"]
+modulate = Color( 0.262745, 0.262745, 0.262745, 1 )
+light_mask = 0
+position = Vector2( 964.532, 1184.65 )
+scale = Vector2( 38.8549, 38.8549 )
+z_index = 6
+texture = ExtResource( 6 )
+
+[node name="Character" type="Sprite" parent="ParallaxBackground/Main"]
+modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
+position = Vector2( 862.099, 911.691 )
+scale = Vector2( 12, 12 )
+texture = ExtResource( 7 )
+vframes = 3
+hframes = 3
+frame = 7
+region_rect = Rect2( 0, 0, 18, 36 )
+
+[node name="Fireworks" type="Sprite" parent="ParallaxBackground/Main"]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+light_mask = 2
+position = Vector2( 462.073, 501.133 )
+scale = Vector2( 8, 8 )
+z_index = 4
+texture = ExtResource( 1 )
+vframes = 12
+hframes = 13
+
+[node name="Fireworks2" type="Sprite" parent="ParallaxBackground/Main"]
+modulate = Color( 0.705882, 0.705882, 0.705882, 1 )
+light_mask = 2
+position = Vector2( 1279.37, 698.113 )
+scale = Vector2( 8, 8 )
+z_index = 4
+texture = ExtResource( 1 )
+flip_h = true
+vframes = 12
+hframes = 13
+
+[node name="Grass" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1.4, 1.4 )
+
+[node name="Grass2" type="Sprite" parent="ParallaxBackground/Grass"]
+modulate = Color( 0.305882, 0.305882, 0.305882, 1 )
+light_mask = 0
+position = Vector2( 1031.64, 1349.84 )
+scale = Vector2( 38.8549, 38.8549 )
+z_index = 6
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Fireworks"
+anims/Fireworks = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 0, 250 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.9, 0.9 )
+
+[node name="Enable-UI" parent="." instance=ExtResource( 5 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = 5.0
+bus = "FX"
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

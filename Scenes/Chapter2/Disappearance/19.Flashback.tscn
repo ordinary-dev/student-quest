@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Chapter1/QuickBeginning/13.Sunset.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=2]
+
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+next_scene = "res://Scenes/Disappearance/20.Noise.tscn"
+delay = 1.0
+transition_in = false
+transition_out = false
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+script = null
