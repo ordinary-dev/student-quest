@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Grass2.png-57ca28018a8c7d8b56e451d4e467a117.stex"
+path="res://.import/Sky.webp-9dd765df8f5258f165ea980ad2137164.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fireworks/Grass2.png"
-dest_files=[ "res://.import/Grass2.png-57ca28018a8c7d8b56e451d4e467a117.stex" ]
+source_file="res://Sprites/Fireworks/Sky.webp"
+dest_files=[ "res://.import/Sky.webp-9dd765df8f5258f165ea980ad2137164.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

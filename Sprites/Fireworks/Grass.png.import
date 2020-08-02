@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fireworks-atlas.png-b8a9895c60cfe6cb6eb2f81453af0b74.stex"
+path="res://.import/Grass.png-c858476d5bf615ac7677b0251f848f65.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fireworks/fireworks-atlas.png"
-dest_files=[ "res://.import/fireworks-atlas.png-b8a9895c60cfe6cb6eb2f81453af0b74.stex" ]
+source_file="res://Sprites/Fireworks/Grass.png"
+dest_files=[ "res://.import/Grass.png-c858476d5bf615ac7677b0251f848f65.stex" ]
 
 [params]
 
@@ -25,7 +25,7 @@ flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
-process/premult_alpha=true
+process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false

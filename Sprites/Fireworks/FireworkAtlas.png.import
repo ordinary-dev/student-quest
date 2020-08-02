@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sky2.png-b8f3a1c7d07ec24fae5faa256532e9cb.stex"
+path="res://.import/FireworkAtlas.png-8f11977aeaa0a04bd1a9a47349fc3743.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fireworks/Sky2.png"
-dest_files=[ "res://.import/Sky2.png-b8f3a1c7d07ec24fae5faa256532e9cb.stex" ]
+source_file="res://Sprites/Fireworks/FireworkAtlas.png"
+dest_files=[ "res://.import/FireworkAtlas.png-8f11977aeaa0a04bd1a9a47349fc3743.stex" ]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
-process/premult_alpha=false
+process/premult_alpha=true
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
