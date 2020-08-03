@@ -6,14 +6,14 @@
 [ext_resource path="res://Sprites/Fireworks/Sky.webp" type="Texture" id=4]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/Fireworks/Grass.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/character_main.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Fireworks/Grass2.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Scenes/Chapter1/1-Beginning/02.Fireworks.gd" type="Script" id=9]
 
 [node name="Fireworks" type="Node2D"]
 script = ExtResource( 9 )
 next_scene = "res://Scenes/Chapter1/1-Beginning/03.Dialog.tscn"
-audio = "res://Audio/music/Technicolor Midnight.ogg"
+audio = "res://Audio/Music/Technicolor Midnight.ogg"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 0

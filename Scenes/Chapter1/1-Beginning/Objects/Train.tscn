@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Sprites/train/train_front.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/train/train_main.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Train/Locomotive.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Train/TrainCar.png" type="Texture" id=3]
+
+
+
 
 [node name="Train-Object" type="Node2D"]
 position = Vector2( -1466.86, -60.0374 )

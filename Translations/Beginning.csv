@@ -1,26 +1,10 @@
 id,en,ru
-D_NIGHT_BYE,Goodbye,Прощай
-D_NIGHT_NEW_LIFE,Now I will have a new life in which there will no longer be old friends.,"Теперь у меня будет новая жизнь, в которой уже не будет старых друзей."
-D_RECTOR_MECHMAT,Faculty of Mathematics?,Мехмат?
-D_RECTOR_YES,Yes,Да
-D_RECTOR_DOCS,"… okay, everything is fine with the documents. Are you from another city?","… ладно, с документами все хорошо. Вы же из другого города?"
-D_RECTOR_TRUE,Right,Верно
-D_RECTOR_CABINET,"Then go to cabinet 225, they will help you there","Тогда зайдите еще в 225 кабинет, вам там помогут"
-D_GUIDE_HI,"Hi, I'm here to help with the settlement.","Привет, я тут помогаю с заселением."
-D_GUIDE_ROOM,"Come on, I'll show you your room","Пойдем, я покажу тебе твою комнату"
-D_SPEAKER_CONGRATULATIONS,"Congratulations, you have chosen the right path.","Поздравляю вас, вы выбрали правильный путь."
-D_SPEAKER_GO_FORWARD,Do not look back at failures and always go forward!,Не оглядывайтесь на неудачи и идите всегда вперед!
-D_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
-D_GUARD_2,Maybe there is another way?,Может есть другой путь?
-D_GUARD_3,"I will be fined if I release you all like that. Sorry, sorry.","Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите."
-D_GUARD_4,There is still no electricity ...,Электричества все еще нет...
-D_STAIRS_1,I'd rather wait ...,Я лучше подожду...
-D_TRAIN_1,You're sad today,Ты какой-то грустный сегодня
-D_TRAIN_2,Really?,Разве?
-D_TRAIN_3,I can’t be fooled. What's the matter?,Меня не обмануть. Что с тобой?
-D_TRAIN_4,"We all went to this for a long 11 years, and now we have succeeded. Aren't you glad?","Мы все шли к этому долгие 11 лет, и теперь у нас все получилось. Разве ты не рад?"
-D_TRAIN_5,"Yes, I'm just tired ...",Да я просто устал...
-D_TRAIN_6,"It's too early to relax, look, we'll be there soon!","Рано расслабляться, смотри, мы уже скоро приедем!"
+D_BEGINNING_NIGHT_1,Good luck!,Удачи!
+D_BEGINNING_NIGHT_2,You too.,Тебе тоже.
+D_BEGINNING_TRAIN_1,,"Эх, жаль, что всё закончилось"
+D_BEGINNING_TRAIN_2,"Come on, there's so much more to come","Да ладно, нас ещё столько всего ждёт впереди"
+D_BEGINNING_TRAIN_3,…,…
+D_BEGINNING_TRAIN_4,"Look, we'll be there soon!","Смотри, мы уже скоро приедем!"
 D_GARDENER_1,I do not like the first of September.,Не люблю я первое сентября.
 D_GARDENER_2,Why so? Back to work?,Почему же? Снова на работу?
 D_GARDENER_3,"No, the garden should always be monitored. Do you really want to know?","Да нет, за садом всегда нужно следить. Действительно хочешь знать?"
@@ -37,3 +21,19 @@ D_GARDENER_13,I'll try ... bye.,Я попробую... До свидания.
 D_GARDENER_14,See you later.,Увидимся.
 JUNE_28,June 28,28 июня
 GRADUATION,Graduation,Выпускной
+JUNE_29,June 29,29 июня
+EARLY_MORNING,Early morning,Раннее утро
+D_RECTOR_MECHMAT,Faculty of Mathematics?,Мехмат?
+D_RECTOR_YES,Yes,Да
+D_RECTOR_DOCS,"… okay, everything is fine with the documents. Are you from another city?","… ладно, с документами все хорошо. Вы же из другого города?"
+D_RECTOR_TRUE,Right,Верно
+D_RECTOR_CABINET,"Then go to cabinet 225, they will help you there","Тогда зайдите еще в 225 кабинет, вам там помогут"
+D_GUIDE_HI,"Hi, I'm here to help with the settlement.","Привет, я тут помогаю с заселением."
+D_GUIDE_ROOM,"Come on, I'll show you your room","Пойдем, я покажу тебе твою комнату"
+D_SPEAKER_CONGRATULATIONS,"Congratulations, you have chosen the right path.","Поздравляю вас, вы выбрали правильный путь."
+D_SPEAKER_GO_FORWARD,Do not look back at failures and always go forward!,Не оглядывайтесь на неудачи и идите всегда вперед!
+D_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
+D_GUARD_2,Maybe there is another way?,Может есть другой путь?
+D_GUARD_3,"I will be fined if I release you all like that. Sorry, sorry.","Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите."
+D_GUARD_4,There is still no electricity ...,Электричества все еще нет...
+D_STAIRS_1,I'd rather wait ...,Я лучше подожду...

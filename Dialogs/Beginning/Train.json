@@ -1,8 +1,6 @@
 {
-    "0": {"name":"-", "text":"D_TRAIN_1", "next":"1"},
-    "1": {"name":"-", "text":"D_TRAIN_2", "next":"2"},
-    "2": {"name":"-", "text":"D_TRAIN_3", "next":"3"},
-    "3": {"name":"-", "text":"D_TRAIN_4", "next":"4"},
-    "4": {"name":"-", "text":"D_TRAIN_5", "next":"5"},
-    "5": {"name":"-", "text":"D_TRAIN_6"}
+    "0": {"name":"MAIN_CHARACTER", "text":"D_BEGINNING_TRAIN_1", "next":"1"},
+    "1": {"name":"-", "text":"D_BEGINNING_TRAIN_2", "next":"2"},
+    "2": {"name":"MAIN_CHARACTER", "text":"D_BEGINNING_TRAIN_3", "next":"3"},
+    "3": {"name":"-", "text":"D_BEGINNING_TRAIN_4"}
 }

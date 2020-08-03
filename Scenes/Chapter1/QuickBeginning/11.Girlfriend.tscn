@@ -2,7 +2,9 @@
 
 [ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/character.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/Show_dialog.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
+
+
 
 [node name="Node2D" type="Node2D"]
 modulate = Color( 0.780392, 0.733333, 0.854902, 1 )

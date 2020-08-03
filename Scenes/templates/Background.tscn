@@ -20,7 +20,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Background-Template" type="Node2D"]
+[node name="Background" type="Node2D"]
 
 [node name="BlurryBackground1_Sprite" type="Sprite" parent="."]
 position = Vector2( 955.094, 540.444 )

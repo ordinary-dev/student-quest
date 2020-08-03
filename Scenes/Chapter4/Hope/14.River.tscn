@@ -4,8 +4,12 @@
 [ext_resource path="res://Tilemaps/house/street.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/templates/Water_coast.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/friend_2.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/character_main.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/Show_dialog.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=6]
+
+
+
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D

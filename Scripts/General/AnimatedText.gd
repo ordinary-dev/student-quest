@@ -25,6 +25,8 @@ const delay_after_animation = 1.5
 # Delay per character
 const duration = 0.05
 
+export (float, 0.0, 5.0) var delay_before_next_scene = 0.0
+
 
 # Scene objects
 onready var label1 = $BackgroundColor/Content/Line1
@@ -77,4 +79,6 @@ func print_text() -> void:
 
 
 func load_scene() -> void:
+	if delay_before_next_scene > 0:
+		yield(get_tree().create_timer(delay_before_next_scene), "timeout")
 	SCENES.load_scene(next_scene, fade_in, fade_out)
