@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/templates/FacultyMaps/Math_map.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Guard.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Characters/Guard.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
+
+
+
 
 
 

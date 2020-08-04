@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/phone/phone.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/templates/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Templates/Background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
+
 
 
 

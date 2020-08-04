@@ -1,8 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/npc_5_still.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=3]
+
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Node2D

@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/templates/Backgrounds/BusStop.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Templates/Backgrounds/BusStop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+
 
 [node name="BusScene" type="Node2D"]
 script = ExtResource( 1 )

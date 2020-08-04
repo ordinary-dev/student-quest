@@ -13,5 +13,5 @@ func _ready():
 [node name="Disable-UI" type="Node2D"]
 script = SubResource( 1 )
 __meta__ = {
-"_editor_description_": "Выключает паузу и управление"
+"_editor_description_": ""
 }

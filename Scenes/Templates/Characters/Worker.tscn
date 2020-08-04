@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/rector/Worker.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.16904, 7.00048 )
+
+[node name="Rector" type="Sprite"]
+scale = Vector2( 3.5, 3.5 )
+z_index = 4
+texture = ExtResource( 1 )
+offset = Vector2( 0, -17 )
+
+[node name="Collider" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
+position = Vector2( -1.08987, -6.71381 )
+shape = SubResource( 1 )

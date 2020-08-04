@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/templates/FacultyMaps/Math_map.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=2]
+
+
 
 [node name="Node2D" type="Node2D"]
 

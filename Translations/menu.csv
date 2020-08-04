@@ -29,13 +29,7 @@ NEW_GAME,New game,Новая игра
 DELETE,Delete,Удалить
 TESTERS,Testers:,Тестеры:
 TICKETWINDOW,Ticket window,Окно кассы
-DIRECTION,Direction,Направление
-COST,Cost,Стоимость
-CITYN,City N,Город N
-3000RUB,3000 Rub,3000 Руб
-CASH,Cash:,Наличные:
-PURCHASE,Purchase,Покупка
-BUY,Buy,Купить
 LOAD,Load,Загрузить
 SAVE,Save,Сохранить
 LOAD_GAME,Load game,Загрузить игру
+CONTINUE,Continue,Продолжить

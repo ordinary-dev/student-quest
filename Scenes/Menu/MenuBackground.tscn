@@ -8,8 +8,9 @@
 [ext_resource path="res://Sprites/Menu/Bridge.webp" type="Texture" id=6]
 [ext_resource path="res://Sprites/Menu/Vignette.webp" type="Texture" id=7]
 [ext_resource path="res://Audio/FX/Rain/rain-moderate-c.wav" type="AudioStream" id=8]
-[ext_resource path="res://Scenes/templates/Rain.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Templates/Rain.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Sprites/Flashlight.png" type="Texture" id=12]
+
 
 [node name="Background" type="Control"]
 margin_right = 40.0

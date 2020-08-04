@@ -1,7 +1,7 @@
 extends Node
 
 
-var dialog_scene : = load("res://Scenes/templates/Dialog.tscn")
+var dialog_scene : = load("res://Scenes/Templates/Dialog.tscn")
 var s_content : Dictionary
 var s_key : String
 
