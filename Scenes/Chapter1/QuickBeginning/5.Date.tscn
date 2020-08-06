@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/Chapter1/1-Beginning/16.Date.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Chapter1/2-FirstDay/1.Date.tscn" type="PackedScene" id=1]
+
+
 
 
 

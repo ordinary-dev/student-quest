@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Templates/Speaker.tscn" type="PackedScene" id=1]
+
+
+[node name="Speaker-Scene" type="Node2D"]
+
+[node name="Speaker-Template" parent="." instance=ExtResource( 1 )]
+position = Vector2( 56, 120 )
+fac_path = "res://Scenes/Beginning/21.Math_blackout.tscn"
+dialog_path = "res://Dialogs/Beginning/Speaker.json"

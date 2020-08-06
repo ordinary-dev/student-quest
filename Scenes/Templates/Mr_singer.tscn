@@ -1,32 +1,22 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/outside/mr_singer/mr_singer.tres" type="SpriteFrames" id=1]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends AnimatedSprite
-
-
-func _ready():
-	playing = true
-"
+[ext_resource path="res://Scripts/General/SpriteAutoplay.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 111.588, 75.31 )
+extents = Vector2( 25.6, 16 )
 
-[node name="Mr-singer-Template_AnimatedSprite" type="AnimatedSprite"]
-scale = Vector2( 0.650735, 0.650735 )
+[node name="MrSingerTemplate" type="AnimatedSprite"]
+scale = Vector2( 2.5, 2.5 )
 frames = ExtResource( 1 )
-script = SubResource( 1 )
+offset = Vector2( 0, -16 )
+script = ExtResource( 2 )
 
-[node name="Collider_StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 1024
 
-[node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="Collider_StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2( 0, -16 )
 shape = SubResource( 2 )
-
-[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-rect = Rect2( -120, -75, 240, 150 )
-pause_animations = false
-freeze_bodies = false
-pause_particles = false

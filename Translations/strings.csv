@@ -1,22 +1,8 @@
 id,en,ru
-MAN,Man,Человек
-D11,"Everything is fine with the documents, it remains only to choose the right direction","С документами все хорошо, осталось лишь выбрать нужное направление"
-D12,Choose wisely,Выбирайте с умом
-STRANGER,Stranger,Незнакомец
-MRD,Mr. Dudec,Мистер Дудец
-D21,"Oh hello, I'm Mr. Dudec","О, привет, я Мистер Дудец"
-D22,I have not often been noticed recently,Меня не часто замечают в последнее время
-D23,I think we'll meet again. Do not be late.,"Я думаю, мы еще встретимся. Не опаздывай."
-BYE,Goodbye,Прощай
-D51,"Hi, are you from the Faculty of Mechanics and Mathematics?","Привет, ты же с механико-математического факультета?"
-D52,You need to go a little down and to the left,Тебе нужно пройти немного вниз и налево
 ABSSTRANGER,Absolute stranger,Абсолютный незнакомец
 D81,"Congratulations, you have risen a notch","Поздравляю вас, вы поднялись на ступеньку выше"
 D82,Now it's time to climb to the very top,Теперь самое время поднятся на самый верх
 D83,Go ahead without looking at failure,"Идите вперед, не оглядываясь на неудачи"
-SECURITY,Security guard,Охранник
-D101,"Sorry, the turnstiles are not working","Простите, турникеты не работают"
-D102,All bypass so far,Все пока идут в обход
 D121,Hey do you know me?,"Эй, ты меня знаешь?"
 D122,"Not sure, maybe I heard somewhere about you","Не уверен, может я слышал где-то о Вас"
 D123,"Ahh, they call me Mr. Dudec","Ааа, меня называют Мистер Дудец"

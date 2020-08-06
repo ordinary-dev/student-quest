@@ -2,8 +2,6 @@
 
 [ext_resource path="res://Tilemaps/trees/trees-1.png" type="Texture" id=1]
 
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.97201, 3.01912 )
 
@@ -15,6 +13,7 @@ texture = ExtResource( 1 )
 offset = Vector2( 0, -32 )
 
 [node name="Tree_StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 0.303602, -2.15125 )
 collision_layer = 0
 collision_mask = 1024

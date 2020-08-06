@@ -7,7 +7,7 @@
 [ext_resource path="res://Scenes/Templates/House/House_expanded.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/Trees/Tree_type_1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Templates/House/House.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/triggers/ObjectSwitcher.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/triggers/Transition.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Templates/Water_collider.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Templates/Streetlight.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Templates/Water_sprite.tscn" type="PackedScene" id=11]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=17]
 [ext_resource path="res://Sprites/friend_1.png" type="Texture" id=18]
 [ext_resource path="res://Sprites/friend_2.png" type="Texture" id=19]
+
 
 
 

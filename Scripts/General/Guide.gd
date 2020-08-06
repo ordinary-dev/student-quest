@@ -20,7 +20,7 @@ var ind := 0
 var cdir = dirs.UNSET
 
 const e := 3
-const speed := 500
+const speed := 400
 const max_distance := 250
 
 # Directions

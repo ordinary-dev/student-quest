@@ -2,17 +2,13 @@
 
 [ext_resource path="res://Sprites/outside/mr_singer/mr_singer_atlas.png" type="Texture" id=1]
 
-
-
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 192, 136 )
+region = Rect2( 0, 0, 48, 34 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 192, 0, 192, 136 )
+region = Rect2( 48, 0, 48, 34 )
 
 [resource]
 animations = [ {

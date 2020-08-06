@@ -8,7 +8,7 @@ export (sprites) var sprite_sheet = sprites.MAIN setget set_sprite
 export (bool) var restore_position = false
 var restored_position = false
 const alex_texture = "res://Sprites/friend_1.png"
-const speed := 500
+const speed := 400
 
 # Objects
 onready var character = $Character_Sprite

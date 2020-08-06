@@ -2,28 +2,15 @@
 
 [ext_resource path="res://Sprites/house/streetlight.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=2]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-export (bool) var enable_light = true setget setlight, getlight
-
-
-func setlight(val:bool) -> void:
-	$Streetlight_Sprite/LightSource_Light2D.visible = val
-
-
-func getlight() -> bool:
-	return enable_light
-"
+[ext_resource path="res://Scripts/General/Streetlight.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5.33333, 2.66668 )
 
-[node name="Streetlight-Template_0" type="Node2D"]
-script = SubResource( 1 )
+[node name="StreetlightTemplate" type="Node2D"]
+script = ExtResource( 3 )
 
-[node name="Streetlight_Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 light_mask = 2
 position = Vector2( 0, -96 )
 scale = Vector2( 3, 3 )
@@ -31,18 +18,19 @@ z_index = 4
 z_as_relative = false
 texture = ExtResource( 1 )
 
-[node name="LightSource_Light2D" type="Light2D" parent="Streetlight_Sprite"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 0, 29.3333 )
+shape = SubResource( 2 )
+
+[node name="LightSource" type="Light2D" parent="."]
+position = Vector2( 0, -8.0001 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 texture_scale = 2.0
 color = Color( 0.933333, 0.917647, 0.701961, 1 )
 energy = 0.75
 shadow_enabled = true
-
-[node name="StreetlightCollider_StaticBody2D" type="StaticBody2D" parent="Streetlight_Sprite"]
-collision_layer = 0
-collision_mask = 1024
-
-[node name="StreetlightCollider_CollisionShape2D" type="CollisionShape2D" parent="Streetlight_Sprite/StreetlightCollider_StaticBody2D"]
-position = Vector2( 0, 29.3333 )
-shape = SubResource( 2 )

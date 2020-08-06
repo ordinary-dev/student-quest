@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/General/PlayMusic.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/Blackout.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=6]
+
+
+
+
+[node name="Math-blackout-Scene" type="Node2D"]
+script = ExtResource( 4 )
+next_scene = "res://Scenes/Beginning/22.Explosion.tscn"
+hidden_room = "res://Scenes/Basement/1.Stairs.tscn"
+dialog_1 = "res://Dialogs/Beginning/Guard_1.json"
+dialog_2 = "res://Dialogs/Beginning/Guard_2.json"
+dialog_3 = "res://Dialogs/Beginning/Guard_3.json"
+
+[node name="Math-map-Template" parent="." instance=ExtResource( 6 )]
+street_path = "res://Scenes/Ignoring/1.Lifeguards.tscn"
+block_turnstile = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Blackout_ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = -167.0
+margin_top = -84.0
+margin_right = 1993.0
+margin_bottom = 1152.0
+mouse_filter = 1
+color = Color( 0.733333, 0.733333, 0.733333, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="GuardDialog-Trigger_Area2D_0" parent="." instance=ExtResource( 2 )]
+position = Vector2( 385.529, 265.764 )
+label = "SECURITY"
+object_name = NodePath("..")
+function_name = "dialog"
+
+[node name="Stairs-DialogTrigger-Trigger_Area2D_0" parent="." instance=ExtResource( 5 )]
+position = Vector2( -329.707, 153.509 )
+dialog_path = "res://Dialogs/Beginning/Stairs.json"
+person = "STAIRS"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 3 )]
+joystick = true
+
+[node name="Audio" type="Node2D" parent="."]
+script = ExtResource( 1 )
+file = "res://Audio/music/Suspense.ogg"
+delay = 5.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 25.0
+one_shot = true
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="turn_lights_on"]

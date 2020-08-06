@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Templates/Guide.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/triggers/DialogTrigger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=5]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.tscn\") var next_scene
+# Dialog trigger
+export (NodePath) var singer
+
+
+func save():
+	TEMP.save(\"street_singer_dialog_used\", 
+		get_node(singer).used)
+	if get_node(singer).used:
+		TEMP.save(\"day1_dialog\", \"1\")
+	else:
+		TEMP.save(\"day1_dialog\", \"0\")
+
+
+# Gardener's house
+func enter_house():
+	NOTIFY.show(\"CLOSED\")
+
+
+func _ready():
+	if TEMP.is_saved(\"street_singer_dialog_used\"):
+		get_node(singer).used = TEMP.get(\"street_singer_dialog_used\")
+	else:
+		get_node(singer).used = false
+"
+
+[node name="First-day-Scene" type="Node2D"]
+modulate = Color( 0.882353, 0.870588, 0.815686, 1 )
+script = SubResource( 1 )
+next_scene = "res://Scenes/Beginning/19.Date.tscn"
+singer = NodePath("MrSingerDialog")
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 5 )]
+allow_entrance = true
+math_scene = "res://Scenes/Chapter1/2-FirstDay/3.Date.tscn"
+
+[node name="MrSingerDialog" parent="." instance=ExtResource( 4 )]
+position = Vector2( 56, 352 )
+dialog_path = "res://Dialogs/Beginning/Stranger.json"
+person = "UNKNOWN_SINGER"
+
+[node name="GardenerDialog" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1120, 2552 )
+dialog_path = "res://Dialogs/Beginning/Gardener.json"
+person = "GARDENER"
+
+[node name="GuideDialog" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2264, 448 )
+dialog_path = "res://Dialogs/Beginning/PathToFaculty.json"
+person = "GUIDE"
+
+[node name="GuideTemplate" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2112, 568 )
+z_index = 5

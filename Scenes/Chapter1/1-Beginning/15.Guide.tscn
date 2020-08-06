@@ -11,8 +11,7 @@ script = ExtResource( 5 )
 scene_path = "res://Scenes/Chapter1/1-Beginning/16.Flat.tscn"
 
 [node name="Street-Template" parent="." instance=ExtResource( 4 )]
-initial_position = 1
-allow_entrance = false
+initial_position = 2
 show_singer = false
 enable_lights = false
 
@@ -23,7 +22,7 @@ object_name = NodePath("..")
 function_name = "load_scene"
 
 [node name="Guide" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2312, 3832 )
+position = Vector2( 1600, 6664 )
 scale = Vector2( 3, 3 )
 z_index = 2
 z_as_relative = false
@@ -34,4 +33,4 @@ joystick = true
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
-points = PoolVector2Array( 2312, 3840, 2528, 3840, 2488, 464, -312, 456, -320, 3096, -1064, 3160 )
+points = PoolVector2Array( 1600, 6664, 2520, 6656, 2512, 5520, 2584, 5336, 2528, 5064, 2528, 3840, 2488, 464, -312, 456, -320, 3096, -1064, 3160 )

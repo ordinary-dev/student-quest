@@ -1,33 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/outside/fountain/fountain.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/General/SpriteAutoplay.gd" type="Script" id=2]
+[ext_resource path="res://Audio/FX/Fountain/fountain01.wav" type="AudioStream" id=3]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends AnimatedSprite
-
-
-func _ready():
-	playing = true
-"
-
-[node name="Fountain-Template_0" type="Node2D"]
-
-[node name="Fountain_AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -17.1663, -65.0172 )
+[node name="Fountain" type="AnimatedSprite"]
 scale = Vector2( 16, 16 )
 z_index = 4
 frames = ExtResource( 1 )
-script = SubResource( 1 )
+offset = Vector2( -1, -4 )
+script = ExtResource( 2 )
 
-[node name="FountainCollider_StaticBody2D" type="StaticBody2D" parent="Fountain_AnimatedSprite"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 1.0729, 4.06357 )
 collision_layer = 0
 collision_mask = 1024
 
-[node name="FountainCollider_CollisionPolygon2D" type="CollisionPolygon2D" parent="Fountain_AnimatedSprite/FountainCollider_StaticBody2D"]
-polygon = PoolVector2Array( -5, 4, -8, 1, -8, -1, -6, -4, 6, -4, 7, -2, 7, 2, 5, 4 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( -6.0729, -0.06357, -9.0729, -3.06357, -9.0729, -5.06357, -7.0729, -8.06357, 4.9271, -8.06357, 5.9271, -6.06357, 5.9271, -2.06357, 3.9271, -0.06357 )
 
-[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="Fountain_AnimatedSprite"]
-pause_animations = false
-freeze_bodies = false
-pause_particles = false
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = 15.0
+autoplay = true
+attenuation = 6.0
+bus = "FX"

@@ -16,6 +16,23 @@ D_BEGINNING_RECTOR_4,Right,Верно
 D_BEGINNING_RECTOR_5,"Then go to cabinet 225, they will help you there","Тогда зайдите еще в 225 кабинет, вам там помогут"
 D_BEGINNING_GUIDE_1,"Hi, I'm here to help with the settlement.","Привет, я тут помогаю с заселением."
 D_BEGINNING_GUIDE_2,Let's find you a room.,Давай найдем тебе комнату.
+D_BEGINNING_SINGER_1,"Oh hello, I'm Mr. Singer!","О, привет, я Мистер Певец!"
+D_BEGINNING_SINGER_2,I have not often been noticed recently.,Меня не часто замечают в последнее время.
+D_BEGINNING_SINGER_3,I think we'll meet again. Do not be late.,"Я думаю, мы еще встретимся. Не опаздывай."
+D_BEGINNING_GARDENER_1,Good morning! What is your name?,Доброе утро! Тебя как зовут?
+D_BEGINNING_GARDENER_2,"My name is Alexey, but my friends just call me Alex.","Моё имя Алексей, но знакомые зовут меня просто Алекс."
+D_BEGINNING_GARDENER_3,"Alex, tell me, have you noticed anything unusual?","Алекс, скажи мне, ты не замечал ничего необычного?"
+D_BEGINNING_GARDENER_4,Unusual?,Необычного?
+D_BEGINNING_GARDENER_5,"Yes, something unusual, unnatural, strange ...","Да, что-нибудь необычное, неестественное, странное…"
+D_BEGINNING_GARDENER_6,Maybe that singer in front of the entrance.,Разве что того певца перед входом
+D_BEGINNING_GARDENER_7,For some reason he calls himself «Mister Singer» ...,Он почему-то называет себя «Мистер Певец»…
+D_BEGINNING_GARDENER_8,"Nooo, he's okay, I know him a little.","Нее, с ним всё в порядке, я его немного знаю."
+D_BEGINNING_GARDENER_9,"Okay, thank you anyway.","Ладно, спасибо тебе в любом случае."
+D_BEGINNING_GARDENER_10,Come back again.,Заходи ещё.
+D_BEGINNING_GARDENER_11,I'll try.,Я попробую.
+D_BEGINNING_PATH_1,"Hi, are you from the Faculty of Mathematics?","Привет, ты же с математического факультета?"
+D_BEGINNING_PATH_2,You need to go a little down and to the left.,Тебе нужно пройти немного вниз и налево.
+D_BEGINNING_PATH_3,Thank!,Спасибо!
 D_SPEAKER_CONGRATULATIONS,"Congratulations, you have chosen the right path.","Поздравляю вас, вы выбрали правильный путь."
 D_SPEAKER_GO_FORWARD,Do not look back at failures and always go forward!,Не оглядывайтесь на неудачи и идите всегда вперед!
 D_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
