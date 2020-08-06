@@ -1,6 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprites/outside/ns_house.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Street/FacultyOfGeography.png" type="Texture" id=1]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 71.273, 151.705 )
@@ -13,7 +15,7 @@ scale = Vector2( 10, 10 )
 z_index = 4
 z_as_relative = false
 texture = ExtResource( 1 )
-offset = Vector2( 0, -8.841 )
+offset = Vector2( -14, -8.841 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false

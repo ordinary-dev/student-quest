@@ -1,7 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/outside/law_house.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Street/FacultyOfLaw.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/triggers/Transition.tscn" type="PackedScene" id=2]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 71.6269, 119.08 )
@@ -14,7 +16,7 @@ scale = Vector2( 10, 10 )
 z_index = 4
 z_as_relative = false
 texture = ExtResource( 1 )
-offset = Vector2( 0, -9 )
+offset = Vector2( 15, -6 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false

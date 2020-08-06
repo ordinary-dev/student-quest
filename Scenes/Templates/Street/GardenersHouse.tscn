@@ -1,19 +1,21 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Sprites/outside/Building_in_garden.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Street/GardenersHouse.png" type="Texture" id=1]
+
+
 
 [node name="GardenersHouse" type="Sprite"]
 scale = Vector2( 8, 8 )
 z_index = 4
 z_as_relative = false
 texture = ExtResource( 1 )
-offset = Vector2( 1, -14 )
+offset = Vector2( 1, -12 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 position = Vector2( 1, -12 )
 polygon = PoolVector2Array( -9, 14, 7, 14, 10, 12, 10, 9, 4, 7, -6, 7, -12, 9, -12, 12 )

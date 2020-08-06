@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Sprites/outside/Column.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Street/Column.png" type="Texture" id=1]
+
 
 [node name="Columns" type="Node2D"]
 
