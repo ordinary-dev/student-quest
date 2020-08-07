@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_small.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Sprites/phone/phone.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=3]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Sprite

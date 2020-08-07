@@ -1,5 +1,5 @@
 {
-    "0": {"name":"-", "text":"D_LIFEGUARDS_BEGINNING", "next":"1"},
+    "0": {"name":"MAIN_CHARACTER", "text":"D_LIFEGUARDS_BEGINNING", "next":"1"},
     "1": {"name":"LIFEGUARDS", "text":"D_LIFEGUARDS_GO_HOME", "next":"2"},
     "2": {"name":"LIFEGUARDS", "text":"D_LIFEGUARDS_EXPLOSIONS"}
 } 

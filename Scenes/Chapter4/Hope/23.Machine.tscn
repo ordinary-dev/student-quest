@@ -4,7 +4,8 @@
 [ext_resource path="res://Sprites/black.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/DelayedLoading.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=5]
+
 
 
 

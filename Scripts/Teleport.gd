@@ -1,10 +1,10 @@
 extends Node2D
 
 # Teleport
-export (NodePath) var p1
-export (NodePath) var p1_left
-export (NodePath) var p2
-export (NodePath) var p3
+onready var p1_center = $FloorPositions/Floor1_Center
+onready var p1_left = $FloorPositions/Floor1_Left
+onready var p2 = $FloorPositions/Floor2
+onready var p3 = $FloorPositions/Floor3
 
 # Street
 export (String, FILE, "*.tscn") var street_scene_path
@@ -32,17 +32,17 @@ func print_warning() -> void:
 	NOTIFY.show("NOENTER")
 
 
-func teleport(node : String, fade = true) -> void:
+func teleport(node : Position2D, fade = true) -> void:
 	if fade:
 		SCENES.fade_in()
 		yield(get_tree().create_timer(SCENES.time), "timeout")
-	get_node(GLOBAL.player_path).position = get_node(node).position
+	get_node(GLOBAL.player_path).position = node.position
 	if fade:
 		SCENES.fade_out()
 
 
 func floor_1():
-	teleport(p1)
+	teleport(p1_center)
 
 
 func floor_2():
@@ -64,7 +64,7 @@ func _ready():
 	turnstile.disabled = !block_turnstile
 	# Initial position
 	if initial_pos == pos.FIRST_CENTER:
-		teleport(p1, false)
+		teleport(p1_center, false)
 	elif initial_pos == pos.FIRST_LEFT:
 		teleport(p1_left, false)
 	elif initial_pos == pos.THIRD:

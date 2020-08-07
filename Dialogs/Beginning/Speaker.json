@@ -1,4 +1,5 @@
 {
-    "0":{"name":"ABSSTRANGER", "text":"D_SPEAKER_CONGRATULATIONS", "next":"1"},
-    "1":{"name":"ABSSTRANGER", "text":"D_SPEAKER_GO_FORWARD"}
+    "0":{"name":"SPEAKER", "text":"D_BEGINNING_SPEAKER_1", "next":"1"},
+    "1":{"name":"SPEAKER", "text":"D_BEGINNING_SPEAKER_2", "next":"2"},
+    "2":{"name":"SPEAKER", "text":"D_BEGINNING_SPEAKER_3"}
 }

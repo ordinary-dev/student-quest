@@ -36,10 +36,6 @@ extents = Vector2( 134.269, 25.8883 )
 
 [node name="FacultyOfMathematicsMap" type="Node2D"]
 script = ExtResource( 4 )
-p1 = NodePath("FloorPositions/Floor1_Position2D")
-p1_left = NodePath("FloorPositions/Floor1_Left")
-p2 = NodePath("FloorPositions/Floor2_Position2D")
-p3 = NodePath("FloorPositions/Floor3_Position2D")
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
@@ -220,16 +216,16 @@ shape = SubResource( 5 )
 
 [node name="FloorPositions" type="Node2D" parent="."]
 
-[node name="Floor1_Position2D" type="Position2D" parent="FloorPositions"]
+[node name="Floor1_Center" type="Position2D" parent="FloorPositions"]
 position = Vector2( 537.105, 478.685 )
 
 [node name="Floor1_Left" type="Position2D" parent="FloorPositions"]
 position = Vector2( -320, 352 )
 
-[node name="Floor2_Position2D" type="Position2D" parent="FloorPositions"]
+[node name="Floor2" type="Position2D" parent="FloorPositions"]
 position = Vector2( 420.854, 1659.83 )
 
-[node name="Floor3_Position2D" type="Position2D" parent="FloorPositions"]
+[node name="Floor3" type="Position2D" parent="FloorPositions"]
 position = Vector2( 436.297, 3075.05 )
 
 [node name="YSort" type="YSort" parent="."]

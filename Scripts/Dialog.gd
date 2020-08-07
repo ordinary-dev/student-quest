@@ -15,8 +15,11 @@ var glob_argv:String
 var return_ui : bool
 var return_joystick : bool
 
+var is_shown = false
+
 
 func hide_dialog():
+	is_shown = false
 	var dialog_obj = UI.get_node("dialog")
 	dialog_obj.play_reverse()
 	yield(get_tree().create_timer(dialog_obj.shape_time), "timeout")
@@ -63,6 +66,7 @@ func show_next() -> void:
 
 
 func show_dialog(path:String, obj:String = "", fnc:String = "", argv:String="") -> void:
+	is_shown = true
 	# Open file
 	var fl : = File.new()
 	var state : = fl.open(path, File.READ)

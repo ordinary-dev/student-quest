@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/Transport/Lifeguards.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/backgrounds/sky.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Audio/FX/Alarm/emergency-alarm.wav" type="AudioStream" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -38,3 +39,9 @@ texture = ExtResource( 1 )
 color = Color( 0.34902, 0.34902, 0.34902, 1 )
 
 [node name="Disable-UI" parent="." instance=ExtResource( 3 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -8.0
+autoplay = true
+bus = "FX"

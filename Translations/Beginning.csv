@@ -33,10 +33,12 @@ D_BEGINNING_GARDENER_11,I'll try.,Я попробую.
 D_BEGINNING_PATH_1,"Hi, are you from the Faculty of Mathematics?","Привет, ты же с математического факультета?"
 D_BEGINNING_PATH_2,You need to go a little down and to the left.,Тебе нужно пройти немного вниз и налево.
 D_BEGINNING_PATH_3,Thank!,Спасибо!
-D_SPEAKER_CONGRATULATIONS,"Congratulations, you have chosen the right path.","Поздравляю вас, вы выбрали правильный путь."
-D_SPEAKER_GO_FORWARD,Do not look back at failures and always go forward!,Не оглядывайтесь на неудачи и идите всегда вперед!
-D_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
-D_GUARD_2,Maybe there is another way?,Может есть другой путь?
-D_GUARD_3,"I will be fined if I release you all like that. Sorry, sorry.","Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите."
-D_GUARD_4,There is still no electricity ...,Электричества все еще нет...
-D_STAIRS_1,I'd rather wait ...,Я лучше подожду...
+D_BEGINNING_SPEAKER_1,You have chosen the right path.,Вы выбрали правильный путь.
+D_BEGINNING_SPEAKER_2,Do not look back at failures and always go forward.,Не оглядывайтесь на неудачи и идите всегда вперед.
+D_BEGINNING_SPEAKER_3,I congratulate you on the beginning of your student life!,Поздравляю вас с началом студенческой жизни!
+D_BEGINNING_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
+D_BEGINNING_GUARD_2,Maybe there is another way?,Может есть другой путь?
+D_BEGINNING_GUARD_3,"I will be fined if I release you all like that. Sorry, sorry.","Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите."
+D_BEGINNING_GUARD_4,There is still no electricity ...,Электричества все еще нет...
+D_BEGINNING_PASSAGE_1,I'd rather wait ...,Я лучше подожду...
+PASSAGE,Passage,Проход
