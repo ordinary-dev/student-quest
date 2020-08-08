@@ -8,8 +8,9 @@
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Snow.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Templates/Streetlight.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/triggers/LoadOnEnter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=10]
+
 
 
 [sub_resource type="RectangleShape2D" id=1]

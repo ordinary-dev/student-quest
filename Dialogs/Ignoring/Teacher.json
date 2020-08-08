@@ -1,0 +1,6 @@
+{
+    "0": {"name":"TEACHER", "text":"D_IGN_TEACHER_1", "next":"1"},
+    "1": {"name":"TEACHER", "text":"D_IGN_TEACHER_2", "next":"2"},
+    "2": {"name":"TEACHER", "text":"D_IGN_TEACHER_3", "next":"3"},
+    "3": {"name":"TEACHER", "text":"D_IGN_TEACHER_4"}
+}  

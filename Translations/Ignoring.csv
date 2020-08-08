@@ -1,23 +1,35 @@
-А что с тем преподавателем?,en,ru
-D_LIFEGUARDS_GO_HOME,Please go home.,"Пожалуйста, расходитесь по домам."
-D_LIFEGUARDS_EXPLOSIONS,There is the possibility of another explosion.,Существует вероятность еще одного взрыва.
-D_LIFEGUARDS_BEGINNING,At the exit there were many rescue vehicles.,У выхода стояло множество машин спасателей. 
-LIFEGUARDS,Lifeguards,Спасатели
+id,en,ru
+D_LIFEGUARDS_1,At the exit there were many rescue vehicles.,У выхода стояло множество машин спасателей. 
+D_LIFEGUARDS_2,Please go home.,"Пожалуйста, расходитесь по домам."
+D_LIFEGUARDS_3,There is the possibility of another explosion.,Существует вероятность еще одного взрыва.
 CHAT_1,Is everyone safe?,Все целы?
 CHAT_2,Like yes,Вроде да
 CHAT_3,And what about that teacher?,А что с тем преподавателем?
 CHAT_4,The teacher?,Преподавателем?
-CHAT_5,"Yes, no one knows where your mathematics teacher is.","Да, никто не знает, где ваш преподаватель матанализа."
-CHAT_6,Although it’s too early to draw conclusions.,Хотя рано делать выводы.
-CHAT_7,"He has not been seen since the morning, so the rescuers are not in a hurry with conclusions.","Его еще с утра не видели, поэтому спасатели не торопятся с выводами."
-D_SPEAKER_SORRY,"... It’s a pity, of course, that your student life began this way.","… Жаль, конечно, что ваша студенческая жизнь так началась."
-D_SPEAKER_NOTHING,But now there's nothing to be done.,Но теперь уже ничего не поделать.
-D_SPEAKER_END,"That's all, you can do whatever your heart desires.","На этом все, можете делать все, что душе угодно."
-D_SPEAKER_SLEEP,Nearby there are houses for those who want to sleep.,Рядом есть домики для желающих поспать.
-D_MATH_RESEARCH,"You know, he was doing pretty interesting research.","Знаете, а ведь он занимался довольно интересными исследованиями."
-D_MATH_INTERCONNECTION,Sometimes one wonders how everything in our world is interconnected.,"Порой удивляешься, как всё в нашем мире взаимосвязанно."
-D_MATH_FORMULA,He was sure that for everything you can find a formula that explains even the most complex things.,"Он был уверен, что для всего можно найти формулу, объясняющую даже самые сложные вещи."
-D_MATH_DISCOVERY,I hope you someday discover something important.,"Надеюсь, что и вы когда-нибудь откроете что-нибудь важное."
+CHAT_5,"Yes, no one knows where your mathematics teacher is","Да, никто не знает, где ваш преподаватель матанализа"
+CHAT_6,Although it’s too early to draw conclusions,Хотя рано делать выводы
+CHAT_7,"He has not been seen since the morning, so the rescuers are not in a hurry with conclusions","Его еще с утра не видели, поэтому спасатели не торопятся с выводами"
+A_FEW_DAYS_LATER,A few days later,Несколько дней спустя
+MORNING,Morning,Утро
+D_IGN_SINGER_1,"Oh hello, it's you again!","О, привет, это же снова ты!"
+D_IGN_SINGER_2,Good morning.,Доброе утро.
+D_IGN_SINGER_3,Have you already begun studying?,У вас уже началась учеба?
+D_IGN_SINGER_4,"Yes, the building was almost not damaged, only now it is impossible to go down to the basement.","Да, здание ведь почти не пострадало, только в подвал теперь не спуститься."
+D_IGN_SINGER_5,Does this situation remind you of anything?,А тебе эта ситуация ничего не напоминает?
+D_IGN_SINGER_6,I don’t think so.,Не думаю.
+D_IGN_SINGER_7,Okay then. Good luck with your studies!,Тогда ладно. Удачи в учебе!
+D_IGN_SINGER_8,Thank you.,Спасибо.
+D_IGN_TEACHER_1,"You know, he was doing pretty interesting research.","Знаете, а ведь он занимался довольно интересными исследованиями."
+D_IGN_TEACHER_2,Sometimes one wonders how everything in our world is interconnected.,"Порой удивляешься, как всё в нашем мире взаимосвязанно."
+D_IGN_TEACHER_3,He was sure that for everything you can find a formula that explains even the most complex things.,"Он был уверен, что для всего можно найти формулу, объясняющую даже самые сложные вещи."
+D_IGN_TEACHER_4,I hope you someday discover something important.,"Надеюсь, что и вы когда-нибудь откроете что-нибудь важное."
+SEPTEMBER_21,September 21st,21 сентября
+INITIATION_TO_STUDENTS,Initiation to students,Посвящение в студенты
+D_IGN_SPEAKER_1,"... It’s a pity, of course, that your student life began this way.","… Жаль, конечно, что ваша студенческая жизнь так началась."
+D_IGN_SPEAKER_2,But now there's nothing to be done.,Но теперь уже ничего не поделать.
+D_IGN_SPEAKER_3,"That's all, you can do whatever your heart desires.","На этом все, можете делать все, что душе угодно."
+D_IGN_SPEAKER_4,Nearby there are houses for those who want to sleep.,Рядом есть домики для желающих поспать.
+STREET,Street,Улица
 D_PARTING_1,Why are you standing here?,Зачем ты здесь стоишь?
 D_PARTING_2,"You see, I thought for a long time ... And I didn’t tell you anything ...","Понимаешь, я долго думала... И тебе ничего не говорила..."
 D_PARTING_3,I decided to return home.,Я решила вернуться домой.

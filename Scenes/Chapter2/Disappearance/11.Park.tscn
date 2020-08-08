@@ -5,7 +5,8 @@
 [ext_resource path="res://Scenes/Templates/Trees/Winter_tree.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/house/Bench_2.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/gardener.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=6]
+
 
 
 [node name="Node2D" type="Node2D"]

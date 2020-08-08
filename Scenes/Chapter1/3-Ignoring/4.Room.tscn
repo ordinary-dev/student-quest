@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Templates/Room/Room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Triggers/LoadScene.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RoomTemplate" parent="." instance=ExtResource( 1 )]
+init_pos = 1
+
+[node name="LoadScene" parent="." instance=ExtResource( 2 )]
+position = Vector2( 456, 112 )
+label = "SLEEP"
+scene_path = "res://Scenes/Chapter1/3-Ignoring/5.Text.tscn"

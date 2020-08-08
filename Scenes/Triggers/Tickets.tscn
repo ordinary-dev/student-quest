@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=1]
+
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.tscn\") var tscn
+
+func show():
+	if has_node(\"/root/Node2D/Body\"):
+		get_node(\"/root/Node2D/Body\").lock()
+	var inst = load(tscn).instance()
+	inst.name = \"Tickets\"
+	UI.add_child(inst)
+"
+
+[node name="Tickets-Trigger_Area2D" instance=ExtResource( 1 )]
+label = "TICKETS"
+object_name = NodePath("../Tickets-Trigger_Area2D/Node2D")
+function_name = "show"
+
+[node name="TicketsScript" type="Node2D" parent="." index="5"]
+script = SubResource( 1 )
+tscn = "res://Scenes/templates/Tickets.tscn"

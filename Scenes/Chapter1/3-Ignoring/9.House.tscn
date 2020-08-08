@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Templates/House/HouseInside.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
+
+[node name="HouseScene" type="Node2D"]
+script = ExtResource( 3 )
+dialog_path = "res://Dialogs/Ignoring/Speaker.json"
+delay = 1.0
+
+[node name="HouseTemplate" parent="." instance=ExtResource( 1 )]
+street_scene = "res://Scenes/Chapter1/3-Ignoring/10.Street.tscn"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 2 )]
+joystick = true

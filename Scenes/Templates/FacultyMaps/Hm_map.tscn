@@ -2,10 +2,11 @@
 
 [ext_resource path="res://Tilemaps/building/building16.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/Teleport.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Templates/Turnstile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/Guard.tscn" type="PackedScene" id=6]
+
 
 
 

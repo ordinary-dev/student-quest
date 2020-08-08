@@ -1,9 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Sprites/Street/Flag/Flag.tres" type="SpriteFrames" id=1]
-[ext_resource path="res://Scenes/triggers/Transition.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Triggers/Transition.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Street/FacultyOfNaturalSciences.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/General/SpriteAutoplay.gd" type="Script" id=4]
+
 
 
 

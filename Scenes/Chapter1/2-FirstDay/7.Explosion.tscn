@@ -9,7 +9,7 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
-next_scene = "res://Scenes/Chapter1/Ignoring/1.Lifeguards.tscn"
+next_scene = "res://Scenes/Chapter1/3-Ignoring/1.Lifeguards.tscn"
 delay = 3.0
 
 [node name="MapTemplate" parent="." instance=ExtResource( 4 )]

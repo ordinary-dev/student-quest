@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Templates/Street/TiketWindow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Templates/AI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilemaps/street/street16.tres" type="TileSet" id=4]
-[ext_resource path="res://Scenes/triggers/Transition.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Triggers/Transition.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/Street/Mathematics-NaturalSciences-Crossing.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Templates/Fountain.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Templates/Street/GardenersHouse.tscn" type="PackedScene" id=8]
@@ -28,15 +28,16 @@
 [ext_resource path="res://Scenes/Templates/Trees/Tree_type_1.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Templates/Bush_type_1.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Scenes/triggers/FunctionCaller.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Scenes/triggers/Label.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Triggers/Label.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/Templates/Water_sprite.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Scenes/Templates/Streetlight.tscn" type="PackedScene" id=34]
-[ext_resource path="res://Scenes/triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=35]
+[ext_resource path="res://Scenes/Triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=35]
 [ext_resource path="res://Sprites/gardener.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/Templates/Street/Columns.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/Templates/Rock_type_3.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=39]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 2.66675 )

@@ -4,7 +4,7 @@
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/General/Streetlight.gd" type="Script" id=3]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.33333, 2.66668 )
 
 [node name="StreetlightTemplate" type="Node2D"]
@@ -24,7 +24,7 @@ collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 0, 29.3333 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="LightSource" type="Light2D" parent="."]
 position = Vector2( 0, -8.0001 )
@@ -33,4 +33,5 @@ texture = ExtResource( 2 )
 texture_scale = 2.0
 color = Color( 0.933333, 0.917647, 0.701961, 1 )
 energy = 0.75
+range_item_cull_mask = 3
 shadow_enabled = true

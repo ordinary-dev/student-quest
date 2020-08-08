@@ -4,7 +4,8 @@
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/friend_1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/friend_2.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=5]
+
 
 
 

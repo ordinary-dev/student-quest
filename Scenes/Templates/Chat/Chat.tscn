@@ -1,45 +1,16 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Control
+[ext_resource path="res://Scripts/Templates/Chat/Chat.gd" type="Script" id=1]
 
-export (String) var title = \"Chat\"
-export (String, FILE, \"*.tscn\") var next_scene_path
-export (Array, String) var messages
-
-var message = load(\"res://Scenes/templates/Chat/Message.tscn\")
-
-onready var cont = $Main_VBoxContainer/BodyBackground_ColorRect/BodyContainer_VBoxContainer
-
-
-func next_scene() -> void:
-	FX.btn_click()
-	SCENES.load_scene(next_scene_path)
-
-
-func add_message(text : String) -> void:
-	var tmp = message.instance()
-	tmp.text = text
-	cont.add_child(tmp)
-
-
-func _ready() -> void:
-	$Main_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_HBoxContainer/HeaderText_Label.text = title
-	for i in messages:
-		add_message(i)
-		var time := rand_range(1.0, 3.0)
-		yield(get_tree().create_timer(time), \"timeout\")
-"
-
-[node name="Chat-Template_Control" type="Control"]
+[node name="ChatTemplate" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 1 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Main_VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_right = 1920.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 1920, 1080 )
@@ -47,13 +18,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HeaderBackground_ColorRect" type="ColorRect" parent="Main_VBoxContainer"]
+[node name="HeaderBackground" type="ColorRect" parent="VBoxContainer"]
 margin_right = 1920.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 1920, 100 )
 color = Color( 0.337255, 0.45098, 0.596078, 1 )
 
-[node name="HeaderContainer_HBoxContainer" type="HBoxContainer" parent="Main_VBoxContainer/HeaderBackground_ColorRect"]
+[node name="HeaderContainer" type="HBoxContainer" parent="VBoxContainer/HeaderBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 50.0
@@ -61,7 +32,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HeaderText_Label" type="Label" parent="Main_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_HBoxContainer"]
+[node name="HeaderText" type="Label" parent="VBoxContainer/HeaderBackground/HeaderContainer"]
 margin_top = 34.0
 margin_right = 1766.0
 margin_bottom = 66.0
@@ -72,7 +43,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HeaderClose_Button" type="Button" parent="Main_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_HBoxContainer"]
+[node name="CloseButton" type="Button" parent="VBoxContainer/HeaderBackground/HeaderContainer"]
 margin_left = 1770.0
 margin_right = 1870.0
 margin_bottom = 100.0
@@ -80,17 +51,17 @@ rect_min_size = Vector2( 100, 100 )
 text = "x"
 flat = true
 
-[node name="BodyBackground_ColorRect" type="ColorRect" parent="Main_VBoxContainer"]
-margin_top = 104.0
+[node name="BodyBackground" type="ColorRect" parent="VBoxContainer"]
+margin_top = 100.0
 margin_right = 1920.0
 margin_bottom = 1084.0
 rect_min_size = Vector2( 0, 980 )
 color = Color( 0.133333, 0.117647, 0.164706, 1 )
 
-[node name="BodyContainer_VBoxContainer" type="VBoxContainer" parent="Main_VBoxContainer/BodyBackground_ColorRect"]
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/BodyBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Main_VBoxContainer/HeaderBackground_ColorRect/HeaderContainer_HBoxContainer/HeaderClose_Button" to="." method="next_scene"]
+[connection signal="pressed" from="VBoxContainer/HeaderBackground/HeaderContainer/CloseButton" to="." method="next_scene"]

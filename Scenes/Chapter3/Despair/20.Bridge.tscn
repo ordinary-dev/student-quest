@@ -4,10 +4,11 @@
 [ext_resource path="res://Sprites/garden/Sky_01.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilemaps/Snow/Snow.tres" type="TileSet" id=4]
-[ext_resource path="res://Scenes/triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Sprites/friend_1.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/singer.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/blood.tres" type="SpriteFrames" id=8]
+
 
 
 [sub_resource type="GDScript" id=1]
