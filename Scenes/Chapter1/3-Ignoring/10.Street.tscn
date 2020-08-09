@@ -6,5 +6,5 @@
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
 house_door = 0
-sleep_scene = "res://Scenes/Ignoring/10.Time.tscn"
-house_scene = "res://Scenes/Ignoring/8.House.tscn"
+sleep_scene = "res://Scenes/Chapter1/3-Ignoring/11.Time.tscn"
+house_scene = "res://Scenes/Chapter1/3-Ignoring/9.House.tscn"

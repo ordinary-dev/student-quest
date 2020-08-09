@@ -8,6 +8,8 @@
 script = ExtResource( 3 )
 dialog_path = "res://Dialogs/Ignoring/Speaker.json"
 delay = 1.0
+show_once = true
+uid = "ign.dialog.house"
 
 [node name="HouseTemplate" parent="." instance=ExtResource( 1 )]
 street_scene = "res://Scenes/Chapter1/3-Ignoring/10.Street.tscn"

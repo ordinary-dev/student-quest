@@ -1,21 +1,27 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Sprites/house/house.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/House/MainHouse.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Triggers/Transition.tscn" type="PackedScene" id=2]
 
-[node name="House-expanded-Template" type="Node2D"]
-
-[node name="HouseExpanded_Sprite" type="Sprite" parent="."]
-position = Vector2( -8, -184 )
+[node name="HouseExpanded_Sprite" type="Sprite"]
 scale = Vector2( 3, 3 )
 z_index = 4
 z_as_relative = false
 texture = ExtResource( 1 )
+offset = Vector2( 0, -61 )
 
-[node name="HouseExpanded_StaticBody2D" type="StaticBody2D" parent="HouseExpanded_Sprite"]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( 8, 29.3333 )
 collision_layer = 0
 collision_mask = 1024
 
-[node name="HouseExpanded_CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseExpanded_Sprite/HouseExpanded_StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 2.66667, -61.3333 )
+polygon = PoolVector2Array( -106.667, 69.3334, -106.667, 72, 85.3333, 72, 85.3333, -21.3333, 82.6667, -50.6667, -61.3333, -50.6667, -64, -21.3333, -64, 26.6667, -106.667, 45.3333, -106.667, 48, -72, 37.3334, -72, 58.6667 )
+
+[node name="Transition" parent="." instance=ExtResource( 2 )]
 visible = false
-polygon = PoolVector2Array( -106.667, 69.3334, 88, 69.3334, 88, -50.6666, -58.6667, -50.6666, -61.3333, -21.3333, -61.3333, 26.6667, -106.667, 42.6667, -106.667, 48, -72, 37.3334, -72, 58.6667 )
+position = Vector2( 21.3333, -122.667 )
+scale = Vector2( 7.4, 3.96 )
+object = NodePath("..")

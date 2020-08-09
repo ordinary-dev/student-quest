@@ -17,14 +17,25 @@ export (bool) var load_scene = false
 export (String, FILE, "*.tscn") var scene_path
 export (float) var loading_delay = 0.0
 
+export (bool) var show_once = false
+export (String) var uid = "id"
+
 
 func _ready() -> void:
 	if enable_delay:
 		yield(get_tree().create_timer(delay), "timeout")
-	if load_scene:
-		DIALOG.show_dialog(dialog_path, get_path(), "load_next_scene")
+	if show_once:
+		if not TEMP.is_saved(uid):
+			TEMP.save(uid, true)
+			if load_scene:
+				DIALOG.show_dialog(dialog_path, get_path(), "load_next_scene")
+			else:
+				DIALOG.show_dialog(dialog_path)
 	else:
-		DIALOG.show_dialog(dialog_path)
+		if load_scene:
+			DIALOG.show_dialog(dialog_path, get_path(), "load_next_scene")
+		else:
+			DIALOG.show_dialog(dialog_path)
 
 
 func load_next_scene() -> void:
