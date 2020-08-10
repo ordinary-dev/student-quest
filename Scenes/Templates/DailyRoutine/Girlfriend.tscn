@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/bridge.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/girlfriend.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/DailyRoutine/Stars.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=5]
+
+[node name="GirlfriendScene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 966.609, 548.519 )
+scale = Vector2( 31.7065, 35.0447 )
+texture = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 972.19, 679.589 )
+scale = Vector2( 21.4113, 19.1696 )
+frames = ExtResource( 2 )
+frame = 2
+playing = true
+
+[node name="Stars" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 964, 112 )
+scale = Vector2( 15.0625, 14 )
+texture = ExtResource( 4 )
+
+[node name="Enable-UI" parent="." instance=ExtResource( 5 )]

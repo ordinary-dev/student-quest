@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Templates/DailyRoutine/Wardrobe.tscn" type="PackedScene" id=1]
+
+
+[node name="Wardrobe" type="Node2D"]
+
+[node name="WardrobeScene" parent="." instance=ExtResource( 1 )]
+scene_path = "res://Scenes/Chapter1/3-Ignoring/19-Classroom-2.tscn"

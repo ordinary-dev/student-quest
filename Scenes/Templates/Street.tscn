@@ -38,7 +38,6 @@
 [ext_resource path="res://Scenes/Templates/Rock_type_3.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=39]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 2.66675 )
 
@@ -2505,7 +2504,7 @@ position = Vector2( -320, 7680 )
 position = Vector2( -960, 3080 )
 
 [node name="Fountain_Position2D" type="Position2D" parent="Positions"]
-position = Vector2( 2312, 3712 )
+position = Vector2( 2496, 3712 )
 
 [node name="Faculty_Position2D" type="Position2D" parent="Positions"]
 position = Vector2( 1376, 6464 )

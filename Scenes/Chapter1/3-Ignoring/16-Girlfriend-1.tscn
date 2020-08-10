@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Templates/DailyRoutine/Girlfriend.tscn" type="PackedScene" id=1]
+
+
+[node name="Girlfriend" type="Node2D"]
+
+[node name="GirlfriendScene" parent="." instance=ExtResource( 1 )]
+position = Vector2( -888.944, -622.261 )
+scale = Vector2( 2, 2 )
+next_scene = "res://Scenes/Chapter1/3-Ignoring/17-Alarm-2.tscn"
+delay = 4.0
+transition_out = false
