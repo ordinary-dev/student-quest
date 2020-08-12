@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Templates/House/HouseInside.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/light_new.png" type="Texture" id=14]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 112 )
+
+[node name="House-Scene" type="Node2D"]
+
+[node name="House-inside-Template" parent="." instance=ExtResource( 1 )]
+street_scene = "res://Scenes/Celebration/4.Street.tscn"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 3 )]
+joystick = true
+
+[node name="ExitCollider_StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="ExitCollider_CollisionShape2D" type="CollisionShape2D" parent="ExitCollider_StaticBody2D"]
+position = Vector2( 88, 232 )
+shape = SubResource( 1 )
+
+[node name="TableLight_Light2D" type="Light2D" parent="."]
+position = Vector2( 1440, 528 )
+texture = ExtResource( 14 )
+texture_scale = 12.0

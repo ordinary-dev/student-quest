@@ -1,5 +1,5 @@
 {
-    "0": {"name":"-", "text":"D_IGN_NIGHT_1", "next":"1"},
-    "1": {"name":"-", "text":"D_IGN_NIGHT_2", "next":"2"},
-    "2": {"name":"-", "text":"D_IGN_NIGHT_3"}
+    "0": {"name":"MAIN_CHARACTER", "text":"D_IGN_NIGHT_1", "next":"1"},
+    "1": {"name":"MAIN_CHARACTER", "text":"D_IGN_NIGHT_2", "next":"2"},
+    "2": {"name":"MAIN_CHARACTER", "text":"D_IGN_NIGHT_3"}
 }

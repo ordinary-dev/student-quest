@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/analog-alarm-clock.wav-05a46f1e344005cdbe82dfa8aa19c718.sample"
+
+[deps]
+
+source_file="res://Audio/FX/AlarmClock/analog-alarm-clock.wav"
+dest_files=[ "res://.import/analog-alarm-clock.wav-05a46f1e344005cdbe82dfa8aa19c718.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

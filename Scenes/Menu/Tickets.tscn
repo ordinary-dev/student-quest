@@ -1,0 +1,194 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=1]
+
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends CenterContainer
+
+export (NodePath) var curAmount
+
+
+func _ready():
+	var money : String = TEMP.get(\"money\")
+	if money == \"-1\":
+		TEMP.save(\"money\", \"0\")
+		money = \"0\"
+	get_node(curAmount).text = money
+	
+
+
+func close():
+	if has_node(\"/root/Node2D/Body\"):
+		get_node(\"/root/Node2D/Body\").unlock()
+	UI.remove_child(self)
+
+
+func _on_Button_pressed():
+	NOTIFY.show(\"Not enough money\")
+"
+
+[node name="Tickets-Menu_CenterContainer" type="CenterContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+curAmount = NodePath("../Tickets-Menu_CenterContainer/Control/MarginContainer/VBoxContainer/MarginContainer/ColorRect/HBoxContainer3/Label2")
+
+[node name="Main_Control" type="Control" parent="."]
+margin_left = 210.0
+margin_top = 290.0
+margin_right = 1710.0
+margin_bottom = 790.0
+rect_min_size = Vector2( 1500, 500 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background_ColorRect" type="ColorRect" parent="Main_Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainContainer_MarginContainer" type="MarginContainer" parent="Main_Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_constants/margin_right = 50
+custom_constants/margin_top = 75
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container_VBoxContainer" type="VBoxContainer" parent="Main_Control/MainContainer_MarginContainer"]
+margin_left = 50.0
+margin_top = 75.0
+margin_right = 1450.0
+margin_bottom = 450.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TicketWindow_Label" type="Label" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer"]
+margin_right = 1400.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+text = "TICKETWINDOW"
+align = 1
+
+[node name="Text_HBoxContainer" type="HBoxContainer" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer"]
+margin_top = 84.0
+margin_right = 1400.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 0, 80 )
+custom_constants/separation = 50
+
+[node name="Direction_Label" type="Label" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/Text_HBoxContainer"]
+margin_top = 24.0
+margin_right = 400.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 400, 0 )
+text = "DIRECTION"
+
+[node name="Cost_Label" type="Label" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/Text_HBoxContainer"]
+margin_left = 450.0
+margin_top = 24.0
+margin_right = 850.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 400, 0 )
+text = "COST"
+
+[node name="Purchase_Label" type="Label" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/Text_HBoxContainer"]
+margin_left = 900.0
+margin_top = 24.0
+margin_right = 1300.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 400, 0 )
+text = "PURCHASE"
+
+[node name="Text2_HBoxContainer" type="HBoxContainer" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer"]
+margin_top = 168.0
+margin_right = 1400.0
+margin_bottom = 248.0
+custom_constants/separation = 50
+
+[node name="CityIn_Label" type="Label" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/Text2_HBoxContainer"]
+margin_top = 10.0
+margin_right = 400.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 400, 60 )
+text = "CITYN"
+valign = 1
+
+[node name="CostRub_Label" type="Label" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/Text2_HBoxContainer"]
+margin_left = 450.0
+margin_top = 10.0
+margin_right = 850.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 400, 60 )
+text = "3000RUB"
+valign = 1
+
+[node name="Buy;Button-Template_Control" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/Text2_HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 900.0
+margin_right = 1200.0
+rect_min_size = Vector2( 300, 80 )
+text = "BUY"
+
+[node name="CharInfo_MarginContainer" type="MarginContainer" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer"]
+margin_top = 252.0
+margin_right = 1400.0
+margin_bottom = 372.0
+custom_constants/margin_top = 20
+
+[node name="TextBackground_ColorRect" type="ColorRect" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/CharInfo_MarginContainer"]
+margin_top = 20.0
+margin_right = 1400.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 100, 100 )
+color = Color( 0.215686, 0.215686, 0.215686, 1 )
+
+[node name="CharInfoContainer_HBoxContainer" type="HBoxContainer" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/CharInfo_MarginContainer/TextBackground_ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 50
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cash_Label" type="Label" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/CharInfo_MarginContainer/TextBackground_ColorRect/CharInfoContainer_HBoxContainer"]
+margin_left = 275.0
+margin_top = 20.0
+margin_right = 675.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 400, 60 )
+text = "CASH"
+valign = 1
+
+[node name="CashAmount_Label" type="Label" parent="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/CharInfo_MarginContainer/TextBackground_ColorRect/CharInfoContainer_HBoxContainer"]
+margin_left = 725.0
+margin_top = 20.0
+margin_right = 1125.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 400, 60 )
+text = "0"
+valign = 1
+
+[node name="Close;Button-Template_Control" parent="Main_Control" instance=ExtResource( 1 )]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_right = 0.0
+text = "x"
+[connection signal="pressed" from="Main_Control/MainContainer_MarginContainer/Container_VBoxContainer/Text2_HBoxContainer/Buy;Button-Template_Control" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Main_Control/Close;Button-Template_Control" to="." method="close"]

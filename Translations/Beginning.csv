@@ -1,37 +1,44 @@
 id,en,ru
-D_NIGHT_BYE,Goodbye,Прощай
-D_NIGHT_NEW_LIFE,Now I will have a new life in which there will no longer be old friends.,"Теперь у меня будет новая жизнь, в которой уже не будет старых друзей."
-D_RECTOR_MECHMAT,Faculty of Mathematics?,Мехмат?
-D_RECTOR_YES,Yes,Да
-D_RECTOR_DOCS,"… okay, everything is fine with the documents. Are you from another city?","… ладно, с документами все хорошо. Вы же из другого города?"
-D_RECTOR_TRUE,Right,Верно
-D_RECTOR_CABINET,"Then go to cabinet 225, they will help you there","Тогда зайдите еще в 225 кабинет, вам там помогут"
-D_GUIDE_HI,"Hi, I'm here to help with the settlement.","Привет, я тут помогаю с заселением."
-D_GUIDE_ROOM,"Come on, I'll show you your room","Пойдем, я покажу тебе твою комнату"
-D_SPEAKER_CONGRATULATIONS,"Congratulations, you have chosen the right path.","Поздравляю вас, вы выбрали правильный путь."
-D_SPEAKER_GO_FORWARD,Do not look back at failures and always go forward!,Не оглядывайтесь на неудачи и идите всегда вперед!
-D_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
-D_GUARD_2,Maybe there is another way?,Может есть другой путь?
-D_GUARD_3,"I will be fined if I release you all like that. Sorry, sorry.","Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите."
-D_GUARD_4,There is still no electricity ...,Электричества все еще нет...
-D_STAIRS_1,I'd rather wait ...,Я лучше подожду...
-D_TRAIN_1,You're sad today,Ты какой-то грустный сегодня
-D_TRAIN_2,Really?,Разве?
-D_TRAIN_3,I can’t be fooled. What's the matter?,Меня не обмануть. Что с тобой?
-D_TRAIN_4,"We all went to this for a long 11 years, and now we have succeeded. Aren't you glad?","Мы все шли к этому долгие 11 лет, и теперь у нас все получилось. Разве ты не рад?"
-D_TRAIN_5,"Yes, I'm just tired ...",Да я просто устал...
-D_TRAIN_6,"It's too early to relax, look, we'll be there soon!","Рано расслабляться, смотри, мы уже скоро приедем!"
-D_GARDENER_1,I do not like the first of September.,Не люблю я первое сентября.
-D_GARDENER_2,Why so? Back to work?,Почему же? Снова на работу?
-D_GARDENER_3,"No, the garden should always be monitored. Do you really want to know?","Да нет, за садом всегда нужно следить. Действительно хочешь знать?"
-D_GARDENER_4,Tell,Расскажите
-D_GARDENER_5,"What can I tell, you yourself will someday understand.","Да что тут рассказывать, сам когда-нибудь поймешь."
-D_GARDENER_6,These people are happy because they entered here.,"Эти люди счастливы, потому что они поступили сюда."
-D_GARDENER_7,"But most of them will not even reach the end, they don’t need it.","Но большая часть даже не дойдет до конца, им это и не нужно."
-D_GARDENER_8,There are only a few people who came here of their own free will.,"Людей, которые пришли сюда по собственному желанию - единицы. "
-D_GARDENER_9,It’s just that not everyone admit this even to themselves.,Просто не все в этом признаются даже самим себе.
-D_GARDENER_10,And half of those who really wanted to come here will be disappointed sooner or later.,"А половина из тех, кто действительно хотел сюда поступить, разочаруются рано или поздно."
-D_GARDENER_11,Somehow too pessimistic ...,Как-то уж слишком пессимистично...
-D_GARDENER_12,"It’s better that way than to deceive yourself. Come to me again, let's talk.","Уж лучше так, чем обманывать самого себя. Ты заглядывай ко мне ещё, поговорим."
-D_GARDENER_13,I'll try ... bye.,Я попробую... До свидания.
-D_GARDENER_14,See you later.,Увидимся.
+JUNE_28,June 28,28 июня
+GRADUATION,Graduation,Выпускной
+D_BEGINNING_NIGHT_1,Good luck!,Удачи!
+D_BEGINNING_NIGHT_2,You too.,Тебе тоже.
+JUNE_29,June 29,29 июня
+EARLY_MORNING,Early morning,Раннее утро
+D_BEGINNING_TRAIN_1,,"Эх, жаль, что всё закончилось"
+D_BEGINNING_TRAIN_2,"Come on, there's so much more to come","Да ладно, нас ещё столько всего ждёт впереди"
+D_BEGINNING_TRAIN_3,…,…
+D_BEGINNING_TRAIN_4,"Look, we'll be there soon!","Смотри, мы уже скоро приедем!"
+D_BEGINNING_RECTOR_1,Faculty of Mathematics?,Мехмат?
+D_BEGINNING_RECTOR_2,Yes,Да
+D_BEGINNING_RECTOR_3,"… okay, everything is fine with the documents. Are you from another city?","… ладно, с документами все хорошо. Вы же из другого города?"
+D_BEGINNING_RECTOR_4,Right,Верно
+D_BEGINNING_RECTOR_5,"Then go to cabinet 225, they will help you there","Тогда зайдите еще в 225 кабинет, вам там помогут"
+D_BEGINNING_GUIDE_1,"Hi, I'm here to help with the settlement.","Привет, я тут помогаю с заселением."
+D_BEGINNING_GUIDE_2,Let's find you a room.,Давай найдем тебе комнату.
+D_BEGINNING_SINGER_1,"Oh hello, I'm Mr. Singer!","О, привет, я Мистер Певец!"
+D_BEGINNING_SINGER_2,I have not often been noticed recently.,Меня не часто замечают в последнее время.
+D_BEGINNING_SINGER_3,I think we'll meet again. Do not be late.,"Я думаю, мы еще встретимся. Не опаздывай."
+D_BEGINNING_GARDENER_1,Good morning! What is your name?,Доброе утро! Тебя как зовут?
+D_BEGINNING_GARDENER_2,"My name is Alexey, but my friends just call me Alex.","Моё имя Алексей, но знакомые зовут меня просто Алекс."
+D_BEGINNING_GARDENER_3,"Alex, tell me, have you noticed anything unusual?","Алекс, скажи мне, ты не замечал ничего необычного?"
+D_BEGINNING_GARDENER_4,Unusual?,Необычного?
+D_BEGINNING_GARDENER_5,"Yes, something unusual, unnatural, strange ...","Да, что-нибудь необычное, неестественное, странное…"
+D_BEGINNING_GARDENER_6,Maybe that singer in front of the entrance.,Разве что того певца перед входом
+D_BEGINNING_GARDENER_7,For some reason he calls himself «Mister Singer» ...,Он почему-то называет себя «Мистер Певец»…
+D_BEGINNING_GARDENER_8,"Nooo, he's okay, I know him a little.","Нее, с ним всё в порядке, я его немного знаю."
+D_BEGINNING_GARDENER_9,"Okay, thank you anyway.","Ладно, спасибо тебе в любом случае."
+D_BEGINNING_GARDENER_10,Come back again.,Заходи ещё.
+D_BEGINNING_GARDENER_11,I'll try.,Я попробую.
+D_BEGINNING_PATH_1,"Hi, are you from the Faculty of Mathematics?","Привет, ты же с математического факультета?"
+D_BEGINNING_PATH_2,You need to go a little down and to the left.,Тебе нужно пройти немного вниз и налево.
+D_BEGINNING_PATH_3,Thank!,Спасибо!
+D_BEGINNING_SPEAKER_1,You have chosen the right path.,Вы выбрали правильный путь.
+D_BEGINNING_SPEAKER_2,Do not look back at failures and always go forward.,Не оглядывайтесь на неудачи и идите всегда вперед.
+D_BEGINNING_SPEAKER_3,I congratulate you on the beginning of your student life!,Поздравляю вас с началом студенческой жизни!
+D_BEGINNING_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
+D_BEGINNING_GUARD_2,Maybe there is another way?,Может есть другой путь?
+D_BEGINNING_GUARD_3,"I will be fined if I release you all like that. Sorry, sorry.","Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите."
+D_BEGINNING_GUARD_4,There is still no electricity ...,Электричества все еще нет...
+D_BEGINNING_PASSAGE_1,I'd rather wait ...,Я лучше подожду...
+PASSAGE,Passage,Проход

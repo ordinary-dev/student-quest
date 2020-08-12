@@ -8,7 +8,7 @@ export (sprites) var sprite_sheet = sprites.MAIN setget set_sprite
 export (bool) var restore_position = false
 var restored_position = false
 const alex_texture = "res://Sprites/friend_1.png"
-const speed := 500
+const speed := 400
 
 # Objects
 onready var character = $Character_Sprite
@@ -65,12 +65,13 @@ func lock() -> void:
 	set_physics_process(false)
 	idle = true
 	anim.stop()
-	if type == states.UP:
-		character.frame = frames.UP_STILL
-	elif type == states.DOWN:
-		character.frame = frames.DOWN_STILL
-	else:
-		character.frame = frames.SIDE_STILL
+	match type:
+		states.UP:
+			character.frame = frames.UP_STILL
+		states.DOWN:
+			character.frame = frames.DOWN_STILL
+		_:
+			character.frame = frames.SIDE_STILL
 
 
 # Unlock input
@@ -234,27 +235,29 @@ func set_sprite(val) -> void:
 	# ...
 
 
-func _ready():
+func _ready() -> void:
+	GLOBAL.player_path = get_path()
 	if restore_position:
 		if TEMP.is_saved(SCENES.last_scene_path):
 			var pos = TEMP.get(SCENES.last_scene_path)
 			position.x = pos["player_pos_x"]
 			position.y = pos["player_pos_y"]
 			restored_position = true
-		else:
-			print("Not saved")
-	GLOBAL.player_path = get_path()
 	# Set starting direction
 	match default_state:
 		states.UP:
 			character.frame = frames.UP_STILL
+			type = states.UP
 		states.DOWN:
 			character.frame = frames.DOWN_STILL
+			type = states.DOWN
 		states.RIGHT:
 			character.frame = frames.SIDE_STILL
+			type = states.RIGHT
 		states.LEFT:
 			character.flip_h = true
 			character.frame = frames.SIDE_STILL
+			type = states.LEFT
 	use_joystick = OS.get_name() == "Android" or UI_INIT.SHOW_CONTROLS
 	if use_joystick:
 		joystick = UI.get_node("Joystick-UI_Sprite/Tap_Button")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Chat/Chat.tscn" type="PackedScene" id=2]
+
+[node name="SiteScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatTemplate" parent="." instance=ExtResource( 2 )]
+next_scene_path = "res://Scenes/Celebration/1.Intro.tscn"
+messages = [ "MESSAGE1", "MESSAGE2", "MESSAGE3", "MESSAGE4" ]
+
+[node name="Disable-UI" parent="." instance=ExtResource( 1 )]

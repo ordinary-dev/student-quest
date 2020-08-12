@@ -1,0 +1,198 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Officer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=3]
+
+
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Street-Template" parent="." instance=ExtResource( 1 )]
+initial_position = 2
+init_dir = 1
+allow_entrance = false
+show_singer = false
+show_gardener = false
+enable_npc = false
+
+[node name="AnimatedSprite" parent="Street-Template/YSort/Buildings_YSort/ENIHouse_Sprite" index="1"]
+frame = 1
+
+[node name="Body" parent="Street-Template/YSort" index="10"]
+restore_position = false
+
+[node name="Character" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1979.73, 5567.18 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2050.36, 5257.73 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2488.37, 4320.1 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4224.37, 4592.1 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1222.92, 5227.46 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1991.67, 4494.47 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2321.84, 5073.79 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3192.66, 4411.11 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1019.14, 5209.57 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 4244.11, 2037.99 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1442.5, 5219.08 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character10" parent="." instance=ExtResource( 2 )]
+position = Vector2( -355.858, 3261.95 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character12" parent="." instance=ExtResource( 2 )]
+position = Vector2( -310.552, 5421.54 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1728.22, 5195.01 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1977.09, 3413.12 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character22" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3452.42, 3591.3 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character23" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3274.24, 2835.82 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character24" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3738.24, 1667.82 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character25" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1986.24, 1651.82 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character26" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1384.46, 490.651 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character27" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2503.26, 1448.41 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2493.2, 3309.91 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2520.11, 2099.02 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2313.42, 481.148 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character19" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1550.81, 1158.23 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character20" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1158.81, 3025.55 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="Character21" parent="." instance=ExtResource( 2 )]
+position = Vector2( 381.95, 431.258 )
+nav_node = NodePath("../Street-Template/Navigation2D")
+upper_left_node = NodePath("../Street-Template/UpperLeft")
+bottom_right_node = NodePath("../NewBottomRight")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.65098, 0.662745, 0.772549, 1 )
+
+[node name="NewBottomRight" type="Position2D" parent="."]
+position = Vector2( 4466.46, 6899.92 )
+
+[node name="LoadOnEnter-Trigger_0" parent="." instance=ExtResource( 3 )]
+position = Vector2( -441.549, 1445.43 )
+scale = Vector2( 7.36, 10.24 )
+scene = "res://Scenes/Hope/14.River.tscn"
+
+[editable path="Street-Template"]

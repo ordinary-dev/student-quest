@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Templates/Guide.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=5]
+
+[node name="FirstDayScene" type="Node2D"]
+modulate = Color( 0.882353, 0.870588, 0.815686, 1 )
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 5 )]
+allow_entrance = true
+math_scene = "res://Scenes/Chapter1/5-QuickBeginning/8.Date.tscn"
+
+[node name="MrSingerDialog" parent="." instance=ExtResource( 4 )]
+position = Vector2( 56, 416 )
+dialog_path = "res://Dialogs/Beginning/Stranger.json"
+person = "UNKNOWN_SINGER"
+
+[node name="GardenerDialog" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1120, 2552 )
+dialog_path = "res://Dialogs/Beginning/Gardener.json"
+person = "GARDENER"
+
+[node name="GuideDialog" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2264, 448 )
+dialog_path = "res://Dialogs/Beginning/PathToFaculty.json"
+person = "GUIDE"
+
+[node name="GuideTemplate" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2112, 568 )
+z_index = 5

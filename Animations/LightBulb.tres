@@ -1,0 +1,17 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "LightBulb"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.4, 1.7, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.831373 ), Color( 1, 1, 1, 0.623529 ), Color( 1, 1, 1, 1 ) ]
+}

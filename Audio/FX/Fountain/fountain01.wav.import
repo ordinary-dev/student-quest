@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fountain01.wav-f3e84c3e084ccf8b0ac6e939f4722372.sample"
+
+[deps]
+
+source_file="res://Audio/FX/Fountain/fountain01.wav"
+dest_files=[ "res://.import/fountain01.wav-f3e84c3e084ccf8b0ac6e939f4722372.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

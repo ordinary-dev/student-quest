@@ -1,9 +1,14 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/icons/pause.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/menu/Settings.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/templates/Button.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/menu/LoadGameScene/Load.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Menu/Settings/Settings.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Menu/LoadGameScene/Load.tscn" type="PackedScene" id=4]
+
+
+
+
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -136,7 +141,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 menu_scene = "res://Scenes/menu/Menu.tscn"
-quit_scene = "res://Scenes/quit.tscn"
+quit_scene = "res://Scenes/Quit.tscn"
 buttons = [ NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Return;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Load;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Save;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Settings;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Menu;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Quit;Button-Template_Control") ]
 settings_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Settings-Menu_TabContainer")
 load_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Load-Menu_ScrollContainer")

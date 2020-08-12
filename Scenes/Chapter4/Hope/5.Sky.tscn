@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Templates/Clouds.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=2]
+
+
+
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+dialog_path = "res://Dialogs/Hope/Night.json"
+enable_delay = true
+
+[node name="Clouds" parent="." instance=ExtResource( 1 )]

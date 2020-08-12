@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+
+func _ready():
+	MUSIC.stop()
+"
+
+[node name="DateScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedText" parent="." instance=ExtResource( 1 )]
+text_1 = "10:00"
+text_2 = "HALL"
+next_scene = "res://Scenes/Chapter1/2-FirstDay/4.Speaker.tscn"
+
+[node name="Disable-UI" parent="." instance=ExtResource( 2 )]

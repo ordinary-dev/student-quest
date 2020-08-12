@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+
+
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+func _ready() -> void:
+	NOTIFY.show(\"Встретьтесь с подружкой у филфака\")
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="Street-Template" parent="." instance=ExtResource( 1 )]
+initial_position = 2
+allow_entrance = false
+enable_lights = false
+
+[node name="LoadOnEnter-Trigger_0" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3975.43, 7905.27 )
+scale = Vector2( 8.44, 2.059 )
+scene = "res://Scenes/Disappearance/2.Waiting.tscn"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 3 )]

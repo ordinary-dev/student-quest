@@ -1,43 +1,14 @@
 id,en,ru
-MAN,Man,Человек
-D11,"Everything is fine with the documents, it remains only to choose the right direction","С документами все хорошо, осталось лишь выбрать нужное направление"
-D12,Choose wisely,Выбирайте с умом
-STRANGER,Stranger,Незнакомец
-MRD,Mr. Dudec,Мистер Дудец
-D21,"Oh hello, I'm Mr. Dudec","О, привет, я Мистер Дудец"
-D22,I have not often been noticed recently,Меня не часто замечают в последнее время
-D23,I think we'll meet again. Do not be late.,"Я думаю, мы еще встретимся. Не опаздывай."
-BYE,Goodbye,Прощай
-D42,"Hey hey look, it's already morning, we'll be there soon","Эй, эй, смотри, уже утро, мы скоро приедем"
-GUIDE,Guide,Гид
-D51,"Hi, are you from the Faculty of Mechanics and Mathematics?","Привет, ты же с механико-математического факультета?"
-D52,You need to go a little down and to the left,Тебе нужно пройти немного вниз и налево
-D61,"Hi, are you from the Faculty of Natural Sciences?","Привет, ты же с факультета естественных наук?"
-D62,You need to go a little down and to the right,Тебе нужно пройти немного вниз и направо
-D71,"Hi, are you from the Faculty of Humanities?","Привет, ты же с гуманитарного факультета?"
-D72,You need the lowest building,Тебе нужно в самое нижнее здание
-ABSSTRANGER,Absolute stranger,Абсолютный незнакомец
-D81,"Congratulations, you have risen a notch","Поздравляю вас, вы поднялись на ступеньку выше"
-D82,Now it's time to climb to the very top,Теперь самое время поднятся на самый верх
-D83,Go ahead without looking at failure,"Идите вперед, не оглядываясь на неудачи"
-SECURITY,Security guard,Охранник
-D101,"Sorry, the turnstiles are not working","Простите, турникеты не работают"
-D102,All bypass so far,Все пока идут в обход
 D121,Hey do you know me?,"Эй, ты меня знаешь?"
 D122,"Not sure, maybe I heard somewhere about you","Не уверен, может я слышал где-то о Вас"
 D123,"Ahh, they call me Mr. Dudec","Ааа, меня называют Мистер Дудец"
 D124,"But I’ll tell you later about myself, you’re already late","Но я как-нибудь потом расскажу о себе, ты и так опаздываешь"
 D131,Maybe I saw him somewhere on the Internet?,Может быть я видел его где-то в интернете?
-START,Start,Начать
-NIGHT,Night,Ночь
-MORNING,Early morning,Раннее утро
 HALL,Assembly Hall,Актовый зал
-RECTOR,Rector,Ректор
 GHOUSE,Gardener's house,Дом садовника
 MATH,Faculty of Mechanics and Mathematics,Механико-математический факультет
 NS,Faculty of Natural Sciences,Факультет естественных наук
 HM,Faculty of Humanities,Гуманитарный факультет
-FUNKNOWN,No faculty selected,Факультет не выбран
 STORE,Supermarket 'Chetverochka',Магазин 'Четверочка'
 TICKETS,Ticket window,Касса
 HOSTEL,Enter the hostel,Зайти в общагу
@@ -49,16 +20,10 @@ OPENSITE,Open site,Открыть сайт
 NOTLOADED,Game not loaded,Игра не загружена
 NOTSAVED,Not saved,Не сохранено
 NOTEXIST,The file does not exist,Файл не существует
-ABILITIES,Abilities:,Способности:
-ABILITY,Ability,Способность
 SELECT,Select,Выбрать
 SLEEP,Go to sleep,Лечь спать
 CHAT,Chat,Чат
 OPENCHAT,Open chat,Открыть чат
-MESSAGE1,Do not forget!,Не забудьте!
-MESSAGE2,Tomorrow we have initiation into students,У нас завтра посвящение в студенты
-MESSAGE3,The bus will take you to the place of celebration,Автобус доставит вас до места праздника
-MESSAGE4,"Yes, be sure to come, last year was a lot of fun!","Да, обязательно приходите, в прошлом году было очень весело!"
 CLOSED,Closed,Заперто
 NOENTER,You cannot come here,Вы не можете сюда зайти
 1ST_FLOOR,1st floor,1 этаж

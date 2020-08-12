@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Characters/Guard.png" type="Texture" id=1]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.80695, 2.80291 )
+
+[node name="Guard-Template_Sprite_0" type="Sprite"]
+scale = Vector2( 3, 3 )
+z_index = 4
+texture = ExtResource( 1 )
+offset = Vector2( 0, -16 )
+
+[node name="GuardCollider_StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, -16 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="GuardCollider_CollisionShape2D" type="CollisionShape2D" parent="GuardCollider_StaticBody2D"]
+position = Vector2( 0, 13.5 )
+shape = SubResource( 1 )

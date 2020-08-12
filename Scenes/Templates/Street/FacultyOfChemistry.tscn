@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Triggers/Transition.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Street/FacultyOfChemistry.png" type="Texture" id=2]
+
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 110.472, 44.1313 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Area2D
+
+# Target
+export (NodePath) var object
+# Tween
+onready var effect : = $Tween
+# Loaded object
+var obj
+# Standart color
+var def_color = Color(1, 1, 1, 1)
+
+# New color
+const mod_color := Color(1, 1, 1, 0.3)
+# Animation duration
+const time := 0.3
+
+
+# Remember color
+func _ready():
+	obj = get_node(object)
+	def_color = obj.modulate
+
+
+# Make object transparent
+func _on_Area2D_body_entered(_body):
+	effect.interpolate_property(obj, \"modulate\",
+			obj.modulate, mod_color, time, 
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.start()
+
+
+# Return default color
+func _on_Area2D_body_exited(_body):
+	effect.interpolate_property(obj, \"modulate\",
+			obj.modulate, def_color, time,
+			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	effect.start()
+"
+
+[node name="FacultyOfChemistry" type="Sprite"]
+scale = Vector2( 10, 10 )
+z_index = 4
+z_as_relative = false
+texture = ExtResource( 2 )
+offset = Vector2( 5, -45 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 1.549, 101.919 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="LowerCollider" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 2.451, -78.719 )
+shape = SubResource( 1 )
+
+[node name="UpperCollider" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1.651, -210.719 )
+shape = SubResource( 1 )
+
+[node name="TransitionLeft" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( -76.8, -46.4 )
+scale = Vector2( 3.316, 1.808 )
+script = SubResource( 2 )
+object = NodePath("..")
+
+[node name="TransitionRight" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 86.4, -47.2 )
+scale = Vector2( 3.316, 1.784 )
+script = SubResource( 2 )
+object = NodePath("..")

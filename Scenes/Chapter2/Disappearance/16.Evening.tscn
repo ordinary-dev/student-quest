@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/stranger.png" type="Texture" id=3]
+
+
+
+[node name="Node2D" type="Node2D"]
+modulate = Color( 0.878431, 0.847059, 0.811765, 1 )
+
+[node name="Street-Template" parent="." instance=ExtResource( 1 )]
+initial_position = 2
+allow_entrance = false
+show_singer = false
+show_gardener = false
+
+[node name="DialogTrigger-Trigger_Area2D_0" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1378.1, 6558.47 )
+dialog_path = "res://Dialogs/Disappearance/Stranger.json"
+load_scene = true
+scene_path = "res://Scenes/Disappearance/17.Roof.tscn"
+
+[node name="stranger" type="Sprite" parent="."]
+position = Vector2( 1380.91, 6619.9 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 3
+frame = 7

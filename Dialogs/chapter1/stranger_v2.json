@@ -1,6 +1,0 @@
-{
-    "0": {"name":"STRANGER", "text":"D121", "next":"1"},
-    "1": {"name":"-", "text":"D122", "next":"2"},
-    "2": {"name":"STRANGER", "text":"D123", "next":"3"},
-    "3": {"name":"MRD", "text":"D124"}
-}

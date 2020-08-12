@@ -1,4 +1,4 @@
 {
-    "0": {"name":"-", "text":"D_NIGHT_BYE", "next":"1"},
-    "1": {"name":"-", "text":"D_NIGHT_NEW_LIFE"}
+    "0": {"name":"UNKNOWN_PERSON", "text":"D_BEGINNING_NIGHT_1", "next":"1"},
+    "1": {"name":"MAIN_CHARACTER", "text":"D_BEGINNING_NIGHT_2"}
 }

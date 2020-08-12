@@ -1,9 +1,24 @@
-*.apk
+# Godot-specific
+.import
+export.cfg
+export_presets.cfg
+
+# Translations
+*.translation
+
+# Keys
 *.keystore
+
+# IDE files
 .idea
+
+# Builds
+Builds
+*.apk
 *.exe
 *.pck
 *.zip
 *.x86_64
+
+# Temporary files
 .~lock.*
-Builds

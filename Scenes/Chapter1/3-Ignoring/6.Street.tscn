@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Templates/Street/Police.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
+allow_entrance = true
+math_scene = "res://Scenes/Chapter1/3-Ignoring/7.Speech.tscn"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 2 )]
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 96, 408 )
+dialog_path = "res://Dialogs/Ignoring/Singer.json"
+person = "MR_SINGER"
+
+[node name="Police" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4904, 5344 )
