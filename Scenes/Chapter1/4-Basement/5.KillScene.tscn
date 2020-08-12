@@ -5,27 +5,19 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends VideoPlayer
 
-
 export (String, FILE, \"*.tscn\") var next_scene
-
-
-func _ready():
-	# When you try to start a new game, this storyline continues
-	TEMP.save(\"new_game_redirect\", \"1\")
-	# Play video
-	play()
 
 
 func _on_VideoPlayer_finished():
 	SCENES.load_scene(next_scene, false, false)
 "
 
-[node name="Kill-scene-Scene_Control" type="Control"]
+[node name="KillScene" type="Control"]
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="KillScene_VideoPlayer" type="VideoPlayer" parent="."]
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 rect_min_size = Vector2( 1920, 1080 )
@@ -36,5 +28,5 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_scene = "res://Scenes/menu/Menu.tscn"
-[connection signal="finished" from="KillScene_VideoPlayer" to="KillScene_VideoPlayer" method="_on_VideoPlayer_finished"]
+next_scene = "res://Scenes/Chapter1/5-QuickBeginning/0.Menu.tscn"
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="_on_VideoPlayer_finished"]

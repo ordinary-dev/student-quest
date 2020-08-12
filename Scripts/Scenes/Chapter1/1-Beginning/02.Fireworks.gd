@@ -9,12 +9,7 @@
 extends Node2D
 
 export (String, FILE, "*.tscn") var next_scene
-export (String, FILE, "*.ogg") var audio
 
 
-func _ready() -> void:
-	MUSIC.play_sound(audio)
-
-
-func _on_AnimationPlayer_animation_finished(_anim_name) -> void:
+func _on_animation_finished(_anim_name) -> void:
 	SCENES.load_scene(next_scene)

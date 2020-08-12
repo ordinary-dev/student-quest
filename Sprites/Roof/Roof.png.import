@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sunset.jpg-2b100bd5ae4b13584f93272b3b3d6ac7.stex"
+path="res://.import/Roof.png-c14df8213fa8ef306957d8796e5b00f9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/garden/Sunset.jpg"
-dest_files=[ "res://.import/Sunset.jpg-2b100bd5ae4b13584f93272b3b3d6ac7.stex" ]
+source_file="res://Sprites/Roof/Roof.png"
+dest_files=[ "res://.import/Roof.png-c14df8213fa8ef306957d8796e5b00f9.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

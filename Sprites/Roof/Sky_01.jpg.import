@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Door.png-3a0eaa22640896dd6eff45ebb61c16bf.stex"
+path="res://.import/Sky_01.jpg-b0ab7b4c22e37f359391a633ed9a8ab9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/garden/Door.png"
-dest_files=[ "res://.import/Door.png-3a0eaa22640896dd6eff45ebb61c16bf.stex" ]
+source_file="res://Sprites/Roof/Sky_01.jpg"
+dest_files=[ "res://.import/Sky_01.jpg-b0ab7b4c22e37f359391a633ed9a8ab9.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

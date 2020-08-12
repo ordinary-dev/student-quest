@@ -7,9 +7,12 @@ extents = Vector2( 23.3559, 56 )
 
 [node name="CharacterSprite" type="Sprite"]
 scale = Vector2( 3, 3 )
+z_index = 4
 texture = ExtResource( 1 )
 offset = Vector2( 0, -17 )
-region_enabled = true
+vframes = 3
+hframes = 3
+frame = 6
 region_rect = Rect2( 0, 73, 18, 35 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

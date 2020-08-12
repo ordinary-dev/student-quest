@@ -11,8 +11,8 @@ __meta__ = {
 }
 
 [node name="AnimatedText" parent="." instance=ExtResource( 1 )]
-text_1 = "MAY_29"
-text_2 = "MORNING"
-next_scene = "res://Scenes/Chapter1/3-Ignoring/26.Street.tscn"
+text_1 = "10:00"
+text_2 = "HALL"
+next_scene = "res://Scenes/Chapter1/5-QuickBeginning/8.Speaker.tscn"
 
 [node name="Disable-UI" parent="." instance=ExtResource( 2 )]

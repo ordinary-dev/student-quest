@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Sky_01.jpg-facf5436f08f477e78d7d53720b0e62d.stex"
+path="res://.import/Stripes.png-410b502bc30784e16e45383c57363a9b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/garden/Sky_01.jpg"
-dest_files=[ "res://.import/Sky_01.jpg-facf5436f08f477e78d7d53720b0e62d.stex" ]
+source_file="res://Sprites/Stripes.png"
+dest_files=[ "res://.import/Stripes.png-410b502bc30784e16e45383c57363a9b.stex" ]
 
 [params]
 
