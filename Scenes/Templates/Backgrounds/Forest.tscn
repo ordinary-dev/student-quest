@@ -4,12 +4,7 @@
 [ext_resource path="res://Sprites/Train/background/Forest.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Train/background/Sky.png" type="Texture" id=3]
 
-
-
-
-
 [node name="ParallaxBackground" type="ParallaxBackground"]
-layer = -1
 
 [node name="Sky" type="ParallaxLayer" parent="."]
 
