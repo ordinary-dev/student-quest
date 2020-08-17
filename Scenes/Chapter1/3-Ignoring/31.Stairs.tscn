@@ -4,8 +4,9 @@
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Templates/Noise_sprite.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=6]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 16 )

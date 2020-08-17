@@ -34,7 +34,6 @@ texture = ExtResource( 8 )
 
 [node name="Seats" type="Node2D" parent="Camera2D"]
 position = Vector2( -0.00012207, 0 )
-scale = Vector2( 1, 1 )
 
 [node name="Row1" type="Node2D" parent="Camera2D/Seats"]
 z_index = 1
@@ -55,7 +54,6 @@ scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
 
 [node name="Row2" type="Node2D" parent="Camera2D/Seats"]
-scale = Vector2( 1, 1 )
 z_index = 2
 
 [node name="Seat1" type="Sprite" parent="Camera2D/Seats/Row2"]

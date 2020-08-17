@@ -3,8 +3,9 @@
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=3]
 [ext_resource path="res://Tilemaps/building/building16.tres" type="TileSet" id=4]
-[ext_resource path="res://Scenes/Templates/Noise_sprite.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/things/Computer.png" type="Texture" id=7]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 

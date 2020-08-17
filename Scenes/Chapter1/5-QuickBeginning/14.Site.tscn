@@ -11,7 +11,7 @@ __meta__ = {
 }
 
 [node name="ChatTemplate" parent="." instance=ExtResource( 2 )]
-next_scene_path = "res://Scenes/Chapter2/1-Celebration/1.Intro.tscn"
+next_scene_path = "res://Scenes/Chapter1/5-QuickBeginning/15.Room.tscn"
 messages = [ "MESSAGE1", "MESSAGE2", "MESSAGE3", "MESSAGE4" ]
 
 [node name="Disable-UI" parent="." instance=ExtResource( 1 )]
