@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Basement/Stairs.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Scenes/Chapter1/4-Parting/2.Stairs.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=4]
+
+
+[node name="StairsScene" type="Node2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+dialog = "res://Scenes/Chapter1/4-Basement/3.Dialog.tscn"
+secret = "res://Scenes/Chapter1/4-Parting/11.Dialog.tscn"
+
+[node name="Map" parent="." instance=ExtResource( 2 )]
+
+[node name="ExitTrigger" parent="." instance=ExtResource( 1 )]
+position = Vector2( 32, 352 )
+label = "GO_DOWN"
+object_name = NodePath("../../StairsScene")
+function_name = "go"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 4 )]
+joystick = true

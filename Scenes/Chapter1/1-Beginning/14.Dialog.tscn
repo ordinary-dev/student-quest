@@ -7,7 +7,6 @@
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=5]
 [ext_resource path="res://Audio/FX/Doors/open-the-door.wav" type="AudioStream" id=6]
 
-
 [node name="DialogScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -15,7 +14,7 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-dialog_path = "res://Dialogs/Beginning/Guide.json"
+dialog_path = "res://Dialogs/Chapter1/Beginning/Guide.json"
 enable_delay = true
 delay = 1.0
 load_scene = true

@@ -16,7 +16,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-dialog_path = "res://Dialogs/Beginning/Night.json"
+dialog_path = "res://Dialogs/Chapter1/Beginning/Night.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter1/1-Beginning/04.Date.tscn"
 

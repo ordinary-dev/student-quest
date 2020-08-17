@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Room/Room.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.tscn\") var chat_scene
+
+
+func chat() -> void:
+	SCENES.load_scene(chat_scene)
+"
+
+[node name="Room" type="Node2D"]
+script = SubResource( 1 )
+chat_scene = "res://Scenes/Chapter1/2-FirstDay/10.Chat.tscn"
+
+[node name="RoomTemplate" parent="." instance=ExtResource( 2 )]
+
+[node name="ChatTrigger" parent="." instance=ExtResource( 1 )]
+position = Vector2( 495.654, 225.198 )
+label = "CHAT"
+object_name = NodePath("..")
+function_name = "chat"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 3 )]
+joystick = true

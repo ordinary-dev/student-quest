@@ -1,0 +1,37 @@
+id,en,ru
+D_FD_SINGER_1,"Oh hello, I'm Mr. Singer!","О, привет, я Мистер Певец!"
+D_FD_SINGER_2,I have not often been noticed recently.,Меня не часто замечают в последнее время.
+D_FD_SINGER_3,I think we'll meet again. Do not be late.,"Я думаю, мы еще встретимся. Не опаздывай."
+D_FD_GARDENER_1,Good morning! What is your name?,Доброе утро! Тебя как зовут?
+D_FD_GARDENER_2,"My name is Alexey, but my friends just call me Alex.","Моё имя Алексей, но знакомые зовут меня просто Алекс."
+D_FD_GARDENER_3,"Alex, tell me, have you noticed anything unusual?","Алекс, скажи мне, ты не замечал ничего необычного?"
+D_FD_GARDENER_4,Unusual?,Необычного?
+D_FD_GARDENER_5,"Yes, something unusual, unnatural, strange ...","Да, что-нибудь необычное, неестественное, странное…"
+D_FD_GARDENER_6,Maybe that singer in front of the entrance.,Разве что того певца перед входом
+D_FD_GARDENER_7,For some reason he calls himself «Mister Singer» ...,Он почему-то называет себя «Мистер Певец»…
+D_FD_GARDENER_8,"Nooo, he's okay, I know him a little.","Нее, с ним всё в порядке, я его немного знаю."
+D_FD_GARDENER_9,"Okay, thank you anyway.","Ладно, спасибо тебе в любом случае."
+D_FD_GARDENER_10,Come back again.,Заходи ещё.
+D_FD_GARDENER_11,I'll try.,Я попробую.
+D_FD_PATH_1,"Hi, are you from the Faculty of Mathematics?","Привет, ты же с математического факультета?"
+D_FD_PATH_2,You need to go a little down and to the left.,Тебе нужно пройти немного вниз и налево.
+D_FD_PATH_3,Thank!,Спасибо!
+D_FD_SPEAKER_1,You have chosen the right path.,Вы выбрали правильный путь.
+D_FD_SPEAKER_2,Do not look back at failures and always go forward.,Не оглядывайтесь на неудачи и идите всегда вперед.
+D_FD_SPEAKER_3,I congratulate you on the beginning of your student life!,Поздравляю вас с началом студенческой жизни!
+D_FD_GUARD_1,"Sorry, turnstiles do not work without electricity.","Простите, турникеты не работают без электричества"
+D_FD_GUARD_2,Maybe there is another way?,Может есть другой путь?
+D_FD_GUARD_3,"I will be fined if I release you all like that. Sorry, sorry.","Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите."
+D_FD_GUARD_4,There is still no electricity ...,Электричества все еще нет...
+D_FD_PASSAGE_1,I'd rather wait ...,Я лучше подожду...
+PASSAGE,Passage,Проход
+D_FD_LIFEGUARDS_1,At the exit there were many rescue vehicles.,У выхода стояло множество машин спасателей. 
+D_FD_LIFEGUARDS_2,Please go home.,"Пожалуйста, расходитесь по домам."
+D_FD_LIFEGUARDS_3,There is the possibility of another explosion.,Существует вероятность еще одного взрыва.
+FD_CHAT_1,Is everyone safe?,Все целы?
+FD_CHAT_2,Like yes,Вроде да
+FD_CHAT_3,And what about that teacher?,А что с тем преподавателем?
+FD_CHAT_4,The teacher?,Преподавателем?
+FD_CHAT_5,"Yes, no one knows where your mathematics teacher is","Да, никто не знает, где ваш преподаватель матанализа"
+FD_CHAT_6,Although it’s too early to draw conclusions,Хотя рано делать выводы
+FD_CHAT_7,"He has not been seen since the morning, so the rescuers are not in a hurry with conclusions","Его еще с утра не видели, поэтому спасатели не торопятся с выводами"

@@ -1,0 +1,5 @@
+{
+    "0": {"name":"MAIN_CHARACTER", "text":"D_PARTING_NIGHT_1", "next":"1"},
+    "1": {"name":"MAIN_CHARACTER", "text":"D_PARTING_NIGHT_2", "next":"2"},
+    "2": {"name":"MAIN_CHARACTER", "text":"D_PARTING_NIGHT_3"}
+}

@@ -5,24 +5,27 @@
 [ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Menu/LoadGameScene/Load.tscn" type="PackedScene" id=4]
 
-
-
-
-
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
 
+export (String, FILE, \"*.tscn\") var menu_scene
+export (String, FILE, \"*.tscn\") var quit_scene
+export (NodePath) var return_btn
+
+onready var main_container := $MainContainer
+onready var background := $Background
+onready var pause_btn = $PauseButton
+
+onready var settings := $MainContainer/HBoxContainer/SubMenues/Settings
+onready var load_menu := $MainContainer/HBoxContainer/SubMenues/LoadMenu
 
 var enabled : bool = false
 var show_joystick := false
-export (String, FILE, \"*.tscn\") var menu_scene
-export (String, FILE, \"*.tscn\") var quit_scene
-export (Array, NodePath) var buttons
-export (NodePath) var settings_node
-export (NodePath) var load_node
-export (NodePath) var save_node
-export (NodePath) var return_btn
+
+
+func _ready() -> void:
+	main_container.visible = false
+	background.visible = false
 
 
 func _process(_delta) -> void:
@@ -30,33 +33,31 @@ func _process(_delta) -> void:
 		switch()
 
 
-func _ready() -> void:
-	$MainContainer_MarginContainer.visible = false
-	$Background_ColorRect.visible = false
-
-
 func switch():
 	if enabled:
 		_return_to_game()
 	else:
-		var img = get_viewport().get_texture().get_data()
-		img.flip_y()
-		print(\"Save screenshot now\")
-		GLOBAL.screenshot = img
 		_on_Pause_pressed()
 
 
 func _on_Pause_pressed() -> void:
 	enabled = true
 	FX.btn_click()
-	get_node(\"MainContainer_MarginContainer\").visible = true
-	get_node(\"Background_ColorRect\").visible = true
-	get_node(\"Pause_Button\").visible = false
+	
+	# Show pause menu
+	main_container.visible = true
+	background.visible = true
+	pause_btn.visible = false
+	
+	# Hide joystick
 	if UI.get_node(\"Joystick-UI_Sprite\").visible:
 		UI_INIT.hide_joystick()
 		show_joystick = true
-	if (has_node(GLOBAL.player_path)):
-		get_node(GLOBAL.player_path).lock()
+	
+	# Stop the game
+	get_tree().paused = true
+	
+	# Focus
 	get_node(return_btn).grab_focus()
 
 
@@ -64,23 +65,23 @@ func _return_to_game(play_sound : bool = true) -> void:
 	enabled = false
 	if play_sound:
 		FX.btn_click()
-	# Hide buttons
-	get_node(\"MainContainer_MarginContainer\").visible = false
-	# Hide semi-transparent black background
-	get_node(\"Background_ColorRect\").visible = false
-	# Show pause button
-	get_node(\"Pause_Button\").visible = true
-	# Unlock player's movement if it exists
-	if (has_node(GLOBAL.player_path)):
-		get_node(GLOBAL.player_path).unlock()
+	
+	# Hide pause menu
+	main_container.visible = false
+	background.visible = false
+	pause_btn.visible = true
+	
+	# Hide submenues
+	settings.visible = false
+	load_menu.visible = false
+	
+	# Continue the game
+	get_tree().paused = false
+	
 	# Enable joystick again if it was hidden
 	if show_joystick:
 		UI_INIT.show_joystick()
 	show_joystick = false
-	# Hide windows
-	get_node(settings_node).visible = false
-	get_node(load_node).visible = false
-	get_node(save_node).visible = false
 
 
 func _to_menu() -> void:
@@ -91,46 +92,35 @@ func _to_menu() -> void:
 	_return_to_game(false)
 
 
+# Quit game
 func _quit_game() -> void:
-	# Save settings
-	GLOBAL.write_settings()
-	# Quit game
 	SCENES.load_scene(quit_scene)
 
 
 # Show or hide settings
 func _settings() -> void:
 	FX.btn_click()
-	get_node(settings_node).visible = !get_node(settings_node).visible
-	get_node(load_node).visible = false
-	get_node(save_node).visible = false
+	settings.visible = !settings.visible
+	load_menu.visible = false
 
 
 # Load
 func _load() -> void:
 	FX.btn_click()
-	var ln = get_node(load_node)
-	ln.get_node(\"Control_VBoxContainer\")._refresh()
-	ln.visible = !ln.visible
-	get_node(settings_node).visible = false
-	get_node(save_node).visible = false
-
-
-# Save
-func _save() -> void:
-	FX.btn_click()
-	var ln = get_node(save_node)
-	ln.get_node(\"Control_VBoxContainer\")._refresh()
-	ln.visible = !ln.visible
-	get_node(settings_node).visible = false
-	get_node(load_node).visible = false
+	settings.visible = false
+	if load_menu.visible:
+		load_menu.visible = false
+	else:
+		load_menu.refresh()
+		load_menu.visible = true
 "
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="StyleBoxEmpty" id=3]
 
-[node name="PauseMenu-UI_Control" type="Control"]
+[node name="PauseUI" type="Control"]
+pause_mode = 2
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -140,15 +130,11 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-menu_scene = "res://Scenes/menu/Menu.tscn"
+menu_scene = "res://Scenes/Menu/Menu.tscn"
 quit_scene = "res://Scenes/Quit.tscn"
-buttons = [ NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Return;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Load;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Save;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Settings;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Menu;Button-Template_Control"), NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Quit;Button-Template_Control") ]
-settings_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Settings-Menu_TabContainer")
-load_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Load-Menu_ScrollContainer")
-save_node = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Save;Load-Menu_ScrollContainer")
-return_btn = NodePath("MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Return;Button-Template_Control")
+return_btn = NodePath("MainContainer/HBoxContainer/MenuContainer/Return")
 
-[node name="Background_ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 visible = false
 light_mask = 0
 anchor_right = 1.0
@@ -159,7 +145,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pause_Button" type="Button" parent="."]
+[node name="PauseButton" type="Button" parent="."]
 light_mask = 0
 anchor_left = 1.0
 anchor_right = 1.0
@@ -176,7 +162,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainContainer_MarginContainer" type="MarginContainer" parent="."]
+[node name="MainContainer" type="MarginContainer" parent="."]
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -189,14 +175,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SubContainer_HBoxContainer" type="HBoxContainer" parent="MainContainer_MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer"]
 margin_left = 100.0
 margin_top = 100.0
 margin_right = 1820.0
 margin_bottom = 980.0
 custom_constants/separation = 100
 
-[node name="MenuContainer_VBoxContainer" type="VBoxContainer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer"]
+[node name="MenuContainer" type="VBoxContainer" parent="MainContainer/HBoxContainer"]
 light_mask = 0
 margin_right = 750.0
 margin_bottom = 880.0
@@ -207,80 +193,69 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Return;Button-Template_Control" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 77.0
+[node name="Return" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 140.0
 margin_right = 750.0
-margin_bottom = 177.0
+margin_bottom = 240.0
 rect_min_size = Vector2( 80, 100 )
-focus_neighbour_bottom = NodePath("../Load;Button-Template_Control")
-focus_next = NodePath("../Load;Button-Template_Control")
+focus_neighbour_bottom = NodePath("../Load")
+focus_next = NodePath("../Load")
+focus_previous = NodePath("../Quit")
 focus_mode = 2
 text = "RETURN"
 
-[node name="Load;Button-Template_Control" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 202.0
+[node name="Load" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 265.0
 margin_right = 750.0
-margin_bottom = 302.0
+margin_bottom = 365.0
 rect_min_size = Vector2( 80, 100 )
-focus_neighbour_top = NodePath("../Return;Button-Template_Control")
-focus_neighbour_bottom = NodePath("../Save;Button-Template_Control")
-focus_next = NodePath("../Save;Button-Template_Control")
-focus_previous = NodePath("../Return;Button-Template_Control")
+focus_neighbour_top = NodePath("../Return")
+focus_neighbour_bottom = NodePath("../Settings")
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../Return")
 focus_mode = 2
 text = "LOAD"
 
-[node name="Save;Button-Template_Control" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 327.0
+[node name="Settings" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 390.0
 margin_right = 750.0
-margin_bottom = 427.0
+margin_bottom = 490.0
 rect_min_size = Vector2( 80, 100 )
-focus_neighbour_top = NodePath("../Load;Button-Template_Control")
-focus_neighbour_bottom = NodePath("../Settings;Button-Template_Control")
-focus_next = NodePath("../Settings;Button-Template_Control")
-focus_previous = NodePath("../Load;Button-Template_Control")
-focus_mode = 2
-text = "SAVE"
-
-[node name="Settings;Button-Template_Control" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 452.0
-margin_right = 750.0
-margin_bottom = 552.0
-rect_min_size = Vector2( 80, 100 )
-focus_neighbour_top = NodePath("../Save;Button-Template_Control")
-focus_neighbour_bottom = NodePath("../Menu;Button-Template_Control")
-focus_next = NodePath("../Menu;Button-Template_Control")
-focus_previous = NodePath("../Save;Button-Template_Control")
+focus_neighbour_top = NodePath("../Load")
+focus_neighbour_bottom = NodePath("../Menu")
+focus_next = NodePath("../Menu")
+focus_previous = NodePath("../Load")
 focus_mode = 2
 text = "SETTINGS"
 
-[node name="Menu;Button-Template_Control" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 577.0
+[node name="Menu" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 515.0
 margin_right = 750.0
-margin_bottom = 677.0
+margin_bottom = 615.0
 rect_min_size = Vector2( 80, 100 )
-focus_neighbour_top = NodePath("../Settings;Button-Template_Control")
-focus_neighbour_bottom = NodePath("../Quit;Button-Template_Control")
-focus_next = NodePath("../Quit;Button-Template_Control")
-focus_previous = NodePath("../Settings;Button-Template_Control")
+focus_neighbour_top = NodePath("../Settings")
+focus_neighbour_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Settings")
 focus_mode = 2
 text = "MENU"
 
-[node name="Quit;Button-Template_Control" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 702.0
+[node name="Quit" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 640.0
 margin_right = 750.0
-margin_bottom = 802.0
+margin_bottom = 740.0
 rect_min_size = Vector2( 80, 100 )
-focus_neighbour_top = NodePath("../Menu;Button-Template_Control")
-focus_neighbour_bottom = NodePath("../Return;Button-Template_Control")
-focus_next = NodePath("../Return;Button-Template_Control")
-focus_previous = NodePath("../Menu;Button-Template_Control")
+focus_neighbour_top = NodePath("../Menu")
+focus_neighbour_bottom = NodePath("../Return")
+focus_next = NodePath("../Return")
+focus_previous = NodePath("../Menu")
 focus_mode = 2
 text = "QUIT"
 
-[node name="SubMenues_CanvasLayer" type="CanvasLayer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer"]
+[node name="SubMenues" type="CanvasLayer" parent="MainContainer/HBoxContainer"]
 layer = 12
 
-[node name="Settings-Menu_TabContainer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer" instance=ExtResource( 2 )]
+[node name="Settings" parent="MainContainer/HBoxContainer/SubMenues" instance=ExtResource( 2 )]
 visible = false
 margin_left = 950.0
 margin_top = 310.0
@@ -288,24 +263,13 @@ margin_right = 1800.0
 margin_bottom = 980.0
 rect_min_size = Vector2( 850, 670 )
 
-[node name="Load-Menu_ScrollContainer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer" instance=ExtResource( 4 )]
+[node name="LoadMenu" parent="MainContainer/HBoxContainer/SubMenues" instance=ExtResource( 4 )]
 visible = false
 margin_left = 1000.0
 margin_top = 200.0
-
-[node name="Control_VBoxContainer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Load-Menu_ScrollContainer" index="0"]
-mode = 0
-
-[node name="Save;Load-Menu_ScrollContainer" parent="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer" instance=ExtResource( 4 )]
-visible = false
-margin_left = 1000.0
-margin_top = 200.0
-[connection signal="pressed" from="Pause_Button" to="." method="_on_Pause_pressed"]
-[connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Return;Button-Template_Control" to="." method="_return_to_game"]
-[connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Load;Button-Template_Control" to="." method="_load"]
-[connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Save;Button-Template_Control" to="." method="_save"]
-[connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Settings;Button-Template_Control" to="." method="_settings"]
-[connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Menu;Button-Template_Control" to="." method="_to_menu"]
-[connection signal="pressed" from="MainContainer_MarginContainer/SubContainer_HBoxContainer/MenuContainer_VBoxContainer/Quit;Button-Template_Control" to="." method="_quit_game"]
-
-[editable path="MainContainer_MarginContainer/SubContainer_HBoxContainer/SubMenues_CanvasLayer/Load-Menu_ScrollContainer"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Return" to="." method="_return_to_game"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Load" to="." method="_load"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Settings" to="." method="_settings"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Menu" to="." method="_to_menu"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Quit" to="." method="_quit_game"]

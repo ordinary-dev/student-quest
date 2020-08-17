@@ -17,7 +17,7 @@ polygon = PoolVector2Array( 890.067, 310.051, 889.888, 280.048, 880.016, 280.033
 
 [node name="InsideTheTrainScene" type="Node2D"]
 script = ExtResource( 8 )
-dialog_path = "res://Dialogs/Beginning/Train.json"
+dialog_path = "res://Dialogs/Chapter1/Beginning/Train.json"
 enable_delay = true
 delay = 1.5
 load_scene = true

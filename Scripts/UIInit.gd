@@ -33,4 +33,5 @@ func enable_ui(joystick := false) -> void:
 func disable_ui() -> void:
 	UI.get_node("Joystick-UI_Sprite").visible = false
 	UI.get_node("PauseMenu-UI_Control").visible = false
+	UI.get_node("PauseMenu-UI_Control")._return_to_game(false)
 	UI.get_node("PauseMenu-UI_Control").set_process(false)

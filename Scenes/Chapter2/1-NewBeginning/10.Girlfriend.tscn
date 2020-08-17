@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Templates/Characters/Girlfriend.tscn" type="PackedScene" id=4]
+
+[node name="Girlfriend" type="Node2D"]
+modulate = Color( 0.780392, 0.733333, 0.854902, 1 )
+script = ExtResource( 3 )
+dialog_path = "res://Dialogs/Chapter2/NewBeginning/Talk.json"
+load_scene = true
+scene_path = "res://Scenes/Chapter2/1-NewBeginning/11.Door.tscn"
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
+initial_position = 2
+init_dir = 1
+show_singer = false
+show_gardener = false
+enable_lights = false
+
+[node name="CharacterSprite" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1368, 6544 )
+frame = 7

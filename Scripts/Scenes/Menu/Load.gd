@@ -12,12 +12,11 @@ onready var stages = [
 	# Chapter 1
 	$VBoxContainer/Chapter1/Beginning,           #0
 	$VBoxContainer/Chapter1/FirstDay,            #1
-	$VBoxContainer/Chapter1/Celebration,         #2
+	$VBoxContainer/Chapter1/UsualLife,           #2
 	$VBoxContainer/Chapter1/Parting,             #3
 	# Chapter 2
-	$VBoxContainer/Chapter2/TimeJump,            #4
 	$VBoxContainer/Chapter2/NewBeginning,        #5
-	$VBoxContainer/Chapter2/NewHoliday,          #6
+	$VBoxContainer/Chapter2/Celebration,         #6
 	$VBoxContainer/Chapter2/Journey,             #7
 	$VBoxContainer/Chapter2/Memories,            #8
 	# Chapter 3
@@ -31,6 +30,10 @@ onready var stages = [
 ]
 
 
-func _ready():
+func _ready() -> void:
+	refresh()
+
+
+func refresh() -> void:
 	for i in range(GLOBAL.progress):
 		stages[i].enabled = true

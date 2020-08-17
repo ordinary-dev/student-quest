@@ -1,0 +1,10 @@
+{
+    "0": {"name":"MR_SINGER", "text":"D_UL_SINGER_1", "next":"1"},
+    "1": {"name":"MAIN_CHARACTER", "text":"D_UL_SINGER_2", "next":"2"},
+    "2": {"name":"MR_SINGER", "text":"D_UL_SINGER_3", "next":"3"},
+    "3": {"name":"MAIN_CHARACTER", "text":"D_UL_SINGER_4", "next":"4"},
+    "4": {"name":"MR_SINGER", "text":"D_UL_SINGER_5", "next":"5"},
+    "5": {"name":"MAIN_CHARACTER", "text":"D_UL_SINGER_6", "next":"6"},
+    "6": {"name":"MR_SINGER", "text":"D_UL_SINGER_7", "next":"7"},
+    "7": {"name":"MAIN_CHARACTER", "text":"D_UL_SINGER_8"}
+}

@@ -2423,7 +2423,6 @@ position = Vector2( -96.8873, 232.846 )
 
 [node name="Body" parent="YSort" instance=ExtResource( 30 )]
 position = Vector2( -313, 2363 )
-restore_position = true
 
 [node name="Gardener" type="Sprite" parent="YSort"]
 position = Vector2( 968, 2584 )

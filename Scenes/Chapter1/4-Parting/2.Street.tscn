@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Templates/Characters/Girlfriend.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=4]
+
+[node name="StreetScene" type="Node2D"]
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 2 )]
+allow_entrance = true
+math_scene = "res://Scenes/Chapter1/4-Parting/3.Night.tscn"
+show_singer = false
+show_gardener = false
+enable_lights = false
+enable_npc = false
+
+[node name="CharacterSprite" parent="." instance=ExtResource( 1 )]
+position = Vector2( -280, 296 )
+
+[node name="CharacterDialog" parent="." instance=ExtResource( 3 )]
+position = Vector2( -212.181, 275.781 )
+dialog_path = "res://Dialogs/Chapter1/Parting/Parting.json"
+person = "GIRLFRIEND"
+load_scene = true
+scene_path = "res://Scenes/Chapter1/4-Parting/3.Night.tscn"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 4 )]
+joystick = true

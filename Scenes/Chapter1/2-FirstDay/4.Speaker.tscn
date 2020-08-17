@@ -5,7 +5,7 @@
 
 [node name="SpeakerScene" type="Node2D"]
 script = ExtResource( 2 )
-dialog_path = "res://Dialogs/Beginning/Speaker.json"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Speaker.json"
 enable_delay = true
 delay = 1.0
 load_scene = true

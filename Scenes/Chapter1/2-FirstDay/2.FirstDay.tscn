@@ -13,17 +13,17 @@ math_scene = "res://Scenes/Chapter1/2-FirstDay/3.Date.tscn"
 
 [node name="MrSingerDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 56, 416 )
-dialog_path = "res://Dialogs/Beginning/Stranger.json"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Stranger.json"
 person = "UNKNOWN_SINGER"
 
 [node name="GardenerDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1120, 2552 )
-dialog_path = "res://Dialogs/Beginning/Gardener.json"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Gardener.json"
 person = "GARDENER"
 
 [node name="GuideDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2264, 448 )
-dialog_path = "res://Dialogs/Beginning/PathToFaculty.json"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/PathToFaculty.json"
 person = "GUIDE"
 
 [node name="GuideTemplate" parent="." instance=ExtResource( 3 )]
