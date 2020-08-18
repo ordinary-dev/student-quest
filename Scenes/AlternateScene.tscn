@@ -6,7 +6,6 @@
 [ext_resource path="res://Audio/FX/Computer/computer-beeps.wav" type="AudioStream" id=4]
 [ext_resource path="res://Audio/FX/TV/tv-turn-off.wav" type="AudioStream" id=5]
 
-
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0

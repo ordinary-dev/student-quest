@@ -32,7 +32,7 @@ volume_db = -8.0
 autoplay = true
 bus = "FX"
 
-[node name="Disable-UI" parent="." instance=ExtResource( 3 )]
-
 [node name="StopMusic" type="Node2D" parent="."]
 script = ExtResource( 6 )
+
+[node name="Disable-UI" parent="." instance=ExtResource( 3 )]

@@ -16,10 +16,10 @@ texture_scale = 5.0
 color = Color( 0.368627, 0.509804, 0.894118, 1 )
 shadow_enabled = true
 
-[node name="Enable-UI" parent="." instance=ExtResource( 2 )]
-joystick = true
-
 [node name="LoadScene" parent="." instance=ExtResource( 1 )]
 position = Vector2( 512, 224 )
 label = "OPENCHAT"
 scene_path = "res://Scenes/Chapter2/1-NewBeginning/14.Site.tscn"
+
+[node name="Enable-UI" parent="." instance=ExtResource( 2 )]
+joystick = true
