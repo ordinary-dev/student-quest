@@ -1,0 +1,5 @@
+{
+    "0":{"name":"MAIN_CHARACTER", "text":"D_DSP_BRIDGE_8", "next":"1"},
+    "1":{"name":"MAIN_CHARACTER", "text":"D_DSP_BRIDGE_9", "next":"2"},
+    "2":{"name":"MAIN_CHARACTER", "text":"D_DSP_BRIDGE_10"}
+} 

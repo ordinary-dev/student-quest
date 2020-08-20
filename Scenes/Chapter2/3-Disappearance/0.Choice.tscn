@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Templates/Choice/Choice.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/0.Choice.gd" type="Script" id=2]
+
+[node name="Choice" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -672.0
+margin_top = -378.0
+margin_right = -672.0
+margin_bottom = -378.0
+rect_min_size = Vector2( 1920, 1080 )
+rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene_path = "res://Scenes/Chapter2/3-Disappearance/6.Police.tscn"
+phone_scene = "res://Scenes/Chapter2/3-Disappearance/3.Phone.tscn"
+commandant_scene = "res://Scenes/Chapter2/3-Disappearance/5.Commandant.tscn"
+
+[node name="Buttons" parent="." instance=ExtResource( 1 )]

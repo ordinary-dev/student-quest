@@ -25,9 +25,11 @@ func _on_Button_pressed():
 "
 
 [node name="Button" type="Button"]
-margin_right = 12.0
-margin_bottom = 38.0
-rect_min_size = Vector2( 800, 170 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1120.0
+margin_bottom = -940.0
+rect_min_size = Vector2( 800, 140 )
 flat = true
 script = SubResource( 1 )
 __meta__ = {
@@ -36,9 +38,10 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
-margin_right = 800.0
-margin_bottom = 170.0
-rect_min_size = Vector2( 800, 170 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 800, 140 )
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -47,7 +50,11 @@ __meta__ = {
 [node name="Label" type="Label" parent="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -10.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Text"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

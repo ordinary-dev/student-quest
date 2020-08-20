@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Sprites/character.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Characters/Girlfriend.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/npc_3.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Shake.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/bus/Seat.png" type="Texture" id=4]
@@ -10,11 +10,13 @@
 [ext_resource path="res://Sprites/bus/Bus.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=9]
 
+
+
 [node name="Bus" type="Node2D"]
 script = ExtResource( 9 )
 dialog_path = "res://Dialogs/Chapter2/Celebration/Bus.json"
 load_scene = true
-scene_path = "res://Scenes/Chapter2/Disappearance/1.Street.tscn"
+scene_path = "res://Scenes/Chapter2/3-Disappearance/1.Street.tscn"
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0.666667, 0.67451, 0.784314, 1 )

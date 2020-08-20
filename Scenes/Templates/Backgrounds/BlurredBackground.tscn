@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/blur/1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/blur/2.png" type="Texture" id=2]
+[ext_resource path="res://Animations/BackgroundTransparency.tres" type="Animation" id=3]
+
+[node name="Background" type="Node2D"]
+
+[node name="BlurredBackground1" type="Sprite" parent="."]
+position = Vector2( 3.63798e-12, 4.76837e-07 )
+scale = Vector2( 25.2632, 25.1163 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BlurredBackground2" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 4.76837e-07, 0 )
+scale = Vector2( 25.2632, 25.1163 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Transparency"
+anims/Transparency = ExtResource( 3 )

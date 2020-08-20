@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/backgrounds/background.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Backgrounds/background.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=4]
+
 
 [node name="RoadScene" type="Node2D"]
 script = ExtResource( 2 )

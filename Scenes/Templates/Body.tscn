@@ -193,12 +193,12 @@ frame = 2
 
 [node name="Footstep1_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -10.0
+volume_db = -15.0
 bus = "FX"
 
 [node name="Footstep2_AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.0
+volume_db = -15.0
 bus = "FX"
 
 [node name="WalkCycle_AnimationPlayer" type="AnimationPlayer" parent="."]
