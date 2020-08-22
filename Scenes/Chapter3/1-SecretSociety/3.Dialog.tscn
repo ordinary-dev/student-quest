@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Scripts/General/PlayMusic.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Characters/Neo.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Backgrounds/Sky.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Stripes.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=7]
+
+[node name="Dialog" type="Node2D"]
+script = ExtResource( 4 )
+dialog_path = "res://Dialogs/Chapter3/SecretSociety/River.json"
+enable_delay = true
+delay = 1.0
+load_scene = true
+scene_path = "res://Scenes/Chapter3/1-SecretSociety/4.River.tscn"
+loading_delay = 2.0
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 0, 192 )
+scale = Vector2( 46.8293, 33.3913 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Neo" type="Sprite" parent="."]
+position = Vector2( 1320, 760 )
+scale = Vector2( 22, 22 )
+texture = ExtResource( 3 )
+flip_h = true
+vframes = 3
+hframes = 3
+frame = 8
+
+[node name="MainCharacter" type="Sprite" parent="."]
+position = Vector2( 456, 784 )
+scale = Vector2( 22, 22 )
+texture = ExtResource( 2 )
+vframes = 3
+hframes = 3
+frame = 8
+
+[node name="Stripes" type="Sprite" parent="."]
+position = Vector2( 960, 544 )
+scale = Vector2( 1, 1.24444 )
+texture = ExtResource( 6 )
+
+[node name="PlayMusic" type="Node2D" parent="."]
+script = ExtResource( 1 )
+file = "res://Audio/Music/Sci-Fi/smpl0005.ogg"
+delay = 1.0
+
+[node name="Disable-UI" parent="." instance=ExtResource( 7 )]

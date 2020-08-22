@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/smpl0005.ogg-3a3ed9bd0d1124009b16b0f86e7e8494.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/Sci-Fi/smpl0005.ogg"
+dest_files=[ "res://.import/smpl0005.ogg-3a3ed9bd0d1124009b16b0f86e7e8494.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

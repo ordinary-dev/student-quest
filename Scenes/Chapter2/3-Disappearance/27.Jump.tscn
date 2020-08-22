@@ -8,7 +8,7 @@
 script = ExtResource( 1 )
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Bridge_3.json"
 load_scene = true
-scene_path = "res://Scenes/Chapter3/SS/1.House.tscn"
+scene_path = "res://Scenes/Chapter3/1-SecretSociety/1.House.tscn"
 loading_delay = 5.0
 
 [node name="NoiseBackground" parent="." instance=ExtResource( 2 )]
