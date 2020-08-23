@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/House/NPC_5.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.json\") var dialog_path
+export (String, FILE, \"*.tscn\") var scene_path
+
+
+func activate_dialog() -> void:
+	var player = get_node(GLOBAL.player_path)
+	player.lock()
+	player.go_left()
+	DIALOG.show_dialog(dialog_path, get_path(), \"load_scene\")
+
+
+func load_scene() -> void:
+	SCENES.load_scene(scene_path, false, false)
+"
+
+[node name="Morning" type="Node2D"]
+script = SubResource( 1 )
+dialog_path = "res://Dialogs/Chapter3/Despair/Stranger.json"
+scene_path = "res://Scenes/Chapter3/2-Despair/11.Train.tscn"
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
+initial_position = 3
+player_tetxure = 1
+init_dir = 0
+
+[node name="FunctionTrigger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2496, 8168 )
+scale = Vector2( 8, 4 )
+call_one_time = true
+obj = NodePath("../../Morning")
+method = "activate_dialog"
+
+[node name="NPC" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2464, 8176 )
+scale = Vector2( 3, 3 )
+z_index = 3

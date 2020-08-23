@@ -11,7 +11,9 @@ extends Node2D
 # Position
 enum positions {HOSTEL, FOUNTAIN, FACULTY, SOUTH_ENTRANCE}
 export (positions) var initial_position = positions.HOSTEL
-export (bool) var use_alex_texture = false
+
+enum player_text {MAIN, NEO}
+export (player_text) var player_tetxure
 
 # Directions
 enum dirs {UP, DOWN, LEFT, RIGHT}
@@ -64,8 +66,8 @@ func init() -> void:
 func _ready() -> void:
 	var player = get_node(GLOBAL.player_path)
 	
-	if use_alex_texture:
-		player.sprite_sheet = player.sprites.ALEX
+	if player_tetxure == player_text.NEO:
+		player.sprite_sheet = player.sprites.NEO
 	
 	# Do not overwrite position if it was saved
 	if player.restored_position == false:

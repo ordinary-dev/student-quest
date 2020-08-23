@@ -1,0 +1,7 @@
+{
+    "0":{"name":"NEO", "text":"D_DESPAIR_BRIDGE_5", "next":"1"},
+    "1":{"name":"MAIN_CHARACTER", "text":"D_DESPAIR_BRIDGE_6", "next":"2"},
+    "2":{"name":"MAIN_CHARACTER", "text":"D_DESPAIR_BRIDGE_7", "next":"3"},
+    "3":{"name":"MR_SINGER", "text":"D_DESPAIR_BRIDGE_8", "next":"4"},
+    "4":{"name":"NEO", "text":"D_DESPAIR_BRIDGE_9"}
+} 
