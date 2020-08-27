@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Journey.webp-ab8d8521179804f0938436be3145dda3.stex"
+path="res://.import/Hope.webp-09a9e04bea75b6d4a71978579f4523e8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Screenshots/Chapter2/Journey.webp"
-dest_files=[ "res://.import/Journey.webp-ab8d8521179804f0938436be3145dda3.stex" ]
+source_file="res://Sprites/Screenshots/Chapter3/Hope.webp"
+dest_files=[ "res://.import/Hope.webp-09a9e04bea75b6d4a71978579f4523e8.stex" ]
 
 [params]
 

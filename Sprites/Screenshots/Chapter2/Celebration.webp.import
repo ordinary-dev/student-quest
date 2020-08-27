@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/IllusoryWorld.webp-95101443f6d3ca6442415aa335b657da.stex"
+path="res://.import/Celebration.webp-1a8ee33f4d5076451e67d7ffdafd1672.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Screenshots/Chapter4/IllusoryWorld.webp"
-dest_files=[ "res://.import/IllusoryWorld.webp-95101443f6d3ca6442415aa335b657da.stex" ]
+source_file="res://Sprites/Screenshots/Chapter2/Celebration.webp"
+dest_files=[ "res://.import/Celebration.webp-1a8ee33f4d5076451e67d7ffdafd1672.stex" ]
 
 [params]
 

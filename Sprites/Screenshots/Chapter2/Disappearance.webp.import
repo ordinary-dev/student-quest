@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Memories.webp-596d667485cc1b70e3522c0a8225b65c.stex"
+path="res://.import/Disappearance.webp-b9b2fef3fb377038bb6e989ac47defe7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Screenshots/Chapter2/Memories.webp"
-dest_files=[ "res://.import/Memories.webp-596d667485cc1b70e3522c0a8225b65c.stex" ]
+source_file="res://Sprites/Screenshots/Chapter2/Disappearance.webp"
+dest_files=[ "res://.import/Disappearance.webp-b9b2fef3fb377038bb6e989ac47defe7.stex" ]
 
 [params]
 

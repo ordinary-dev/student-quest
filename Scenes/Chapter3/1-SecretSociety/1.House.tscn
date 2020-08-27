@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Templates/House/HouseInside.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/General/Unlock.gd" type="Script" id=4]
 
 [node name="House" type="Node2D"]
 
@@ -11,6 +12,10 @@ street_scene = "res://Scenes/Chapter3/1-SecretSociety/2.Forest.tscn"
 
 [node name="StopMusic" type="Node2D" parent="."]
 script = ExtResource( 1 )
+
+[node name="Unlock" type="Node2D" parent="."]
+script = ExtResource( 4 )
+subchapter_id = 7
 
 [node name="Enable-UI" parent="." instance=ExtResource( 3 )]
 joystick = true

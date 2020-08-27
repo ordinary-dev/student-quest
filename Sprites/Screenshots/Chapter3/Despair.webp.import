@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Escape.webp-72d319fe768f8ab00d726b3f727cff3c.stex"
+path="res://.import/Despair.webp-71509604d472aa9e1dd7b3e1d829e5f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Screenshots/Chapter4/Escape.webp"
-dest_files=[ "res://.import/Escape.webp-72d319fe768f8ab00d726b3f727cff3c.stex" ]
+source_file="res://Sprites/Screenshots/Chapter3/Despair.webp"
+dest_files=[ "res://.import/Despair.webp-71509604d472aa9e1dd7b3e1d829e5f0.stex" ]
 
 [params]
 

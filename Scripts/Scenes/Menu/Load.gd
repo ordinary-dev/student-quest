@@ -12,18 +12,13 @@ onready var stages = [
 	$VBoxContainer/Chapter1/UsualLife,           #2
 	$VBoxContainer/Chapter1/Parting,             #3
 	# Chapter 2
-	$VBoxContainer/Chapter2/NewBeginning,        #5
-	$VBoxContainer/Chapter2/Celebration,         #6
-	$VBoxContainer/Chapter2/Journey,             #7
-	$VBoxContainer/Chapter2/Memories,            #8
+	$VBoxContainer/Chapter2/NewBeginning,        #4
+	$VBoxContainer/Chapter2/Celebration,         #5
+	$VBoxContainer/Chapter2/Disappearance,       #6
 	# Chapter 3
-	$VBoxContainer/Chapter3/SecretSociety,       #9
-	$VBoxContainer/Chapter3/DailyLife,           #10
-	$VBoxContainer/Chapter3/UnexpectedDecisions, #11
-	# Chapter 4
-	$VBoxContainer/Chapter4/IllusoryWorld,       #12
-	$VBoxContainer/Chapter4/Escape,              #13
-	$VBoxContainer/Chapter4/Infiltration         #14
+	$VBoxContainer/Chapter3/SecretSociety,       #7
+	$VBoxContainer/Chapter3/Despair,             #8
+	$VBoxContainer/Chapter3/Hope                 #9
 ]
 
 
@@ -32,5 +27,5 @@ func _ready() -> void:
 
 
 func refresh() -> void:
-	for i in range(GLOBAL.progress):
+	for i in range(GLOBAL.progress + 1):
 		stages[i].enabled = true

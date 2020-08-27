@@ -16,10 +16,13 @@ text_1 = "MAY_29"
 text_2 = "MORNING"
 next_scene = "res://Scenes/Chapter1/4-Parting/2.Street.tscn"
 
-[node name="Disable-UI" parent="." instance=ExtResource( 2 )]
-
 [node name="Unlock" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 subchapter_id = 4
+
+[node name="Disable-UI" parent="." instance=ExtResource( 2 )]

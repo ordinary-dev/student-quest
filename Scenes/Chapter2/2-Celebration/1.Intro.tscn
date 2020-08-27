@@ -23,6 +23,9 @@ next_scene = "res://Scenes/Chapter2/2-Celebration/2.Road.tscn"
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 3 )
-subchapter_id = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+subchapter_id = 5
 
 [node name="Disable-UI" parent="." instance=ExtResource( 4 )]
