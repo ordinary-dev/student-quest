@@ -220,7 +220,7 @@ fade_out = false
 
 [node name="PlayMusic" type="Node2D" parent="."]
 script = ExtResource( 12 )
-file = "res://Audio/Music/MidnightTwighlight/MidnightTwighlight.ogg"
+file = "res://Audio/Music/SadPiano/SadHeavenPiano1.ogg"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 6 )]
 joystick = true

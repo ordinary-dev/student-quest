@@ -11,7 +11,8 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-file = "res://Audio/Music/FallingDown.ogg"
+file = "res://Audio/Music/MelancholicExistence/a-melancholic-existence.ogg"
+delay = 3.0
 
 [node name="AnimatedText" parent="." instance=ExtResource( 1 )]
 text_1 = "SEPTEMBER1"

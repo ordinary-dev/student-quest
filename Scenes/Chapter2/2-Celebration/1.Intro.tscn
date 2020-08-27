@@ -12,7 +12,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-file = "res://Audio/Music/LastBusHome.ogg"
+file = "res://Audio/Music/FrozenFjords/frozen-fjords-only-guitar.ogg"
 
 [node name="AnimatedText" parent="." instance=ExtResource( 2 )]
 text_1 = "MORNING"

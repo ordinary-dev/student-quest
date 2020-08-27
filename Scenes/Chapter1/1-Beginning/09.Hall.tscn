@@ -5,8 +5,6 @@
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Backgrounds/hall.png" type="Texture" id=4]
 
-
-
 [node name="HallScene" type="Node2D"]
 script = ExtResource( 2 )
 next_scene = "res://Scenes/Chapter1/1-Beginning/10.Bus.tscn"
@@ -19,6 +17,6 @@ texture = ExtResource( 4 )
 
 [node name="Audio" type="Node2D" parent="."]
 script = ExtResource( 1 )
-file = "res://Audio/Music/Ambient.ogg"
+file = "res://Audio/Music/Ambient/Ambient.ogg"
 
 [node name="Enable-UI" parent="." instance=ExtResource( 3 )]

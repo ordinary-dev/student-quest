@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Audio/Music/Suspense.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Audio/Music/DeadPulse/dead-pulse.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Blackout.gd" type="Script" id=4]
@@ -61,7 +61,7 @@ bus = "Ambient"
 
 [node name="Suspense" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = 15.0
+volume_db = 10.0
 autoplay = true
 bus = "OST"
 [connection signal="timeout" from="Timer" to="." method="turn_lights_on"]

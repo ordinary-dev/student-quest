@@ -7,7 +7,7 @@
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=7]
-[ext_resource path="res://Audio/FX/OceanWaves.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Audio/FX/OceanWaves/zen-ocean-waves-ocean-waves-ambience.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=9]
 
 [node name="River" type="Node2D"]
@@ -114,7 +114,7 @@ script = ExtResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -5.0
+volume_db = -13.0
 autoplay = true
 bus = "FX"
 
