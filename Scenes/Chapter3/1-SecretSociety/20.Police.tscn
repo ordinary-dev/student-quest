@@ -12,7 +12,7 @@ script = ExtResource( 6 )
 dialog_path = "res://Dialogs/Chapter3/SecretSociety/BusStop.json"
 enable_delay = true
 load_scene = true
-scene_path = "res://Scenes/Despair/1.Street.tscn"
+scene_path = "res://Scenes/Chapter3/2-Despair/1.Street.tscn"
 loading_delay = 4.0
 
 [node name="Background" parent="." instance=ExtResource( 2 )]

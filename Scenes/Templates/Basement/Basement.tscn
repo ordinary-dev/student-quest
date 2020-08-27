@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Characters/Neo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/light_new.png" type="Texture" id=3]
 [ext_resource path="res://Tilemaps/building/building16.tres" type="TileSet" id=4]
+[ext_resource path="res://Scripts/Templates/Basement.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/things/Computer.png" type="Texture" id=7]
-
 
 [sub_resource type="RectangleShape2D" id=1]
 
 [node name="Map" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Map_TileMap" type="TileMap" parent="."]
 modulate = Color( 0.235294, 0.235294, 0.431373, 1 )
@@ -41,20 +43,19 @@ position = Vector2( 720, -352 )
 texture = ExtResource( 3 )
 texture_scale = 22.0
 color = Color( 0.407843, 0.0431373, 0.937255, 1 )
+range_item_cull_mask = 3
 shadow_enabled = true
 
-[node name="Body" parent="." instance=ExtResource( 1 )]
-modulate = Color( 0.235294, 0.235294, 0.431373, 1 )
-position = Vector2( 80, 128 )
+[node name="YSort" type="YSort" parent="."]
+modulate = Color( 0.615686, 0.654902, 0.737255, 1 )
+
+[node name="Body" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 160, 128 )
 collision_layer = 1025
 default_state = 3
 
-[node name="Camera2D" parent="Body/Character_Sprite" index="0"]
-limit_left = -384
-limit_top = -512
-limit_right = 1024
-limit_bottom = 512
-editor_draw_limits = true
+[node name="Neo" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 696, -96 )
 
 [node name="Noise" type="Node2D" parent="."]
 
@@ -147,5 +148,3 @@ position = Vector2( -352, 256 )
 
 [node name="Noise-Sprite-Template_AnimatedSprite_40" parent="Noise" instance=ExtResource( 6 )]
 position = Vector2( -352, 448 )
-
-[editable path="Body"]

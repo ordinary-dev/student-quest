@@ -1,0 +1,5 @@
+{
+    "0":{"name":"MR_SINGER", "text":"D_HP_MACHINE_7", "next":"1"},
+    "1":{"name":"MR_SINGER", "text":"D_HP_MACHINE_8", "next":"2"},
+    "2":{"name":"MR_SINGER", "text":"D_HP_MACHINE_9"}
+} 

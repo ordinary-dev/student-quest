@@ -1,8 +1,13 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/phone/background.jpg" type="Texture" id=2]
-[ext_resource path="res://Sprites/phone/phone.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Backgrounds/BlurryRoom.jpg" type="Texture" id=2]
+[ext_resource path="res://Sprites/Phone/Phone.png" type="Texture" id=3]
+
+
+
+
+
 
 [node name="PhoneScene" type="Node2D"]
 script = ExtResource( 1 )

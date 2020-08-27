@@ -1,0 +1,42 @@
+id,en,ru
+D_HP_FIELD_1,I don't remember this place.,Я не помню это место.
+D_HP_STREET_1,Hi.,Привет.
+D_HP_STREET_2,Maybe check the basement again today?,Может сегодня еще раз проверить подвал?
+D_HP_STREET_3,I don't think it will help.,"Не думаю, что это поможет."
+D_HP_STREET_4,I'll go all the way to the end.,Я всё равно пойду до конца.
+D_HP_STREET_5,Hope you change your mind.,"Надеюсь, что ты передумаешь."
+D_HP_STREET_6,I'll be waiting at 4 o'clock on the 3rd floor.,Я буду ждать в 4 часа на 3 этаже.
+D_HP_STREET_7,Come if you can.,"Приходи, если можешь."
+D_HP_LETS_GO,Let’s go.,Пойдём.
+D_HP_NIGHT_1,We waited until nightfall and then went down to the basement.,"Мы дождались ночи, а затем спустились в подвал."
+D_HP_STEPS_1,Hey look!,"Эй, смотри!"
+TALK,Talk,Поговорить
+D_HP_BASEMENT_1,This computer works!,Этот компьютер работает!
+D_HP_BASEMENT_2,And what's there?,И что там?
+D_HP_BASEMENT_3,"I can't understand yet, everything is very strange.","Не могу пока что понять, всё очень странно."
+D_HP_BASEMENT_4,But I'll copy everything I can.,"Но я скопирую себе всё, что смогу."
+D_HP_BASEMENT_5,"You can wait or go, like there really is nothing else.","Можешь подождать или идти, вроде тут действительно больше ничего нет."
+HP_MESSAGE,Hurry up and leave the class. I'll be waiting at the bus stop. It is important.,"Быстрее уходи с пары, буду ждать у остановки. Это важно."
+TRY_AGAIN,Try again,Попробуй ещё раз
+D_HP_RIVER_1,What happened?,Что произошло?
+D_HP_RIVER_2,I was able to open some files from that computer.,Я смог открыть некоторые файлы с того компьютера.
+D_HP_RIVER_3,"Apparently, there is something very important there.","Судя по всему, там что-то очень важное."
+D_HP_RIVER_4,"But the laptop suddenly turned off, and I saw the police through the window.","Но ноутбук вдруг выключился, а через окно я увидел полицию."
+D_HP_RIVER_5,That's when I wrote to you.,Тогда я и написал тебе.
+D_HP_RIVER_6,Where did the police come from? Were they looking for me?,А откуда взялась полиция? Они искали тебя?
+D_HP_RIVER_7,"I don't know, but it's best not to get caught until we figure it out.","Я не знаю, но лучше не попадаться им, пока не разберемся."
+D_HP_RIVER_8,…,…
+D_HP_RIVER_9,What?,Что?
+D_HP_RIVER_10,Do you hear footsteps? Someone is coming.,Слышишь шаги? Кто-то идет.
+D_HP_RIVER_11,Run!,Бежим!
+D_HP_ML_1,We split up and hid from the police all day.,Мы разделились и весь день скрывались от полиции.
+D_HP_ML_2,"In the late afternoon, I went to the place where we had agreed to meet.","Ближе к вечеру я пошел туда, где мы договорились встретиться."
+D_HP_MACHINE_1,Wait!,Подожди!
+D_HP_MACHINE_2,Don't go there!,Не иди туда!
+D_HP_MACHINE_3,We still don't know what's on the other side of the machine.,"Мы все еще не знаем, что находится по ту сторону машины."
+D_HP_MACHINE_4,And nothing ever came back.,И ещё ничто не возвращалось оттуда.
+D_HP_MACHINE_5,"I don't want to hurt you, honestly.","Я не желаю тебе зла, честно."
+D_HP_MACHINE_6,But I won't let you go any further.,Но я не позволю тебе пройти дальше.
+D_HP_MACHINE_7,No way.,Ну уж нет.
+D_HP_MACHINE_8,We've taken too long to get to this point.,Мы слишком долго шли к этому моменту.
+D_HP_MACHINE_9,And we all know that there is more behind this barrier.,"И все мы знаем, что за этим барьером скрыто нечто большее."
