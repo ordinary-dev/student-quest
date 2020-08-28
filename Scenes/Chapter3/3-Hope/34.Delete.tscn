@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Templates/Backgrounds/AlexTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=2]
+
+[node name="Delete" type="Node2D"]
+script = ExtResource( 2 )
+dialog_path = "res://Dialogs/Chapter3/Hope/Delete.json"
+enable_delay = true
+load_scene = true
+scene_path = "res://Scenes/AlternateScene.tscn"
+
+[node name="AlexTemplate" parent="." instance=ExtResource( 1 )]

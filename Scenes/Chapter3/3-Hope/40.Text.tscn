@@ -2,14 +2,13 @@
 
 [ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=1]
 
-[node name="Tmp" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Text" type="Control"]
+rect_min_size = Vector2( 1920, 1080 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimatedText" parent="." instance=ExtResource( 1 )]
-text_1 = "To be continued"
-text_2 = "Wait for updates"
-next_scene = "res://Scenes/Menu/Menu.tscn"
+text_1 = "SEPTEMBER1"
+text_2 = "MORNING"
+next_scene = "res://Scenes/Chapter3/3-Hope/41.Street.tscn"

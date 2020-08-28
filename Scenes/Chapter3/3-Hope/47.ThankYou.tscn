@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedText" parent="." instance=ExtResource( 1 )]
+text_1 = "THANK_YOU"
+show_second_line = false
+next_scene = "res://Scenes/Chapter3/3-Hope/48.StopMusic.tscn"

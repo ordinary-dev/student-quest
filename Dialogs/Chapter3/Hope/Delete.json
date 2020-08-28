@@ -1,0 +1,6 @@
+{
+    "0":{"name":"~", "text":"D_HP_DEL_1", "next":"1"},
+    "1":{"name":"~", "text":"D_HP_DEL_2", "next":"2"},
+    "2":{"name":"~", "text":"D_HP_DEL_3", "next":"3"},
+    "3":{"name":"~", "text":"D_HP_DEL_4"}
+} 

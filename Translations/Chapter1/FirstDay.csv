@@ -16,6 +16,10 @@ D_FD_GARDENER_11,I'll try.,Я попробую.
 D_FD_PATH_1,"Hi, are you from the Faculty of Mathematics?","Привет, ты же с математического факультета?"
 D_FD_PATH_2,You need to go a little down and to the left.,Тебе нужно пройти немного вниз и налево.
 D_FD_PATH_3,Thank!,Спасибо!
+D_FD_GF_1,"Oh, hi.","О, привет."
+D_FD_GF_2,Have you finished everything yet?,У вас уже всё закончилось?
+D_FD_GF_3,"Yes, now I want to walk around the University.","Да, теперь хочу погулять по университету."
+D_FD_GF_4,"Okay, I'll go.","Ладно, я пойду."
 D_FD_SPEAKER_1,You have chosen the right path.,Вы выбрали правильный путь.
 D_FD_SPEAKER_2,Do not look back at failures and always go forward.,Не оглядывайтесь на неудачи и идите всегда вперед.
 D_FD_SPEAKER_3,I congratulate you on the beginning of your student life!,Поздравляю вас с началом студенческой жизни!

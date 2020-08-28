@@ -1,0 +1,12 @@
+{
+    "0":{"name":"UNKNOWN_PERSON", "text":"D_HP_ROOF_3",  "next":"1"},
+    "1":{"name":"MAIN_CHARACTER", "text":"D_HP_ROOF_4",  "next":"2"},
+    "2":{"name":"UNKNOWN_PERSON", "text":"D_HP_ROOF_5",  "next":"3"},
+    "3":{"name":"GIRLFRIEND",     "text":"D_HP_ROOF_6",  "next":"4"},
+    "4":{"name":"MAIN_CHARACTER", "text":"D_HP_ROOF_7",  "next":"5"},
+    "5":{"name":"GIRLFRIEND",     "text":"D_HP_ROOF_8",  "next":"6"},
+    "6":{"name":"GIRLFRIEND",     "text":"D_HP_ROOF_9",  "next":"7"},
+    "7":{"name":"MAIN_CHARACTER", "text":"D_HP_ROOF_10", "next":"8"},
+    "8":{"name":"GIRLFRIEND",     "text":"D_HP_ROOF_11", "next":"9"},
+    "9":{"name":"MAIN_CHARACTER", "text":"D_HP_ROOF_12"}
+} 
