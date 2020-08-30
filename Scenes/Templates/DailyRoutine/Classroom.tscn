@@ -7,15 +7,10 @@
 [ext_resource path="res://Scripts/Shake.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/DailyRoutine/Hand.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Templates/DailyRoutine/Classroom.gd" type="Script" id=7]
-[ext_resource path="res://Audio/FX/Voices/classroom.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/FX/Voices/classroom.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=9]
 
-
-
-
-
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Pen"
 length = 0.3
 tracks/0/type = "value"
@@ -93,7 +88,7 @@ max_diff = 5.0
 opf = 5.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Pen = SubResource( 2 )
+anims/Pen = SubResource( 1 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = -32.0

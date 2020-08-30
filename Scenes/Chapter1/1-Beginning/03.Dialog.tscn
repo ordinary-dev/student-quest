@@ -4,9 +4,7 @@
 [ext_resource path="res://Scenes/Templates/Backgrounds/BlurredBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Templates/Characters/UnknownPerson.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Audio/FX/Voices/classroom.wav" type="AudioStream" id=5]
-
-
+[ext_resource path="res://Audio/FX/Voices/classroom.ogg" type="AudioStream" id=5]
 
 [node name="Dialog" type="Control"]
 anchor_right = 1.0

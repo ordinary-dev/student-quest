@@ -9,12 +9,11 @@ export(String, FILE, "*.tscn") var next_scene
 
 onready var audio := $TrainSound
 
-const delay = 4
+const delay = 3
 
 
 func _ready() -> void:
-	audio.play()
-	audio.seek(7)
+	audio.play(7)
 	yield(get_tree().create_timer(delay), "timeout")
 	load_scene()
 

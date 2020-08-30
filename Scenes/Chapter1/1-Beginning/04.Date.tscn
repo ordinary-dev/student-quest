@@ -11,7 +11,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-file = "res://Audio/FX/Train/train-passing-left-to-right-a.wav"
+file = "res://Audio/FX/Train/train-passing-left-to-right-a.ogg"
 
 [node name="Text" parent="." instance=ExtResource( 2 )]
 text_1 = "JUNE_29"
