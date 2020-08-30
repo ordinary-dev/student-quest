@@ -3,7 +3,7 @@ extends Node
 # Display a notification in top left corner
 
 # Template
-onready var scene : = preload("res://Scenes/global/Notification.tscn")
+onready var scene : = preload("res://Scenes/ui/Notification.tscn")
 var id := 1
 
 
