@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/Room/Room.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -26,5 +26,6 @@ label = "CHAT"
 object_name = NodePath("..")
 function_name = "chat"
 
-[node name="Enable-UI" parent="." instance=ExtResource( 3 )]
-joystick = true
+[node name="ChangeUI" parent="." instance=ExtResource( 3 )]
+show_pause_menu = true
+show_joystick = true

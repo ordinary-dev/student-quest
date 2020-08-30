@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/Roof/Sunset.jpg" type="Texture" id=1]
-[ext_resource path="res://Sprites/black.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Black.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Roof/Roof.png" type="Texture" id=3]
+
 
 [node name="Background" type="Node2D"]
 

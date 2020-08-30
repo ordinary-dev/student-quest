@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/Officer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/General/AI_Config.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=4]
 
 [node name="Infiltration" type="Node2D"]
 
@@ -112,5 +113,9 @@ nav_node = NodePath("../../StreetTemplate/Navigation2D")
 upper_left_node = NodePath("../../StreetTemplate/UpperLeft")
 bottom_right_node = NodePath("../../StreetTemplate/BottomDown")
 hit_scene_path = "res://Scenes/Chapter3/3-Hope/19.Hit.tscn"
+
+[node name="ChangeUI" parent="." instance=ExtResource( 4 )]
+show_pause_menu = true
+show_joystick = true
 
 [editable path="StreetTemplate"]

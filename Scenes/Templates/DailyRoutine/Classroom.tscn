@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/DailyRoutine/ClassroomBackground.jpg" type="Texture" id=1]
 [ext_resource path="res://Sprites/DailyRoutine/Table_2.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Sprites/DailyRoutine/Hand.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/Templates/DailyRoutine/Classroom.gd" type="Script" id=7]
 [ext_resource path="res://Audio/FX/Voices/classroom.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Pen"
@@ -105,7 +104,5 @@ stream = ExtResource( 8 )
 volume_db = -10.0
 autoplay = true
 bus = "Ambient"
-
-[node name="Enable-UI" parent="." instance=ExtResource( 9 )]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="pressed" from="Button" to="." method="move"]

@@ -33,7 +33,6 @@ func _ready() -> void:
 
 
 func _on_button_pressed() -> void:
-	UI_INIT.disable_ui()
 	MUSIC.stop()
 	get_tree().paused = false
 	SCENES.load_scene(path_to_scene)

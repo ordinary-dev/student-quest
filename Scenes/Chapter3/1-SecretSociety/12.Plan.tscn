@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/Guard.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=4]
 
 [node name="Plan" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,5 +20,3 @@ position = Vector2( 352, 1504 )
 scale = Vector2( 3, 3 )
 z_index = 1
 texture = ExtResource( 2 )
-
-[node name="Disable-UI" parent="." instance=ExtResource( 4 )]

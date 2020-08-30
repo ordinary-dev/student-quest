@@ -1,19 +1,19 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Sprites/Bridge.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Bridge-1.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SnowStreet/Background.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Stranger.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Characters/Stranger.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/26.StrangerAI.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/26.Bridge.gd" type="Script" id=8]
 
 
-[sub_resource type="RectangleShape2D" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 104, 96 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1016, 96 )
 
 [node name="Bridge" type="Node2D"]
@@ -53,7 +53,7 @@ collision_mask = 1024
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Characters/Stranger/StaticBody2D"]
 position = Vector2( 12.8, 14.9333 )
 scale = Vector2( 0.0666667, 0.0666667 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Body" parent="Characters" instance=ExtResource( 3 )]
 position = Vector2( 1616, 1008 )
@@ -75,15 +75,15 @@ collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 952, 1136 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 960, 792 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1888, 968 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="DialogTrigger" parent="." instance=ExtResource( 5 )]
 position = Vector2( 720, 968 )
@@ -116,8 +116,5 @@ enabled = false
 call_one_time = true
 obj = NodePath("../..")
 method = "teleport_3"
-
-[node name="Enable-UI" parent="." instance=ExtResource( 6 )]
-joystick = true
 
 [editable path="Characters/Body"]

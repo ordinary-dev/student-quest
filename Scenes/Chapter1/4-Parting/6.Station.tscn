@@ -8,8 +8,8 @@
 [ext_resource path="res://Scenes/Templates/Buildings/Building_3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Templates/Buildings/Building_2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Templates/Buildings/Building_4.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Templates/Trees/Tree_type_1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Templates/Trees/Tree_type_2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Templates/Buildings/Building_1.tscn" type="PackedScene" id=14]
@@ -221,7 +221,8 @@ position = Vector2( -864, 32 )
 [node name="Noise-Sprite-Template_AnimatedSprite_21" parent="Noise" instance=ExtResource( 10 )]
 position = Vector2( -864, -160 )
 
-[node name="Enable-UI" parent="." instance=ExtResource( 11 )]
-joystick = true
+[node name="ChangeUI" parent="." instance=ExtResource( 9 )]
+show_pause_menu = true
+show_joystick = true
 
 [editable path="YSort/Body"]

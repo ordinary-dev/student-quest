@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Templates/NightStreet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=4]
 
 [node name="NightStreet" type="Node2D"]
 
@@ -17,3 +18,7 @@ dialog_path = "res://Dialogs/Chapter2/Disappearance/Night_2.json"
 position = Vector2( -2872, -56 )
 scale = Vector2( 4.16, 9.04 )
 scene = "res://Scenes/Chapter2/3-Disappearance/26.Bridge.tscn"
+
+[node name="ChangeUI" parent="." instance=ExtResource( 4 )]
+show_pause_menu = true
+show_joystick = true

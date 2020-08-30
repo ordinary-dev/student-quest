@@ -1,12 +1,13 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Sprites/Backgrounds/Sky.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Train/background/Forest.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Train/Background/Forest.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=4]
 [ext_resource path="res://Audio/FX/Wind/Autumn-wind-and-dry-leaves.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/General/Unlock.gd" type="Script" id=7]
+
 
 [node name="Field" type="Node2D"]
 script = ExtResource( 3 )
@@ -62,4 +63,4 @@ bus = "FX"
 script = ExtResource( 7 )
 subchapter_id = 9
 
-[node name="Disable-UI" parent="." instance=ExtResource( 6 )]
+[node name="ChangeUI" parent="." instance=ExtResource( 6 )]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/House/NPC_5.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -43,3 +44,7 @@ method = "activate_dialog"
 position = Vector2( 2464, 8176 )
 scale = Vector2( 3, 3 )
 z_index = 3
+
+[node name="ChangeUI" parent="." instance=ExtResource( 4 )]
+show_pause_menu = true
+show_joystick = true

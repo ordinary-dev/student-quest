@@ -1,8 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/House/Forest.tscn" type="PackedScene" id=2]
-
 
 [node name="StreetScene" type="Node2D"]
 
@@ -10,6 +8,3 @@
 house_door = 0
 sleep_scene = "res://Scenes/Chapter2/2-Celebration/5.SecondFloor.tscn"
 house_scene = "res://Scenes/Chapter2/2-Celebration/3.House.tscn"
-
-[node name="Enable-UI" parent="." instance=ExtResource( 1 )]
-joystick = true

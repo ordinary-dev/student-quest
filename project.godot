@@ -18,7 +18,7 @@ _global_script_class_icons={
 config/name="Student Quest"
 config/description="2D quest"
 run/main_scene="res://Scenes/Entry.tscn"
-config/icon="res://Sprites/icons/logo.png"
+config/icon="res://Sprites/Icons/logo.png"
 
 [autoload]
 
@@ -26,7 +26,6 @@ GLOBAL="*res://Scripts/Global.gd"
 MUSIC="*res://Scenes/global/Music.tscn"
 FX="*res://Scenes/global/FX.tscn"
 DIALOG="*res://Scripts/Dialog.gd"
-UI_INIT="*res://Scripts/UIInit.gd"
 SCENES="*res://Scenes/global/SceneLoader.tscn"
 UI="*res://Scenes/ui/UI.tscn"
 NOTIFY="*res://Scripts/Notify.gd"

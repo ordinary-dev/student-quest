@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Templates/House/HouseInside.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/General/Unlock.gd" type="Script" id=4]
 
 [node name="House" type="Node2D"]
@@ -17,5 +17,6 @@ script = ExtResource( 1 )
 script = ExtResource( 4 )
 subchapter_id = 7
 
-[node name="Enable-UI" parent="." instance=ExtResource( 3 )]
-joystick = true
+[node name="ChangeUI" parent="." instance=ExtResource( 3 )]
+show_pause_menu = true
+show_joystick = true

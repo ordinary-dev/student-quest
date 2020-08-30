@@ -1,8 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Sprites/npc_1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Characters/npc_1.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/General/Police.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/Flashlight.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Light/Flashlight.png" type="Texture" id=3]
+
+
 
 
 

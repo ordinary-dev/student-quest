@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Sprites/fog_of_war/fog_of_war.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Sprites/ForOfWar/fog_of_war.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=2]
+
 
 [node name="NoiseBackground" type="Node2D"]
 

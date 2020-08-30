@@ -5,16 +5,18 @@
 [ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Teleport.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Templates/Guard.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Sprites/things/door_225.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/things/door_227.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/things/door_224.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/things/door_226.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/things/door_132.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/things/door_130.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/things/door_313.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/things/door_312.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Templates/Characters/Guard.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Doors/door_225.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Doors/door_227.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Doors/door_224.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Doors/door_226.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Doors/door_132.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Doors/door_130.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Doors/door_313.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Doors/door_312.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Templates/AI.tscn" type="PackedScene" id=15]
+
+
 
 
 [sub_resource type="RectangleShape2D" id=1]

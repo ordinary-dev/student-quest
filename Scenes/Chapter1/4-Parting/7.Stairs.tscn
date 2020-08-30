@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tilemaps/building/building16.tres" type="TileSet" id=1]
-[ext_resource path="res://Sprites/light_new.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Light/Light.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=6]
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 160, 16 )
@@ -145,6 +146,3 @@ position = Vector2( 32, -288 )
 
 [node name="Noise-Sprite-Template_AnimatedSprite_27" parent="Noise" instance=ExtResource( 5 )]
 position = Vector2( 224, -288 )
-
-[node name="Enable-UI" parent="." instance=ExtResource( 6 )]
-joystick = true

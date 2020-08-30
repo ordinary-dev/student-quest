@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Sprites/fog_of_war/fog_of_war.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Sprites/ForOfWar/fog_of_war.tres" type="SpriteFrames" id=1]
+
 
 [node name="Noise-Sprite-Template_AnimatedSprite_0" type="AnimatedSprite"]
 position = Vector2( 96, 96 )

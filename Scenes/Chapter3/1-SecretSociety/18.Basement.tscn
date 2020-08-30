@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Templates/Basement/Basement.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Characters/Neo.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -36,6 +35,3 @@ position = Vector2( 718, -329 )
 scale = Vector2( 8.48, 2.96 )
 z_index = 1
 scene = "res://Scenes/Chapter3/1-SecretSociety/19.Monolog.tscn"
-
-[node name="Enable-UI" parent="." instance=ExtResource( 3 )]
-joystick = true

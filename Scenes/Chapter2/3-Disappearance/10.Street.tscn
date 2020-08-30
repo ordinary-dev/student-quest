@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Templates/Street2.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/SnowStreet/Snow.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=10]
@@ -222,5 +222,6 @@ fade_out = false
 script = ExtResource( 12 )
 file = "res://Audio/Music/SadPiano/SadHeavenPiano1.ogg"
 
-[node name="Enable-UI" parent="." instance=ExtResource( 6 )]
-joystick = true
+[node name="ChangeUI" parent="." instance=ExtResource( 2 )]
+show_pause_menu = true
+show_joystick = true

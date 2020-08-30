@@ -259,6 +259,5 @@ func _ready() -> void:
 			character.flip_h = true
 			character.frame = frames.SIDE_STILL
 			type = states.LEFT
-	use_joystick = OS.get_name() == "Android" or UI_INIT.SHOW_CONTROLS
-	if use_joystick:
-		joystick = UI.get_node("Joystick-UI_Sprite/Tap_Button")
+	if UI.show_joystick:
+		joystick = UI.get_node("Joystick-UI/TapButton")

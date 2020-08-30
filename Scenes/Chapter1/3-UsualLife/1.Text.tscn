@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/General/Unlock.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -22,4 +22,4 @@ margin_bottom = 40.0
 script = ExtResource( 2 )
 subchapter_id = 3
 
-[node name="Disable-UI" parent="." instance=ExtResource( 3 )]
+[node name="ChangeUI" parent="." instance=ExtResource( 3 )]

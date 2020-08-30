@@ -1,35 +1,19 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Templates/RoadTemplate.gd" type="Script" id=1]
 [ext_resource path="res://Audio/Music/DeadPulse/dead-pulse.ogg" type="AudioStream" id=3]
-[ext_resource path="res://Sprites/things/Computer.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Things/Computer.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/Streetlight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Templates/NoiseBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tilemaps/street/street16.tres" type="TileSet" id=8]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=9]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 640 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 128, 32 )
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends Node2D
-
-# Enale ui at load
-
-export (bool) var joystick = false
-export (bool) var show_time = false
-export (String) var time = \"10:00\"
-
-
-func _ready() -> void:
-	UI_INIT.enable_ui(joystick)
-	if show_time:
-		UI_INIT.show_time(time)
-"
 
 [node name="RoadTemplate" type="Node2D"]
 script = ExtResource( 1 )
@@ -136,9 +120,5 @@ volume_db = 15.0
 autoplay = true
 max_distance = 1500.0
 bus = "OST"
-
-[node name="Enable-UI" parent="." instance=ExtResource( 9 )]
-script = SubResource( 3 )
-joystick = true
 
 [editable path="Body"]

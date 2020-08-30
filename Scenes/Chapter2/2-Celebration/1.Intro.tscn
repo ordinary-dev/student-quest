@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/General/PlayMusic.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/General/Unlock.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=4]
 
 [node name="IntroScene" type="Control"]
 anchor_right = 1.0
@@ -28,4 +28,4 @@ __meta__ = {
 }
 subchapter_id = 5
 
-[node name="Disable-UI" parent="." instance=ExtResource( 4 )]
+[node name="ChangeUI" parent="." instance=ExtResource( 4 )]

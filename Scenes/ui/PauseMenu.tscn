@@ -1,9 +1,10 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Sprites/icons/pause.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Icons/pause.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Menu/Settings/Settings.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Menu/LoadGameScene/Load.tscn" type="PackedScene" id=4]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -50,8 +51,8 @@ func _on_Pause_pressed() -> void:
 	pause_btn.visible = false
 	
 	# Hide joystick
-	if UI.get_node(\"Joystick-UI_Sprite\").visible:
-		UI_INIT.hide_joystick()
+	if UI.show_joystick:
+		UI.show_joystick = true
 		show_joystick = true
 	
 	# Stop the game
@@ -80,12 +81,13 @@ func _return_to_game(play_sound : bool = true) -> void:
 	
 	# Enable joystick again if it was hidden
 	if show_joystick:
-		UI_INIT.show_joystick()
+		UI.show_joystick = true
 	show_joystick = false
 
 
 func _to_menu() -> void:
 	FX.btn_click()
+	MUSIC.stop()
 	SCENES.load_scene(menu_scene)
 	yield(get_tree().create_timer(SCENES.time), \"timeout\")
 	# Hide this scene

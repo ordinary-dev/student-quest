@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Water/PlayerCollision/player_col_1.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Water/PlayerCollision/player_col_0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Water/PlayerCollision/player_col_2.png" type="Texture" id=3]
+
+
+
+
+
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]

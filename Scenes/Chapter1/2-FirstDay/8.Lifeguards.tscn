@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/Transport/Lifeguards.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Backgrounds/Sky.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/ui/Disable.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Audio/FX/Alarm/emergency-alarm.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=6]
@@ -34,5 +33,3 @@ bus = "FX"
 
 [node name="StopMusic" type="Node2D" parent="."]
 script = ExtResource( 6 )
-
-[node name="Disable-UI" parent="." instance=ExtResource( 3 )]

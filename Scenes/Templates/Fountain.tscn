@@ -1,8 +1,9 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Sprites/Street/Fountain/fountain.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Sprites/Street/Fountain/Fountain.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/General/SpriteAutoplay.gd" type="Script" id=2]
 [ext_resource path="res://Audio/FX/Fountain/fountain01.ogg" type="AudioStream" id=3]
+
 
 [node name="Fountain" type="AnimatedSprite"]
 scale = Vector2( 16, 16 )

@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Templates/Room/Bed.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tilemaps/flat/flat.tres" type="TileSet" id=3]
 [ext_resource path="res://Tilemaps/flat/overlay.tres" type="TileSet" id=4]
-[ext_resource path="res://Sprites/light_new.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Light/Light.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Templates/Room/Computer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Templates/Room/Sofa.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Templates/Room/TV.tscn" type="PackedScene" id=8]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Templates/Room/Fridge.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Templates/Room/Table.tscn" type="PackedScene" id=12]
+
+
 
 
 [sub_resource type="GDScript" id=1]

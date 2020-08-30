@@ -1,7 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Sprites/water/water.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Sprites/Water/Water.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/General/SpriteAutoplay.gd" type="Script" id=2]
+
+
+
+
 
 [node name="WaterSprite" type="AnimatedSprite"]
 scale = Vector2( 12, 12 )

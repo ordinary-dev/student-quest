@@ -1,16 +1,20 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Sprites/joystick/button.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/joystick/main.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Joystick/Button.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Joystick/Main.png" type="Texture" id=3]
 
-[sub_resource type="StyleBoxEmpty" id=3]
 
-[sub_resource type="StyleBoxEmpty" id=4]
 
-[sub_resource type="GDScript" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="GDScript" id=3]
 script/source = "extends Button
 
-# Gonkee's joystick script for Godot 3 from https://youtu.be/uGyEP2LUFPg
+# Gonkee's joystick script for Godot 3
+# https://youtu.be/uGyEP2LUFPg
 
 var radius = Vector2(64, 64)
 var boundary = 128
@@ -35,13 +39,13 @@ func get_button_pos() -> Vector2:
 func _input(event) -> void:
 	if event is InputEventScreenDrag or (event is InputEventScreenTouch and event.is_pressed()):
 		var event_dist_from_centre = (event.position - get_parent().global_position).length()
-
+		
 		if event_dist_from_centre <= boundary * rect_scale.x or event.get_index() == ongoing_drag:
 			set_global_position(event.position - radius * rect_scale)
-
+			
 			if get_button_pos().length() > boundary:
 				set_position( get_button_pos().normalized() * boundary - radius)
-
+			
 			ongoing_drag = event.get_index()
 
 	if event is InputEventScreenTouch and !event.is_pressed() and event.get_index() == ongoing_drag:
@@ -54,11 +58,11 @@ func get_value() -> Vector2:
 	return Vector2(0, 0)
 "
 
+[sub_resource type="StyleBoxEmpty" id=4]
+
 [sub_resource type="StyleBoxEmpty" id=5]
 
-[sub_resource type="StyleBoxEmpty" id=6]
-
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=6]
 script/source = "extends Button
 
 func emit_once(name):
@@ -74,26 +78,26 @@ func _on_Accept_pressed():
 	emit_once(\"dialog_start\")
 "
 
-[node name="Joystick-UI_Sprite" type="Sprite"]
+[node name="Joystick-UI" type="Sprite"]
 light_mask = 0
 position = Vector2( 200, 880 )
 texture = ExtResource( 3 )
 
-[node name="Tap_Button" type="Button" parent="."]
+[node name="TapButton" type="Button" parent="."]
 light_mask = 0
 margin_right = 140.0
 margin_bottom = 134.0
 rect_min_size = Vector2( 128, 128 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 4 )
+custom_styles/pressed = SubResource( 1 )
+custom_styles/focus = SubResource( 2 )
 icon = ExtResource( 1 )
 flat = true
-script = SubResource( 1 )
+script = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Accept_Button" type="Button" parent="."]
+[node name="AcceptButton" type="Button" parent="."]
 light_mask = 0
 anchor_left = 1.0
 anchor_top = 1.0
@@ -104,12 +108,12 @@ margin_top = -319.944
 margin_right = 1326.07
 margin_bottom = -185.944
 rect_min_size = Vector2( 128, 128 )
-custom_styles/pressed = SubResource( 5 )
-custom_styles/focus = SubResource( 6 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 5 )
 icon = ExtResource( 1 )
 flat = true
-script = SubResource( 2 )
+script = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Accept_Button" to="Accept_Button" method="_on_Accept_pressed"]
+[connection signal="pressed" from="AcceptButton" to="AcceptButton" method="_on_Accept_pressed"]
