@@ -1,35 +1,15 @@
 #!/bin/sh
 
-## Remove old directory ##
-rm -r Builds
+# Publish new build to itch.io
 
-## Create new ##
-mkdir Builds
-mkdir Builds/Android
-mkdir Builds/Linux
-mkdir Builds/MacOS
-mkdir Builds/Windows
+version=5.0
 
-## Copy files ##
-name=sq-v.$1
-# Android
-cp latest.apk Builds/Android/$name.apk
-# Linux
-cp latest.pck    Builds/Linux/$name.pck
-cp latest.x86_64 Builds/Linux/$name.x86_64
-# MacOS
-cp latest.x86_64.zip Builds/MacOS/$name.zip
-# Windows
-cp latest.exe Builds/Windows/$name.exe
-cp latest.pck Builds/Windows/$name.pck
-
-## Butler ##
 cd Builds
 # Android
-butler push Android/$name.apk pixeltrain/student-quest:android --userversion $1
+butler push Android/student-quest.apk pixeltrain/student-quest:android --userversion $version
 # Linux
-butler push Linux pixeltrain/student-quest:linux --userversion $1
+butler push Linux pixeltrain/student-quest:linux --userversion $version
 # MacOS
-butler push MacOS/$name.zip pixeltrain/student-quest:macos --userversion $1
+butler push MacOS/student-quest.zip pixeltrain/student-quest:macos --userversion $version
 # Windows
-butler push Windows pixeltrain/student-quest:windows --userversion $1
+butler push Windows pixeltrain/student-quest:windows --userversion $version
