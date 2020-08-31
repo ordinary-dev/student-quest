@@ -3,7 +3,7 @@
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
 
-extends Node2D
+extends Node
 
 export (String, FILE, "*.tscn") var scene_path 
 

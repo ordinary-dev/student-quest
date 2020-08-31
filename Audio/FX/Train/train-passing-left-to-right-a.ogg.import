@@ -11,5 +11,5 @@ dest_files=[ "res://.import/train-passing-left-to-right-a.ogg-17d6b6bc3f30e3b6de
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
