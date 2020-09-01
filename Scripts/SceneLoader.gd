@@ -56,7 +56,8 @@ func load_scene(scene_name : String, anim_start : bool = true, anim_end : bool =
 			pl._save()
 	# Load scene
 	last_scene_path = scene_name
-	assert(get_tree().change_scene(scene_name) == OK)
+	var status = get_tree().change_scene(scene_name)
+	assert(status == OK)
 	
 	# Fade out
 	if anim_end:

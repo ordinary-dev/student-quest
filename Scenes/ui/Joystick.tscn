@@ -3,9 +3,6 @@
 [ext_resource path="res://Sprites/Joystick/Button.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Joystick/Main.png" type="Texture" id=3]
 
-
-
-
 [sub_resource type="StyleBoxEmpty" id=1]
 
 [sub_resource type="StyleBoxEmpty" id=2]

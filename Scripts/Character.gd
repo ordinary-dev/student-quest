@@ -28,9 +28,6 @@ var type := 0
 # Used to reset animation for the first time
 var idle := true
 
-# Applied when SHIFT is pressed
-var mult := 1
-
 # Has at least one navigation button been pressed
 var any_button_pressed : bool
 
@@ -147,8 +144,8 @@ func go_up() -> void:
 
 
 func joystick_processing() -> bool:
-	velocity = joystick.get_value()
-	if velocity.length() > 0:
+	var joystick_value : Vector2 = joystick.get_value()
+	if joystick_value.length() > 0:
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
 				go_right()
@@ -159,7 +156,7 @@ func joystick_processing() -> bool:
 				go_down()
 			else:
 				go_up()
-		velocity = joystick.get_value() * speed
+		velocity = joystick_value * speed
 		return true
 	else:
 		if !idle:
@@ -199,8 +196,7 @@ func process_buttons() -> bool:
 			_:
 				character.frame = frames.SIDE_STILL
 		return false
-	mult = 4 if Input.is_action_pressed("speed_up") else 1
-	velocity = velocity.normalized() * speed * mult
+	velocity = velocity.normalized() * speed
 	return true
 
 
@@ -259,5 +255,6 @@ func _ready() -> void:
 			character.flip_h = true
 			character.frame = frames.SIDE_STILL
 			type = states.LEFT
-	if UI.show_joystick:
+	if OS.get_name() == "Android" or UI.force_joystick:
+		use_joystick = true
 		joystick = UI.get_node("Joystick-UI/TapButton")

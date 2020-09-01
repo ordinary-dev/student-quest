@@ -6,9 +6,6 @@
 [ext_resource path="res://Audio/FX/Steps/step-12.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sprites/Water/player_in_water.tres" type="SpriteFrames" id=5]
 
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.9665, 5.43987 )
 
