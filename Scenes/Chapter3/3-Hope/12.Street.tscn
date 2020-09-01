@@ -190,7 +190,7 @@ color = Color( 0.65098, 0.662745, 0.772549, 1 )
 position = Vector2( 4466.46, 6899.92 )
 
 [node name="LoadTrigger" parent="." instance=ExtResource( 3 )]
-position = Vector2( -441.549, 1445.43 )
+position = Vector2( -392, 792 )
 scale = Vector2( 7.36, 10.24 )
 scene = "res://Scenes/Chapter3/3-Hope/14.River.tscn"
 

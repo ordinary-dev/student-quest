@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scenes/Templates/Street/Store.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/Street/TiketWindow.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/Templates/Fountain.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Templates/Street/GardenersHouse.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Templates/WaterCollider.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Templates/Street/BusStation.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Templates/Characters/MrSinger.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Templates/Bridge.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Templates/Rock_type_1.tscn" type="PackedScene" id=13]
@@ -36,10 +37,6 @@
 [ext_resource path="res://Sprites/Characters/Gardener.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/Templates/Street/Columns.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/Templates/Rock_type_3.tscn" type="PackedScene" id=38]
-
-
-
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 2.66675 )
@@ -2440,6 +2437,8 @@ collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YSort/Gardener/StaticBody2D"]
 shape = SubResource( 1 )
+
+[node name="BusStationSmall" parent="YSort" instance=ExtResource( 10 )]
 
 [node name="Triggers" type="Node2D" parent="."]
 
