@@ -4,7 +4,6 @@
 [ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=3]
 
-
 [node name="Date" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,7 +11,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-file = "res://Audio/FX/Train.ogg"
+file = "res://Audio/FX/Train/train-passing-left-to-right-a.ogg"
 
 [node name="Text" parent="." instance=ExtResource( 2 )]
 text_1 = "JUNE_29"
@@ -20,7 +19,7 @@ text_2 = "EARLY_MORNING"
 next_scene = "res://Scenes/Chapter1/1-Beginning/05.Train.tscn"
 fade_in = false
 fade_out = false
-delay_before_next_scene = 2.0
+delay_before_next_scene = 1.5
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/analog-alarm-clock.ogg-aedc27bda0225a98f7c8d70827284361.oggstr"
+
+[deps]
+
+source_file="res://Audio/FX/AlarmClock/analog-alarm-clock.ogg"
+dest_files=[ "res://.import/analog-alarm-clock.ogg-aedc27bda0225a98f7c8d70827284361.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

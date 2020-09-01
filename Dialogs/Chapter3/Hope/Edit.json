@@ -1,0 +1,9 @@
+{
+    "0":{"name":"~", "text":"D_HP_EDIT_1", "next":"1"},
+    "1":{"name":"~", "text":"D_HP_EDIT_2", "next":"2"},
+    "2":{"name":"~", "text":"D_HP_EDIT_3", "next":"3"},
+    "3":{"name":"~", "text":"D_HP_EDIT_4", "next":"4"},
+    "4":{"name":"~", "text":"D_HP_EDIT_5", "next":"5"},
+    "5":{"name":"~", "text":"D_HP_EDIT_6", "next":"6"},
+    "6":{"name":"~", "text":"D_HP_EDIT_7"}
+} 

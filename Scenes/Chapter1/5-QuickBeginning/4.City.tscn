@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://Scenes/Chapter1/1-Beginning/11.City.tscn" type="PackedScene" id=1]
-
-[node name="City" type="Node2D"]
-
-[node name="CityScene" parent="." instance=ExtResource( 1 )]
-next_scene = "res://Scenes/Chapter1/5-QuickBeginning/5.Date.tscn"

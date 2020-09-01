@@ -14,7 +14,7 @@ func _on_Area_body_entered(_body):
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[node name="LoadOnEnter-Trigger_0" type="Node2D"]
+[node name="LoadTrigger" type="Node2D"]
 script = SubResource( 1 )
 
 [node name="TriggeringArea_Area2D" type="Area2D" parent="."]

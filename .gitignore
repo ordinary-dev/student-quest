@@ -12,6 +12,9 @@ export_presets.cfg
 # IDE files
 .idea
 
+# System files
+.directory
+
 # Builds
 Builds
 *.apk

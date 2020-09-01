@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Templates/House/Furniture.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Templates/House/Table.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Light_2.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Light/WindowLight.png" type="Texture" id=4]
 [ext_resource path="res://Tilemaps/house/overlay.tres" type="TileSet" id=5]
 [ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tilemaps/house/house.tres" type="TileSet" id=7]
@@ -13,7 +13,10 @@
 [ext_resource path="res://Scenes/Templates/House/NPC_3.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Templates/House/NPC_4.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Templates/House/NPC_5.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Templates/Noise_sprite.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=14]
+
+
+
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends Node2D

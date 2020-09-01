@@ -2,12 +2,13 @@ extends KinematicBody2D
 
 # State types
 enum states {DOWN, UP, LEFT, RIGHT}
-enum sprites {MAIN, ALEX}
+enum sprites {MAIN, NEO}
 export (states) var default_state = states.UP
 export (sprites) var sprite_sheet = sprites.MAIN setget set_sprite
 export (bool) var restore_position = false
 var restored_position = false
-const alex_texture = "res://Sprites/friend_1.png"
+const main_texture = "res://Sprites/Characters/MainCharacter.png"
+const neo_texture = "res://Sprites/Characters/Neo.png"
 const speed := 400
 
 # Objects
@@ -26,9 +27,6 @@ var type := 0
 # Does the character stand still
 # Used to reset animation for the first time
 var idle := true
-
-# Applied when SHIFT is pressed
-var mult := 1
 
 # Has at least one navigation button been pressed
 var any_button_pressed : bool
@@ -146,8 +144,8 @@ func go_up() -> void:
 
 
 func joystick_processing() -> bool:
-	velocity = joystick.get_value()
-	if velocity.length() > 0:
+	var joystick_value : Vector2 = joystick.get_value()
+	if joystick_value.length() > 0:
 		if abs(velocity.x) > abs(velocity.y):
 			if velocity.x > 0:
 				go_right()
@@ -158,7 +156,7 @@ func joystick_processing() -> bool:
 				go_down()
 			else:
 				go_up()
-		velocity = joystick.get_value() * speed
+		velocity = joystick_value * speed
 		return true
 	else:
 		if !idle:
@@ -198,8 +196,7 @@ func process_buttons() -> bool:
 			_:
 				character.frame = frames.SIDE_STILL
 		return false
-	mult = 4 if Input.is_action_pressed("speed_up") else 1
-	velocity = velocity.normalized() * speed * mult
+	velocity = velocity.normalized() * speed
 	return true
 
 
@@ -229,10 +226,10 @@ func _save() -> void:
 
 func set_sprite(val) -> void:
 	sprite_sheet = val
-	if val == sprites.ALEX:
-		character.texture = load(alex_texture)
-	# else
-	# ...
+	if val == sprites.NEO:
+		character.texture = load(neo_texture)
+	elif val == sprites.MAIN:
+		character.texture = load(main_texture)
 
 
 func _ready() -> void:
@@ -258,6 +255,6 @@ func _ready() -> void:
 			character.flip_h = true
 			character.frame = frames.SIDE_STILL
 			type = states.LEFT
-	use_joystick = OS.get_name() == "Android" or UI_INIT.SHOW_CONTROLS
-	if use_joystick:
-		joystick = UI.get_node("Joystick-UI_Sprite/Tap_Button")
+	if OS.get_name() == "Android" or UI.force_joystick:
+		use_joystick = true
+		joystick = UI.get_node("Joystick-UI/TapButton")

@@ -40,6 +40,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+credits_scene = "res://Scenes/Chapter3/3-Hope/48.Credits.tscn"
 
 [node name="Scroll" type="ScrollContainer" parent="."]
 light_mask = 0
@@ -52,21 +53,21 @@ scroll_horizontal_enabled = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Scroll"]
 light_mask = 0
-margin_right = 1808.0
-margin_bottom = 1391.0
+margin_right = 1820.0
+margin_bottom = 410.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
 
 [node name="TextContainer" type="VBoxContainer" parent="Scroll/MarginContainer"]
 light_mask = 0
-margin_right = 1788.0
-margin_bottom = 1391.0
+margin_right = 1800.0
+margin_bottom = 410.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
 [node name="OpenSite" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_right = 1788.0
+margin_right = 1800.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 3 )
@@ -74,16 +75,27 @@ custom_styles/disabled = SubResource( 4 )
 custom_styles/normal = SubResource( 5 )
 text = "OPENSITE"
 
+[node name="ShowCredits" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
+margin_top = 100.0
+margin_right = 1800.0
+margin_bottom = 180.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "SHOW_CREDITS"
+
 [node name="Link" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 100.0
-margin_right = 1788.0
-margin_bottom = 178.0
+margin_top = 200.0
+margin_right = 1800.0
+margin_bottom = 278.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "pixeltrain.itch.io/student-quest
 
-v 4.6"
+v 5.0"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -91,9 +103,9 @@ __meta__ = {
 
 [node name="Godot" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 198.0
-margin_right = 1788.0
-margin_bottom = 222.0
+margin_top = 298.0
+margin_right = 1800.0
+margin_bottom = 322.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "GODOT"
@@ -102,198 +114,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChangelogTitle" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 242.0
-margin_right = 1788.0
-margin_bottom = 266.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "CHANGELOG"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Changes" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 286.0
-margin_right = 1788.0
-margin_bottom = 310.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "CHANGES"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Authors" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 330.0
-margin_right = 1788.0
-margin_bottom = 354.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "AUTHORS"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Nicknames" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 374.0
-margin_right = 1788.0
-margin_bottom = 479.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "- mcraw
-- friday13
-- HisMaj3sty
-"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Testers" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 499.0
-margin_right = 1788.0
-margin_bottom = 523.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "TESTERS"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TestersNicks_Label" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 543.0
-margin_right = 1788.0
-margin_bottom = 621.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "- wheasy
-- kijy
-"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Joystick" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 641.0
-margin_right = 1788.0
-margin_bottom = 665.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "JOYSTICK"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Gonkee" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 685.0
-margin_right = 1788.0
-margin_bottom = 763.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Gonkee - https://youtu.be/uGyEP2LUFPg
-
-"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Songs" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 783.0
-margin_right = 1788.0
-margin_bottom = 915.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "Some sounds were downloaded from freesound.org and zapsplat.com
-Music:
-- Outgoing Hikikomori:
-1. Falling Down
-2. Last Bus Home"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="FreeSound;Button" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_top = 935.0
-margin_right = 1788.0
-margin_bottom = 1015.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-text = "FreeSound"
-
-[node name="Zapsplat;Button" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_top = 1035.0
-margin_right = 1788.0
-margin_bottom = 1115.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-text = "Zapsplat"
-
-[node name="OH" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_top = 1135.0
-margin_right = 1788.0
-margin_bottom = 1215.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
-text = "Outgoing Hikikomori"
-
-[node name="Contact" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 1235.0
-margin_right = 1788.0
-margin_bottom = 1259.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "CONTACT"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Mail" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
-margin_top = 1279.0
-margin_right = 1788.0
-margin_bottom = 1303.0
-size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
-text = "mcraw@protonmail.com"
-autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Legal" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 1323.0
-margin_right = 1788.0
-margin_bottom = 1347.0
+margin_top = 342.0
+margin_right = 1800.0
+margin_bottom = 366.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "LEGAL"
@@ -304,9 +129,9 @@ __meta__ = {
 
 [node name="Copyright" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 1367.0
-margin_right = 1788.0
-margin_bottom = 1391.0
+margin_top = 386.0
+margin_right = 1800.0
+margin_bottom = 410.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "© 2020"
@@ -315,6 +140,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Scroll/MarginContainer/TextContainer/OpenSite" to="." method="open_store"]
-[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/FreeSound;Button" to="." method="freesound"]
-[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/Zapsplat;Button" to="." method="zapsplat"]
-[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/OH" to="." method="outgoing_hikikomori"]
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/ShowCredits" to="." method="open_credits"]

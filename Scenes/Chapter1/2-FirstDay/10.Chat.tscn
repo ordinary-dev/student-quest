@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Templates/Chat/Chat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
+
+[node name="ChatScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatTemplate" parent="." instance=ExtResource( 1 )]
+next_scene_path = "res://Scenes/Chapter1/2-FirstDay/11.Room.tscn"
+messages = [ "FD_CHAT_1", "FD_CHAT_2", "FD_CHAT_3", "FD_CHAT_4", "FD_CHAT_5", "FD_CHAT_6", "FD_CHAT_7" ]
+
+[node name="ChangeUI" parent="." instance=ExtResource( 2 )]

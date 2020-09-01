@@ -1,10 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/General/PlayMusic.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/backgrounds/hall.png" type="Texture" id=4]
-
+[ext_resource path="res://Sprites/Backgrounds/hall.png" type="Texture" id=4]
 
 [node name="HallScene" type="Node2D"]
 script = ExtResource( 2 )
@@ -18,6 +16,4 @@ texture = ExtResource( 4 )
 
 [node name="Audio" type="Node2D" parent="."]
 script = ExtResource( 1 )
-file = "res://Audio/Music/Ambient.ogg"
-
-[node name="Enable-UI" parent="." instance=ExtResource( 3 )]
+file = "res://Audio/Music/Ambient/Ambient.ogg"

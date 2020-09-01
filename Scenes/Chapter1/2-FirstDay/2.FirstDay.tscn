@@ -1,31 +1,49 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/Templates/Guide.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Characters/Girlfriend.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Templates/Characters/Guide.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=6]
+
 
 [node name="FirstDayScene" type="Node2D"]
 modulate = Color( 0.882353, 0.870588, 0.815686, 1 )
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 5 )]
-allow_entrance = true
-math_scene = "res://Scenes/Chapter1/5-QuickBeginning/8.Date.tscn"
+math_scene = "res://Scenes/Chapter1/2-FirstDay/3.Date.tscn"
 
 [node name="MrSingerDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 56, 416 )
-dialog_path = "res://Dialogs/Beginning/Stranger.json"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Stranger.json"
 person = "UNKNOWN_SINGER"
 
 [node name="GardenerDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1120, 2552 )
-dialog_path = "res://Dialogs/Beginning/Gardener.json"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Gardener.json"
 person = "GARDENER"
 
 [node name="GuideDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2264, 448 )
-dialog_path = "res://Dialogs/Beginning/PathToFaculty.json"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/PathToFaculty.json"
 person = "GUIDE"
 
 [node name="GuideTemplate" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2112, 568 )
 z_index = 5
+
+[node name="CharacterSprite" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1568, 6456 )
+frame = 8
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1632, 6488 )
+scale = Vector2( 2.24, 1.43998 )
+dialog_path = "res://Dialogs/Chapter1/FirstDay/GF.json"
+load_scene = true
+scene_path = "res://Scenes/Chapter1/2-FirstDay/3.Date.tscn"
+
+[node name="ChangeUI" parent="." instance=ExtResource( 6 )]
+show_pause_menu = true
+show_joystick = true

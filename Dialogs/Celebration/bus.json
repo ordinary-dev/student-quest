@@ -1,9 +1,0 @@
-{
-    "0": {"name":"-", "text":"D_BUS_1", "next":"1"},
-    "1": {"name":"-", "text":"D_BUS_2", "next":"2"},
-    "2": {"name":"-", "text":"D_BUS_3", "next":"3"},
-    "3": {"name":"-", "text":"D_BUS_4", "next":"4"},
-    "4": {"name":"-", "text":"D_BUS_5", "next":"5"},
-    "5": {"name":"-", "text":"D_BUS_6", "next":"6"},
-    "6": {"name":"-", "text":"D_BUS_7"},
-} 

@@ -1,20 +1,19 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Audio/Music/Suspense.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Audio/Music/DeadPulse/dead-pulse.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Blackout.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Audio/FX/PowerCut/power-cut.wav" type="AudioStream" id=7]
 
-
 [node name="BlackoutScene" type="Node2D"]
 script = ExtResource( 4 )
 next_scene = "res://Scenes/Chapter1/2-FirstDay/6.LightBulb.tscn"
-dialog_1 = "res://Dialogs/Beginning/Guard_1.json"
-dialog_2 = "res://Dialogs/Beginning/Guard_2.json"
-dialog_3 = "res://Dialogs/Beginning/Guard_3.json"
+dialog_1 = "res://Dialogs/Chapter1/FirstDay/Guard_1.json"
+dialog_2 = "res://Dialogs/Chapter1/FirstDay/Guard_2.json"
+dialog_3 = "res://Dialogs/Chapter1/FirstDay/Guard_3.json"
 
 [node name="MapTemplate" parent="." instance=ExtResource( 6 )]
 block_turnstile = true
@@ -43,11 +42,8 @@ function_name = "dialog"
 
 [node name="Monolog" parent="." instance=ExtResource( 5 )]
 position = Vector2( -329.707, 153.509 )
-dialog_path = "res://Dialogs/Beginning/Passage.json"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Passage.json"
 person = "PASSAGE"
-
-[node name="Enable-UI" parent="." instance=ExtResource( 3 )]
-joystick = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 25.0
@@ -62,7 +58,11 @@ bus = "Ambient"
 
 [node name="Suspense" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = 15.0
+volume_db = 10.0
 autoplay = true
 bus = "OST"
+
+[node name="ChangeUI" parent="." instance=ExtResource( 3 )]
+show_pause_menu = true
+show_joystick = true
 [connection signal="timeout" from="Timer" to="." method="turn_lights_on"]

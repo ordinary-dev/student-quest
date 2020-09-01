@@ -1,9 +1,0 @@
-{
-    "0":{"name":"-", "text":"D_DSP_GARDENER_1", "next":"1"},
-    "1":{"name":"-", "text":"D_DSP_GARDENER_2", "next":"2"},
-    "2":{"name":"-", "text":"D_DSP_GARDENER_3", "next":"3"},
-    "3":{"name":"-", "text":"D_DSP_GARDENER_4", "next":"4"},
-    "4":{"name":"-", "text":"D_DSP_GARDENER_5", "next":"5"},
-    "5":{"name":"-", "text":"D_DSP_GARDENER_6", "next":"6"},
-    "6":{"name":"-", "text":"D_DSP_GARDENER_7"}
-} 

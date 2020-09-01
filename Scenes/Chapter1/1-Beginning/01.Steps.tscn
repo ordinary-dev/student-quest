@@ -1,18 +1,18 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Audio/FX/steps/footstep1.wav" type="AudioStream" id=1]
+[ext_resource path="res://Audio/FX/Steps/step-1.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sprites/Fireworks/Step.png" type="Texture" id=2]
 [ext_resource path="res://Tilemaps/house/street.tres" type="TileSet" id=3]
-[ext_resource path="res://Sprites/light_new.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Light/Light.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/Scenes/Chapter1/1-Beginning/01.Steps.gd" type="Script" id=5]
 [ext_resource path="res://Audio/FX/Fireworks/fireworks-display-2.ogg" type="AudioStream" id=6]
 
 
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 791.905, -368.539, 642.016, -415.024, 1282.03, -413.892, 1135.83, -368.335 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Lights"
 length = 3.0
 loop = true
@@ -103,11 +103,11 @@ texture = ExtResource( 2 )
 [node name="Shadows" type="Node2D" parent="."]
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Shadows"]
-occluder = SubResource( 2 )
+occluder = SubResource( 1 )
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="Shadows"]
 position = Vector2( -2.5199, 322.54 )
-occluder = SubResource( 2 )
+occluder = SubResource( 1 )
 
 [node name="Lights" type="Node2D" parent="."]
 
@@ -137,7 +137,7 @@ shadow_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights"]
 autoplay = "Lights"
-anims/Lights = SubResource( 3 )
+anims/Lights = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 968, 760 )

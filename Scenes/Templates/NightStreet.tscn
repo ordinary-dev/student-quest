@@ -1,46 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Templates/Streetlight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/backgrounds/city3.jpg" type="Texture" id=4]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/SnowStreet/Background.jpg" type="Texture" id=4]
 
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-export (bool) var enable_light = true setget setlight, getlight
-
-
-func setlight(val:bool) -> void:
-	$Streetlight_Sprite/LightSource_Light2D.visible = val
-
-
-func getlight() -> bool:
-	return enable_light
-"
-
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1768, 112 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 72, 96 )
-
-[sub_resource type="GDScript" id=4]
-script/source = "extends Node2D
-
-# Enale ui at load
-
-export (bool) var joystick = false
-export (bool) var show_time = false
-export (String) var time = \"10:00\"
-
-
-func _ready() -> void:
-	UI_INIT.enable_ui(joystick)
-	if show_time:
-		UI_INIT.show_time(time)
-"
 
 [node name="Base" type="Node2D"]
 
@@ -49,22 +17,24 @@ func _ready() -> void:
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.1, 0.1 )
 
-[node name="city3" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2( -376, -33 )
-scale = Vector2( 0.504, 0.73 )
+[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+modulate = Color( 0.356863, 0.364706, 0.392157, 1 )
+position = Vector2( -154.417, -227.415 )
+scale = Vector2( 0.393208, 0.385735 )
 texture = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/city3"]
-margin_left = -2555.56
-margin_top = 12.024
-margin_right = 2056.44
-margin_bottom = 926.024
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/Background"]
+margin_left = -2556.0
+margin_top = 601.0
+margin_right = 2056.0
+margin_bottom = 2174.0
 color = Color( 0.0862745, 0.0627451, 0.0627451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Body" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.427451, 0.45098, 0.513726, 1 )
 position = Vector2( 8.00012, 6.10352e-05 )
 scale = Vector2( 2.5, 2.5 )
 default_state = 2
@@ -72,44 +42,41 @@ default_state = 2
 [node name="Camera2D" parent="Body/Character_Sprite" index="0"]
 position = Vector2( -0.433349, -18.9609 )
 
-[node name="Streetlight-Template_0" parent="." instance=ExtResource( 1 )]
-position = Vector2( -224, 64 )
-scale = Vector2( 3, 3 )
-script = SubResource( 1 )
+[node name="Streetlights" type="Node2D" parent="."]
+modulate = Color( 0.6, 0.6, 0.6, 1 )
 
-[node name="Streetlight-Template_1" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1344, 64 )
+[node name="StreetlightTemplate1" parent="Streetlights" instance=ExtResource( 1 )]
+position = Vector2( -225.581, 57.2562 )
 scale = Vector2( 3, 3 )
-script = SubResource( 1 )
 
-[node name="Streetlight-Template_2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -2416, 64 )
+[node name="StreetlightTemplate2" parent="Streetlights" instance=ExtResource( 1 )]
+position = Vector2( -1344.55, 57.2562 )
 scale = Vector2( 3, 3 )
-script = SubResource( 1 )
+
+[node name="StreetlightTemplate3" parent="Streetlights" instance=ExtResource( 1 )]
+position = Vector2( -2414.34, 57.2562 )
+scale = Vector2( 3, 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2( -488, -264 )
 collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -832, 16 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -832, 408 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 672, 208 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -2512, 216 )
-shape = SubResource( 3 )
-
-[node name="Enable-UI" parent="." instance=ExtResource( 5 )]
-script = SubResource( 4 )
-joystick = true
+shape = SubResource( 2 )
 
 [editable path="Body"]

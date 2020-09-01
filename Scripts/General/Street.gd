@@ -1,17 +1,16 @@
 # Street template
 
 # Copyright (c) 2020 PixelTrain
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
+# Licensed under the GPL-3 License
 
 extends Node2D
 
 # Position
 enum positions {HOSTEL, FOUNTAIN, FACULTY, SOUTH_ENTRANCE}
 export (positions) var initial_position = positions.HOSTEL
-export (bool) var use_alex_texture = false
+
+enum player_text {MAIN, NEO}
+export (player_text) var player_tetxure
 
 # Directions
 enum dirs {UP, DOWN, LEFT, RIGHT}
@@ -64,8 +63,8 @@ func init() -> void:
 func _ready() -> void:
 	var player = get_node(GLOBAL.player_path)
 	
-	if use_alex_texture:
-		player.sprite_sheet = player.sprites.ALEX
+	if player_tetxure == player_text.NEO:
+		player.sprite_sheet = player.sprites.NEO
 	
 	# Do not overwrite position if it was saved
 	if player.restored_position == false:

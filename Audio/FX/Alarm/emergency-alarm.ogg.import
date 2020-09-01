@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/emergency-alarm.ogg-2541c4a911ac2f4452a263d618e43544.oggstr"
+
+[deps]
+
+source_file="res://Audio/FX/Alarm/emergency-alarm.ogg"
+dest_files=[ "res://.import/emergency-alarm.ogg-2541c4a911ac2f4452a263d618e43544.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

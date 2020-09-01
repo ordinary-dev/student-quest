@@ -18,7 +18,7 @@ _global_script_class_icons={
 config/name="Student Quest"
 config/description="2D quest"
 run/main_scene="res://Scenes/Entry.tscn"
-config/icon="res://Sprites/icons/logo.png"
+config/icon="res://Sprites/Icons/logo.png"
 
 [autoload]
 
@@ -26,7 +26,6 @@ GLOBAL="*res://Scripts/Global.gd"
 MUSIC="*res://Scenes/global/Music.tscn"
 FX="*res://Scenes/global/FX.tscn"
 DIALOG="*res://Scripts/Dialog.gd"
-UI_INIT="*res://Scripts/UIInit.gd"
 SCENES="*res://Scenes/global/SceneLoader.tscn"
 UI="*res://Scenes/ui/UI.tscn"
 NOTIFY="*res://Scripts/Notify.gd"
@@ -123,7 +122,7 @@ pointing/emulate_touch_from_mouse=true
 
 test="en"
 fallback="ru"
-translations=PoolStringArray( "res://Translations/chapter2.en.translation", "res://Translations/chapter2.ru.translation", "res://Translations/strings.en.translation", "res://Translations/strings.ru.translation", "res://Translations/menu.en.translation", "res://Translations/menu.ru.translation", "res://Translations/Beginning.en.translation", "res://Translations/Beginning.ru.translation", "res://Translations/Ignoring.en.translation", "res://Translations/Ignoring.ru.translation", "res://Translations/Basement.en.translation", "res://Translations/Basement.ru.translation", "res://Translations/Celebration.ru.translation", "res://Translations/Celebration.en.translation", "res://Translations/QuickBeginning.en.translation", "res://Translations/QuickBeginning.ru.translation", "res://Translations/Disappearance.en.translation", "res://Translations/Disappearance.ru.translation", "res://Translations/SS.ru.translation", "res://Translations/SS.en.translation", "res://Translations/Despair.en.translation", "res://Translations/Despair.ru.translation", "res://Translations/Hope.en.translation", "res://Translations/Hope.ru.translation", "res://Translations/Characters.en.translation", "res://Translations/Characters.ru.translation", "res://Translations/Chapters.en.translation", "res://Translations/Chapters.ru.translation" )
+translations=PoolStringArray( "res://Translations/Menu.en.translation", "res://Translations/Menu.ru.translation", "res://Translations/strings.en.translation", "res://Translations/strings.ru.translation", "res://Translations/Chapters.en.translation", "res://Translations/Chapters.ru.translation", "res://Translations/Characters.en.translation", "res://Translations/Characters.ru.translation", "res://Translations/Chapter1/Beginning.en.translation", "res://Translations/Chapter1/Beginning.ru.translation", "res://Translations/Chapter1/FirstDay.en.translation", "res://Translations/Chapter1/FirstDay.ru.translation", "res://Translations/Chapter1/UsualLife.en.translation", "res://Translations/Chapter1/UsualLife.ru.translation", "res://Translations/Chapter1/Parting.en.translation", "res://Translations/Chapter1/Parting.ru.translation", "res://Translations/Chapter2/NewBeginning.en.translation", "res://Translations/Chapter2/NewBeginning.ru.translation", "res://Translations/Chapter2/Celebration.en.translation", "res://Translations/Chapter2/Celebration.ru.translation", "res://Translations/Chapter2/Disappearance.en.translation", "res://Translations/Chapter2/Disappearance.ru.translation", "res://Translations/Chapter3/SecretSociety.en.translation", "res://Translations/Chapter3/SecretSociety.ru.translation", "res://Translations/Chapter3/Despair.en.translation", "res://Translations/Chapter3/Despair.ru.translation", "res://Translations/Chapter3/Hope.en.translation", "res://Translations/Chapter3/Hope.ru.translation" )
 
 [physics]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/DailyRoutine/Tag.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/DailyRoutine/BlurredFloor.png" type="Texture" id=2]
@@ -6,15 +6,9 @@
 [ext_resource path="res://Sprites/DailyRoutine/Hand.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/DailyRoutine/Table.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/Templates/DailyRoutine/Wardrobe.gd" type="Script" id=6]
-[ext_resource path="res://Audio/FX/Voices/classroom.wav" type="AudioStream" id=7]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Audio/FX/Voices/classroom.ogg" type="AudioStream" id=7]
 
-
-
-
-
-
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 resource_name = "Hand"
 length = 0.4
 tracks/0/type = "value"
@@ -68,7 +62,7 @@ max_diff = 5.0
 opf = 5.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Hand = SubResource( 2 )
+anims/Hand = SubResource( 1 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = -34.0
@@ -85,7 +79,5 @@ stream = ExtResource( 7 )
 volume_db = -2.0
 autoplay = true
 bus = "Ambient"
-
-[node name="Enable-UI" parent="." instance=ExtResource( 8 )]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
 [connection signal="pressed" from="Button" to="." method="move"]

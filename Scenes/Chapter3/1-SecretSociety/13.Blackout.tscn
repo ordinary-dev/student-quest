@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export(String, FILE, \"*.tscn\") var scene_path
+
+
+func _ready():
+	yield(get_tree().create_timer(1), \"timeout\")
+	$Tween.interpolate_property(
+		$CanvasModulate, \"color\",
+		Color(\"#ffffff\"), Color(\"#2d2d2d\"), 1,
+		Tween.TRANS_ELASTIC, Tween.EASE_IN_OUT
+		)
+	$Tween.start()
+	yield(get_tree().create_timer(2), \"timeout\")
+	SCENES.load_scene(scene_path, false, false)
+"
+
+[node name="Blackout" type="Node2D"]
+script = SubResource( 1 )
+scene_path = "res://Scenes/Chapter3/1-SecretSociety/14.Face.tscn"
+
+[node name="FacultyMap" parent="." instance=ExtResource( 1 )]
+player_direction = 0
+block_turnstile = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="Tween" type="Tween" parent="."]

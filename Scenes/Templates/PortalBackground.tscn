@@ -1,0 +1,341 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Sprites/Light/Light.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Water/Water.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Scenes/Templates/WaterSprite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Black.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/General/SpriteAutoplay.gd" type="Script" id=6]
+
+
+
+
+
+
+
+
+
+[node name="PortalBackground" type="Node2D"]
+
+[node name="Portal" type="Node2D" parent="."]
+modulate = Color( 0.996078, 0.709804, 0.984314, 1 )
+
+[node name="Water-sprite-Template_AnimatedSprite_0" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 96, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_1" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 288, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_2" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 480, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_3" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 672, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_4" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 864, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_5" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1056, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_6" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1248, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_7" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1440, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_8" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1632, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_9" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1824, 96 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_11" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 96, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_12" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 288, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_13" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 480, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_14" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 672, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_15" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 864, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_16" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1056, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_17" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1248, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_18" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1440, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_19" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1632, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_20" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1824, 288 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_22" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 96, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_23" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 288, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_24" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 480, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_25" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 672, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_26" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 864, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_27" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1056, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_28" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1248, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_29" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1440, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_30" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1632, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_31" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1824, 480 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_33" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 96, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_34" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 288, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_35" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 480, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_36" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 672, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_37" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 864, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_38" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1056, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_39" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1248, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_40" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1440, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_41" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1632, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_42" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1824, 672 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_44" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 96, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_45" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 288, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_46" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 480, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_47" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 672, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_48" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 864, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_49" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1056, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_50" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1248, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_51" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1440, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_52" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1632, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Water-sprite-Template_AnimatedSprite_53" type="AnimatedSprite" parent="Portal" instance=ExtResource( 4 )]
+position = Vector2( 1824, 864 )
+scale = Vector2( 12, 12 )
+frames = ExtResource( 3 )
+script = ExtResource( 6 )
+
+[node name="Bottom" type="Sprite" parent="."]
+position = Vector2( 966, 1012 )
+scale = Vector2( 242.5, 27 )
+texture = ExtResource( 5 )
+
+[node name="Character" type="Sprite" parent="."]
+modulate = Color( 0.333333, 0.345098, 0.384314, 1 )
+position = Vector2( 968, 856 )
+scale = Vector2( 6, 6 )
+texture = ExtResource( 2 )
+vframes = 3
+hframes = 3
+frame = 7
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 968, 1196 )
+scale = Vector2( 59.2, 44 )
+texture = ExtResource( 1 )
+energy = 0.7

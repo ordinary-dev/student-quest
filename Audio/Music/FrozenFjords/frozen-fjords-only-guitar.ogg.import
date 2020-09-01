@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/frozen-fjords-only-guitar.ogg-4b3e7aa9bf4dfd212f5bb81a564d9936.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/FrozenFjords/frozen-fjords-only-guitar.ogg"
+dest_files=[ "res://.import/frozen-fjords-only-guitar.ogg-4b3e7aa9bf4dfd212f5bb81a564d9936.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

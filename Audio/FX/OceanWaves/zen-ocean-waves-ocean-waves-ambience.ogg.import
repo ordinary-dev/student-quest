@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/zen-ocean-waves-ocean-waves-ambience.ogg-778445570df412455a03eca87ffec68b.oggstr"
+
+[deps]
+
+source_file="res://Audio/FX/OceanWaves/zen-ocean-waves-ocean-waves-ambience.ogg"
+dest_files=[ "res://.import/zen-ocean-waves-ocean-waves-ambience.ogg-778445570df412455a03eca87ffec68b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

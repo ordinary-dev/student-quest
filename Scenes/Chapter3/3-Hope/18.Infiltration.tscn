@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Templates/Officer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/General/AI_Config.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=4]
+
+[node name="Infiltration" type="Node2D"]
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
+init_dir = 0
+allow_entrance = true
+math_scene = "res://Scenes/Chapter3/3-Hope/20.Building.tscn"
+show_singer = false
+show_gardener = false
+enable_npc = false
+
+[node name="Transition" parent="StreetTemplate/Overlay" index="2"]
+object = NodePath("../../../StreetTemplate/Overlay/Railways")
+
+[node name="Character" parent="StreetTemplate/YSort/AI" index="0"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character2" parent="StreetTemplate/YSort/AI" index="1"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character3" parent="StreetTemplate/YSort/AI" index="2"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character4" parent="StreetTemplate/YSort/AI" index="3"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character5" parent="StreetTemplate/YSort/AI" index="4"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character6" parent="StreetTemplate/YSort/AI" index="5"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character7" parent="StreetTemplate/YSort/AI" index="6"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character8" parent="StreetTemplate/YSort/AI" index="7"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character9" parent="StreetTemplate/YSort/AI" index="8"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character10" parent="StreetTemplate/YSort/AI" index="9"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character11" parent="StreetTemplate/YSort/AI" index="10"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Character12" parent="StreetTemplate/YSort/AI" index="11"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Mathematics" parent="StreetTemplate/Triggers" index="2"]
+object_name = NodePath("../../../StreetTemplate")
+
+[node name="Right-Trigger_0" parent="StreetTemplate/Teleports" index="0"]
+obj = NodePath("../../../StreetTemplate/Teleports")
+
+[node name="Left-Trigger_1" parent="StreetTemplate/Teleports" index="1"]
+obj = NodePath("../../../StreetTemplate/Teleports")
+
+[node name="Up-Trigger_1" parent="StreetTemplate/Teleports" index="2"]
+obj = NodePath("../../../StreetTemplate/Teleports")
+
+[node name="Down-Trigger_1" parent="StreetTemplate/Teleports" index="3"]
+obj = NodePath("../../../StreetTemplate/Teleports")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.411765, 0.47451, 0.615686, 1 )
+
+[node name="Police" type="Node2D" parent="."]
+
+[node name="Character" parent="Police" instance=ExtResource( 2 )]
+position = Vector2( 1376, 496 )
+
+[node name="Character2" parent="Police" instance=ExtResource( 2 )]
+position = Vector2( 1536, 504 )
+
+[node name="Character3" parent="Police" instance=ExtResource( 2 )]
+position = Vector2( 1696, 504 )
+
+[node name="AI_Config" type="Node2D" parent="Police"]
+script = ExtResource( 3 )
+nav_node = NodePath("../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../StreetTemplate/BottomDown")
+hit_scene_path = "res://Scenes/Chapter3/3-Hope/19.Hit.tscn"
+
+[node name="ChangeUI" parent="." instance=ExtResource( 4 )]
+show_pause_menu = true
+show_joystick = true
+
+[editable path="StreetTemplate"]

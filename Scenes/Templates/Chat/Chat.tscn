@@ -20,8 +20,8 @@ __meta__ = {
 
 [node name="HeaderBackground" type="ColorRect" parent="VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 100.0
-rect_min_size = Vector2( 1920, 100 )
+margin_bottom = 104.0
+rect_min_size = Vector2( 1920, 104 )
 color = Color( 0.337255, 0.45098, 0.596078, 1 )
 
 [node name="HeaderContainer" type="HBoxContainer" parent="VBoxContainer/HeaderBackground"]
@@ -33,9 +33,9 @@ __meta__ = {
 }
 
 [node name="HeaderText" type="Label" parent="VBoxContainer/HeaderBackground/HeaderContainer"]
-margin_top = 34.0
+margin_top = 36.0
 margin_right = 1766.0
-margin_bottom = 66.0
+margin_bottom = 68.0
 size_flags_horizontal = 3
 text = "CHAT"
 valign = 1
@@ -46,16 +46,18 @@ __meta__ = {
 [node name="CloseButton" type="Button" parent="VBoxContainer/HeaderBackground/HeaderContainer"]
 margin_left = 1770.0
 margin_right = 1870.0
-margin_bottom = 100.0
+margin_bottom = 104.0
 rect_min_size = Vector2( 100, 100 )
 text = "x"
 flat = true
 
 [node name="BodyBackground" type="ColorRect" parent="VBoxContainer"]
-margin_top = 100.0
+margin_top = 104.0
 margin_right = 1920.0
-margin_bottom = 1084.0
+margin_bottom = 1080.0
 rect_min_size = Vector2( 0, 980 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 color = Color( 0.133333, 0.117647, 0.164706, 1 )
 
 [node name="Container" type="VBoxContainer" parent="VBoxContainer/BodyBackground"]

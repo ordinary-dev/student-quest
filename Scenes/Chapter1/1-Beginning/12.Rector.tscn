@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Tilemaps/Rector/map.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Templates/Noise_sprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Templates/Characters/Rector.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/ui/Enable.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Templates/Furniture/Bookcase1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Templates/Furniture/Table3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Templates/Furniture/Bookcase2.tscn" type="PackedScene" id=9]
@@ -14,18 +14,11 @@
 [ext_resource path="res://Scenes/Templates/Furniture/Table2.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Templates/Furniture/Chair1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Templates/Characters/Worker.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Sprites/Light_2.png" type="Texture" id=15]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-
-func _ready():
-	MUSIC.stop()
-"
+[ext_resource path="res://Sprites/Light/WindowLight.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=16]
 
 [node name="RectorScene" type="Node2D"]
-script = SubResource( 1 )
+script = ExtResource( 16 )
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -165,7 +158,7 @@ shadow_enabled = true
 
 [node name="RectorDialog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 808.866, 494.028 )
-dialog_path = "res://Dialogs/Beginning/Rector.json"
+dialog_path = "res://Dialogs/Chapter1/Beginning/Rector.json"
 person = "RECTOR"
 load_scene = true
 scene_path = "res://Scenes/Chapter1/1-Beginning/13.PathToTheCabinet.tscn"
@@ -192,7 +185,8 @@ position = Vector2( 904, 576 )
 [node name="Chair1" parent="YSort" instance=ExtResource( 13 )]
 position = Vector2( 832, 568 )
 
-[node name="Enable-UI" parent="." instance=ExtResource( 6 )]
-joystick = true
+[node name="ChangeUI" parent="." instance=ExtResource( 6 )]
+show_pause_menu = true
+show_joystick = true
 
 [editable path="YSort/Body"]

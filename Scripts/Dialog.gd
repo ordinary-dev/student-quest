@@ -36,7 +36,9 @@ func hide_dialog():
 			get_node(glob_obj).call(glob_fnc, glob_argv)
 	glob_obj = ""
 	if return_ui:
-		UI_INIT.enable_ui(return_joystick)
+		UI.show_pause_menu = true
+	if return_joystick:
+		UI.show_joystick = true
 
 
 func _process(_delta):
@@ -77,12 +79,15 @@ func show_dialog(path:String, obj:String = "", fnc:String = "", argv:String="") 
 	if has_node(GLOBAL.player_path):
 		get_node(GLOBAL.player_path).lock()
 	# Disable the interface, if enabled, and remember this
-	return_joystick = UI.get_node("Joystick-UI_Sprite").visible
-	if UI.get_node("PauseMenu-UI_Control").visible:
-		UI_INIT.disable_ui()
+	if UI.show_joystick:
+		UI.show_joystick = false
+		return_joystick = true
+	if UI.show_pause_menu:
+		UI.show_pause_menu = false
 		return_ui = true
 	else:
 		return_ui = false
+		return_joystick = false
 	# Sound
 	FX.dialog()
 	

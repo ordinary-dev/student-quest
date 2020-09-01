@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Sprites/rain.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Rain.png" type="Texture" id=1]
+
 
 [node name="Rain-Template_Particles2D" type="CPUParticles2D"]
 position = Vector2( 983.083, -31.9593 )
