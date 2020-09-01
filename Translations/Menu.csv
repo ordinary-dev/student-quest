@@ -17,13 +17,6 @@ VSYNC,Vsync,Верт. син.
 FULLSCREEN,Fullscreen,Полный экран
 SITE,Open site,Открыть сайт
 GODOT,Created with Godot Engine,Создано при помощи Godot Engine
-CHANGELOG,Changelog:,Список изменений:
-CHANGES,-Check out itch.io,-Проверьте itch.io
-AUTHORS,Authors:,Авторы:
-JOYSTICK,Joystick script:,Скрипт джойстика:
-MUSIC,Music:,Музыка:
-CONTACT,Contact us:,Свяжитесь с нами:
-SUPPORT,"Support us, we are hungry:","Поддержите нас, мы голодные:"
 LEGAL,Every character is just the result of our imagination,Каждый персонаж всего лишь результат нашего воображения
 NEW_GAME,New game,Новая игра
 DELETE,Delete,Удалить
@@ -33,3 +26,4 @@ LOAD,Load,Загрузить
 SAVE,Save,Сохранить
 LOAD_GAME,Load game,Загрузить игру
 CONTINUE,Continue,Продолжить
+SHOW_CREDITS,Show credits,Показать титры

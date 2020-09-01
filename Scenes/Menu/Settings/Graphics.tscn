@@ -4,7 +4,6 @@
 [ext_resource path="res://Sprites/Icons/checkbox-off.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Scenes/Menu/Settings/Graphics.gd" type="Script" id=3]
 
-
 [node name="Graphics" type="MarginContainer"]
 light_mask = 0
 anchor_right = 1.0
