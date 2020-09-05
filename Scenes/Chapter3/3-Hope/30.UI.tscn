@@ -7,13 +7,6 @@
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=5]
 
 [node name="UI" type="Node2D"]
-script = ExtResource( 5 )
-dialog_path = "res://Dialogs/Chapter3/Hope/Game_2.json"
-enable_delay = true
-delay = 3.0
-load_scene = true
-scene_path = "res://Scenes/Chapter3/3-Hope/31.Street.tscn"
-loading_delay = 4.0
 
 [node name="OldScreen" parent="." instance=ExtResource( 1 )]
 
@@ -81,3 +74,12 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 5 )
+dialog_path = "res://Dialogs/Chapter3/Hope/Game_2.json"
+enable_delay = true
+delay = 3.0
+load_scene = true
+scene_path = "res://Scenes/Chapter3/3-Hope/31.Street.tscn"
+loading_delay = 4.0

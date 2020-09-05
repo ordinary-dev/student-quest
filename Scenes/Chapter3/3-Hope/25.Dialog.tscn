@@ -5,15 +5,7 @@
 [ext_resource path="res://Sprites/Backgrounds/BlurryRoom.jpg" type="Texture" id=3]
 [ext_resource path="res://Sprites/Characters/Singer.png" type="Texture" id=4]
 
-
-
 [node name="Dialog" type="Node2D"]
-script = ExtResource( 2 )
-dialog_path = "res://Dialogs/Chapter3/Hope/Machine_2.json"
-enable_delay = true
-delay = 1.0
-load_scene = true
-scene_path = "res://Scenes/Chapter3/3-Hope/26.EnteringTheMachine.tscn"
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0.317647, 0.6, 0.960784, 1 )
@@ -48,3 +40,11 @@ texture = ExtResource( 4 )
 flip_h = true
 hframes = 3
 frame = 1
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 2 )
+dialog_path = "res://Dialogs/Chapter3/Hope/Machine_2.json"
+enable_delay = true
+delay = 1.0
+load_scene = true
+scene_path = "res://Scenes/Chapter3/3-Hope/26.EnteringTheMachine.tscn"

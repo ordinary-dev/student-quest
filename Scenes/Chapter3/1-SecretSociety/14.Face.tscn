@@ -43,6 +43,6 @@ frame = 2
 texture = ExtResource( 2 )
 centered = false
 
-[node name="PlayMusic" type="Node2D" parent="."]
+[node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 3 )
 file = "res://Audio/Music/DeadPulse/dead-pulse.ogg"

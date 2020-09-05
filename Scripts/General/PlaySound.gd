@@ -4,6 +4,7 @@
 # Licensed under the GPL-3 License
 
 extends Node
+class_name SoundPlayer
 
 export (String, FILE) var file
 export (float, 0.0, 10.0) var delay = 0.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
 
 [node name="Text" type="Control"]
 __meta__ = {
@@ -14,4 +14,5 @@ text_1 = "THE_NEXT_DAY"
 text_2 = "Начало первой пары"
 next_scene = "res://Scenes/Chapter3/3-Hope/9.Classroom.tscn"
 
-[node name="ChangeUI" parent="." instance=ExtResource( 2 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )

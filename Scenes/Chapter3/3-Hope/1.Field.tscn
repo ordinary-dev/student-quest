@@ -5,18 +5,10 @@
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=4]
 [ext_resource path="res://Audio/FX/Wind/Autumn-wind-and-dry-leaves.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/General/Unlock.gd" type="Script" id=7]
 
-
 [node name="Field" type="Node2D"]
-script = ExtResource( 3 )
-dialog_path = "res://Dialogs/Chapter3/Hope/Field.json"
-enable_delay = true
-delay = 4.0
-load_scene = true
-scene_path = "res://Scenes/Chapter3/3-Hope/2.Bed.tscn"
-loading_delay = 2.0
 
 [node name="Sky" type="Sprite" parent="."]
 modulate = Color( 0.988235, 0.976471, 1, 1 )
@@ -59,8 +51,18 @@ volume_db = 2.0
 autoplay = true
 bus = "FX"
 
-[node name="Unlock" type="Node2D" parent="."]
-script = ExtResource( 7 )
-subchapter_id = 9
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 6 )
 
-[node name="ChangeUI" parent="." instance=ExtResource( 6 )]
+[node name="UnlockStage" type="Node" parent="."]
+script = ExtResource( 7 )
+subchapter_id = 10
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://Dialogs/Chapter3/Hope/Field.json"
+enable_delay = true
+delay = 4.0
+load_scene = true
+scene_path = "res://Scenes/Chapter3/3-Hope/2.Bed.tscn"
+loading_delay = 2.0

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Audio/Music/DeadPulse/dead-pulse.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Blackout.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=6]
@@ -62,7 +62,8 @@ volume_db = 10.0
 autoplay = true
 bus = "OST"
 
-[node name="ChangeUI" parent="." instance=ExtResource( 3 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )
 show_pause_menu = true
 show_joystick = true
 [connection signal="timeout" from="Timer" to="." method="turn_lights_on"]

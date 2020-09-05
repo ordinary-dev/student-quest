@@ -11,7 +11,8 @@ margin_bottom = -1080.0
 rect_min_size = Vector2( 1920, 1080 )
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 960.735 ]
 }
 menu_scene_path = "res://Scenes/Menu/Menu.tscn"
 alternate_scene_path = "res://Scenes/AlternateScene.tscn"

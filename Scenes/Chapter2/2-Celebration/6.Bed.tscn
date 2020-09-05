@@ -7,10 +7,7 @@
 [ext_resource path="res://Sprites/Blanket.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/House/RoomBackground.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Room/Carpet.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=8]
-
-
-
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Camera"
@@ -92,4 +89,5 @@ anims/Camera = SubResource( 1 )
 position = Vector2( 960, 540 )
 current = true
 
-[node name="ChangeUI" parent="." instance=ExtResource( 8 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 8 )

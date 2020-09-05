@@ -21,7 +21,5 @@ fade_in = false
 fade_out = false
 delay_before_next_scene = 1.5
 
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="StopTheMusic" type="Node" parent="."]
 script = ExtResource( 3 )

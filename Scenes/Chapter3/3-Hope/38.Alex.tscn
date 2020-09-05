@@ -5,11 +5,6 @@
 [ext_resource path="res://Scripts/Shake.gd" type="Script" id=3]
 
 [node name="Train" type="Node2D"]
-script = ExtResource( 2 )
-next_scene = "res://Scenes/Chapter3/3-Hope/39.Liza.tscn"
-delay = 3.0
-transition_in = false
-transition_out = false
 
 [node name="InsideTheTrain" type="Sprite" parent="."]
 position = Vector2( 960, 480 )
@@ -20,3 +15,10 @@ texture = ExtResource( 1 )
 anchor_mode = 0
 current = true
 script = ExtResource( 3 )
+
+[node name="SceneLoader" type="Node" parent="."]
+script = ExtResource( 2 )
+next_scene = "res://Scenes/Chapter3/3-Hope/39.Liza.tscn"
+delay = 3.0
+transition_in = false
+transition_out = false

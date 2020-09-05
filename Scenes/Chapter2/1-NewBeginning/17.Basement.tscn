@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Templates/Basement/Stairs.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Triggers/LoadScene.tscn" type="PackedScene" id=3]
 
 [node name="Basement" type="Node2D"]
@@ -13,6 +13,7 @@ position = Vector2( 24, 392 )
 label = "GO_DOWN"
 scene_path = "res://Scenes/Chapter2/1-NewBeginning/18.Portal.tscn"
 
-[node name="ChangeUI" parent="." instance=ExtResource( 2 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
 show_pause_menu = true
 show_joystick = true

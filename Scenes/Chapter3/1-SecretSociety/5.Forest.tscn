@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Templates/House/Forest.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
 
 [node name="Forest" type="Node2D"]
 
@@ -11,6 +11,7 @@ is_main_door_open = false
 initial_location = 1
 sleep_scene = "res://Scenes/Chapter3/1-SecretSociety/6.Text.tscn"
 
-[node name="ChangeUI" parent="." instance=ExtResource( 2 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
 show_pause_menu = true
 show_joystick = true

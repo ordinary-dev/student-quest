@@ -5,17 +5,10 @@
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Templates/Rain.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/FX/Rain/rain-moderate-c.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=7]
 
 [node name="Police" type="Node2D"]
-script = ExtResource( 3 )
-dialog_path = "res://Dialogs/Chapter2/Disappearance/Police.json"
-enable_delay = true
-delay = 3.0
-load_scene = true
-scene_path = "res://Scenes/Chapter2/3-Disappearance/7.Clouds.tscn"
-loading_delay = 2.0
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
@@ -37,8 +30,18 @@ volume_db = -10.0
 autoplay = true
 bus = "FX"
 
-[node name="ChangeUI" parent="." instance=ExtResource( 6 )]
+[node name="StopTheMusic" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 6 )
 show_pause_menu = true
 
-[node name="StopMusic" type="Node2D" parent="."]
-script = ExtResource( 7 )
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://Dialogs/Chapter2/Disappearance/Police.json"
+enable_delay = true
+delay = 3.0
+load_scene = true
+scene_path = "res://Scenes/Chapter2/3-Disappearance/7.Clouds.tscn"
+loading_delay = 2.0

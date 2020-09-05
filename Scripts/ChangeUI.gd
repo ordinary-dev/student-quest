@@ -2,6 +2,7 @@
 # Licensed under the GPL-3 License
 
 extends Node
+class_name ChangeUI
 
 export (bool) var show_pause_menu = false
 export (bool) var show_joystick = false

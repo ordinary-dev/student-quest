@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Templates/Street2.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/SnowStreet/Snow.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Triggers/LoadOnEnter.tscn" type="PackedScene" id=10]
@@ -218,10 +218,11 @@ scene = "res://Scenes/Chapter2/3-Disappearance/11.Park.tscn"
 fade_in = false
 fade_out = false
 
-[node name="PlayMusic" type="Node2D" parent="."]
-script = ExtResource( 12 )
-file = "res://Audio/Music/SadPiano/SadHeavenPiano1.ogg"
-
-[node name="ChangeUI" parent="." instance=ExtResource( 2 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
 show_pause_menu = true
 show_joystick = true
+
+[node name="MusicPlayer" type="Node" parent="."]
+script = ExtResource( 12 )
+file = "res://Audio/Music/SadPiano/SadHeavenPiano1.ogg"

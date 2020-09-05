@@ -3,10 +3,12 @@
 [ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=2]
 
-[node name="Node2D" type="Node2D"]
+[node name="StopMusic" type="Node2D"]
+
+[node name="StopTheMusic" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="SceneLoader" type="Node" parent="."]
 script = ExtResource( 1 )
 next_scene = "res://Scenes/Menu/Menu.tscn"
 delay = 2.0
-
-[node name="StopMusic" type="Node2D" parent="."]
-script = ExtResource( 2 )

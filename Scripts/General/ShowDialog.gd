@@ -4,6 +4,7 @@
 # Licensed under the GPL-3 License
 
 extends Node
+class_name Dialog
 
 export (String, FILE, "*.json") var dialog_path
 

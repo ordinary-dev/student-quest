@@ -2,9 +2,9 @@
 
 [ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/General/Unlock.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
 
-[node name="Control" type="Control"]
+[node name="Text" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -16,10 +16,9 @@ text_1 = "A_FEW_DAYS_LATER"
 text_2 = "MORNING"
 next_scene = "res://Scenes/Chapter1/3-UsualLife/2.Street.tscn"
 
-[node name="Unlock" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="UnlockStage" type="Node" parent="."]
 script = ExtResource( 2 )
 subchapter_id = 3
 
-[node name="ChangeUI" parent="." instance=ExtResource( 3 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )

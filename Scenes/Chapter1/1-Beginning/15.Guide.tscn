@@ -1,26 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Triggers/LoadScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Templates/Characters/Guide_AI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/General/LoadSceneFunction.gd" type="Script" id=5]
-
 
 [node name="Guide-Scene" type="Node2D"]
-script = ExtResource( 5 )
-scene_path = "res://Scenes/Chapter1/1-Beginning/16.Flat.tscn"
 
 [node name="Street-Template" parent="." instance=ExtResource( 4 )]
 initial_position = 2
 show_singer = false
 enable_lights = false
-
-[node name="Hostel" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1136, 2880 )
-label = "HOSTEL"
-object_name = NodePath("..")
-function_name = "load_scene"
 
 [node name="Guide" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1600, 6664 )
@@ -29,10 +19,16 @@ z_index = 2
 z_as_relative = false
 line_path = NodePath("../Line2D")
 
+[node name="LoadScene" parent="." instance=ExtResource( 1 )]
+position = Vector2( -1120, 2880 )
+label = "HOSTEL"
+scene_path = "res://Scenes/Chapter1/1-Beginning/16.Room.tscn"
+
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
 points = PoolVector2Array( 1600, 6664, 2520, 6656, 2512, 5520, 2584, 5336, 2528, 5064, 2528, 3840, 2488, 464, -312, 456, -320, 3096, -1064, 3160 )
 
-[node name="ChangeUI" parent="." instance=ExtResource( 2 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
 show_pause_menu = true
 show_joystick = true
