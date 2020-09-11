@@ -18,11 +18,20 @@ var bottom_right : Position2D
 enum DIRECTIONS{UP, DOWN, LEFT, RIGHT, UNSET}
 var current_dir = DIRECTIONS.UNSET
 var anim_playing := false
+onready var sprite = $npc
 
 const speed = 270
 
+const sprite_paths = [
+	"res://Sprites/Characters/Npc_1.png",
+	"res://Sprites/Characters/Npc_2.png",
+	"res://Sprites/Characters/Npc_3.png"
+]
+
 
 func _ready() -> void:
+	var ind := randi() % 3
+	sprite.texture = load(sprite_paths[ind])
 	upper_left = get_node(upper_left_node)
 	bottom_right = get_node(bottom_right_node)
 	x_min = upper_left.position.x
