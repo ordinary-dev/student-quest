@@ -102,3 +102,20 @@ func generate_path() -> void:
 	var new_path = nav_2d.get_simple_path(position, point)
 	path = new_path
 	set_process(true)
+
+
+func _on_Area2D_body_entered(_body):
+	set_process(false)
+	$AnimationPlayer.stop()
+	match current_dir:
+		DIRECTIONS.UP:
+			$npc.frame = 7
+		DIRECTIONS.DOWN:
+			$npc.frame = 6
+		_:
+			$npc.frame = 8
+	current_dir = DIRECTIONS.UNSET
+
+
+func _on_Area2D_body_exited(_body):
+	set_process(true)
