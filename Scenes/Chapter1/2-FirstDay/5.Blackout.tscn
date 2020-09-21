@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Audio/Music/DeadPulse/dead-pulse.ogg" type="AudioStream" id=1]
-[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Blackout.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=5]
@@ -36,14 +36,14 @@ __meta__ = {
 
 [node name="GuardDialog" parent="." instance=ExtResource( 2 )]
 position = Vector2( 385.529, 265.764 )
-label = "SECURITY_GUARD"
 object_name = NodePath("../../BlackoutScene")
 function_name = "dialog"
 
 [node name="Monolog" parent="." instance=ExtResource( 5 )]
 position = Vector2( -329.707, 153.509 )
-dialog_path = "res://Dialogs/Chapter1/FirstDay/Passage.json"
+hint = "PASSAGE"
 person = "PASSAGE"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Passage.json"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 25.0

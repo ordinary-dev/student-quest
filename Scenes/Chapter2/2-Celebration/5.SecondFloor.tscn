@@ -4,10 +4,13 @@
 [ext_resource path="res://Sprites/Light/WindowLight.png" type="Texture" id=3]
 [ext_resource path="res://Tilemaps/house/house.tres" type="TileSet" id=4]
 [ext_resource path="res://Tilemaps/house/overlay.tres" type="TileSet" id=5]
-[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Sprites/House/Door.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Triggers/InstantlyEnableObject.tscn" type="PackedScene" id=9]
+
+
+
 
 
 

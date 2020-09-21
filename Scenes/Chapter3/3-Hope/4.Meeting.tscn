@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Templates/Characters/Neo.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Triggers/SimpleDialogTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=4]
+
+
+
 
 [node name="Meeting" type="Node2D"]
 

@@ -3,7 +3,7 @@
 [ext_resource path="res://Tilemaps/street/Overlay16.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Templates/Streetlight.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Triggers/LoadScene.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tilemaps/street/street16.tres" type="TileSet" id=5]
 [ext_resource path="res://Scenes/Templates/Buildings/Building_3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Templates/Buildings/Building_2.tscn" type="PackedScene" id=7]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Scenes/Templates/Trees/Tree_type_1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Templates/Trees/Tree_type_2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Templates/Buildings/Building_1.tscn" type="PackedScene" id=14]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1328, 64 )

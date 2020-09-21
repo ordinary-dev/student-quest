@@ -29,13 +29,16 @@
 [ext_resource path="res://Scenes/Templates/Trees/Tree_type_1.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/Templates/Bush_type_1.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Scenes/Triggers/Label.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/Templates/WaterSprite.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Scenes/Templates/Streetlight.tscn" type="PackedScene" id=34]
 [ext_resource path="res://Sprites/Characters/Gardener.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/Templates/Street/Columns.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/Templates/Rock_type_3.tscn" type="PackedScene" id=38]
+
+
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 2.66675 )

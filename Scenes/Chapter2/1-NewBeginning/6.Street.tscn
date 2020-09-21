@@ -5,6 +5,8 @@
 [ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/Characters/Guide.tscn" type="PackedScene" id=6]
 
+
+
 [node name="StreetScene" type="Node2D"]
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 5 )]

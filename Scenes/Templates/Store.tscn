@@ -2,8 +2,11 @@
 
 [ext_resource path="res://Tilemaps/store/store.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Light/LightSmall.png" type="Texture" id=4]
+
+
+
 
 
 

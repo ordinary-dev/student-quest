@@ -5,6 +5,8 @@
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=4]
 
+
+
 [node name="StreetScene" type="Node2D"]
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 2 )]
@@ -20,8 +22,9 @@ position = Vector2( -280, 296 )
 
 [node name="CharacterDialog" parent="." instance=ExtResource( 3 )]
 position = Vector2( -212.181, 275.781 )
-dialog_path = "res://Dialogs/Chapter1/Parting/Parting.json"
+hint = "GIRLFRIEND"
 person = "GIRLFRIEND"
+dialog_path = "res://Dialogs/Chapter1/Parting/Parting.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter1/4-Parting/3.Night.tscn"
 

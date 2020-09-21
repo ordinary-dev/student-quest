@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/Triggers/DialogTriggerWithoutPrompt.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Triggers/SimpleDialogTrigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/Characters/Girlfriend.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Templates/Characters/Guide.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=4]
@@ -15,18 +15,21 @@ math_scene = "res://Scenes/Chapter1/2-FirstDay/3.Date.tscn"
 
 [node name="MrSingerDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 56, 416 )
-dialog_path = "res://Dialogs/Chapter1/FirstDay/Stranger.json"
+hint = "UNKNOWN_SINGER"
 person = "UNKNOWN_SINGER"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Stranger.json"
 
 [node name="GardenerDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1120, 2552 )
-dialog_path = "res://Dialogs/Chapter1/FirstDay/Gardener.json"
+hint = "GARDENER"
 person = "GARDENER"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Gardener.json"
 
 [node name="GuideDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2264, 448 )
-dialog_path = "res://Dialogs/Chapter1/FirstDay/PathToFaculty.json"
+hint = "GUIDE"
 person = "GUIDE"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/PathToFaculty.json"
 
 [node name="GuideTemplate" parent="." instance=ExtResource( 3 )]
 position = Vector2( 2112, 568 )
