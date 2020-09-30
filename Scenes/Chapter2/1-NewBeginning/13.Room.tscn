@@ -5,9 +5,6 @@
 [ext_resource path="res://Scenes/Templates/Room/Room.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Light/LightSmall.png" type="Texture" id=4]
 
-
-
-
 [node name="Room" type="Node2D"]
 
 [node name="Flat-Template" parent="." instance=ExtResource( 3 )]
@@ -20,9 +17,9 @@ color = Color( 0.368627, 0.509804, 0.894118, 1 )
 shadow_enabled = true
 
 [node name="LoadScene" parent="." instance=ExtResource( 1 )]
-position = Vector2( 512, 224 )
-label = "OPENCHAT"
-scene_path = "res://Scenes/Chapter2/1-NewBeginning/14.Site.tscn"
+position = Vector2( 640.434, 252.541 )
+hint = "CHAT"
+scene = "res://Scenes/Chapter2/1-NewBeginning/14.Site.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

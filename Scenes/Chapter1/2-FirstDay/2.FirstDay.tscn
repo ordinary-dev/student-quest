@@ -16,19 +16,16 @@ math_scene = "res://Scenes/Chapter1/2-FirstDay/3.Date.tscn"
 [node name="MrSingerDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 56, 416 )
 hint = "UNKNOWN_SINGER"
-person = "UNKNOWN_SINGER"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Stranger.json"
 
 [node name="GardenerDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1120, 2552 )
 hint = "GARDENER"
-person = "GARDENER"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Gardener.json"
 
 [node name="GuideDialog" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2264, 448 )
 hint = "GUIDE"
-person = "GUIDE"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/PathToFaculty.json"
 
 [node name="GuideTemplate" parent="." instance=ExtResource( 3 )]

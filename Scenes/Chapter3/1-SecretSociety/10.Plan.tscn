@@ -3,8 +3,6 @@
 [ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=2]
 
-
-
 [node name="Plan" type="Node2D"]
 
 [node name="FacultyMap" parent="." instance=ExtResource( 1 )]
@@ -15,7 +13,6 @@ block_turnstile = true
 [node name="DialogTrigger" parent="." instance=ExtResource( 2 )]
 position = Vector2( 528, 312 )
 hint = "SECURITY_GUARD"
-person = "SECURITY_GUARD"
 dialog_path = "res://Dialogs/Chapter3/SecretSociety/Plan.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter3/1-SecretSociety/11.Phone.tscn"

@@ -18,9 +18,6 @@
 [ext_resource path="res://Scenes/Templates/Characters/Neo.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Templates/House/Bench2.tscn" type="PackedScene" id=18]
 
-
-
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
@@ -273,7 +270,7 @@ tile_data = PoolIntArray( -1638429, 0, 0, -1638428, 0, 0, -1638427, 0, 0, -16384
 
 [node name="GoBack" parent="." instance=ExtResource( 4 )]
 position = Vector2( -82.9297, 29.3778 )
-label = "HOUSE"
+hint = "GO_BACK"
 object_name = NodePath("..")
 function_name = "house"
 
@@ -303,13 +300,13 @@ shape = SubResource( 3 )
 
 [node name="OpenTheDoor_1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 176, -520 )
-label = "SLEEP"
+hint = "OPEN_THE_DOOR"
 object_name = NodePath("..")
 function_name = "open_door"
 
 [node name="OpenTheDoor_2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 880, -520 )
-label = "SLEEP"
+hint = "OPEN_THE_DOOR"
 object_name = NodePath("..")
 function_name = "open_door"
 

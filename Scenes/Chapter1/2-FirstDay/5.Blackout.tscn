@@ -35,14 +35,15 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 
 [node name="GuardDialog" parent="." instance=ExtResource( 2 )]
-position = Vector2( 385.529, 265.764 )
+position = Vector2( 526.8, 334.718 )
+hint = "SECURITY_GUARD"
+use_once = false
 object_name = NodePath("../../BlackoutScene")
 function_name = "dialog"
 
 [node name="Monolog" parent="." instance=ExtResource( 5 )]
-position = Vector2( -329.707, 153.509 )
+position = Vector2( -321.698, 122.808 )
 hint = "PASSAGE"
-person = "PASSAGE"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Passage.json"
 
 [node name="Timer" type="Timer" parent="."]

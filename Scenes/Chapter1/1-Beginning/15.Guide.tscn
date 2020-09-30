@@ -5,9 +5,6 @@
 [ext_resource path="res://Scenes/Templates/Characters/Guide_AI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=4]
 
-
-
-
 [node name="Guide-Scene" type="Node2D"]
 
 [node name="Street-Template" parent="." instance=ExtResource( 4 )]
@@ -23,9 +20,9 @@ z_as_relative = false
 line_path = NodePath("../Line2D")
 
 [node name="LoadScene" parent="." instance=ExtResource( 1 )]
-position = Vector2( -1120, 2880 )
-label = "HOSTEL"
-scene_path = "res://Scenes/Chapter1/1-Beginning/16.Room.tscn"
+position = Vector2( -989.833, 2927.62 )
+hint = "HOSTEL"
+scene = "res://Scenes/Chapter1/1-Beginning/16.Room.tscn"
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false

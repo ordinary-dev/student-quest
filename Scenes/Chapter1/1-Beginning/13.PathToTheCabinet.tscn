@@ -4,21 +4,18 @@
 [ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Audio/FX/Doors/close-the-door.wav" type="AudioStream" id=5]
 
-
-
-
 [node name="PathToTheCabinet" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
 initial_pos = 1
 block_turnstile = true
 
-[node name="LoadScene" parent="." instance=ExtResource( 4 )]
-position = Vector2( 240, 1376 )
-label = "GUIDE"
-scene_path = "res://Scenes/Chapter1/1-Beginning/14.Dialog.tscn"
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
 bus = "FX"
+
+[node name="LoadSceneTrigger" parent="." instance=ExtResource( 4 )]
+position = Vector2( 358.969, 1428.21 )
+hint = "TALK"
+scene = "res://Scenes/Chapter1/1-Beginning/14.Dialog.tscn"

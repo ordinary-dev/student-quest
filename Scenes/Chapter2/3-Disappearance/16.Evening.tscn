@@ -5,9 +5,6 @@
 [ext_resource path="res://Sprites/Characters/Stranger.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=4]
 
-
-
-
 [node name="Evening" type="Node2D"]
 modulate = Color( 0.878431, 0.847059, 0.811765, 1 )
 

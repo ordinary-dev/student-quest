@@ -159,7 +159,6 @@ shadow_enabled = true
 [node name="RectorDialog" parent="." instance=ExtResource( 5 )]
 position = Vector2( 808.866, 494.028 )
 hint = "RECTOR"
-person = "RECTOR"
 dialog_path = "res://Dialogs/Chapter1/Beginning/Rector.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter1/1-Beginning/13.PathToTheCabinet.tscn"

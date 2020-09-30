@@ -5,8 +5,6 @@
 [ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/Characters/Guide.tscn" type="PackedScene" id=6]
 
-
-
 [node name="StreetScene" type="Node2D"]
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 5 )]
@@ -19,18 +17,18 @@ z_as_relative = false
 
 [node name="MrSinger" parent="." instance=ExtResource( 1 )]
 position = Vector2( 104, 424 )
+hint = "UNKNOWN_SINGER"
 dialog_path = "res://Dialogs/Chapter2/NewBeginning/Stranger.json"
-person = "UNKNOWN_SINGER"
 
 [node name="Guide" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2280, 456 )
+hint = "GUIDE"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/PathToFaculty.json"
-person = "GUIDE"
 
 [node name="Gardener" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1136, 2528 )
+hint = "GARDENER"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Gardener.json"
-person = "GARDENER"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

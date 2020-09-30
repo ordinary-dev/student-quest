@@ -6,9 +6,6 @@
 [ext_resource path="res://Scenes/Templates/Characters/Neo.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=5]
 
-
-
-
 [node name="Street" type="Node2D"]
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
@@ -19,8 +16,8 @@ enable_lights = false
 
 [node name="LoadScene" parent="." instance=ExtResource( 3 )]
 position = Vector2( 4032, 3592 )
-label = "ROOF"
-scene_path = "res://Scenes/Chapter3/3-Hope/44.Roof.tscn"
+hint = "ROOF"
+scene = "res://Scenes/Chapter3/3-Hope/44.Roof.tscn"
 
 [node name="Neo" parent="." instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 1, 1 )

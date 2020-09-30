@@ -7,9 +7,6 @@ extends Area2D
 
 export (String) var hint = "Trigger"
 
-# Deprecated
-export (String) var person = "Trigger"
-
 onready var tween  = $TriggerBase/Tween
 onready var frame1 = $TriggerBase/DialogFrame
 onready var frame2 = $TriggerBase/ButtonHintFrame
@@ -20,6 +17,7 @@ const start := Color(1, 1, 1, 0)
 const end   := Color(1, 1, 1, 1)
 const time : float = 0.3
 
+export (bool) var use_once = true
 var used = false
 var button_pressed = false
 var action : FuncRef
@@ -62,13 +60,13 @@ func hide_ui() -> void:
 
 
 func _on_Area2D_body_entered(_body) -> void:
-	if !used:
+	if !used or !use_once:
 		show_ui()
 		set_process(true)
 
 
 func _on_Area2D_body_exited(_body) -> void:
-	if !used:
+	if !used or !use_once:
 		hide_ui()
 		set_process(false)
 
@@ -78,7 +76,7 @@ func _ready() -> void:
 	frame2.visible = false
 	btn.visible = false
 	btn.connect("pressed", self, "_on_Button_pressed")
-	label.text = person
+	label.text = hint
 	set_process(false)
 	frame1.modulate = start
 	frame2.modulate = start

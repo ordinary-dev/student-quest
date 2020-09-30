@@ -4,17 +4,14 @@
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=3]
 
-
-
-
 [node name="Basement" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]
 
 [node name="LoadScene" parent="." instance=ExtResource( 3 )]
-position = Vector2( 24, 392 )
-label = "GO_DOWN"
-scene_path = "res://Scenes/Chapter2/1-NewBeginning/18.Portal.tscn"
+position = Vector2( 160, 352 )
+hint = "GO_DOWN"
+scene = "res://Scenes/Chapter2/1-NewBeginning/18.Portal.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

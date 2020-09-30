@@ -6,10 +6,6 @@
 [ext_resource path="res://Scenes/Triggers/SimpleFunctionTrigger.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/Scenes/Chapter3/3-Hope/28.Road.gd" type="Script" id=10]
 
-
-
-
-
 [node name="Road" type="Node2D"]
 script = ExtResource( 10 )
 
@@ -23,9 +19,9 @@ obj = NodePath("..")
 method = "show_notification"
 
 [node name="LoadScene" parent="." instance=ExtResource( 8 )]
-position = Vector2( 872, -1192 )
-label = "LOOK"
-scene_path = "res://Scenes/Chapter3/3-Hope/29.Alex.tscn"
+position = Vector2( 997.992, -1138.26 )
+hint = "LOOK"
+scene = "res://Scenes/Chapter3/3-Hope/29.Alex.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

@@ -5,9 +5,6 @@
 [ext_resource path="res://Scripts/Scenes/Chapter1/4-Parting/2.Stairs.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=4]
 
-
-
-
 [node name="StairsScene" type="Node2D"]
 script = ExtResource( 3 )
 __meta__ = {
@@ -19,8 +16,8 @@ secret = "res://Scenes/Chapter1/4-Parting/12.Secret.tscn"
 [node name="Map" parent="." instance=ExtResource( 2 )]
 
 [node name="ExitTrigger" parent="." instance=ExtResource( 1 )]
-position = Vector2( 32, 352 )
-label = "GO_DOWN"
+position = Vector2( 160, 352 )
+hint = "GO_DOWN"
 object_name = NodePath("../../StairsScene")
 function_name = "go"
 

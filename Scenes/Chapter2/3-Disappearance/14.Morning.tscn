@@ -5,9 +5,6 @@
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=4]
 
-
-
-
 [node name="Street" type="Node2D"]
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
@@ -22,7 +19,6 @@ dialog_path = "res://Dialogs/Chapter2/Disappearance/MS.json"
 [node name="GardenerDialogTrigger" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1132.45, 2570.22 )
 hint = "GARDENER"
-person = "GARDENER"
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Gardener.json"
 
 [node name="ChangeUI" type="Node" parent="."]

@@ -14,9 +14,6 @@
 [ext_resource path="res://Scenes/Templates/Trees/Tree_type_2.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Templates/Buildings/Building_1.tscn" type="PackedScene" id=14]
 
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1328, 64 )
 
@@ -112,11 +109,6 @@ position = Vector2( -240, 808 )
 
 [node name="Tree-type-2-Template_Sprite_1" parent="YSort/Trees" instance=ExtResource( 13 )]
 position = Vector2( 1312, 840 )
-
-[node name="LoadScene" parent="." instance=ExtResource( 4 )]
-position = Vector2( 448, 768 )
-label = "GO_DOWN"
-scene_path = "res://Scenes/Chapter1/4-Parting/7.Stairs.tscn"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.290196, 0.301961, 0.34902, 1 )
@@ -228,5 +220,10 @@ position = Vector2( -864, -160 )
 script = ExtResource( 9 )
 show_pause_menu = true
 show_joystick = true
+
+[node name="LoadSceneTrigger" parent="." instance=ExtResource( 4 )]
+position = Vector2( 576.168, 768.431 )
+hint = "GO_DOWN"
+scene = "res://Scenes/Chapter1/4-Parting/7.Stairs.tscn"
 
 [editable path="YSort/Body"]

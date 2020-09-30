@@ -37,9 +37,6 @@
 [ext_resource path="res://Scenes/Templates/Street/Columns.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/Templates/Rock_type_3.tscn" type="PackedScene" id=38]
 
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 2.66675 )
 
@@ -2420,8 +2417,9 @@ position = Vector2( 3880, 7848 )
 label = "HM"
 
 [node name="Mathematics" parent="Triggers" instance=ExtResource( 31 )]
-position = Vector2( 1279.6, 6345.17 )
-label = "MATH"
+position = Vector2( 1401.07, 6389.22 )
+hint = "MATH"
+person = "MATH"
 object_name = NodePath("../..")
 function_name = "math"
 

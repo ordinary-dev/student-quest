@@ -9,12 +9,6 @@
 [ext_resource path="res://Sprites/House/Door.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Triggers/InstantlyEnableObject.tscn" type="PackedScene" id=9]
 
-
-
-
-
-
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
@@ -80,14 +74,14 @@ texture = ExtResource( 8 )
 [node name="Triggers" type="Node2D" parent="."]
 
 [node name="Opened" parent="Triggers" instance=ExtResource( 6 )]
-position = Vector2( 528, 832 )
-label = "OPEN_THE_DOOR"
+position = Vector2( 658.255, 873.531 )
+hint = "OPEN_THE_DOOR"
 object_name = NodePath("../..")
 function_name = "open_door"
 
 [node name="FirstFloor" parent="Triggers" instance=ExtResource( 6 )]
-position = Vector2( -256, 1216 )
-label = "1ST_FLOOR"
+position = Vector2( -126.746, 1220.24 )
+hint = "STREET"
 object_name = NodePath("../..")
 function_name = "first_floor"
 

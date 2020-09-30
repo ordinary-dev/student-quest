@@ -7,10 +7,6 @@
 [ext_resource path="res://Scenes/Triggers/SimpleLoadSceneTrigger.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scripts/General/PlayMusic.gd" type="Script" id=12]
 
-
-
-
-
 [node name="Street" type="Node2D"]
 
 [node name="Template" parent="." instance=ExtResource( 1 )]

@@ -3,9 +3,6 @@
 [ext_resource path="res://Scenes/Templates/Basement/Stairs.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Triggers/SimpleLoadSceneTrigger.tscn" type="PackedScene" id=2]
 
-
-
-
 [node name="Steps" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource( 1 )]

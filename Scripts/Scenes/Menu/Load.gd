@@ -27,5 +27,5 @@ func _ready() -> void:
 
 
 func refresh() -> void:
-	for i in range(GLOBAL.progress + 1):
+	for i in range(GLOBAL.progress):
 		stages[i].enabled = true

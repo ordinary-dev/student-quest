@@ -5,9 +5,6 @@
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=4]
 
-
-
-
 [node name="Building" type="Node2D"]
 
 [node name="FacultyTemplate" parent="." instance=ExtResource( 1 )]

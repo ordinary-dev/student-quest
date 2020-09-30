@@ -4,9 +4,6 @@
 [ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
 
-
-
-
 [node name="Faculty" type="Node2D"]
 
 [node name="FacultyMap" parent="." instance=ExtResource( 1 )]
@@ -14,9 +11,9 @@ street_scene_path = "res://Scenes/Chapter3/2-Despair/6.Room.tscn"
 initial_pos = 3
 
 [node name="LoadScene" parent="." instance=ExtResource( 2 )]
-position = Vector2( -448, 96 )
-label = "BASEMENT"
-scene_path = "res://Scenes/Chapter3/2-Despair/4.Steps.tscn"
+position = Vector2( -320.721, 122.87 )
+hint = "GO_DOWN"
+scene = "res://Scenes/Chapter3/2-Despair/4.Steps.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 3 )

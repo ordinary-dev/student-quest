@@ -4,9 +4,6 @@
 [ext_resource path="res://Scenes/Templates/Village.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
 
-
-
-
 [node name="Village" type="Node2D"]
 
 [node name="VillageTemplate" parent="." instance=ExtResource( 2 )]
