@@ -13,3 +13,4 @@ func _ready() -> void:
 	if GLOBAL.progress < subchapter_id:
 		GLOBAL.progress = subchapter_id
 		GLOBAL.write_settings()
+		NOTIFY.show("NEW_CHAPTER_UNLOCKED")
