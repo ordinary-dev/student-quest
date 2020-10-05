@@ -11,6 +11,11 @@ const main_texture = "res://Sprites/Characters/MainCharacter.png"
 const neo_texture = "res://Sprites/Characters/Neo.png"
 const speed := 400
 
+# Speed curve
+export (Curve) var speed_curve
+var offset : float
+var multiplier : float
+
 # Objects
 onready var character = $Character_Sprite
 onready var water_sprite = $Character_Sprite/Water_AnimatedSprite
@@ -143,7 +148,7 @@ func go_up() -> void:
 	velocity.y -= 1
 
 
-func joystick_processing() -> bool:
+func joystick_processing(_delta) -> bool:
 	var joystick_value : Vector2 = joystick.get_value()
 	if joystick_value.length() > 0:
 		if abs(velocity.x) > abs(velocity.y):
@@ -156,12 +161,18 @@ func joystick_processing() -> bool:
 				go_down()
 			else:
 				go_up()
-		velocity = joystick_value * speed
+		if (offset < 1):
+			multiplier = speed_curve.interpolate_baked (offset)
+			velocity = joystick_value * speed * multiplier
+			offset += _delta
+		else:
+			velocity = joystick_value * speed
 		return true
 	else:
 		if !idle:
 			idle = true
 			anim.stop()
+			offset = 0
 			match type:
 				states.UP:
 					character.frame = frames.UP_STILL
@@ -172,7 +183,7 @@ func joystick_processing() -> bool:
 		return false
 
 
-func process_buttons() -> bool:
+func process_buttons(_delta) -> bool:
 	# Reset variables
 	velocity = Vector2()
 	# Process 4 directions
@@ -188,6 +199,7 @@ func process_buttons() -> bool:
 	if !idle && !any_button_pressed:
 		idle = true
 		anim.stop()
+		offset = 0
 		match type:
 			states.UP:
 				character.frame = frames.UP_STILL
@@ -196,23 +208,29 @@ func process_buttons() -> bool:
 			_:
 				character.frame = frames.SIDE_STILL
 		return false
-	velocity = velocity.normalized() * speed
+	# Speed curve
+	if (offset < 1):
+		multiplier = speed_curve.interpolate_baked (offset)
+		velocity = velocity.normalized() * speed * multiplier
+		offset += _delta
+	else:
+		velocity = velocity.normalized() * speed
 	return true
 
 
 # Input processing
-func get_input() -> bool:
+func get_input(_delta) -> bool:
 	side_used = false
 	any_button_pressed = false
 	if use_joystick:
-		return joystick_processing()
-	return process_buttons()
+		return joystick_processing(_delta)
+	return process_buttons(_delta)
 
 
 # Invoked constantly
 func _physics_process(_delta) -> void:
 	# If at least one key has been pressed
-	if get_input():
+	if get_input(_delta):
 		velocity = move_and_slide(velocity)
 
 
