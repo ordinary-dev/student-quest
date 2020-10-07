@@ -2419,7 +2419,6 @@ label = "HM"
 [node name="Mathematics" parent="Triggers" instance=ExtResource( 31 )]
 position = Vector2( 1401.07, 6389.22 )
 hint = "MATH"
-person = "MATH"
 object_name = NodePath("../..")
 function_name = "math"
 
@@ -2436,6 +2435,9 @@ position = Vector2( 1376, 6464 )
 
 [node name="South_Entrance_Position2D" type="Position2D" parent="Positions"]
 position = Vector2( 2496, 9728 )
+
+[node name="Fac_Of_Humanities_Position2D" type="Position2D" parent="Positions"]
+position = Vector2( 3970.39, 8155.62 )
 
 [node name="BottomDown" type="Position2D" parent="."]
 position = Vector2( 8103.46, 9854.84 )
