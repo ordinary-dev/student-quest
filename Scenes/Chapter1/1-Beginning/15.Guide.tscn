@@ -26,7 +26,7 @@ scene = "res://Scenes/Chapter1/1-Beginning/16.Room.tscn"
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
-points = PoolVector2Array( 3661.84, 8158.96, 2507.75, 8161.48, 2520, 6656, 2512, 5520, 2584, 5336, 2528, 5064, 2528, 3840, 2488, 464, -312, 456, -320, 3096, -1064, 3160 )
+points = PoolVector2Array( 3667.79, 8163.49, 2507.75, 8161.48, 2520, 6656, 2512, 5520, 2584, 5336, 2528, 5064, 2528, 3840, 2488, 464, -312, 456, -321.671, 3158.23, -1064, 3160 )
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

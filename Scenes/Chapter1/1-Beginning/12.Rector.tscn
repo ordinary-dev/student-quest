@@ -161,7 +161,7 @@ position = Vector2( 808.866, 494.028 )
 hint = "RECTOR"
 dialog_path = "res://Dialogs/Chapter1/Beginning/Rector.json"
 load_scene = true
-scene_path = "res://Scenes/Chapter1/1-Beginning/13.PathToTheCabinet.tscn"
+scene_path = "res://Scenes/Chapter1/1-Beginning/13.PathToGuide.tscn"
 
 [node name="YSort" type="YSort" parent="."]
 
