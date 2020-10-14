@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Tilemaps/building/building16.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Templates/Turnstile.tscn" type="PackedScene" id=2]
@@ -15,21 +15,18 @@
 [ext_resource path="res://Scenes/Templates/AI.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 64 )
-
-[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 64, 32 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 128, 32 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 90, 32 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 134.269, 25.8883 )
 
-[node name="FacultyOfMathematicsMap" type="Node2D"]
+[node name="FacultyOfHumanitiesMap" type="Node2D"]
 script = ExtResource( 4 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -48,18 +45,18 @@ tile_data = PoolIntArray( -131085, 2, 0, -131084, 2, 0, -131083, 2, 0, -131082, 
 [node name="Floor1" type="Node2D" parent="."]
 
 [node name="UpperLeft" type="Position2D" parent="Floor1"]
-position = Vector2( -384, -64 )
+position = Vector2( -369.167, 239.006 )
 
 [node name="BottomRight" type="Position2D" parent="Floor1"]
-position = Vector2( 1056, 608 )
+position = Vector2( 1232.99, 595.117 )
 
 [node name="Floor2" type="Node2D" parent="."]
 
 [node name="UpperLeft" type="Position2D" parent="Floor2"]
-position = Vector2( -336, 1456 )
+position = Vector2( -460.591, 1456 )
 
 [node name="BottomRight" type="Position2D" parent="Floor2"]
-position = Vector2( 1472, 1776 )
+position = Vector2( 1041.59, 1781.66 )
 
 [node name="Floor3" type="Node2D" parent="."]
 
@@ -104,58 +101,77 @@ texture = ExtResource( 8 )
 [node name="Teleports" type="Node2D" parent="."]
 
 [node name="TpFloor1-2" parent="Teleports" instance=ExtResource( 3 )]
-position = Vector2( 573.405, 545.587 )
+position = Vector2( 320.447, 545.587 )
 hint = "2ND_FLOOR"
-object_name = NodePath("../..")
+use_once = false
+object_name = NodePath("../../../FacultyOfHumanitiesMap")
+function_name = "floor_2"
+
+[node name="TpFloor1-3" parent="Teleports" instance=ExtResource( 3 )]
+position = Vector2( 703.66, 543.699 )
+hint = "2ND_FLOOR"
+use_once = false
+object_name = NodePath("../../../FacultyOfHumanitiesMap")
 function_name = "floor_2"
 
 [node name="TpFloor2-1" parent="Teleports" instance=ExtResource( 3 )]
-position = Vector2( 416, 1728 )
+position = Vector2( 318.986, 1728 )
 hint = "1ST_FLOOR"
-object_name = NodePath("../..")
+use_once = false
+object_name = NodePath("../../../FacultyOfHumanitiesMap")
 function_name = "floor_1"
 
-[node name="TpFloor2-3" parent="Teleports" instance=ExtResource( 3 )]
-position = Vector2( 608, 1728 )
-hint = "3RD_FLOOR"
-object_name = NodePath("../..")
-function_name = "floor_3"
+[node name="TpFloor2-2" parent="Teleports" instance=ExtResource( 3 )]
+position = Vector2( 670.504, 1728 )
+hint = "1ST_FLOOR"
+use_once = false
+object_name = NodePath("../../../FacultyOfHumanitiesMap")
+function_name = "floor_1"
 
 [node name="TpOutside" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 576, 0 )
 hint = "STREET"
-object_name = NodePath("../..")
+use_once = false
+object_name = NodePath("../../../FacultyOfHumanitiesMap")
 function_name = "street"
 
 [node name="Colliders" type="Node2D" parent="."]
 
-[node name="BlockFloor0" type="StaticBody2D" parent="Colliders"]
-position = Vector2( -408, 192 )
-z_index = 1
-collision_layer = 0
-collision_mask = 1024
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/BlockFloor0"]
-z_index = 1
-shape = SubResource( 1 )
-
 [node name="BlockFloor1" type="StaticBody2D" parent="Colliders"]
-position = Vector2( 544, 680 )
+position = Vector2( 671.252, 701.419 )
 collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/BlockFloor1"]
 z_index = 1
-shape = SubResource( 2 )
+shape = SubResource( 1 )
+
+[node name="BlockFloor1-2" type="StaticBody2D" parent="Colliders"]
+position = Vector2( 286.976, 705.198 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/BlockFloor1-2"]
+z_index = 1
+shape = SubResource( 1 )
 
 [node name="BlockFloor2" type="StaticBody2D" parent="Colliders"]
-position = Vector2( 480, 1888 )
+position = Vector2( 280.725, 1888 )
 collision_layer = 0
 collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/BlockFloor2"]
 z_index = 1
-shape = SubResource( 3 )
+shape = SubResource( 2 )
+
+[node name="BlockFloor2-2" type="StaticBody2D" parent="Colliders"]
+position = Vector2( 637.322, 1888 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/BlockFloor2-2"]
+z_index = 1
+shape = SubResource( 2 )
 
 [node name="BlockStreet" type="StaticBody2D" parent="Colliders"]
 position = Vector2( 552, -32 )
@@ -164,15 +180,12 @@ collision_mask = 1024
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/BlockStreet"]
 z_index = 1
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="FloorPositions" type="Node2D" parent="."]
 
 [node name="Floor1_Center" type="Position2D" parent="FloorPositions"]
 position = Vector2( 537.105, 478.685 )
-
-[node name="Floor1_Left" type="Position2D" parent="FloorPositions"]
-position = Vector2( -320, 352 )
 
 [node name="Floor2" type="Position2D" parent="FloorPositions"]
 position = Vector2( 420.854, 1659.83 )
@@ -200,53 +213,53 @@ position = Vector2( 434.892, 367.18 )
 
 [node name="Character" parent="YSort/NPC" instance=ExtResource( 15 )]
 position = Vector2( 232, 368 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor1/UpperLeft")
-bottom_right_node = NodePath("../../../Floor1/BottomRight")
+nav_node = NodePath("../../../../FacultyOfHumanitiesMap/Navigation2D")
+upper_left_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor1/UpperLeft")
+bottom_right_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor1/BottomRight")
 
 [node name="Character2" parent="YSort/NPC" instance=ExtResource( 15 )]
-position = Vector2( -312, 48 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor1/UpperLeft")
-bottom_right_node = NodePath("../../../Floor1/BottomRight")
+position = Vector2( -141.193, 476.516 )
+nav_node = NodePath("../../../../FacultyOfHumanitiesMap/Navigation2D")
+upper_left_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor1/UpperLeft")
+bottom_right_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor1/BottomRight")
 
 [node name="Character3" parent="YSort/NPC" instance=ExtResource( 15 )]
 position = Vector2( 944, 384 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor1/UpperLeft")
-bottom_right_node = NodePath("../../../Floor1/BottomRight")
+nav_node = NodePath("../../../../FacultyOfHumanitiesMap/Navigation2D")
+upper_left_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor1/UpperLeft")
+bottom_right_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor1/BottomRight")
 
 [node name="NPC2" type="YSort" parent="YSort"]
 
 [node name="Character" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( -160, 1544 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+nav_node = NodePath("../../../../FacultyOfHumanitiesMap/Navigation2D")
+upper_left_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/UpperLeft")
+bottom_right_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/BottomRight")
 
 [node name="Character2" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( 848, 1528 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+nav_node = NodePath("../../../../FacultyOfHumanitiesMap/Navigation2D")
+upper_left_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/UpperLeft")
+bottom_right_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/BottomRight")
 
 [node name="Character3" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( 88, 1664 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+nav_node = NodePath("../../../../FacultyOfHumanitiesMap/Navigation2D")
+upper_left_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/UpperLeft")
+bottom_right_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/BottomRight")
 
 [node name="Character4" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( 536, 1560 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+nav_node = NodePath("../../../../FacultyOfHumanitiesMap/Navigation2D")
+upper_left_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/UpperLeft")
+bottom_right_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/BottomRight")
 
 [node name="Character5" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( 968, 1728 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+nav_node = NodePath("../../../../FacultyOfHumanitiesMap/Navigation2D")
+upper_left_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/UpperLeft")
+bottom_right_node = NodePath("../../../../FacultyOfHumanitiesMap/Floor2/BottomRight")
 
 [node name="NPC3" type="YSort" parent="YSort"]
 
@@ -257,4 +270,4 @@ collision_mask = 1024
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Turnstiles"]
 position = Vector2( 544.771, 242.081 )
 z_index = 1
-shape = SubResource( 5 )
+shape = SubResource( 4 )
