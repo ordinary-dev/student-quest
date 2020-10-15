@@ -54,7 +54,7 @@ scroll_horizontal_enabled = false
 [node name="MarginContainer" type="MarginContainer" parent="Scroll"]
 light_mask = 0
 margin_right = 1820.0
-margin_bottom = 410.0
+margin_bottom = 710.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_constants/margin_right = 20
@@ -62,7 +62,7 @@ custom_constants/margin_right = 20
 [node name="TextContainer" type="VBoxContainer" parent="Scroll/MarginContainer"]
 light_mask = 0
 margin_right = 1800.0
-margin_bottom = 410.0
+margin_bottom = 710.0
 size_flags_horizontal = 3
 custom_constants/separation = 20
 
@@ -114,11 +114,44 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Legal" type="Label" parent="Scroll/MarginContainer/TextContainer"]
-light_mask = 0
+[node name="Patreon" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
 margin_top = 342.0
 margin_right = 1800.0
-margin_bottom = 366.0
+margin_bottom = 422.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Patreon"
+
+[node name="Ko-Fi" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
+margin_top = 442.0
+margin_right = 1800.0
+margin_bottom = 522.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Ko-fi"
+
+[node name="Liberapay" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
+margin_top = 542.0
+margin_right = 1800.0
+margin_bottom = 622.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Liberapay"
+
+[node name="Legal" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
+margin_top = 642.0
+margin_right = 1800.0
+margin_bottom = 666.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "LEGAL"
@@ -129,9 +162,9 @@ __meta__ = {
 
 [node name="Copyright" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 386.0
+margin_top = 686.0
 margin_right = 1800.0
-margin_bottom = 410.0
+margin_bottom = 710.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "© 2020"
@@ -141,3 +174,6 @@ __meta__ = {
 }
 [connection signal="pressed" from="Scroll/MarginContainer/TextContainer/OpenSite" to="." method="open_store"]
 [connection signal="pressed" from="Scroll/MarginContainer/TextContainer/ShowCredits" to="." method="open_credits"]
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/Patreon" to="." method="open_patreon"]
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/Ko-Fi" to="." method="open_ko_fi"]
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/Liberapay" to="." method="open_liberapay"]

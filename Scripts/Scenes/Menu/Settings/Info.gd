@@ -18,5 +18,17 @@ func open_store() -> void:
 	open_site("https://pixeltrain.itch.io/student-quest")
 
 
+func open_patreon() -> void:
+	open_site("https://www.patreon.com/pixeltrain")
+
+
+func open_ko_fi() -> void:
+	open_site("https://ko-fi.com/pixeltrain")
+
+
+func open_liberapay() -> void:
+	open_site("https://liberapay.com/pixeltrain")
+
+
 func open_credits() -> void:
 	SCENES.load_scene(credits_scene)
