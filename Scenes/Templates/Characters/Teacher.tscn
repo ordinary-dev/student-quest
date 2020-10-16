@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Sprites/Characters/Guide.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Characters/Andrew.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.33333, 2.66667 )
 
-[node name="GuideSprite" type="Sprite"]
+[node name="TeacherSprite" type="Sprite"]
 scale = Vector2( 3, 3 )
 z_index = 4
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
 offset = Vector2( 0, -15 )
 vframes = 3
 hframes = 3

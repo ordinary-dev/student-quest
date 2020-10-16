@@ -39,3 +39,9 @@ FD_CHAT_4,The teacher?,Преподавателем?
 FD_CHAT_5,"Yes, no one knows where your mathematics teacher is","Да, никто не знает, где ваш преподаватель матанализа"
 FD_CHAT_6,Although it’s too early to draw conclusions,Хотя рано делать выводы
 FD_CHAT_7,"He has not been seen since the morning, so the rescuers are not in a hurry with conclusions","Его еще с утра не видели, поэтому спасатели не торопятся с выводами"
+D_FD_REQUEST_1,"Group #!@%$, please go to the teacher of the calculus on the ground floor.","Группа #!@%$, пожалуйста, подойдите к преподавателю матанализа на первом этаже."
+D_FD_REQUEST_2,Yes OK.,"Да, хорошо."
+D_FD_TEACHER_1,"Hello, my name is Andrew, I'm your teacher of calculus.","Здравствуйте, меня зовут Андрей, я ваш преподаватель матанализа."
+D_FD_TEACHER_2,"Tomorrow will be the first lesson, do not forget to bring a large notebook for graphs.","Уже завтра будет первая пара, не забудьте принести большую тетрадь для графиков."
+D_FD_TEACHER_3,"And tell the others, will you?","И остальным передайте, хорошо?"
+D_FD_TEACHER_4,"All right, we'll pass it on.","Хорошо, мы передадим."
