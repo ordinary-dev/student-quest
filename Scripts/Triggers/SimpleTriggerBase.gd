@@ -5,8 +5,13 @@
 
 extends Area2D
 
+export (bool) var activate_once = false
+
 var action : FuncRef
+var used := false
 
 
 func _on_body_entered(_body):
-	action.call_func()
+	if (activate_once and not used) or (activate_once == false):
+		action.call_func()
+		used = true

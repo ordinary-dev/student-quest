@@ -1,7 +1,7 @@
 id,en,ru
 D_FD_SINGER_1,"Oh hello, I'm Mr. Singer!","О, привет, я Мистер Певец!"
 D_FD_SINGER_2,I have not often been noticed recently.,Меня не часто замечают в последнее время.
-D_FD_SINGER_3,I think we'll meet again. Do not be late.,"Я думаю, мы еще встретимся. Не опаздывай."
+D_FD_SINGER_3,I think we'll meet again. Do not be late.,"Я думаю, мы ещё встретимся. Не опаздывай."
 D_FD_GARDENER_1,Good morning! What is your name?,Доброе утро! Тебя как зовут?
 D_FD_GARDENER_2,"My name is Alexey, but my friends just call me Alex.","Моё имя Алексей, но знакомые зовут меня просто Алекс."
 D_FD_GARDENER_3,"Alex, tell me, have you noticed anything unusual?","Алекс, скажи мне, ты не замечал ничего необычного?"
@@ -38,10 +38,26 @@ FD_CHAT_3,And what about that teacher?,А что с тем преподават�
 FD_CHAT_4,The teacher?,Преподавателем?
 FD_CHAT_5,"Yes, no one knows where your mathematics teacher is","Да, никто не знает, где ваш преподаватель матанализа"
 FD_CHAT_6,Although it’s too early to draw conclusions,Хотя рано делать выводы
-FD_CHAT_7,"He has not been seen since the morning, so the rescuers are not in a hurry with conclusions","Его еще с утра не видели, поэтому спасатели не торопятся с выводами"
+FD_CHAT_7,"He has not been seen since the morning, so the rescuers are not in a hurry with conclusions","Его ещё с утра не видели, поэтому спасатели не торопятся с выводами"
 D_FD_REQUEST_1,"Group #!@%$, please go to the teacher of the calculus on the ground floor.","Группа #!@%$, пожалуйста, подойдите к преподавателю матанализа на первом этаже."
 D_FD_REQUEST_2,Yes OK.,"Да, хорошо."
 D_FD_TEACHER_1,"Hello, my name is Andrew, I'm your teacher of calculus.","Здравствуйте, меня зовут Андрей, я ваш преподаватель матанализа."
 D_FD_TEACHER_2,"Tomorrow will be the first lesson, do not forget to bring a large notebook for graphs.","Уже завтра будет первая пара, не забудьте принести большую тетрадь для графиков."
 D_FD_TEACHER_3,"And tell the others, will you?","И остальным передайте, хорошо?"
 D_FD_TEACHER_4,"All right, we'll pass it on.","Хорошо, мы передадим."
+D_FD_LESSON_1,"Oh, good job.","О, хорошая работа."
+D_FD_LESSON_2,Did you manage to do your homework?,А домашнюю работу получилось сделать?
+D_FD_LESSON_3,"Yes, here it is.","Да, вот она."
+D_FD_LESSON_4,…,…
+D_FD_LESSON_5,Well done. If only everyone worked like that ...,Молодец. Все бы так работали.
+D_FD_LESSON_6,I just like your subject.,Мне просто нравится ваш предмет.
+D_FD_EVENING_0,Time to go home…,Пора идти домой…
+D_FD_EVENING_1,"Oh, I told you we'd meet again.","О, я же говорил, что мы ещё встретимся."
+D_FD_EVENING_2,"So, how are you doing with your studies?","Ну, как твои дела с учёбой?"
+D_FD_EVENING_3,"Pretty good, I especially like the calculus.","Довольно хорошо, особенно мне нравятся пары матанализа."
+D_FD_EVENING_4,We got a good teacher.,Хороший преподаватель нам попался.
+D_FD_EVENING_5,How are you doing?,А как ваши дела?
+D_FD_EVENING_6,I just sit and sing. Everything is as usual.,"Да вот, сижу, пою. Всё как обычно."
+D_FD_EVENING_7,"Okay, I'll go then.","Ладно, я пойду тогда."
+D_FD_EVENING_8,Good luck.,Удачи.
+SEPTEMBER11,September 11,11 сентября

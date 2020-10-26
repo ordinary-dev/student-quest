@@ -17,7 +17,9 @@ do
     find . -name "*$i" | while read line; do
 	NEWFILE=${line/$i/$EXT}
 	echo -ne "\r\033[KConverting $line..."
-	ffmpeg -nostdin -y -i "$line" -ac 2 -ar 44100 -b:a $BITRATE -c:a $CODEC "$NEWFILE" &> /dev/null
+	if [ ! -f $NEWFILE ]; then
+		ffmpeg -nostdin -y -i "$line" -ac 2 -ar 44100 -b:a $BITRATE -c:a $CODEC "$NEWFILE" &> /dev/null
+	fi
     done
 done
 

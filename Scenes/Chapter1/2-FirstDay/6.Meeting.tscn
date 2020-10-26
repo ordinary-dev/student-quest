@@ -9,7 +9,9 @@
 [node name="Meeting" type="Node2D"]
 
 [node name="FacultyOfMathematicsMap" parent="." instance=ExtResource( 1 )]
+street_scene_path = "res://Scenes/Chapter1/2-FirstDay/7.Room.tscn"
 initial_pos = 3
+block_turnstile = true
 enable_security_guard = false
 
 [node name="TeacherSprite" parent="." instance=ExtResource( 2 )]
@@ -21,6 +23,8 @@ flip_h = true
 position = Vector2( 723.775, 309.953 )
 hint = "TEACHER"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Teacher.json"
+load_scene = true
+scene_path = "res://Scenes/Chapter1/2-FirstDay/7.Room.tscn"
 
 [node name="NPC_1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 672.605, 350.781 )
