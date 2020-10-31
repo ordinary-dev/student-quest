@@ -13,9 +13,9 @@ modulate = Color( 0.882353, 0.870588, 0.815686, 1 )
 [node name="StreetTemplate" parent="." instance=ExtResource( 5 )]
 math_scene = "res://Scenes/Chapter1/2-FirstDay/3.Date.tscn"
 
-[node name="MrSingerDialog" parent="." instance=ExtResource( 4 )]
-position = Vector2( 56, 416 )
-hint = "UNKNOWN_SINGER"
+[node name="SingerDialog" parent="." instance=ExtResource( 1 )]
+position = Vector2( 49.9446, 486.855 )
+activate_once = true
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Stranger.json"
 
 [node name="GardenerDialog" parent="." instance=ExtResource( 4 )]
@@ -41,7 +41,7 @@ position = Vector2( 1632, 6488 )
 scale = Vector2( 2.24, 1.43998 )
 dialog_path = "res://Dialogs/Chapter1/FirstDay/GF.json"
 load_scene = true
-scene_path = "res://Scenes/Chapter1/2-FirstDay/3.Date.tscn"
+scene_path = "res://Scenes/Chapter1/2-FirstDays/3.Date.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 6 )

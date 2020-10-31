@@ -14,6 +14,7 @@ __meta__ = {
 [node name="AnimatedText" parent="." instance=ExtResource( 2 )]
 text_1 = "SEPTEMBER11"
 show_second_line = false
+next_scene = "res://Scenes/Chapter1/2-FirstDays/15.Dialog.tscn"
 
 [node name="StopTheMusic" type="Node" parent="."]
 script = ExtResource( 1 )

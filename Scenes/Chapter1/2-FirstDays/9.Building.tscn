@@ -19,5 +19,5 @@ texture = ExtResource( 2 )
 
 [node name="SceneLoader" type="Node" parent="."]
 script = ExtResource( 3 )
-next_scene = "res://Scenes/Chapter1/2-FirstDay/10.Lesson.tscn"
+next_scene = "res://Scenes/Chapter1/2-FirstDays/10.Lesson.tscn"
 delay = 2.0

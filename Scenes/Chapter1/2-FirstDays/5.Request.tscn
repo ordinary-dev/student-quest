@@ -17,4 +17,4 @@ frame = 6
 script = ExtResource( 2 )
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Request.json"
 load_scene = true
-scene_path = "res://Scenes/Chapter1/2-FirstDay/6.Meeting.tscn"
+scene_path = "res://Scenes/Chapter1/2-FirstDays/6.Meeting.tscn"

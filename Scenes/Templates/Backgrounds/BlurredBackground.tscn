@@ -4,8 +4,6 @@
 [ext_resource path="res://Sprites/Backgrounds/BlurryBackground/2.png" type="Texture" id=2]
 [ext_resource path="res://Animations/BackgroundTransparency.tres" type="Animation" id=3]
 
-
-
 [node name="Background" type="Node2D"]
 
 [node name="BlurredBackground1" type="Sprite" parent="."]

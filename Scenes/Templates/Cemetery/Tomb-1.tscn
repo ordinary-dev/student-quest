@@ -6,6 +6,7 @@
 extents = Vector2( 32, 16 )
 
 [node name="Tomb-1" type="Sprite"]
+z_index = 4
 texture = ExtResource( 1 )
 offset = Vector2( 0, -24 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Tilemaps/building/building16.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=4]
@@ -6,7 +6,6 @@
 [ext_resource path="res://Sprites/Things/SchoolDesk.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Templates/Characters/NPC_1.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Templates/Characters/NPC_2.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Templates/Characters/Teacher.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Curve" id=1]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.747253, 1 ), 2.51491, 0.0, 0, 0 ]
@@ -31,9 +30,6 @@ frame = 7
 [node name="NPC_2" parent="People" instance=ExtResource( 10 )]
 position = Vector2( 969.393, 547.178 )
 frame = 7
-
-[node name="TeacherSprite" parent="People" instance=ExtResource( 11 )]
-position = Vector2( 720.668, 508.972 )
 
 [node name="Body" parent="People" instance=ExtResource( 4 )]
 position = Vector2( 760.854, 544.65 )

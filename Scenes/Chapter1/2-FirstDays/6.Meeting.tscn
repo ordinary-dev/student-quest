@@ -19,13 +19,6 @@ position = Vector2( 731.361, 347.749 )
 z_index = 3
 flip_h = true
 
-[node name="DialogTrigger" parent="." instance=ExtResource( 3 )]
-position = Vector2( 723.775, 309.953 )
-hint = "TEACHER"
-dialog_path = "res://Dialogs/Chapter1/FirstDay/Teacher.json"
-load_scene = true
-scene_path = "res://Scenes/Chapter1/2-FirstDay/7.Room.tscn"
-
 [node name="NPC_1" parent="." instance=ExtResource( 4 )]
 position = Vector2( 672.605, 350.781 )
 z_index = 3
@@ -34,3 +27,10 @@ z_index = 3
 position = Vector2( 794.466, 356.348 )
 z_index = 3
 flip_h = true
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 723.775, 309.953 )
+hint = "TEACHER"
+dialog_path = "res://Dialogs/Chapter1/FirstDay/Teacher.json"
+load_scene = true
+scene_path = "res://Scenes/Chapter1/2-FirstDays/7.Room.tscn"

@@ -5,6 +5,6 @@
 	"3":{"name":"MAIN_CHARACTER", "text":"D_FD_EVENING_4", "next":"4"},
 	"4":{"name":"MAIN_CHARACTER", "text":"D_FD_EVENING_5", "next":"5"},
 	"5":{"name":"MR_SINGER",      "text":"D_FD_EVENING_6", "next":"6"},
-	"6":{"name":"MAIN_CHARACTER", "text":"D_FD_EVENING_7", "next":"7"},
-	"7":{"name":"MR_SINGER",      "text":"D_FD_EVENING_8"}
+	"6":{"name":"MR_SINGER",      "text":"D_FD_EVENING_7", "next":"7"},
+	"7":{"name":"MAIN_CHARACTER", "text":"D_FD_EVENING_8"}
 }

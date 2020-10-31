@@ -13,7 +13,7 @@ __meta__ = {
 [node name="AnimatedText" parent="." instance=ExtResource( 1 )]
 text_1 = "SEPTEMBER1"
 text_2 = "MORNING"
-next_scene = "res://Scenes/Chapter1/2-FirstDay/2.FirstDay.tscn"
+next_scene = "res://Scenes/Chapter1/2-FirstDays/2.FirstDay.tscn"
 delay_before_next_scene = 0.4
 
 [node name="UnlockStage" type="Node" parent="."]

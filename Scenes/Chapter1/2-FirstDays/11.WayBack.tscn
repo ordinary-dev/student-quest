@@ -20,6 +20,8 @@ position = Vector2( 74.8602, 477.562 )
 scale = Vector2( 2.04, 1.6 )
 activate_once = true
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Evening.json"
+load_scene = true
+scene_path = "res://Scenes/Chapter1/2-FirstDays/12.City.tscn"
 
 [node name="LoadSceneTrigger" parent="." instance=ExtResource( 2 )]
 position = Vector2( -991.229, 2937.73 )

@@ -11,4 +11,4 @@ __meta__ = {
 [node name="AnimatedText" parent="." instance=ExtResource( 1 )]
 text_1 = "A_FEW_DAYS_LATER"
 show_second_line = false
-next_scene = "res://Scenes/Chapter1/2-FirstDay/9.Building.tscn"
+next_scene = "res://Scenes/Chapter1/2-FirstDays/9.Building.tscn"

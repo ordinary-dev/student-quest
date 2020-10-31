@@ -18,6 +18,9 @@ export (float) var loading_delay = 0.0
 export (bool) var show_once = false
 export (String) var uid = "id"
 
+export (bool) var call_function = false
+export (NodePath) var obj
+export (String) var fun
 
 func _ready() -> void:
 	if enable_delay:
@@ -32,6 +35,8 @@ func _ready() -> void:
 	else:
 		if load_scene:
 			DIALOG.show_dialog(dialog_path, get_path(), "load_next_scene")
+		elif call_function:
+			DIALOG.show_dialog(dialog_path, get_node(obj).get_path() , fun)
 		else:
 			DIALOG.show_dialog(dialog_path)
 

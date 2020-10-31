@@ -8,6 +8,6 @@
 [node name="RoomTemplate" parent="." instance=ExtResource( 1 )]
 
 [node name="LoadSceneTrigger" parent="." instance=ExtResource( 2 )]
-position = Vector2( 615.082, 173.905 )
+position = Vector2( 640, 160 )
 hint = "SLEEP"
-scene = "res://Scenes/Chapter1/2-FirstDay/13.Date.tscn"
+scene = "res://Scenes/Chapter1/2-FirstDays/8.Date.tscn"
