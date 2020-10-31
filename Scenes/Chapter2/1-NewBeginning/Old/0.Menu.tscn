@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Menu/MenuBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Menu/MenuUI.tscn" type="PackedScene" id=3]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="Menu" parent="." instance=ExtResource( 3 )]
+new_game_scene = "res://Scenes/Chapter2/1-NewBeginning/1.Fireworks.tscn"
+game_loading_scene_path = NodePath("../../Menu/Menu/Right/LoadMenu")
+settings_scene_path = NodePath("../../Menu/Menu/Right/Settings")
+confirmation_scene_path = NodePath("../../Menu/Menu/Right/Confirmation")
+new_game_btn = NodePath("../../Menu/Menu/Left/Column/NewGame")
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 1 )

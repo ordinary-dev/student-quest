@@ -12,7 +12,7 @@
 script = ExtResource( 2 )
 dialog_path = "res://Dialogs/Chapter1/UsualLife/Teacher.json"
 load_scene = true
-scene_path = "res://Scenes/Chapter1/3-UsualLife/4.Date.tscn"
+scene_path = "res://Scenes/Chapter1/3-Accident/11.Time.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 3 )

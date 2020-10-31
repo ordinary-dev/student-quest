@@ -38,7 +38,7 @@ FD_CHAT_3,And what about that teacher?,А что с тем преподават�
 FD_CHAT_4,The teacher?,Преподавателем?
 FD_CHAT_5,"Yes, no one knows where your mathematics teacher is","Да, никто не знает, где ваш преподаватель матанализа"
 FD_CHAT_6,Although it’s too early to draw conclusions,Хотя рано делать выводы
-FD_CHAT_7,"He has not been seen since the morning, so the rescuers are not in a hurry with conclusions","Его ещё с утра не видели, поэтому спасатели не торопятся с выводами"
+FD_CHAT_7,Lifeguards are not saying anything yet,Спасатели пока ничего не говорят
 D_FD_REQUEST_1,"Group #!@%$, please go to the teacher of the calculus on the ground floor.","Группа #!@%$, пожалуйста, подойдите к преподавателю матанализа на первом этаже."
 D_FD_REQUEST_2,Yes OK.,"Да, хорошо."
 D_FD_TEACHER_1,"Hello, my name is Andrew, I'm your teacher of calculus.","Здравствуйте, меня зовут Андрей, я ваш преподаватель матанализа."
@@ -66,4 +66,5 @@ D_FD_CITY_1,What a nice evening.,Какой же сегодня хороший �
 D_FD_CITY_2,That's true.,Это точно.
 D_FD_CITY_3,Thank you for your help.,Спасибо тебе за помощь.
 D_FD_CITY_4,You're welcome.,Да не за что.
+D_FD_CITY_5,You're welcome…,Да не за что…
 D_FD_MORNING_1,Nobody could imagine what awaits us.,"Тогда ещё никто не мог представить, что нас ждёт."

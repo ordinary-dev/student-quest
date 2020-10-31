@@ -11,7 +11,7 @@
 [node name="LoadScene" parent="." instance=ExtResource( 1 )]
 position = Vector2( 640.163, 256.045 )
 hint = "CHAT"
-scene = "res://Scenes/Chapter1/2-FirstDays/20.Chat.tscn"
+scene = "res://Scenes/Chapter1/3-Accident/6.Chat.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 3 )

@@ -29,7 +29,7 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-next_scene = "res://Scenes/Chapter2/1-NewBeginning/0.Menu.tscn"
+next_scene = "res://Scenes/Chapter2/1-NewBeginning/1.Fireworks.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

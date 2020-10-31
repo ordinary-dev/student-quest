@@ -14,5 +14,5 @@ show_pause_menu = true
 
 [node name="SceneLoader" type="Node" parent="."]
 script = ExtResource( 2 )
-next_scene = "res://Scenes/Chapter1/4-Parting/1.Date.tscn"
+next_scene = "res://Scenes/Chapter1/4-Funeral/1.Grave.tscn"
 delay = 3.0

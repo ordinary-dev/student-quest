@@ -9,7 +9,7 @@
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
 allow_entrance = true
-math_scene = "res://Scenes/Chapter1/3-UsualLife/3.Speech.tscn"
+math_scene = "res://Scenes/Chapter1/3-Accident/10.Speech.tscn"
 
 [node name="DialogTrigger" parent="." instance=ExtResource( 3 )]
 position = Vector2( 96, 408 )

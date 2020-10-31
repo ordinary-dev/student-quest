@@ -143,6 +143,6 @@ fun = "follow_path"
 
 [node name="LoadScene" type="Node" parent="."]
 script = ExtResource( 8 )
-scene_path = "res://Scenes/Chapter1/2-FirstDays/17.BlackScreen.tscn"
+scene_path = "res://Scenes/Chapter1/3-Accident/3.BlackScreen.tscn"
 fade_in = false
 fade_out = false

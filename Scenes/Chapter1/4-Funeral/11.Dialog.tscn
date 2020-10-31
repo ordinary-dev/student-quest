@@ -9,7 +9,7 @@
 script = ExtResource( 1 )
 dialog_path = "res://Dialogs/Chapter1/Parting/Stairs.json"
 load_scene = true
-scene_path = "res://Scenes/Chapter1/4-Parting/12.Secret.tscn"
+scene_path = "res://Scenes/Chapter1/4-Funeral/12.Secret.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

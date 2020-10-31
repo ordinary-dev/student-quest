@@ -12,7 +12,7 @@ init_pos = 1
 [node name="LoadScene" parent="." instance=ExtResource( 2 )]
 position = Vector2( 636.203, 162.724 )
 hint = "SLEEP"
-scene = "res://Scenes/Chapter1/3-UsualLife/1.Text.tscn"
+scene = "res://Scenes/Chapter1/3-Accident/8.Text.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 3 )

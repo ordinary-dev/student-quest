@@ -34,4 +34,4 @@ script = ExtResource( 6 )
 script = ExtResource( 5 )
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Lifeguards.json"
 load_scene = true
-scene_path = "res://Scenes/Chapter1/2-FirstDays/19.Room.tscn"
+scene_path = "res://Scenes/Chapter1/3-Accident/5.Room.tscn"
