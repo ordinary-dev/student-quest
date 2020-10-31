@@ -18,6 +18,7 @@ scale = Vector2( 3, 3 )
 z_index = 2
 z_as_relative = false
 line_path = NodePath("../Line2D")
+speed = 380
 
 [node name="LoadScene" parent="." instance=ExtResource( 1 )]
 position = Vector2( -989.833, 2927.62 )

@@ -8,11 +8,6 @@
 [ext_resource path="res://Sprites/BusStation/building-2.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Backgrounds/city1.png" type="Texture" id=7]
 
-
-
-
-
-
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 156, 276, 1090.63, 274.755, 1090.11, 672.081, 156, 673 )
 

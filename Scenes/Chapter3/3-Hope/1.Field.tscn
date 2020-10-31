@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Sprites/Backgrounds/Sky.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/Train/Background/Forest.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Templates/Backgrounds/FieldTemplate.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=4]
 [ext_resource path="res://Audio/FX/Wind/Autumn-wind-and-dry-leaves.ogg" type="AudioStream" id=5]
@@ -10,12 +9,7 @@
 
 [node name="Field" type="Node2D"]
 
-[node name="Sky" type="Sprite" parent="."]
-modulate = Color( 0.988235, 0.976471, 1, 1 )
-position = Vector2( 0, 9.53674e-07 )
-scale = Vector2( 46.8293, 41.7391 )
-texture = ExtResource( 1 )
-centered = false
+[node name="FieldTemplate" parent="." instance=ExtResource( 1 )]
 
 [node name="Alex" type="Sprite" parent="."]
 modulate = Color( 0.847059, 0.847059, 0.847059, 1 )
@@ -25,25 +19,6 @@ texture = ExtResource( 4 )
 vframes = 3
 hframes = 3
 frame = 7
-
-[node name="Grass_1" type="Sprite" parent="."]
-modulate = Color( 0.898039, 0.898039, 0.898039, 1 )
-position = Vector2( 960, 771.62 )
-scale = Vector2( 15, 11.1744 )
-texture = ExtResource( 2 )
-
-[node name="Grass_2" type="Sprite" parent="."]
-modulate = Color( 0.898039, 0.898039, 0.898039, 1 )
-position = Vector2( 960, 889.087 )
-scale = Vector2( 15, 10.1823 )
-texture = ExtResource( 2 )
-flip_h = true
-
-[node name="Grass_3" type="Sprite" parent="."]
-modulate = Color( 0.898039, 0.898039, 0.898039, 1 )
-position = Vector2( 960, 1017.23 )
-scale = Vector2( 15, 11.4337 )
-texture = ExtResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

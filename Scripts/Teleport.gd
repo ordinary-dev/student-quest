@@ -21,6 +21,10 @@ export (pos) var initial_pos = pos.SECOND
 export (bool) var block_turnstile = false setget set_turnstile_state
 onready var turnstile = $Turnstiles/CollisionShape2D
 
+# Security guard
+export (bool) var enable_security_guard = true
+onready var security_guard = $YSort/Guard
+
 
 func set_turnstile_state(value : bool) -> void:
 	block_turnstile = value
@@ -69,6 +73,10 @@ func _ready():
 		teleport(p1_left, false)
 	elif initial_pos == pos.THIRD:
 		teleport(p3, false)
+	# Disable security guard if needed
+	if (not enable_security_guard):
+		security_guard.queue_free()
+	# Player direction
 	var player = get_node(GLOBAL.player_path)
 	match player_direction:
 		directions.UP:

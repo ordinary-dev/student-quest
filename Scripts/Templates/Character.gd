@@ -51,6 +51,7 @@ enum frames {DOWN_1, UP_1, SIDE_1,
 var water_level := 0
 var water_protection := false setget set_water_protection
 
+export (bool) var locked := false
 
 func set_water_protection(val):
 	water_protection = val
@@ -229,9 +230,10 @@ func get_input(_delta) -> bool:
 
 # Invoked constantly
 func _physics_process(_delta) -> void:
-	# If at least one key has been pressed
-	if get_input(_delta):
-		velocity = move_and_slide(velocity)
+	if not locked:
+		# If at least one key has been pressed
+		if get_input(_delta):
+			velocity = move_and_slide(velocity)
 
 
 func _save() -> void:

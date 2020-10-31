@@ -129,35 +129,35 @@ texture = ExtResource( 13 )
 [node name="TpFloor1-2" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 573.405, 545.587 )
 hint = "2ND_FLOOR"
-person = "2ND_FLOOR"
+use_once = false
 object_name = NodePath("../..")
 function_name = "floor_2"
 
 [node name="TpFloor2-1" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 416, 1728 )
 hint = "1ST_FLOOR"
-person = "1ST_FLOOR"
+use_once = false
 object_name = NodePath("../..")
 function_name = "floor_1"
 
 [node name="TpFloor2-3" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 608, 1728 )
 hint = "3RD_FLOOR"
-person = "3RD_FLOOR"
+use_once = false
 object_name = NodePath("../..")
 function_name = "floor_3"
 
 [node name="TpFloor3-2" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 464, 3136 )
 hint = "2ND_FLOOR"
-person = "2ND_FLOOR"
+use_once = false
 object_name = NodePath("../..")
 function_name = "floor_2"
 
 [node name="TpOutside" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 576, 0 )
 hint = "STREET"
-person = "STREET"
+use_once = false
 object_name = NodePath("../..")
 function_name = "street"
 
@@ -336,6 +336,5 @@ shape = SubResource( 6 )
 [node name="NS" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1393.87, 1612.33 )
 hint = "NS"
-person = "NS"
 object_name = NodePath("..")
 function_name = "print_warning"

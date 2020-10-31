@@ -8,9 +8,9 @@ extends Node
 onready var stages = [
 	# Chapter 1
 	$VBoxContainer/Chapter1/Beginning,           #0
-	$VBoxContainer/Chapter1/FirstDay,            #1
-	$VBoxContainer/Chapter1/UsualLife,           #2
-	$VBoxContainer/Chapter1/Parting,             #3
+	$VBoxContainer/Chapter1/FirstDays,           #1
+	$VBoxContainer/Chapter1/Accident,            #2
+	$VBoxContainer/Chapter1/Funeral,             #3
 	# Chapter 2
 	$VBoxContainer/Chapter2/NewBeginning,        #4
 	$VBoxContainer/Chapter2/Celebration,         #5
