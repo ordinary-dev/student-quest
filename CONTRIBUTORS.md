@@ -6,12 +6,12 @@
 # Songwriters
 * Adam Wayne Gistarb
 * DirtyJewbs
+* ispeakwaves
 * Lilliryth-SFX
 * Magmi.Soundtracks
 * mareproduction
 * orphantrainproject
 * PSOVOD
-* sunfly
 
 # Sound creators:
 * bone666138
