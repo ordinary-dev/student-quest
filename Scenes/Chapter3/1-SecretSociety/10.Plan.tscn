@@ -12,7 +12,7 @@ block_turnstile = true
 
 [node name="DialogTrigger" parent="." instance=ExtResource( 2 )]
 position = Vector2( 528, 312 )
+hint = "SECURITY_GUARD"
 dialog_path = "res://Dialogs/Chapter3/SecretSociety/Plan.json"
-person = "SECURITY_GUARD"
 load_scene = true
 scene_path = "res://Scenes/Chapter3/1-SecretSociety/11.Phone.tscn"

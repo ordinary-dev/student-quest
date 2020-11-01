@@ -18,11 +18,20 @@ var bottom_right : Position2D
 enum DIRECTIONS{UP, DOWN, LEFT, RIGHT, UNSET}
 var current_dir = DIRECTIONS.UNSET
 var anim_playing := false
+onready var sprite = $npc
 
 const speed = 270
 
+const sprite_paths = [
+	"res://Sprites/Characters/Npc_1.png",
+	"res://Sprites/Characters/Npc_2.png",
+	"res://Sprites/Characters/Npc_3.png"
+]
+
 
 func _ready() -> void:
+	var ind := randi() % 3
+	sprite.texture = load(sprite_paths[ind])
 	upper_left = get_node(upper_left_node)
 	bottom_right = get_node(bottom_right_node)
 	x_min = upper_left.position.x
@@ -92,4 +101,21 @@ func generate_path() -> void:
 	var point := Vector2(x, y)
 	var new_path = nav_2d.get_simple_path(position, point)
 	path = new_path
+	set_process(true)
+
+
+func _on_Area2D_body_entered(_body):
+	set_process(false)
+	$AnimationPlayer.stop()
+	match current_dir:
+		DIRECTIONS.UP:
+			$npc.frame = 7
+		DIRECTIONS.DOWN:
+			$npc.frame = 6
+		_:
+			$npc.frame = 8
+	current_dir = DIRECTIONS.UNSET
+
+
+func _on_Area2D_body_exited(_body):
 	set_process(true)

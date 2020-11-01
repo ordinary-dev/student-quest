@@ -6,10 +6,6 @@
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=5]
 
 [node name="Store" type="Node2D"]
-script = ExtResource( 5 )
-dialog_path = "res://Dialogs/Chapter3/SecretSociety/Store.json"
-load_scene = true
-scene_path = "res://Scenes/Chapter3/1-SecretSociety/17.Steps.tscn"
 
 [node name="Background" type="ColorRect" parent="."]
 margin_left = -400.0
@@ -62,3 +58,9 @@ __meta__ = {
 position = Vector2( 1248, -174 )
 scale = Vector2( 28.9091, 28.9091 )
 texture = ExtResource( 2 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 5 )
+dialog_path = "res://Dialogs/Chapter3/SecretSociety/Store.json"
+load_scene = true
+scene_path = "res://Scenes/Chapter3/1-SecretSociety/17.Steps.tscn"

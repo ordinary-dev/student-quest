@@ -2,10 +2,8 @@
 
 [ext_resource path="res://Tilemaps/store/store.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Light/LightSmall.png" type="Texture" id=4]
-
-
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
@@ -48,8 +46,9 @@ format = 1
 tile_data = PoolIntArray( -589820, 1610612738, 0, -589819, -1073741821, 0, -589818, -1073741821, 0, -589817, -1073741821, 0, -589816, -1073741821, 0, -589815, -1073741821, 0, -589814, -1073741821, 0, -589813, -1073741821, 0, -589812, -1073741821, 0, -589811, -1073741822, 0, -524284, 1610612739, 0, -524275, 3, 0, -458748, 1610612739, 0, -458739, 3, 0, -393212, 1610612739, 0, -393203, 3, 0, -327676, 1610612739, 0, -327667, 3, 0, -262140, 1610612739, 0, -262131, 3, 0, -196604, 1610612739, 0, -196595, 3, 0, -131068, 1610612739, 0, -131059, 3, 0, -65532, -1610612734, 0, -65531, -1610612733, 0, -65530, -1610612733, 0, -65529, -1610612733, 0, -65526, -1610612733, 0, -65525, -1610612733, 0, -65524, -1610612733, 0, -65523, 2, 0 )
 
 [node name="Exit" parent="." instance=ExtResource( 3 )]
-position = Vector2( 476.2, -126.7 )
-label = "EXITBUILDING"
+position = Vector2( 605.455, -125.641 )
+hint = "GO_BACK"
+person = "GO_BACK"
 object_name = NodePath("../../CafeTemplate")
 function_name = "load_street"
 

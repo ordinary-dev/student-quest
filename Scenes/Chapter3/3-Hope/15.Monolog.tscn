@@ -4,9 +4,11 @@
 [ext_resource path="res://Scenes/Templates/Backgrounds/BlurredBackground.tscn" type="PackedScene" id=2]
 
 [node name="Monolog" type="Node2D"]
+
+[node name="BackgroundTemplate" parent="." instance=ExtResource( 2 )]
+
+[node name="Dialog" type="Node" parent="."]
 script = ExtResource( 1 )
 dialog_path = "res://Dialogs/Chapter3/Hope/ML.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter3/3-Hope/16.Street.tscn"
-
-[node name="BackgroundTemplate" parent="." instance=ExtResource( 2 )]

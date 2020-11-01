@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Templates/Room/Room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Triggers/LoadScene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
 
 [node name="Room" type="Node2D"]
 
@@ -10,10 +10,11 @@
 init_pos = 1
 
 [node name="LoadScene" parent="." instance=ExtResource( 2 )]
-position = Vector2( 448, 112 )
-label = "SLEEP"
-scene_path = "res://Scenes/Chapter2/1-NewBeginning/16.Text.tscn"
+position = Vector2( 626, 154 )
+hint = "SLEEP"
+scene = "res://Scenes/Chapter2/1-NewBeginning/16.Text.tscn"
 
-[node name="ChangeUI" parent="." instance=ExtResource( 3 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )
 show_pause_menu = true
 show_joystick = true

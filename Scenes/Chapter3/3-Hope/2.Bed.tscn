@@ -5,11 +5,7 @@
 [ext_resource path="res://Scenes/Templates/Room/Room.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=4]
 
-
 [node name="Bed" type="Node2D"]
-script = ExtResource( 4 )
-next_scene = "res://Scenes/Chapter3/3-Hope/3.Street.tscn"
-delay = 3.0
 
 [node name="RoomTemplate" parent="." instance=ExtResource( 3 )]
 character_enabled = false
@@ -35,3 +31,8 @@ texture = ExtResource( 2 )
 position = Vector2( 539.781, 98.9662 )
 current = true
 zoom = Vector2( 0.2, 0.2 )
+
+[node name="SceneLoader" type="Node" parent="."]
+script = ExtResource( 4 )
+next_scene = "res://Scenes/Chapter3/3-Hope/3.Street.tscn"
+delay = 3.0

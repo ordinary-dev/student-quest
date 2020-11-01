@@ -5,14 +5,16 @@
 [ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=3]
 
 [node name="Edit" type="Node2D"]
+
+[node name="AlexTemplate" parent="." instance=ExtResource( 1 )]
+
+[node name="StopTheMusic" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Dialog" type="Node" parent="."]
 script = ExtResource( 2 )
 dialog_path = "res://Dialogs/Chapter3/Hope/Edit.json"
 enable_delay = true
 load_scene = true
 scene_path = "res://Scenes/Chapter3/3-Hope/36.Return.tscn"
 loading_delay = 2.0
-
-[node name="AlexTemplate" parent="." instance=ExtResource( 1 )]
-
-[node name="StopMusic" type="Node2D" parent="."]
-script = ExtResource( 3 )

@@ -4,9 +4,11 @@
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=2]
 
 [node name="Monolog" type="Node2D"]
+
+[node name="BackgroundTemplate" parent="." instance=ExtResource( 1 )]
+
+[node name="Dialog" type="Node" parent="."]
 script = ExtResource( 2 )
 dialog_path = "res://Dialogs/Chapter3/SecretSociety/Fire.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter3/1-SecretSociety/16.Store.tscn"
-
-[node name="BackgroundTemplate" parent="." instance=ExtResource( 1 )]

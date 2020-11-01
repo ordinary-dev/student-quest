@@ -1,0 +1,146 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Tilemaps/building/building16.tres" type="TileSet" id=1]
+[ext_resource path="res://Sprites/Light/Light.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Triggers/SimpleLoadSceneTrigger.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 160, 16 )
+
+[node name="StairsScene" type="Node2D"]
+
+[node name="Map" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 1024
+format = 1
+tile_data = PoolIntArray( 5, -1610612732, 0, 6, -1610612731, 0, 7, -1610612731, 0, 8, -1610612731, 0, 9, -2147483644, 0, 65541, -1610612732, 0, 65542, -1610612731, 0, 65543, -1610612731, 0, 65544, -1610612731, 0, 65545, -2147483644, 0, 131077, -1610612732, 0, 131078, -1610612731, 0, 131079, -1610612731, 0, 131080, -1610612731, 0, 131081, -2147483644, 0, 196613, -1610612732, 0, 196614, -1610612731, 0, 196615, -1610612731, 0, 196616, -1610612731, 0, 196617, -2147483644, 0, 262149, -1610612732, 0, 262150, -1610612731, 0, 262151, -1610612731, 0, 262152, -1610612731, 0, 262153, -2147483644, 0, 327685, -1610612732, 0, 327686, -1610612731, 0, 327687, -1610612731, 0, 327688, -1610612731, 0, 327689, -2147483644, 0, 393221, -1610612732, 0, 393222, -1610612731, 0, 393223, -1610612731, 0, 393224, -1610612731, 0, 393225, -2147483644, 0, 458757, -1610612732, 0, 458758, -1610612731, 0, 458759, -1610612731, 0, 458760, -1610612731, 0, 458761, -2147483644, 0, 524293, -1610612732, 0, 524294, -1610612731, 0, 524295, -1610612731, 0, 524296, -1610612731, 0, 524297, -2147483644, 0, 589829, -1610612732, 0, 589830, -1610612731, 0, 589831, -1610612731, 0, 589832, -1610612731, 0, 589833, -2147483644, 0, 655365, -1610612732, 0, 655366, -1610612731, 0, 655367, -1610612731, 0, 655368, -1610612731, 0, 655369, -2147483644, 0, 720901, -1610612732, 0, 720902, -1610612731, 0, 720903, -1610612731, 0, 720904, -1610612731, 0, 720905, -2147483644, 0, 786437, -1610612732, 0, 786438, -1610612731, 0, 786439, -1610612731, 0, 786440, -1610612731, 0, 786441, -2147483644, 0, 851973, -1610612732, 0, 851974, -1610612731, 0, 851975, -1610612731, 0, 851976, -1610612731, 0, 851977, -2147483644, 0, 917509, -1610612732, 0, 917510, -1610612731, 0, 917511, -1610612731, 0, 917512, -1610612731, 0, 917513, -2147483644, 0, 983045, -1610612732, 0, 983046, -1610612731, 0, 983047, -1610612731, 0, 983048, -1610612731, 0, 983049, -2147483644, 0, 1048581, -1610612732, 0, 1048582, -1610612731, 0, 1048583, -1610612731, 0, 1048584, -1610612731, 0, 1048585, -2147483644, 0, 1114117, -1610612732, 0, 1114118, -1610612731, 0, 1114119, -1610612731, 0, 1114120, -1610612731, 0, 1114121, -2147483644, 0, 1179653, -1610612732, 0, 1179654, -1610612731, 0, 1179655, -1610612731, 0, 1179656, -1610612731, 0, 1179657, -2147483644, 0, 1245189, -1610612732, 0, 1245190, -1610612731, 0, 1245191, -1610612731, 0, 1245192, -1610612731, 0, 1245193, -2147483644, 0, 1310725, -1610612732, 0, 1310726, -1610612731, 0, 1310727, -1610612731, 0, 1310728, -1610612731, 0, 1310729, -2147483644, 0, 1376261, -1610612732, 0, 1376262, -1610612731, 0, 1376263, -1610612731, 0, 1376264, -1610612731, 0, 1376265, -2147483644, 0, 1441797, -1610612732, 0, 1441798, -1610612731, 0, 1441799, -1610612731, 0, 1441800, -1610612731, 0, 1441801, -2147483644, 0, 1507333, -1610612732, 0, 1507334, -1610612731, 0, 1507335, -1610612731, 0, 1507336, -1610612731, 0, 1507337, -2147483644, 0, 1572869, -1610612732, 0, 1572870, -1610612731, 0, 1572871, -1610612731, 0, 1572872, -1610612731, 0, 1572873, -2147483644, 0, 1638405, -1610612732, 0, 1638406, -1610612731, 0, 1638407, -1610612731, 0, 1638408, -1610612731, 0, 1638409, -2147483644, 0, 1703941, -1610612732, 0, 1703942, -1610612731, 0, 1703943, -1610612731, 0, 1703944, -1610612731, 0, 1703945, -2147483644, 0 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 480, -32 )
+texture = ExtResource( 2 )
+texture_scale = 50.0
+range_item_cull_mask = 3
+
+[node name="Trigger" parent="." instance=ExtResource( 4 )]
+position = Vector2( 480, 1272 )
+scale = Vector2( 16, 4 )
+scene = "res://Scenes/Chapter1/4-Parting/8.Speach.tscn"
+
+[node name="Body" parent="." instance=ExtResource( 3 )]
+position = Vector2( 472, 96 )
+default_state = 0
+
+[node name="ExitCollider_StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="ExitCollider_CollisionShape2D" type="CollisionShape2D" parent="ExitCollider_StaticBody2D"]
+visible = false
+position = Vector2( 480, -16 )
+shape = SubResource( 1 )
+
+[node name="Noise" type="Node2D" parent="."]
+
+[node name="Noise-Sprite-Template_AnimatedSprite_" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 416, -96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_2" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 608, -96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_4" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 800, -96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_3" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 992, -96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_32" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 416, -288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_31" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 608, -288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_30" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 800, -288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_29" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 992, -288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_6" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 736, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_5" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 928, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_8" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 736, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_7" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 928, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_10" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 736, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_9" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 928, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_12" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 736, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_11" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 928, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_14" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 736, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_13" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 928, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_16" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 32, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_15" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 224, 864 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_18" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 32, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_17" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 224, 672 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_20" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 32, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_19" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 224, 480 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_22" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 32, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_21" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 224, 288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_24" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 32, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_23" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 224, 96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_26" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 32, -96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_25" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 224, -96 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_28" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 32, -288 )
+
+[node name="Noise-Sprite-Template_AnimatedSprite_27" parent="Noise" instance=ExtResource( 5 )]
+position = Vector2( 224, -288 )

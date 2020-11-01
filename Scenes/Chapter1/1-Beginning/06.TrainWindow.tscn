@@ -6,7 +6,6 @@
 [ext_resource path="res://Audio/FX/Train/train-passing-left-to-right-a.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Scripts/Shake.gd" type="Script" id=7]
 
-
 [node name="TrainWindow" type="Node2D"]
 script = ExtResource( 2 )
 next_scene = "res://Scenes/Chapter1/1-Beginning/07.InsideTheTrain.tscn"

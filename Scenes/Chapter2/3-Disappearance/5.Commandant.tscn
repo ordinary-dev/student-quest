@@ -8,14 +8,7 @@
 [ext_resource path="res://Sprites/Light/Flashlight.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/General/SaveState.gd" type="Script" id=7]
 
-
-
-
 [node name="Commandant" type="Node2D"]
-script = ExtResource( 3 )
-dialog_path = "res://Dialogs/Chapter2/Disappearance/Commandant.json"
-load_scene = true
-scene_path = "res://Scenes/Chapter2/3-Disappearance/4.Buttons.tscn"
 
 [node name="Sprites" type="Node2D" parent="."]
 modulate = Color( 0.568627, 0.615686, 0.662745, 1 )
@@ -54,3 +47,9 @@ energy = 0.7
 script = ExtResource( 7 )
 prop = "sv_commandant"
 value = "yes"
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://Dialogs/Chapter2/Disappearance/Commandant.json"
+load_scene = true
+scene_path = "res://Scenes/Chapter2/3-Disappearance/4.Buttons.tscn"

@@ -2,15 +2,18 @@
 
 [ext_resource path="res://Scenes/Templates/Backgrounds/BlurredBackground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
 
 [node name="Monolog" type="Node2D"]
+
+[node name="BackgroundTemplate" parent="." instance=ExtResource( 1 )]
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Dialog" type="Node" parent="."]
 script = ExtResource( 2 )
 dialog_path = "res://Dialogs/Chapter3/SecretSociety/Thoughts.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter3/1-SecretSociety/20.Police.tscn"
 loading_delay = 1.0
-
-[node name="BackgroundTemplate" parent="." instance=ExtResource( 1 )]
-
-[node name="ChangeUI" parent="." instance=ExtResource( 3 )]

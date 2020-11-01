@@ -4,6 +4,7 @@
 # Licensed under the GPL-3 License
 
 extends Node
+class_name MusicPlayer
 
 export (String, FILE, "*.ogg") var file
 export (float, 0.0, 5.0) var delay = 0.0

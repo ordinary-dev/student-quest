@@ -4,11 +4,9 @@
 [ext_resource path="res://Sprites/SnowStreet/Background.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Characters/Stranger.png" type="Texture" id=4]
-[ext_resource path="res://Scenes/Triggers/CallFunctionOnEnter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Triggers/SimpleFunctionTrigger.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/26.StrangerAI.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/26.Bridge.gd" type="Script" id=8]
-
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 104, 96 )

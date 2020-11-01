@@ -15,10 +15,5 @@ text_1 = "A_FEW_MONTHS_LATER"
 text_2 = "MORNING"
 next_scene = "res://Scenes/Chapter2/3-Disappearance/14.Morning.tscn"
 
-[node name="StopMusic" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="StopTheMusic" type="Node" parent="."]
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}

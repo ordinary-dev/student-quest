@@ -5,14 +5,7 @@
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/General/SaveState.gd" type="Script" id=4]
 
-
-
 [node name="Phone" type="Node2D"]
-script = ExtResource( 3 )
-dialog_path = "res://Dialogs/Chapter2/Disappearance/Phone.json"
-load_scene = true
-scene_path = "res://Scenes/Chapter2/3-Disappearance/4.Buttons.tscn"
-loading_delay = 0.5
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
@@ -25,3 +18,10 @@ texture = ExtResource( 2 )
 script = ExtResource( 4 )
 prop = "sv_phone"
 value = "yes"
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://Dialogs/Chapter2/Disappearance/Phone.json"
+load_scene = true
+scene_path = "res://Scenes/Chapter2/3-Disappearance/4.Buttons.tscn"
+loading_delay = 0.5

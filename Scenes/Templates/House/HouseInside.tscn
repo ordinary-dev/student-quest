@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Templates/House/Table.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Light/WindowLight.png" type="Texture" id=4]
 [ext_resource path="res://Tilemaps/house/overlay.tres" type="TileSet" id=5]
-[ext_resource path="res://Scenes/Triggers/FunctionCaller.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tilemaps/house/house.tres" type="TileSet" id=7]
 [ext_resource path="res://Scenes/Templates/House/Stage.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Templates/House/NPC_1.tscn" type="PackedScene" id=9]
@@ -15,10 +15,7 @@
 [ext_resource path="res://Scenes/Templates/House/NPC_5.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=14]
 
-
-
-
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 export (bool) var street_active = true
@@ -40,7 +37,7 @@ func _ready() -> void:
 extents = Vector2( 16, 96 )
 
 [node name="HouseTemplate" type="Node2D"]
-script = SubResource( 3 )
+script = SubResource( 1 )
 
 [node name="Noise" type="Node2D" parent="."]
 
@@ -218,8 +215,8 @@ position = Vector2( 456, 512 )
 [node name="NPC_5" parent="YSort" instance=ExtResource( 13 )]
 
 [node name="Street_Area2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( 128, 128 )
-label = "STREET"
+position = Vector2( 255.245, 154.163 )
+hint = "STREET"
 object_name = NodePath("..")
 function_name = "street"
 

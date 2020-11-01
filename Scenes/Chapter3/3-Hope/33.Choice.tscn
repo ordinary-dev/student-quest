@@ -7,8 +7,6 @@
 [ext_resource path="res://Scripts/Scenes/Chapter3/3-Hope/33.Buttons.gd" type="Script" id=5]
 
 [node name="Choice" type="Node2D"]
-script = ExtResource( 3 )
-dialog_path = "res://Dialogs/Chapter3/Hope/Fix_2.json"
 
 [node name="OldScreen" parent="." instance=ExtResource( 1 )]
 
@@ -46,5 +44,9 @@ __meta__ = {
 }
 edit_scene_path = "res://Scenes/Chapter3/3-Hope/35.Edit.tscn"
 delete_scene_path = "res://Scenes/Chapter3/3-Hope/34.Delete.tscn"
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://Dialogs/Chapter3/Hope/Fix_2.json"
 [connection signal="pressed" from="Edit" to="Buttons" method="_on_Edit_pressed"]
 [connection signal="pressed" from="Delete" to="Buttons" method="_on_Delete_pressed"]

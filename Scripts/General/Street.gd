@@ -6,7 +6,7 @@
 extends Node2D
 
 # Position
-enum positions {HOSTEL, FOUNTAIN, FACULTY, SOUTH_ENTRANCE}
+enum positions {HOSTEL, FOUNTAIN, FACULTY, SOUTH_ENTRANCE, FAC_OF_HUMANITIES}
 export (positions) var initial_position = positions.HOSTEL
 
 enum player_text {MAIN, NEO}
@@ -44,6 +44,7 @@ onready var hostel_pos = $Positions/Hostel_Position2D
 onready var fountain_pos = $Positions/Fountain_Position2D
 onready var faculty_pos = $Positions/Faculty_Position2D
 onready var south_entrance = $Positions/South_Entrance_Position2D
+onready var fac_of_humanities = $Positions/Fac_Of_Humanities_Position2D
 
 
 func init() -> void:
@@ -57,6 +58,8 @@ func init() -> void:
 			player.position = faculty_pos.position
 		positions.SOUTH_ENTRANCE:
 			player.position = south_entrance.position
+		positions.FAC_OF_HUMANITIES:
+			player.position = fac_of_humanities.position
 
 
 

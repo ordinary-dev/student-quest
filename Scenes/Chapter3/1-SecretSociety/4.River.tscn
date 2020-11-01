@@ -7,14 +7,7 @@
 [ext_resource path="res://Sprites/Backgrounds/Sky.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Stripes.png" type="Texture" id=6]
 
-
 [node name="River" type="Node2D"]
-script = ExtResource( 4 )
-dialog_path = "res://Dialogs/Chapter3/SecretSociety/River_2.json"
-enable_delay = true
-delay = 3.0
-load_scene = true
-scene_path = "res://Scenes/Chapter3/1-SecretSociety/5.Forest.tscn"
 
 [node name="Water" type="Node2D" parent="."]
 modulate = Color( 1, 0.831373, 0.898039, 1 )
@@ -78,3 +71,11 @@ frame = 7
 [node name="Stripes" type="Sprite" parent="."]
 position = Vector2( 960, 544 )
 texture = ExtResource( 6 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 4 )
+dialog_path = "res://Dialogs/Chapter3/SecretSociety/River_2.json"
+enable_delay = true
+delay = 3.0
+load_scene = true
+scene_path = "res://Scenes/Chapter3/1-SecretSociety/5.Forest.tscn"

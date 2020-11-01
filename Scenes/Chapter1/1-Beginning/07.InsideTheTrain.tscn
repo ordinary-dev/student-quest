@@ -5,12 +5,9 @@
 [ext_resource path="res://Scripts/Shake.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/Train/Cloud.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Train/InsideTheTrain.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=6]
 [ext_resource path="res://Animations/Window.tres" type="Animation" id=7]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=8]
-
-
-
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 990.03, 310.03, 989.999, 279.986, 1000.05, 279.986, 1000.09, 260.058, 1010.05, 260.058, 1010.05, 250.003, 1019.89, 250.033, 1019.99, 230.013, 1030.03, 230.045, 1030.06, 210.002, 1039.97, 209.873, 1040, 199.932, 1049.91, 199.964, 1050, 170.033, 1060.02, 169.999, 1060.02, 149.985, 1069.95, 149.951, 1070.01, 139.995, 1080.04, 139.961, 1080.04, 130.004, 1090, 130.038, 1090.03, 120.014, 1100.05, 120.014, 1099.95, 110.024, 1120, 109.888, 1119.86, 99.9993, 1261.15, 100.004 )
@@ -18,13 +15,7 @@ polygon = PoolVector2Array( 990.03, 310.03, 989.999, 279.986, 1000.05, 279.986, 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 890.067, 310.051, 889.888, 280.048, 880.016, 280.033, 880.067, 270.122, 870.054, 270.041, 870.137, 249.914, 860.182, 249.938, 860.068, 229.983, 850.22, 230.015, 850.137, 209.914, 839.989, 209.912, 840.068, 189.845, 830.027, 189.809, 829.998, 169.985, 819.886, 169.976, 819.999, 159.985, 810.104, 160.104, 809.999, 150.193, 800.052, 150.142, 799.999, 139.916, 790.091, 140.001, 790.069, 129.986, 779.95, 129.949, 779.93, 119.986, 759.936, 119.988, 759.93, 109.917, 615.385, 110.137 )
 
-[node name="InsideTheTrainScene" type="Node2D"]
-script = ExtResource( 8 )
-dialog_path = "res://Dialogs/Chapter1/Beginning/Train.json"
-enable_delay = true
-delay = 1.5
-load_scene = true
-scene_path = "res://Scenes/Chapter1/1-Beginning/08.Bridge.tscn"
+[node name="InsideTheTrain" type="Node2D"]
 
 [node name="Sky" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.14902 )
@@ -75,4 +66,13 @@ shadow_item_cull_mask = -2147483647
 autoplay = "Window"
 anims/Window = ExtResource( 7 )
 
-[node name="ChangeUI" parent="." instance=ExtResource( 6 )]
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 8 )
+dialog_path = "res://Dialogs/Chapter1/Beginning/Train.json"
+enable_delay = true
+delay = 1.5
+load_scene = true
+scene_path = "res://Scenes/Chapter1/1-Beginning/08.Bridge.tscn"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 6 )

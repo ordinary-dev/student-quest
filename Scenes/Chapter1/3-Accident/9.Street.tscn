@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Templates/Street/Police.tscn" type="PackedScene" id=4]
+
+[node name="Street" type="Node2D"]
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
+allow_entrance = true
+math_scene = "res://Scenes/Chapter1/3-Accident/10.Speech.tscn"
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 96, 408 )
+hint = "MR_SINGER"
+dialog_path = "res://Dialogs/Chapter1/UsualLife/Singer.json"
+
+[node name="Police" parent="." instance=ExtResource( 4 )]
+position = Vector2( 4904, 5344 )
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
+show_pause_menu = true
+show_joystick = true

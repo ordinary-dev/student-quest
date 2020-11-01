@@ -8,6 +8,6 @@
 [node name="CafeTemplate" parent="." instance=ExtResource( 1 )]
 street_scene = "res://Scenes/Chapter3/3-Hope/18.Infiltration.tscn"
 
-[node name="PlayMusic" type="Node2D" parent="."]
+[node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 2 )
 file = "res://Audio/Music/SadPiano/EmotionalOriginalSoundtrackROAD.ogg"

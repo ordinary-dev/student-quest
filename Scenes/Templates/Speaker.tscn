@@ -5,8 +5,6 @@
 [ext_resource path="res://Sprites/Light/Light.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Speaker/Background.webp" type="Texture" id=4]
 
-
-
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 464.1, 608.108, 1353.13, 608.108, 1351.99, 728.694, 464.1, 727.556 )
 

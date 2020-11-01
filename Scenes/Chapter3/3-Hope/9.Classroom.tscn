@@ -7,9 +7,6 @@
 [ext_resource path="res://Scripts/General/PlaySound.gd" type="Script" id=5]
 
 [node name="Classroom" type="Node2D"]
-script = ExtResource( 4 )
-next_scene = "res://Scenes/Chapter3/3-Hope/10.Message.tscn"
-delay = 3.0
 
 [node name="ClassroomBackground" type="Sprite" parent="."]
 position = Vector2( 960, 540 )
@@ -29,7 +26,12 @@ vframes = 3
 hframes = 3
 frame = 7
 
-[node name="PlaySound" type="Node2D" parent="."]
+[node name="SoundPlayer" type="Node" parent="."]
 script = ExtResource( 5 )
 file = "res://Audio/FX/Notification/drip-echo.wav"
 delay = 2.0
+
+[node name="SceneLoader" type="Node" parent="."]
+script = ExtResource( 4 )
+next_scene = "res://Scenes/Chapter3/3-Hope/10.Message.tscn"
+delay = 3.0

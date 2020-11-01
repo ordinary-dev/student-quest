@@ -6,13 +6,6 @@
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=4]
 
 [node name="Sunset" type="Node2D"]
-script = ExtResource( 4 )
-dialog_path = "res://Dialogs/Chapter2/Disappearance/Roof.json"
-enable_delay = true
-delay = 1.0
-load_scene = true
-scene_path = "res://Scenes/Chapter2/3-Disappearance/19.Flashback.tscn"
-loading_delay = 1.0
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 
@@ -29,3 +22,12 @@ modulate = Color( 0.956863, 0.94902, 0.933333, 1 )
 position = Vector2( 1159.15, 691.904 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 2 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 4 )
+dialog_path = "res://Dialogs/Chapter2/Disappearance/Roof.json"
+enable_delay = true
+delay = 1.0
+load_scene = true
+scene_path = "res://Scenes/Chapter2/3-Disappearance/19.Flashback.tscn"
+loading_delay = 1.0

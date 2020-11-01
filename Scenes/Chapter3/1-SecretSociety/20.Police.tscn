@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Templates/Rain.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Templates/Backgrounds/BusStop.tscn" type="PackedScene" id=2]
@@ -6,15 +6,10 @@
 [ext_resource path="res://Sprites/Characters/Neo.png" type="Texture" id=4]
 [ext_resource path="res://Audio/FX/Rain/rain-moderate-c.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=8]
 
 [node name="Police" type="Node2D"]
-script = ExtResource( 6 )
-dialog_path = "res://Dialogs/Chapter3/SecretSociety/BusStop.json"
-enable_delay = true
-load_scene = true
-scene_path = "res://Scenes/Chapter3/2-Despair/1.Street.tscn"
-loading_delay = 4.0
 
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
@@ -43,5 +38,17 @@ volume_db = -7.0
 autoplay = true
 bus = "FX"
 
-[node name="ChangeUI" parent="." instance=ExtResource( 7 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 7 )
 show_pause_menu = true
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 6 )
+dialog_path = "res://Dialogs/Chapter3/SecretSociety/BusStop.json"
+enable_delay = true
+load_scene = true
+scene_path = "res://Scenes/Chapter3/2-Despair/1.Street.tscn"
+loading_delay = 4.0
+
+[node name="StopTheMusic" type="Node" parent="."]
+script = ExtResource( 8 )

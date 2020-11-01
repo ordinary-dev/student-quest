@@ -8,9 +8,50 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "ChangeUI",
+"language": "GDScript",
+"path": "res://Scripts/ChangeUI.gd"
+}, {
+"base": "Node",
+"class": "Dialog",
+"language": "GDScript",
+"path": "res://Scripts/General/ShowDialog.gd"
+}, {
+"base": "Node",
+"class": "MusicPlayer",
+"language": "GDScript",
+"path": "res://Scripts/General/PlayMusic.gd"
+}, {
+"base": "Node",
+"class": "SceneLoader",
+"language": "GDScript",
+"path": "res://Scripts/General/DelayedLoading.gd"
+}, {
+"base": "Node",
+"class": "SoundPlayer",
+"language": "GDScript",
+"path": "res://Scripts/General/PlaySound.gd"
+}, {
+"base": "Node",
+"class": "StopTheMusic",
+"language": "GDScript",
+"path": "res://Scripts/General/StopMusic.gd"
+}, {
+"base": "Node",
+"class": "UnlockStage",
+"language": "GDScript",
+"path": "res://Scripts/General/Unlock.gd"
+} ]
 _global_script_class_icons={
-
+"ChangeUI": "",
+"Dialog": "",
+"MusicPlayer": "",
+"SceneLoader": "",
+"SoundPlayer": "",
+"StopTheMusic": "",
+"UnlockStage": ""
 }
 
 [application]

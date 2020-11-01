@@ -1,19 +1,21 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Templates/Character.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=2]
 [ext_resource path="res://Audio/FX/Steps/step-10.wav" type="AudioStream" id=3]
 [ext_resource path="res://Audio/FX/Steps/step-12.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sprites/Water/player_in_water.tres" type="SpriteFrames" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, -0.0322966, 0, 0, Vector2( 0.518518, 1 ), 0.0314686, 0.0, 0, 0 ]
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 18.9665, 5.43987 )
 
-[sub_resource type="OccluderPolygon2D" id=2]
+[sub_resource type="OccluderPolygon2D" id=3]
 polygon = PoolVector2Array( -4.93834, 15.1545, -4.16582, 14.4261, 3.18421, 14.4261, 4.2216, 15.1104, 3.14006, 15.7725, -4.0996, 15.7505 )
 
-[sub_resource type="Animation" id=3]
-resource_name = "down"
+[sub_resource type="Animation" id=4]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -57,7 +59,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -101,8 +103,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "up"
+[sub_resource type="Animation" id=6]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -153,11 +154,12 @@ z_as_relative = false
 collision_layer = 1024
 collision_mask = 0
 script = ExtResource( 1 )
+speed_curve = SubResource( 1 )
 
 [node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -0.554323, -6.13217 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Character_Sprite" type="Sprite" parent="."]
 light_mask = 2
@@ -180,7 +182,7 @@ smoothing_speed = 7.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Character_Sprite"]
 show_behind_parent = true
-occluder = SubResource( 2 )
+occluder = SubResource( 3 )
 
 [node name="Water_AnimatedSprite" type="AnimatedSprite" parent="Character_Sprite"]
 visible = false
@@ -202,6 +204,6 @@ volume_db = -15.0
 bus = "FX"
 
 [node name="WalkCycle_AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/down = SubResource( 3 )
-anims/right = SubResource( 4 )
-anims/up = SubResource( 5 )
+anims/down = SubResource( 4 )
+anims/right = SubResource( 5 )
+anims/up = SubResource( 6 )

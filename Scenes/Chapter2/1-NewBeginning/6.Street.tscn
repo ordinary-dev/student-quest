@@ -1,10 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Templates/Characters/Guide.tscn" type="PackedScene" id=6]
-
 
 [node name="StreetScene" type="Node2D"]
 
@@ -18,19 +17,20 @@ z_as_relative = false
 
 [node name="MrSinger" parent="." instance=ExtResource( 1 )]
 position = Vector2( 104, 424 )
+hint = "UNKNOWN_SINGER"
 dialog_path = "res://Dialogs/Chapter2/NewBeginning/Stranger.json"
-person = "UNKNOWN_SINGER"
 
 [node name="Guide" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2280, 456 )
+hint = "GUIDE"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/PathToFaculty.json"
-person = "GUIDE"
 
 [node name="Gardener" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1136, 2528 )
+hint = "GARDENER"
 dialog_path = "res://Dialogs/Chapter1/FirstDay/Gardener.json"
-person = "GARDENER"
 
-[node name="ChangeUI" parent="." instance=ExtResource( 2 )]
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
 show_pause_menu = true
 show_joystick = true

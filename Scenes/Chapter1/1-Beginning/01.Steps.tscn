@@ -7,8 +7,6 @@
 [ext_resource path="res://Scripts/Scenes/Chapter1/1-Beginning/01.Steps.gd" type="Script" id=5]
 [ext_resource path="res://Audio/FX/Fireworks/fireworks-display-2.ogg" type="AudioStream" id=6]
 
-
-
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 791.905, -368.539, 642.016, -415.024, 1282.03, -413.892, 1135.83, -368.335 )
 
@@ -53,7 +51,7 @@ tracks/2/keys = {
 "values": [ 0.7, 0.6, 0.4, 0.5, 0.7 ]
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Steps" type="Node2D"]
 script = ExtResource( 5 )
 scene_path = "res://Scenes/Chapter1/1-Beginning/02.Fireworks.tscn"
 
