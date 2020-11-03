@@ -1,16 +1,16 @@
-id,en
-MAIN_CHARACTER,Alex
-UNKNOWN_PERSON,Unknown person
-GIRLFRIEND,Liza
-RECTOR,Rector
-GUIDE,Guide
-UNKNOWN_SINGER,Unknown singer
-MR_SINGER,Mr. Singer
-GARDENER,Gardener
-SPEAKER,Speaker
-SECURITY_GUARD,Security guard
-LIFEGUARDS,Lifeguards
-TEACHER,Teacher
-COMMANDANT,Commandant
-NEO,Neo
-ANDREW,Andrew
+"id","ru"
+"MAIN_CHARACTER","Алекс","Алекс"
+"UNKNOWN_PERSON","Неизвестный человек","Неизвестный человек"
+"GIRLFRIEND","Лиза","Лиза"
+"RECTOR","Ректор","Ректор"
+"GUIDE","Гид","Гид"
+"UNKNOWN_SINGER","Неизвестный певец","Неизвестный певец"
+"MR_SINGER","М-р Певец","М-р Певец"
+"GARDENER","Садовник","Садовник"
+"SPEAKER","Выступающий","Выступающий"
+"SECURITY_GUARD","Охранник","Охранник"
+"LIFEGUARDS","Спасатели","Спасатели"
+"TEACHER","Учитель","Учитель"
+"COMMANDANT","Комендант","Комендант"
+"NEO","Нео","Нео"
+"ANDREW","Андрей","Андрей"
