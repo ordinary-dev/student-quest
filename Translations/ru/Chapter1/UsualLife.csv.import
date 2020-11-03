@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://Translations/ru/Chapter1/UsualLife.ru.translation" ]
+
+source_file="res://Translations/ru/Chapter1/UsualLife.csv"
+dest_files=[ "res://Translations/ru/Chapter1/UsualLife.ru.translation" ]
+
+[params]
+
+compress=true
+delimiter=0
