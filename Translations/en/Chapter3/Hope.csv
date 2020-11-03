@@ -1,0 +1,89 @@
+id,en
+D_HP_FIELD_1,I don't remember this place.
+D_HP_STREET_1,Hi.
+D_HP_STREET_2,Maybe check the basement again today?
+D_HP_STREET_3,I don't think it will help.
+D_HP_STREET_4,I'll go all the way to the end.
+D_HP_STREET_5,Hope you change your mind.
+D_HP_STREET_6,I'll be waiting at 4 o'clock on the 3rd floor.
+D_HP_STREET_7,Come if you can.
+D_HP_LETS_GO,Let’s go.
+D_HP_NIGHT_1,We waited until nightfall and then went down to the basement.
+D_HP_STEPS_1,Hey look!
+TALK,Talk
+D_HP_BASEMENT_1,This computer works!
+D_HP_BASEMENT_2,And what's there?
+D_HP_BASEMENT_3,"I can't understand yet, everything is very strange."
+D_HP_BASEMENT_4,But I'll copy everything I can.
+D_HP_BASEMENT_5,"You can wait or go, like there really is nothing else."
+HP_MESSAGE,Hurry up and leave the class. I'll be waiting at the bus stop. It is important.
+TRY_AGAIN,Try again
+D_HP_RIVER_1,What happened?
+D_HP_RIVER_2,I was able to open some files from that computer.
+D_HP_RIVER_3,"Apparently, there is something very important there."
+D_HP_RIVER_4,"But the laptop suddenly turned off, and I saw the police through the window."
+D_HP_RIVER_5,That's when I wrote to you.
+D_HP_RIVER_6,Where did the police come from? Were they looking for me?
+D_HP_RIVER_7,"I don't know, but it's best not to get caught until we figure it out."
+D_HP_RIVER_8,…
+D_HP_RIVER_9,What?
+D_HP_RIVER_10,Do you hear footsteps? Someone is coming.
+D_HP_RIVER_11,Run!
+D_HP_ML_1,We split up and hid from the police all day.
+D_HP_ML_2,"In the late afternoon, I went to the place where we had agreed to meet."
+D_HP_MACHINE_1,Wait!
+D_HP_MACHINE_2,Don't go there!
+D_HP_MACHINE_3,We still don't know what's on the other side of the machine.
+D_HP_MACHINE_4,And nothing ever came back.
+D_HP_MACHINE_5,"I don't want to hurt you, honestly."
+D_HP_MACHINE_6,But I won't let you go any further.
+D_HP_MACHINE_7,No way.
+D_HP_MACHINE_8,We've taken too long to get to this point.
+D_HP_MACHINE_9,And we all know that there is more behind this barrier.
+D_HP_MACHINE_10,I have noticed so many times how the world suddenly returned to the past.
+D_HP_MACHINE_11,"This was repeated hundreds of times, and only I remembered everything."
+D_HP_MACHINE_12,"Therefore, we have no way back."
+D_HP_MACHINE_13,Run! I'll buy some time!
+LOOK,Look
+D_HP_GAME_1,It's all…
+D_HP_GAME_2,… just a game.
+DASHBOARD,Dashboard
+CHARACTER_ALEX,Character: Alex
+STATUS_NPC,Status: NPC
+ACTIVE_YES,Active: yes
+NUMEROUS_ERRORS,! Numerous errors !
+D_HP_SIM_1,All these days are just a simulation.
+D_HP_SIM_2,As I.
+D_HP_SIM_3,"But, apparently, there was a moment when the rules of the game ceased to apply to me."
+D_HP_FIX_1,And now I have the power to fix everything.
+D_HP_FIX_2,But I need to choose the right way.
+CONTROL_PANEL,Control Panel
+EDIT_THE_WORLD,Edit the world
+DELETE_ALL_DATA,Delete all data
+D_HP_DEL_1,I decided. I'll try again.
+D_HP_DEL_2,I can do it.
+D_HP_DEL_3,I was already able to change the game.
+D_HP_DEL_4,Now I won't back down.
+D_HP_EDIT_1,Change the world?
+D_HP_EDIT_2,There are not many possibilities here.
+D_HP_EDIT_3,"But there is a way out, I think."
+D_HP_EDIT_4,I can edit characters.
+D_HP_EDIT_5,"Okay, I'm ready."
+D_HP_EDIT_6,…
+D_HP_EDIT_7,Sorry.
+GO_AWAY,Go away
+D_HP_ROOF_1,They say that from the roof of the Faculty of Geography there is a good view.
+D_HP_ROOF_2,I'd like to see it…
+ROOF,Roof
+D_HP_ROOF_3,Hi!
+D_HP_ROOF_4,Hi… Do we know each other?
+D_HP_ROOF_5,I don't think.
+D_HP_ROOF_6,I'm Lisa.
+D_HP_ROOF_7,I'm Alex.
+D_HP_ROOF_8,Nice to meet you.
+D_HP_ROOF_9,"You're in your first year, too?"
+D_HP_ROOF_10,Yes.
+D_HP_ROOF_11,I think a lot of interesting things await us.
+D_HP_ROOF_12,Hopefully.
+THE_END,The end
+THANK_YOU,Thank you!

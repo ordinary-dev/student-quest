@@ -1,0 +1,29 @@
+id,en
+LOADING,Loading
+D_ALTERNATE_SCENE,"Well, let's start"
+SETTINGS,Settings
+QUIT,Quit
+QUIT_CONFIRMATION,Do you really want to quit?
+YES,Yes
+NO,No
+LANG,Lang
+AUDIO,Audio
+GRAPHICS,Graphics
+INFO,Info
+MUSIC_VOLUME,Music volume
+EFFECTS_VOLUME,Effects volume
+RESET,Reset
+VSYNC,Vsync
+FULLSCREEN,Fullscreen
+SITE,Open site
+GODOT,Created with Godot Engine
+LEGAL,Every character is just the result of our imagination
+NEW_GAME,New game
+DELETE,Delete
+TESTERS,Testers:
+TICKETWINDOW,Ticket window
+LOAD,Load
+SAVE,Save
+LOAD_GAME,Load game
+CONTINUE,Continue
+SHOW_CREDITS,Show credits
