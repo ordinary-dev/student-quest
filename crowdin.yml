@@ -1,0 +1,6 @@
+files:
+  - source: Translations/**/*.csv
+    translation: '%original_path%'
+    multilingual_spreadsheet: 1
+    first_line_contains_header: 1
+    scheme: 'identifier,en,source_phrase'
