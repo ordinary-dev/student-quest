@@ -1,29 +1,29 @@
-id,en
-LOADING,Loading
-D_ALTERNATE_SCENE,"Well, let's start"
-SETTINGS,Settings
-QUIT,Quit
-QUIT_CONFIRMATION,Do you really want to quit?
-YES,Yes
-NO,No
-LANG,Lang
-AUDIO,Audio
-GRAPHICS,Graphics
-INFO,Info
-MUSIC_VOLUME,Music volume
-EFFECTS_VOLUME,Effects volume
-RESET,Reset
-VSYNC,Vsync
-FULLSCREEN,Fullscreen
-SITE,Open site
-GODOT,Created with Godot Engine
-LEGAL,Every character is just the result of our imagination
-NEW_GAME,New game
-DELETE,Delete
-TESTERS,Testers:
-TICKETWINDOW,Ticket window
-LOAD,Load
-SAVE,Save
-LOAD_GAME,Load game
-CONTINUE,Continue
-SHOW_CREDITS,Show credits
+"id","ru"
+"LOADING","Загрузка","Загрузка"
+"D_ALTERNATE_SCENE","Хорошо, начнём","Хорошо, начнём"
+"SETTINGS","Настройки","Настройки"
+"QUIT","Выйти","Выйти"
+"QUIT_CONFIRMATION","Вы действительно хотите выйти?","Вы действительно хотите выйти?"
+"YES","Да","Да"
+"NO","Нет","Нет"
+"LANG","Язык","Язык"
+"AUDIO","Аудио","Аудио"
+"GRAPHICS","Графика","Графика"
+"INFO","Инфо","Инфо"
+"MUSIC_VOLUME","Громкость музыки","Громкость музыки"
+"EFFECTS_VOLUME","Громкость эффектов","Громкость эффектов"
+"RESET","Сбросить","Сбросить"
+"VSYNC","Верт. син.","Верт. син."
+"FULLSCREEN","Полный экран","Полный экран"
+"SITE","Открыть сайт","Открыть сайт"
+"GODOT","Создано при помощи Godot Engine","Создано при помощи Godot Engine"
+"LEGAL","Каждый персонаж всего лишь результат нашего воображения","Каждый персонаж всего лишь результат нашего воображения"
+"NEW_GAME","Новая игра","Новая игра"
+"DELETE","Удалить","Удалить"
+"TESTERS","Тестеры:","Тестеры:"
+"TICKETWINDOW","Окно кассы","Окно кассы"
+"LOAD","Загрузить","Загрузить"
+"SAVE","Сохранить","Сохранить"
+"LOAD_GAME","Загрузить игру","Загрузить игру"
+"CONTINUE","Продолжить","Продолжить"
+"SHOW_CREDITS","Показать титры","Показать титры"
