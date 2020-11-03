@@ -1,19 +1,19 @@
-id,en
-D_PARTING_NIGHT_1,Why is this all happening? This is unfair.
-D_PARTING_THOUGHTS_1,Ah?! ...
-D_PARTING_THOUGHTS_2,What? Why? Again?
-D_PARTING_THOUGHTS_3,How did i do this? Did I do this?
-D_PARTING_THOUGHTS_4,"I've gone crazy? And after all, no one will believe in this story."
-D_PARTING_THOUGHTS_5,I must think quickly. Why am I here?
-D_PARTING_THOUGHTS_6,Maybe this is not by chance?
-D_PARTING_THOUGHTS_7,"Last time, the explosion was in the basement. Maybe I need to go down there?"
-D_PARTING_THOUGHTS_8,What if I die?
-D_PARTING_THOUGHTS_9,But I should at least try to get that teacher out.
-GO_BACK,Go back
-GO_DOWN,Go down
-COMPUTER,Computer
-D_PARTING_STAIRS_1,Stairs? Lower?
-D_FR_SINGER_1,So you knew each other?
-D_FR_SINGER_2,"Yes, we worked together."
-D_FR_SINGER_3,"Ah, it was a good time…"
-D_FR_RIVER_1,What was that?
+"id","ru"
+"D_PARTING_NIGHT_1","Почему всё так происходит? Это несправедливо.","Почему всё так происходит? Это несправедливо."
+"D_PARTING_THOUGHTS_1","Аа?!...","Аа?!..."
+"D_PARTING_THOUGHTS_2","Что? Почему? Снова? ","Что? Почему? Снова? "
+"D_PARTING_THOUGHTS_3","Как я это сделал? Я ли это сделал?","Как я это сделал? Я ли это сделал?"
+"D_PARTING_THOUGHTS_4","Я сошел с ума? И ведь никто не поверит в эту историю.","Я сошел с ума? И ведь никто не поверит в эту историю."
+"D_PARTING_THOUGHTS_5","Надо думать и быстро. Почему я именно здесь?","Надо думать и быстро. Почему я именно здесь?"
+"D_PARTING_THOUGHTS_6","Может быть это всё не случайно?","Может быть это всё не случайно?"
+"D_PARTING_THOUGHTS_7","В прошлый раз взрыв был в подвале. Может мне нужно туда спуститься?","В прошлый раз взрыв был в подвале. Может мне нужно туда спуститься?"
+"D_PARTING_THOUGHTS_8","А если я умру?","А если я умру?"
+"D_PARTING_THOUGHTS_9","Но надо хотя бы попытаться вытащить того преподавателя.","Но надо хотя бы попытаться вытащить того преподавателя."
+"GO_BACK","Вернуться","Вернуться"
+"GO_DOWN","Спуститься","Спуститься"
+"COMPUTER","Компьютер","Компьютер"
+"D_PARTING_STAIRS_1","Лестница? Еще ниже?","Лестница? Еще ниже?"
+"D_FR_SINGER_1","То есть вы были знакомы?","То есть вы были знакомы?"
+"D_FR_SINGER_2","Да, мы работали вместе.","Да, мы работали вместе."
+"D_FR_SINGER_3","Эх, хорошее было время…","Эх, хорошее было время…"
+"D_FR_RIVER_1","Что это было?","Что это было?"
