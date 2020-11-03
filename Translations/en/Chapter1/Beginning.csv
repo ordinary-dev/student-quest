@@ -1,18 +1,18 @@
-id,en
-JUNE_28,June 28
-GRADUATION,Graduation
-D_BEGINNING_NIGHT_1,Good luck!
-D_BEGINNING_NIGHT_2,You too.
-JUNE_29,June 29
-EARLY_MORNING,Early morning
-D_BEGINNING_TRAIN_1,
-D_BEGINNING_TRAIN_2,"Come on, there's so much more to come"
-D_BEGINNING_TRAIN_3,…
-D_BEGINNING_TRAIN_4,"Look, we'll be there soon!"
-D_BEGINNING_RECTOR_1,Faculty of Mathematics?
-D_BEGINNING_RECTOR_2,Yes
-D_BEGINNING_RECTOR_3,"… okay, everything is fine with the documents. Are you from another city?"
-D_BEGINNING_RECTOR_4,Right
-D_BEGINNING_RECTOR_5,"Then go to cabinet 225, they will help you there"
-D_BEGINNING_GUIDE_1,"Hi, I'm here to help with the settlement."
-D_BEGINNING_GUIDE_2,Let's find you a room.
+"id","ru"
+"JUNE_28","28 июня","28 июня"
+"GRADUATION","Выпускной","Выпускной"
+"D_BEGINNING_NIGHT_1","Удачи!","Удачи!"
+"D_BEGINNING_NIGHT_2","Тебе тоже.","Тебе тоже."
+"JUNE_29","29 июня","29 июня"
+"EARLY_MORNING","Раннее утро","Раннее утро"
+"D_BEGINNING_TRAIN_1","Эх, жаль, что всё закончилось","Эх, жаль, что всё закончилось"
+"D_BEGINNING_TRAIN_2","Да ладно, нас ещё столько всего ждёт впереди","Да ладно, нас ещё столько всего ждёт впереди"
+"D_BEGINNING_TRAIN_3","…","…"
+"D_BEGINNING_TRAIN_4","Смотри, мы уже скоро приедем!","Смотри, мы уже скоро приедем!"
+"D_BEGINNING_RECTOR_1","Мехмат?","Мехмат?"
+"D_BEGINNING_RECTOR_2","Да","Да"
+"D_BEGINNING_RECTOR_3","… ладно, с документами все хорошо. Вы же из другого города?","… ладно, с документами все хорошо. Вы же из другого города?"
+"D_BEGINNING_RECTOR_4","Верно","Верно"
+"D_BEGINNING_RECTOR_5","Тогда зайдите еще в 225 кабинет, вам там помогут","Тогда зайдите еще в 225 кабинет, вам там помогут"
+"D_BEGINNING_GUIDE_1","Привет, я тут помогаю с заселением.","Привет, я тут помогаю с заселением."
+"D_BEGINNING_GUIDE_2","Давай найдем тебе комнату.","Давай найдем тебе комнату."
