@@ -1,28 +1,28 @@
-id,en
-NEW_CHAPTER_UNLOCKED,New chapter unlocked
-HALL,Assembly Hall
-GHOUSE,Gardener's house
-MATH,Faculty of Mechanics and Mathematics
-NS,Faculty of Natural Sciences
-HM,Faculty of Humanities
-STORE,Supermarket 'Chetverochka'
-TICKETS,Ticket window
-HOSTEL,Enter the hostel
-SEPTEMBER1,First of september
-BUSSTOP,Bus stop
-RETURN,Return
-MENU,Menu
-OPENSITE,Open site
-NOTLOADED,Game not loaded
-NOTSAVED,Not saved
-NOTEXIST,The file does not exist
-SELECT,Select
-SLEEP,Go to sleep
-CHAT,Chat
-OPENCHAT,Open chat
-CLOSED,Closed
-NOENTER,You cannot come here
-1ST_FLOOR,1st floor
-2ND_FLOOR,2nd floor
-3RD_FLOOR,3rd floor
-EXITBUILDING,Exit building
+"id","ru"
+"NEW_CHAPTER_UNLOCKED","Доступна новая глава","Доступна новая глава"
+"HALL","Актовый зал","Актовый зал"
+"GHOUSE","Дом садовника","Дом садовника"
+"MATH","Механико-математический факультет","Механико-математический факультет"
+"NS","Факультет естественных наук","Факультет естественных наук"
+"HM","Гуманитарный факультет","Гуманитарный факультет"
+"STORE","Магазин 'Четверочка'","Магазин 'Четверочка'"
+"TICKETS","Касса","Касса"
+"HOSTEL","Зайти в общагу","Зайти в общагу"
+"SEPTEMBER1","Первое сентября","Первое сентября"
+"BUSSTOP","Автобусная остановка","Автобусная остановка"
+"RETURN","Вернуться","Вернуться"
+"MENU","Меню","Меню"
+"OPENSITE","Открыть сайт","Открыть сайт"
+"NOTLOADED","Игра не загружена","Игра не загружена"
+"NOTSAVED","Не сохранено","Не сохранено"
+"NOTEXIST","Файл не существует","Файл не существует"
+"SELECT","Выбрать","Выбрать"
+"SLEEP","Лечь спать","Лечь спать"
+"CHAT","Чат","Чат"
+"OPENCHAT","Открыть чат","Открыть чат"
+"CLOSED","Заперто","Заперто"
+"NOENTER","Вы не можете сюда зайти","Вы не можете сюда зайти"
+"1ST_FLOOR","1 этаж","1 этаж"
+"2ND_FLOOR","2 этаж","2 этаж"
+"3RD_FLOOR","3 этаж","3 этаж"
+"EXITBUILDING","Выйти из здания","Выйти из здания"
