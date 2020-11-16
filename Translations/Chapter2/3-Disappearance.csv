@@ -23,8 +23,8 @@ D_DSP_TALK_4,Так далеко?,So far?
 D_DSP_TALK_5,Я живу в паре минут отсюда.,I live a couple of minutes from here.
 D_DSP_TALK_6,А вам не далековато ездить на работу?,Aren't you too far to commute to work?
 D_DSP_TALK_7,А я там и не работаю. Я уже давно на пенсии. Мне просто нравится ухаживать за тем садом. Вот я и прихожу раз в несколько дней.,I don't work there. I have been retired for a long time. I just love looking after that garden. So I come every few days.
-D_DSP_TALK_8,Интересно... Вы живете в довольно красивом месте.,Interesting ... you live in a pretty beautiful place.
-D_DSP_TALK_9,"Я недавно принес сюда скамейку. Не совсем сам, мне помогли знакомые. Теперь здесь ещё приятнее.","I recently brought a bench here. Not quite myself, my friends helped me. Now it's even nicer here."
+D_DSP_TALK_8,Интересно... Вы живёте в довольно красивом месте.,Interesting ... you live in a pretty beautiful place.
+D_DSP_TALK_9,"Я недавно принёс сюда скамейку. Не совсем сам, мне помогли знакомые. Теперь здесь ещё приятнее.","I recently brought a bench here. Not quite myself, my friends helped me. Now it's even nicer here."
 D_DSP_TALK_10,И зачем вам все это?,And why do you need all this?
 D_DSP_TALK_11,"Просто так, захотелось. Ты мне лучше скажи: ладно я уже старый, а ты-то почему один в этот день? Новый год ведь уже скоро.","Just like that, I wanted to. You'd better tell me: okay, I'm already old, but why are you alone on this day? New Year is coming soon."
 D_DSP_TALK_12,"Я даже не знаю, не сложилось, вот и всё. Это не мой родной город, тут у меня ещё нет друзей.","I don't even know, it didn't work out, that's all. This is not my hometown, I have no friends here yet."
@@ -36,7 +36,7 @@ D_DSP_MS_2,"Приходи сегодня на крышу географичес
 D_DSP_GARDENER_1,Доброе утро.,Good morning.
 D_DSP_GARDENER_2,"О, доброе утро!",Oh good morning!
 D_DSP_GARDENER_3,"Вы слышали, что Мистер Певец уезжает?",Did you hear that Mister Singer is leaving?
-D_DSP_GARDENER_4,"Нет, я его не часто вижу, а разговариваем мы еще реже.","No, I don't see him often, and we talk even less often."
+D_DSP_GARDENER_4,"Нет, я его не часто вижу, а разговариваем мы ещё реже.","No, I don't see him often, and we talk even less often."
 D_DSP_GARDENER_5,То есть вы не знаете почему?,So you don't know why?
 D_DSP_GARDENER_6,Может он тебе сам расскажет?,Maybe he will tell you?
 D_DSP_GARDENER_7,Возможно. Спасибо.,Maybe. Thank.
@@ -67,7 +67,7 @@ D_DSP_NIGHT_4,Но это произошло.,But it happened.
 D_DSP_BRIDGE_1,Ты тоже вспомнил?,Did you remember too?
 D_DSP_BRIDGE_2,Да. Что мы теперь будем делать?,Yes. What are we going to do now?
 D_DSP_BRIDGE_3,Я ничего не понимаю.,I don’t understand anything.
-D_DSP_BRIDGE_4,Надо успокоиться. Может пойдем ко мне? Тут уже становится холодно.,We need to calm down. Can we come to me? It's getting cold here.
+D_DSP_BRIDGE_4,Надо успокоиться. Может пойдём ко мне? Тут уже становится холодно.,We need to calm down. Can we come to me? It's getting cold here.
 D_DSP_BRIDGE_5,"Л-л-ладно, давай.","O-o-okay, come on."
 D_DSP_BRIDGE_6,Ч-ч-ч-что это было?,W-w-w-what was that?
 D_DSP_BRIDGE_7,Ничего не понимаю.,"I don’t understand anything,"

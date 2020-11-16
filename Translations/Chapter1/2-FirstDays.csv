@@ -21,12 +21,12 @@ D_FD_GF_2,У вас уже всё закончилось?,Have you finished ever
 D_FD_GF_3,"Да, теперь хочу погулять по университету.","Yes, now I want to walk around the University."
 D_FD_GF_4,"Ладно, я пойду.","Okay, I'll go."
 D_FD_SPEAKER_1,Вы выбрали правильный путь.,You have chosen the right path.
-D_FD_SPEAKER_2,Не оглядывайтесь на неудачи и идите всегда вперед.,Do not look back at failures and always go forward.
+D_FD_SPEAKER_2,Не оглядывайтесь на неудачи и идите всегда вперёд.,Do not look back at failures and always go forward.
 D_FD_SPEAKER_3,Поздравляю вас с началом студенческой жизни!,I congratulate you on the beginning of your student life!
 D_FD_GUARD_1,"Простите, турникеты не работают без электричества","Sorry, turnstiles do not work without electricity."
 D_FD_GUARD_2,Может есть другой путь?,Maybe there is another way?
 D_FD_GUARD_3,"Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите.","I will be fined if I release you all like that. Sorry, sorry."
-D_FD_GUARD_4,Электричества все еще нет...,There is still no electricity ...
+D_FD_GUARD_4,Электричества все ещё нет...,There is still no electricity ...
 D_FD_PASSAGE_1,Я лучше подожду...,I'd rather wait ...
 PASSAGE,Проход,Passage
 D_FD_LIFEGUARDS_1,У выхода стояло множество машин спасателей. ,At the exit there were many rescue vehicles.
