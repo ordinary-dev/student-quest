@@ -1,0 +1,70 @@
+id,ru,en
+D_FD_SINGER_1,"О, привет, я Мистер Певец!","Oh hello, I'm Mr. Singer!"
+D_FD_SINGER_2,Меня не часто замечают в последнее время.,I have not often been noticed recently.
+D_FD_SINGER_3,"Я думаю, мы ещё встретимся. Не опаздывай.",I think we'll meet again. Do not be late.
+D_FD_GARDENER_1,Доброе утро! Тебя как зовут?,Good morning! What is your name?
+D_FD_GARDENER_2,"Моё имя Алексей, но знакомые зовут меня просто Алекс.","My name is Alexey, but my friends just call me Alex."
+D_FD_GARDENER_3,"Алекс, скажи мне, ты не замечал ничего необычного?","Alex, tell me, have you noticed anything unusual?"
+D_FD_GARDENER_4,Необычного?,Unusual?
+D_FD_GARDENER_5,"Да, что-нибудь необычное, неестественное, странное…","Yes, something unusual, unnatural, strange ..."
+D_FD_GARDENER_6,Разве что того певца перед входом,Maybe that singer in front of the entrance.
+D_FD_GARDENER_7,Он почему-то называет себя «Мистер Певец»…,For some reason he calls himself «Mister Singer» ...
+D_FD_GARDENER_8,"Нее, с ним всё в порядке, я его немного знаю.","Nooo, he's okay, I know him a little."
+D_FD_GARDENER_9,"Ладно, спасибо тебе в любом случае.","Okay, thank you anyway."
+D_FD_GARDENER_10,Заходи ещё.,Come back again.
+D_FD_GARDENER_11,Я попробую.,I'll try.
+D_FD_PATH_1,"Привет, ты же с математического факультета?","Hi, are you from the Faculty of Mathematics?"
+D_FD_PATH_2,Тебе нужно пройти немного вниз и налево.,You need to go a little down and to the left.
+D_FD_PATH_3,Спасибо!,Thank!
+D_FD_GF_1,"О, привет.","Oh, hi."
+D_FD_GF_2,У вас уже всё закончилось?,Have you finished everything yet?
+D_FD_GF_3,"Да, теперь хочу погулять по университету.","Yes, now I want to walk around the University."
+D_FD_GF_4,"Ладно, я пойду.","Okay, I'll go."
+D_FD_SPEAKER_1,Вы выбрали правильный путь.,You have chosen the right path.
+D_FD_SPEAKER_2,Не оглядывайтесь на неудачи и идите всегда вперёд.,Do not look back at failures and always go forward.
+D_FD_SPEAKER_3,Поздравляю вас с началом студенческой жизни!,I congratulate you on the beginning of your student life!
+D_FD_GUARD_1,"Простите, турникеты не работают без электричества","Sorry, turnstiles do not work without electricity."
+D_FD_GUARD_2,Может есть другой путь?,Maybe there is another way?
+D_FD_GUARD_3,"Меня оштрафуют, если я вас всех вот так выпущу. Честно, простите.","I will be fined if I release you all like that. Sorry, sorry."
+D_FD_GUARD_4,Электричества все ещё нет...,There is still no electricity ...
+D_FD_PASSAGE_1,Я лучше подожду...,I'd rather wait ...
+PASSAGE,Проход,Passage
+D_FD_LIFEGUARDS_1,У выхода стояло множество машин спасателей. ,At the exit there were many rescue vehicles.
+D_FD_LIFEGUARDS_2,"Пожалуйста, расходитесь по домам.",Please go home.
+D_FD_LIFEGUARDS_3,Существует вероятность еще одного взрыва.,There is the possibility of another explosion.
+FD_CHAT_1,Все целы?,Is everyone safe?
+FD_CHAT_2,Вроде да,Like yes
+FD_CHAT_3,А что с тем преподавателем?,And what about that teacher?
+FD_CHAT_4,Преподавателем?,The teacher?
+FD_CHAT_5,"Да, никто не знает, где ваш преподаватель матанализа","Yes, no one knows where your mathematics teacher is"
+FD_CHAT_6,Хотя рано делать выводы,Although it’s too early to draw conclusions
+FD_CHAT_7,Спасатели пока ничего не говорят,Lifeguards are not saying anything yet
+D_FD_REQUEST_1,"Группа #!@%$, пожалуйста, подойдите к преподавателю матанализа на первом этаже.","Group #!@%$, please go to the teacher of the calculus on the ground floor."
+D_FD_REQUEST_2,"Да, хорошо.",Yes OK.
+D_FD_TEACHER_1,"Здравствуйте, меня зовут Андрей, я ваш преподаватель матанализа.","Hello, my name is Andrew, I'm your teacher of calculus."
+D_FD_TEACHER_2,"Уже завтра будет первая пара, не забудьте принести большую тетрадь для графиков.","Tomorrow will be the first lesson, do not forget to bring a large notebook for graphs."
+D_FD_TEACHER_3,"И остальным передайте, хорошо?","And tell the others, will you?"
+D_FD_TEACHER_4,"Хорошо, мы передадим.","All right, we'll pass it on."
+D_FD_LESSON_1,"О, хорошая работа.","Oh, good job."
+D_FD_LESSON_2,А домашнюю работу получилось сделать?,Did you manage to do your homework?
+D_FD_LESSON_3,"Да, вот она.","Yes, here it is."
+D_FD_LESSON_4,…,…
+D_FD_LESSON_5,Молодец. Все бы так работали.,Well done. If only everyone worked like that ...
+D_FD_LESSON_6,Мне просто нравится ваш предмет.,I just like your subject.
+D_FD_EVENING_0,Пора идти домой…,Time to go home…
+D_FD_EVENING_1,"О, я же говорил, что мы ещё встретимся.","Oh, I told you we'd meet again."
+D_FD_EVENING_2,"Ну, как твои дела с учёбой?","So, how are you doing with your studies?"
+D_FD_EVENING_3,"Довольно хорошо, особенно мне нравятся пары матанализа.","Pretty good, I especially like the calculus."
+D_FD_EVENING_4,Хороший преподаватель нам попался.,We got a good teacher.
+D_FD_EVENING_5,А как ваши дела?,How are you doing?
+D_FD_EVENING_6,"Да вот, сижу, пою. Всё как обычно.",I just sit and sing. Everything is as usual.
+D_FD_EVENING_7,Не поможешь донести вещи до остановки? Это недалеко.,Can you help me get my stuff to the bus stop? It's not far.
+D_FD_EVENING_8,Хорошо.,OK.
+SEPTEMBER11,11 сентября,September 11
+D_FD_BLACKOUT_1,"Подождите, я проверю, что случилось","Wait, I'll check what happened"
+D_FD_CITY_1,Какой же сегодня хороший вечер.,What a nice evening.
+D_FD_CITY_2,Это точно.,That's true.
+D_FD_CITY_3,Спасибо тебе за помощь.,Thank you for your help.
+D_FD_CITY_4,Да не за что.,You're welcome.
+D_FD_CITY_5,Да не за что…,You're welcome…
+D_FD_MORNING_1,"Тогда ещё никто не мог представить, что нас ждёт.",Nobody could imagine what awaits us.

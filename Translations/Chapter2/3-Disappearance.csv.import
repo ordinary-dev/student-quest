@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://Translations/Chapter2/3-Disappearance.ru.translation", "res://Translations/Chapter2/3-Disappearance.en.translation" ]
+
+source_file="res://Translations/Chapter2/3-Disappearance.csv"
+dest_files=[ "res://Translations/Chapter2/3-Disappearance.ru.translation", "res://Translations/Chapter2/3-Disappearance.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

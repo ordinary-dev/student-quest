@@ -1,5 +1,5 @@
 {
-	"0":{"name":"MAIN_CHARACTER", "text":"D_FR_SINGER_1", "next":"1"},
-	"1":{"name":"MR_SINGER",      "text":"D_FR_SINGER_2", "next":"2"},
-	"2":{"name":"MR_SINGER",      "text":"D_FR_SINGER_3"}
+	"0":{"name":"MAIN_CHARACTER", "text":"D_FNL_SINGER_1", "next":"1"},
+	"1":{"name":"MR_SINGER",      "text":"D_FNL_SINGER_2", "next":"2"},
+	"2":{"name":"MR_SINGER",      "text":"D_FNL_SINGER_3"}
 }

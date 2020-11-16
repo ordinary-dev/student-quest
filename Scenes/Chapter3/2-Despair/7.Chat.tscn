@@ -11,7 +11,7 @@ __meta__ = {
 [node name="ChatTemplate" parent="." instance=ExtResource( 1 )]
 title = "SECRET_SOCIETY"
 next_scene_path = "res://Scenes/Chapter3/2-Despair/8.Bed.tscn"
-messages = [ "DSP_CHAT_1", "DSP_CHAT_2", "DSP_CHAT_3" ]
+messages = [ "DPR_CHAT_1", "DPR_CHAT_2", "DPR_CHAT_3" ]
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

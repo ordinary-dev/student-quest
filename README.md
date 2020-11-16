@@ -11,6 +11,8 @@ Go to [itch.io](https://pixeltrain.itch.io/student-quest) and download latest ve
 There are two branches right now: `master` and `dev`. It is obvious that all the latest changes are made to the `dev` branch, and then, when it comes time to release a new version, the game is checked and the code is transferred to the `master` branch. On its basis, official versions of the game are created.
 ## API used in the game
 Check out the wiki, there should be enough material. And if there is no necessary information, then write to us in any way.
+## Translation.
+The game's native language is Russian. We will be happy if you can help us translate the game into your language. All the files you need for translation are located in the `Translations` directory.
 ## License:
 We use GPL v3 for all of our code, but some music and sprites does not belong to us. We use some music and sprites under `CC 0` and `CC BY 3.0` license.
 ## Contacts and links:

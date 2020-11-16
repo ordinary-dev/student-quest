@@ -1,0 +1,89 @@
+id,ru,en
+D_HP_FIELD_1,Я не помню это место.,I don't remember this place.
+D_HP_STREET_1,Привет.,Hi.
+D_HP_STREET_2,Может сегодня еще раз проверить подвал?,Maybe check the basement again today?
+D_HP_STREET_3,"Не думаю, что это поможет.",I don't think it will help.
+D_HP_STREET_4,Я всё равно пойду до конца.,I'll go all the way to the end.
+D_HP_STREET_5,"Надеюсь, что ты передумаешь.",Hope you change your mind.
+D_HP_STREET_6,Я буду ждать в 4 часа на 3 этаже.,I'll be waiting at 4 o'clock on the 3rd floor.
+D_HP_STREET_7,"Приходи, если можешь.",Come if you can.
+D_HP_LETS_GO,Пойдём.,Let’s go.
+D_HP_NIGHT_1,"Мы дождались ночи, а затем спустились в подвал.",We waited until nightfall and then went down to the basement.
+D_HP_STEPS_1,"Эй, смотри!",Hey look!
+TALK,Поговорить,Talk
+D_HP_BASEMENT_1,Этот компьютер работает!,This computer works!
+D_HP_BASEMENT_2,И что там?,And what's there?
+D_HP_BASEMENT_3,"Не могу пока что понять, всё очень странно.","I can't understand yet, everything is very strange."
+D_HP_BASEMENT_4,"Но я скопирую себе всё, что смогу.",But I'll copy everything I can.
+D_HP_BASEMENT_5,"Можешь подождать или идти, вроде тут действительно больше ничего нет.","You can wait or go, like there really is nothing else."
+HP_MESSAGE,"Быстрее уходи с пары, буду ждать у остановки. Это важно.",Hurry up and leave the class. I'll be waiting at the bus stop. It is important.
+TRY_AGAIN,Попробуй ещё раз,Try again
+D_HP_RIVER_1,Что произошло?,What happened?
+D_HP_RIVER_2,Я смог открыть некоторые файлы с того компьютера.,I was able to open some files from that computer.
+D_HP_RIVER_3,"Судя по всему, там что-то очень важное.","Apparently, there is something very important there."
+D_HP_RIVER_4,"Но ноутбук вдруг выключился, а через окно я увидел полицию.","But the laptop suddenly turned off, and I saw the police through the window."
+D_HP_RIVER_5,Тогда я и написал тебе.,That's when I wrote to you.
+D_HP_RIVER_6,А откуда взялась полиция? Они искали тебя?,Where did the police come from? Were they looking for me?
+D_HP_RIVER_7,"Я не знаю, но лучше не попадаться им, пока не разберёмся.","I don't know, but it's best not to get caught until we figure it out."
+D_HP_RIVER_8,…,…
+D_HP_RIVER_9,Что?,What?
+D_HP_RIVER_10,Слышишь шаги? Кто-то идёт.,Do you hear footsteps? Someone is coming.
+D_HP_RIVER_11,Бежим!,Run!
+D_HP_ML_1,Мы разделились и весь день скрывались от полиции.,We split up and hid from the police all day.
+D_HP_ML_2,"Ближе к вечеру я пошёл туда, где мы договорились встретиться.","In the late afternoon, I went to the place where we had agreed to meet."
+D_HP_MACHINE_1,Подожди!,Wait!
+D_HP_MACHINE_2,Не иди туда!,Don't go there!
+D_HP_MACHINE_3,"Мы все ещё не знаем, что находится по ту сторону машины.",We still don't know what's on the other side of the machine.
+D_HP_MACHINE_4,И ещё ничто не возвращалось оттуда.,And nothing ever came back.
+D_HP_MACHINE_5,"Я не желаю тебе зла, честно.","I don't want to hurt you, honestly."
+D_HP_MACHINE_6,Но я не позволю тебе пройти дальше.,But I won't let you go any further.
+D_HP_MACHINE_7,Ну уж нет.,No way.
+D_HP_MACHINE_8,Мы слишком долго шли к этому моменту.,We've taken too long to get to this point.
+D_HP_MACHINE_9,"И все мы знаем, что за этим барьером скрыто нечто большее.",And we all know that there is more behind this barrier.
+D_HP_MACHINE_10,"Я столько раз замечал, как мир внезапно возвращался в прошлое.",I have noticed so many times how the world suddenly returned to the past.
+D_HP_MACHINE_11,"Это повторялось сотни раз, а помнил всё лишь я. ","This was repeated hundreds of times, and only I remembered everything."
+D_HP_MACHINE_12,Поэтому у нас нет пути назад.,"Therefore, we have no way back."
+D_HP_MACHINE_13,Беги! Я выиграю немного времени!,Run! I'll buy some time!
+LOOK,Посмотреть,Look
+D_HP_GAME_1,Это всё…,It's all…
+D_HP_GAME_2,… лишь игра.,… just a game.
+DASHBOARD,Панель мониторинга,Dashboard
+CHARACTER_ALEX,Персонаж: Алекс,Character: Alex
+STATUS_NPC,Статус: НПС,Status: NPC
+ACTIVE_YES,Активен: да,Active: yes
+NUMEROUS_ERRORS,! Многочисленные ошибки !,! Numerous errors !
+D_HP_SIM_1,Все эти дни лишь симуляция.,All these days are just a simulation.
+D_HP_SIM_2,Как и я.,As I.
+D_HP_SIM_3,"Но, судя по всему, был такой момент, когда правила игры перестали действовать на меня.","But, apparently, there was a moment when the rules of the game ceased to apply to me."
+D_HP_FIX_1,И сейчас у меня есть сила всё исправить.,And now I have the power to fix everything.
+D_HP_FIX_2,Но нужно выбрать правильный способ.,But I need to choose the right way.
+CONTROL_PANEL,Панель управления,Control Panel
+EDIT_THE_WORLD,Редактировать мир,Edit the world
+DELETE_ALL_DATA,Удалить все данные,Delete all data
+D_HP_DEL_1,Решено. Я попробую ещё раз.,I decided. I'll try again.
+D_HP_DEL_2,У меня получится.,I can do it.
+D_HP_DEL_3,Я ведь уже смог изменить игру.,I was already able to change the game.
+D_HP_DEL_4,Теперь я не отступлю.,Now I won't back down.
+D_HP_EDIT_1,Изменить мир?,Change the world?
+D_HP_EDIT_2,Здесь не так уж и много возможностей.,There are not many possibilities here.
+D_HP_EDIT_3,"Но выход есть, я думаю.","But there is a way out, I think."
+D_HP_EDIT_4,Я могу редактировать персонажей.,I can edit characters.
+D_HP_EDIT_5,"Ладно, я готов.","Okay, I'm ready."
+D_HP_EDIT_6,…,…
+D_HP_EDIT_7,Прости.,Sorry.
+GO_AWAY,Уйти,Go away
+D_HP_ROOF_1,"Говорят, что с крыши географического факультета открывается хороший вид.",They say that from the roof of the Faculty of Geography there is a good view.
+D_HP_ROOF_2,Надо бы посмотреть…,I'd like to see it…
+ROOF,Крыша,Roof
+D_HP_ROOF_3,Привет!,Hi!
+D_HP_ROOF_4,Привет… Мы знакомы?,Hi… Do we know each other?
+D_HP_ROOF_5,Не думаю.,I don't think.
+D_HP_ROOF_6,Я Лиза.,I'm Lisa.
+D_HP_ROOF_7,А я Алекс.,I'm Alex.
+D_HP_ROOF_8,Приятно познакомиться.,Nice to meet you.
+D_HP_ROOF_9,Ты же тоже на первом курсе?,"You're in your first year, too?"
+D_HP_ROOF_10,Да.,Yes.
+D_HP_ROOF_11,"Думаю, нас ждёт много интересного.",I think a lot of interesting things await us.
+D_HP_ROOF_12,Надеюсь.,Hopefully.
+THE_END,Конец,The end
+THANK_YOU,Спасибо!,Thank you!
