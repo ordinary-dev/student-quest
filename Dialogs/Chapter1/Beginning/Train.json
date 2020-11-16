@@ -1,6 +1,6 @@
 {
-    "0": {"name":"MAIN_CHARACTER", "text":"D_BEGINNING_TRAIN_1", "next":"1"},
-    "1": {"name":"GIRLFRIEND", "text":"D_BEGINNING_TRAIN_2", "next":"2"},
-    "2": {"name":"MAIN_CHARACTER", "text":"D_BEGINNING_TRAIN_3", "next":"3"},
-    "3": {"name":"GIRLFRIEND", "text":"D_BEGINNING_TRAIN_4"}
+    "0": {"name":"MAIN_CHARACTER", "text":"D_BNG_TRAIN_1", "next":"1"},
+    "1": {"name":"GIRLFRIEND",     "text":"D_BNG_TRAIN_2", "next":"2"},
+    "2": {"name":"MAIN_CHARACTER", "text":"D_BNG_TRAIN_3", "next":"3"},
+    "3": {"name":"GIRLFRIEND",     "text":"D_BNG_TRAIN_4"}
 }

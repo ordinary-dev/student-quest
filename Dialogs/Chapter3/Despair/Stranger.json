@@ -1,7 +1,7 @@
 {
-    "0":{"name":"UNKNOWN_PERSON", "text":"D_DSP_STRANGER_1", "next":"1"},
-    "1":{"name":"NEO",            "text":"D_DSP_STRANGER_2", "next":"2"},
-    "2":{"name":"UNKNOWN_PERSON", "text":"D_DSP_STRANGER_3", "next":"3"},
-    "3":{"name":"UNKNOWN_PERSON", "text":"D_DSP_STRANGER_3", "next":"4"},
-    "4":{"name":"NEO",            "text":"D_DSP_STRANGER_4"}
+    "0":{"name":"UNKNOWN_PERSON", "text":"D_DPR_STRANGER_1", "next":"1"},
+    "1":{"name":"NEO",            "text":"D_DPR_STRANGER_2", "next":"2"},
+    "2":{"name":"UNKNOWN_PERSON", "text":"D_DPR_STRANGER_3", "next":"3"},
+    "3":{"name":"UNKNOWN_PERSON", "text":"D_DPR_STRANGER_3", "next":"4"},
+    "4":{"name":"NEO",            "text":"D_DPR_STRANGER_4"}
 } 

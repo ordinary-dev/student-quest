@@ -1,8 +1,8 @@
 {
     "0":{"name":"MAIN_CHARACTER", "text":"D_DSP_COMMANDANT_1", "next":"1"},
     "1":{"name":"MAIN_CHARACTER", "text":"D_DSP_COMMANDANT_2", "next":"2"},
-    "2":{"name":"COMMANDANT", "text":"D_DSP_COMMANDANT_3", "next":"3"},
+    "2":{"name":"COMMANDANT",     "text":"D_DSP_COMMANDANT_3", "next":"3"},
     "3":{"name":"MAIN_CHARACTER", "text":"D_DSP_COMMANDANT_4", "next":"4"},
-    "4":{"name":"COMMANDANT", "text":"D_DSP_COMMANDANT_5", "next":"5"},
+    "4":{"name":"COMMANDANT",     "text":"D_DSP_COMMANDANT_5", "next":"5"},
     "5":{"name":"MAIN_CHARACTER", "text":"D_DSP_COMMANDANT_6"},
 } 

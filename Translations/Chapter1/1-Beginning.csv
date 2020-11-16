@@ -1,18 +1,18 @@
 id,ru,en
 JUNE_28,28 июня,June 28
 GRADUATION,Выпускной,Graduation
-D_BEGINNING_NIGHT_1,Удачи!,Good luck!
-D_BEGINNING_NIGHT_2,Тебе тоже.,You too.
+D_BNG_NIGHT_1,Удачи!,Good luck!
+D_BNG_NIGHT_2,Тебе тоже.,You too.
 JUNE_29,29 июня,June 29
 EARLY_MORNING,Раннее утро,Early morning
-D_BEGINNING_TRAIN_1,"Эх, жаль, что всё закончилось",
-D_BEGINNING_TRAIN_2,"Да ладно, нас ещё столько всего ждёт впереди","Come on, there's so much more to come"
-D_BEGINNING_TRAIN_3,…,…
-D_BEGINNING_TRAIN_4,"Смотри, мы уже скоро приедем!","Look, we'll be there soon!"
-D_BEGINNING_RECTOR_1,Мехмат?,Faculty of Mathematics?
-D_BEGINNING_RECTOR_2,Да,Yes
-D_BEGINNING_RECTOR_3,"… ладно, с документами все хорошо. Вы же из другого города?","… okay, everything is fine with the documents. Are you from another city?"
-D_BEGINNING_RECTOR_4,Верно,Right
-D_BEGINNING_RECTOR_5,"Тогда зайдите еще в 225 кабинет, вам там помогут","Then go to cabinet 225, they will help you there"
-D_BEGINNING_GUIDE_1,"Привет, я тут помогаю с заселением.","Hi, I'm here to help with the settlement."
-D_BEGINNING_GUIDE_2,Давай найдем тебе комнату.,Let's find you a room.
+D_BNG_TRAIN_1,"Эх, жаль, что всё закончилось",
+D_BNG_TRAIN_2,"Да ладно, нас ещё столько всего ждёт впереди","Come on, there's so much more to come"
+D_BNG_TRAIN_3,…,…
+D_BNG_TRAIN_4,"Смотри, мы уже скоро приедем!","Look, we'll be there soon!"
+D_BNG_RECTOR_1,Мехмат?,Faculty of Mathematics?
+D_BNG_RECTOR_2,Да,Yes
+D_BNG_RECTOR_3,"… ладно, с документами все хорошо. Вы же из другого города?","… okay, everything is fine with the documents. Are you from another city?"
+D_BNG_RECTOR_4,Верно,Right
+D_BNG_RECTOR_5,"Тогда зайдите еще в 225 кабинет, вам там помогут","Then go to cabinet 225, they will help you there"
+D_BNG_GUIDE_1,"Привет, я тут помогаю с заселением.","Hi, I'm here to help with the settlement."
+D_BNG_GUIDE_2,Давай найдем тебе комнату.,Let's find you a room.
