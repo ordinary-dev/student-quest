@@ -4,7 +4,6 @@
 [ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Scenes/Menu/NewGame.gd" type="Script" id=3]
 
-
 [node name="NewGame" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -13,7 +12,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 menu = "res://Scenes/Menu/Menu.tscn"
-next_scene = "res://Scenes/Chapter1/1-Beginning/00.Date.tscn"
+next_scene = "res://Scenes/Chapter1/1-Beginning/01.Date.tscn"
 
 [node name="Noise" type="Node2D" parent="."]
 
