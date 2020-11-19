@@ -66,7 +66,7 @@ margin_right = 800.0
 margin_bottom = 580.0
 texture = ExtResource( 3 )
 stage_name = "BEGINNING"
-path_to_scene = "res://Scenes/Chapter1/1-Beginning/00.Date.tscn"
+path_to_scene = "res://Scenes/Chapter1/1-Beginning/01.Date.tscn"
 
 [node name="FirstDays" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
 anchor_right = 0.0

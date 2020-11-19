@@ -12,4 +12,4 @@ __meta__ = {
 [node name="Text" parent="." instance=ExtResource( 1 )]
 text_1 = "JUNE_28"
 text_2 = "GRADUATION"
-next_scene = "res://Scenes/Chapter1/1-Beginning/01.Steps.tscn"
+next_scene = "res://Scenes/Chapter1/1-Beginning/02.Fireworks.tscn"
