@@ -1,6 +1,6 @@
-{
-	"0":{"name":"MR_SINGER",      "text":"D_FD_CITY_1", "next":"1"},
-	"1":{"name":"MAIN_CHARACTER", "text":"D_FD_CITY_2", "next":"2"},
-	"2":{"name":"MR_SINGER",      "text":"D_FD_CITY_3", "next":"3"},
-	"3":{"name":"MAIN_CHARACTER", "text":"D_FD_CITY_4"}
-}
+[
+	{"name": "MR_SINGER",      "text": "D_FD_CITY_1"},
+	{"name": "MAIN_CHARACTER", "text": "D_FD_CITY_2"},
+	{"name": "MR_SINGER",      "text": "D_FD_CITY_3"},
+	{"name": "MAIN_CHARACTER", "text": "D_FD_CITY_4"}
+]

@@ -1,16 +1,15 @@
-{
-    "0": {"name":"MAIN_CHARACTER", "text":"D_DSP_TALK_2",  "next":"1"},
-    "1": {"name":"GARDENER",       "text":"D_DSP_TALK_3",  "next":"2"},
-    "2": {"name":"MAIN_CHARACTER", "text":"D_DSP_TALK_4",  "next":"3"},
-    "3": {"name":"GARDENER",       "text":"D_DSP_TALK_5",  "next":"4"},
-    "4": {"name":"MAIN_CHARACTER", "text":"D_DSP_TALK_6",  "next":"5"},
-    "5": {"name":"GARDENER",       "text":"D_DSP_TALK_7",  "next":"6"},
-    "6": {"name":"MAIN_CHARACTER", "text":"D_DSP_TALK_8",  "next":"7"},
-    "7": {"name":"GARDENER",       "text":"D_DSP_TALK_9",  "next":"8"},
-    "8": {"name":"MAIN_CHARACTER", "text":"D_DSP_TALK_10", "next":"9"},
-    "9": {"name":"GARDENER",       "text":"D_DSP_TALK_11", "next":"10"},
-    "10":{"name":"MAIN_CHARACTER", "text":"D_DSP_TALK_12", "next":"11"},
-    "11":{"name":"GARDENER",       "text":"D_DSP_TALK_13", "next":"12"},
-    "12":{"name":"MAIN_CHARACTER", "text":"D_DSP_TALK_14"}
-} 
- 
+[
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_TALK_2" },
+    {"name": "GARDENER",       "text": "D_DSP_TALK_3" },
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_TALK_4" },
+    {"name": "GARDENER",       "text": "D_DSP_TALK_5" },
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_TALK_6" },
+    {"name": "GARDENER",       "text": "D_DSP_TALK_7" },
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_TALK_8" },
+    {"name": "GARDENER",       "text": "D_DSP_TALK_9" },
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_TALK_10"},
+    {"name": "GARDENER",       "text": "D_DSP_TALK_11"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_TALK_12"},
+    {"name": "GARDENER",       "text": "D_DSP_TALK_13"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_TALK_14"}
+]

@@ -1,7 +1,6 @@
-{
-    "0":{"name":"NEO",            "text":"D_SS_RIVER_7", "next":"1"},
-    "1":{"name":"NEO",            "text":"D_SS_RIVER_8", "next":"2"},
-    "2":{"name":"MAIN_CHARACTER", "text":"D_SS_RIVER_9", "next":"3"},
-    "3":{"name":"NEO",            "text":"D_SS_RIVER_10"}
-}
- 
+[
+    {"name": "NEO",            "text": "D_SS_RIVER_7" },
+    {"name": "NEO",            "text": "D_SS_RIVER_8" },
+    {"name": "MAIN_CHARACTER", "text": "D_SS_RIVER_9" },
+    {"name": "NEO",            "text": "D_SS_RIVER_10"}
+]

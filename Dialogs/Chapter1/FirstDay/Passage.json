@@ -1,4 +1,3 @@
-{
-    "0":{"name":"MAIN_CHARACTER", "text":"D_FD_PASSAGE_1"}
-}
- 
+[
+    {"name": "MAIN_CHARACTER", "text": "D_FD_PASSAGE_1"}
+]

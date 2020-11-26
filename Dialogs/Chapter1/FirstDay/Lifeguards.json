@@ -1,5 +1,5 @@
-{
-    "0": {"name":"MAIN_CHARACTER", "text":"D_FD_LIFEGUARDS_1", "next":"1"},
-    "1": {"name":"LIFEGUARDS", "text":"D_FD_LIFEGUARDS_2", "next":"2"},
-    "2": {"name":"LIFEGUARDS", "text":"D_FD_LIFEGUARDS_3"}
-} 
+[
+    {"name": "MAIN_CHARACTER", "text": "D_FD_LIFEGUARDS_1"},
+    {"name": "LIFEGUARDS",     "text": "D_FD_LIFEGUARDS_2"},
+    {"name": "LIFEGUARDS",     "text": "D_FD_LIFEGUARDS_3"}
+]

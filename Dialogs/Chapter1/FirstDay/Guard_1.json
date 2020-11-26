@@ -1,4 +1,4 @@
-{
-    "0":{"name":"SECURITY_GUARD", "text":"D_FD_GUARD_1", "next":"1"},
-    "1":{"name":"SECURITY_GUARD", "text":"D_FD_GUARD_2"}
-}
+[
+    {"name": "SECURITY_GUARD", "text": "D_FD_GUARD_1"},
+    {"name": "SECURITY_GUARD", "text": "D_FD_GUARD_2"}
+]

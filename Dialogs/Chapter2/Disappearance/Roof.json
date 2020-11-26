@@ -1,14 +1,14 @@
-{
-    "0": {"name":"MAIN_CHARACTER", "text":"D_DSP_ROOF_1",  "next":"1"},
-    "1": {"name":"MR_SINGER",      "text":"D_DSP_ROOF_2",  "next":"2"},
-    "2": {"name":"MAIN_CHARACTER", "text":"D_DSP_ROOF_3",  "next":"3"},
-    "3": {"name":"MR_SINGER",      "text":"D_DSP_ROOF_4",  "next":"4"},
-    "4": {"name":"MAIN_CHARACTER", "text":"D_DSP_ROOF_5",  "next":"5"},
-    "5": {"name":"MR_SINGER",      "text":"D_DSP_ROOF_6",  "next":"6"},
-    "6": {"name":"MAIN_CHARACTER", "text":"D_DSP_ROOF_7",  "next":"7"},
-    "7": {"name":"MR_SINGER",      "text":"D_DSP_ROOF_8",  "next":"8"},
-    "8": {"name":"MAIN_CHARACTER", "text":"D_DSP_ROOF_9",  "next":"9"},
-    "9": {"name":"MR_SINGER",      "text":"D_DSP_ROOF_10", "next":"10"},
-    "10":{"name":"MR_SINGER",      "text":"D_DSP_ROOF_11", "next":"11"},
-    "11":{"name":"MR_SINGER",      "text":"D_DSP_ROOF_12"}
-} 
+[
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_ROOF_1" },
+    {"name": "MR_SINGER",      "text": "D_DSP_ROOF_2" },
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_ROOF_3" },
+    {"name": "MR_SINGER",      "text": "D_DSP_ROOF_4" },
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_ROOF_5" },
+    {"name": "MR_SINGER",      "text": "D_DSP_ROOF_6" },
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_ROOF_7" },
+    {"name": "MR_SINGER",      "text": "D_DSP_ROOF_8" },
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_ROOF_9" },
+    {"name": "MR_SINGER",      "text": "D_DSP_ROOF_10"},
+    {"name": "MR_SINGER",      "text": "D_DSP_ROOF_11"},
+    {"name": "MR_SINGER",      "text": "D_DSP_ROOF_12"}
+]

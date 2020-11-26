@@ -7,8 +7,8 @@ extends Node
 
 var is_shown := false
 var _dialog_scene := load("res://Scenes/Templates/Dialog.tscn")
-var _content: Dictionary
-var _key: String
+var _content: Array
+var _index: int
 # Call function after the dialog
 var _call_fnc: bool
 var _glob_obj: String
@@ -63,7 +63,7 @@ func show_dialog(path: String, obj := "", fnc := "", argv := "") -> void:
 			fl.close()
 			# Save values
 			_content = content
-			_key = "0"
+			_index = 0
 			# Activate button processing
 			set_process(true)
 			# Show first phrase
@@ -99,7 +99,7 @@ func _hide_dialog():
 
 func _process(_delta):
 	if Input.is_action_just_pressed("dialog_next"):
-		if _key != "-1":
+		if _index != -1:
 			_show_next()
 		else:
 			_hide_dialog()
@@ -109,20 +109,20 @@ func _show_next() -> void:
 	# Show next phrase
 	var dial = UI.get_node("dialog")
 	dial.play_dialog(
-		_content[_key]["name"],
-		tr(_content[_key]["text"])
+		_content[_index]["name"],
+		_content[_index]["text"]
 	)
 	# Connect signal and get id of the next phrase
 	var btn = UI.get_node("dialog/" + dial.next_button)
-	if _content[_key].has("next"):
+	if _index < len(_content) - 1:
 		btn.disconnect("pressed", self, "show_next")
 		btn.connect("pressed", self, "show_next")
-		_key = _content[_key]["next"]
+		_index += 1
 	# If this is the last phrase
 	else:
-		if _key != "0":
+		if _index != 0:
 			btn.disconnect("pressed", self, "show_next")
-		_key = "-1"
+		_index = -1
 		btn.connect("pressed", self, "hide_dialog")
 
 

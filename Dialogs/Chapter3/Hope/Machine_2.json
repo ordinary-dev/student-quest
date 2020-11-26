@@ -1,9 +1,9 @@
-{
-    "0":{"name":"MR_SINGER", "text":"D_HP_MACHINE_7", "next":"1"},
-    "1":{"name":"MR_SINGER", "text":"D_HP_MACHINE_8", "next":"2"},
-    "2":{"name":"MR_SINGER", "text":"D_HP_MACHINE_9", "next":"3"},
-    "3":{"name":"MR_SINGER", "text":"D_HP_MACHINE_10", "next":"4"},
-    "4":{"name":"MR_SINGER", "text":"D_HP_MACHINE_11", "next":"5"},
-    "5":{"name":"MR_SINGER", "text":"D_HP_MACHINE_12", "next":"6"},
-    "6":{"name":"MR_SINGER", "text":"D_HP_MACHINE_13"}
-}
+[
+    {"name": "MR_SINGER", "text": "D_HP_MACHINE_7" },
+    {"name": "MR_SINGER", "text": "D_HP_MACHINE_8" },
+    {"name": "MR_SINGER", "text": "D_HP_MACHINE_9" },
+    {"name": "MR_SINGER", "text": "D_HP_MACHINE_10"},
+    {"name": "MR_SINGER", "text": "D_HP_MACHINE_11"},
+    {"name": "MR_SINGER", "text": "D_HP_MACHINE_12"},
+    {"name": "MR_SINGER", "text": "D_HP_MACHINE_13"}
+]

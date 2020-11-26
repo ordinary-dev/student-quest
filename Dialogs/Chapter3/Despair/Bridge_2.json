@@ -1,7 +1,7 @@
-{
-    "0":{"name":"NEO",            "text":"D_DPR_BRIDGE_5", "next":"1"},
-    "1":{"name":"MAIN_CHARACTER", "text":"D_DPR_BRIDGE_6", "next":"2"},
-    "2":{"name":"MAIN_CHARACTER", "text":"D_DPR_BRIDGE_7", "next":"3"},
-    "3":{"name":"MR_SINGER",      "text":"D_DPR_BRIDGE_8", "next":"4"},
-    "4":{"name":"NEO",            "text":"D_DPR_BRIDGE_9"}
-} 
+[
+    {"name": "NEO",            "text": "D_DPR_BRIDGE_5"},
+    {"name": "MAIN_CHARACTER", "text": "D_DPR_BRIDGE_6"},
+    {"name": "MAIN_CHARACTER", "text": "D_DPR_BRIDGE_7"},
+    {"name": "MR_SINGER",      "text": "D_DPR_BRIDGE_8"},
+    {"name": "NEO",            "text": "D_DPR_BRIDGE_9"}
+]
