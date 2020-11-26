@@ -1,7 +1,15 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/Triggers/DialogTrigger.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/triggers/advanced/dialog_trigger.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Triggers/TriggerBase.tscn" type="PackedScene" id=2]
+
+
+
+
+
+
+
+
 
 [node name="DialogTrigger" type="Area2D"]
 z_index = 6

@@ -1,4 +1,8 @@
-extends "res://Scripts/Triggers/SimpleTriggerBase.gd"
+extends "res://Scripts/triggers/simple/base.gd"
+
+# Shows dialog without confirmation
+# Copyright (c) 2020 PixelTrain
+# Licensed under the GPL-3 License
 
 export (String, FILE, "*.json") var dialog_path
 export (bool) var load_scene = false
@@ -10,7 +14,3 @@ func action() -> void:
 		DIALOG.show_dialog(dialog_path, "/root/SCENES", "load_scene", scene_path)
 	else:
 		DIALOG.show_dialog(dialog_path)
-
-
-func _ready() -> void:
-	action = funcref(self, "action")
