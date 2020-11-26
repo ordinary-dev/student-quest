@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Sprites/Fireworks/Sky.webp" type="Texture" id=1]
 [ext_resource path="res://Sprites/Fireworks/Grass2.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/General/PlayMusic.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/nodes/music_player.gd" type="Script" id=3]
 [ext_resource path="res://Audio/FX/Fireworks/explosion.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Fireworks/Firework.tres" type="Texture" id=6]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Sprites/Fireworks/Grass.png" type="Texture" id=8]
 [ext_resource path="res://Scripts/Scenes/Chapter1/1-Beginning/02.Fireworks.gd" type="Script" id=9]
 [ext_resource path="res://Audio/FX/Fireworks/fireworks.ogg" type="AudioStream" id=10]
+
+
 
 [node name="FireworksTemplate" type="Node2D"]
 script = ExtResource( 9 )

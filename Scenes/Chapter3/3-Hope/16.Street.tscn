@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Templates/Street2.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Triggers/SimpleLoadSceneTrigger.tscn" type="PackedScene" id=10]
+
+
 
 
 

@@ -1,12 +1,14 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Templates/WaterSprite.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Train/Bridge.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Chapter1/1-Beginning/Objects/Train.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Sprites/Train/Background/Water.png" type="Texture" id=5]
 [ext_resource path="res://Animations/Bridge.tres" type="Animation" id=6]
 [ext_resource path="res://Scripts/General/LoadSceneFunction.gd" type="Script" id=7]
+
+
 
 [node name="BridgeScene" type="Node2D"]
 script = ExtResource( 7 )

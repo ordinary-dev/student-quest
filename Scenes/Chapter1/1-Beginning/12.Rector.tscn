@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Templates/Characters/Rector.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Templates/Furniture/Bookcase1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Templates/Furniture/Table3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Templates/Furniture/Bookcase2.tscn" type="PackedScene" id=9]
@@ -15,7 +15,11 @@
 [ext_resource path="res://Scenes/Templates/Furniture/Chair1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Templates/Characters/Worker.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Sprites/Light/WindowLight.png" type="Texture" id=15]
-[ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/nodes/stop_the_music.gd" type="Script" id=16]
+
+
+
+
 
 [node name="RectorScene" type="Node2D"]
 script = ExtResource( 16 )

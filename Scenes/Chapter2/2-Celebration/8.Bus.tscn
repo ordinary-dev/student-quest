@@ -8,7 +8,9 @@
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Characters/Npc_2.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Bus/Bus.png" type="Texture" id=8]
-[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=9]
+
+
 
 
 

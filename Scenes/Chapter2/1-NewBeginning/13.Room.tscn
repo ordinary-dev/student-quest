@@ -1,9 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Templates/Room/Room.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Light/LightSmall.png" type="Texture" id=4]
+
+
 
 [node name="Room" type="Node2D"]
 

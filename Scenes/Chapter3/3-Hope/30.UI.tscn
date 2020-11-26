@@ -4,7 +4,9 @@
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Scripts/Scenes/Chapter3/3-Hope/30.Alex.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=5]
+
+
 
 [node name="UI" type="Node2D"]
 

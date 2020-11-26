@@ -9,7 +9,9 @@
 [ext_resource path="res://Audio/FX/Rain/rain-moderate-c.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Sprites/Cemetery/MainCharacter_Black.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Cemetery/Singer_Black.png" type="Texture" id=9]
-[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=10]
+
+
 
 [node name="Funeral" type="Node2D"]
 

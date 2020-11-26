@@ -4,7 +4,9 @@
 [ext_resource path="res://Scenes/Templates/Officer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Triggers/SimpleLoadSceneTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/General/AI_Config.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=5]
+
+
 
 
 

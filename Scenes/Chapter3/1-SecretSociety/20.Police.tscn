@@ -5,9 +5,15 @@
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Characters/Neo.png" type="Texture" id=4]
 [ext_resource path="res://Audio/FX/Rain/rain-moderate-c.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/nodes/stop_the_music.gd" type="Script" id=8]
+
+
+
+
+
+
 
 [node name="Police" type="Node2D"]
 

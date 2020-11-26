@@ -1,8 +1,10 @@
-# Copyright (c) 2020 PixelTrain
-# Licensed under the GPL-3 License
-
 extends Node
 class_name ChangeUI
+
+# Allows you to change the visibility 
+# of elements at the start of the scene
+# Copyright (c) 2020 PixelTrain
+# Licensed under the GPL-3 License
 
 export (bool) var show_pause_menu = false
 export (bool) var show_joystick = false
