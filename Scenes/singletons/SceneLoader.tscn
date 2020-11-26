@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/SceneLoader.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/signletons/scene_loader.gd" type="Script" id=1]
+
 
 [node name="SceneLoader" type="Tween"]
 script = ExtResource( 1 )

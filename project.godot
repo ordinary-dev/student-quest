@@ -63,14 +63,14 @@ config/icon="res://Sprites/Icons/logo.png"
 
 [autoload]
 
-GLOBAL="*res://Scripts/Global.gd"
-MUSIC="*res://Scenes/global/Music.tscn"
-FX="*res://Scenes/global/FX.tscn"
-DIALOG="*res://Scripts/Dialog.gd"
-SCENES="*res://Scenes/global/SceneLoader.tscn"
-UI="*res://Scenes/ui/UI.tscn"
-NOTIFY="*res://Scripts/Notify.gd"
-TEMP="*res://Scripts/Temp.gd"
+SETTINGS="*res://Scripts/signletons/settings.gd"
+MUSIC="*res://Scenes/singletons/Music.tscn"
+FX="*res://Scenes/singletons/FX.tscn"
+DIALOG="*res://Scripts/signletons/dialog.gd"
+SCENES="*res://Scenes/singletons/SceneLoader.tscn"
+UI="*res://Scenes/singletons/ui/UI.tscn"
+NOTIFY="*res://Scripts/signletons/notify.gd"
+STORAGE="*res://Scripts/signletons/storage.gd"
 
 [display]
 

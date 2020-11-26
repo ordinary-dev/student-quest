@@ -10,12 +10,11 @@ export (String, FILE, "*.tscn") var quit_scene_path
 
 # Return to menu
 func _return() -> void:
-	FX.btn_click()
-	# Hide scene
+	FX.play_btn_click()
 	visible = false
 
 
 # Quit the game
 func _quit() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	SCENES.load_scene(quit_scene_path)

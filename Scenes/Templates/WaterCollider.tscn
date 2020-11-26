@@ -5,13 +5,13 @@ script/source = "extends Node2D
 
 
 func _on_body_entered(_body):
-	if has_node(GLOBAL.player_path):
-		get_node(GLOBAL.player_path).enable_water()
+	if has_node(SETTINGS.player_path):
+		get_node(SETTINGS.player_path).enable_water()
 
 
 func _on_body_exited(_body):
-	if has_node(GLOBAL.player_path):
-		get_node(GLOBAL.player_path).disable_water()
+	if has_node(SETTINGS.player_path):
+		get_node(SETTINGS.player_path).disable_water()
 "
 
 [sub_resource type="RectangleShape2D" id=2]

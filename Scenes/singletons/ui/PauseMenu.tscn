@@ -42,7 +42,7 @@ func switch():
 
 func _on_Pause_pressed() -> void:
 	enabled = true
-	FX.btn_click()
+	FX.play_btn_click()
 	
 	# Show pause menu
 	main_container.visible = true
@@ -64,7 +64,7 @@ func _on_Pause_pressed() -> void:
 func _return_to_game(play_sound : bool = true) -> void:
 	enabled = false
 	if play_sound:
-		FX.btn_click()
+		FX.play_btn_click()
 	
 	# Hide pause menu
 	main_container.visible = false
@@ -85,7 +85,7 @@ func _return_to_game(play_sound : bool = true) -> void:
 
 
 func _to_menu() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	MUSIC.stop()
 	SCENES.load_scene(menu_scene)
 	yield(get_tree().create_timer(SCENES.time), \"timeout\")
@@ -100,14 +100,14 @@ func _quit_game() -> void:
 
 # Show or hide settings
 func _settings() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	settings.visible = !settings.visible
 	load_menu.visible = false
 
 
 # Load
 func _load() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	settings.visible = false
 	if load_menu.visible:
 		load_menu.visible = false

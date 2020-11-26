@@ -15,7 +15,7 @@ const delay : float = 0.7
 
 
 func _ready() -> void:
-	if GLOBAL.first_run:
+	if SETTINGS.first_run:
 		# Running for the first time
 		# Cache translation
 		var message := tr(loading_text.text)

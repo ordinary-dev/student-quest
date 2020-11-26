@@ -8,6 +8,6 @@ extends Control
 
 func _ready():
 	# Save data
-	GLOBAL.write_settings()
+	SETTINGS.write_settings()
 	# Quit
 	get_tree().quit()

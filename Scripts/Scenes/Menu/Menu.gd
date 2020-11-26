@@ -21,14 +21,14 @@ var confirmation_scene
 
 # Create new game
 func _new_game() -> void:
-	FX.btn_click()
-	GLOBAL.write_settings()
+	FX.play_btn_click()
+	SETTINGS.write_settings()
 	SCENES.load_scene(new_game_scene)
 
 
 # Show saved games
 func _load_game() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	game_loading_scene.visible = !game_loading_scene.visible
 	settings_scene.visible = false
 	confirmation_scene.visible = false
@@ -36,7 +36,7 @@ func _load_game() -> void:
 
 # Show or hide settings
 func _settings() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	settings_scene.visible = !settings_scene.visible
 	game_loading_scene.visible = false
 	confirmation_scene.visible = false
@@ -44,7 +44,7 @@ func _settings() -> void:
 
 # Confirmation
 func _quit() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	confirmation_scene.visible = !confirmation_scene.visible
 	game_loading_scene.visible = false
 	settings_scene.visible = false

@@ -2,22 +2,20 @@
 
 [ext_resource path="res://Sprites/Street/BridgeHalf.png" type="Texture" id=1]
 
-
-
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D
 
 
 func _on_body_entered(body):
 	if \"Body\" in body.name:
-		if has_node(GLOBAL.player_path):
-			get_node(GLOBAL.player_path).water_protection = true
+		if has_node(SETTINGS.player_path):
+			get_node(SETTINGS.player_path).water_protection = true
 
 
 func _on_body_exited(body):
 	if \"Body\" in body.name:
-		if has_node(GLOBAL.player_path):
-			get_node(GLOBAL.player_path).water_protection = false
+		if has_node(SETTINGS.player_path):
+			get_node(SETTINGS.player_path).water_protection = false
 "
 
 [node name="Bridge-Template_0" type="Node2D"]

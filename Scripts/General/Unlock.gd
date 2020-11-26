@@ -10,7 +10,7 @@ export (int) var subchapter_id = 1
 
 
 func _ready() -> void:
-	if GLOBAL.progress < subchapter_id:
-		GLOBAL.progress = subchapter_id
-		GLOBAL.write_settings()
+	if SETTINGS.progress < subchapter_id:
+		SETTINGS.progress = subchapter_id
+		SETTINGS.write_settings()
 		NOTIFY.show("NEW_CHAPTER_UNLOCKED")

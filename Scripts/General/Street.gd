@@ -48,7 +48,7 @@ onready var fac_of_humanities = $Positions/Fac_Of_Humanities_Position2D
 
 
 func init() -> void:
-	var player = get_node(GLOBAL.player_path)
+	var player = get_node(STORAGE.get("player_path"))
 	match initial_position:
 		positions.HOSTEL:
 			player.position = hostel_pos.position
@@ -64,7 +64,7 @@ func init() -> void:
 
 
 func _ready() -> void:
-	var player = get_node(GLOBAL.player_path)
+	var player = get_node(STORAGE.get("player_path"))
 	
 	if player_tetxure == player_text.NEO:
 		player.sprite_sheet = player.sprites.NEO

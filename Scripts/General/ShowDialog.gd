@@ -28,8 +28,8 @@ func _ready() -> void:
 	if enable_delay:
 		yield(get_tree().create_timer(delay), "timeout")
 	if show_once:
-		if not TEMP.is_saved(uid):
-			TEMP.save(uid, true)
+		if not STORAGE.is_saved(uid):
+			STORAGE.save(uid, true)
 			if load_scene:
 				DIALOG.show_dialog(dialog_path, get_path(), "load_next_scene")
 			else:

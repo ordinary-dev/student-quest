@@ -241,7 +241,7 @@ func _save() -> void:
 		"player_pos_x": position.x,
 		"player_pos_y": position.y
 	}
-	TEMP.save(SCENES.last_scene_path, dict)
+	STORAGE.save(SCENES.last_scene_path, dict)
 
 
 func set_sprite(val) -> void:
@@ -253,10 +253,10 @@ func set_sprite(val) -> void:
 
 
 func _ready() -> void:
-	GLOBAL.player_path = get_path()
+	STORAGE.save("player_path", get_path())
 	if restore_position:
-		if TEMP.is_saved(SCENES.last_scene_path):
-			var pos = TEMP.get(SCENES.last_scene_path)
+		if STORAGE.is_saved(SCENES.last_scene_path):
+			var pos = STORAGE.get(SCENES.last_scene_path)
 			position.x = pos["player_pos_x"]
 			position.y = pos["player_pos_y"]
 			restored_position = true

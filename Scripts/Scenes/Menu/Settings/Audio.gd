@@ -26,24 +26,24 @@ func update_text(val : float, obj : Label) -> void:
 
 
 func change_music_vol(delta : int) -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	MUSIC.volume += delta
 	update_text(MUSIC.volume, music_text)
 
 
 func change_effect_vol(delta : int) -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	FX.volume += delta
 	update_text(FX.volume, effects_text)
 
 
 func reset_music_volume() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	MUSIC.volume = 0
 	update_text(0, music_text)
 
 
 func reset_effect_volume() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	FX.volume = 0
 	update_text(0, effects_text)

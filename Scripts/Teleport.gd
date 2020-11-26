@@ -40,7 +40,7 @@ func teleport(node : Position2D, fade = true) -> void:
 	if fade:
 		SCENES.fade_in()
 		yield(get_tree().create_timer(SCENES.time), "timeout")
-	get_node(GLOBAL.player_path).position = node.position
+	get_node(SETTINGS.player_path).position = node.position
 	if fade:
 		SCENES.fade_out()
 
@@ -77,7 +77,7 @@ func _ready():
 	if (not enable_security_guard):
 		security_guard.queue_free()
 	# Player direction
-	var player = get_node(GLOBAL.player_path)
+	var player = get_node(SETTINGS.player_path)
 	match player_direction:
 		directions.UP:
 			player.go_up()

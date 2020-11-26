@@ -16,4 +16,4 @@ func _ready() -> void:
 
 # Button click
 func _on_TabContainer_tab_changed(_tab):
-	FX.btn_click()
+	FX.play_btn_click()
