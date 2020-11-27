@@ -1,9 +1,8 @@
-# Settings script
+extends TabContainer
 
+# Settings script
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
-
-extends TabContainer
 
 
 # Change tabs name

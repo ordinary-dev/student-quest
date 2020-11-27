@@ -1,9 +1,8 @@
-# Exit confirmation script
+extends Control
 
+# The script for exit confirmation
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
-
-extends Control
 
 export (String, FILE, "*.tscn") var quit_scene_path
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scripts/Scenes/Menu/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Menu/LoadGameScene/Load.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/menu/menu.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Menu/Chapters/Load.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=4]
 [ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Menu/Settings/Settings.tscn" type="PackedScene" id=6]
@@ -39,10 +39,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 new_game_scene = "res://Scenes/Menu/NewGame.tscn"
-game_loading_scene_path = NodePath("Right/LoadMenu")
-settings_scene_path = NodePath("Right/Settings")
-confirmation_scene_path = NodePath("Right/Confirmation")
-new_game_btn = NodePath("Left/Column/NewGame")
 
 [node name="Left" type="MarginContainer" parent="."]
 margin_right = 960.0

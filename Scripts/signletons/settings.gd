@@ -8,8 +8,6 @@ extends Node
 
 # Path to config file
 const FILE_PATH := "user://config.json"
-# Used by Scripts/Scenes/Entry.gd
-var first_run := true
 # Variable for saving the number of open chapters
 var progress := 1
 
@@ -36,6 +34,10 @@ func _ready() -> void:
 	_read_settings()
 
 
+func is_file_exist() -> bool:
+	return File.new().file_exists(FILE_PATH)
+
+
 # Try to read settings file
 func _read_settings() -> void:
 	var fl := File.new()
@@ -46,7 +48,6 @@ func _read_settings() -> void:
 		var json_result = JSON.parse(fl.get_as_text())
 		if json_result.error == OK:
 			var content = json_result.result
-			first_run = false
 			_restore(content)
 		fl.close()
 	else:

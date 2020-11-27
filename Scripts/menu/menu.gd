@@ -1,32 +1,27 @@
-# Menu interface script
+extends Control
 
+# Menu interface script
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
 
-extends Control
-
 # Path to the scene with new game
 export (String, FILE, "*.tscn") var new_game_scene
-
-export (NodePath) var game_loading_scene_path
-export (NodePath) var settings_scene_path
-export (NodePath) var confirmation_scene_path
-
-export (NodePath) var new_game_btn
-
-var game_loading_scene
-var settings_scene
-var confirmation_scene
+# The button that gets the focus
+onready var new_game_btn := $Left/Column/NewGame
+# Menu sections
+onready var game_loading_scene := $Right/LoadMenu
+onready var settings_scene := $Right/Settings
+onready var confirmation_scene := $Right/Confirmation
 
 
-# Create new game
+# Start new game
 func _new_game() -> void:
 	FX.play_btn_click()
 	SETTINGS.write_settings()
 	SCENES.load_scene(new_game_scene)
 
 
-# Show saved games
+# Show the list of chapters
 func _load_game() -> void:
 	FX.play_btn_click()
 	game_loading_scene.visible = !game_loading_scene.visible
@@ -51,13 +46,9 @@ func _quit() -> void:
 
 
 func _ready() -> void:
-	# Get nodes
-	game_loading_scene = get_node(game_loading_scene_path)
-	settings_scene = get_node(settings_scene_path)
-	confirmation_scene = get_node(confirmation_scene_path)
 	# Disable scenes
 	game_loading_scene.visible = false
 	settings_scene.visible = false
 	confirmation_scene.visible = false
 	# Focus
-	get_node(new_game_btn).grab_focus()
+	new_game_btn.grab_focus()

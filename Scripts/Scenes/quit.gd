@@ -1,12 +1,11 @@
-# The script to quit the game
+extends Control
 
+# The script to quit the game
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
 
-extends Control
 
-
-func _ready():
+func _ready() -> void:
 	# Save data
 	SETTINGS.write_settings()
 	# Quit

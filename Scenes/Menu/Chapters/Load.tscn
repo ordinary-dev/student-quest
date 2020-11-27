@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Sprites/Screenshots/Chapter2/Disappearance.webp" type="Texture" id=1]
-[ext_resource path="res://Scenes/Menu/LoadGameScene/Stage.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Menu/Chapters/Chapter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Screenshots/Chapter1/Beginning.webp" type="Texture" id=3]
 [ext_resource path="res://Sprites/Screenshots/Chapter1/FirstDay.webp" type="Texture" id=4]
 [ext_resource path="res://Sprites/Screenshots/Chapter1/Celebration.webp" type="Texture" id=5]
@@ -11,7 +11,7 @@
 [ext_resource path="res://Sprites/Screenshots/Chapter3/Hope.webp" type="Texture" id=9]
 [ext_resource path="res://Sprites/Screenshots/Chapter3/SecretSociety.webp" type="Texture" id=11]
 [ext_resource path="res://Sprites/Screenshots/Chapter3/Despair.webp" type="Texture" id=13]
-[ext_resource path="res://Scripts/Scenes/Menu/Load.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/menu/chapters/load.gd" type="Script" id=17]
 
 [node name="LoadScene" type="ScrollContainer"]
 light_mask = 0
@@ -65,7 +65,7 @@ margin_top = 180.0
 margin_right = 800.0
 margin_bottom = 580.0
 texture = ExtResource( 3 )
-stage_name = "BEGINNING"
+chapter_name = "BEGINNING"
 path_to_scene = "res://Scenes/Chapter1/1-Beginning/01.Date.tscn"
 
 [node name="FirstDays" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
@@ -75,7 +75,7 @@ margin_top = 590.0
 margin_right = 800.0
 margin_bottom = 990.0
 texture = ExtResource( 4 )
-stage_name = "FIRST_DAYS"
+chapter_name = "FIRST_DAYS"
 path_to_scene = "res://Scenes/Chapter1/2-FirstDays/1.Date.tscn"
 
 [node name="Accident" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
@@ -85,7 +85,7 @@ margin_top = 1000.0
 margin_right = 800.0
 margin_bottom = 1400.0
 texture = ExtResource( 5 )
-stage_name = "ACCIDENT"
+chapter_name = "ACCIDENT"
 path_to_scene = "res://Scenes/Chapter1/3-Accident/1.Dialog.tscn"
 
 [node name="Funeral" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
@@ -95,7 +95,7 @@ margin_top = 1410.0
 margin_right = 800.0
 margin_bottom = 1810.0
 texture = ExtResource( 6 )
-stage_name = "FUNERAL"
+chapter_name = "FUNERAL"
 path_to_scene = "res://Scenes/Chapter1/4-Funeral/1.Grave.tscn"
 
 [node name="Chapter2" type="VBoxContainer" parent="VBoxContainer"]
@@ -130,7 +130,7 @@ margin_top = 180.0
 margin_right = 800.0
 margin_bottom = 580.0
 texture = ExtResource( 7 )
-stage_name = "NEW_BEGINNING"
+chapter_name = "NEW_BEGINNING"
 path_to_scene = "res://Scenes/Chapter2/1-NewBeginning/1.Fireworks.tscn"
 
 [node name="Celebration" parent="VBoxContainer/Chapter2" instance=ExtResource( 2 )]
@@ -140,7 +140,7 @@ margin_top = 590.0
 margin_right = 800.0
 margin_bottom = 990.0
 texture = ExtResource( 8 )
-stage_name = "CELEBRATION"
+chapter_name = "CELEBRATION"
 path_to_scene = "res://Scenes/Chapter2/2-Celebration/1.Intro.tscn"
 
 [node name="Disappearance" parent="VBoxContainer/Chapter2" instance=ExtResource( 2 )]
@@ -150,7 +150,7 @@ margin_top = 1000.0
 margin_right = 800.0
 margin_bottom = 1400.0
 texture = ExtResource( 1 )
-stage_name = "DISAPPEARANCE"
+chapter_name = "DISAPPEARANCE"
 path_to_scene = "res://Scenes/Chapter2/3-Disappearance/1.Street.tscn"
 
 [node name="Chapter3" type="VBoxContainer" parent="VBoxContainer"]
@@ -185,7 +185,7 @@ margin_top = 180.0
 margin_right = 800.0
 margin_bottom = 580.0
 texture = ExtResource( 11 )
-stage_name = "SECRET_SOCIETY"
+chapter_name = "SECRET_SOCIETY"
 path_to_scene = "res://Scenes/Chapter3/1-SecretSociety/1.House.tscn"
 
 [node name="Despair" parent="VBoxContainer/Chapter3" instance=ExtResource( 2 )]
@@ -195,7 +195,7 @@ margin_top = 590.0
 margin_right = 800.0
 margin_bottom = 990.0
 texture = ExtResource( 13 )
-stage_name = "DESPAIR"
+chapter_name = "DESPAIR"
 path_to_scene = "res://Scenes/Chapter3/2-Despair/1.Street.tscn"
 
 [node name="Hope" parent="VBoxContainer/Chapter3" instance=ExtResource( 2 )]
@@ -205,5 +205,5 @@ margin_top = 1000.0
 margin_right = 800.0
 margin_bottom = 1400.0
 texture = ExtResource( 9 )
-stage_name = "HOPE"
+chapter_name = "HOPE"
 path_to_scene = "res://Scenes/Chapter3/3-Hope/1.Field.tscn"

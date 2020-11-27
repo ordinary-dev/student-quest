@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/Scenes/AlternateScene.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Scenes/alternate_scene.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Templates/Effects/OldScreen.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Audio/FX/Computer/computer-hum-3.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Audio/FX/Computer/computer-beeps.wav" type="AudioStream" id=4]
