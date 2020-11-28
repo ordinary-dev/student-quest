@@ -8,13 +8,10 @@
 [ext_resource path="res://Sprites/Fireworks/Firework.tres" type="Texture" id=6]
 [ext_resource path="res://Animations/Fireworks.tres" type="Animation" id=7]
 [ext_resource path="res://Sprites/Fireworks/Grass.png" type="Texture" id=8]
-[ext_resource path="res://Scripts/Scenes/Chapter1/1-Beginning/02.Fireworks.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/General/LoadSceneFunction.gd" type="Script" id=9]
 [ext_resource path="res://Audio/FX/Fireworks/fireworks.ogg" type="AudioStream" id=10]
 
-
-
 [node name="FireworksTemplate" type="Node2D"]
-script = ExtResource( 9 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 layer = 0
@@ -105,4 +102,8 @@ bus = "FX"
 [node name="Music" type="Node2D" parent="."]
 script = ExtResource( 3 )
 file = "res://Audio/Music/SadPiano/SadHeavenPiano1.ogg"
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]
+
+[node name="LoadScene" type="Node" parent="."]
+script = ExtResource( 9 )
+scene_path = "res://Scenes/Chapter1/1-Beginning/03.Dialog.tscn"
+[connection signal="animation_finished" from="AnimationPlayer" to="LoadScene" method="load_scene"]

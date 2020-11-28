@@ -5,8 +5,9 @@
 [ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Characters/Stranger.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Triggers/SimpleFunctionTrigger.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/26.StrangerAI.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/26.Bridge.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/scenes/chapter_2/3_disappearance/26_stranger_ai.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/scenes/chapter_2/3_disappearance/26_bridge.gd" type="Script" id=8]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 104, 96 )
@@ -16,9 +17,9 @@ extents = Vector2( 1016, 96 )
 
 [node name="Bridge" type="Node2D"]
 script = ExtResource( 8 )
+scene_path = "res://Scenes/Chapter2/3-Disappearance/27.Jump.tscn"
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Bridge.json"
 dialog_path_2 = "res://Dialogs/Chapter2/Disappearance/Bridge_2.json"
-scene_path = "res://Scenes/Chapter2/3-Disappearance/27.Jump.tscn"
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0.866667, 0.819608, 0.819608, 1 )
