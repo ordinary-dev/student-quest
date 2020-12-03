@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/Street/TicketsStore/Block.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Street/TicketsStore/Store.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14, 4 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 14, 2 )
+
+[node name="TicketWindow" type="Node2D"]
+
+[node name="MainBox_Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 24 )
+scale = Vector2( 4, 4 )
+z_index = 4
+z_as_relative = false
+texture = ExtResource( 2 )
+offset = Vector2( 0, -13 )
+
+[node name="Siderail_Sprite" type="Sprite" parent="."]
+position = Vector2( -96, 0 )
+scale = Vector2( 4, 4 )
+z_index = 4
+z_as_relative = false
+texture = ExtResource( 1 )
+offset = Vector2( -2, -1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 0, -32 )
+scale = Vector2( 4, 4 )
+z_index = 4
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 10 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -24, 6 )
+z_index = 1
+shape = SubResource( 2 )

@@ -1,9 +1,9 @@
-{
-    "0":{"name":"NEO",            "text":"D_HP_STREET_1", "next":"1"},
-    "1":{"name":"NEO",            "text":"D_HP_STREET_2", "next":"2"},
-    "2":{"name":"MAIN_CHARACTER", "text":"D_HP_STREET_3", "next":"3"},
-    "3":{"name":"NEO",            "text":"D_HP_STREET_4", "next":"4"},
-    "4":{"name":"NEO",            "text":"D_HP_STREET_5", "next":"5"},
-    "5":{"name":"NEO",            "text":"D_HP_STREET_6", "next":"6"},
-    "6":{"name":"NEO",            "text":"D_HP_STREET_7"}
-} 
+[
+    {"name": "NEO",            "text": "D_HP_STREET_1"},
+    {"name": "NEO",            "text": "D_HP_STREET_2"},
+    {"name": "MAIN_CHARACTER", "text": "D_HP_STREET_3"},
+    {"name": "NEO",            "text": "D_HP_STREET_4"},
+    {"name": "NEO",            "text": "D_HP_STREET_5"},
+    {"name": "NEO",            "text": "D_HP_STREET_6"},
+    {"name": "NEO",            "text": "D_HP_STREET_7"}
+]

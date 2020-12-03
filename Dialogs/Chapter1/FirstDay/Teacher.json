@@ -1,6 +1,6 @@
-{
-    "0":{"name":"UNKNOWN_PERSON", "text":"D_FD_TEACHER_1", "next":"1"},
-    "1":{"name":"ANDREW", "text":"D_FD_TEACHER_2", "next":"2"},
-    "2":{"name":"ANDREW", "text":"D_FD_TEACHER_3", "next":"3"},
-    "3":{"name":"MAIN_CHARACTER", "text":"D_FD_TEACHER_4"}
-}
+[
+    {"name": "UNKNOWN_PERSON", "text": "D_FD_TEACHER_1"},
+    {"name": "ANDREW",         "text": "D_FD_TEACHER_2"},
+    {"name": "ANDREW",         "text": "D_FD_TEACHER_3"},
+    {"name": "MAIN_CHARACTER", "text": "D_FD_TEACHER_4"}
+]

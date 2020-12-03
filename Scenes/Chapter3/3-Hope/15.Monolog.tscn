@@ -1,7 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Templates/Backgrounds/BlurredBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/templates/backgrounds/blurred_background.tscn" type="PackedScene" id=2]
+
+
+
+
+
 
 [node name="Monolog" type="Node2D"]
 

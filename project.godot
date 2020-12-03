@@ -10,48 +10,54 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "ChangeUI",
+"class": "AutomaticSceneLoader",
 "language": "GDScript",
-"path": "res://Scripts/ChangeUI.gd"
+"path": "res://Scripts/nodes/automatic_scene_loader.gd"
 }, {
 "base": "Node",
-"class": "Dialog",
+"class": "ChangeUI",
 "language": "GDScript",
-"path": "res://Scripts/General/ShowDialog.gd"
+"path": "res://Scripts/nodes/change_ui.gd"
+}, {
+"base": "Node",
+"class": "DialogLoader",
+"language": "GDScript",
+"path": "res://Scripts/nodes/dialog_loader.gd"
 }, {
 "base": "Node",
 "class": "MusicPlayer",
 "language": "GDScript",
-"path": "res://Scripts/General/PlayMusic.gd"
+"path": "res://Scripts/nodes/music_player.gd"
 }, {
-"base": "Node",
-"class": "SceneLoader",
+"base": "Node2D",
+"class": "PoliceOfficerConfig",
 "language": "GDScript",
-"path": "res://Scripts/General/DelayedLoading.gd"
+"path": "res://Scripts/nodes/police_officer_config.gd"
 }, {
 "base": "Node",
 "class": "SoundPlayer",
 "language": "GDScript",
-"path": "res://Scripts/General/PlaySound.gd"
+"path": "res://Scripts/nodes/sound_player.gd"
+}, {
+"base": "Node",
+"class": "StageUnlocker",
+"language": "GDScript",
+"path": "res://Scripts/nodes/stage_unlocker.gd"
 }, {
 "base": "Node",
 "class": "StopTheMusic",
 "language": "GDScript",
-"path": "res://Scripts/General/StopMusic.gd"
-}, {
-"base": "Node",
-"class": "UnlockStage",
-"language": "GDScript",
-"path": "res://Scripts/General/Unlock.gd"
+"path": "res://Scripts/nodes/stop_the_music.gd"
 } ]
 _global_script_class_icons={
+"AutomaticSceneLoader": "",
 "ChangeUI": "",
-"Dialog": "",
+"DialogLoader": "",
 "MusicPlayer": "",
-"SceneLoader": "",
+"PoliceOfficerConfig": "",
 "SoundPlayer": "",
-"StopTheMusic": "",
-"UnlockStage": ""
+"StageUnlocker": "",
+"StopTheMusic": ""
 }
 
 [application]
@@ -63,14 +69,14 @@ config/icon="res://Sprites/Icons/logo.png"
 
 [autoload]
 
-GLOBAL="*res://Scripts/Global.gd"
-MUSIC="*res://Scenes/global/Music.tscn"
-FX="*res://Scenes/global/FX.tscn"
-DIALOG="*res://Scripts/Dialog.gd"
-SCENES="*res://Scenes/global/SceneLoader.tscn"
-UI="*res://Scenes/ui/UI.tscn"
-NOTIFY="*res://Scripts/Notify.gd"
-TEMP="*res://Scripts/Temp.gd"
+SETTINGS="*res://Scripts/signletons/settings.gd"
+MUSIC="*res://Scenes/singletons/Music.tscn"
+FX="*res://Scenes/singletons/FX.tscn"
+DIALOG="*res://Scripts/signletons/dialog.gd"
+SCENES="*res://Scenes/singletons/SceneLoader.tscn"
+UI="*res://Scenes/singletons/UI.tscn"
+NOTIFY="*res://Scripts/signletons/notify.gd"
+STORAGE="*res://Scripts/signletons/storage.gd"
 
 [display]
 

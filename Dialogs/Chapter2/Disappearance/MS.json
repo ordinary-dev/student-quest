@@ -1,4 +1,4 @@
-{
-    "0":{"name":"MR_SINGER", "text":"D_DSP_MS_1", "next":"1"},
-    "1":{"name":"MR_SINGER", "text":"D_DSP_MS_2"}
-} 
+[
+    {"name": "MR_SINGER", "text": "D_DSP_MS_1"},
+    {"name": "MR_SINGER", "text": "D_DSP_MS_2"}
+] 

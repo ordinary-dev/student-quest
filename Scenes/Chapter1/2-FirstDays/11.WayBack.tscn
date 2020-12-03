@@ -1,11 +1,20 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/street/street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Triggers/SimpleDialogTrigger.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/General/PlayMusic.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/nodes/music_player.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=6]
+
+
+
+
+
+
+
+
+
 
 [node name="WayBack" type="Node2D"]
 

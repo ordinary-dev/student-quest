@@ -1,13 +1,13 @@
-{
-    "0": {"name":"MAIN_CHARACTER", "text":"D_HP_RIVER_1",  "next":"1"},
-    "1": {"name":"NEO",            "text":"D_HP_RIVER_2",  "next":"2"},
-    "2": {"name":"NEO",            "text":"D_HP_RIVER_3",  "next":"3"},
-    "3": {"name":"NEO",            "text":"D_HP_RIVER_4",  "next":"4"},
-    "4": {"name":"NEO",            "text":"D_HP_RIVER_5",  "next":"5"},
-    "5": {"name":"MAIN_CHARACTER", "text":"D_HP_RIVER_6",  "next":"6"},
-    "6": {"name":"NEO",            "text":"D_HP_RIVER_7",  "next":"7"},
-    "7": {"name":"MAIN_CHARACTER", "text":"D_HP_RIVER_8",  "next":"8"},
-    "8": {"name":"NEO",            "text":"D_HP_RIVER_9",  "next":"9"},
-    "9": {"name":"MAIN_CHARACTER", "text":"D_HP_RIVER_10", "next":"10"},
-    "10":{"name":"MAIN_CHARACTER", "text":"D_HP_RIVER_11"}
-} 
+[
+    {"name": "MAIN_CHARACTER", "text": "D_HP_RIVER_1" },
+    {"name": "NEO",            "text": "D_HP_RIVER_2" },
+    {"name": "NEO",            "text": "D_HP_RIVER_3" },
+    {"name": "NEO",            "text": "D_HP_RIVER_4" },
+    {"name": "NEO",            "text": "D_HP_RIVER_5" },
+    {"name": "MAIN_CHARACTER", "text": "D_HP_RIVER_6" },
+    {"name": "NEO",            "text": "D_HP_RIVER_7" },
+    {"name": "MAIN_CHARACTER", "text": "D_HP_RIVER_8" },
+    {"name": "NEO",            "text": "D_HP_RIVER_9" },
+    {"name": "MAIN_CHARACTER", "text": "D_HP_RIVER_10"},
+    {"name": "MAIN_CHARACTER", "text": "D_HP_RIVER_11"}
+]

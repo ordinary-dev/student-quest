@@ -1,5 +1,5 @@
-{
-	"0":{"name":"UNKNOWN_SINGER", "text":"D_FD_SINGER_1", "next":"1"},
-	"1":{"name":"MR_SINGER", "text":"D_FD_SINGER_2", "next":"2"},
-	"2":{"name":"MR_SINGER", "text":"D_FD_SINGER_3"}
-}
+[
+	{"name": "UNKNOWN_SINGER", "text": "D_FD_SINGER_1"},
+	{"name": "MR_SINGER",      "text": "D_FD_SINGER_2"},
+	{"name": "MR_SINGER",      "text": "D_FD_SINGER_3"}
+]

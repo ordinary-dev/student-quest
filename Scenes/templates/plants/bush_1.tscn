@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tilemaps/street/Overlay16.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.00613, 5.07315 )
+
+[node name="Bush-1" type="Sprite"]
+position = Vector2( 0, 0.41869 )
+z_index = 4
+z_as_relative = false
+texture = ExtResource( 1 )
+offset = Vector2( 0, 2 )
+region_enabled = true
+region_rect = Rect2( -0.196198, -0.27471, 15.6691, 16.387 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -0.051281, 4.38918 )
+shape = SubResource( 1 )

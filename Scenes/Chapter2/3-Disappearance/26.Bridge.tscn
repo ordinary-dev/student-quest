@@ -2,11 +2,11 @@
 
 [ext_resource path="res://Sprites/Bridge-1.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/SnowStreet/Background.jpg" type="Texture" id=2]
-[ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/templates/characters/player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/Characters/Stranger.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Triggers/SimpleFunctionTrigger.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/26.StrangerAI.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/Scenes/Chapter2/3-Disappearance/26.Bridge.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/scenes/chapter_2/3_disappearance/26_stranger_ai.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/scenes/chapter_2/3_disappearance/26_bridge.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 104, 96 )
@@ -16,9 +16,9 @@ extents = Vector2( 1016, 96 )
 
 [node name="Bridge" type="Node2D"]
 script = ExtResource( 8 )
+scene_path = "res://Scenes/Chapter2/3-Disappearance/27.Jump.tscn"
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Bridge.json"
 dialog_path_2 = "res://Dialogs/Chapter2/Disappearance/Bridge_2.json"
-scene_path = "res://Scenes/Chapter2/3-Disappearance/27.Jump.tscn"
 
 [node name="Background" type="Sprite" parent="."]
 modulate = Color( 0.866667, 0.819608, 0.819608, 1 )
@@ -57,14 +57,11 @@ shape = SubResource( 1 )
 position = Vector2( 1616, 1008 )
 scale = Vector2( 5, 5 )
 default_state = 2
-
-[node name="Camera2D" parent="Characters/Body/Character_Sprite" index="0"]
-position = Vector2( -21.2333, -4.5609 )
-limit_left = 0
-limit_top = 0
-limit_right = 1900
-limit_bottom = 1080
-editor_draw_limits = true
+camera_limit_left = -1000
+camera_limit_top = 120
+camera_limit_right = 1900
+camera_limit_bottom = 1080
+camera_zoom = 0.9
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -114,5 +111,3 @@ enabled = false
 call_one_time = true
 obj = NodePath("../..")
 method = "teleport_3"
-
-[editable path="Characters/Body"]

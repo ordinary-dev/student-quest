@@ -2,7 +2,9 @@
 
 [ext_resource path="res://Sprites/Menu/City.webp" type="Texture" id=1]
 [ext_resource path="res://Sprites/Menu/Bridge.webp" type="Texture" id=2]
-[ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/nodes/automatic_scene_loader.gd" type="Script" id=3]
+
+
 
 [node name="City" type="Node2D"]
 

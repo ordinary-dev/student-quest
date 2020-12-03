@@ -1,4 +1,4 @@
-{
-    "0":{"name":"UNKNOWN_PERSON", "text":"D_DSP_BRIDGE_6", "next":"1"},
-    "1":{"name":"MAIN_CHARACTER", "text":"D_DSP_BRIDGE_7"}
-} 
+[
+    {"name": "UNKNOWN_PERSON", "text": "D_DSP_BRIDGE_6"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_BRIDGE_7"}
+]

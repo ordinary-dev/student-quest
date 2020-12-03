@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/ui/ChangeUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Templates/Backgrounds/BlurredBackground.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Templates/Characters/UnknownPerson.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/templates/backgrounds/blurred_background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/templates/characters/unknown_person.tscn" type="PackedScene" id=4]
 
 [node name="Dialog" type="Control"]
 __meta__ = {
@@ -15,10 +15,11 @@ __meta__ = {
 [node name="UnknownPerson" parent="." instance=ExtResource( 4 )]
 position = Vector2( 968, 1336 )
 
-[node name="ChangeUI" parent="." instance=ExtResource( 2 )]
-
 [node name="Dialog" type="Node" parent="."]
 script = ExtResource( 1 )
 dialog_path = "res://Dialogs/Chapter1/Beginning/Night.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter2/1-NewBeginning/3.Bridge.tscn"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )

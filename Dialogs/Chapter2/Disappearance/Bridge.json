@@ -1,7 +1,7 @@
-{
-    "0":{"name":"UNKNOWN_PERSON", "text":"D_DSP_BRIDGE_1", "next":"1"},
-    "1":{"name":"MAIN_CHARACTER", "text":"D_DSP_BRIDGE_2", "next":"2"},
-    "2":{"name":"UNKNOWN_PERSON", "text":"D_DSP_BRIDGE_3", "next":"3"},
-    "3":{"name":"MAIN_CHARACTER", "text":"D_DSP_BRIDGE_4", "next":"4"},
-    "4":{"name":"UNKNOWN_PERSON", "text":"D_DSP_BRIDGE_5"}
-} 
+[
+    {"name": "UNKNOWN_PERSON", "text": "D_DSP_BRIDGE_1"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_BRIDGE_2"},
+    {"name": "UNKNOWN_PERSON", "text": "D_DSP_BRIDGE_3"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_BRIDGE_4"},
+    {"name": "UNKNOWN_PERSON", "text": "D_DSP_BRIDGE_5"}
+] 

@@ -1,7 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/templates/interface/animated_text.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/nodes/stop_the_music.gd" type="Script" id=2]
+
+
+
+
+
+
 
 [node name="Text" type="Control"]
 anchor_right = 1.0

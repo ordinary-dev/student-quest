@@ -1,10 +1,10 @@
-{
-    "0":{"name":"UNKNOWN_PERSON", "text":"D_DSP_STRANGER_1", "next":"1"},
-    "1":{"name":"MAIN_CHARACTER", "text":"D_DSP_STRANGER_2", "next":"2"},
-    "2":{"name":"UNKNOWN_PERSON", "text":"D_DSP_STRANGER_3", "next":"3"},
-    "3":{"name":"MAIN_CHARACTER", "text":"D_DSP_STRANGER_4", "next":"4"},
-    "4":{"name":"UNKNOWN_PERSON", "text":"D_DSP_STRANGER_5", "next":"5"},
-    "5":{"name":"MAIN_CHARACTER", "text":"D_DSP_STRANGER_6", "next":"6"},
-    "6":{"name":"UNKNOWN_PERSON", "text":"D_DSP_STRANGER_7", "next":"7"},
-    "7":{"name":"MAIN_CHARACTER", "text":"D_DSP_STRANGER_8"}
-} 
+[
+    {"name": "UNKNOWN_PERSON", "text": "D_DSP_STRANGER_1"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_STRANGER_2"},
+    {"name": "UNKNOWN_PERSON", "text": "D_DSP_STRANGER_3"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_STRANGER_4"},
+    {"name": "UNKNOWN_PERSON", "text": "D_DSP_STRANGER_5"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_STRANGER_6"},
+    {"name": "UNKNOWN_PERSON", "text": "D_DSP_STRANGER_7"},
+    {"name": "MAIN_CHARACTER", "text": "D_DSP_STRANGER_8"}
+]

@@ -1,21 +1,21 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Tilemaps/Rector/map.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Templates/Characters/Rector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/templates/characters/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/templates/interface/noise_sprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/templates/characters/rector.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/Templates/Furniture/Bookcase1.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Templates/Furniture/Table3.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Templates/Furniture/Bookcase2.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Templates/Furniture/Bookcase3.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Templates/Furniture/Table1.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Templates/Furniture/Table2.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Templates/Furniture/Chair1.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Templates/Characters/Worker.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/templates/rector/bookcase_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/templates/rector/table_3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/templates/rector/bookcase_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/templates/rector/bookcase_3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/templates/rector/table_1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/templates/rector/table_2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/templates/rector/chair_1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/templates/characters/worker.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Sprites/Light/WindowLight.png" type="Texture" id=15]
-[ext_resource path="res://Scripts/General/StopMusic.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/nodes/stop_the_music.gd" type="Script" id=16]
 
 [node name="RectorScene" type="Node2D"]
 script = ExtResource( 16 )
@@ -129,7 +129,7 @@ position = Vector2( 1064, 376 )
 [node name="Table2" parent="Background/Furniture" instance=ExtResource( 12 )]
 position = Vector2( 1224, 376 )
 
-[node name="Rector" parent="Background" instance=ExtResource( 14 )]
+[node name="Worker" parent="Background" instance=ExtResource( 14 )]
 position = Vector2( 1328, 368 )
 
 [node name="Light2D" type="Light2D" parent="Background"]
@@ -168,13 +168,10 @@ scene_path = "res://Scenes/Chapter1/1-Beginning/13.PathToGuide.tscn"
 [node name="Body" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 376, 448 )
 default_state = 3
-
-[node name="Camera2D" parent="YSort/Body/Character_Sprite" index="0"]
-limit_left = 64
-limit_top = -64
-limit_right = 1664
-limit_bottom = 1024
-editor_draw_limits = true
+camera_limit_left = 100
+camera_limit_top = 0
+camera_limit_right = 1600
+camera_limit_bottom = 1000
 
 [node name="Rector" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 992, 568 )
@@ -189,5 +186,3 @@ position = Vector2( 832, 568 )
 script = ExtResource( 6 )
 show_pause_menu = true
 show_joystick = true
-
-[editable path="YSort/Body"]

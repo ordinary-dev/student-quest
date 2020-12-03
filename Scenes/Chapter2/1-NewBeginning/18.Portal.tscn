@@ -1,8 +1,16 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Templates/PortalBackground.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/General/DelayedLoading.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/templates/basement/portal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/nodes/automatic_scene_loader.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=3]
+
+
+
+
+
+
+
+
 
 [node name="Portal" type="Node2D"]
 

@@ -1,9 +1,14 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Templates/Roof/GardenBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/roof/sunset.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Street/MrSinger/MrSingerHead.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Characters/MainCharacter.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/General/ShowDialog.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=4]
+
+
+
+
+
 
 [node name="Sunset" type="Node2D"]
 

@@ -1,6 +1,10 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/Templates/AnimatedText.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/interface/animated_text.tscn" type="PackedScene" id=1]
+
+
+
+
 
 [node name="Text" type="Control"]
 rect_min_size = Vector2( 1920, 1080 )

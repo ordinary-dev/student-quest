@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Templates/Street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/street/street.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Triggers/SimpleDialogTrigger.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scripts/ChangeUI.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Triggers/DialogTrigger.tscn" type="PackedScene" id=4]
 
 [node name="Street" type="Node2D"]
@@ -10,7 +10,7 @@
 [node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
 allow_entrance = true
-math_scene = "res://Scenes/Chapter2/3-Disappearance/15.Clouds.tscn"
+next_scene = "res://Scenes/Chapter2/3-Disappearance/15.Clouds.tscn"
 
 [node name="DialogTrigger" parent="." instance=ExtResource( 2 )]
 position = Vector2( 64.2768, 491.42 )
