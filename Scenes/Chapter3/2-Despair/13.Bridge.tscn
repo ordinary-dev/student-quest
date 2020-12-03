@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Scenes/Templates/Body.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/characters/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Bridge-3.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/blood.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Sprites/Characters/Singer.png" type="Texture" id=4]
@@ -8,6 +8,10 @@
 [ext_resource path="res://Scenes/Triggers/SimpleFunctionTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Characters/Neo.png" type="Texture" id=7]
 [ext_resource path="res://Tilemaps/Snow/Snow.tres" type="TileSet" id=8]
+
+
+
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Node2D

@@ -3,9 +3,13 @@
 [ext_resource path="res://Scripts/menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Menu/Chapters/Load.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=4]
-[ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/templates/interface/button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Menu/Settings/Settings.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Menu/Confirmation.tscn" type="PackedScene" id=7]
+
+
+
+
 
 
 [sub_resource type="StyleBoxFlat" id=1]

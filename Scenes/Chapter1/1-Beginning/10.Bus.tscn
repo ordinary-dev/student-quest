@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/nodes/automatic_scene_loader.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Templates/Backgrounds/BusStop.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/templates/backgrounds/bus_stop.tscn" type="PackedScene" id=2]
+
+
+
 
 
 

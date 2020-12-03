@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/nodes/music_player.gd"
 }, {
+"base": "Node2D",
+"class": "PoliceOfficerConfig",
+"language": "GDScript",
+"path": "res://Scripts/nodes/police_officer_config.gd"
+}, {
 "base": "Node",
 "class": "SoundPlayer",
 "language": "GDScript",
@@ -49,6 +54,7 @@ _global_script_class_icons={
 "ChangeUI": "",
 "DialogLoader": "",
 "MusicPlayer": "",
+"PoliceOfficerConfig": "",
 "SoundPlayer": "",
 "StageUnlocker": "",
 "StopTheMusic": ""
@@ -68,7 +74,7 @@ MUSIC="*res://Scenes/singletons/Music.tscn"
 FX="*res://Scenes/singletons/FX.tscn"
 DIALOG="*res://Scripts/signletons/dialog.gd"
 SCENES="*res://Scenes/singletons/SceneLoader.tscn"
-UI="*res://Scenes/singletons/ui/UI.tscn"
+UI="*res://Scenes/singletons/UI.tscn"
 NOTIFY="*res://Scripts/signletons/notify.gd"
 STORAGE="*res://Scripts/signletons/storage.gd"
 

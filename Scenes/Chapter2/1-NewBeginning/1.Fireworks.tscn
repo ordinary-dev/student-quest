@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Templates/FireworksTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/fireworks.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/nodes/stage_unlocker.gd" type="Script" id=3]
+
+
 
 
 

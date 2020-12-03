@@ -8,7 +8,7 @@ export (bool) var show_pause_menu setget _show_pause_menu
 export (bool) var show_joystick setget _show_joystick
 # Show joystick on win/mac/linux for debugging
 export (bool) var force_joystick = false
-onready var _joystick = $"Joystick-UI"
+onready var _joystick = $Joystick
 onready var _pause_menu = $"PauseMenu-UI"
 
 

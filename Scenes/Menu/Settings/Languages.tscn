@@ -1,7 +1,11 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/interface/button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/menu/settings/language.gd" type="Script" id=2]
+
+
+
+
 
 
 

@@ -1,9 +1,12 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Templates/NoiseBackground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/templates/interface/noise_background.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Audio/FX/Wind/Autumn-wind-and-dry-leaves.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=4]
+
+
+
 
 
 

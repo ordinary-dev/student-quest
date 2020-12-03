@@ -3,7 +3,11 @@
 [ext_resource path="res://Scripts/scenes/chapter_1/4_funeral/10_steps.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Templates/Basement/Stairs.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/templates/basement/steps.tscn" type="PackedScene" id=4]
+
+
+
+
 
 [node name="StairsScene" type="Node2D"]
 script = ExtResource( 1 )

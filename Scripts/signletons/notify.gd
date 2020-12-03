@@ -5,7 +5,7 @@ extends Node
 # Licensed under the GPL-3 License
 
 var _id := 1
-onready var _template := preload("res://Scenes/singletons/ui/Notification.tscn")
+onready var _template := preload("res://Scenes/templates/interface/notification.tscn")
 
 
 func show(text: String) -> void:

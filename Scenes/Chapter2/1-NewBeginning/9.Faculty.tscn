@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/Templates/FacultyMaps/MathMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/faculty_maps/faculty_of_mathematics.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=2]
+
+
+
 
 
 

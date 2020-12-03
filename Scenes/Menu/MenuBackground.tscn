@@ -8,9 +8,13 @@
 [ext_resource path="res://Sprites/Menu/Bridge.webp" type="Texture" id=6]
 [ext_resource path="res://Sprites/Menu/Vignette.webp" type="Texture" id=7]
 [ext_resource path="res://Audio/FX/Rain/rain-moderate-c.ogg" type="AudioStream" id=8]
-[ext_resource path="res://Scripts/General/PlayFromPosition.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/Templates/Rain.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/templates/play_from_position.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/templates/rain.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Sprites/Light/Flashlight.png" type="Texture" id=12]
+
+
+
+
 
 
 [node name="Background" type="Control"]

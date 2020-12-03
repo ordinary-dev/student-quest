@@ -3,8 +3,6 @@
 [ext_resource path="res://Sprites/Backgrounds/BlurryRoom.jpg" type="Texture" id=1]
 [ext_resource path="res://Scripts/nodes/automatic_scene_loader.gd" type="Script" id=2]
 
-
-
 [node name="Message" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]

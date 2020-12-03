@@ -1,8 +1,14 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Scenes/Templates/NoiseSprite.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Templates/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/templates/interface/noise_sprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/interface/button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/menu/new_game.gd" type="Script" id=3]
+
+
+
+
+
+
 
 
 

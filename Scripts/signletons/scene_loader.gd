@@ -27,7 +27,7 @@ func load_scene(scene_name: String, anim_start := true, anim_end := true) -> voi
 	if has_node(STORAGE.get("player_path")):
 		var pl = get_node(STORAGE.get("player_path"))
 		if pl.restore_position:
-			pl._save()
+			pl.save_position()
 	
 	# Load scene
 	last_scene_path = scene_name

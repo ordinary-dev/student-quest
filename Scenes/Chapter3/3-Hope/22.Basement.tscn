@@ -1,7 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Scenes/Templates/Basement/Basement.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/templates/basement/basement.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Triggers/SimpleLoadSceneTrigger.tscn" type="PackedScene" id=2]
+
+
+
 
 [node name="Basement" type="Node2D"]
 

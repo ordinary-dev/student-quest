@@ -6,7 +6,7 @@ extends Node
 # Licensed under the GPL-3 License
 
 var is_shown := false
-var _dialog_scene := load("res://Scenes/Templates/Dialog.tscn")
+var _dialog_scene := load("res://Scenes/templates/interface/dialog.tscn")
 var _content: Array
 var _index: int
 # Call function after the dialog
@@ -76,8 +76,8 @@ func show_dialog(path: String, obj := "", fnc := "", argv := "") -> void:
 func _hide_dialog():
 	is_shown = false
 	var dialog_obj = UI.get_node("dialog")
-	dialog_obj.play_reverse()
-	yield(get_tree().create_timer(dialog_obj.shape_time), "timeout")
+	dialog_obj.hide()
+	yield(get_tree().create_timer(dialog_obj.ANIM_DURATION), "timeout")
 	UI.remove_child(dialog_obj)
 	set_process(false)
 	# Unlock player movement
@@ -113,7 +113,7 @@ func _show_next() -> void:
 		_content[_index]["text"]
 	)
 	# Connect signal and get id of the next phrase
-	var btn = UI.get_node("dialog/" + dial.next_button)
+	var btn = dial.next_button
 	if _index < len(_content) - 1:
 		btn.disconnect("pressed", self, "show_next")
 		btn.connect("pressed", self, "show_next")

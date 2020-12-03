@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/scenes/entry.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Templates/Sounds/Click.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/templates/sounds/random_click_sound.tscn" type="PackedScene" id=2]
 
 [node name="EntryScene" type="Control"]
 anchor_right = 1.0

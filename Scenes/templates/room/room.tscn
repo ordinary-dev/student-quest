@@ -1,0 +1,191 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Tilemaps/flat/flat.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/templates/room/tv.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/Room/Carpet.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Light/Light.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/templates/room/bed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/templates/room/fridge.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/templates/room/sofa.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/templates/room/computer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/templates/room/room.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/templates/characters/player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/templates/room/table.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Tilemaps/flat/overlay.tres" type="TileSet" id=12]
+[ext_resource path="res://Scenes/templates/interface/noise_sprite.tscn" type="PackedScene" id=13]
+
+
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 64 )
+
+[node name="RoomTemplate" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="NoiseSprites" type="Node2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="NoiseSprite0" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 288, -96 )
+
+[node name="NoiseSprite1" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 480, -96 )
+
+[node name="NoiseSprite2" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 672, -96 )
+
+[node name="NoiseSprite3" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 864, -96 )
+
+[node name="NoiseSprite4" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1056, -96 )
+
+[node name="NoiseSprite5" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1248, -96 )
+
+[node name="NoiseSprite6" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1440, -96 )
+
+[node name="NoiseSprite7" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1632, -96 )
+
+[node name="NoiseSprite8" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1632, 96 )
+
+[node name="NoiseSprite9" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1632, 288 )
+
+[node name="NoiseSprite10" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1632, 480 )
+
+[node name="NoiseSprite11" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1632, 672 )
+
+[node name="NoiseSprite12" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1632.29, 864.221 )
+
+[node name="NoiseSprite13" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1632, 1056 )
+
+[node name="NoiseSprite14" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1440, 992 )
+
+[node name="NoiseSprite15" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1248, 992 )
+
+[node name="NoiseSprite16" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 1056, 992 )
+
+[node name="NoiseSprite17" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 864, 992 )
+
+[node name="NoiseSprite18" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 672, 992 )
+
+[node name="NoiseSprite19" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 480, 992 )
+
+[node name="NoiseSprite20" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 288, 1056 )
+
+[node name="NoiseSprite21" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 288, 864 )
+
+[node name="NoiseSprite22" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 288, 672 )
+
+[node name="NoiseSprite23" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 288, 480 )
+
+[node name="NoiseSprite24" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 288, 288 )
+
+[node name="NoiseSprite25" parent="NoiseSprites" instance=ExtResource( 13 )]
+position = Vector2( 288, 96 )
+
+[node name="FloorAndWalls" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+z_index = 1
+z_as_relative = false
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 1024
+format = 1
+tile_data = PoolIntArray( 6, 24, 0, 7, 24, 0, 8, 24, 0, 9, 24, 0, 10, 24, 0, 11, 24, 0, 12, 24, 0, 13, 24, 0, 14, 24, 0, 15, 24, 0, 16, 24, 0, 17, 24, 0, 18, 24, 0, 19, 24, 0, 20, 24, 0, 21, 24, 0, 22, 24, 0, 23, 24, 0, 65542, 24, 0, 65543, 24, 0, 65544, 24, 0, 65545, 24, 0, 65546, 24, 0, 65547, 24, 0, 65548, 24, 0, 65549, 24, 0, 65550, 24, 0, 65551, 24, 0, 65552, 24, 0, 65553, 24, 0, 65554, 24, 0, 65555, 24, 0, 65556, 24, 0, 65557, 24, 0, 65558, 24, 0, 65559, 24, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0, 131082, 0, 0, 131083, 0, 0, 131084, 0, 0, 131085, 0, 0, 131086, 0, 0, 131087, 0, 0, 131088, 0, 0, 131089, 0, 0, 131090, 0, 0, 131091, 0, 0, 131092, 0, 0, 131093, 0, 0, 131094, 0, 0, 131095, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 536870912, 0, 196621, 536870912, 0, 196622, 0, 0, 196623, 0, 0, 196624, 0, 0, 196625, 0, 0, 196626, 0, 0, 196627, 0, 0, 196628, 0, 0, 196629, 0, 0, 196630, 0, 0, 196631, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 536870912, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 536870912, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 536870912, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 458758, 24, 0, 458759, 24, 0, 458760, 24, 0, 458761, 24, 0, 458762, 24, 0, 458763, 536870912, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 524294, 24, 0, 524295, 24, 0, 524296, 24, 0, 524297, 24, 0, 524298, 24, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 720902, 0, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 786438, 1, 0, 786439, 1, 0, 786440, 1, 0, 786441, 1, 0, 786442, 1, 0, 786443, 1, 0, 786444, 1, 0, 786445, 1, 0, 786446, 1, 0, 786447, 1, 0, 786448, 1, 0, 786449, 1, 0, 786450, 1, 0, 786451, 1, 0, 786452, 1, 0, 786453, 1, 0, 786454, 1, 0, 786455, 1, 0, 851974, -1610612735, 0, 851975, -1610612735, 0, 851976, -1610612735, 0, 851977, -1610612735, 0, 851978, -1610612735, 0, 851979, -1610612735, 0, 851980, -1610612735, 0, 851981, -1610612735, 0, 851982, -1610612735, 0, 851983, -1610612735, 0, 851984, -1610612735, 0, 851985, -1610612735, 0, 851986, -1610612735, 0, 851987, -1610612735, 0, 851988, -1610612735, 0, 851989, -1610612735, 0, 851990, -1610612735, 0, 851991, -1610612735, 0 )
+
+[node name="ThinWalls" type="TileMap" parent="."]
+scale = Vector2( 4, 4 )
+z_index = 1
+z_as_relative = false
+tile_set = ExtResource( 12 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 1024
+format = 1
+tile_data = PoolIntArray( 6, 1610612737, 0, 7, 1610612736, 0, 8, 1610612736, 0, 9, 1610612736, 0, 10, -1073741823, 0, 11, 1610612736, 0, 12, 1610612736, 0, 13, 1610612736, 0, 14, 1610612736, 0, 15, 1610612736, 0, 16, 1610612736, 0, 17, 1610612736, 0, 18, 1610612736, 0, 19, 1610612736, 0, 20, 1610612737, 0, 21, 1610612736, 0, 22, 1610612736, 0, 23, -1073741823, 0, 65542, -1610612736, 0, 65546, -1073741824, 0, 65556, -1610612736, 0, 65559, -1073741824, 0, 131078, -1610612736, 0, 131082, -1073741824, 0, 131092, -1610612736, 0, 131095, -1073741824, 0, 196614, -1610612736, 0, 196618, -1073741822, 0, 196628, -1610612736, 0, 196631, -1073741824, 0, 262150, -1610612736, 0, 262154, -1073741822, 0, 262164, -1610612736, 0, 262167, -1073741824, 0, 327686, -1610612736, 0, 327700, -1610612736, 0, 327703, -1073741824, 0, 393222, -1610612735, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 1, 0, 393236, -1610612734, 0, 393239, -1073741824, 0, 458758, -1610612736, 0, 458762, -1073741822, 0, 458772, -1610612734, 0, 458775, -1073741824, 0, 524294, -1610612734, 0, 524298, -1073741822, 0, 524311, -1073741824, 0, 589830, -1610612734, 0, 589844, -1610612736, 0, 589847, -1073741824, 0, 655380, -1610612736, 0, 655383, -1073741824, 0, 720902, -1610612735, 0, 720903, 0, 0, 720904, 0, 0, 720905, 0, 0, 720906, 0, 0, 720907, 0, 0, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, -1610612735, 0, 720917, 0, 0, 720918, 0, 0, 720919, 1, 0 )
+
+[node name="CeilingLight" type="Light2D" parent="."]
+position = Vector2( 959.762, 213.912 )
+texture = ExtResource( 4 )
+texture_scale = 10.0
+color = Color( 0.670588, 0.768627, 0.956863, 1 )
+energy = 0.8
+shadow_enabled = true
+shadow_color = Color( 0.419608, 0.568627, 0.882353, 0 )
+
+[node name="DoorCollider" type="StaticBody2D" parent="."]
+position = Vector2( 352, 640 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCollider"]
+shape = SubResource( 1 )
+
+[node name="TV" parent="." instance=ExtResource( 2 )]
+position = Vector2( 963.804, 202.699 )
+
+[node name="Carpet" type="Sprite" parent="."]
+position = Vector2( 963.567, 401.344 )
+scale = Vector2( 6, 6 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="Bed" parent="." instance=ExtResource( 5 )]
+position = Vector2( 522.462, 187.852 )
+
+[node name="Fridge" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1456, 200 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Body" parent="YSort" instance=ExtResource( 10 )]
+position = Vector2( 511.814, 677.502 )
+scale = Vector2( 1.3, 1.3 )
+
+[node name="Computer" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 484.954, 398.931 )
+scale = Vector2( 5, 5 )
+
+[node name="Sofa" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 966.915, 726.793 )
+
+[node name="Table" parent="YSort" instance=ExtResource( 11 )]
+position = Vector2( 1464, 720 )
+
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Door" type="Position2D" parent="Positions"]
+position = Vector2( 511.945, 678.115 )
+
+[node name="Computer" type="Position2D" parent="Positions"]
+position = Vector2( 595.864, 370.527 )
+
+[node name="Bed" type="Position2D" parent="Positions"]
+position = Vector2( 592.864, 222.527 )
+
+[editable path="YSort/Body"]
