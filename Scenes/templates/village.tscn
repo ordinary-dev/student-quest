@@ -6,7 +6,6 @@
 [ext_resource path="res://Tilemaps/street/Overlay16.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/templates/plants/winter_tree.tscn" type="PackedScene" id=5]
 
-
 [node name="VillageTemplate" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -31,6 +30,10 @@ tile_data = PoolIntArray( -196609, -536870908, 0, -262144, -1073741820, 0, -1310
 position = Vector2( 192.158, 220.093 )
 default_state = 0
 restore_position = true
+camera_limit_left = -100
+camera_limit_top = -180
+camera_limit_right = 1800
+camera_limit_bottom = 1300
 
 [node name="Houses" type="Node2D" parent="."]
 modulate = Color( 0.866667, 0.870588, 0.886275, 1 )
@@ -84,5 +87,3 @@ position = Vector2( 1164.22, 219.326 )
 
 [node name="Tree-type-2-Template_Sprite_8" parent="Trees" instance=ExtResource( 5 )]
 position = Vector2( 431.671, 186.028 )
-
-[editable path="Body"]

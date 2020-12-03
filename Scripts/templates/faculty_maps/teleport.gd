@@ -1,7 +1,7 @@
 extends Node2D
 
 enum Directions {UP, DOWN, LEFT, RIGHT}
-enum Positions {FIRST_CENTER, FIRST_LEFT, SECOND, THIRD}
+enum Positions {FIRST, SECOND, THIRD}
 
 export (String, FILE, "*.tscn") var street_scene_path
 export (Directions) var player_direction = Directions.DOWN
@@ -10,8 +10,7 @@ export (bool) var block_turnstile = false setget set_turnstile_state
 export (bool) var show_security_guard = true
 
 onready var _turnstile = $Turnstiles/CollisionShape2D
-onready var _p1_center = $FloorPositions/Floor1_Center
-onready var _p1_left = $FloorPositions/Floor1_Left
+onready var _p1 = $FloorPositions/Floor1
 onready var _p2 = $FloorPositions/Floor2
 onready var _p3 = $FloorPositions/Floor3
 onready var _security_guard = $YSort/Guard
@@ -38,7 +37,7 @@ func teleport(node : Position2D, fade = true) -> void:
 
 
 func floor_1():
-	teleport(_p1_center)
+	teleport(_p1)
 
 
 func floor_2():
@@ -59,10 +58,8 @@ func _ready():
 	# The state changes here manually
 	_turnstile.disabled = !block_turnstile
 	# Initial position
-	if initial_pos == Positions.FIRST_CENTER:
-		teleport(_p1_center, false)
-	elif initial_pos == Positions.FIRST_LEFT:
-		teleport(_p1_left, false)
+	if initial_pos == Positions.FIRST:
+		teleport(_p1, false)
 	elif initial_pos == Positions.THIRD:
 		teleport(_p3, false)
 	# Disable security guard if needed

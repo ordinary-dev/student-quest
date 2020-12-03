@@ -4,10 +4,6 @@
 [ext_resource path="res://Scenes/templates/interface/animated_text.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/nodes/stop_the_music.gd" type="Script" id=3]
 
-
-
-
-
 [node name="Date" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,7 +19,7 @@ text_2 = "EARLY_MORNING"
 next_scene = "res://Scenes/Chapter1/1-Beginning/05.Train.tscn"
 fade_in = false
 fade_out = false
-delay_before_next_scene = 1.5
+delay_before_next_scene = 2.5
 
 [node name="StopTheMusic" type="Node" parent="."]
 script = ExtResource( 3 )

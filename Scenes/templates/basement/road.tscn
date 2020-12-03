@@ -8,11 +8,6 @@
 [ext_resource path="res://Scenes/templates/interface/noise_background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tilemaps/street/street16.tres" type="TileSet" id=8]
 
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 640 )
 
@@ -35,6 +30,10 @@ tile_data = PoolIntArray( 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 modulate = Color( 0.772549, 0.815686, 0.905882, 1 )
 position = Vector2( 960, 900 )
+camera_limit_left = 0
+camera_limit_top = -1250
+camera_limit_right = 1920
+camera_limit_bottom = 1080
 
 [node name="Streetlights" type="Node2D" parent="."]
 

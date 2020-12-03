@@ -15,9 +15,7 @@ const SPRITE_PATHS := [
 	"res://Sprites/Characters/Npc_3.png",
 ]
 
-export (NodePath) var nav_node = NodePath("../Navigation2D")
-export (NodePath) var upper_left_node
-export (NodePath) var bottom_right_node
+export (NodePath) var ai_config_path
 
 var _path: PoolVector2Array
 var _minpos: Vector2
@@ -25,6 +23,7 @@ var _maxpos: Vector2
 var _nav_2d: Navigation2D
 var _current_dir = Directions.UNSET
 var _anim_playing := false
+var _cfg
 
 onready var _sprite := $Sprite
 onready var _ap := $AnimationPlayer
@@ -34,12 +33,13 @@ func _ready() -> void:
 	# Select sprite
 	var ind := randi() % 3
 	_sprite.texture = load(SPRITE_PATHS[ind])
+	_cfg = get_node(ai_config_path)
 	# Get min and max position
-	_minpos = get_node(upper_left_node).position
-	_maxpos = get_node(bottom_right_node).position
+	_minpos = get_node(_cfg.upper_left_node).position
+	_maxpos = get_node(_cfg.bottom_right_node).position
 	# Generate random path
 	randomize()
-	_nav_2d = get_node(nav_node)
+	_nav_2d = get_node(_cfg.nav_node)
 	_generate_path()
 
 

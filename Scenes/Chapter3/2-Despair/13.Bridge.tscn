@@ -8,27 +8,9 @@
 [ext_resource path="res://Scenes/Triggers/SimpleFunctionTrigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Characters/Neo.png" type="Texture" id=7]
 [ext_resource path="res://Tilemaps/Snow/Snow.tres" type="TileSet" id=8]
-
-
-
-
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func enable() -> void:
-	var player = get_node(GLOBAL.player_path)
-	player.go_left()
-	player.lock()
-	$Neo.enable_ai()
-"
+[ext_resource path="res://Scripts/scenes/chapter_3/2_despair/13_bridge.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/scenes/chapter_3/2_despair/13_singer.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/scenes/chapter_3/2_despair/13_neo.gd" type="Script" id=11]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 1069.86, 98.0671 )
@@ -36,103 +18,8 @@ extents = Vector2( 1069.86, 98.0671 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 37.9747, 26.9374 )
 
-[sub_resource type="GDScript" id=4]
-script/source = "extends Sprite
-
-var posx = 800
-var speed = 250
-const delay = 18
-var cf = 0
-
-export (String, FILE, \"*.json\") var dialog_path
-
-
-func _ready() -> void:
-	set_process(false)
-
-
-func blood() -> void:
-	position.x += 10
-	$AnimatedSprite.visible = true
-	$AnimatedSprite.play()
-
-
-func show_singer() -> void:
-	get_node(\"../Singer\").enable_ai()
-
-
-func enable_ai() -> void:
-	set_process(true)
-	visible = true
-	
-
-func _process(delta):
-	if position.x < posx:
-		position.x += delta * speed
-		if cf < delay:
-			cf += 1
-		else:
-			cf = 0
-			if frame == 2:
-				frame = 5
-			else:
-				frame = 2
-	else:
-		frame = 8
-		set_process(false)
-		DIALOG.show_dialog(dialog_path, get_path(), \"show_singer\")
-"
-
-[sub_resource type="GDScript" id=5]
-script/source = "extends Sprite
-
-var posx = 600
-var speed = 250
-const delay = 13
-var cf = 0
-
-export (String, FILE, \"*.json\") var dialog_path
-export (String, FILE, \"*.tscn\") var scene_path
-
-
-func _ready() -> void:
-	set_process(false)
-	
-
-func enable_ai() -> void:
-	set_process(true)
-	visible = true
-	
-
-func _process(delta):
-	if position.x < posx:
-		position.x += delta * speed
-		if cf < delay:
-			cf += 1
-		else:
-			cf = 0
-			if frame == 0:
-				frame = 1
-			else:
-				frame = 0
-	else:
-		frame = 8
-		set_process(false)
-		get_node(\"../Neo\").flip_h = true
-		DIALOG.show_dialog(dialog_path, get_path(), \"shot\")
-
-
-func shot() -> void:
-	yield(get_tree().create_timer(2), \"timeout\")
-	frame = 2
-	yield(get_tree().create_timer(1), \"timeout\")
-	get_node(\"../Neo\").blood()
-	yield(get_tree().create_timer(1.3), \"timeout\")
-	SCENES.load_scene(scene_path, false, false)
-"
-
 [node name="Bridge" type="Node2D"]
-script = SubResource( 1 )
+script = ExtResource( 9 )
 
 [node name="Sky" type="Sprite" parent="."]
 position = Vector2( 961.758, 528.881 )
@@ -141,15 +28,12 @@ texture = ExtResource( 5 )
 flip_v = true
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
-position = Vector2( 162.072, 813.958 )
+position = Vector2( 162.072, 819.634 )
 default_state = 3
-
-[node name="Camera2D" parent="Body/Character_Sprite" index="0"]
-limit_left = 0
-limit_top = 0
-limit_right = 1300
-limit_bottom = 1080
-editor_draw_limits = true
+camera_limit_left = 0
+camera_limit_top = 0
+camera_limit_right = 1200
+camera_limit_bottom = 1080
 
 [node name="Bridge" type="Sprite" parent="."]
 position = Vector2( 1023.67, 695.379 )
@@ -169,7 +53,7 @@ position = Vector2( 963.898, 701.825 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Bridge/StaticBody2D"]
-position = Vector2( 949.643, 912.177 )
+position = Vector2( 949.171, 914.537 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Bridge/StaticBody2D"]
@@ -196,7 +80,7 @@ position = Vector2( 1072.54, 805.293 )
 scale = Vector2( 5.39399, -1.91329 )
 call_one_time = true
 obj = NodePath("../../Bridge")
-method = "enable"
+method = "start_sequence"
 
 [node name="Neo" type="Sprite" parent="."]
 visible = false
@@ -206,7 +90,7 @@ texture = ExtResource( 7 )
 vframes = 3
 hframes = 3
 frame = 2
-script = SubResource( 4 )
+script = ExtResource( 11 )
 dialog_path = "res://Dialogs/Chapter3/Despair/Bridge.json"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Neo"]
@@ -221,8 +105,6 @@ position = Vector2( 58.1903, 764.517 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 4 )
 hframes = 3
-script = SubResource( 5 )
+script = ExtResource( 10 )
 dialog_path = "res://Dialogs/Chapter3/Despair/Bridge_2.json"
 scene_path = "res://Scenes/Chapter3/2-Despair/14.Black.tscn"
-
-[editable path="Body"]

@@ -7,22 +7,12 @@
 [ext_resource path="res://Scenes/templates/characters/npc_2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=6]
 
-
-
-
-
-
-
-
-
-
 [node name="Meeting" type="Node2D"]
 
 [node name="FacultyOfMathematicsMap" parent="." instance=ExtResource( 1 )]
 street_scene_path = "res://Scenes/Chapter1/2-FirstDay/7.Room.tscn"
 initial_pos = 3
 block_turnstile = true
-enable_security_guard = false
 
 [node name="TeacherSprite" parent="." instance=ExtResource( 2 )]
 position = Vector2( 731.361, 347.749 )

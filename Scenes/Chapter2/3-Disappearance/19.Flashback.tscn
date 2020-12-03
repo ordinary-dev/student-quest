@@ -4,13 +4,6 @@
 [ext_resource path="res://Scripts/nodes/automatic_scene_loader.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/nodes/music_player.gd" type="Script" id=5]
 
-
-
-
-
-
-
-
 [node name="Flashback" type="Node2D"]
 
 [node name="Sunset" parent="." instance=ExtResource( 1 )]

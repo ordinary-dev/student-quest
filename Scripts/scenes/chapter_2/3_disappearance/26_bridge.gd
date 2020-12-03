@@ -4,7 +4,7 @@ extends Node2D
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
 
-const DIST := 800
+const DIST := 600
 export (String, FILE, "*.tscn") var scene_path
 export (String, FILE, "*.json") var dialog_path
 export (String, FILE, "*.json") var dialog_path_2

@@ -5,18 +5,11 @@
 [ext_resource path="res://Scenes/templates/street/street.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/templates/characters/guide.tscn" type="PackedScene" id=6]
 
-
-
-
-
-
-
-
 [node name="StreetScene" type="Node2D"]
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 5 )]
 allow_entrance = true
-math_scene = "res://Scenes/Chapter2/1-NewBeginning/7.Date.tscn"
+next_scene = "res://Scenes/Chapter2/1-NewBeginning/7.Date.tscn"
 
 [node name="GuideTemplate" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2096, 568 )

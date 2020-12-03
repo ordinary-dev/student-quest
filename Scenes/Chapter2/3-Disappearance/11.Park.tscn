@@ -9,23 +9,6 @@
 [ext_resource path="res://Scenes/templates/holiday/bench_2.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/templates/interface/noise_sprite.tscn" type="PackedScene" id=8]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [node name="Park" type="Node2D"]
 modulate = Color( 0.596078, 0.596078, 0.596078, 1 )
 
@@ -136,13 +119,11 @@ position = Vector2( 250.043, -236.896 )
 position = Vector2( -102.753, -176.314 )
 
 [node name="Body" parent="." instance=ExtResource( 1 )]
-
-[node name="Camera2D" parent="Body/Character_Sprite" index="0"]
-limit_left = -300
-limit_top = -1392
-limit_right = 7200
-limit_bottom = 832
-editor_draw_limits = true
+position = Vector2( -10.5637, -24.6283 )
+camera_limit_left = -320
+camera_limit_top = -1200
+camera_limit_right = 7200
+camera_limit_bottom = 700
 
 [node name="Benches" type="Node2D" parent="."]
 
@@ -220,5 +201,3 @@ scale = Vector2( 1, 5 )
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Talk-1.json"
 load_scene = true
 scene_path = "res://Scenes/Chapter2/3-Disappearance/12.Talk.tscn"
-
-[editable path="Body"]

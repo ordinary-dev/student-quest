@@ -6,11 +6,6 @@
 [ext_resource path="res://Scripts/templates/characters/follow_path.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/templates/characters/guide.tscn" type="PackedScene" id=6]
 
-
-
-
-
-
 [node name="Guide-Scene" type="Node2D"]
 
 [node name="Street-Template" parent="." instance=ExtResource( 4 )]

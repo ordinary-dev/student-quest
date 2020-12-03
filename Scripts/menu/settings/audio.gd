@@ -4,8 +4,8 @@ extends Node
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
 
-onready var _music_label := $Container/Music/Volume
-onready var _effects_label := $Container/Effects/EffectsVolume
+onready var _music_label := $Container/Music/Buttons/MusicVolume
+onready var _effects_label := $Container/Effects/Buttons/EffectsVolume
 
 
 func change_music_vol(delta: int) -> void:

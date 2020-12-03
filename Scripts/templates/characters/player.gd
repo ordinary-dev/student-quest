@@ -17,12 +17,18 @@ const MAIN_SPRITE := "res://Sprites/Characters/MainCharacter.png"
 const NEO_SPRITE := "res://Sprites/Characters/Neo.png"
 const SPEED := 400
 const SPRITE_PATH := "Character"
+const CAMERA_PATH := "Camera2D"
 
 export (States) var default_state = States.UP setget _set_state
 export (Sprites) var sprite_sheet = Sprites.MAIN setget _set_sprite
 export (bool) var restore_position = false
 export (Curve) var speed_curve
 export (bool) var locked = false
+export (int) var camera_limit_left = -10000000 setget _set_cl_left
+export (int) var camera_limit_top = -10000000 setget _set_cl_top
+export (int) var camera_limit_right = 10000000 setget _set_cl_right
+export (int) var camera_limit_bottom = 10000000 setget _set_cl_bottom
+export (float) var camera_zoom = 0.6 setget _set_camera_zoom
 
 var _speed_curve_offset := 0.0
 # Get input from joystick
@@ -66,43 +72,73 @@ func save_position() -> void:
 	STORAGE.save(SCENES.last_scene_path, pos)
 
 
+# Set camera limit
+func _set_cl_left(val: int) -> void:
+	camera_limit_left = val
+	var cam = get_node(CAMERA_PATH)
+	cam.limit_left = camera_limit_left
+
+
+func _set_cl_top(val: int) -> void:
+	camera_limit_top = val
+	var cam = get_node(CAMERA_PATH)
+	cam.limit_top = camera_limit_top
+
+
+func _set_cl_right(val: int) -> void:
+	camera_limit_right = val
+	var cam = get_node(CAMERA_PATH)
+	cam.limit_right = camera_limit_right
+
+
+func _set_cl_bottom(val: int) -> void:
+	camera_limit_bottom = val
+	var cam = get_node(CAMERA_PATH)
+	cam.limit_bottom = camera_limit_bottom
+
+
+func _set_camera_zoom(val: float) -> void:
+	camera_zoom = val
+	var cam = get_node(CAMERA_PATH)
+	cam.zoom = Vector2(camera_zoom, camera_zoom)
+
+
 func _set_state(val) -> void:
 	default_state = val
-	if Engine.editor_hint:
-		if has_node(SPRITE_PATH):
-			var sprite = get_node(SPRITE_PATH)
-			match default_state:
-				States.UP:
-					sprite.frame = Frames.UP_STILL
-				States.DOWN:
-					sprite.frame = Frames.DOWN_STILL
-				States.RIGHT:
-					sprite.flip_h = false
-					sprite.frame = Frames.SIDE_STILL
-				States.LEFT:
-					sprite.flip_h = true
-					sprite.frame = Frames.SIDE_STILL
+	if has_node(SPRITE_PATH):
+		var sprite = get_node(SPRITE_PATH)
+		match default_state:
+			States.UP:
+				sprite.frame = Frames.UP_STILL
+			States.DOWN:
+				sprite.frame = Frames.DOWN_STILL
+			States.RIGHT:
+				sprite.flip_h = false
+				sprite.frame = Frames.SIDE_STILL
+			States.LEFT:
+				sprite.flip_h = true
+				sprite.frame = Frames.SIDE_STILL
 
 
 func _set_sprite(val) -> void:
 	sprite_sheet = val
-	if Engine.editor_hint:
-		if has_node(SPRITE_PATH):
-			var sprite = get_node(SPRITE_PATH)
-			if val == Sprites.NEO:
-				sprite.texture = load(NEO_SPRITE)
-			elif val == Sprites.MAIN:
-				sprite.texture = load(MAIN_SPRITE)
+	if has_node(SPRITE_PATH):
+		var sprite = get_node(SPRITE_PATH)
+		if val == Sprites.NEO:
+			sprite.texture = load(NEO_SPRITE)
+		elif val == Sprites.MAIN:
+			sprite.texture = load(MAIN_SPRITE)
 
 
 func _ready() -> void:
-	STORAGE.save("player_path", get_path())
-	if restore_position:
-		_try_to_restore_position()
-	_dir = default_state
-	# Determine the control method
-	if OS.get_name() == "Android" or UI.force_joystick:
-		_use_joystick = true
+	if not Engine.editor_hint:
+		STORAGE.save("player_path", get_path())
+		if restore_position:
+			_try_to_restore_position()
+		_dir = default_state
+		# Determine the control method
+		if OS.get_name() == "Android" or UI.force_joystick:
+			_use_joystick = true
 
 
 func _try_to_restore_position() -> void:

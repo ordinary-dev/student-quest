@@ -5,15 +5,13 @@
 [ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/templates/basement/steps.tscn" type="PackedScene" id=4]
 
-
-
-
-
 [node name="StairsScene" type="Node2D"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [  ]
 }
+dialog_scene = "res://Scenes/Chapter1/4-Funeral/11.Dialog.tscn"
+basement_scene = "res://Scenes/Chapter1/4-Funeral/12.Secret.tscn"
 
 [node name="Map" parent="." instance=ExtResource( 4 )]
 

@@ -17,24 +17,21 @@ export (bool) var show_computer = true setget _set_computer_visibility
 
 func _set_neo_visibility(val: bool) -> void:
 	show_neo = val
-	if Engine.editor_hint:
-		if has_node(NEO_PATH):
-			var neo := get_node(NEO_PATH)
-			neo.visible = show_neo
-			neo.enable_collider = show_neo
+	if has_node(NEO_PATH):
+		var neo := get_node(NEO_PATH)
+		neo.visible = show_neo
+		neo.enable_collider = show_neo
 
 
 func _set_light_visibility(val: bool) -> void:
 	enable_light = val
-	if Engine.editor_hint:
-		if has_node(LIGHT_PATH):
-			var light := get_node(LIGHT_PATH)
-			light.enabled = enable_light
+	if has_node(LIGHT_PATH):
+		var light := get_node(LIGHT_PATH)
+		light.enabled = enable_light
 
 
 func _set_computer_visibility(val: bool) -> void:
 	show_computer = val
-	if Engine.editor_hint:
-		if has_node(COMPUTER_PATH):
-			var comp := get_node(COMPUTER_PATH)
-			comp.visible = show_computer
+	if has_node(COMPUTER_PATH):
+		var comp := get_node(COMPUTER_PATH)
+		comp.visible = show_computer

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Tilemaps/building/building16.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/templates/faculty_maps/turnstile.tscn" type="PackedScene" id=2]
@@ -15,8 +15,7 @@
 [ext_resource path="res://Sprites/Doors/door_313.png" type="Texture" id=13]
 [ext_resource path="res://Sprites/Doors/door_312.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/templates/characters/ai.tscn" type="PackedScene" id=15]
-
-
+[ext_resource path="res://Scripts/templates/characters/ai_config.gd" type="Script" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 64 )
@@ -132,35 +131,35 @@ texture = ExtResource( 13 )
 position = Vector2( 573.405, 545.587 )
 hint = "2ND_FLOOR"
 use_once = false
-object_name = NodePath("../../../FacultyOfMathematics")
+object_name = NodePath("../..")
 function_name = "floor_2"
 
 [node name="TpFloor2-1" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 416, 1728 )
 hint = "1ST_FLOOR"
 use_once = false
-object_name = NodePath("../../../FacultyOfMathematics")
+object_name = NodePath("../..")
 function_name = "floor_1"
 
 [node name="TpFloor2-3" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 608, 1728 )
 hint = "3RD_FLOOR"
 use_once = false
-object_name = NodePath("../../../FacultyOfMathematics")
+object_name = NodePath("../..")
 function_name = "floor_3"
 
 [node name="TpFloor3-2" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 464, 3136 )
 hint = "2ND_FLOOR"
 use_once = false
-object_name = NodePath("../../../FacultyOfMathematics")
+object_name = NodePath("../..")
 function_name = "floor_2"
 
 [node name="TpOutside" parent="Teleports" instance=ExtResource( 3 )]
 position = Vector2( 576, 0 )
 hint = "STREET"
 use_once = false
-object_name = NodePath("../../../FacultyOfMathematics")
+object_name = NodePath("../..")
 function_name = "street"
 
 [node name="Colliders" type="Node2D" parent="."]
@@ -223,11 +222,8 @@ shape = SubResource( 5 )
 
 [node name="FloorPositions" type="Node2D" parent="."]
 
-[node name="Floor1_Center" type="Position2D" parent="FloorPositions"]
+[node name="Floor1" type="Position2D" parent="FloorPositions"]
 position = Vector2( 537.105, 478.685 )
-
-[node name="Floor1_Left" type="Position2D" parent="FloorPositions"]
-position = Vector2( -320, 352 )
 
 [node name="Floor2" type="Position2D" parent="FloorPositions"]
 position = Vector2( 420.854, 1659.83 )
@@ -258,73 +254,69 @@ position = Vector2( 434.892, 367.18 )
 
 [node name="Character" parent="YSort/NPC" instance=ExtResource( 15 )]
 position = Vector2( 232, 368 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor1/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor1/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character2" parent="YSort/NPC" instance=ExtResource( 15 )]
 position = Vector2( -312, 48 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor1/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor1/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character3" parent="YSort/NPC" instance=ExtResource( 15 )]
 position = Vector2( 944, 384 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor1/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor1/BottomRight")
+ai_config_path = NodePath("../Config")
+
+[node name="Config" type="Node" parent="YSort/NPC"]
+script = ExtResource( 16 )
+nav_node = NodePath("../../../Navigation2D")
+upper_left_node = NodePath("../../../Floor1/UpperLeft")
+bottom_right_node = NodePath("../../../Floor1/BottomRight")
 
 [node name="NPC2" type="YSort" parent="YSort"]
 
 [node name="Character" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( -160, 1544 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character2" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( 848, 1528 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character3" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( 88, 1664 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character4" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( 536, 1560 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character5" parent="YSort/NPC2" instance=ExtResource( 15 )]
 position = Vector2( 968, 1728 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
+
+[node name="Config" type="Node" parent="YSort/NPC2"]
+script = ExtResource( 16 )
+nav_node = NodePath("../../../Navigation2D")
+upper_left_node = NodePath("../../../Floor2/UpperLeft")
+bottom_right_node = NodePath("../../../Floor2/BottomRight")
 
 [node name="NPC3" type="YSort" parent="YSort"]
 
 [node name="Character" parent="YSort/NPC3" instance=ExtResource( 15 )]
 position = Vector2( 144, 3056 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor3/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor3/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character2" parent="YSort/NPC3" instance=ExtResource( 15 )]
 position = Vector2( 936, 2904 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor3/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor3/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character3" parent="YSort/NPC3" instance=ExtResource( 15 )]
 position = Vector2( -160, 2912 )
-nav_node = NodePath("../../../../FacultyOfMathematics/Navigation2D")
-upper_left_node = NodePath("../../../../FacultyOfMathematics/Floor3/UpperLeft")
-bottom_right_node = NodePath("../../../../FacultyOfMathematics/Floor3/BottomRight")
+ai_config_path = NodePath("../Config")
+
+[node name="Config" type="Node" parent="YSort/NPC3"]
+script = ExtResource( 16 )
+nav_node = NodePath("../../../Navigation2D")
+upper_left_node = NodePath("../../../Floor3/UpperLeft")
+bottom_right_node = NodePath("../../../Floor3/BottomRight")
 
 [node name="Turnstiles" type="StaticBody2D" parent="."]
 collision_layer = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scenes/templates/street/store.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/templates/street/ticket_window.tscn" type="PackedScene" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Scenes/templates/street/faculties/faculty_of_philology.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/templates/street/faculties/faculty_of_physics.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scripts/templates/street/street.gd" type="Script" id=25]
+[ext_resource path="res://Scripts/templates/characters/ai_config.gd" type="Script" id=26]
 [ext_resource path="res://Scenes/templates/street/faculties/faculty_of_law.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/templates/plants/tree_1.tscn" type="PackedScene" id=28]
 [ext_resource path="res://Scenes/templates/plants/bush_1.tscn" type="PackedScene" id=29]
@@ -36,9 +37,6 @@
 [ext_resource path="res://Sprites/Characters/Gardener.png" type="Texture" id=36]
 [ext_resource path="res://Scenes/templates/street/faculties/columns.tscn" type="PackedScene" id=37]
 [ext_resource path="res://Scenes/templates/rocks/rock_3.tscn" type="PackedScene" id=38]
-
-
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 2.66675 )
@@ -88,7 +86,7 @@ tile_data = PoolIntArray( 393215, -536870907, 0, 327680, -536870908, 0, 327681, 
 [node name="Transition" parent="Overlay" instance=ExtResource( 5 )]
 position = Vector2( 64.0668, 448.356 )
 scale = Vector2( 17.071, 12.8 )
-object = NodePath("../../../StreetTemplate/Overlay/Railways")
+object = NodePath("../Railways")
 
 [node name="Water" type="Node2D" parent="."]
 
@@ -589,75 +587,57 @@ z_index = 4
 
 [node name="Character" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 1120.86, 6540.24 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character2" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 1042.94, 6651.12 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character3" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 2847.15, 6530.16 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character4" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 6377.53, 8244.56 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character5" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 6943.66, 8245.37 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character6" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 7317.5, 6434.58 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character7" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 4237.22, 3876.88 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character8" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 3434.13, 3619.17 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character9" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 2667, 3601.19 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character10" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 1577.77, 2554.67 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character11" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 3710.28, 1606.14 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
 
 [node name="Character12" parent="YSort/AI" instance=ExtResource( 3 )]
 position = Vector2( 1386.82, 907.676 )
-nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
-upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
-bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+ai_config_path = NodePath("../AiConfig")
+
+[node name="AiConfig" type="Node" parent="YSort/AI"]
+script = ExtResource( 26 )
+nav_node = NodePath("../../../Navigation2D")
+upper_left_node = NodePath("../../../UpperLeft")
+bottom_right_node = NodePath("../../../BottomDown")
 
 [node name="Buildings" type="YSort" parent="YSort"]
 
@@ -670,7 +650,7 @@ position = Vector2( 1128, 8168 )
 [node name="FacultyOfPhysics" parent="YSort/Buildings" instance=ExtResource( 24 )]
 position = Vector2( 6224, 6328 )
 
-[node name="FacultyOfHumanities" parent="YSort/Buildings" instance=ExtResource( 23 )]
+[node name="FacultyOfPhilology" parent="YSort/Buildings" instance=ExtResource( 23 )]
 position = Vector2( 3976, 7920 )
 
 [node name="Columns" parent="YSort/Buildings" instance=ExtResource( 37 )]
@@ -2422,7 +2402,7 @@ label = "HM"
 [node name="Mathematics" parent="Triggers" instance=ExtResource( 31 )]
 position = Vector2( 1401.07, 6389.22 )
 hint = "MATH"
-object_name = NodePath("../../../StreetTemplate")
+object_name = NodePath("../..")
 function_name = "enter_the_building"
 
 [node name="Positions" type="Node2D" parent="."]

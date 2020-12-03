@@ -3,12 +3,6 @@
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/templates/holiday/interior.tscn" type="PackedScene" id=2]
 
-
-
-
-
-
-
 [node name="HouseScene" type="Node2D"]
 
 [node name="HouseTemplate" parent="." instance=ExtResource( 2 )]

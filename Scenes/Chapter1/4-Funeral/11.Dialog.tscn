@@ -3,10 +3,6 @@
 [ext_resource path="res://Scripts/nodes/dialog_loader.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=2]
 
-
-
-
-
 [node name="DialogScene" type="Node2D"]
 
 [node name="Dialog" type="Node" parent="."]

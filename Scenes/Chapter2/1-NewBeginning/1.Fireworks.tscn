@@ -4,16 +4,10 @@
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/nodes/stage_unlocker.gd" type="Script" id=3]
 
-
-
-
-
-
-
 [node name="Fireworks" type="Node2D"]
 
 [node name="FireworksTemplate" parent="." instance=ExtResource( 1 )]
-next_scene = "res://Scenes/Chapter2/1-NewBeginning/2.Dialog.tscn"
+scene_path = "res://Scenes/Chapter2/1-NewBeginning/2.Dialog.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )

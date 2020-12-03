@@ -5,11 +5,11 @@
 [ext_resource path="res://Scripts/nodes/police_officer_config.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=4]
 
-
 [node name="Infiltration" type="Node2D"]
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
 allow_entrance = true
+next_scene = "res://Scenes/Chapter3/3-Hope/20.Building.tscn"
 show_singer = false
 show_gardener = false
 enable_npc = false

@@ -17,17 +17,6 @@
 [ext_resource path="res://Sprites/Light/WindowLight.png" type="Texture" id=15]
 [ext_resource path="res://Scripts/nodes/stop_the_music.gd" type="Script" id=16]
 
-
-
-
-
-
-
-
-
-
-
-
 [node name="RectorScene" type="Node2D"]
 script = ExtResource( 16 )
 
@@ -179,6 +168,10 @@ scene_path = "res://Scenes/Chapter1/1-Beginning/13.PathToGuide.tscn"
 [node name="Body" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 376, 448 )
 default_state = 3
+camera_limit_left = 100
+camera_limit_top = 0
+camera_limit_right = 1600
+camera_limit_bottom = 1000
 
 [node name="Rector" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 992, 568 )
@@ -193,5 +186,3 @@ position = Vector2( 832, 568 )
 script = ExtResource( 6 )
 show_pause_menu = true
 show_joystick = true
-
-[editable path="YSort/Body"]

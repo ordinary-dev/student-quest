@@ -4,19 +4,12 @@
 [ext_resource path="res://Scenes/templates/characters/girlfriend.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=3]
 
-
-
-
-
-
-
-
 [node name="Street" type="Node2D"]
 
 [node name="Street-Template" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.784314, 0.823529, 0.898039, 1 )
 allow_entrance = true
-math_scene = "res://Scenes/Chapter3/3-Hope/42.Speach.tscn"
+next_scene = "res://Scenes/Chapter3/3-Hope/42.Speach.tscn"
 
 [node name="CharacterSprite" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1816, 336 )

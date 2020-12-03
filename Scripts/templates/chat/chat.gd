@@ -18,7 +18,7 @@ onready var _header := $VBoxContainer/HeaderBackground/HeaderContainer/HeaderTex
 
 
 func next_scene() -> void:
-	FX.btn_click()
+	FX.play_btn_click()
 	SCENES.load_scene(next_scene_path)
 
 

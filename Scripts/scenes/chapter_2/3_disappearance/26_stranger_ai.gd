@@ -4,7 +4,7 @@ extends Sprite
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
 
-const ANIM_SPEED = 25
+const ANIM_SPEED = 50
 const DISTANCE = 500
 const SPEED = 290
 export (NodePath) var player_path

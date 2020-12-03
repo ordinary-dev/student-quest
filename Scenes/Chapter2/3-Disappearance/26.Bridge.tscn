@@ -8,11 +8,6 @@
 [ext_resource path="res://Scripts/scenes/chapter_2/3_disappearance/26_stranger_ai.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/scenes/chapter_2/3_disappearance/26_bridge.gd" type="Script" id=8]
 
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 104, 96 )
 
@@ -62,14 +57,11 @@ shape = SubResource( 1 )
 position = Vector2( 1616, 1008 )
 scale = Vector2( 5, 5 )
 default_state = 2
-
-[node name="Camera2D" parent="Characters/Body/Character_Sprite" index="0"]
-position = Vector2( -21.2333, -4.5609 )
-limit_left = 0
-limit_top = 0
-limit_right = 1900
-limit_bottom = 1080
-editor_draw_limits = true
+camera_limit_left = -1000
+camera_limit_top = 120
+camera_limit_right = 1900
+camera_limit_bottom = 1080
+camera_zoom = 0.9
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -119,5 +111,3 @@ enabled = false
 call_one_time = true
 obj = NodePath("../..")
 method = "teleport_3"
-
-[editable path="Characters/Body"]

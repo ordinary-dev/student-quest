@@ -4,18 +4,10 @@
 [ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=3]
 
-
-
-
-
-
-
-
-
 [node name="Return" type="Node2D"]
 
 [node name="RoadTemplate" parent="." instance=ExtResource( 1 )]
-init_pos = 1
+initial_position = 1
 
 [node name="LoadScene" parent="." instance=ExtResource( 2 )]
 position = Vector2( 997.484, 896 )

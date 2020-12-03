@@ -5,11 +5,6 @@
 [ext_resource path="res://Sprites/Characters/Stranger.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=4]
 
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 80, 24 )
 
@@ -18,7 +13,10 @@ extents = Vector2( 80, 24 )
 [node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.862745, 0.823529, 0.929412, 1 )
 allow_entrance = true
-math_scene = "res://Scenes/Chapter3/1-SecretSociety/10.Plan.tscn"
+next_scene = "res://Scenes/Chapter3/1-SecretSociety/10.Plan.tscn"
+show_singer = false
+show_gardener = false
+enable_lights = false
 
 [node name="Girlfriend" type="Sprite" parent="."]
 position = Vector2( 1000, 296 )

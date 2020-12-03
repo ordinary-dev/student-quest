@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Sprites/Doors/door_132.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Doors/door_130.png" type="Texture" id=2]
@@ -13,8 +13,7 @@
 [ext_resource path="res://Scenes/templates/characters/guard.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Triggers/FunctionTrigger.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scripts/templates/faculty_maps/teleport.gd" type="Script" id=13]
-
-
+[ext_resource path="res://Scripts/templates/characters/ai_config.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 64, 32 )
@@ -186,11 +185,17 @@ shape = SubResource( 3 )
 
 [node name="FloorPositions" type="Node2D" parent="."]
 
-[node name="Floor1_Center" type="Position2D" parent="FloorPositions"]
+[node name="Floor1" type="Position2D" parent="FloorPositions"]
 position = Vector2( 537.105, 478.685 )
 
 [node name="Floor2" type="Position2D" parent="FloorPositions"]
 position = Vector2( 420.854, 1659.83 )
+
+[node name="Floor3" type="Position2D" parent="FloorPositions"]
+position = Vector2( 420.854, 1659.83 )
+__meta__ = {
+"_editor_description_": "Unused"
+}
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -198,7 +203,6 @@ position = Vector2( 420.854, 1659.83 )
 position = Vector2( 288, 1643 )
 scale = Vector2( 0.9, 0.9 )
 default_state = 0
-restore_position = true
 
 [node name="Turnstile0" parent="YSort" instance=ExtResource( 7 )]
 position = Vector2( 481.758, 262.635 )
@@ -215,18 +219,18 @@ position = Vector2( 434.892, 367.18 )
 
 [node name="Character" parent="YSort/NPC" instance=ExtResource( 3 )]
 position = Vector2( 232, 368 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor1/UpperLeft")
-bottom_right_node = NodePath("../../../Floor1/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character2" parent="YSort/NPC" instance=ExtResource( 3 )]
 position = Vector2( -141.193, 476.516 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor1/UpperLeft")
-bottom_right_node = NodePath("../../../Floor1/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character3" parent="YSort/NPC" instance=ExtResource( 3 )]
 position = Vector2( 944, 384 )
+ai_config_path = NodePath("../Config")
+
+[node name="Config" type="Node" parent="YSort/NPC"]
+script = ExtResource( 14 )
 nav_node = NodePath("../../../Navigation2D")
 upper_left_node = NodePath("../../../Floor1/UpperLeft")
 bottom_right_node = NodePath("../../../Floor1/BottomRight")
@@ -235,30 +239,26 @@ bottom_right_node = NodePath("../../../Floor1/BottomRight")
 
 [node name="Character" parent="YSort/NPC2" instance=ExtResource( 3 )]
 position = Vector2( -160, 1544 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character2" parent="YSort/NPC2" instance=ExtResource( 3 )]
 position = Vector2( 848, 1528 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character3" parent="YSort/NPC2" instance=ExtResource( 3 )]
 position = Vector2( 88, 1664 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character4" parent="YSort/NPC2" instance=ExtResource( 3 )]
 position = Vector2( 536, 1560 )
-nav_node = NodePath("../../../Navigation2D")
-upper_left_node = NodePath("../../../Floor2/UpperLeft")
-bottom_right_node = NodePath("../../../Floor2/BottomRight")
+ai_config_path = NodePath("../Config")
 
 [node name="Character5" parent="YSort/NPC2" instance=ExtResource( 3 )]
 position = Vector2( 968, 1728 )
+ai_config_path = NodePath("../Config")
+
+[node name="Config" type="Node" parent="YSort/NPC2"]
+script = ExtResource( 14 )
 nav_node = NodePath("../../../Navigation2D")
 upper_left_node = NodePath("../../../Floor2/UpperLeft")
 bottom_right_node = NodePath("../../../Floor2/BottomRight")
