@@ -194,21 +194,25 @@ flip_v = true
 [node name="DialogTrigger_0" parent="Dialogs" instance=ExtResource( 9 )]
 position = Vector2( 1221.08, 546.207 )
 scale = Vector2( 3, 3 )
+activate_once = true
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Walk-1.json"
 
 [node name="DialogTrigger_1" parent="Dialogs" instance=ExtResource( 9 )]
 position = Vector2( 2860.33, 546.207 )
 scale = Vector2( 3, 3 )
+activate_once = true
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Walk-2.json"
 
 [node name="DialogTrigger_2" parent="Dialogs" instance=ExtResource( 9 )]
 position = Vector2( 4080.33, 546.207 )
 scale = Vector2( 3, 3 )
+activate_once = true
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Walk-3.json"
 
 [node name="DialogTrigger_3" parent="Dialogs" instance=ExtResource( 9 )]
 position = Vector2( 6401.66, 546.207 )
 scale = Vector2( 3, 3 )
+activate_once = true
 dialog_path = "res://Dialogs/Chapter2/Disappearance/Walk-4.json"
 
 [node name="LoadTrigger" parent="." instance=ExtResource( 10 )]

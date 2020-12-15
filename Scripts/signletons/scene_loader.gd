@@ -24,10 +24,11 @@ func load_scene(scene_name: String, anim_start := true, anim_end := true) -> voi
 		yield(get_tree().create_timer(TIME), "timeout")
 	
 	# Save player position
-	if has_node(STORAGE.get("player_path")):
-		var pl = get_node(STORAGE.get("player_path"))
-		if pl.restore_position:
-			pl.save_position()
+	var player_path = STORAGE.get("player_path")
+	if has_node(player_path):
+		var player = get_node(player_path)
+		if player.restore_position:
+			player.save_position()
 	
 	# Load scene
 	last_scene_path = scene_name

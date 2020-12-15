@@ -29,7 +29,8 @@ func print_to_console() -> void:
 	yield(get_tree().create_timer(DELAY_BEFORE_PRINTING), "timeout")
 	# Print file contents to console
 	var text_file = File.new()
-	text_file.open(text_file_path, File.READ)
+	var status = text_file.open(text_file_path, File.READ)
+	assert(status == OK)
 	# Print first five lines
 	for _i in range(5):
 		# Print text

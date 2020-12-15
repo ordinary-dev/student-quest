@@ -1,37 +1,110 @@
 extends Node
 
 # Dialog API
-# It may be rewritten in the future
 # Copyright (c) 2020 PixelTrain
 # Licensed under the GPL-3 License
 
+const DIALOG_SCENE := preload("res://Scenes/templates/interface/dialog.tscn")
 var is_shown := false
-var _dialog_scene := load("res://Scenes/templates/interface/dialog.tscn")
-var _content: Array
-var _index: int
 # Call function after the dialog
 var _call_fnc: bool
-var _glob_obj: String
-var _glob_fnc: String
-var _glob_argv: String
+var _obj: String
+var _method: String
+var _argv: String
 # Remember whether the interface was hidden
 # before the dialog was displayed
 var _enable_pause_menu: bool
 var _enable_joystick: bool
+var _index: int
+var _content
 
 
-func show_dialog(path: String, obj := "", fnc := "", argv := "") -> void:
-	is_shown = true
-	# Try to open the file
-	var fl := File.new()
-	var state := fl.open(path, File.READ)
-	if state != OK:
-		NOTIFY.show("I can't load the dialog. Please report a bug.")
+func show_dialog(file_path: String, obj := "", method := "", argv := "") -> void:
+	# Try to read the json file
+	if _read_file(file_path) == false:
 		return
 	# Lock player movement
-	if has_node(STORAGE.get("player_path")):
-		get_node(STORAGE.get("player_path")).lock()
+	var player_path = STORAGE.get("player_path")
+	if has_node(player_path):
+		get_node(player_path).lock()
+	# Save arguments
+	if obj != "" and method != "":
+		_call_fnc = true
+		_obj = obj
+		_method = method
+		_argv = argv
+	else:
+		_call_fnc = false
+	# Play sound
+	FX.play_dialog_sound()
 	# Disable the interface, if enabled, and remember this
+	_hide_interface()
+	_create_dialog_obj()
+	# Activate button processing
+	set_process(true)
+	# Show first phrase
+	is_shown = true
+	_index = 0
+	show_next()
+
+
+func show_next() -> void:
+	# Show next phrase
+	var dialog = UI.get_node("dialog")
+	dialog.play_dialog(
+		_content[_index]["name"],
+		_content[_index]["text"]
+	)
+	_index += 1
+	# Next phrase is last
+	if _index == len(_content):
+		var btn = dialog.next_button
+		btn.disconnect("pressed", self, "show_next")
+		btn.connect("pressed", self, "hide_dialog")
+
+
+func hide_dialog():
+	is_shown = false
+	var dialog = UI.get_node("dialog")
+	dialog.hide()
+	set_process(false)
+	# Unlock player movement
+	var player_path = STORAGE.get("player_path")
+	if has_node(player_path):
+		get_node(player_path).unlock()
+	# Call a method if necessary
+	if _call_fnc:
+		if has_node(_obj):
+			if _argv == "":
+				get_node(_obj).call(_method)
+			else:
+				get_node(_obj).call(_method, _argv)
+	# Enable ui if necessary
+	if _enable_pause_menu:
+		UI.show_pause_menu = true
+	if _enable_joystick:
+		UI.show_joystick = true
+
+
+# Try to read the file
+# Returns true if there were no errors
+func _read_file(file_path: String) -> bool:
+	var fl := File.new()
+	var state := fl.open(file_path, File.READ)
+	if state != OK:
+		NOTIFY.show("I can't load the dialog. Please report a bug.")
+		return false
+	# Try to read the file
+	var json_result = JSON.parse(fl.get_as_text())
+	fl.close()
+	if json_result.error != OK:
+		NOTIFY.show("Can't parse the file. Please report a bug.")
+		return false
+	_content = json_result.result
+	return true
+
+
+func _hide_interface() -> void:
 	if UI.show_joystick:
 		UI.show_joystick = false
 		_enable_joystick = true
@@ -42,89 +115,22 @@ func show_dialog(path: String, obj := "", fnc := "", argv := "") -> void:
 		_enable_pause_menu = true
 	else:
 		_enable_pause_menu = false
-	# Play sound
-	FX.play_dialog_sound()
-	# Save arguments
-	if obj != "":
-		_call_fnc = true
-		_glob_obj = obj
-		_glob_fnc = fnc
-		_glob_argv = argv
-	else:
-		_call_fnc = false
-	# Prepare interface
-	var tmp = _dialog_scene.instance()
+
+
+func _create_dialog_obj() -> void:
+	var tmp = DIALOG_SCENE.instance()
 	tmp.name = "dialog"
 	UI.add_child(tmp)
-	# Read file
-	var json_result = JSON.parse(fl.get_as_text())
-	if json_result.error == OK:
-			var content = json_result.result
-			fl.close()
-			# Save values
-			_content = content
-			_index = 0
-			# Activate button processing
-			set_process(true)
-			# Show first phrase
-			_show_next()
-	else:
-		NOTIFY.show("Can't process the dialog")
-		fl.close()
+	UI.get_node("dialog").next_button.connect("pressed", self, "show_next")
 
 
-func _hide_dialog():
-	is_shown = false
-	var dialog_obj = UI.get_node("dialog")
-	dialog_obj.hide()
-	yield(get_tree().create_timer(dialog_obj.ANIM_DURATION), "timeout")
-	UI.remove_child(dialog_obj)
-	set_process(false)
-	# Unlock player movement
-	if has_node(STORAGE.get("player_path")):
-		get_node(STORAGE.get("player_path")).unlock()
-	# Call a method if necessary
-	if _call_fnc and has_node(_glob_obj):
-		if _glob_argv == "":
-			get_node(_glob_obj).call(_glob_fnc)
-		else:
-			get_node(_glob_obj).call(_glob_fnc, _glob_argv)
-	_glob_obj = ""
-	# Enable ui if necessary
-	if _enable_pause_menu:
-		UI.show_pause_menu = true
-	if _enable_joystick:
-		UI.show_joystick = true
-
-
-func _process(_delta):
+func _process(_delta) -> void:
 	if Input.is_action_just_pressed("dialog_next"):
-		if _index != -1:
-			_show_next()
+		if _index != len(_content):
+			show_next()
 		else:
-			_hide_dialog()
+			hide_dialog()
 
 
-func _show_next() -> void:
-	# Show next phrase
-	var dial = UI.get_node("dialog")
-	dial.play_dialog(
-		_content[_index]["name"],
-		_content[_index]["text"]
-	)
-	# Connect signal and get id of the next phrase
-	var btn = dial.next_button
-	if _index < len(_content) - 1:
-		btn.disconnect("pressed", self, "show_next")
-		btn.connect("pressed", self, "show_next")
-		_index += 1
-	# If this is the last phrase
-	else:
-		if _index != 0:
-			btn.disconnect("pressed", self, "show_next")
-		_index = -1
-		btn.connect("pressed", self, "hide_dialog")
-
-
-func _ready():
+func _ready() -> void:
 	set_process(false)

@@ -26,7 +26,7 @@ onready var _name_label := $MarginContainer/Body/Margin/Labels/Name
 onready var _text_label := $MarginContainer/Body/Margin/Labels/Text
 
 
-# Called by another script
+# Show the dialog on the screen
 func play_dialog(name: String, text: String) -> void:
 	if _tween.is_active():
 		_tween.stop_all()
@@ -40,11 +40,13 @@ func play_dialog(name: String, text: String) -> void:
 		_play(false)
 
 
-# Called by another script too
+# Destroy this object
 func hide() -> void:
 	anim_template(LEFT_OFFSET_END, LEFT_OFFSET_START, 
 			RIGHT_OFFSET_END, RIGHT_OFFSET_START, 
 			true, false)
+	yield(get_tree().create_timer(ANIM_DURATION), "timeout")
+	queue_free()
 
 
 # Appearance animation
@@ -58,28 +60,20 @@ func anim_template(left_from: int, left_to: int,
 			right_from: int, right_to: int, 
 			animate_form: bool, text_anim := true) -> void:
 	if animate_form:
-		_tween.interpolate_property(
-			_border, "margin_left",
-			left_from, left_to, ANIM_DURATION,
-			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-		)
-		_tween.interpolate_property(
-			_border, "margin_right",
-			right_from, right_to, ANIM_DURATION,
-			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-		)
-		_tween.interpolate_property(
-			_body, "margin_left",
-			left_from, left_to, ANIM_DURATION,
-			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-		)
-		_tween.interpolate_property(
-			_body, "margin_right",
-			right_from, right_to, ANIM_DURATION,
-			Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-		)
+		for obj in [_border, _body]:
+			_tween.interpolate_property(
+				obj, "margin_left",
+				left_from, left_to, ANIM_DURATION,
+				Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+			)
+			_tween.interpolate_property(
+				obj, "margin_right",
+				right_from, right_to, ANIM_DURATION,
+				Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
+			)
 		_tween.start()
-		yield(get_tree().create_timer(ANIM_DURATION), "timeout")
+		if text_anim:
+			yield(get_tree().create_timer(ANIM_DURATION), "timeout")
 	if text_anim:
 		_tween.interpolate_property(
 			_text_label, "percent_visible",

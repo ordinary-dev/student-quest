@@ -3,7 +3,6 @@
 [ext_resource path="res://Fonts/PressStart_Res/Pixel_font_large.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/templates/interface/dialog_template.gd" type="Script" id=2]
 
-
 [node name="DialogTemplate" type="Control"]
 light_mask = 0
 anchor_right = 1.0

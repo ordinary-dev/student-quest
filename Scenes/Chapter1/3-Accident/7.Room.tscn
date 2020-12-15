@@ -4,11 +4,6 @@
 [ext_resource path="res://Scenes/Triggers/LoadSceneTrigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/nodes/change_ui.gd" type="Script" id=3]
 
-
-
-
-
-
 [node name="Room" type="Node2D"]
 
 [node name="RoomTemplate" parent="." instance=ExtResource( 1 )]
