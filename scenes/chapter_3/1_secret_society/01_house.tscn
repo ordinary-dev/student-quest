@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/nodes/stop_the_music.gd" type="Script" id=1]
+[ext_resource path="res://scenes/templates/holiday/interior.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=3]
+[ext_resource path="res://scripts/nodes/stage_unlocker.gd" type="Script" id=4]
+
+[node name="House" type="Node2D"]
+
+[node name="HouseTemplate" parent="." instance=ExtResource( 2 )]
+door_open = true
+street_scene = "res://scenes/chapter_3/1_secret_society/02_forest.tscn"
+
+[node name="UnlockStage" type="Node" parent="."]
+script = ExtResource( 4 )
+subchapter_id = 8
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )
+show_pause_menu = true
+show_joystick = true
+
+[node name="StopTheMusic" type="Node" parent="."]
+script = ExtResource( 1 )

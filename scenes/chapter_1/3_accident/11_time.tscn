@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=1]
+[ext_resource path="res://scripts/scenes/chapter_1/3_accident/11_time.gd" type="Script" id=2]
+
+[node name="DateScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+next_scene = "res://scenes/chapter_1/3_accident/12_clouds.tscn"
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "12:00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 1 )

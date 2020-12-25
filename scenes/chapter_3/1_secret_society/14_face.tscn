@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=1]
+[ext_resource path="res://sprites/stripes.png" type="Texture" id=2]
+[ext_resource path="res://scripts/nodes/music_player.gd" type="Script" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+export (String, FILE, \"*.tscn\") var scene_path
+
+
+func _ready() -> void:
+	yield(get_tree().create_timer(1), \"timeout\")
+	$Background.color = Color(\"#1c1c1c\")
+	yield(get_tree().create_timer(1), \"timeout\")
+	SCENES.load_scene(scene_path)
+	
+"
+
+[node name="Face" type="Node2D"]
+script = SubResource( 1 )
+scene_path = "res://scenes/chapter_3/1_secret_society/15_monolog.tscn"
+
+[node name="Background" type="ColorRect" parent="."]
+margin_top = 312.0
+margin_right = 1920.0
+margin_bottom = 760.0
+color = Color( 0.905882, 0.819608, 0.819608, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainCharacter" type="Sprite" parent="."]
+position = Vector2( 976, 752 )
+scale = Vector2( 23, 23 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 2
+
+[node name="Stripes" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="MusicPlayer" type="Node" parent="."]
+script = ExtResource( 3 )
+file = "res://audio/music/dead_pulse/dead_pulse.ogg"

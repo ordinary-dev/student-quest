@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/templates/backgrounds/field.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/templates/rain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/templates/cemetery/statue.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/templates/cemetery/tomb_3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/templates/cemetery/tomb_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/templates/cemetery/grave_1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://audio/fx/rain/rain_moderate_c.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sprites/characters/alex/alex_black_suit.png" type="Texture" id=8]
+[ext_resource path="res://sprites/characters/mr_singer/mr_singer_black_suit.png" type="Texture" id=9]
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=10]
+
+[node name="Funeral" type="Node2D"]
+
+[node name="FieldTemplate" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.576471, 0.568627, 0.619608, 1 )
+
+[node name="RainTemplate" parent="." instance=ExtResource( 2 )]
+
+[node name="Statue" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.662745, 0.658824, 0.756863, 0.85098 )
+position = Vector2( 299.932, 886.143 )
+rotation = 1.39626
+scale = Vector2( 8.35784, 8.35784 )
+
+[node name="Tomb-3" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.796078, 0.815686, 0.913725, 0.607843 )
+position = Vector2( 1783.86, 868.927 )
+scale = Vector2( 3, 3 )
+
+[node name="Tomb-1" parent="." instance=ExtResource( 5 )]
+modulate = Color( 0.788235, 0.803922, 0.92549, 0.752941 )
+position = Vector2( 252.038, 862.968 )
+scale = Vector2( 3, 3 )
+
+[node name="Grave-1" parent="." instance=ExtResource( 6 )]
+modulate = Color( 0.854902, 0.862745, 0.878431, 0.607843 )
+position = Vector2( 1841.35, 807.681 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="MainCharacter_Black" type="Sprite" parent="."]
+modulate = Color( 0.85098, 0.870588, 0.905882, 0.741176 )
+position = Vector2( 990.353, 739.871 )
+scale = Vector2( 5.20416, 5.20416 )
+texture = ExtResource( 8 )
+
+[node name="Singer_Black" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.694118 )
+position = Vector2( 1195.04, 729.309 )
+scale = Vector2( 4.84999, 4.84999 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -8.0
+autoplay = true
+bus = "FX"
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 10 )
+dialog_path = "res://dialogs/chapter_1/funeral/singer.json"
+load_scene = true
+scene_path = "res://scenes/chapter_1/4_funeral/03_river.tscn"
+loading_delay = 3.0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/train_passing_left_to_right_a.ogg-98e3b74b9bdc04880f23bda6884a9a83.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/train/train_passing_left_to_right_a.ogg"
+dest_files=[ "res://.import/train_passing_left_to_right_a.ogg-98e3b74b9bdc04880f23bda6884a9a83.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

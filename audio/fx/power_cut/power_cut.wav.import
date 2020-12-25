@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/power_cut.wav-61f227a8166d3f4a54f401a98b997689.sample"
+
+[deps]
+
+source_file="res://audio/fx/power_cut/power_cut.wav"
+dest_files=[ "res://.import/power_cut.wav-61f227a8166d3f4a54f401a98b997689.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

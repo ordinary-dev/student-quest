@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=1]
+[ext_resource path="res://sprites/characters/commandant.png" type="Texture" id=2]
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=3]
+[ext_resource path="res://sprites/dormitory/background.png" type="Texture" id=4]
+[ext_resource path="res://sprites/dormitory/table.png" type="Texture" id=5]
+[ext_resource path="res://sprites/light/flashlight.png" type="Texture" id=6]
+[ext_resource path="res://scripts/templates/save_state.gd" type="Script" id=7]
+
+[node name="Commandant" type="Node2D"]
+
+[node name="Sprites" type="Node2D" parent="."]
+modulate = Color( 0.568627, 0.615686, 0.662745, 1 )
+
+[node name="Wall" type="Sprite" parent="Sprites"]
+position = Vector2( 960, 540 )
+scale = Vector2( 30, 33.75 )
+texture = ExtResource( 4 )
+
+[node name="Commandant" type="Sprite" parent="Sprites"]
+position = Vector2( 667.311, 446.241 )
+scale = Vector2( 15, 15 )
+texture = ExtResource( 2 )
+
+[node name="Table" type="Sprite" parent="Sprites"]
+position = Vector2( 672, 656 )
+scale = Vector2( 20.9909, 21.1587 )
+texture = ExtResource( 5 )
+
+[node name="MainCharacter" type="Sprite" parent="Sprites"]
+position = Vector2( 819.932, 665.719 )
+scale = Vector2( 15, 15 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 7
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 920, 536 )
+rotation = 3.14159
+scale = Vector2( 120.358, 67.5 )
+texture = ExtResource( 6 )
+energy = 0.7
+
+[node name="SaveState" type="Node2D" parent="."]
+script = ExtResource( 7 )
+prop = "sv_commandant"
+value = "yes"
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://dialogs/chapter_2/disappearance/commandant.json"
+load_scene = true
+scene_path = "res://scenes/chapter_2/3_disappearance/04_buttons.tscn"

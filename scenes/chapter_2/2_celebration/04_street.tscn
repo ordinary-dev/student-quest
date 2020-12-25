@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/templates/holiday/forest.tscn" type="PackedScene" id=2]
+
+[node name="StreetScene" type="Node2D"]
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 2 )]
+main_door_open = true
+another_door_open = true
+initial_location = 0
+interior_scene = "res://scenes/chapter_2/2_celebration/03_house.tscn"
+small_house = "res://scenes/chapter_2/2_celebration/05_second_floor.tscn"
+show_neo = false
+show_campfire = false

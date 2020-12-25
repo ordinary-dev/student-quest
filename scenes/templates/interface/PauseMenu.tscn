@@ -1,0 +1,285 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/icons/pause.png" type="Texture" id=1]
+[ext_resource path="res://scenes/menu/settings/settings.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/templates/interface/button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/menu/chapters/load.tscn" type="PackedScene" id=4]
+
+
+
+
+
+
+
+
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+export (String, FILE, \"*.tscn\") var menu_scene
+export (String, FILE, \"*.tscn\") var quit_scene
+export (NodePath) var return_btn
+
+onready var main_container := $MainContainer
+onready var background := $Background
+onready var pause_btn = $PauseButton
+
+onready var settings := $MainContainer/HBoxContainer/SubMenues/Settings
+onready var load_menu := $MainContainer/HBoxContainer/SubMenues/LoadMenu
+
+var enabled : bool = false
+var show_joystick := false
+
+
+func _ready() -> void:
+	main_container.visible = false
+	background.visible = false
+
+
+func _process(_delta) -> void:
+	if Input.is_action_just_pressed(\"ui_cancel\"):
+		switch()
+
+
+func switch():
+	if enabled:
+		_return_to_game()
+	else:
+		_on_Pause_pressed()
+
+
+func _on_Pause_pressed() -> void:
+	enabled = true
+	FX.play_btn_click()
+	
+	# Show pause menu
+	main_container.visible = true
+	background.visible = true
+	pause_btn.visible = false
+	
+	# Hide joystick
+	if UI.show_joystick:
+		UI.show_joystick = false
+		show_joystick = true
+	
+	# Stop the game
+	get_tree().paused = true
+	
+	# Focus
+	get_node(return_btn).grab_focus()
+
+
+func _return_to_game(play_sound : bool = true) -> void:
+	enabled = false
+	if play_sound:
+		FX.play_btn_click()
+	
+	# Hide pause menu
+	main_container.visible = false
+	background.visible = false
+	pause_btn.visible = true
+	
+	# Hide submenues
+	settings.visible = false
+	load_menu.visible = false
+	
+	# Continue the game
+	get_tree().paused = false
+	
+	# Enable joystick again if it was hidden
+	if show_joystick:
+		UI.show_joystick = true
+	show_joystick = false
+
+
+func _to_menu() -> void:
+	FX.play_btn_click()
+	MUSIC.stop()
+	SCENES.load_scene(menu_scene)
+	yield(get_tree().create_timer(SCENES.time), \"timeout\")
+	# Hide this scene
+	_return_to_game(false)
+
+
+# Quit game
+func _quit_game() -> void:
+	SCENES.load_scene(quit_scene)
+
+
+# Show or hide settings
+func _settings() -> void:
+	FX.play_btn_click()
+	settings.visible = !settings.visible
+	load_menu.visible = false
+
+
+# Load
+func _load() -> void:
+	FX.play_btn_click()
+	settings.visible = false
+	if load_menu.visible:
+		load_menu.visible = false
+	else:
+		load_menu.refresh()
+		load_menu.visible = true
+"
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[node name="PauseUI" type="Control"]
+pause_mode = 2
+process_priority = -3
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+mouse_filter = 2
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+menu_scene = "res://Scenes/Menu/Menu.tscn"
+quit_scene = "res://Scenes/Quit.tscn"
+return_btn = NodePath("MainContainer/HBoxContainer/MenuContainer/Return")
+
+[node name="Background" type="ColorRect" parent="."]
+visible = false
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.905882 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseButton" type="Button" parent="."]
+light_mask = 0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -84.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 84.0
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+icon = ExtResource( 1 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainContainer" type="MarginContainer" parent="."]
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_constants/margin_right = 100
+custom_constants/margin_top = 100
+custom_constants/margin_left = 100
+custom_constants/margin_bottom = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer"]
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 1820.0
+margin_bottom = 980.0
+custom_constants/separation = 100
+
+[node name="MenuContainer" type="VBoxContainer" parent="MainContainer/HBoxContainer"]
+light_mask = 0
+margin_right = 750.0
+margin_bottom = 880.0
+rect_min_size = Vector2( 750, 0 )
+custom_constants/separation = 25
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Return" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 140.0
+margin_right = 750.0
+margin_bottom = 240.0
+rect_min_size = Vector2( 80, 100 )
+focus_neighbour_bottom = NodePath("../Load")
+focus_next = NodePath("../Load")
+focus_previous = NodePath("../Quit")
+focus_mode = 2
+text = "RETURN"
+
+[node name="Load" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 265.0
+margin_right = 750.0
+margin_bottom = 365.0
+rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Return")
+focus_neighbour_bottom = NodePath("../Settings")
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../Return")
+focus_mode = 2
+text = "LOAD"
+
+[node name="Settings" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 390.0
+margin_right = 750.0
+margin_bottom = 490.0
+rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Load")
+focus_neighbour_bottom = NodePath("../Menu")
+focus_next = NodePath("../Menu")
+focus_previous = NodePath("../Load")
+focus_mode = 2
+text = "SETTINGS"
+
+[node name="Menu" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 515.0
+margin_right = 750.0
+margin_bottom = 615.0
+rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Settings")
+focus_neighbour_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Settings")
+focus_mode = 2
+text = "MENU"
+
+[node name="Quit" parent="MainContainer/HBoxContainer/MenuContainer" instance=ExtResource( 3 )]
+margin_top = 640.0
+margin_right = 750.0
+margin_bottom = 740.0
+rect_min_size = Vector2( 80, 100 )
+focus_neighbour_top = NodePath("../Menu")
+focus_neighbour_bottom = NodePath("../Return")
+focus_next = NodePath("../Return")
+focus_previous = NodePath("../Menu")
+focus_mode = 2
+text = "QUIT"
+
+[node name="SubMenues" type="CanvasLayer" parent="MainContainer/HBoxContainer"]
+layer = 12
+
+[node name="Settings" parent="MainContainer/HBoxContainer/SubMenues" instance=ExtResource( 2 )]
+visible = false
+margin_left = 950.0
+margin_top = 310.0
+margin_right = 1800.0
+margin_bottom = 980.0
+rect_min_size = Vector2( 850, 670 )
+
+[node name="LoadMenu" parent="MainContainer/HBoxContainer/SubMenues" instance=ExtResource( 4 )]
+visible = false
+margin_left = 1000.0
+margin_top = 200.0
+[connection signal="pressed" from="PauseButton" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Return" to="." method="_return_to_game"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Load" to="." method="_load"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Settings" to="." method="_settings"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Menu" to="." method="_to_menu"]
+[connection signal="pressed" from="MainContainer/HBoxContainer/MenuContainer/Quit" to="." method="_quit_game"]

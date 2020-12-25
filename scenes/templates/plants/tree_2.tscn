@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/trees/trees-2.png" type="Texture" id=1]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.82759, 4.16392 )
+
+[node name="Tree-2" type="Sprite"]
+position = Vector2( -7.10543e-15, 1.14441e-05 )
+scale = Vector2( 4.17415, 4.19891 )
+z_index = 4
+texture = ExtResource( 1 )
+offset = Vector2( 0, -32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 1.70225e-15, -3.81051 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -5.10862, -0.0995784 )
+shape = SubResource( 1 )

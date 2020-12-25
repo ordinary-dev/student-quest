@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/frozen_fjords_only_guitar.wav-2e006000bc4f255c79a3e5e9fb30c89f.sample"
+
+[deps]
+
+source_file="res://audio/music/frozen_fjords/frozen_fjords_only_guitar.wav"
+dest_files=[ "res://.import/frozen_fjords_only_guitar.wav-2e006000bc4f255c79a3e5e9fb30c89f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

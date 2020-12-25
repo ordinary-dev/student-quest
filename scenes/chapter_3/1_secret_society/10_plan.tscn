@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/templates/faculty_maps/faculty_of_mathematics.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/triggers/advanced/dialog_trigger.tscn" type="PackedScene" id=2]
+
+[node name="Plan" type="Node2D"]
+
+[node name="FacultyMap" parent="." instance=ExtResource( 1 )]
+player_direction = 0
+initial_pos = 0
+block_turnstile = true
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 2 )]
+position = Vector2( 528, 312 )
+hint = "SECURITY_GUARD"
+dialog_path = "res://dialogs/chapter_3/secret_society/plan.json"
+load_scene = true
+scene_path = "res://scenes/chapter_3/1_secret_society/11_phone.tscn"

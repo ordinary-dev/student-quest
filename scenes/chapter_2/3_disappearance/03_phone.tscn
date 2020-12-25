@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/templates/backgrounds/blurred_background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/phone.png" type="Texture" id=2]
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=3]
+[ext_resource path="res://scripts/templates/save_state.gd" type="Script" id=4]
+
+[node name="Phone" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+
+[node name="Phone" type="Sprite" parent="."]
+position = Vector2( 992, 760 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+
+[node name="SaveState" type="Node2D" parent="."]
+script = ExtResource( 4 )
+prop = "sv_phone"
+value = "yes"
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://dialogs/chapter_2/disappearance/phone.json"
+load_scene = true
+scene_path = "res://scenes/chapter_2/3_disappearance/04_buttons.tscn"
+loading_delay = 0.5

@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/street/fountain/fountain.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://scripts/templates/sprite_autoplay.gd" type="Script" id=2]
+[ext_resource path="res://audio/fx/fountain/fountain_01.ogg" type="AudioStream" id=3]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[node name="Fountain" type="AnimatedSprite"]
+scale = Vector2( 16, 16 )
+z_index = 4
+frames = ExtResource( 1 )
+offset = Vector2( -1, -4 )
+script = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 1.0729, 4.06357 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
+polygon = PoolVector2Array( -6.0729, -0.06357, -9.0729, -3.06357, -9.0729, -5.06357, -7.0729, -8.06357, 4.9271, -8.06357, 5.9271, -6.06357, 5.9271, -2.06357, 3.9271, -0.06357 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = 15.0
+autoplay = true
+attenuation = 6.0
+bus = "FX"

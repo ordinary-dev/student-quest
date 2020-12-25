@@ -1,0 +1,209 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://sprites/screenshots/chapter_2/disappearance.webp" type="Texture" id=1]
+[ext_resource path="res://scenes/menu/chapters/chapter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://sprites/screenshots/chapter_1/beginning.webp" type="Texture" id=3]
+[ext_resource path="res://sprites/screenshots/chapter_1/first_days.webp" type="Texture" id=4]
+[ext_resource path="res://sprites/screenshots/chapter_1/accident.webp" type="Texture" id=5]
+[ext_resource path="res://sprites/screenshots/chapter_1/funeral.webp" type="Texture" id=6]
+[ext_resource path="res://sprites/screenshots/chapter_2/new_beginning.webp" type="Texture" id=7]
+[ext_resource path="res://sprites/screenshots/chapter_2/celebration.webp" type="Texture" id=8]
+[ext_resource path="res://sprites/screenshots/chapter_3/hope.webp" type="Texture" id=9]
+[ext_resource path="res://sprites/screenshots/chapter_3/secret_society.webp" type="Texture" id=11]
+[ext_resource path="res://sprites/screenshots/chapter_3/despair.webp" type="Texture" id=13]
+[ext_resource path="res://scripts/menu/chapters/load.gd" type="Script" id=17]
+
+[node name="LoadScene" type="ScrollContainer"]
+light_mask = 0
+margin_right = 600.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 860, 600 )
+mouse_filter = 1
+size_flags_horizontal = 3
+follow_focus = true
+scroll_horizontal_enabled = false
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+light_mask = 0
+margin_right = 800.0
+margin_bottom = 4650.0
+custom_constants/separation = 20
+
+[node name="Chapter1" type="VBoxContainer" parent="VBoxContainer"]
+light_mask = 0
+margin_right = 800.0
+margin_bottom = 1810.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/Chapter1"]
+light_mask = 0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 420, 80 )
+text = "CHAPTER_1"
+align = 1
+valign = 1
+
+[node name="Name" type="Label" parent="VBoxContainer/Chapter1"]
+light_mask = 0
+margin_top = 90.0
+margin_right = 800.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 460, 80 )
+text = "CHAPTER_1_NAME"
+align = 1
+valign = 1
+
+[node name="Beginning" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 180.0
+margin_right = 800.0
+margin_bottom = 580.0
+texture = ExtResource( 3 )
+chapter_name = "BEGINNING"
+path_to_scene = "res://scenes/chapter_1/1_beginning/01_date.tscn"
+
+[node name="FirstDays" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 590.0
+margin_right = 800.0
+margin_bottom = 990.0
+texture = ExtResource( 4 )
+chapter_name = "FIRST_DAYS"
+path_to_scene = "res://Scenes/Chapter1/2-FirstDays/1.Date.tscn"
+
+[node name="Accident" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1000.0
+margin_right = 800.0
+margin_bottom = 1400.0
+texture = ExtResource( 5 )
+chapter_name = "ACCIDENT"
+path_to_scene = "res://Scenes/Chapter1/3-Accident/1.Dialog.tscn"
+
+[node name="Funeral" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1410.0
+margin_right = 800.0
+margin_bottom = 1810.0
+texture = ExtResource( 6 )
+chapter_name = "FUNERAL"
+path_to_scene = "res://Scenes/Chapter1/4-Funeral/1.Grave.tscn"
+
+[node name="Chapter2" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 1830.0
+margin_right = 800.0
+margin_bottom = 3230.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/Chapter2"]
+light_mask = 0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 420, 80 )
+text = "CHAPTER_2"
+align = 1
+valign = 1
+
+[node name="Name" type="Label" parent="VBoxContainer/Chapter2"]
+light_mask = 0
+margin_top = 90.0
+margin_right = 800.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 460, 80 )
+text = "CHAPTER_2_NAME"
+align = 1
+valign = 1
+
+[node name="NewBeginning" parent="VBoxContainer/Chapter2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 180.0
+margin_right = 800.0
+margin_bottom = 580.0
+texture = ExtResource( 7 )
+chapter_name = "NEW_BEGINNING"
+path_to_scene = "res://Scenes/Chapter2/1-NewBeginning/1.Fireworks.tscn"
+
+[node name="Celebration" parent="VBoxContainer/Chapter2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 590.0
+margin_right = 800.0
+margin_bottom = 990.0
+texture = ExtResource( 8 )
+chapter_name = "CELEBRATION"
+path_to_scene = "res://Scenes/Chapter2/2-Celebration/1.Intro.tscn"
+
+[node name="Disappearance" parent="VBoxContainer/Chapter2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1000.0
+margin_right = 800.0
+margin_bottom = 1400.0
+texture = ExtResource( 1 )
+chapter_name = "DISAPPEARANCE"
+path_to_scene = "res://Scenes/Chapter2/3-Disappearance/1.Street.tscn"
+
+[node name="Chapter3" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 3250.0
+margin_right = 800.0
+margin_bottom = 4650.0
+custom_constants/separation = 10
+
+[node name="Label" type="Label" parent="VBoxContainer/Chapter3"]
+light_mask = 0
+margin_right = 800.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 420, 80 )
+text = "CHAPTER_3"
+align = 1
+valign = 1
+
+[node name="Name" type="Label" parent="VBoxContainer/Chapter3"]
+light_mask = 0
+margin_top = 90.0
+margin_right = 800.0
+margin_bottom = 170.0
+rect_min_size = Vector2( 460, 80 )
+text = "CHAPTER_3_NAME"
+align = 1
+valign = 1
+
+[node name="SecretSociety" parent="VBoxContainer/Chapter3" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 180.0
+margin_right = 800.0
+margin_bottom = 580.0
+texture = ExtResource( 11 )
+chapter_name = "SECRET_SOCIETY"
+path_to_scene = "res://Scenes/Chapter3/1-SecretSociety/1.House.tscn"
+
+[node name="Despair" parent="VBoxContainer/Chapter3" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 590.0
+margin_right = 800.0
+margin_bottom = 990.0
+texture = ExtResource( 13 )
+chapter_name = "DESPAIR"
+path_to_scene = "res://Scenes/Chapter3/2-Despair/1.Street.tscn"
+
+[node name="Hope" parent="VBoxContainer/Chapter3" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1000.0
+margin_right = 800.0
+margin_bottom = 1400.0
+texture = ExtResource( 9 )
+chapter_name = "HOPE"
+path_to_scene = "res://Scenes/Chapter3/3-Hope/1.Field.tscn"

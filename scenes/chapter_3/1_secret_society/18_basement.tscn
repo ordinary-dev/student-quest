@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/templates/basement/basement.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/triggers/simple_triggers/load_scene_trigger.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 16 )
+
+[node name="Basement" type="Node2D"]
+
+[node name="Map" parent="." instance=ExtResource( 1 )]
+enable_light = true
+show_computer = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 672, -40 )
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 8, -64 )
+shape = SubResource( 1 )
+
+[node name="LoadTrigger" parent="." instance=ExtResource( 4 )]
+position = Vector2( 718, -329 )
+scale = Vector2( 8.48, 2.96 )
+z_index = 1
+scene = "res://scenes/chapter_3/1_secret_society/19_monolog.tscn"

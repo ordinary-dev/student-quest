@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/templates/street/faculties/faculty_of_philology.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=2]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=3]
+[ext_resource path="res://scenes/templates/street/faculties/columns.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/templates/interface/noise_background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/scenes/chapter_2/3_disappearance/2_waiting.gd" type="Script" id=6]
+[ext_resource path="res://scripts/nodes/music_player.gd" type="Script" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Camera"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.4, 0.4 ), Vector2( 0.7, 0.7 ) ]
+}
+
+[node name="Waiting" type="Node2D"]
+script = ExtResource( 6 )
+btn_scene_path = "res://scenes/chapter_2/3_disappearance/00_choice.tscn"
+
+[node name="NoiseBackground" parent="." instance=ExtResource( 5 )]
+position = Vector2( -720, -536 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="FacultyOfHumanities" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4.76837e-07, 1.52588e-05 )
+scale = Vector2( 5, 5 )
+
+[node name="Columns" parent="FacultyOfHumanities" instance=ExtResource( 4 )]
+position = Vector2( -9.53674e-08, 16 )
+
+[node name="MainCharacter" type="Sprite" parent="."]
+position = Vector2( 48, -8 )
+scale = Vector2( 2.5, 2.5 )
+z_index = 4
+texture = ExtResource( 2 )
+flip_h = true
+vframes = 3
+hframes = 3
+frame = 8
+
+[node name="Camera2D" type="Camera2D" parent="."]
+z_index = 5
+offset = Vector2( 0, -25 )
+current = true
+zoom = Vector2( 0.3, 0.3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Camera"
+anims/Camera = SubResource( 1 )
+
+[node name="MusicPlayer" type="Node" parent="."]
+script = ExtResource( 7 )
+file = "res://audio/music/sad_piano/sad_heaven_piano_3.ogg"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="load_scene"]

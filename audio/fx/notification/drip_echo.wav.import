@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/drip_echo.wav-3e4b693a46954328d8c9c3becb06c17c.sample"
+
+[deps]
+
+source_file="res://audio/fx/notification/drip_echo.wav"
+dest_files=[ "res://.import/drip_echo.wav-3e4b693a46954328d8c9c3becb06c17c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

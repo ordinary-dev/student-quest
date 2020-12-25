@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=1]
+[ext_resource path="res://sprites/characters/guard.png" type="Texture" id=2]
+[ext_resource path="res://scenes/templates/faculty_maps/faculty_of_mathematics.tscn" type="PackedScene" id=3]
+
+[node name="Plan" type="Node2D"]
+
+[node name="FacultyMap" parent="." instance=ExtResource( 3 )]
+player_direction = 0
+block_turnstile = true
+
+[node name="Guard" type="Sprite" parent="."]
+position = Vector2( 352, 1504 )
+scale = Vector2( 3, 3 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 1 )
+dialog_path = "res://dialogs/chapter_3/secret_society/security_guard.json"
+load_scene = true
+scene_path = "res://scenes/chapter_3/1_secret_society/13_blackout.tscn"
+loading_delay = 1.0

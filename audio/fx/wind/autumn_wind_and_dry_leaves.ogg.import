@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/autumn_wind_and_dry_leaves.ogg-b06203a4776ea3eb7edd37456e405648.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/wind/autumn_wind_and_dry_leaves.ogg"
+dest_files=[ "res://.import/autumn_wind_and_dry_leaves.ogg-b06203a4776ea3eb7edd37456e405648.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

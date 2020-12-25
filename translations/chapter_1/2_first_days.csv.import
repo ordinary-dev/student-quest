@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://translations/chapter_1/2_first_days.ru.translation", "res://translations/chapter_1/2_first_days.en.translation" ]
+
+source_file="res://translations/chapter_1/2_first_days.csv"
+dest_files=[ "res://translations/chapter_1/2_first_days.ru.translation", "res://translations/chapter_1/2_first_days.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

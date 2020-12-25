@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sad_heaven_piano_1.ogg-9b5bcfba63bb317944fa8f797220953a.oggstr"
+
+[deps]
+
+source_file="res://audio/music/sad_piano/sad_heaven_piano_1.ogg"
+dest_files=[ "res://.import/sad_heaven_piano_1.ogg-9b5bcfba63bb317944fa8f797220953a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

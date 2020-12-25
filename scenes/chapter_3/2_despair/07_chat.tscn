@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/templates/chat/chat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
+
+[node name="Chat" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChatTemplate" parent="." instance=ExtResource( 1 )]
+title = "SECRET_SOCIETY"
+next_scene_path = "res://scenes/chapter_3/2_despair/08_bed.tscn"
+messages = [ "DPR_CHAT_1", "DPR_CHAT_2", "DPR_CHAT_3" ]
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/nodes/automatic_scene_loader.gd" type="Script" id=2]
+[ext_resource path="res://sprites/backgrounds/field.png" type="Texture" id=3]
+
+[node name="RoadScene" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 955.508, 535.687 )
+scale = Vector2( 22, 22 )
+texture = ExtResource( 3 )
+
+[node name="SceneLoader" type="Node" parent="."]
+script = ExtResource( 2 )
+next_scene = "res://scenes/chapter_2/2_celebration/03_house.tscn"
+delay = 2.0

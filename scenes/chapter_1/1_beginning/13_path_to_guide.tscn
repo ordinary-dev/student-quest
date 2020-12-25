@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/templates/faculty_maps/faculty_of_philology.tscn" type="PackedScene" id=1]
+
+[node name="PathToGuide" type="Node2D"]
+
+[node name="FacultyOfPhililogy" parent="." instance=ExtResource( 1 )]
+street_scene_path = "res://scenes/chapter_1/1_beginning/14_dialog.tscn"
