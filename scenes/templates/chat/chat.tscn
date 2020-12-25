@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/templates/chat/chat.gd" type="Script" id=1]
+
+
+[node name="ChatTemplate" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 1920.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 1920, 1080 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeaderBackground" type="ColorRect" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 1920, 104 )
+color = Color( 0.337255, 0.45098, 0.596078, 1 )
+
+[node name="HeaderContainer" type="HBoxContainer" parent="VBoxContainer/HeaderBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeaderText" type="Label" parent="VBoxContainer/HeaderBackground/HeaderContainer"]
+margin_top = 36.0
+margin_right = 1766.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+text = "CHAT"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="VBoxContainer/HeaderBackground/HeaderContainer"]
+margin_left = 1770.0
+margin_right = 1870.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 100, 100 )
+text = "x"
+flat = true
+
+[node name="BodyBackground" type="ColorRect" parent="VBoxContainer"]
+margin_top = 108.0
+margin_right = 1920.0
+margin_bottom = 1088.0
+rect_min_size = Vector2( 0, 980 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.133333, 0.117647, 0.164706, 1 )
+
+[node name="Container" type="VBoxContainer" parent="VBoxContainer/BodyBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/HeaderBackground/HeaderContainer/CloseButton" to="." method="next_scene"]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_1/4_funeral.en.translation" ]
+
+source_file="res://translations/chapter_1/4_funeral.csv"
+dest_files=[ "res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_1/4_funeral.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,188 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://tilemaps/rector/map.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/templates/characters/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/templates/interface/noise_sprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/templates/characters/rector.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/triggers/advanced/dialog_trigger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=6]
+[ext_resource path="res://scenes/templates/rector/bookcase_1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/templates/rector/table_3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/templates/rector/bookcase_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/templates/rector/bookcase_3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/templates/rector/table_1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/templates/rector/table_2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/templates/rector/chair_1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/templates/characters/worker.tscn" type="PackedScene" id=14]
+[ext_resource path="res://sprites/light/window_light.png" type="Texture" id=15]
+[ext_resource path="res://scripts/nodes/stop_the_music.gd" type="Script" id=16]
+
+[node name="RectorScene" type="Node2D"]
+script = ExtResource( 16 )
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Noise" type="Node2D" parent="Background"]
+
+[node name="NoiseSprite" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 160, 160 )
+
+[node name="NoiseSprite25" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 160, -32 )
+
+[node name="NoiseSprite2" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 352, 32 )
+
+[node name="NoiseSprite3" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 544, 32 )
+
+[node name="NoiseSprite4" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 736, 32 )
+
+[node name="NoiseSprite5" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 928, 32 )
+
+[node name="NoiseSprite6" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1120, 32 )
+
+[node name="NoiseSprite7" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1312, 32 )
+
+[node name="NoiseSprite8" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1504, 32 )
+
+[node name="NoiseSprite9" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1696, 32 )
+
+[node name="NoiseSprite10" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1568, 224 )
+
+[node name="NoiseSprite11" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1568, 416 )
+
+[node name="NoiseSprite12" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1568, 608 )
+
+[node name="NoiseSprite13" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1568, 800 )
+
+[node name="NoiseSprite14" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1568, 992 )
+
+[node name="NoiseSprite15" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1376, 928 )
+
+[node name="NoiseSprite16" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 1184, 928 )
+
+[node name="NoiseSprite17" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 992, 928 )
+
+[node name="NoiseSprite18" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 800, 928 )
+
+[node name="NoiseSprite19" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 608, 928 )
+
+[node name="NoiseSprite20" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 416, 928 )
+
+[node name="NoiseSprite21" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 224, 928 )
+
+[node name="NoiseSprite26" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 32, 928 )
+
+[node name="NoiseSprite22" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 160, 736 )
+
+[node name="NoiseSprite23" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 160, 544 )
+
+[node name="NoiseSprite24" parent="Background/Noise" instance=ExtResource( 3 )]
+position = Vector2( 160, 352 )
+
+[node name="Map" type="TileMap" parent="Background"]
+scale = Vector2( 4, 4 )
+z_index = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+collision_layer = 0
+collision_mask = 1024
+format = 1
+tile_data = PoolIntArray( 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 196612, 1, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 2, 0, 196619, 2, 0, 196620, 2, 0, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 2, 0, 196625, 2, 0, 196626, 2, 0, 196627, 2, 0, 196628, 2, 0, 196629, 2, 0, 196630, 1, 0, 262148, 1, 0, 262149, 2, 0, 262150, 2, 0, 262151, 2, 0, 262152, 2, 0, 262153, 2, 0, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 262164, 2, 0, 262165, 2, 0, 262166, 1, 0, 327684, 1, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327689, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 1, 0, 393220, 1, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 393226, 0, 0, 393227, 0, 0, 393228, 0, 0, 393229, 0, 0, 393230, 0, 0, 393231, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, 393235, 0, 0, 393236, 0, 0, 393237, 0, 0, 393238, 1, 0, 458756, 1, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 0, 458773, 0, 0, 458774, 1, 0, 524292, 1, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 524309, 0, 0, 524310, 1, 0, 589828, 1, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0, 589836, 0, 0, 589837, 0, 0, 589838, 0, 0, 589839, 0, 0, 589840, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 589845, 0, 0, 589846, 1, 0, 655364, 1, 0, 655365, 1, 0, 655366, 1, 0, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 1, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 1, 0, 655375, 1, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 1, 0, 655380, 1, 0, 655381, 1, 0, 655382, 1, 0, 720900, 3, 0, 720901, 3, 0, 720902, 3, 0, 720903, 3, 0, 720904, 3, 0, 720905, 3, 0, 720906, 3, 0, 720907, 3, 0, 720908, 3, 0, 720909, 3, 0, 720910, 3, 0, 720911, 3, 0, 720912, 3, 0, 720913, 3, 0, 720914, 3, 0, 720915, 3, 0, 720916, 3, 0, 720917, 3, 0, 720918, 3, 0, 786436, 3, 0, 786437, 3, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 3, 0, 786442, 3, 0, 786443, 3, 0, 786444, 3, 0, 786445, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786450, 3, 0, 786451, 3, 0, 786452, 3, 0, 786453, 3, 0, 786454, 3, 0 )
+
+[node name="Furniture" type="Node2D" parent="Background"]
+
+[node name="Bookcase1" parent="Background/Furniture" instance=ExtResource( 7 )]
+position = Vector2( 760, 368 )
+
+[node name="Bookcase2" parent="Background/Furniture" instance=ExtResource( 9 )]
+position = Vector2( 856, 368 )
+
+[node name="Bookcase3" parent="Background/Furniture" instance=ExtResource( 10 )]
+position = Vector2( 952, 368 )
+
+[node name="Table1" parent="Background/Furniture" instance=ExtResource( 11 )]
+position = Vector2( 1064, 376 )
+
+[node name="Table2" parent="Background/Furniture" instance=ExtResource( 12 )]
+position = Vector2( 1224, 376 )
+
+[node name="Worker" parent="Background" instance=ExtResource( 14 )]
+position = Vector2( 1328, 368 )
+
+[node name="Light2D" type="Light2D" parent="Background"]
+position = Vector2( 600, 640 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -128 )
+energy = 0.6
+range_item_cull_mask = 3
+shadow_enabled = true
+
+[node name="Light2D2" type="Light2D" parent="Background"]
+position = Vector2( 900, 640 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -128 )
+energy = 0.6
+range_item_cull_mask = -2147483645
+shadow_enabled = true
+
+[node name="Light2D3" type="Light2D" parent="Background"]
+position = Vector2( 1200, 640 )
+texture = ExtResource( 15 )
+offset = Vector2( 0, -128 )
+energy = 0.6
+range_item_cull_mask = 3
+shadow_enabled = true
+
+[node name="RectorDialog" parent="." instance=ExtResource( 5 )]
+position = Vector2( 808.866, 494.028 )
+hint = "RECTOR"
+dialog_path = "res://dialogs/chapter_1/beginning/rector.json"
+load_scene = true
+scene_path = "res://scenes/chapter_1/1_beginning/13_path_to_guide.tscn"
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Body" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 376, 448 )
+default_state = 3
+camera_limit_left = 100
+camera_limit_top = 0
+camera_limit_right = 1600
+camera_limit_bottom = 1000
+
+[node name="Rector" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 992, 568 )
+
+[node name="Table3" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 904, 576 )
+
+[node name="Chair1" parent="YSort" instance=ExtResource( 13 )]
+position = Vector2( 832, 568 )
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 6 )
+show_pause_menu = true
+show_joystick = true

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/backgrounds/sky.png" type="Texture" id=1]
+[ext_resource path="res://sprites/street/faculty_of_mathematics.png" type="Texture" id=2]
+[ext_resource path="res://scripts/nodes/automatic_scene_loader.gd" type="Script" id=3]
+
+[node name="Building" type="Node2D"]
+
+[node name="Sky" type="Sprite" parent="."]
+position = Vector2( 4.76837e-07, 0 )
+scale = Vector2( 46.8293, 46.9565 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="FacultyOfMathematics" type="Sprite" parent="."]
+position = Vector2( 950.182, 731.919 )
+scale = Vector2( 9.55344, 9.55344 )
+texture = ExtResource( 2 )
+
+[node name="SceneLoader" type="Node" parent="."]
+script = ExtResource( 3 )
+next_scene = "res://scenes/chapter_1/2_first_days/10_lesson.tscn"
+delay = 2.0

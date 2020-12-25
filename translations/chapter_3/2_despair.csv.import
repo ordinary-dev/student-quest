@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://translations/chapter_3/2_despair.ru.translation", "res://translations/chapter_3/2_despair.en.translation" ]
+
+source_file="res://translations/chapter_3/2_despair.csv"
+dest_files=[ "res://translations/chapter_3/2_despair.ru.translation", "res://translations/chapter_3/2_despair.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

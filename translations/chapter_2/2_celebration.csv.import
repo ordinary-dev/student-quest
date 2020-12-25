@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/2_celebration.en.translation" ]
+
+source_file="res://translations/chapter_2/2_celebration.csv"
+dest_files=[ "res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/2_celebration.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

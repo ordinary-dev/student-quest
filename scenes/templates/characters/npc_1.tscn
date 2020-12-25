@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/characters/npc_1.png" type="Texture" id=1]
+
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.33333, 2.66667 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -4.93964, -0.127963, -3.99683, -2.868, 2.868, -2.868, 4.51792, -0.186887, 2.54391, -2.30821, -3.37811, -2.3966 )
+
+[node name="NPC_1" type="Sprite"]
+light_mask = 2
+scale = Vector2( 3, 3 )
+z_index = 4
+texture = ExtResource( 1 )
+offset = Vector2( 0, -15 )
+vframes = 3
+hframes = 3
+frame = 8
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 4.54747e-13, -2.66667 )
+shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+show_behind_parent = true
+occluder = SubResource( 2 )

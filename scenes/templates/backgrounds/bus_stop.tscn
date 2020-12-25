@@ -1,0 +1,145 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://sprites/light/light.png" type="Texture" id=1]
+[ext_resource path="res://sprites/buildings/building_3.png" type="Texture" id=2]
+[ext_resource path="res://sprites/buildings/building_2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/buildings/building_4.png" type="Texture" id=4]
+[ext_resource path="res://sprites/bus_stop/background.png" type="Texture" id=5]
+[ext_resource path="res://sprites/bus_stop/bus_station.png" type="Texture" id=6]
+[ext_resource path="res://sprites/buildings/building_1.png" type="Texture" id=7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( 156, 276, 1090.63, 274.755, 1090.11, 672.081, 156, 673 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 456.935, 97.337, 1397.95, 94.4342, 1392.6, -432.044, 449.076, -438.551 )
+
+[node name="BusStop" type="Node2D"]
+
+[node name="BackgroundSprite" type="Sprite" parent="."]
+position = Vector2( 983.163, 537.938 )
+scale = Vector2( 17.2391, 17.2391 )
+texture = ExtResource( 5 )
+
+[node name="Buildings" type="Node2D" parent="."]
+
+[node name="Building_Sprite_3" type="Sprite" parent="Buildings"]
+light_mask = 2
+position = Vector2( 932.382, 243.644 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 2 )
+
+[node name="Building_Sprite_6" type="Sprite" parent="Buildings"]
+light_mask = 2
+position = Vector2( 932.382, -146.485 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 4 )
+
+[node name="Building_Sprite_4" type="Sprite" parent="Buildings"]
+light_mask = 2
+position = Vector2( 1915.28, 246.734 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 2 )
+
+[node name="Building_Sprite_5" type="Sprite" parent="Buildings"]
+light_mask = 2
+position = Vector2( -221.18, 239.145 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 2 )
+
+[node name="Building_Sprite_1" type="Sprite" parent="Buildings"]
+light_mask = 3
+position = Vector2( 445.651, 386.165 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 7 )
+
+[node name="Building_Sprite_2" type="Sprite" parent="Buildings"]
+light_mask = 3
+position = Vector2( 1376.46, 383.229 )
+scale = Vector2( 9, 9 )
+texture = ExtResource( 3 )
+
+[node name="Light" type="Node2D" parent="."]
+
+[node name="Sun_Light2D_1" type="Light2D" parent="Light"]
+position = Vector2( 324.531, -740.635 )
+texture = ExtResource( 1 )
+texture_scale = 50.0
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 2
+
+[node name="Sun_Light2D_2" type="Light2D" parent="Light"]
+position = Vector2( 1348.54, -583.095 )
+texture = ExtResource( 1 )
+texture_scale = 50.0
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 2
+
+[node name="StreetLight" type="Light2D" parent="Light"]
+position = Vector2( 70.3776, 78.8193 )
+texture = ExtResource( 1 )
+texture_scale = 50.0
+energy = 0.6
+shadow_enabled = true
+
+[node name="Building1_LightOccluder2D" type="LightOccluder2D" parent="Light"]
+z_index = -1
+occluder = SubResource( 1 )
+
+[node name="Building2_LightOccluder2D" type="LightOccluder2D" parent="Light"]
+light_mask = 3
+position = Vector2( 753.452, 0 )
+z_index = -1
+occluder = SubResource( 1 )
+light_mask = 3
+
+[node name="Building6_LightOccluder2D" type="LightOccluder2D" parent="Light"]
+light_mask = 2
+z_index = -1
+occluder = SubResource( 2 )
+light_mask = 2
+
+[node name="BusStation" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 927.455, 654.397 )
+scale = Vector2( 30, 30 )
+texture = ExtResource( 6 )
+
+[node name="Police_1" type="Label" parent="."]
+margin_left = 952.257
+margin_top = 218.364
+margin_right = 1158.26
+margin_bottom = 250.364
+rect_scale = Vector2( 2.8, 2.8 )
+custom_colors/font_color = Color( 0.788235, 0.513726, 0.513726, 1 )
+text = "Полиция"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Police_2" type="Label" parent="."]
+margin_left = 948.0
+margin_top = 223.0
+margin_right = 1154.0
+margin_bottom = 255.0
+rect_scale = Vector2( 2.8, 2.8 )
+custom_colors/font_color = Color( 0.862745, 0.639216, 0.639216, 1 )
+text = "Полиция"
+__meta__ = {
+"_edit_use_anchors_": false
+}

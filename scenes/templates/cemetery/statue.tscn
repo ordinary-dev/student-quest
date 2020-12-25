@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/cemetery/statue.png" type="Texture" id=1]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 24 )
+
+[node name="Statue" type="Sprite"]
+z_index = 4
+texture = ExtResource( 1 )
+offset = Vector2( 2, -32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 2147483648
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, -24 )
+shape = SubResource( 1 )

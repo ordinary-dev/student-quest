@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/templates/fireworks.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
+
+[node name="Fireworks" type="Node2D"]
+
+[node name="FireworksTemplate" parent="." instance=ExtResource( 1 )]
+scene_path = "res://scenes/chapter_1/1_beginning/03_dialog.tscn"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
+show_pause_menu = true

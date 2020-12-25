@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=1]
+[ext_resource path="res://scenes/templates/backgrounds/bus_stop.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=3]
+[ext_resource path="res://scenes/templates/rain.tscn" type="PackedScene" id=4]
+[ext_resource path="res://audio/fx/rain/rain_moderate_c.ogg" type="AudioStream" id=5]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=6]
+[ext_resource path="res://scripts/nodes/stop_the_music.gd" type="Script" id=7]
+
+[node name="Police" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.772549, 0.772549, 0.772549, 1 )
+
+[node name="MainCharacter" type="Sprite" parent="."]
+modulate = Color( 0.886275, 0.886275, 0.886275, 1 )
+position = Vector2( 905.612, 718.478 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+vframes = 3
+hframes = 3
+frame = 6
+
+[node name="RainTemplate" parent="." instance=ExtResource( 4 )]
+
+[node name="RainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+autoplay = true
+bus = "FX"
+
+[node name="StopTheMusic" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 6 )
+show_pause_menu = true
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://dialogs/chapter_2/disappearance/police.json"
+enable_delay = true
+delay = 3.0
+load_scene = true
+scene_path = "res://scenes/chapter_2/3_disappearance/07_clouds.tscn"
+loading_delay = 2.0

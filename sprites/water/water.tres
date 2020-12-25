@@ -1,0 +1,21 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=2]
+
+[ext_resource path="res://sprites/water/water_sprites/0.png" type="Texture" id=1]
+[ext_resource path="res://sprites/water/water_sprites/1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/water/water_sprites/3.png" type="Texture" id=3]
+[ext_resource path="res://sprites/water/water_sprites/2.png" type="Texture" id=4]
+
+
+
+
+
+
+
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 4.0
+} ]

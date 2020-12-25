@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/templates/street/street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/triggers/simple_triggers/dialog_trigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=3]
+
+[node name="Street" type="Node2D"]
+
+[node name="Street-Template" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.490196, 0.498039, 0.65098, 1 )
+initial_position = 1
+show_singer = false
+show_gardener = false
+enable_npc = false
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 2 )]
+position = Vector2( -160, 448 )
+scale = Vector2( 1, 1.96 )
+dialog_path = "res://dialogs/chapter_3/hope/simulation.json"
+load_scene = true
+scene_path = "res://scenes/chapter_3/3_hope/32_fix.tscn"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )
+show_pause_menu = true
+show_joystick = true

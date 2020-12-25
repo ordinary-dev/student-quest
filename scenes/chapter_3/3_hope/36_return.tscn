@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/templates/basement/road.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/triggers/advanced/load_scene_trigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=3]
+
+[node name="Return" type="Node2D"]
+
+[node name="RoadTemplate" parent="." instance=ExtResource( 1 )]
+initial_position = 1
+
+[node name="LoadScene" parent="." instance=ExtResource( 2 )]
+position = Vector2( 997.484, 896 )
+hint = "GO_BACK"
+scene = "res://scenes/chapter_3/3_hope/37_train.tscn"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )
+show_pause_menu = true
+show_joystick = true

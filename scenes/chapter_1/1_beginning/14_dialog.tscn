@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
+[ext_resource path="res://sprites/characters/guide.png" type="Texture" id=3]
+[ext_resource path="res://sprites/backgrounds/blurry_room.jpg" type="Texture" id=4]
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=5]
+
+[node name="DialogScene" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="."]
+modulate = Color( 0.345098, 0.345098, 0.345098, 1 )
+position = Vector2( 280.415, 727.419 )
+scale = Vector2( 2.55594, 2.25341 )
+texture = ExtResource( 4 )
+flip_h = true
+flip_v = true
+
+[node name="Guide" type="Sprite" parent="."]
+position = Vector2( 1008, 712 )
+scale = Vector2( 37.3026, 37.3026 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 3
+frame = 6
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 5 )
+dialog_path = "res://dialogs/chapter_1/beginning/guide.json"
+enable_delay = true
+delay = 1.0
+load_scene = true
+scene_path = "res://scenes/chapter_1/1_beginning/15_guide.tscn"
