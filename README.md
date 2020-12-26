@@ -1,5 +1,5 @@
 # Student Quest
-![Screenshot 1](Screenshots/City.png)
+![Screenshot 1](screenshots/city.png)
 A pixel art game created with the [Godot engine](https://godotengine.org/).
 ## How to open a project in editor
 0. Download this repository as a zip file and extract it or `git clone git@github.com:pixeltrain/student-quest.git`
