@@ -76,7 +76,7 @@ margin_right = 800.0
 margin_bottom = 990.0
 texture = ExtResource( 4 )
 chapter_name = "FIRST_DAYS"
-path_to_scene = "res://Scenes/Chapter1/2-FirstDays/1.Date.tscn"
+path_to_scene = "res://scenes/chapter_1/2_first_days/01_date.tscn"
 
 [node name="Accident" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -86,7 +86,7 @@ margin_right = 800.0
 margin_bottom = 1400.0
 texture = ExtResource( 5 )
 chapter_name = "ACCIDENT"
-path_to_scene = "res://Scenes/Chapter1/3-Accident/1.Dialog.tscn"
+path_to_scene = "res://scenes/chapter_1/3_accident/01_dialog.tscn"
 
 [node name="Funeral" parent="VBoxContainer/Chapter1" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -96,7 +96,7 @@ margin_right = 800.0
 margin_bottom = 1810.0
 texture = ExtResource( 6 )
 chapter_name = "FUNERAL"
-path_to_scene = "res://Scenes/Chapter1/4-Funeral/1.Grave.tscn"
+path_to_scene = "res://scenes/chapter_1/4_funeral/01_grave.tscn"
 
 [node name="Chapter2" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 1830.0
@@ -131,7 +131,7 @@ margin_right = 800.0
 margin_bottom = 580.0
 texture = ExtResource( 7 )
 chapter_name = "NEW_BEGINNING"
-path_to_scene = "res://Scenes/Chapter2/1-NewBeginning/1.Fireworks.tscn"
+path_to_scene = "res://scenes/chapter_2/1_new_beginning/01_fireworks.tscn"
 
 [node name="Celebration" parent="VBoxContainer/Chapter2" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -141,7 +141,7 @@ margin_right = 800.0
 margin_bottom = 990.0
 texture = ExtResource( 8 )
 chapter_name = "CELEBRATION"
-path_to_scene = "res://Scenes/Chapter2/2-Celebration/1.Intro.tscn"
+path_to_scene = "res://scenes/chapter_2/2_celebration/01_intro.tscn"
 
 [node name="Disappearance" parent="VBoxContainer/Chapter2" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -151,7 +151,7 @@ margin_right = 800.0
 margin_bottom = 1400.0
 texture = ExtResource( 1 )
 chapter_name = "DISAPPEARANCE"
-path_to_scene = "res://Scenes/Chapter2/3-Disappearance/1.Street.tscn"
+path_to_scene = "res://scenes/chapter_2/3_disappearance/01_street.tscn"
 
 [node name="Chapter3" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 3250.0
@@ -186,7 +186,7 @@ margin_right = 800.0
 margin_bottom = 580.0
 texture = ExtResource( 11 )
 chapter_name = "SECRET_SOCIETY"
-path_to_scene = "res://Scenes/Chapter3/1-SecretSociety/1.House.tscn"
+path_to_scene = "res://scenes/chapter_3/1_secret_society/01_house.tscn"
 
 [node name="Despair" parent="VBoxContainer/Chapter3" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -196,7 +196,7 @@ margin_right = 800.0
 margin_bottom = 990.0
 texture = ExtResource( 13 )
 chapter_name = "DESPAIR"
-path_to_scene = "res://Scenes/Chapter3/2-Despair/1.Street.tscn"
+path_to_scene = "res://scenes/chapter_3/2_despair/01_street.tscn"
 
 [node name="Hope" parent="VBoxContainer/Chapter3" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -206,4 +206,4 @@ margin_right = 800.0
 margin_bottom = 1400.0
 texture = ExtResource( 9 )
 chapter_name = "HOPE"
-path_to_scene = "res://Scenes/Chapter3/3-Hope/1.Field.tscn"
+path_to_scene = "res://scenes/chapter_3/3_hope/01_field.tscn"
