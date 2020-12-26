@@ -29,16 +29,6 @@ D_FD_GUARD_3,"Меня оштрафуют, если я вас всех вот т
 D_FD_GUARD_4,Электричества все ещё нет...,There is still no electricity ...
 D_FD_PASSAGE_1,Я лучше подожду...,I'd rather wait ...
 PASSAGE,Проход,Passage
-D_FD_LIFEGUARDS_1,У выхода стояло множество машин спасателей. ,At the exit there were many rescue vehicles.
-D_FD_LIFEGUARDS_2,"Пожалуйста, расходитесь по домам.",Please go home.
-D_FD_LIFEGUARDS_3,Существует вероятность еще одного взрыва.,There is the possibility of another explosion.
-FD_CHAT_1,Все целы?,Is everyone safe?
-FD_CHAT_2,Вроде да,Like yes
-FD_CHAT_3,А что с тем преподавателем?,And what about that teacher?
-FD_CHAT_4,Преподавателем?,The teacher?
-FD_CHAT_5,"Да, никто не знает, где ваш преподаватель матанализа","Yes, no one knows where your mathematics teacher is"
-FD_CHAT_6,Хотя рано делать выводы,Although it’s too early to draw conclusions
-FD_CHAT_7,Спасатели пока ничего не говорят,Lifeguards are not saying anything yet
 D_FD_REQUEST_1,"Группа #!@%$, пожалуйста, подойдите к преподавателю матанализа на первом этаже.","Group #!@%$, please go to the teacher of the calculus on the ground floor."
 D_FD_REQUEST_2,"Да, хорошо.",Yes OK.
 D_FD_TEACHER_1,"Здравствуйте, меня зовут Андрей, я ваш преподаватель матанализа.","Hello, my name is Andrew, I'm your teacher of calculus."

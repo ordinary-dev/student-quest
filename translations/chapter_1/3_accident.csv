@@ -20,3 +20,13 @@ D_ADT_SPEAKER_2,Но теперь уже ничего не поделать.,But
 D_ADT_SPEAKER_3,"На этом все, можете делать все, что душе угодно.","That's all, you can do whatever your heart desires."
 D_ADT_SPEAKER_4,Рядом есть домики для желающих поспать.,Nearby there are houses for those who want to sleep.
 STREET,Улица,Street
+D_FD_LIFEGUARDS_1,У выхода стояло множество машин спасателей. ,At the exit there were many rescue vehicles.
+D_FD_LIFEGUARDS_2,"Пожалуйста, расходитесь по домам.",Please go home.
+D_FD_LIFEGUARDS_3,Существует вероятность еще одного взрыва.,There is the possibility of another explosion.
+FD_CHAT_1,Все целы?,Is everyone safe?
+FD_CHAT_2,Вроде да,It seems to be
+FD_CHAT_3,А что с тем преподавателем?,And what about that teacher?
+FD_CHAT_4,Преподавателем?,The teacher?
+FD_CHAT_5,"Да, никто не знает, где ваш преподаватель матанализа","Yes, no one knows where your mathematics teacher is"
+FD_CHAT_6,Хотя рано делать выводы,Although it’s too early to draw conclusions
+FD_CHAT_7,Спасатели пока ничего не говорят,Lifeguards are not saying anything yet
