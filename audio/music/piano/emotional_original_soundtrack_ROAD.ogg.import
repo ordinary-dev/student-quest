@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/emotional_original_soundtrack_ROAD.ogg-3c848eed7c3b435bc1dbd9cc15799e15.oggstr"
+
+[deps]
+
+source_file="res://audio/music/piano/emotional_original_soundtrack_ROAD.ogg"
+dest_files=[ "res://.import/emotional_original_soundtrack_ROAD.ogg-3c848eed7c3b435bc1dbd9cc15799e15.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
