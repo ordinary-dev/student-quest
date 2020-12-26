@@ -9,7 +9,7 @@ EXT=".ogg"
 SAVED_PWD=$PWD
 SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
 cd $SCRIPT_DIR
-cd ../Audio/Music
+cd ../audio/music
 
 
 for i in ".wav" ".mp3"
@@ -17,6 +17,7 @@ do
     find . -name "*$i" | while read line; do
 	NEWFILE=${line/$i/$EXT}
 	echo -ne "\r\033[KConverting $line..."
+	# If the file does not exist
 	if [ ! -f $NEWFILE ]; then
 		ffmpeg -nostdin -y -i "$line" -ac 2 -ar 44100 -b:a $BITRATE -c:a $CODEC "$NEWFILE" &> /dev/null
 	fi
