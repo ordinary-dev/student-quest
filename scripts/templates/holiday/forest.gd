@@ -7,8 +7,10 @@ extends Node2D
 # Licensed under the GPL-3 License
 
 enum Locations {House, Campfire}
+
 const NEO_PATH := "YSort/Neo"
 const CAMPFIRE_PATH := "YSort/Campfire"
+
 export (bool) var main_door_open = true
 export (bool) var another_door_open = false
 export (Locations) var initial_location = Locations.House
@@ -16,6 +18,7 @@ export (String, FILE, "*.tscn") var interior_scene
 export (String, FILE, "*.tscn") var small_house
 export (bool) var show_neo = true setget _set_neo_visibility
 export (bool) var show_campfire = true setget _set_campfire_visibility
+
 onready var _trigger = $MainHouseTrigger
 
 

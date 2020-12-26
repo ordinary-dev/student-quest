@@ -10,4 +10,4 @@ street_scene = "res://scenes/chapter_3/3_hope/18_infiltration.tscn"
 
 [node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 2 )
-file = "res://audio/music/sad_piano/emotional_original_soundtrack_ROAD.ogg"
+file = "res://audio/music/piano/emotional_original_soundtrack_ROAD.ogg"

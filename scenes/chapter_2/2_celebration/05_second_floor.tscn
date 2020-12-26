@@ -1,35 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://scenes/triggers/advanced/load_scene_trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sprites/light/light.png" type="Texture" id=2]
 [ext_resource path="res://sprites/light/window_light.png" type="Texture" id=3]
 [ext_resource path="res://tilemaps/house/house.tres" type="TileSet" id=4]
 [ext_resource path="res://tilemaps/house/overlay.tres" type="TileSet" id=5]
-[ext_resource path="res://scenes/triggers/advanced/function_trigger.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/templates/characters/player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/house/door.png" type="Texture" id=8]
 [ext_resource path="res://scenes/triggers/make_obj_visible.tscn" type="PackedScene" id=9]
 
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-export (String, FILE, \"*.tscn\") var first_floor_scene
-export (String, FILE, \"*.tscn\") var next_scene_path
-
-
-func first_floor():
-	SCENES.load_scene(first_floor_scene)
-
-
-func open_door():
-	MUSIC.stop()
-	SCENES.load_scene(next_scene_path)
-"
-
 [node name="SecondFloorScene" type="Node2D"]
 position = Vector2( 0, -8 )
-script = SubResource( 1 )
-first_floor_scene = "res://scenes/chapter_2/2_celebration/04_street.tscn"
-next_scene_path = "res://scenes/chapter_2/2_celebration/06_bed.tscn"
 
 [node name="Map" type="TileMap" parent="."]
 scale = Vector2( 4, 4 )
@@ -73,17 +54,15 @@ texture = ExtResource( 8 )
 
 [node name="Triggers" type="Node2D" parent="."]
 
-[node name="Opened" parent="Triggers" instance=ExtResource( 6 )]
-position = Vector2( 658.255, 873.531 )
+[node name="OpenTheDoor" parent="Triggers" instance=ExtResource( 1 )]
+position = Vector2( 659.485, 873.97 )
 hint = "OPEN_THE_DOOR"
-object_name = NodePath("../..")
-function_name = "open_door"
+scene = "res://scenes/chapter_2/2_celebration/06_bed.tscn"
 
-[node name="FirstFloor" parent="Triggers" instance=ExtResource( 6 )]
-position = Vector2( -126.746, 1220.24 )
-hint = "STREET"
-object_name = NodePath("../..")
-function_name = "first_floor"
+[node name="GoBack" parent="Triggers" instance=ExtResource( 1 )]
+position = Vector2( -123.623, 1217.64 )
+hint = "GO_BACK"
+scene = "res://scenes/chapter_2/2_celebration/04_forest.tscn"
 
 [node name="Body" parent="." instance=ExtResource( 7 )]
 position = Vector2( -134.902, 1148.89 )

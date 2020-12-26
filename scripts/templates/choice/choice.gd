@@ -9,7 +9,7 @@ extends Control
 
 const HEIGHT := 170
 var _number_of_options := 0
-var _btn_template = load("res://Scenes/templates/choice/option.tscn")
+var _btn_template = load("res://scenes/templates/choice/option.tscn")
 onready var _box := $VBoxContainer
 
 

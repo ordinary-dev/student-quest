@@ -11,7 +11,7 @@ __meta__ = {
 [node name="AnimatedText" parent="." instance=ExtResource( 1 )]
 rect_min_size = Vector2( 1920, 1080 )
 text_1 = "THE_NEXT_DAY"
-text_2 = "Начало первой пары"
+text_2 = "BEGINNING_OF_THE_FIRST_LESSON"
 next_scene = "res://scenes/chapter_3/3_hope/09_classroom.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]

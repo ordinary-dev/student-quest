@@ -31,9 +31,7 @@ mode = 2
 [node name="Body" parent="." instance=ExtResource( 3 )]
 position = Vector2( 464, 1016 )
 default_state = 3
-
-[node name="Character" parent="Body" index="1"]
-frame = 8
+camera_limit_bottom = 1040
 
 [node name="Water" type="Node2D" parent="."]
 position = Vector2( 0, 32 )
@@ -151,5 +149,3 @@ scene = "res://scenes/chapter_3/3_hope/27_nothing.tscn"
 script = ExtResource( 6 )
 show_pause_menu = true
 show_joystick = true
-
-[editable path="Body"]

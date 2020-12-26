@@ -11,8 +11,6 @@
 [ext_resource path="res://scripts/templates/load_scene_function.gd" type="Script" id=9]
 [ext_resource path="res://audio/fx/fireworks/fireworks.ogg" type="AudioStream" id=10]
 
-
-
 [node name="FireworksTemplate" type="Node2D"]
 script = ExtResource( 9 )
 
@@ -106,4 +104,4 @@ bus = "FX"
 
 [node name="Music" type="Node2D" parent="."]
 script = ExtResource( 3 )
-file = "res://audio/music/sad_piano/sad_heaven_piano_1.ogg"
+file = "res://audio/music/piano/sad_heaven_piano_1.ogg"

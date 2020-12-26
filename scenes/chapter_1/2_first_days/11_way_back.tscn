@@ -29,7 +29,7 @@ dialog_path = "res://dialogs/chapter_1/first_day/evening_0.json"
 
 [node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 5 )
-file = "res://audio/music/soft_piano/soft_piano_loop_2.ogg"
+file = "res://audio/music/piano/soft_piano_loop_2.ogg"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 6 )

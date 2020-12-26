@@ -4,125 +4,7 @@
 [ext_resource path="res://scenes/menu/settings/settings.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/templates/interface/button.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/menu/chapters/load.tscn" type="PackedScene" id=4]
-
-
-
-
-
-
-
-
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Control
-
-export (String, FILE, \"*.tscn\") var menu_scene
-export (String, FILE, \"*.tscn\") var quit_scene
-export (NodePath) var return_btn
-
-onready var main_container := $MainContainer
-onready var background := $Background
-onready var pause_btn = $PauseButton
-
-onready var settings := $MainContainer/HBoxContainer/SubMenues/Settings
-onready var load_menu := $MainContainer/HBoxContainer/SubMenues/LoadMenu
-
-var enabled : bool = false
-var show_joystick := false
-
-
-func _ready() -> void:
-	main_container.visible = false
-	background.visible = false
-
-
-func _process(_delta) -> void:
-	if Input.is_action_just_pressed(\"ui_cancel\"):
-		switch()
-
-
-func switch():
-	if enabled:
-		_return_to_game()
-	else:
-		_on_Pause_pressed()
-
-
-func _on_Pause_pressed() -> void:
-	enabled = true
-	FX.play_btn_click()
-	
-	# Show pause menu
-	main_container.visible = true
-	background.visible = true
-	pause_btn.visible = false
-	
-	# Hide joystick
-	if UI.show_joystick:
-		UI.show_joystick = false
-		show_joystick = true
-	
-	# Stop the game
-	get_tree().paused = true
-	
-	# Focus
-	get_node(return_btn).grab_focus()
-
-
-func _return_to_game(play_sound : bool = true) -> void:
-	enabled = false
-	if play_sound:
-		FX.play_btn_click()
-	
-	# Hide pause menu
-	main_container.visible = false
-	background.visible = false
-	pause_btn.visible = true
-	
-	# Hide submenues
-	settings.visible = false
-	load_menu.visible = false
-	
-	# Continue the game
-	get_tree().paused = false
-	
-	# Enable joystick again if it was hidden
-	if show_joystick:
-		UI.show_joystick = true
-	show_joystick = false
-
-
-func _to_menu() -> void:
-	FX.play_btn_click()
-	MUSIC.stop()
-	SCENES.load_scene(menu_scene)
-	yield(get_tree().create_timer(SCENES.time), \"timeout\")
-	# Hide this scene
-	_return_to_game(false)
-
-
-# Quit game
-func _quit_game() -> void:
-	SCENES.load_scene(quit_scene)
-
-
-# Show or hide settings
-func _settings() -> void:
-	FX.play_btn_click()
-	settings.visible = !settings.visible
-	load_menu.visible = false
-
-
-# Load
-func _load() -> void:
-	FX.play_btn_click()
-	settings.visible = false
-	if load_menu.visible:
-		load_menu.visible = false
-	else:
-		load_menu.refresh()
-		load_menu.visible = true
-"
+[ext_resource path="res://scripts/templates/interface/pause_menu.gd" type="Script" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -136,12 +18,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1920, 1080 )
 mouse_filter = 2
-script = SubResource( 1 )
+script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-menu_scene = "res://Scenes/Menu/Menu.tscn"
-quit_scene = "res://Scenes/Quit.tscn"
+menu_scene = "res://scenes/menu/menu.tscn"
+quit_scene = "res://scenes/quit.tscn"
 return_btn = NodePath("MainContainer/HBoxContainer/MenuContainer/Return")
 
 [node name="Background" type="ColorRect" parent="."]
@@ -156,6 +38,7 @@ __meta__ = {
 }
 
 [node name="PauseButton" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0.470588 )
 light_mask = 0
 anchor_left = 1.0
 anchor_right = 1.0

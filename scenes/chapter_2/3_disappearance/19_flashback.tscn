@@ -10,7 +10,7 @@
 
 [node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 5 )
-file = "res://audio/music/sad_piano/emotional_original_soundtrack_ROAD.ogg"
+file = "res://audio/music/piano/emotional_original_soundtrack_ROAD.ogg"
 delay = 0.5
 
 [node name="SceneLoader" type="Node" parent="."]

@@ -19,17 +19,6 @@
 [ext_resource path="res://scenes/templates/holiday/bench_2.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scripts/templates/holiday/forest.gd" type="Script" id=18]
 
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2480, 112 )
 
@@ -387,12 +376,17 @@ modulate = Color( 0.796078, 0.796078, 0.796078, 1 )
 position = Vector2( -128, 80 )
 default_state = 2
 restore_position = true
+camera_limit_left = -2040
+camera_limit_top = -1830
+camera_limit_right = 3100
+camera_limit_bottom = 1780
 
 [node name="Neo" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 1264, 1264 )
 
 [node name="Campfire" parent="YSort" instance=ExtResource( 12 )]
 position = Vector2( 1224, 1304 )
+enabled = true
 
 [node name="Bench" parent="YSort" instance=ExtResource( 15 )]
 position = Vector2( 1216, 40 )

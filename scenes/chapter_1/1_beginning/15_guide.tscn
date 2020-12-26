@@ -6,21 +6,69 @@
 [ext_resource path="res://scripts/templates/characters/follow_path.gd" type="Script" id=5]
 [ext_resource path="res://scenes/templates/characters/guide.tscn" type="PackedScene" id=6]
 
-[node name="Guide-Scene" type="Node2D"]
+[node name="Guide" type="Node2D"]
 
-[node name="Street-Template" parent="." instance=ExtResource( 4 )]
+[node name="StreetTemplate" parent="." instance=ExtResource( 4 )]
 initial_position = 4
+initial_direction = 2
 show_singer = false
 enable_lights = false
 
-[node name="Guide" parent="." instance=ExtResource( 6 )]
+[node name="Transition" parent="StreetTemplate/Overlay" index="2"]
+object = NodePath("../../../StreetTemplate/Overlay/Railways")
+
+[node name="Character" parent="StreetTemplate/YSort/AI" index="0"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character2" parent="StreetTemplate/YSort/AI" index="1"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character3" parent="StreetTemplate/YSort/AI" index="2"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character4" parent="StreetTemplate/YSort/AI" index="3"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character5" parent="StreetTemplate/YSort/AI" index="4"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character6" parent="StreetTemplate/YSort/AI" index="5"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character7" parent="StreetTemplate/YSort/AI" index="6"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character8" parent="StreetTemplate/YSort/AI" index="7"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character9" parent="StreetTemplate/YSort/AI" index="8"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character10" parent="StreetTemplate/YSort/AI" index="9"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character11" parent="StreetTemplate/YSort/AI" index="10"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="Character12" parent="StreetTemplate/YSort/AI" index="11"]
+ai_config_path = NodePath("../../../../StreetTemplate/YSort/AI/AiConfig")
+
+[node name="AiConfig" parent="StreetTemplate/YSort/AI" index="12"]
+nav_node = NodePath("../../../../StreetTemplate/Navigation2D")
+upper_left_node = NodePath("../../../../StreetTemplate/UpperLeft")
+bottom_right_node = NodePath("../../../../StreetTemplate/BottomDown")
+
+[node name="Guide" parent="StreetTemplate/YSort" index="14" instance=ExtResource( 6 )]
 position = Vector2( 3684.85, 8190.25 )
 script = ExtResource( 5 )
-line_path = NodePath("../Line2D")
+line_path = NodePath("../../../Line2D")
+
+[node name="Mathematics" parent="StreetTemplate/Triggers" index="2"]
+object_name = NodePath("../../../StreetTemplate")
 
 [node name="LoadScene" parent="." instance=ExtResource( 1 )]
 position = Vector2( -989.833, 2927.62 )
-hint = "HOSTEL"
+hint = "ENTER_THE_DORMITORY"
 scene = "res://scenes/chapter_1/1_beginning/16_room.tscn"
 
 [node name="Line2D" type="Line2D" parent="."]
@@ -31,3 +79,5 @@ points = PoolVector2Array( 3667.79, 8163.49, 2507.75, 8161.48, 2520, 6656, 2512,
 script = ExtResource( 2 )
 show_pause_menu = true
 show_joystick = true
+
+[editable path="StreetTemplate"]

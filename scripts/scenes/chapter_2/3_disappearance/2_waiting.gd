@@ -9,5 +9,6 @@ export (String, FILE, "*.tscn") var btn_scene_path
 
 # Called by the animation player
 func load_scene(_anim_name) -> void:
+	assert(File.new().file_exists(btn_scene_path))
 	var tmp = load(btn_scene_path).instance()
 	add_child(tmp)

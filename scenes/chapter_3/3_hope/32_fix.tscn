@@ -14,7 +14,7 @@ script = ExtResource( 4 )
 
 [node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 3 )
-file = "res://audio/music/dead_pulse/dead_pulse.ogg"
+file = "res://audio/music/suspence/dead_pulse.ogg"
 
 [node name="Dialog" type="Node" parent="."]
 script = ExtResource( 2 )

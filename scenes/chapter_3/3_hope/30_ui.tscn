@@ -81,5 +81,5 @@ dialog_path = "res://dialogs/chapter_3/hope/game_2.json"
 enable_delay = true
 delay = 3.0
 load_scene = true
-scene_path = "res://scenes/chapter_3/3_hope/31_street.tscn"
+scene_path = "res://scenes/chapter_3/3_hope/31_thoughts.tscn"
 loading_delay = 4.0

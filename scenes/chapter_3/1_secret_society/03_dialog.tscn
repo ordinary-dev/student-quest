@@ -46,5 +46,5 @@ dialog_path = "res://dialogs/chapter_3/secret_society/river_1.json"
 enable_delay = true
 delay = 1.0
 load_scene = true
-scene_path = "res://Scenes/Chapter3/1-SecretSociety/4.River.tscn"
+scene_path = "res://scenes/chapter_3/1_secret_society/04_river.tscn"
 loading_delay = 2.0

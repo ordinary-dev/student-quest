@@ -229,4 +229,4 @@ show_joystick = true
 
 [node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 12 )
-file = "res://audio/music/sad_piano/sad_heaven_piano_1.ogg"
+file = "res://audio/music/piano/sad_heaven_piano_1.ogg"

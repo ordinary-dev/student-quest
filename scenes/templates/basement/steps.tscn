@@ -4,12 +4,6 @@
 [ext_resource path="res://scenes/templates/characters/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://sprites/light/small_light.png" type="Texture" id=3]
 
-
-
-
-
-
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 96, 16 )
 
@@ -27,7 +21,7 @@ tile_data = PoolIntArray( 1, 2, 0, 2, -1610612732, 0, 3, -2147483643, 0, 4, -214
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 modulate = Color( 0.333333, 0.333333, 0.333333, 1 )
-position = Vector2( 93.8158, 119.056 )
+position = Vector2( 129.838, 117.997 )
 collision_layer = 1025
 default_state = 0
 restore_position = true

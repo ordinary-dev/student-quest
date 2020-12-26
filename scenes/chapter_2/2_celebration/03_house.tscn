@@ -7,7 +7,7 @@
 
 [node name="HouseTemplate" parent="." instance=ExtResource( 2 )]
 door_open = true
-street_scene = "res://scenes/chapter_2/2_celebration/04_street.tscn"
+street_scene = "res://scenes/chapter_2/2_celebration/04_forest.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 1 )

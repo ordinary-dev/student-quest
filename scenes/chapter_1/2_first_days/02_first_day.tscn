@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/triggers/simple_triggers/dialog_trigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/templates/characters/girlfriend.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/triggers/advanced/dialog_trigger.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/templates/street/street.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=6]
+[ext_resource path="res://scripts/nodes/music_player.gd" type="Script" id=7]
 
 [node name="FirstDayScene" type="Node2D"]
 modulate = Color( 0.882353, 0.870588, 0.815686, 1 )
@@ -46,3 +47,8 @@ scene_path = "res://scenes/chapter_1/2_first_days/03_date.tscn"
 script = ExtResource( 6 )
 show_pause_menu = true
 show_joystick = true
+
+[node name="MusicPlayer" type="Node" parent="."]
+script = ExtResource( 7 )
+file = "res://audio/music/piano/wonderful_calm_beautiful_piano_loop.ogg"
+delay = 3.0

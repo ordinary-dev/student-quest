@@ -21,7 +21,7 @@ delay_before_next_scene = 1.5
 
 [node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 2 )
-file = "res://audio/music/dead_pulse/dead_pulse.ogg"
+file = "res://audio/music/suspence/dead_pulse.ogg"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 3 )

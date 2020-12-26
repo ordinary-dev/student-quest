@@ -61,7 +61,7 @@ anims/Camera = SubResource( 1 )
 
 [node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 7 )
-file = "res://audio/music/sad_piano/sad_heaven_piano_3.ogg"
+file = "res://audio/music/piano/sad_heaven_piano_3.ogg"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 3 )
