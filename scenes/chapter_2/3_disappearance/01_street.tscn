@@ -4,17 +4,9 @@
 [ext_resource path="res://scenes/triggers/simple_triggers/load_scene_trigger.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/nodes/stage_unlocker.gd" type="Script" id=3]
 [ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=4]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-
-func _ready() -> void:
-	NOTIFY.show(\"DSP_MEETING_1\")
-"
+[ext_resource path="res://scripts/nodes/notification.gd" type="Script" id=5]
 
 [node name="Meeting" type="Node2D"]
-script = SubResource( 1 )
 
 [node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
 initial_position = 2
@@ -35,3 +27,7 @@ subchapter_id = 7
 script = ExtResource( 4 )
 show_pause_menu = true
 show_joystick = true
+
+[node name="Notification" type="Node" parent="."]
+script = ExtResource( 5 )
+text = "DSP_MEETING_1"

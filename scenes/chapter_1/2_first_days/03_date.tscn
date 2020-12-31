@@ -2,19 +2,11 @@
 
 [ext_resource path="res://scenes/templates/interface/animated_text.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Control
-
-
-func _ready():
-	MUSIC.stop()
-"
+[ext_resource path="res://scripts/nodes/stop_the_music.gd" type="Script" id=3]
 
 [node name="DateScene" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -26,3 +18,6 @@ next_scene = "res://scenes/chapter_1/2_first_days/04_speaker.tscn"
 
 [node name="ChangeUI" type="Node" parent="."]
 script = ExtResource( 2 )
+
+[node name="StopTheMusic" type="Node" parent="."]
+script = ExtResource( 3 )

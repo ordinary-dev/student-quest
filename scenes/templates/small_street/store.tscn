@@ -4,36 +4,13 @@
 [ext_resource path="res://scenes/templates/characters/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/triggers/advanced/function_trigger.tscn" type="PackedScene" id=3]
 [ext_resource path="res://sprites/light/small_light.png" type="Texture" id=4]
+[ext_resource path="res://scripts/templates/load_scene_function.gd" type="Script" id=5]
 
-
-
-
-
-
-
-
-
-
-
-
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-# Cafe
-
-export (String, FILE, \"*.tscn\") var street_scene
-
-
-func load_street():
-	SCENES.load_scene(street_scene)
-"
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 80, 15 )
 
 [node name="CafeTemplate" type="Node2D"]
-script = SubResource( 1 )
+script = ExtResource( 5 )
 
 [node name="Map" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -60,7 +37,6 @@ tile_data = PoolIntArray( -589820, 1610612738, 0, -589819, -1073741821, 0, -5898
 [node name="Exit" parent="." instance=ExtResource( 3 )]
 position = Vector2( 605.455, -125.641 )
 hint = "GO_BACK"
-person = "GO_BACK"
 object_name = NodePath("../../CafeTemplate")
 function_name = "load_street"
 
@@ -75,4 +51,4 @@ shadow_enabled = true
 position = Vector2( 576, -24 )
 
 [node name="Collider_CollisionShape2D" type="CollisionShape2D" parent="Collider"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )

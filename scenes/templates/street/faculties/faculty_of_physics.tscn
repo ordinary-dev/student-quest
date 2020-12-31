@@ -1,64 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://sprites/street/faculty_of_physics.png" type="Texture" id=1]
 [ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=2]
-
-
-
-
-
-
-
-
-
-
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 110, 40.5405 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 3.19995, 0.799988 )
-
-[sub_resource type="GDScript" id=3]
-script/source = "extends Area2D
-
-# Target
-export (NodePath) var object
-# Tween
-onready var effect : = $Tween
-# Loaded object
-var obj
-# Standart color
-var def_color = Color(1, 1, 1, 1)
-
-# New color
-const mod_color := Color(1, 1, 1, 0.3)
-# Animation duration
-const time := 0.3
-
-
-# Remember color
-func _ready():
-	obj = get_node(object)
-	def_color = obj.modulate
-
-
-# Make object transparent
-func _on_Area2D_body_entered(_body):
-	effect.interpolate_property(obj, \"modulate\",
-			obj.modulate, mod_color, time, 
-			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	effect.start()
-
-
-# Return default color
-func _on_Area2D_body_exited(_body):
-	effect.interpolate_property(obj, \"modulate\",
-			obj.modulate, def_color, time,
-			Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	effect.start()
-"
 
 [node name="FacultyOfPhysics" type="Sprite"]
 scale = Vector2( 10, 10 )
@@ -82,7 +31,6 @@ shape = SubResource( 2 )
 
 [node name="Transition" parent="." instance=ExtResource( 2 )]
 visible = false
-position = Vector2( -10.4, -81.6 )
-scale = Vector2( 11.072, 1 )
-script = SubResource( 3 )
+position = Vector2( -10.8, -76 )
+scale = Vector2( 11.29, 1.708 )
 object = NodePath("..")

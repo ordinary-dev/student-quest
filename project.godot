@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/nodes/music_player.gd"
 }, {
+"base": "Node",
+"class": "Notification",
+"language": "GDScript",
+"path": "res://scripts/nodes/notification.gd"
+}, {
 "base": "Node2D",
 "class": "PoliceOfficerConfig",
 "language": "GDScript",
@@ -54,6 +59,7 @@ _global_script_class_icons={
 "ChangeUI": "",
 "DialogLoader": "",
 "MusicPlayer": "",
+"Notification": "",
 "PoliceOfficerConfig": "",
 "SoundPlayer": "",
 "StageUnlocker": "",

@@ -1,29 +1,10 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://sprites/street/bridge.png" type="Texture" id=1]
-
-
-
-
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends Node2D
-
-
-func _on_body_entered(_body):
-	var player_path = STORAGE.get(\"player_path\")
-	if has_node(player_path):
-		get_node(player_path).water.hide_water = true
-
-
-func _on_body_exited(_body):
-	var player_path = STORAGE.get(\"player_path\")
-	if has_node(player_path):
-		get_node(player_path).water.hide_water = false
-"
+[ext_resource path="res://scripts/templates/street/bridge.gd" type="Script" id=2]
 
 [node name="Bridge-Template_0" type="Node2D"]
-script = SubResource( 1 )
+script = ExtResource( 2 )
 
 [node name="LeftHalf_Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
