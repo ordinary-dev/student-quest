@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/scenes/chapter_1/4_funeral/10_steps.gd" type="Script" id=1]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
+[ext_resource path="res://scenes/triggers/advanced/function_trigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/templates/basement/steps.tscn" type="PackedScene" id=4]
+
+[node name="StairsScene" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+dialog_scene = "res://scenes/chapter_1/4_funeral/11_dialog.tscn"
+basement_scene = "res://scenes/chapter_1/4_funeral/12_secret.tscn"
+
+[node name="Map" parent="." instance=ExtResource( 4 )]
+
+[node name="Trigger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160, 352 )
+hint = "GO_DOWN"
+object_name = NodePath("../../StairsScene")
+function_name = "go"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
+show_pause_menu = true
+show_joystick = true

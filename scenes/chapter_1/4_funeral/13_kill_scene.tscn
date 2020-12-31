@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://videos/kill_scene.ogv" type="VideoStream" id=1]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
+[ext_resource path="res://scripts/templates/load_scene_function.gd" type="Script" id=3]
+
+[node name="KillScene" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1920, 1080 )
+stream = ExtResource( 1 )
+autoplay = true
+bus = "OST"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_path = "res://scenes/chapter_2/1_new_beginning/01_fireworks.tscn"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
+[connection signal="finished" from="VideoPlayer" to="VideoPlayer" method="load_scene"]

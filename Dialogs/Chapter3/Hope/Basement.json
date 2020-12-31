@@ -1,7 +1,0 @@
-{
-    "0":{"name":"NEO",            "text":"D_HP_BASEMENT_1", "next":"1"},
-    "1":{"name":"MAIN_CHARACTER", "text":"D_HP_BASEMENT_2", "next":"2"},
-    "2":{"name":"NEO",            "text":"D_HP_BASEMENT_3", "next":"3"},
-    "3":{"name":"NEO",            "text":"D_HP_BASEMENT_4", "next":"4"},
-    "4":{"name":"NEO",            "text":"D_HP_BASEMENT_5"}
-} 

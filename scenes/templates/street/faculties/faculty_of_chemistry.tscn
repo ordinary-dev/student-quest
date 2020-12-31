@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/street/faculty_of_chemistry.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 110.472, 44.1313 )
+
+[node name="FacultyOfChemistry" type="Sprite"]
+scale = Vector2( 10, 10 )
+z_index = 4
+z_as_relative = false
+texture = ExtResource( 2 )
+offset = Vector2( 5, -45 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 1.549, 101.919 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="LowerCollider" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 2.451, -78.719 )
+shape = SubResource( 1 )
+
+[node name="UpperCollider" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1.651, -210.719 )
+shape = SubResource( 1 )
+
+[node name="TransitionLeft" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( -74.8355, -46.3267 )
+scale = Vector2( 3.48, 1.864 )
+object = NodePath("..")
+
+[node name="TransitionRight" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 86.2029, -46.3267 )
+scale = Vector2( 3.48, 1.864 )
+object = NodePath("..")

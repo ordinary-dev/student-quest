@@ -1,0 +1,153 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sprites/menu/person.webp" type="Texture" id=1]
+[ext_resource path="res://sprites/menu/city.webp" type="Texture" id=2]
+[ext_resource path="res://animations/menu_background.tres" type="Animation" id=3]
+[ext_resource path="res://sprites/menu/train.webp" type="Texture" id=4]
+[ext_resource path="res://audio/fx/train/train_passing_left_to_right_a.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sprites/menu/bridge.webp" type="Texture" id=6]
+[ext_resource path="res://sprites/effects/vignette.webp" type="Texture" id=7]
+[ext_resource path="res://audio/fx/rain/rain_moderate_c.ogg" type="AudioStream" id=8]
+[ext_resource path="res://scripts/templates/play_from_position.gd" type="Script" id=9]
+[ext_resource path="res://scenes/templates/rain.tscn" type="PackedScene" id=11]
+[ext_resource path="res://sprites/light/flashlight.png" type="Texture" id=12]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[node name="Background" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 1920, 1080 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="City" type="TextureRect" parent="."]
+modulate = Color( 0.533333, 0.533333, 0.533333, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Person" type="TextureRect" parent="."]
+visible = false
+margin_left = 1456.0
+margin_top = 728.0
+margin_right = 1488.0
+margin_bottom = 776.0
+texture = ExtResource( 1 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Train" type="TextureRect" parent="."]
+modulate = Color( 0.521569, 0.521569, 0.521569, 1 )
+margin_left = -568.0
+margin_top = 728.0
+margin_right = -67.998
+margin_bottom = 778.0
+rect_min_size = Vector2( 500, 50 )
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Train"]
+stream = ExtResource( 5 )
+volume_db = -7.0
+bus = "FX"
+script = ExtResource( 9 )
+position = 6.5
+
+[node name="Bridge" type="TextureRect" parent="."]
+modulate = Color( 0.533333, 0.533333, 0.533333, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StreetLights" type="Node2D" parent="."]
+
+[node name="Light2D" type="Light2D" parent="StreetLights"]
+position = Vector2( 1404.29, 738.333 )
+rotation = -3.14159
+scale = Vector2( 8.3799, 6.3065 )
+texture = ExtResource( 12 )
+energy = 0.0
+
+[node name="Light2D2" type="Light2D" parent="StreetLights"]
+position = Vector2( 1571.54, 738.333 )
+rotation = -3.14159
+scale = Vector2( 8.3799, 6.3065 )
+texture = ExtResource( 12 )
+energy = 0.0
+
+[node name="Light2D3" type="Light2D" parent="StreetLights"]
+position = Vector2( 683.549, 738.333 )
+rotation = -3.14159
+scale = Vector2( 8.3799, 6.3065 )
+texture = ExtResource( 12 )
+energy = 0.0
+
+[node name="Light2D4" type="Light2D" parent="StreetLights"]
+position = Vector2( 515.98, 738.333 )
+rotation = -3.14159
+scale = Vector2( 8.3799, 6.3065 )
+texture = ExtResource( 12 )
+energy = 0.0
+
+[node name="Vignette" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rain" parent="." instance=ExtResource( 11 )]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1006.84, -10.4977 )
+emitting = false
+
+[node name="RainSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -40.0
+bus = "FX"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "MenuBackground"
+anims/MenuBackground = ExtResource( 3 )

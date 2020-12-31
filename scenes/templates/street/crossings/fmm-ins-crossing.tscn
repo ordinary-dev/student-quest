@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/street/crossing_1.png" type="Texture" id=2]
+
+[node name="Mathematics-NaturalSciences-Crossing" type="Sprite"]
+position = Vector2( 0.953751, 49.506 )
+scale = Vector2( 1.02235, 1 )
+z_index = 4
+texture = ExtResource( 2 )
+offset = Vector2( 0, -50 )
+
+[node name="Transition" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( -1.81353, -54.0326 )
+scale = Vector2( 5.14731, 2.6 )
+object = NodePath("..")

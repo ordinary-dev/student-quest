@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=1]
+[ext_resource path="res://scenes/templates/interface/noise_background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://audio/fx/wind/autumn_wind_and_dry_leaves.ogg" type="AudioStream" id=3]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=4]
+
+[node name="Dialog" type="Node2D"]
+
+[node name="NoiseBackground" parent="." instance=ExtResource( 2 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+bus = "FX"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 1 )
+dialog_path = "res://dialogs/chapter_2/disappearance/bridge_3.json"
+load_scene = true
+scene_path = "res://scenes/chapter_3/1_secret_society/01_house.tscn"
+loading_delay = 5.0

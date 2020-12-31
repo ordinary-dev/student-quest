@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/computer_hum_3.ogg-709a9f9a0f218bc68b0680ac1b9a7bd8.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/computer/computer_hum_3.ogg"
+dest_files=[ "res://.import/computer_hum_3.ogg-709a9f9a0f218bc68b0680ac1b9a7bd8.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

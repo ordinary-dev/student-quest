@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/classroom.ogg-6fa26128cc5ed7fc5f0997d55263399f.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/voices/classroom.ogg"
+dest_files=[ "res://.import/classroom.ogg-6fa26128cc5ed7fc5f0997d55263399f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/rector/table_2.png" type="Texture" id=1]
+
+
+
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8.0152, 3.88361 )
+
+[node name="Table1" type="Sprite"]
+scale = Vector2( 6, 6 )
+z_index = 2
+texture = ExtResource( 1 )
+offset = Vector2( 0, -8 )
+
+[node name="Collider" type="StaticBody2D" parent="."]
+visible = false
+position = Vector2( 0, -4 )
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
+position = Vector2( 0, -0.116394 )
+shape = SubResource( 1 )

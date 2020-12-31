@@ -1,5 +1,0 @@
-{
-    "0":{"name":"MAIN_CHARACTER", "text":"D_SS_PLAN_1", "next":"1"},
-    "1":{"name":"SECURITY_GUARD", "text":"D_SS_PLAN_2", "next":"2"},
-    "2":{"name":"SECURITY_GUARD", "text":"D_SS_PLAN_3"}
-} 

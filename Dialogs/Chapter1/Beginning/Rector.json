@@ -1,7 +1,0 @@
-{
-    "0": { "name": "RECTOR", "text": "D_BEGINNING_RECTOR_1", "next": "1" },
-    "1": { "name": "MAIN_CHARACTER", "text": "D_BEGINNING_RECTOR_2", "next": "2" },
-    "2": { "name": "RECTOR", "text": "D_BEGINNING_RECTOR_3", "next": "3"},
-    "3": { "name": "MAIN_CHARACTER", "text": "D_BEGINNING_RECTOR_4", "next": "4"},
-    "4": { "name": "RECTOR", "text": "D_BEGINNING_RECTOR_5"}
-}

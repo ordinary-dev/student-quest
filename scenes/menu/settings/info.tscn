@@ -1,0 +1,179 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://fonts/press_start_2p/press_start_2p_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/templates/interface/button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/menu/settings/info.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+
+[node name="Info" type="MarginContainer"]
+light_mask = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 62.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+credits_scene = "res://Scenes/Chapter3/3-Hope/48.Credits.tscn"
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+light_mask = 0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 1870.0
+margin_bottom = 968.0
+size_flags_vertical = 3
+scroll_horizontal_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="Scroll"]
+light_mask = 0
+margin_right = 1820.0
+margin_bottom = 710.0
+mouse_filter = 1
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+
+[node name="TextContainer" type="VBoxContainer" parent="Scroll/MarginContainer"]
+light_mask = 0
+margin_right = 1800.0
+margin_bottom = 710.0
+size_flags_horizontal = 3
+custom_constants/separation = 20
+
+[node name="OpenSite" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
+margin_right = 1800.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "OPENSITE"
+
+[node name="ShowCredits" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
+margin_top = 100.0
+margin_right = 1800.0
+margin_bottom = 180.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "SHOW_CREDITS"
+
+[node name="Link" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
+margin_top = 200.0
+margin_right = 1800.0
+margin_bottom = 278.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "pixeltrain.itch.io/student-quest
+
+v 7.0+1.0"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Godot" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
+margin_top = 298.0
+margin_right = 1800.0
+margin_bottom = 322.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "GODOT"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Patreon" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
+margin_top = 342.0
+margin_right = 1800.0
+margin_bottom = 422.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Patreon"
+
+[node name="Ko-Fi" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
+margin_top = 442.0
+margin_right = 1800.0
+margin_bottom = 522.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Ko-fi"
+
+[node name="Liberapay" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
+margin_top = 542.0
+margin_right = 1800.0
+margin_bottom = 622.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+text = "Liberapay"
+
+[node name="Legal" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
+margin_top = 642.0
+margin_right = 1800.0
+margin_bottom = 666.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "LEGAL"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Copyright" type="Label" parent="Scroll/MarginContainer/TextContainer"]
+light_mask = 0
+margin_top = 686.0
+margin_right = 1800.0
+margin_bottom = 710.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 1 )
+text = "© 2020"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/OpenSite" to="." method="open_store"]
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/ShowCredits" to="." method="open_credits"]
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/Patreon" to="." method="open_patreon"]
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/Ko-Fi" to="." method="open_ko_fi"]
+[connection signal="pressed" from="Scroll/MarginContainer/TextContainer/Liberapay" to="." method="open_liberapay"]

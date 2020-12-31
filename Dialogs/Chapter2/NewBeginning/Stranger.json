@@ -1,6 +1,0 @@
-{
-	"0":{"name":"UNKNOWN_SINGER", "text":"D_NB_SINGER_1", "next":"1"},
-	"1":{"name":"MAIN_CHARACTER", "text":"D_NB_SINGER_2", "next":"2"},
-	"2":{"name":"UNKNOWN_SINGER", "text":"D_NB_SINGER_3", "next":"3"},
-	"3":{"name":"MR_SINGER", "text":"D_NB_SINGER_4"}
-}

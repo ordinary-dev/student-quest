@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/nodes/automatic_scene_loader.gd" type="Script" id=1]
+[ext_resource path="res://scenes/templates/backgrounds/bus_stop.tscn" type="PackedScene" id=2]
+
+[node name="BusScene" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource( 2 )]
+
+[node name="SceneLoader" type="Node" parent="."]
+script = ExtResource( 1 )
+next_scene = "res://scenes/chapter_1/1_beginning/11_city.tscn"
+delay = 1.5
+transition_in = false
+transition_out = false

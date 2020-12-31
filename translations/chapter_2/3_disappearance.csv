@@ -1,0 +1,76 @@
+id,ru,en
+DSP_MEETING_1,Встретьтесь с подружкой у гумфака,Meet your girlfriend at the Faculty of Humanities
+CHECK_PHONE,Проверить телефон,Check phone
+ASK_COMMANDANT,Спросить коменданта,Ask the commandant
+D_DSP_PHONE_1,Была онлайн 2 часа назад...,Was online 2 hours ago…
+D_DSP_COMMANDANT_1,"Простите, вы не поможете?","Excuse me, can you help?"
+D_DSP_COMMANDANT_2,"Я тут потерял своего друга, вы не подскажете, может он в общежитии?","I’ve lost my friend, you won’t tell me, maybe he’s in a dormitory?"
+D_DSP_COMMANDANT_3,Знаете номер комнаты?,Do you know room’s number?
+D_DSP_COMMANDANT_4,225,225
+D_DSP_COMMANDANT_5,"Ммм, нет, в 225 сейчас никого нет.","Mmm, no, there is no one in the room 225 right now."
+D_DSP_COMMANDANT_6,Ясно. Спасибо.,Okay. Thank.
+D_DSP_POLICE_1,"Похоже, полиция не поможет.",The police don't seem to help.
+D_DSP_POLICE_2,Они ведь даже не воспринимают меня всерьёз.,They don’t even take me seriously.
+D_DSP_WALK_1,Почему-то мне сегодня очень хочется прогуляться по той улице.,"For some reason, today I really want to walk along that street."
+D_DSP_THOUGHTS_1,"Такое чувство, что я здесь уже был, но не помню когда.","It feels like I've already been here, but I don’t remember when."
+D_DSP_THOUGHTS_2,"Хотя в этом городе все дома так похожи, что отличить один от другого бывает невозможно.",Although in this city all houses are so similar that it is impossible to distinguish one from another.
+D_DSP_THOUGHTS_3,И зачем я вообще здесь хожу?,And why do I even go here?
+D_DSP_THOUGHTS_4,Но может в этом что-то и есть. Новогодняя атмосфера по-своему прекрасна.,But maybe there is something good in this. The New Year’s atmosphere is beautiful in its own way.
+D_DSP_TALK_1,"Вечер добрый, юноша. Присаживайтесь, если хотите.","Good evening, young man. Take a seat if you like."
+D_DSP_TALK_2,Вы же садовник из нашего университета. А что вы тут делаете?,You are a gardener from our university. What are you doing here?
+D_DSP_TALK_3,Просто наслаждаюсь атмосферой.,I just enjoy the atmosphere.
+D_DSP_TALK_4,Так далеко?,So far?
+D_DSP_TALK_5,Я живу в паре минут отсюда.,I live a couple of minutes from here.
+D_DSP_TALK_6,А вам не далековато ездить на работу?,Aren't you too far to commute to work?
+D_DSP_TALK_7,А я там и не работаю. Я уже давно на пенсии. Мне просто нравится ухаживать за тем садом. Вот я и прихожу раз в несколько дней.,I don't work there. I have been retired for a long time. I just love looking after that garden. So I come every few days.
+D_DSP_TALK_8,Интересно... Вы живёте в довольно красивом месте.,Interesting ... you live in a pretty beautiful place.
+D_DSP_TALK_9,"Я недавно принёс сюда скамейку. Не совсем сам, мне помогли знакомые. Теперь здесь ещё приятнее.","I recently brought a bench here. Not quite myself, my friends helped me. Now it's even nicer here."
+D_DSP_TALK_10,И зачем вам все это?,And why do you need all this?
+D_DSP_TALK_11,"Просто так, захотелось. Ты мне лучше скажи: ладно я уже старый, а ты-то почему один в этот день? Новый год ведь уже скоро.","Just like that, I wanted to. You'd better tell me: okay, I'm already old, but why are you alone on this day? New Year is coming soon."
+D_DSP_TALK_12,"Я даже не знаю, не сложилось, вот и всё. Это не мой родной город, тут у меня ещё нет друзей.","I don't even know, it didn't work out, that's all. This is not my hometown, I have no friends here yet."
+D_DSP_TALK_13,…,…
+D_DSP_TALK_14,"А в последнее время у меня чувство, что я потерял нечто важное.",And lately I have a feeling that I have lost something important.
+A_FEW_MONTHS_LATER,Несколько месяцев спустя,A few months later
+D_DSP_MS_1,"Знаешь, я сегодня собираюсь уезжать. Жаль, что всё так обернулось.","You know, I'm going to leave today. It's a pity that things turned out like this."
+D_DSP_MS_2,"Приходи сегодня на крышу географического факультета, пожалуйста.","Come to the roof of the Faculty of Geography today, please."
+D_DSP_GARDENER_1,Доброе утро.,Good morning.
+D_DSP_GARDENER_2,"О, доброе утро!",Oh good morning!
+D_DSP_GARDENER_3,"Вы слышали, что Мистер Певец уезжает?",Did you hear that Mister Singer is leaving?
+D_DSP_GARDENER_4,"Нет, я его не часто вижу, а разговариваем мы ещё реже.","No, I don't see him often, and we talk even less often."
+D_DSP_GARDENER_5,То есть вы не знаете почему?,So you don't know why?
+D_DSP_GARDENER_6,Может он тебе сам расскажет?,Maybe he will tell you?
+D_DSP_GARDENER_7,Возможно. Спасибо.,Maybe. Thank.
+D_DSP_STRANGER_1,Это же ты!,It's you!
+D_DSP_STRANGER_2,Ты меня знаешь?,You know me?
+D_DSP_STRANGER_3,Я в этом уверена! Мне рассказывали о тебе!,I'm sure! They told me about you!
+D_DSP_STRANGER_4,Кто?,Who?
+D_DSP_STRANGER_5,Не помню. Но меня не покидает странное чувство.,I don't remember. But a strange feeling never leaves me.
+D_DSP_STRANGER_6,А я тут при чем?,What do I have to do with it?
+D_DSP_STRANGER_7,"Я не знаю, но я не обманываю.","I don't know, but I'm not lying."
+D_DSP_STRANGER_8,"Напишешь мне, если вспомнишь, хорошо? Я уже должен бежать.","Write me if you remember, okay? I have to run already."
+D_DSP_ROOF_1,А как вы вообще прошли сюда?,How did you get here at all?
+D_DSP_ROOF_2,"И это все, что тебя волнует?",Is that all you care about?
+D_DSP_ROOF_3,Вы про что?,What are you talking about?
+D_DSP_ROOF_4,"Ты же совсем прекратил поиски. Может тебе нужна помощь? Я верю, что здесь что-то не чисто.",You've given up on the search altogether. Do you need help? I believe there is something wrong here.
+D_DSP_ROOF_5,Поиски? Вы о чем?,Search? What are you talking about?
+D_DSP_ROOF_6,Шутишь? Ты не знаешь про пропажу девушки?,Are you kidding? Don't you know about the missing girl?
+D_DSP_ROOF_7,Какой девушки?,What girl?
+D_DSP_ROOF_8,"... эх, жаль. Я до последнего не хотел верить, что такое возможно.",.. I'm sorry. I didn't want to believe it was possible until the last moment.
+D_DSP_ROOF_9,Может быть вы мне подскажите тогда?,Can you tell me then?
+D_DSP_ROOF_10,"Прости, я даже не знаю, что тебе сказать.","I'm sorry, I don't even know what to tell you."
+D_DSP_ROOF_11,"Ладно, прости, что позвал тебя.","Okay, I'm sorry I called you."
+D_DSP_ROOF_12,Спасибо!,Thanks!
+D_DSP_NIGHT_1,Я забыл.,I forgot.
+D_DSP_NIGHT_2,Я всё забыл.,I forgot everything.
+D_DSP_NIGHT_3,Но ведь так не бывает.,But it doesn't happen that way.
+D_DSP_NIGHT_4,Но это произошло.,But it happened.
+D_DSP_BRIDGE_1,Ты тоже вспомнил?,Did you remember too?
+D_DSP_BRIDGE_2,Да. Что мы теперь будем делать?,Yes. What are we going to do now?
+D_DSP_BRIDGE_3,Я ничего не понимаю.,I don’t understand anything.
+D_DSP_BRIDGE_4,Надо успокоиться. Может пойдём ко мне? Тут уже становится холодно.,We need to calm down. Can we come to me? It's getting cold here.
+D_DSP_BRIDGE_5,"Л-л-ладно, давай.","O-o-okay, come on."
+D_DSP_BRIDGE_6,Ч-ч-ч-что это было?,W-w-w-what was that?
+D_DSP_BRIDGE_7,Ничего не понимаю.,"I don’t understand anything,"
+D_DSP_BRIDGE_8,"Эй, подожди!",Hey wait!
+D_DSP_BRIDGE_9,Держись!,Hold on!
+D_DSP_BRIDGE_10,"Нет, нет!",No no!

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fireworks_display_2.ogg-ff4ba7781c17246f500b1ae33310688d.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/fireworks/fireworks_display_2.ogg"
+dest_files=[ "res://.import/fireworks_display_2.ogg-ff4ba7781c17246f500b1ae33310688d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

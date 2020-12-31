@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=1]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
+[ext_resource path="res://scenes/templates/backgrounds/blurred_background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/templates/characters/unknown_person.tscn" type="PackedScene" id=4]
+
+[node name="Dialog" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="UnknownPerson" parent="." instance=ExtResource( 4 )]
+position = Vector2( 968, 1336 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 1 )
+dialog_path = "res://dialogs/chapter_1/beginning/night.json"
+load_scene = true
+scene_path = "res://scenes/chapter_2/1_new_beginning/03_bridge.tscn"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )

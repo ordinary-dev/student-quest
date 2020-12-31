@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/templates/street/street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/triggers/simple_triggers/dialog_trigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=3]
+[ext_resource path="res://scenes/triggers/advanced/dialog_trigger.tscn" type="PackedScene" id=4]
+
+[node name="Street" type="Node2D"]
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.823529, 0.823529, 0.823529, 1 )
+allow_entrance = true
+next_scene = "res://scenes/chapter_2/3_disappearance/15_clouds.tscn"
+
+[node name="DialogTrigger" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64.2768, 491.42 )
+dialog_path = "res://dialogs/chapter_2/disappearance/mr_singer.json"
+
+[node name="GardenerDialogTrigger" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1132.45, 2570.22 )
+hint = "GARDENER"
+dialog_path = "res://dialogs/chapter_2/disappearance/gardener.json"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 3 )
+show_pause_menu = true
+show_joystick = true

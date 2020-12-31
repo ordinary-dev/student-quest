@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://sprites/phone.png" type="Texture" id=1]
+[ext_resource path="res://scenes/templates/backgrounds/blurred_background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=3]
+[ext_resource path="res://sprites/stripes.png" type="Texture" id=4]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=5]
+
+[node name="Phone" type="Node2D"]
+
+[node name="BackgroundTemplate" parent="." instance=ExtResource( 2 )]
+
+[node name="Phone" type="Sprite" parent="."]
+position = Vector2( 960, 576 )
+scale = Vector2( 16, 16 )
+texture = ExtResource( 1 )
+
+[node name="Stripes" type="Sprite" parent="."]
+position = Vector2( 960, 544 )
+scale = Vector2( 1, 1.36296 )
+texture = ExtResource( 4 )
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 3 )
+dialog_path = "res://dialogs/chapter_3/secret_society/message.json"
+enable_delay = true
+delay = 3.0
+load_scene = true
+scene_path = "res://scenes/chapter_3/1_secret_society/12_plan.tscn"

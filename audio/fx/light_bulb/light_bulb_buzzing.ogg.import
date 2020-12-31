@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/light_bulb_buzzing.ogg-e0094bfce834204ff3e8164355187ed4.oggstr"
+
+[deps]
+
+source_file="res://audio/fx/light_bulb/light_bulb_buzzing.ogg"
+dest_files=[ "res://.import/light_bulb_buzzing.ogg-e0094bfce834204ff3e8164355187ed4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

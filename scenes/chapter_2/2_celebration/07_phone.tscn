@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=1]
+[ext_resource path="res://sprites/backgrounds/blurry_room.jpg" type="Texture" id=2]
+[ext_resource path="res://sprites/phone.png" type="Texture" id=3]
+
+[node name="Phone" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 920.45, 548 )
+scale = Vector2( 1.74174, 1.74174 )
+texture = ExtResource( 2 )
+
+[node name="Phone" type="Sprite" parent="."]
+position = Vector2( 936, 624 )
+scale = Vector2( 30, 30 )
+texture = ExtResource( 3 )
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 1 )
+dialog_path = "res://dialogs/chapter_2/celebration/phone.json"
+load_scene = true
+scene_path = "res://scenes/chapter_2/2_celebration/08_bus.tscn"

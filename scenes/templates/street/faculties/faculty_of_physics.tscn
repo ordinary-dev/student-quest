@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/street/faculty_of_physics.png" type="Texture" id=1]
+[ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 110, 40.5405 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3.19995, 0.799988 )
+
+[node name="FacultyOfPhysics" type="Sprite"]
+scale = Vector2( 10, 10 )
+z_index = 4
+z_as_relative = false
+texture = ExtResource( 1 )
+offset = Vector2( 0, -41 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 1024
+
+[node name="MainCollider" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -10.4, -32 )
+shape = SubResource( 1 )
+
+[node name="PoleCollider" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 116, -0.8 )
+shape = SubResource( 2 )
+
+[node name="Transition" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( -10.8, -76 )
+scale = Vector2( 11.29, 1.708 )
+object = NodePath("..")

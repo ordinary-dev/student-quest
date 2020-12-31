@@ -10,67 +10,79 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
-"class": "ChangeUI",
+"class": "AutomaticSceneLoader",
 "language": "GDScript",
-"path": "res://Scripts/ChangeUI.gd"
+"path": "res://scripts/nodes/automatic_scene_loader.gd"
 }, {
 "base": "Node",
-"class": "Dialog",
+"class": "ChangeUI",
 "language": "GDScript",
-"path": "res://Scripts/General/ShowDialog.gd"
+"path": "res://scripts/nodes/change_ui.gd"
+}, {
+"base": "Node",
+"class": "DialogLoader",
+"language": "GDScript",
+"path": "res://scripts/nodes/dialog_loader.gd"
 }, {
 "base": "Node",
 "class": "MusicPlayer",
 "language": "GDScript",
-"path": "res://Scripts/General/PlayMusic.gd"
+"path": "res://scripts/nodes/music_player.gd"
 }, {
 "base": "Node",
-"class": "SceneLoader",
+"class": "Notification",
 "language": "GDScript",
-"path": "res://Scripts/General/DelayedLoading.gd"
+"path": "res://scripts/nodes/notification.gd"
+}, {
+"base": "Node2D",
+"class": "PoliceOfficerConfig",
+"language": "GDScript",
+"path": "res://scripts/nodes/police_officer_config.gd"
 }, {
 "base": "Node",
 "class": "SoundPlayer",
 "language": "GDScript",
-"path": "res://Scripts/General/PlaySound.gd"
+"path": "res://scripts/nodes/sound_player.gd"
+}, {
+"base": "Node",
+"class": "StageUnlocker",
+"language": "GDScript",
+"path": "res://scripts/nodes/stage_unlocker.gd"
 }, {
 "base": "Node",
 "class": "StopTheMusic",
 "language": "GDScript",
-"path": "res://Scripts/General/StopMusic.gd"
-}, {
-"base": "Node",
-"class": "UnlockStage",
-"language": "GDScript",
-"path": "res://Scripts/General/Unlock.gd"
+"path": "res://scripts/nodes/stop_the_music.gd"
 } ]
 _global_script_class_icons={
+"AutomaticSceneLoader": "",
 "ChangeUI": "",
-"Dialog": "",
+"DialogLoader": "",
 "MusicPlayer": "",
-"SceneLoader": "",
+"Notification": "",
+"PoliceOfficerConfig": "",
 "SoundPlayer": "",
-"StopTheMusic": "",
-"UnlockStage": ""
+"StageUnlocker": "",
+"StopTheMusic": ""
 }
 
 [application]
 
 config/name="Student Quest"
 config/description="2D quest"
-run/main_scene="res://Scenes/Entry.tscn"
-config/icon="res://Sprites/Icons/logo.png"
+run/main_scene="res://scenes/entry.tscn"
+config/icon="res://sprites/icons/logo.png"
 
 [autoload]
 
-GLOBAL="*res://Scripts/Global.gd"
-MUSIC="*res://Scenes/global/Music.tscn"
-FX="*res://Scenes/global/FX.tscn"
-DIALOG="*res://Scripts/Dialog.gd"
-SCENES="*res://Scenes/global/SceneLoader.tscn"
-UI="*res://Scenes/ui/UI.tscn"
-NOTIFY="*res://Scripts/Notify.gd"
-TEMP="*res://Scripts/Temp.gd"
+SETTINGS="*res://scripts/signletons/settings.gd"
+MUSIC="*res://scenes/singletons/music.tscn"
+FX="*res://scenes/singletons/fx.tscn"
+DIALOG="*res://scripts/signletons/dialog.gd"
+SCENES="*res://scenes/singletons/scene_loader.tscn"
+UI="*res://scenes/singletons/ui.tscn"
+NOTIFY="*res://scripts/signletons/notify.gd"
+STORAGE="*res://scripts/signletons/storage.gd"
 
 [display]
 
@@ -81,7 +93,7 @@ window/stretch/aspect="keep"
 
 [gui]
 
-theme/custom_font="res://Fonts/PressStart_Res/Pixel_font.tres"
+theme/custom_font="res://fonts/press_start_2p/press_start_2p_regular.tres"
 
 [input]
 
@@ -163,7 +175,7 @@ pointing/emulate_touch_from_mouse=true
 
 test="en"
 fallback="ru"
-translations=PoolStringArray( "res://Translations/Menu.en.translation", "res://Translations/Menu.ru.translation", "res://Translations/strings.en.translation", "res://Translations/strings.ru.translation", "res://Translations/Chapters.en.translation", "res://Translations/Chapters.ru.translation", "res://Translations/Characters.en.translation", "res://Translations/Characters.ru.translation", "res://Translations/Chapter1/Beginning.en.translation", "res://Translations/Chapter1/Beginning.ru.translation", "res://Translations/Chapter1/FirstDay.en.translation", "res://Translations/Chapter1/FirstDay.ru.translation", "res://Translations/Chapter1/UsualLife.en.translation", "res://Translations/Chapter1/UsualLife.ru.translation", "res://Translations/Chapter1/Parting.en.translation", "res://Translations/Chapter1/Parting.ru.translation", "res://Translations/Chapter2/NewBeginning.en.translation", "res://Translations/Chapter2/NewBeginning.ru.translation", "res://Translations/Chapter2/Celebration.en.translation", "res://Translations/Chapter2/Celebration.ru.translation", "res://Translations/Chapter2/Disappearance.en.translation", "res://Translations/Chapter2/Disappearance.ru.translation", "res://Translations/Chapter3/SecretSociety.en.translation", "res://Translations/Chapter3/SecretSociety.ru.translation", "res://Translations/Chapter3/Despair.en.translation", "res://Translations/Chapter3/Despair.ru.translation", "res://Translations/Chapter3/Hope.en.translation", "res://Translations/Chapter3/Hope.ru.translation" )
+translations=PoolStringArray( "res://translations/chapters.en.translation", "res://translations/chapters.ru.translation", "res://translations/characters.en.translation", "res://translations/characters.ru.translation", "res://translations/menu.en.translation", "res://translations/menu.ru.translation", "res://translations/strings.en.translation", "res://translations/strings.ru.translation", "res://translations/chapter_1/1_beginning.en.translation", "res://translations/chapter_1/1_beginning.ru.translation", "res://translations/chapter_1/2_first_days.en.translation", "res://translations/chapter_1/2_first_days.ru.translation", "res://translations/chapter_1/3_accident.en.translation", "res://translations/chapter_1/3_accident.ru.translation", "res://translations/chapter_1/4_funeral.en.translation", "res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_2/1_new_beginning.en.translation", "res://translations/chapter_2/1_new_beginning.ru.translation", "res://translations/chapter_2/2_celebration.en.translation", "res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/3_disappearance.en.translation", "res://translations/chapter_2/3_disappearance.ru.translation", "res://translations/chapter_3/1_secret_society.en.translation", "res://translations/chapter_3/1_secret_society.ru.translation", "res://translations/chapter_3/2_despair.en.translation", "res://translations/chapter_3/2_despair.ru.translation", "res://translations/chapter_3/3_hope.en.translation", "res://translations/chapter_3/3_hope.ru.translation" )
 
 [physics]
 
@@ -182,5 +194,4 @@ quality/shadow_atlas/size=2048
 quality/shadow_atlas/size.mobile=1024
 quality/shadows/filter_mode=0
 environment/default_clear_color=Color( 0, 0, 0, 1 )
-environment/default_environment="res://default_env.tres"
 quality/dynamic_fonts/use_oversampling=false

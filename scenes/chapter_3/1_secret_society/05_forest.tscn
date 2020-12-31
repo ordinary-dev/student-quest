@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/templates/holiday/forest.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
+
+[node name="Forest" type="Node2D"]
+
+[node name="ForestTemplate" parent="." instance=ExtResource( 1 )]
+main_door_open = false
+another_door_open = true
+initial_location = 1
+interior_scene = ""
+small_house = "res://scenes/chapter_3/1_secret_society/06_text.tscn"
+show_neo = true
+show_campfire = true
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 2 )
+show_pause_menu = true
+show_joystick = true

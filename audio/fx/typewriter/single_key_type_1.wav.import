@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/single_key_type_1.wav-b0427d592607e1f8ba2e9927a77f15cd.sample"
+
+[deps]
+
+source_file="res://audio/fx/typewriter/single_key_type_1.wav"
+dest_files=[ "res://.import/single_key_type_1.wav-b0427d592607e1f8ba2e9927a77f15cd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

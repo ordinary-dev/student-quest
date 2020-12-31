@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/suspence.wav-c36de82fd4328b8cb4033bd3ed5c42eb.sample"
+
+[deps]
+
+source_file="res://audio/music/suspence/suspence.wav"
+dest_files=[ "res://.import/suspence.wav-c36de82fd4328b8cb4033bd3ed5c42eb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

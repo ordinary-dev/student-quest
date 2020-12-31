@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/templates/street/street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/triggers/simple_triggers/load_scene_trigger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/nodes/stage_unlocker.gd" type="Script" id=3]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=4]
+[ext_resource path="res://scripts/nodes/notification.gd" type="Script" id=5]
+
+[node name="Meeting" type="Node2D"]
+
+[node name="StreetTemplate" parent="." instance=ExtResource( 1 )]
+initial_position = 2
+show_singer = false
+show_gardener = false
+enable_lights = false
+
+[node name="LoadTrigger" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3968, 7960 )
+scale = Vector2( 8, 4 )
+scene = "res://scenes/chapter_2/3_disappearance/02_waiting.tscn"
+
+[node name="UnlockStage" type="Node" parent="."]
+script = ExtResource( 3 )
+subchapter_id = 7
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 4 )
+show_pause_menu = true
+show_joystick = true
+
+[node name="Notification" type="Node" parent="."]
+script = ExtResource( 5 )
+text = "DSP_MEETING_1"

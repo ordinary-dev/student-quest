@@ -1,0 +1,29 @@
+id,ru,en
+LOADING,Загрузка,Loading
+D_ALTERNATE_SCENE,"Хорошо, начнём","Well, let's start"
+SETTINGS,Настройки,Settings
+QUIT,Выйти,Quit
+QUIT_CONFIRMATION,Вы действительно хотите выйти?,Do you really want to quit?
+YES,Да,Yes
+NO,Нет,No
+LANG,Язык,Lang
+AUDIO,Аудио,Audio
+GRAPHICS,Графика,Graphics
+INFO,Инфо,Info
+MUSIC_VOLUME,Громкость музыки,Music volume
+EFFECTS_VOLUME,Громкость эффектов,Effects volume
+RESET,Сбросить,Reset
+VSYNC,Верт. син.,Vsync
+FULLSCREEN,Полный экран,Fullscreen
+SITE,Открыть сайт,Open site
+GODOT,Создано при помощи Godot Engine,Created with Godot Engine
+LEGAL,Каждый персонаж всего лишь результат нашего воображения,Every character is just the result of our imagination
+NEW_GAME,Новая игра,New game
+DELETE,Удалить,Delete
+TESTERS,Тестеры:,Testers:
+TICKETWINDOW,Окно кассы,Ticket window
+LOAD,Загрузить,Load
+SAVE,Сохранить,Save
+LOAD_GAME,Загрузить игру,Load game
+CONTINUE,Продолжить,Continue
+SHOW_CREDITS,Показать титры,Show credits

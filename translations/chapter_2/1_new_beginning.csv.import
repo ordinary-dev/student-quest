@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://translations/chapter_2/1_new_beginning.ru.translation", "res://translations/chapter_2/1_new_beginning.en.translation" ]
+
+source_file="res://translations/chapter_2/1_new_beginning.csv"
+dest_files=[ "res://translations/chapter_2/1_new_beginning.ru.translation", "res://translations/chapter_2/1_new_beginning.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0

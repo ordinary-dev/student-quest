@@ -1,6 +1,0 @@
-{
-    "0": {"name":"SPEAKER", "text":"D_UL_SPEAKER_1", "next":"1"},
-    "1": {"name":"SPEAKER", "text":"D_UL_SPEAKER_2", "next":"2"},
-    "2": {"name":"SPEAKER", "text":"D_UL_SPEAKER_3", "next":"3"},
-    "3": {"name":"SPEAKER", "text":"D_UL_SPEAKER_4"}
-} 

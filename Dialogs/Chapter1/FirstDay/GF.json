@@ -1,6 +1,0 @@
-{
-	"0":{"name":"MAIN_CHARACTER", "text":"D_FD_GF_1", "next":"1"},
-	"1":{"name":"MAIN_CHARACTER", "text":"D_FD_GF_2", "next":"2"},
-	"2":{"name":"GIRLFRIEND",     "text":"D_FD_GF_3", "next":"3"},
-	"3":{"name":"MAIN_CHARACTER", "text":"D_FD_GF_4"}
-}

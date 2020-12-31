@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/templates/street/street.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/triggers/simple_triggers/dialog_trigger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=4]
+[ext_resource path="res://scripts/nodes/music_player.gd" type="Script" id=5]
+[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=6]
+
+[node name="WayBack" type="Node2D"]
+
+[node name="Street-Template" parent="." instance=ExtResource( 1 )]
+initial_position = 2
+show_gardener = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.552941, 0.462745, 0.780392, 1 )
+
+[node name="SimpleDialogTrigger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 74.8602, 477.562 )
+scale = Vector2( 2.04, 1.6 )
+activate_once = true
+dialog_path = "res://dialogs/chapter_1/first_day/evening.json"
+load_scene = true
+scene_path = "res://scenes/chapter_1/2_first_days/12_city.tscn"
+
+[node name="Dialog" type="Node" parent="."]
+script = ExtResource( 4 )
+dialog_path = "res://dialogs/chapter_1/first_day/evening_0.json"
+
+[node name="MusicPlayer" type="Node" parent="."]
+script = ExtResource( 5 )
+file = "res://audio/music/piano/soft_piano_loop_2.ogg"
+
+[node name="ChangeUI" type="Node" parent="."]
+script = ExtResource( 6 )
+show_pause_menu = true
+show_joystick = true

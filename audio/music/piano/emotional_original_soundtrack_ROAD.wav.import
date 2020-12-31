@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/emotional_original_soundtrack_ROAD.wav-235b44a9e0424648de5ec6ea78d0eb55.sample"
+
+[deps]
+
+source_file="res://audio/music/piano/emotional_original_soundtrack_ROAD.wav"
+dest_files=[ "res://.import/emotional_original_soundtrack_ROAD.wav-235b44a9e0424648de5ec6ea78d0eb55.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
