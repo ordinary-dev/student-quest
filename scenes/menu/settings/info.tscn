@@ -4,21 +4,6 @@
 [ext_resource path="res://scenes/templates/interface/button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/menu/settings/info.gd" type="Script" id=3]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 border_width_left = 4
@@ -110,7 +95,7 @@ size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "pixeltrain.itch.io/student-quest
 
-v 6.39"
+v 7.0+1.0"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
