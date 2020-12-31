@@ -6,7 +6,7 @@
 [node name="Cafe" type="Node2D"]
 
 [node name="CafeTemplate" parent="." instance=ExtResource( 1 )]
-street_scene = "res://scenes/chapter_3/3_hope/18_infiltration.tscn"
+scene_path = "res://scenes/chapter_3/3_hope/18_infiltration.tscn"
 
 [node name="MusicPlayer" type="Node" parent="."]
 script = ExtResource( 2 )

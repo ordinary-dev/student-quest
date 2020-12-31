@@ -7,6 +7,7 @@
 
 [node name="Face" type="Node2D"]
 script = ExtResource( 4 )
+scene_path = "res://scenes/chapter_3/1_secret_society/15_monolog.tscn"
 
 [node name="Background" type="ColorRect" parent="."]
 margin_top = 312.0

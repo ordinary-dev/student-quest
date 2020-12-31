@@ -24,6 +24,15 @@ tile_data = PoolIntArray( -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 
 [node name="Body" parent="." instance=ExtResource( 2 )]
 position = Vector2( 574.758, -129.762 )
 collision_layer = 1025
+default_state = 1
+sprite_sheet = 0
+restore_position = false
+locked = false
+camera_limit_left = -10000000
+camera_limit_top = -10000000
+camera_limit_right = 10000000
+camera_limit_bottom = 10000000
+camera_zoom = 0.6
 
 [node name="Walls" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -38,7 +47,7 @@ tile_data = PoolIntArray( -589820, 1610612738, 0, -589819, -1073741821, 0, -5898
 position = Vector2( 605.455, -125.641 )
 hint = "GO_BACK"
 object_name = NodePath("../../CafeTemplate")
-function_name = "load_street"
+function_name = "load_scene"
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 576.827, 68.5621 )

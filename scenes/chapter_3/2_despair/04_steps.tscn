@@ -6,6 +6,8 @@
 
 [node name="Steps" type="Node2D"]
 script = ExtResource( 3 )
+room_scene = "res://scenes/chapter_3/2_despair/06_room.tscn"
+basement_scene = "res://scenes/chapter_3/2_despair/05_basement.tscn"
 
 [node name="MapTemplate" parent="." instance=ExtResource( 2 )]
 
