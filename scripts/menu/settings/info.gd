@@ -3,7 +3,7 @@ extends Node
 # Script for the information panel in the menu.
 # Opens links in the browser
 # and loads the scene with captions.
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (String, FILE, "*.tscn") var credits_scene

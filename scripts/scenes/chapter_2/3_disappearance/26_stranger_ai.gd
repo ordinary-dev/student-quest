@@ -1,7 +1,7 @@
 extends Sprite
 
 # Simple AI for the scene on the bridge
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const ANIM_SPEED = 50

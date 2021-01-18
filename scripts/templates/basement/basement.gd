@@ -2,7 +2,7 @@ tool
 extends Node2D
 
 # Script for quick setup of the basement
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 # I haven't found a better way

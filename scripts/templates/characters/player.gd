@@ -2,7 +2,7 @@ tool
 extends KinematicBody2D
 
 # Player controller
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 # State types

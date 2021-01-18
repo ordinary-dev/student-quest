@@ -3,7 +3,7 @@ extends Node
 # Script to disable unavailable chapters.
 # It looks strange, but I didn't find
 # a better way to do it.
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 onready var _stages := [

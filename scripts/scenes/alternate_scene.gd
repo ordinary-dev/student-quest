@@ -1,7 +1,7 @@
 extends Control
 
 # Script for an alternative start of the game
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const DELAY_BEFORE_PRINTING := 0.8

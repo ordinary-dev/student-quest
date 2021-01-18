@@ -2,7 +2,7 @@ extends Area2D
 
 # Trigger base class
 # All inherited classes must override the "action" method!
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const START_COLOR := Color(1, 1, 1, 0)

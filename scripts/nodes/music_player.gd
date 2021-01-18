@@ -2,7 +2,7 @@ extends Node
 class_name MusicPlayer
 
 # Play music in background
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (String, FILE, "*.ogg") var file

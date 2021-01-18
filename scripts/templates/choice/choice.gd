@@ -4,7 +4,7 @@ extends Control
 # You need to use another script
 # to add options and specify the scene
 # that will be loaded
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const HEIGHT := 170

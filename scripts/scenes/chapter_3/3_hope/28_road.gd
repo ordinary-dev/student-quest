@@ -2,7 +2,7 @@ extends Node2D
 
 # Show fake error messages
 # when approaching the computer
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const DELAY := 0.3

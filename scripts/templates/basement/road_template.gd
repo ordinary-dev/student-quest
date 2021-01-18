@@ -2,7 +2,7 @@ tool
 extends Node2D
 
 # Character position adjustment
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 enum Positions {BOTTOM, TOP}

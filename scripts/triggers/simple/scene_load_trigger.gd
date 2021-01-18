@@ -1,7 +1,7 @@
 extends "res://scripts/triggers/simple/base.gd"
 
 # Loads the scene without confirmation
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (String, FILE, "*.tscn") var scene

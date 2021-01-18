@@ -2,7 +2,7 @@ extends Control
 
 # Changes the time on the screen,
 # then loads the next scene
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const TIME := ["0:00", "6:00", "12:00", "18:00"]

@@ -1,7 +1,7 @@
 extends Node2D
 
 # Streetlight
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (bool) var enable_light = true setget _set_state

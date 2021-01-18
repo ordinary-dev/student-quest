@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 # Script for water splashes
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 # Hide water splashes if this variable == 0 and show otherwise.

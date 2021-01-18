@@ -1,7 +1,7 @@
 extends Sprite
 
 # Animation of character movement on the screen
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 # Time between frame changes in seconds

@@ -2,7 +2,7 @@ tool
 extends AnimatedSprite
 
 # Controls the campfire and its sounds
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const AUDIO_SOURCE_PATH := "AudioStreamPlayer2D"

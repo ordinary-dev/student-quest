@@ -1,7 +1,7 @@
 extends ColorRect
 
 # Script for hiding an unavailable Chapter
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const BG_COLOR_ENABLED := "#232323"

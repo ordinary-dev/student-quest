@@ -2,7 +2,7 @@ extends Node2D
 
 # Script for NPCs that go
 # to a random point on the map
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 enum Directions {UP, DOWN, LEFT, RIGHT, UNSET}

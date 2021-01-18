@@ -1,7 +1,7 @@
 extends Node
 
 # Audio settings
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 onready var _music_label := $Container/Music/Buttons/MusicVolume

@@ -1,7 +1,7 @@
 extends Node2D
 
 # Temporary save a value
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (String) var prop

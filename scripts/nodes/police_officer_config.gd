@@ -2,7 +2,7 @@ extends Node2D
 class_name PoliceOfficerConfig
 
 # Settings for officer_ai script
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (NodePath) var nav_node = NodePath("../Navigation2D")
