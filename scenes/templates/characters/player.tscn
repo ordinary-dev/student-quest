@@ -1,37 +1,26 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://scripts/templates/characters/player.gd" type="Script" id=1]
+[ext_resource path="res://scripts/templates/characters/player/main.gd" type="Script" id=1]
 [ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=2]
 [ext_resource path="res://audio/fx/steps/step_10.wav" type="AudioStream" id=3]
 [ext_resource path="res://audio/fx/steps/step_12.wav" type="AudioStream" id=4]
 [ext_resource path="res://sprites/water/player_in_water.tres" type="SpriteFrames" id=5]
-[ext_resource path="res://scripts/templates/characters/splashes.gd" type="Script" id=6]
+[ext_resource path="res://scripts/templates/characters/player/splashes.gd" type="Script" id=6]
+[ext_resource path="res://scripts/templates/characters/player/joystick.gd" type="Script" id=7]
+[ext_resource path="res://scripts/templates/characters/player/keyboard.gd" type="Script" id=8]
+[ext_resource path="res://scripts/templates/characters/player/sprite.gd" type="Script" id=9]
 
-
-
-
-
-
-
-
-
-
-
-
-[sub_resource type="Curve" id=1]
-_data = [ Vector2( 0, 0 ), 0.0, -0.0322966, 0, 0, Vector2( 0.518518, 1 ), 0.0314686, 0.0, 0, 0 ]
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.9665, 5.43987 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( -6.76242, 14.5207, -6.12232, 14.1234, 2.72861, 14.1454, 3.45699, 14.6752, 2.75068, 15.1608, -6.23268, 15.1387 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Character:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -71,11 +60,11 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Character:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -115,11 +104,11 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Character:frame")
+tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -159,7 +148,7 @@ tracks/2/keys = {
 } ]
 }
 
-[node name="Body" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D"]
 process_priority = -1
 position = Vector2( 68.7217, 228.33 )
 z_index = 4
@@ -167,14 +156,19 @@ z_as_relative = false
 collision_layer = 1024
 collision_mask = 0
 script = ExtResource( 1 )
-speed_curve = SubResource( 1 )
+
+[node name="KeyboardHandler" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="JoystickHandler" type="Node" parent="."]
+script = ExtResource( 7 )
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -0.554323, -6.13217 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="Character" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="."]
 light_mask = 2
 position = Vector2( 0, -48 )
 scale = Vector2( 3, 3 )
@@ -184,6 +178,7 @@ hframes = 3
 frame = 7
 region_enabled = true
 region_rect = Rect2( 0, 0, 57, 108 )
+script = ExtResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 33.3505, 5.4938 )
@@ -198,7 +193,7 @@ editor_draw_limits = true
 show_behind_parent = true
 position = Vector2( 4.5, -45.5173 )
 scale = Vector2( 3, 3 )
-occluder = SubResource( 3 )
+occluder = SubResource( 2 )
 
 [node name="Water" type="AnimatedSprite" parent="."]
 visible = false
@@ -222,6 +217,6 @@ volume_db = -15.0
 bus = "FX"
 
 [node name="WalkCycle" type="AnimationPlayer" parent="."]
-anims/down = SubResource( 4 )
-anims/right = SubResource( 5 )
-anims/up = SubResource( 6 )
+anims/down = SubResource( 3 )
+anims/right = SubResource( 4 )
+anims/up = SubResource( 5 )
