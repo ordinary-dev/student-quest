@@ -40,7 +40,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-credits_scene = "res://Scenes/Chapter3/3-Hope/48.Credits.tscn"
+credits_scene = "res://scenes/chapter_3/3_hope/48_credits.tscn"
 
 [node name="Scroll" type="ScrollContainer" parent="."]
 light_mask = 0
