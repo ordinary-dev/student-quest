@@ -1,0 +1,54 @@
+name: "Godot: build and publish"
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  GAME: student_quest
+  COMPANY: pixeltrain
+
+defaults:
+  run:
+    working-directory: ./game
+
+jobs:
+  export:
+    name: Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.2.3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Create directories
+        run: mkdir -p build/windows build/linux build/mac build/android
+      # Prepare keystore
+      - name: Create keystore
+        run: echo $RELEASE_KEYSTORE | base64 --decode > release.keystore
+      - name: Set keystore path
+        run: sed 's@keystore/release=".*"@keystore/release="release.keystore"@g' -i export_presets.cfg
+      - name: Set keystore user
+        run: sed 's@keystore/release_user=".*"@keystore/release_user="'$RELEASE_KEYSTORE_USER'"@g' -i export_presets.cfg
+      - name: Set keystore password
+        run: sed 's@keystore/release_password=".*"@keystore/release_password="'$RELEASE_KEYSTORE_PASSWORD'"@g' -i export_presets.cfg
+      # Godot
+      - name: Build for windows
+        run: godot --export "windows" build/windows/$GAME.exe
+      - name: Build for linux
+        run: godot --export "linux" build/linux/$GAME.x86_64
+      - name: Build for mac
+        run: godot --export "mac" build/mac/$GAME.zip
+      - name: Build for android
+        run: godot --export "android" build/android/$GAME.apk
+      # Butler
+      # Do not forget to define BUTLER_API_KEY
+      - name: Publish for windows
+        run: butler push build/windows $COMPANY/$GAME:windows --userversion-file VERSION.txt
+      - name: Publish for linux
+        run: butler push build/linux $COMPANY/$GAME:linux --userversion-file VERSION.txt
+      - name: Publish for mac
+        run: butler push build/mac/$GAME.zip $COMPANY/$GAME:mac --userversion-file VERSION.txt
+      - name: Publish for android
+        run: butler push build/android/$GAME.apk $COMPANY/$GAME:android --userversion-file VERSION.txt
