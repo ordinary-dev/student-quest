@@ -26,6 +26,11 @@ jobs:
         run: mkdir -p ~/.local/share/godot/templates
       - name: Move templates
         run: mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      # Godot config
+      - name: Create directory for godot config
+        run: mkdir -p ~/.config/godot
+      - name: Copy godot config
+        run: mv /root/.config/godot/editor_settings-3.tres ~/.config/godot/editor_settings-3.tres
       # Prepare keystore
       - name: Create keystore
         run: echo $RELEASE_KEYSTORE | base64 --decode > release.keystore
