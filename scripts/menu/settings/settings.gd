@@ -1,7 +1,7 @@
 extends TabContainer
 
 # Settings script
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 

@@ -1,7 +1,7 @@
 extends AudioStreamPlayer
 
 # Audio player for effects
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const MAX_VOLUME := 5

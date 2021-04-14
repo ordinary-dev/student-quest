@@ -2,7 +2,7 @@ extends Control
 
 # Displays messages on the screen
 # and sets the title
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const MIN_DELAY := 1

@@ -2,7 +2,7 @@ extends Node2D
 
 # Script for a scene with a room.
 # It controls the character.
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 enum Positions {DOOR, COMPUTER, BED}

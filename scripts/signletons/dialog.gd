@@ -1,7 +1,7 @@
 extends Node
 
 # Dialog API
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const DIALOG_SCENE := preload("res://scenes/templates/interface/dialog.tscn")

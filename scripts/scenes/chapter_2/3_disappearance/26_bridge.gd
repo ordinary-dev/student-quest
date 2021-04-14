@@ -1,7 +1,7 @@
 extends Node2D
 
 # Script for teleportation on the bridge
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const DIST := 600
@@ -10,7 +10,7 @@ export (String, FILE, "*.json") var dialog_path
 export (String, FILE, "*.json") var dialog_path_2
 var _dialog_shown := false
 var _player_path: String
-var _player
+var _player: KinematicBody2D
 onready var _stranger := $Characters/Stranger
 onready var _teleport_trigger   := $Teleports/TeleportTrigger
 onready var _teleport_trigger_2 := $Teleports/TeleportTrigger2
@@ -40,7 +40,7 @@ func teleport() -> void:
 	# Get path to player
 	_player = get_node(STORAGE.get("player_path"))
 	# Turn the player to the left
-	_player.go_left()
+	_player.turn_left()
 	# Move player and stranger
 	_player.position.x -= DIST
 	_stranger.position.x -= DIST
@@ -58,7 +58,7 @@ func move_2() -> void:
 
 # The second teleportation
 func teleport_2() -> void:
-	_player.go_left()
+	_player.turn_left()
 	_player.position.x -= DIST
 	_stranger.position.x -= DIST
 	_teleport_trigger_3.enabled = true

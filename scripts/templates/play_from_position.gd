@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (float) var position = 0.0

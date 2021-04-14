@@ -3,7 +3,7 @@ extends Node
 # Works with settings
 # Tries to read them at start
 # Also saves settings to file
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 # Path to config file

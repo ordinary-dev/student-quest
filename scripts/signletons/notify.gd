@@ -1,7 +1,7 @@
 extends Node
 
 # Display a notification in top left corner
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 var _id := 1

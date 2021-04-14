@@ -70,8 +70,8 @@ func _ready():
 	var player = get_node(player_path)
 	match player_direction:
 		Directions.UP:
-			player.go_up()
+			player.turn_up()
 		Directions.RIGHT:
-			player.go_right()
+			player.turn_right()
 		Directions.LEFT:
-			player.go_left()
+			player.turn_left()

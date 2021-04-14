@@ -2,7 +2,7 @@ extends Area2D
 
 # Simple trigger base class
 # All inherited classes must override the "action" method!
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (bool) var activate_once = false

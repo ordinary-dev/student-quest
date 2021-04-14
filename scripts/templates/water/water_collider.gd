@@ -2,7 +2,7 @@ extends Node2D
 
 # Enables and disables water
 # splashes at the character's feet
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 

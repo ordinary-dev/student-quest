@@ -1,7 +1,7 @@
 extends Node2D
 
 # Street template
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 enum Positions {HOSTEL, FOUNTAIN, FACULTY, SOUTH_ENTRANCE, FAC_OF_HUMANITIES}
@@ -85,10 +85,10 @@ func _move_player(player) -> void:
 func _rotate_player(player) -> void:
 	match initial_direction:
 		Directions.UP:
-			player.go_up()
+			player.turn_up()
 		Directions.DOWN:
-			player.go_down()
+			player.turn_down()
 		Directions.RIGHT:
-			player.go_right()
+			player.turn_right()
 		Directions.LEFT:
-			player.go_left()
+			player.turn_left()

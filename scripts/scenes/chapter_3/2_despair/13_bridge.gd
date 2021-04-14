@@ -7,6 +7,6 @@ onready var _player = $Body
 
 
 func start_sequence() -> void:
-	_player.go_left()
+	_player.turn_left()
 	_player.lock()
 	_neo.enable_ai()

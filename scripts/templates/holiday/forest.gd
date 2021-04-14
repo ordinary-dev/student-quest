@@ -3,7 +3,7 @@ extends Node2D
 
 # Manages settings and loading
 # of scenes in the forest
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 enum Locations {House, Campfire}

@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # API for user interface
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (bool) var show_pause_menu setget _show_pause_menu

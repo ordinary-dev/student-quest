@@ -1,7 +1,7 @@
 extends Node2D
 
 # Loads the scene after the train passes
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (String, FILE, "*.tscn") var scene_path

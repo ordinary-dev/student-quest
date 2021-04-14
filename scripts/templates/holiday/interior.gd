@@ -3,7 +3,7 @@ extends Node2D
 
 # Controls the state of the door.
 # Loads the next scene.
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const TRIGGER_PATH := "Trigger"

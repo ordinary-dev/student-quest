@@ -1,7 +1,7 @@
 extends Tween
 
 # Custom scene loader
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 const START_COLOR := Color(0, 0, 0, 0)

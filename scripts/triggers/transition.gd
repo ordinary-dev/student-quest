@@ -2,7 +2,7 @@ extends Area2D
 
 # Makes an object semi-transparent
 # when the player approaches it
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 # New color

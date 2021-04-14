@@ -3,7 +3,7 @@ extends Control
 # Script for a scene with a choice of actions.
 # The player must check all the options,
 # then the next scene must be loaded.
-# Copyright (c) 2020 PixelTrain
+# Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
 export (String, FILE, "*.tscn") var next_scene_path
