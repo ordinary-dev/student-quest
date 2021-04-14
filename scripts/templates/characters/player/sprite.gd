@@ -11,11 +11,11 @@ const MAIN_SPRITE := "res://sprites/characters/alex/alex.png"
 const NEO_SPRITE := "res://sprites/characters/neo.png"
 
 
-func load_neo_spirte():
+func load_neo_sprite():
 	texture = load(NEO_SPRITE)
 
 
-func load_main_spirte():
+func load_main_sprite():
 	texture = load(MAIN_SPRITE)
 
 

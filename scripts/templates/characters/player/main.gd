@@ -57,9 +57,9 @@ func set_sprite(val) -> void:
 	sprite_sheet = val
 	match sprite_sheet:
 		Sprites.NEO:
-			_sprite.load_neo_sprite()
+			get_node("Sprite").load_neo_sprite()
 		Sprites.MAIN:
-			_sprite.load_main_sprite()
+			get_node("Sprite").load_main_sprite()
 
 
 # Lock input

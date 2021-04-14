@@ -9,7 +9,7 @@ func activate_dialog() -> void:
 	assert(has_node(player_path))
 	var player = get_node(player_path)
 	player.lock()
-	player.go_left()
+	player.turn_left()
 	DIALOG.show_dialog(dialog_path, get_path(), "load_scene")
 
 
