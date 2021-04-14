@@ -33,9 +33,9 @@ jobs:
         run: mv /root/.config/godot/editor_settings-3.tres ~/.config/godot/editor_settings-3.tres
       # Prepare keystore
       - name: Create keystore
-        run: echo $RELEASE_KEYSTORE | base64 --decode > release.keystore
+        run: echo $RELEASE_KEYSTORE | base64 --decode > /root/release.keystore
       - name: Set keystore path
-        run: sed 's@keystore/release=".*"@keystore/release="release.keystore"@g' -i export_presets.cfg
+        run: sed 's@keystore/release=".*"@keystore/release="/root/release.keystore"@g' -i export_presets.cfg
       - name: Set keystore user
         run: sed 's@keystore/release_user=".*"@keystore/release_user="'$RELEASE_KEYSTORE_USER'"@g' -i export_presets.cfg
       - name: Set keystore password
