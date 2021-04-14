@@ -9,10 +9,6 @@ env:
   GAME: student_quest
   COMPANY: pixeltrain
 
-defaults:
-  run:
-    working-directory: ./game
-
 jobs:
   export:
     name: Export
