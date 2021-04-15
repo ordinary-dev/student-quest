@@ -18,37 +18,42 @@ jobs:
       image: barichello/godot-ci:3.2.3
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Create directories
-        run: mkdir -p build/windows build/linux build/mac build/android
+        run: mkdir -v -p build/windows build/linux build/mac build/android
       # Godot templates
       - name: Create directory for templates
-        run: mkdir -p ~/.local/share/godot/templates
+        run: mkdir -v -p ~/.local/share/godot/templates
       - name: Move templates
         run: mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       # Godot config
       - name: Create directory for godot config
-        run: mkdir -p ~/.config/godot
+        run: mkdir -v -p ~/.config/godot
       - name: Copy godot config
         run: mv /root/.config/godot/editor_settings-3.tres ~/.config/godot/editor_settings-3.tres
       # Prepare keystore
       - name: Create keystore
-        run: echo $RELEASE_KEYSTORE | base64 --decode > /root/release.keystore
+        run: echo $RELEASE_KEYSTORE | base64 --decode > release.keystore
       - name: Set keystore path
-        run: sed 's@keystore/release=".*"@keystore/release="'/root/release.keystore'"@g' -i export_presets.cfg
+        run: sed 's@keystore/release=".*"@keystore/release="'release.keystore'"@g' -i export_presets.cfg
       - name: Set keystore user
         run: sed 's@keystore/release_user=".*"@keystore/release_user="'$RELEASE_KEYSTORE_USER'"@g' -i export_presets.cfg
       - name: Set keystore password
         run: sed 's@keystore/release_password=".*"@keystore/release_password="'$RELEASE_KEYSTORE_PASSWORD'"@g' -i export_presets.cfg
+      # Debug info
+      - name: Run ls
+        run: ls -lahF
+      - name: Check release.keystore
+        run: sha256sum release.keystore
       # Godot
-      - name: Build for windows
-        run: godot --export "windows" build/windows/$GAME.exe
-      - name: Build for linux
-        run: godot --export "linux" build/linux/$GAME.x86_64
-      - name: Build for mac
-        run: godot --export "mac" build/mac/$GAME.zip
       - name: Build for android
-        run: godot --export "android" build/android/$GAME.apk
+        run: godot -v --export "android" build/android/$GAME.apk
+      - name: Build for windows
+        run: godot -v --export "windows" build/windows/$GAME.exe
+      - name: Build for linux
+        run: godot -v --export "linux" build/linux/$GAME.x86_64
+      - name: Build for mac
+        run: godot -v --export "mac" build/mac/$GAME.zip
       # Butler
       # Do not forget to define BUTLER_API_KEY
       - name: Publish for windows
