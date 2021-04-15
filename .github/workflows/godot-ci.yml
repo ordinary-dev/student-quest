@@ -9,6 +9,10 @@ env:
   GAME: student_quest
   COMPANY: pixeltrain
   GODOT_VERSION: 3.2.3
+  RELEASE_KEYSTORE: ${{ secrets.RELEASE_KEYSTORE }}
+  RELEASE_KEYSTORE_USER: ${{ secrets.RELEASE_KEYSTORE_USER }}
+  RELEASE_KEYSTORE_PASSWORD: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
 
 jobs:
   export:
@@ -35,7 +39,7 @@ jobs:
       - name: Create keystore
         run: echo $RELEASE_KEYSTORE | base64 --decode > release.keystore
       - name: Set keystore path
-        run: sed 's@keystore/release=".*"@keystore/release="'release.keystore'"@g' -i export_presets.cfg
+        run: sed 's@keystore/release=".*"@keystore/release="release.keystore"@g' -i export_presets.cfg
       - name: Set keystore user
         run: sed 's@keystore/release_user=".*"@keystore/release_user="'$RELEASE_KEYSTORE_USER'"@g' -i export_presets.cfg
       - name: Set keystore password
