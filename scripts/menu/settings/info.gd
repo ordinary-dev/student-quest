@@ -8,6 +8,8 @@ extends Node
 
 export (String, FILE, "*.tscn") var credits_scene
 
+onready var version_label = $Scroll/MarginContainer/TextContainer/Version
+
 
 func open_store() -> void:
 	_open_site("https://pixeltrain.itch.io/student-quest")
@@ -33,3 +35,12 @@ func _open_site(link: String) -> void:
 	var err := OS.shell_open(link)
 	if err != OK:
 		NOTIFY.show("Can't open link")
+
+
+func _ready() -> void:
+	# Read version from file
+	var fp := File.new()
+	var status := fp.open("res://VERSION.txt", File.READ)
+	assert(status == OK)
+	var version := "v" + fp.get_as_text()
+	version_label.text = version

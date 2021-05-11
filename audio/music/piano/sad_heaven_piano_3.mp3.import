@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sad_heaven_piano_3.mp3-56219291fc04f7acbd6082bea03c7484.mp3str"
+
+[deps]
+
+source_file="res://audio/music/piano/sad_heaven_piano_3.mp3"
+dest_files=[ "res://.import/sad_heaven_piano_3.mp3-56219291fc04f7acbd6082bea03c7484.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
