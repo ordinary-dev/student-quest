@@ -167,11 +167,12 @@ margin_right = 1800.0
 margin_bottom = 710.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
-text = "© 2020"
+text = "© 2020-2021"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="Scroll/MarginContainer/TextContainer/OpenSite" to="." method="open_store"]
 [connection signal="pressed" from="Scroll/MarginContainer/TextContainer/ShowCredits" to="." method="open_credits"]
 [connection signal="pressed" from="Scroll/MarginContainer/TextContainer/Patreon" to="." method="open_patreon"]
