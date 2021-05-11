@@ -8,7 +8,7 @@ on:
 env:
   GAME: student-quest
   COMPANY: pixeltrain
-  GODOT_VERSION: 3.2.3
+  GODOT_VERSION: '3.3'
   RELEASE_KEYSTORE: ${{ secrets.RELEASE_KEYSTORE }}
   RELEASE_KEYSTORE_USER: ${{ secrets.RELEASE_KEYSTORE_USER }}
   RELEASE_KEYSTORE_PASSWORD: ${{ secrets.RELEASE_KEYSTORE_PASSWORD }}
@@ -19,7 +19,7 @@ jobs:
     name: Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.2.3
+      image: barichello/godot-ci:3.3
     steps:
       - name: Checkout
         uses: actions/checkout@v2
