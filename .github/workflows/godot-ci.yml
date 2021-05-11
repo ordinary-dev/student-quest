@@ -52,9 +52,9 @@ jobs:
       - name: Set windows product version
         run: sed 's@application/product_version=".*"@application/product_version="'$GAME_VERSION'"@g' -i export_presets.cfg
       - name: Set windows file version
-	run: sed 's@application/file_version=".*"@application/file_version="'$GAME_VERSION'"@g' -i export_presets.cfg
+        run: sed 's@application/file_version=".*"@application/file_version="'$GAME_VERSION'"@g' -i export_presets.cfg
       - name: Set mac os short version
-	run: sed 's@application/short_version=".*"@application/short_version="'$GAME_VERSION'"@g' -i export_presets.cfg
+        run: sed 's@application/short_version=".*"@application/short_version="'$GAME_VERSION'"@g' -i export_presets.cfg
       - name: Set mac os version
         run: sed 's@application/version=".*"@application/version="'$GAME_VERSION'"@g' -i export_presets.cfg
       # Godot
