@@ -44,6 +44,19 @@ jobs:
         run: sed 's@keystore/release_user=".*"@keystore/release_user="'$RELEASE_KEYSTORE_USER'"@g' -i export_presets.cfg
       - name: Set keystore password
         run: sed 's@keystore/release_password=".*"@keystore/release_password="'$RELEASE_KEYSTORE_PASSWORD'"@g' -i export_presets.cfg
+      # Set version
+      - name: Read version from file
+        run: GAME_VERSION=$(cat VERSION.txt)
+      - name: Set android version
+        run: sed 's@version/name=".*"@version/name="'$GAME_VERSION'"@g' -i export_presets.cfg
+      - name: Set windows product version
+        run: sed 's@application/product_version=".*"@application/product_version="'$GAME_VERSION'"@g' -i export_presets.cfg
+      - name: Set windows file version
+	run: sed 's@application/file_version=".*"@application/file_version="'$GAME_VERSION'"@g' -i export_presets.cfg
+      - name: Set mac os short version
+	run: sed 's@application/short_version=".*"@application/short_version="'$GAME_VERSION'"@g' -i export_presets.cfg
+      - name: Set mac os version
+        run: sed 's@application/version=".*"@application/version="'$GAME_VERSION'"@g' -i export_presets.cfg
       # Godot
       - name: Build for android
         run: godot -v --export "android" build/android/$GAME.apk
