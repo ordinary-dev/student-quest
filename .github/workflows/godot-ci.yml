@@ -15,8 +15,8 @@ env:
   BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
 
 jobs:
-  export:
-    name: Export
+  windows_export:
+    name: Windows export
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:3.3
@@ -24,7 +24,102 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Create directories
-        run: mkdir -v -p build/windows build/linux build/mac build/android
+        run: mkdir -v -p build/windows
+      # Godot templates
+      - name: Create directory for templates
+        run: mkdir -v -p ~/.local/share/godot/templates
+      - name: Move templates
+        run: mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      # Godot config
+      - name: Create directory for godot config
+        run: mkdir -v -p ~/.config/godot
+      - name: Copy godot config
+        run: mv /root/.config/godot/editor_settings-3.tres ~/.config/godot/editor_settings-3.tres
+      # Set version
+      - name: Read version from file
+        run: GAME_VERSION=$(cat VERSION.txt)
+      - name: Set product version
+        run: sed 's@application/product_version=".*"@application/product_version="'$GAME_VERSION'"@g' -i export_presets.cfg
+      - name: Set file version
+        run: sed 's@application/file_version=".*"@application/file_version="'$GAME_VERSION'"@g' -i export_presets.cfg
+      # Godot
+      - name: Build
+        run: godot -v --export "windows" build/windows/$GAME.exe
+      # Butler
+      # Do not forget to define BUTLER_API_KEY
+      - name: Publish
+        run: butler push build/windows $COMPANY/$GAME:windows --userversion-file VERSION.txt
+  linux_export:
+    name: Linux export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create directories
+        run: mkdir -v -p build/linux
+      # Godot templates
+      - name: Create directory for templates
+        run: mkdir -v -p ~/.local/share/godot/templates
+      - name: Move templates
+        run: mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      # Godot config
+      - name: Create directory for godot config
+        run: mkdir -v -p ~/.config/godot
+      - name: Copy godot config
+        run: mv /root/.config/godot/editor_settings-3.tres ~/.config/godot/editor_settings-3.tres
+      # Godot
+      - name: Build
+        run: godot -v --export "linux" build/linux/$GAME.x86_64
+      # Butler
+      # Do not forget to define BUTLER_API_KEY
+      - name: Publish
+        run: butler push build/linux $COMPANY/$GAME:linux --userversion-file VERSION.txt
+  mac_os_export:
+    name: Mac OS export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create directories
+        run: mkdir -v -p build/mac
+      # Godot templates
+      - name: Create directory for templates
+        run: mkdir -v -p ~/.local/share/godot/templates
+      - name: Move templates
+        run: mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      # Godot config
+      - name: Create directory for godot config
+        run: mkdir -v -p ~/.config/godot
+      - name: Copy godot config
+        run: mv /root/.config/godot/editor_settings-3.tres ~/.config/godot/editor_settings-3.tres
+      # Set version
+      - name: Read version from file
+        run: GAME_VERSION=$(cat VERSION.txt)
+      - name: Set short version
+        run: sed 's@application/short_version=".*"@application/short_version="'$GAME_VERSION'"@g' -i export_presets.cfg
+      - name: Set version
+        run: sed 's@application/version=".*"@application/version="'$GAME_VERSION'"@g' -i export_presets.cfg
+      # Godot
+      - name: Build
+        run: godot -v --export "mac" build/mac/$GAME.zip
+      # Butler
+      # Do not forget to define BUTLER_API_KEY
+      - name: Publish
+        run: butler push build/mac/$GAME.zip $COMPANY/$GAME:mac --userversion-file VERSION.txt
+  android_export:
+    name: Android export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create directories
+        run: mkdir -v -p build/android
       # Godot templates
       - name: Create directory for templates
         run: mkdir -v -p ~/.local/share/godot/templates
@@ -47,32 +142,12 @@ jobs:
       # Set version
       - name: Read version from file
         run: GAME_VERSION=$(cat VERSION.txt)
-      - name: Set android version
+      - name: Set version
         run: sed 's@version/name=".*"@version/name="'$GAME_VERSION'"@g' -i export_presets.cfg
-      - name: Set windows product version
-        run: sed 's@application/product_version=".*"@application/product_version="'$GAME_VERSION'"@g' -i export_presets.cfg
-      - name: Set windows file version
-        run: sed 's@application/file_version=".*"@application/file_version="'$GAME_VERSION'"@g' -i export_presets.cfg
-      - name: Set mac os short version
-        run: sed 's@application/short_version=".*"@application/short_version="'$GAME_VERSION'"@g' -i export_presets.cfg
-      - name: Set mac os version
-        run: sed 's@application/version=".*"@application/version="'$GAME_VERSION'"@g' -i export_presets.cfg
       # Godot
-      - name: Build for android
+      - name: Build
         run: godot -v --export "android" build/android/$GAME.apk
-      - name: Build for windows
-        run: godot -v --export "windows" build/windows/$GAME.exe
-      - name: Build for linux
-        run: godot -v --export "linux" build/linux/$GAME.x86_64
-      - name: Build for mac
-        run: godot -v --export "mac" build/mac/$GAME.zip
       # Butler
       # Do not forget to define BUTLER_API_KEY
-      - name: Publish for windows
-        run: butler push build/windows $COMPANY/$GAME:windows --userversion-file VERSION.txt
-      - name: Publish for linux
-        run: butler push build/linux $COMPANY/$GAME:linux --userversion-file VERSION.txt
-      - name: Publish for mac
-        run: butler push build/mac/$GAME.zip $COMPANY/$GAME:mac --userversion-file VERSION.txt
-      - name: Publish for android
+      - name: Publish
         run: butler push build/android/$GAME.apk $COMPANY/$GAME:android --userversion-file VERSION.txt
