@@ -185,13 +185,14 @@ translations=PoolStringArray( "res://translations/chapters.en.translation", "res
 
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
-quality/2d/use_pixel_snap=true
+2d/snapping/use_gpu_pixel_snap=true
 threads/thread_model=2
-quality/filters/anisotropic_filter_level=2
 quality/directional_shadow/size=1024
 quality/directional_shadow/size.mobile=1024
 quality/shadow_atlas/size=2048
 quality/shadow_atlas/size.mobile=1024
 quality/shadows/filter_mode=0
+quality/filters/anisotropic_filter_level=2
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/dynamic_fonts/use_oversampling=false
+quality/2d/use_pixel_snap=true
