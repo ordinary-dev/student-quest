@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/cemetery/grave-clean.png" type="Texture" id=1]
+[ext_resource path="res://sprites/cemetery/grave-clean.png" type="Texture2D" id=1]
 
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 16 )
+size = Vector2( 24, 16 )
 
-[node name="GraveClean" type="Sprite"]
+[node name="GraveClean" type="Sprite2D"]
 z_index = 4
 texture = ExtResource( 1 )
 offset = Vector2( 0, -23 )

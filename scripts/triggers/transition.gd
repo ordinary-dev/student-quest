@@ -9,12 +9,12 @@ extends Area2D
 const MOD_COLOR := Color(1, 1, 1, 0.3)
 # Animation duration
 const TIME := 0.3
-export (NodePath) var object
+@export (NodePath) var object
 # Loaded object
 var _obj
 # Standart color
 var _def_color := Color(1, 1, 1, 1)
-onready var _tween := $Tween
+@onready var _tween := $Tween
 
 
 # Remember color

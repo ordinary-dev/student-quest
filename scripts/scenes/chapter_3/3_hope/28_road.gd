@@ -10,5 +10,5 @@ const DELAY := 0.3
 
 func show_notification() -> void:
 	NOTIFY.show("ERROR")
-	yield(get_tree().create_timer(DELAY), "timeout")
+	await get_tree().create_timer(DELAY).timeout
 	NOTIFY.show("Unallocated memory access detected")

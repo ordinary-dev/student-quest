@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprites/street/crossing_2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/street/crossing_2.png" type="Texture2D" id=2]
 
-[node name="NaturalSciences-Physics-Crossing" type="Sprite"]
+[node name="NaturalSciences-Physics-Crossing" type="Sprite2D"]
 z_index = 4
 z_as_relative = false
 texture = ExtResource( 2 )

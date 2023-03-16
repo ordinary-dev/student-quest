@@ -2,13 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
+uid="uid://ccjqxs8srlw6c"
 
 [deps]
 
-files=[ "res://translations/chapter_1/3_accident.ru.translation", "res://translations/chapter_1/3_accident.en.translation" ]
+files=["res://translations/chapter_1/3_accident.ru.translation", "res://translations/chapter_1/3_accident.en.translation"]
 
 source_file="res://translations/chapter_1/3_accident.csv"
-dest_files=[ "res://translations/chapter_1/3_accident.ru.translation", "res://translations/chapter_1/3_accident.en.translation" ]
+dest_files=["res://translations/chapter_1/3_accident.ru.translation", "res://translations/chapter_1/3_accident.en.translation"]
 
 [params]
 

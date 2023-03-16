@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprites/street/crossing_1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/street/crossing_1.png" type="Texture2D" id=2]
 
-[node name="Mathematics-NaturalSciences-Crossing" type="Sprite"]
+[node name="Mathematics-NaturalSciences-Crossing" type="Sprite2D"]
 position = Vector2( 0.953751, 49.506 )
 scale = Vector2( 1.02235, 1 )
 z_index = 4

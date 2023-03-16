@@ -16,21 +16,21 @@ const TEXT_ANIM_SPEED := 60.0
 var _first_time := true
 
 # For other scripts
-onready var next_button := $Button
-onready var _tween := $Tween
+@onready var next_button := $Button
+@onready var _tween := $Tween
 # Animated objects
-onready var _border := $MarginContainer/Border
-onready var _body := $MarginContainer/Body
+@onready var _border := $MarginContainer/Border
+@onready var _body := $MarginContainer/Body
 # Labels
-onready var _name_label := $MarginContainer/Body/Margin/Labels/Name
-onready var _text_label := $MarginContainer/Body/Margin/Labels/Text
+@onready var _name_label := $MarginContainer/Body/Margin/Labels/Name
+@onready var _text_label := $MarginContainer/Body/Margin/Labels/Text
 
 
 # Show the dialog on the screen
-func play_dialog(name: String, text: String) -> void:
+func play_dialog(dialog_name: String, text: String) -> void:
 	if _tween.is_active():
 		_tween.stop_all()
-	_name_label.text = name
+	_name_label.text = dialog_name
 	_text_label.percent_visible = 0
 	_text_label.text = text
 	if _first_time:
@@ -41,11 +41,11 @@ func play_dialog(name: String, text: String) -> void:
 
 
 # Destroy this object
-func hide() -> void:
+func hide_dialog() -> void:
 	anim_template(LEFT_OFFSET_END, LEFT_OFFSET_START, 
 			RIGHT_OFFSET_END, RIGHT_OFFSET_START, 
 			true, false)
-	yield(get_tree().create_timer(ANIM_DURATION), "timeout")
+	await get_tree().create_timer(ANIM_DURATION).timeout
 	queue_free()
 
 
@@ -62,18 +62,18 @@ func anim_template(left_from: int, left_to: int,
 	if animate_form:
 		for obj in [_border, _body]:
 			_tween.interpolate_property(
-				obj, "margin_left",
+				obj, "offset_left",
 				left_from, left_to, ANIM_DURATION,
 				Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 			)
 			_tween.interpolate_property(
-				obj, "margin_right",
+				obj, "offset_right",
 				right_from, right_to, ANIM_DURATION,
 				Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 			)
 		_tween.start()
 		if text_anim:
-			yield(get_tree().create_timer(ANIM_DURATION), "timeout")
+			await get_tree().create_timer(ANIM_DURATION).timeout
 	if text_anim:
 		_tween.interpolate_property(
 			_text_label, "percent_visible",

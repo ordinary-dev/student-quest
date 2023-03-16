@@ -1,6 +1,6 @@
 extends Node
 
-onready var _joystick := $"/root/UI/Joystick/TapButton"
+@onready var _joystick := $"/root/UI/Joystick/TapButton"
 
 
 func get_joystick_input() -> Vector2:

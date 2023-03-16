@@ -1,4 +1,4 @@
-tool
+@tool
 extends Node2D
 
 # Manages settings and loading
@@ -8,25 +8,25 @@ extends Node2D
 
 enum Locations {House, Campfire}
 
-const NEO_PATH := "YSort/Neo"
-const CAMPFIRE_PATH := "YSort/Campfire"
+const NEO_PATH := "Node2D/Neo"
+const CAMPFIRE_PATH := "Node2D/Campfire"
 
-export (bool) var main_door_open = true
-export (bool) var another_door_open = false
-export (Locations) var initial_location = Locations.House
-export (String, FILE, "*.tscn") var interior_scene
-export (String, FILE, "*.tscn") var small_house
-export (bool) var show_neo = true setget _set_neo_visibility
-export (bool) var show_campfire = true setget _set_campfire_visibility
+@export (bool) var main_door_open = true
+@export (bool) var another_door_open = false
+@export (Locations) var initial_location = Locations.House
+@export (String, FILE, "*.tscn") var interior_scene
+@export (String, FILE, "*.tscn") var small_house
+@export (bool) var show_neo = true : set = _set_neo_visibility
+@export (bool) var show_campfire = true : set = _set_campfire_visibility
 
-onready var _trigger = $MainHouseTrigger
+@onready var _trigger = $MainHouseTrigger
 
 
 func open_door() -> void:
 	if another_door_open:
 		SCENES.load_scene(small_house)
 	else:
-		yield(get_tree().create_timer(0.3), "timeout")
+		await get_tree().create_timer(0.3).timeout
 		NOTIFY.show("NO_KEY")
 
 

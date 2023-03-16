@@ -1,18 +1,18 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://sprites/characters/girlfriend.png" type="Texture" id=1]
-[ext_resource path="res://sprites/characters/npc_3.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/girlfriend.png" type="Texture2D" id=1]
+[ext_resource path="res://sprites/characters/npc_3.png" type="Texture2D" id=2]
 [ext_resource path="res://scripts/templates/shake.gd" type="Script" id=3]
-[ext_resource path="res://sprites/bus/seat.png" type="Texture" id=4]
-[ext_resource path="res://sprites/bus/background.jpg" type="Texture" id=5]
-[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=6]
-[ext_resource path="res://sprites/characters/npc_2.png" type="Texture" id=7]
-[ext_resource path="res://sprites/bus/bus.png" type="Texture" id=8]
+[ext_resource path="res://sprites/bus/seat.png" type="Texture2D" id=4]
+[ext_resource path="res://sprites/bus/background.jpg" type="Texture2D" id=5]
+[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture2D" id=6]
+[ext_resource path="res://sprites/characters/npc_2.png" type="Texture2D" id=7]
+[ext_resource path="res://sprites/bus/bus.png" type="Texture2D" id=8]
 [ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=9]
 
 [node name="Bus" type="Node2D"]
 
-[node name="Background" type="Sprite" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 modulate = Color( 0.666667, 0.67451, 0.784314, 1 )
 position = Vector2( 864.043, 596 )
 scale = Vector2( 1.53151, 1.53151 )
@@ -23,7 +23,7 @@ position = Vector2( 1096, 504 )
 current = true
 script = ExtResource( 3 )
 
-[node name="Bus" type="Sprite" parent="Camera2D"]
+[node name="Bus" type="Sprite2D" parent="Camera2D"]
 position = Vector2( -317.655, 106.373 )
 scale = Vector2( 5.19761, 5.34524 )
 texture = ExtResource( 8 )
@@ -34,17 +34,17 @@ position = Vector2( -0.00012207, 0 )
 [node name="Row1" type="Node2D" parent="Camera2D/Seats"]
 z_index = 1
 
-[node name="Seat1" type="Sprite" parent="Camera2D/Seats/Row1"]
+[node name="Seat1" type="Sprite2D" parent="Camera2D/Seats/Row1"]
 position = Vector2( -1152, -240 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
 
-[node name="Seat2" type="Sprite" parent="Camera2D/Seats/Row1"]
+[node name="Seat2" type="Sprite2D" parent="Camera2D/Seats/Row1"]
 position = Vector2( -256, -240 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
 
-[node name="Seat3" type="Sprite" parent="Camera2D/Seats/Row1"]
+[node name="Seat3" type="Sprite2D" parent="Camera2D/Seats/Row1"]
 position = Vector2( 280, -240 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
@@ -52,17 +52,17 @@ texture = ExtResource( 4 )
 [node name="Row2" type="Node2D" parent="Camera2D/Seats"]
 z_index = 2
 
-[node name="Seat1" type="Sprite" parent="Camera2D/Seats/Row2"]
+[node name="Seat1" type="Sprite2D" parent="Camera2D/Seats/Row2"]
 position = Vector2( -1192, 80 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
 
-[node name="Seat2" type="Sprite" parent="Camera2D/Seats/Row2"]
+[node name="Seat2" type="Sprite2D" parent="Camera2D/Seats/Row2"]
 position = Vector2( -296, 80 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
 
-[node name="Seat3" type="Sprite" parent="Camera2D/Seats/Row2"]
+[node name="Seat3" type="Sprite2D" parent="Camera2D/Seats/Row2"]
 position = Vector2( 320, 80 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
@@ -70,24 +70,24 @@ texture = ExtResource( 4 )
 [node name="Row3" type="Node2D" parent="Camera2D/Seats"]
 z_index = 5
 
-[node name="Seat1" type="Sprite" parent="Camera2D/Seats/Row3"]
+[node name="Seat1" type="Sprite2D" parent="Camera2D/Seats/Row3"]
 position = Vector2( -1232, 400 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
 
-[node name="Seat2" type="Sprite" parent="Camera2D/Seats/Row3"]
+[node name="Seat2" type="Sprite2D" parent="Camera2D/Seats/Row3"]
 position = Vector2( -336, 400 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
 
-[node name="Seat3" type="Sprite" parent="Camera2D/Seats/Row3"]
+[node name="Seat3" type="Sprite2D" parent="Camera2D/Seats/Row3"]
 position = Vector2( 360, 400 )
 scale = Vector2( 20, 20 )
 texture = ExtResource( 4 )
 
 [node name="Characters" type="Node2D" parent="Camera2D"]
 
-[node name="NPC_2" type="Sprite" parent="Camera2D/Characters"]
+[node name="NPC_2" type="Sprite2D" parent="Camera2D/Characters"]
 position = Vector2( -256, -200 )
 scale = Vector2( 20, 20 )
 z_index = 1
@@ -95,7 +95,7 @@ texture = ExtResource( 7 )
 vframes = 3
 hframes = 3
 
-[node name="NPC_3" type="Sprite" parent="Camera2D/Characters"]
+[node name="NPC_3" type="Sprite2D" parent="Camera2D/Characters"]
 position = Vector2( 288, -168 )
 scale = Vector2( 20, 20 )
 z_index = 1
@@ -104,7 +104,7 @@ vframes = 3
 hframes = 3
 frame = 6
 
-[node name="MainCharacter" type="Sprite" parent="Camera2D/Characters"]
+[node name="MainCharacter" type="Sprite2D" parent="Camera2D/Characters"]
 position = Vector2( 320, 208 )
 scale = Vector2( 20, 20 )
 z_index = 4
@@ -114,7 +114,7 @@ vframes = 3
 hframes = 3
 frame = 5
 
-[node name="Girlfriend" type="Sprite" parent="Camera2D/Characters"]
+[node name="Girlfriend" type="Sprite2D" parent="Camera2D/Characters"]
 position = Vector2( -224, 168 )
 scale = Vector2( 20, 20 )
 z_index = 4

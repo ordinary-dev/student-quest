@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://sprites/street/faculty_of_law.png" type="Texture" id=1]
+[ext_resource path="res://sprites/street/faculty_of_law.png" type="Texture2D" id=1]
 [ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=2]
 
 
@@ -15,12 +15,12 @@
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 71.6269, 119.08 )
+size = Vector2( 71.6269, 119.08 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3.2, 0.8 )
+size = Vector2( 3.2, 0.8 )
 
-[node name="FacultyOfLaw" type="Sprite"]
+[node name="FacultyOfLaw" type="Sprite2D"]
 scale = Vector2( 10, 10 )
 z_index = 4
 z_as_relative = false

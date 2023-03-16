@@ -5,34 +5,34 @@ class_name DialogLoader
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.json") var dialog_path
+@export (String, FILE, "*.json") var dialog_path
 
-export (bool) var enable_delay = false
-export (float) var delay = 2.0
+@export (bool) var enable_delay = false
+@export (float) var delay = 2.0
 
-export (bool) var load_scene = false
-export (String, FILE, "*.tscn") var scene_path
-export (float) var loading_delay = 0.0
-export (bool) var fade_in = true
-export (bool) var fade_out = true
+@export (bool) var load_scene = false
+@export (String, FILE, "*.tscn") var scene_path
+@export (float) var loading_delay = 0.0
+@export (bool) var fade_in = true
+@export (bool) var fade_out = true
 
-export (bool) var show_once = false
-export (String) var uid = "id"
+@export (bool) var show_once = false
+@export (String) var uid = "id"
 
-export (bool) var call_function = false
-export (NodePath) var obj
-export (String) var fun
+@export (bool) var call_function = false
+@export (NodePath) var obj
+@export (String) var fun
 
 
 func load_next_scene() -> void:
 	if loading_delay > 0:
-		yield(get_tree().create_timer(loading_delay), "timeout")
+		await get_tree().create_timer(loading_delay).timeout
 	SCENES.load_scene(scene_path, fade_in, fade_out)
 
 
 func _ready() -> void:
 	if enable_delay:
-		yield(get_tree().create_timer(delay), "timeout")
+		await get_tree().create_timer(delay).timeout
 	if show_once:
 		if not STORAGE.is_saved(uid):
 			STORAGE.save(uid, true)

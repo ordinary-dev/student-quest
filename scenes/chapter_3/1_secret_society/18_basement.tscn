@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/triggers/simple_triggers/load_scene_trigger.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 24, 16 )
+size = Vector2( 24, 16 )
 
 [node name="Basement" type="Node2D"]
 

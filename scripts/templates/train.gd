@@ -4,7 +4,7 @@ extends Node2D
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var scene_path
+@export (String, FILE, "*.tscn") var scene_path
 
 
 func _on_animation_finished(_anim_name):

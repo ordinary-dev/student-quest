@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/until_i_informed_him_of_it_by_letter_instrumental_edit.ogg-015a17861504e904cda6ea7c7965947e.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cm75vnnmamb6x"
+path="res://.godot/imported/until_i_informed_him_of_it_by_letter_instrumental_edit.ogg-015a17861504e904cda6ea7c7965947e.oggvorbisstr"
 
 [deps]
 
 source_file="res://audio/music/instrumental/until_i_informed_him_of_it_by_letter_instrumental_edit.ogg"
-dest_files=[ "res://.import/until_i_informed_him_of_it_by_letter_instrumental_edit.ogg-015a17861504e904cda6ea7c7965947e.oggstr" ]
+dest_files=["res://.godot/imported/until_i_informed_him_of_it_by_letter_instrumental_edit.ogg-015a17861504e904cda6ea7c7965947e.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

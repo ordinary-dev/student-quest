@@ -107,7 +107,7 @@ restart_scene = "res://scenes/chapter_3/3_hope/13_hit.tscn"
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.65098, 0.662745, 0.772549, 1 )
 
-[node name="NewBottomRight" type="Position2D" parent="."]
+[node name="NewBottomRight" type="Marker2D" parent="."]
 position = Vector2( 4466.46, 6899.92 )
 
 [node name="LoadTrigger" parent="." instance=ExtResource( 3 )]

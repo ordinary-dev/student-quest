@@ -10,7 +10,7 @@
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 64 )
+size = Vector2( 64, 64 )
 
 [node name="SimpleDialogTrigger" type="Area2D"]
 z_index = 6

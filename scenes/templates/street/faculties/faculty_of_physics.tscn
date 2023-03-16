@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://sprites/street/faculty_of_physics.png" type="Texture" id=1]
+[ext_resource path="res://sprites/street/faculty_of_physics.png" type="Texture2D" id=1]
 [ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 110, 40.5405 )
+size = Vector2( 110, 40.5405 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3.19995, 0.799988 )
+size = Vector2( 3.19995, 0.799988 )
 
-[node name="FacultyOfPhysics" type="Sprite"]
+[node name="FacultyOfPhysics" type="Sprite2D"]
 scale = Vector2( 10, 10 )
 z_index = 4
 z_as_relative = false

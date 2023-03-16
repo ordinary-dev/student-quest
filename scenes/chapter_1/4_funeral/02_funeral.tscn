@@ -7,8 +7,8 @@
 [ext_resource path="res://scenes/templates/cemetery/tomb_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/templates/cemetery/grave_1.tscn" type="PackedScene" id=6]
 [ext_resource path="res://audio/fx/rain/rain_moderate_c.ogg" type="AudioStream" id=7]
-[ext_resource path="res://sprites/characters/alex/alex_black_suit.png" type="Texture" id=8]
-[ext_resource path="res://sprites/characters/mr_singer/mr_singer_black_suit.png" type="Texture" id=9]
+[ext_resource path="res://sprites/characters/alex/alex_black_suit.png" type="Texture2D" id=8]
+[ext_resource path="res://sprites/characters/mr_singer/mr_singer_black_suit.png" type="Texture2D" id=9]
 [ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=10]
 
 [node name="Funeral" type="Node2D"]
@@ -39,13 +39,13 @@ modulate = Color( 0.854902, 0.862745, 0.878431, 0.607843 )
 position = Vector2( 1841.35, 807.681 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="MainCharacter_Black" type="Sprite" parent="."]
+[node name="MainCharacter_Black" type="Sprite2D" parent="."]
 modulate = Color( 0.85098, 0.870588, 0.905882, 0.741176 )
 position = Vector2( 990.353, 739.871 )
 scale = Vector2( 5.20416, 5.20416 )
 texture = ExtResource( 8 )
 
-[node name="Singer_Black" type="Sprite" parent="."]
+[node name="Singer_Black" type="Sprite2D" parent="."]
 modulate = Color( 1, 1, 1, 0.694118 )
 position = Vector2( 1195.04, 729.309 )
 scale = Vector2( 4.84999, 4.84999 )

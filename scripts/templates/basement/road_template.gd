@@ -1,4 +1,4 @@
-tool
+@tool
 extends Node2D
 
 # Character position adjustment
@@ -10,7 +10,7 @@ const Y_TOP_POSITION := -960
 const Y_BOTTOM_POSITION := 900
 const X_POSITION := 960
 const PLAYER_PATH = "Player"
-export (Positions) var initial_position = Positions.BOTTOM setget _set_position
+@export (Positions) var initial_position = Positions.BOTTOM : set = _set_position
 
 
 func _set_position(val) -> void:

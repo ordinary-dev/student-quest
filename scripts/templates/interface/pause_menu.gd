@@ -5,18 +5,18 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var menu_scene
-export (String, FILE, "*.tscn") var quit_scene
-export (NodePath) var return_btn
+@export (String, FILE, "*.tscn") var menu_scene
+@export (String, FILE, "*.tscn") var quit_scene
+@export (NodePath) var return_btn
 
 var enabled := false
 var show_joystick := false
 
-onready var main_container := $MainContainer
-onready var background := $Background
-onready var pause_btn = $PauseButton
-onready var settings := $MainContainer/HBoxContainer/SubMenues/Settings
-onready var load_menu := $MainContainer/HBoxContainer/SubMenues/LoadMenu
+@onready var main_container := $MainContainer
+@onready var background := $Background
+@onready var pause_btn = $PauseButton
+@onready var settings := $MainContainer/HBoxContainer/SubMenues/Settings
+@onready var load_menu := $MainContainer/HBoxContainer/SubMenues/LoadMenu
 
 
 func switch():
@@ -87,7 +87,7 @@ func _to_menu() -> void:
 	FX.play_btn_click()
 	MUSIC.stop()
 	SCENES.load_scene(menu_scene)
-	yield(get_tree().create_timer(SCENES.time), "timeout")
+	await get_tree().create_timer(SCENES.time).timeout
 	# Hide this scene
 	_return_to_game(false)
 

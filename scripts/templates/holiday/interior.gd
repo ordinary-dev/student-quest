@@ -1,4 +1,4 @@
-tool
+@tool
 extends Node2D
 
 # Controls the state of the door.
@@ -7,9 +7,9 @@ extends Node2D
 # Licensed under the GPL-3 License
 
 const TRIGGER_PATH := "Trigger"
-export (bool) var door_open = true setget _set_door_status
-export (String, FILE, "*.tscn") var street_scene
-onready var _street_trigger := $Trigger
+@export (bool) var door_open = true : set = _set_door_status
+@export (String, FILE, "*.tscn") var street_scene
+@onready var _street_trigger := $Trigger
 
 
 func street() -> void:

@@ -6,7 +6,7 @@ extends Node
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-# Path to config file
+# Path3D to config file
 const FILE_PATH := "user://config.json"
 # Variable for saving the number of open chapters
 var progress := 1
@@ -14,20 +14,18 @@ var progress := 1
 
 # Write dictionary to file
 func write_settings() -> void:
-	var fl := File.new()
-	var state = fl.open(FILE_PATH, File.WRITE)
-	assert(state == OK)
+	var file = FileAccess.open(FILE_PATH, FileAccess.WRITE)
 	# Save dictionary as JSON
 	var dict = {
 		"music": MUSIC.volume,
 		"fx": FX.volume,
-		"fullscreen": str(OS.window_fullscreen),
-		"vsync": str(OS.vsync_enabled),
+		"fullscreen": str(((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))),
+		"vsync": str((DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)),
 		"lang": TranslationServer.get_locale(),
 		"progress": progress,
 	}
-	fl.store_line(to_json(dict))
-	fl.close()
+	file.store_line(JSON.stringify(dict))
+	file.close()
 
 
 func _ready() -> void:
@@ -35,21 +33,21 @@ func _ready() -> void:
 
 
 func is_file_exist() -> bool:
-	return File.new().file_exists(FILE_PATH)
+	return FileAccess.file_exists(FILE_PATH)
 
 
 # Try to read settings file
 func _read_settings() -> void:
-	var fl := File.new()
-	if fl.file_exists(FILE_PATH):
+	if FileAccess.file_exists(FILE_PATH):
 		# Read data
-		var state = fl.open(FILE_PATH, File.READ)
-		assert(state == OK)
-		var json_result = JSON.parse(fl.get_as_text())
+		var file = FileAccess.open(FILE_PATH, FileAccess.READ)
+		var test_json_conv = JSON.new()
+		test_json_conv.parse(file.get_as_text())
+		var json_result = test_json_conv.get_data()
 		if json_result.error == OK:
 			var content = json_result.result
 			_restore(content)
-		fl.close()
+		file.close()
 	else:
 		_set_default()
 
@@ -64,9 +62,9 @@ func _restore(content: Dictionary) -> void:
 	
 	# Graphics
 	if content.has("fullscreen"):
-		OS.window_fullscreen = _str_to_bool(content["fullscreen"])
+		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (_str_to_bool(content["fullscreen"])) else Window.MODE_WINDOWED
 	if content.has("vsync"):
-		OS.vsync_enabled = _str_to_bool(content["vsync"])
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (_str_to_bool(content["vsync"])) else DisplayServer.VSYNC_DISABLED)
 	
 	# Language
 	if content.has("lang"):
@@ -85,6 +83,6 @@ func _str_to_bool(val: String) -> bool:
 func _set_default() -> void:
 	MUSIC.volume = 0
 	FX.volume = 0
-	OS.vsync_enabled = true
-	OS.window_fullscreen = true
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (true) else DisplayServer.VSYNC_DISABLED)
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (true) else Window.MODE_WINDOWED
 	TranslationServer.set_locale("en")

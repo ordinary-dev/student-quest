@@ -10,13 +10,13 @@ extends Control
 const HEIGHT := 170
 var _number_of_options := 0
 var _btn_template = load("res://scenes/templates/choice/option.tscn")
-onready var _box := $VBoxContainer
+@onready var _box := $VBoxContainer
 
 
 func add_option(text: String, scene_path: String) -> void:
 	_number_of_options += 1
-	_box.rect_position = Vector2(560, 1080 - HEIGHT * _number_of_options)
-	var tmp = _btn_template.instance()
+	_box.position = Vector2(560, 1080 - HEIGHT * _number_of_options)
+	var tmp = _btn_template.instantiate()
 	tmp.label = text
-	tmp.connect("pressed", $"/root/SCENES", "load_scene", [scene_path])
+	tmp.connect("pressed",Callable($"/root/SCENES","load_scene").bind(scene_path))
 	_box.add_child(tmp)

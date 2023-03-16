@@ -1,17 +1,17 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/room/computer.png" type="Texture" id=1]
+[ext_resource path="res://sprites/room/computer.png" type="Texture2D" id=1]
 
 
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 13.3 )
+size = Vector2( 10, 13.3 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( -6.0219, -28.9697, -5.99691, -8.0101, -8, -8, -8.02044, -28.9947 )
+polygon = PackedVector2Array( -6.0219, -28.9697, -5.99691, -8.0101, -8, -8, -8.02044, -28.9947 )
 
-[node name="Computer" type="Sprite"]
+[node name="Computer" type="Sprite2D"]
 scale = Vector2( 6, 6 )
 z_index = 4
 texture = ExtResource( 1 )

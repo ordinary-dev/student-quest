@@ -5,12 +5,12 @@ extends Node
 # Licensed under the GPL-3 License
 
 var _id := 1
-onready var _template := preload("res://scenes/templates/interface/notification.tscn")
+@onready var _template := preload("res://scenes/templates/interface/notification.tscn")
 
 
 func show(text: String) -> void:
 	# Create new notification
-	var tmp = _template.instance()
+	var tmp = _template.instantiate()
 	tmp.name = str(_id)
 	tmp.set_label(text)
 	# Add object and start animation

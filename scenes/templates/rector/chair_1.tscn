@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/rector/chair.png" type="Texture" id=1]
+[ext_resource path="res://sprites/rector/chair.png" type="Texture2D" id=1]
 
 
 
@@ -8,9 +8,9 @@
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.62711, 6.79636 )
+size = Vector2( 6.62711, 6.79636 )
 
-[node name="Chair1" type="Sprite"]
+[node name="Chair1" type="Sprite2D"]
 scale = Vector2( 3.5, 3.5 )
 z_index = 4
 texture = ExtResource( 1 )

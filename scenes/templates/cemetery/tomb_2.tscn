@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/cemetery/tomb-2.png" type="Texture" id=1]
+[ext_resource path="res://sprites/cemetery/tomb-2.png" type="Texture2D" id=1]
 
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 32, 16 )
+size = Vector2( 32, 16 )
 
-[node name="Tomb-2" type="Sprite"]
+[node name="Tomb-2" type="Sprite2D"]
 z_index = 4
 texture = ExtResource( 1 )
 offset = Vector2( 0, -24 )

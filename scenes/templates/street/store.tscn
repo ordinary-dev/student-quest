@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/street/store.png" type="Texture" id=1]
+[ext_resource path="res://sprites/street/store.png" type="Texture2D" id=1]
 
 
 
@@ -8,9 +8,9 @@
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 57.8397, 16 )
+size = Vector2( 57.8397, 16 )
 
-[node name="Store" type="Sprite"]
+[node name="Store" type="Sprite2D"]
 scale = Vector2( 5, 5 )
 z_index = 4
 z_as_relative = false

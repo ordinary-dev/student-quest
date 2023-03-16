@@ -6,8 +6,8 @@ extends AudioStreamPlayer
 
 const MAX_VOLUME := 5
 const MIN_VOLUME := -35
-var volume: float setget _set_volume, _get_volume
-onready var _last_path := "no_song"
+var volume: float : get = _get_volume, set = _set_volume
+@onready var _last_path := "no_song"
 
 
 func play_sound(song_path: String) -> void:

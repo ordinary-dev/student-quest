@@ -12,9 +12,9 @@
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.6, 16 )
+size = Vector2( 25.6, 16 )
 
-[node name="MrSinger" type="AnimatedSprite"]
+[node name="MrSinger" type="AnimatedSprite2D"]
 scale = Vector2( 2.5, 2.5 )
 frames = ExtResource( 2 )
 offset = Vector2( 0, -16 )

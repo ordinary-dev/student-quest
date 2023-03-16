@@ -1,5 +1,5 @@
-tool
-extends AnimatedSprite
+@tool
+extends AnimatedSprite2D
 
 # Controls the campfire and its sounds
 # Copyright (c) 2020-2021 PixelTrain
@@ -7,7 +7,7 @@ extends AnimatedSprite
 
 const AUDIO_SOURCE_PATH := "AudioStreamPlayer2D"
 const COLLIDER_PATH := "StaticBody2D/CollisionShape2D"
-export (bool) var enabled = true setget _set_fire_visibility
+@export (bool) var enabled = true : set = _set_fire_visibility
 
 
 func _set_fire_visibility(val: bool) -> void:

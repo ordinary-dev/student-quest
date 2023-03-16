@@ -1,4 +1,4 @@
-extends AnimatedSprite
+extends AnimatedSprite2D
 
 # Script for water splashes
 # Copyright (c) 2020-2021 PixelTrain
@@ -12,7 +12,7 @@ extends AnimatedSprite
 var _number_of_requests := 0
 # Bridges use this to prevent
 # water splashes from showing
-var hide_water := false setget _set_water_visibility
+var hide_water := false : set = _set_water_visibility
 
 
 func enable_water() -> void:

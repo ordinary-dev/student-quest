@@ -3,7 +3,7 @@
 [ext_resource path="res://scripts/triggers/make_obj_visible.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 50, 50 )
+size = Vector2( 50, 50 )
 
 [node name="MakeObjVisible" type="Area2D"]
 collision_layer = 0

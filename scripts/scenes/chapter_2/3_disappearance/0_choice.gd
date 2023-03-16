@@ -6,10 +6,10 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var next_scene_path
-export (String, FILE, "*.tscn") var phone_scene
-export (String, FILE, "*.tscn") var commandant_scene
-onready var _buttons := $Buttons
+@export (String, FILE, "*.tscn") var next_scene_path
+@export (String, FILE, "*.tscn") var phone_scene
+@export (String, FILE, "*.tscn") var commandant_scene
+@onready var _buttons := $Buttons
 
 
 func _ready() -> void:
@@ -26,6 +26,6 @@ func _ready() -> void:
 	
 	# Load next scene
 	if sv_phone == "yes" and sv_commandant == "yes":
-		yield(get_tree().create_timer(2), "timeout")
+		await get_tree().create_timer(2).timeout
 		SCENES.load_scene(next_scene_path)
 	

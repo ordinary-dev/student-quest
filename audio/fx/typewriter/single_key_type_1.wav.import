@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/single_key_type_1.wav-b0427d592607e1f8ba2e9927a77f15cd.sample"
+type="AudioStreamWAV"
+uid="uid://bao3i13t6n3sv"
+path="res://.godot/imported/single_key_type_1.wav-b0427d592607e1f8ba2e9927a77f15cd.sample"
 
 [deps]
 
 source_file="res://audio/fx/typewriter/single_key_type_1.wav"
-dest_files=[ "res://.import/single_key_type_1.wav-b0427d592607e1f8ba2e9927a77f15cd.sample" ]
+dest_files=["res://.godot/imported/single_key_type_1.wav-b0427d592607e1f8ba2e9927a77f15cd.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/triggers/label.gd" type="Script" id=1]
-[ext_resource path="res://fonts/press_start_2p/press_start_2p_small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/press_start_2p/press_start_2p_small.tres" type="FontFile" id=2]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 96, 60.9999 )
+size = Vector2( 96, 60.9999 )
 
 [node name="Label" type="Area2D"]
 z_index = 6
@@ -20,10 +20,10 @@ shape = SubResource( 2 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Frame" type="ColorRect" parent="."]
-margin_left = 96.0
-margin_top = -48.0
-margin_right = 416.0
-margin_bottom = 37.0
+offset_left = 96.0
+offset_top = -48.0
+offset_right = 416.0
+offset_bottom = 37.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -32,19 +32,19 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="Frame"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 3
-custom_constants/margin_top = 3
-custom_constants/margin_left = 3
-custom_constants/margin_bottom = 3
+custom_constants/offset_right = 3
+custom_constants/offset_top = 3
+custom_constants/offset_left = 3
+custom_constants/offset_bottom = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Background" type="ColorRect" parent="Frame/MarginContainer"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 317.0
-margin_bottom = 82.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 317.0
+offset_bottom = 82.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,19 +53,19 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="Frame/MarginContainer/Background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Frame/MarginContainer/Background/MarginContainer"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 304.0
-margin_bottom = 69.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 304.0
+offset_bottom = 69.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )

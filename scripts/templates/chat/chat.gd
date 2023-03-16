@@ -8,13 +8,13 @@ extends Control
 const MIN_DELAY := 1
 const MAX_DELAY := 3
 
-export (String) var title = "CHAT"
-export (String, FILE, "*.tscn") var next_scene_path
-export (Array, String) var messages
+@export (String) var title = "CHAT"
+@export (String, FILE, "*.tscn") var next_scene_path
+@export (Array, String) var messages
 
 var _message = load("res://scenes/templates/chat/message.tscn")
-onready var _container := $VBoxContainer/BodyBackground/Container
-onready var _header := $VBoxContainer/HeaderBackground/HeaderContainer/HeaderText
+@onready var _container := $VBoxContainer/BodyBackground/Container
+@onready var _header := $VBoxContainer/HeaderBackground/HeaderContainer/HeaderText
 
 
 func next_scene() -> void:
@@ -25,8 +25,8 @@ func next_scene() -> void:
 func _ready() -> void:
 	_header.text = title
 	for i in messages:
-		var tmp = _message.instance()
+		var tmp = _message.instantiate()
 		tmp.text = i
 		_container.add_child(tmp)
-		var delay := rand_range(MIN_DELAY, MAX_DELAY)
-		yield(get_tree().create_timer(delay), "timeout")
+		var delay := randf_range(MIN_DELAY, MAX_DELAY)
+		await get_tree().create_timer(delay).timeout

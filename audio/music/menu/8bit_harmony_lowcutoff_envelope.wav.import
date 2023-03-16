@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/8bit_harmony_lowcutoff_envelope.wav-7800ae1ab542a81684c20b47461ee95b.sample"
+type="AudioStreamWAV"
+uid="uid://c73urcevepbk8"
+path="res://.godot/imported/8bit_harmony_lowcutoff_envelope.wav-7800ae1ab542a81684c20b47461ee95b.sample"
 
 [deps]
 
 source_file="res://audio/music/menu/8bit_harmony_lowcutoff_envelope.wav"
-dest_files=[ "res://.import/8bit_harmony_lowcutoff_envelope.wav-7800ae1ab542a81684c20b47461ee95b.sample" ]
+dest_files=["res://.godot/imported/8bit_harmony_lowcutoff_envelope.wav-7800ae1ab542a81684c20b47461ee95b.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

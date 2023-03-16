@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/emergency_alarm.ogg-162c3a8db01887c7c61d79c776a6ddd6.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://co76w6a66mml5"
+path="res://.godot/imported/emergency_alarm.ogg-162c3a8db01887c7c61d79c776a6ddd6.oggvorbisstr"
 
 [deps]
 
 source_file="res://audio/fx/alarm/emergency_alarm.ogg"
-dest_files=[ "res://.import/emergency_alarm.ogg-162c3a8db01887c7c61d79c776a6ddd6.oggstr" ]
+dest_files=["res://.godot/imported/emergency_alarm.ogg-162c3a8db01887c7c61d79c776a6ddd6.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

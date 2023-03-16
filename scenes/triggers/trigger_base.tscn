@@ -1,20 +1,20 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://fonts/press_start_2p/press_start_2p_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/press_start_2p/press_start_2p_small.tres" type="FontFile" id=1]
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 96, 64 )
+size = Vector2( 96, 64 )
 
 [node name="TriggerBase" type="CollisionShape2D"]
 position = Vector2( -32, 64 )
 shape = SubResource( 1 )
 
 [node name="DialogFrame" type="ColorRect" parent="."]
-margin_left = 45.0
-margin_top = -117.0
-margin_right = 365.0
-margin_bottom = -32.0
+offset_left = 45.0
+offset_top = -117.0
+offset_right = 365.0
+offset_bottom = -32.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -23,19 +23,19 @@ __meta__ = {
 [node name="Container" type="MarginContainer" parent="DialogFrame"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 3
-custom_constants/margin_top = 3
-custom_constants/margin_left = 3
-custom_constants/margin_bottom = 3
+custom_constants/offset_right = 3
+custom_constants/offset_top = 3
+custom_constants/offset_left = 3
+custom_constants/offset_bottom = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="DialogBackground" type="ColorRect" parent="DialogFrame/Container"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 317.0
-margin_bottom = 82.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 317.0
+offset_bottom = 82.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,19 +44,19 @@ __meta__ = {
 [node name="TextContainer" type="MarginContainer" parent="DialogFrame/Container/DialogBackground"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextLabel" type="Label" parent="DialogFrame/Container/DialogBackground/TextContainer"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 304.0
-margin_bottom = 69.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 304.0
+offset_bottom = 69.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
@@ -68,10 +68,10 @@ __meta__ = {
 }
 
 [node name="ButtonHintFrame" type="ColorRect" parent="."]
-margin_left = 54.0
-margin_top = -42.0
-margin_right = 114.0
-margin_bottom = -5.0
+offset_left = 54.0
+offset_top = -42.0
+offset_right = 114.0
+offset_bottom = -5.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -80,19 +80,19 @@ __meta__ = {
 [node name="HintTextContainer" type="MarginContainer" parent="ButtonHintFrame"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_constants/margin_right = 3
-custom_constants/margin_top = 3
-custom_constants/margin_left = 3
-custom_constants/margin_bottom = 3
+custom_constants/offset_right = 3
+custom_constants/offset_top = 3
+custom_constants/offset_left = 3
+custom_constants/offset_bottom = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HintTextBackground" type="ColorRect" parent="ButtonHintFrame/HintTextContainer"]
-margin_left = 3.0
-margin_top = 3.0
-margin_right = 57.0
-margin_bottom = 34.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 57.0
+offset_bottom = 34.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="ButtonHintText" type="Label" parent="ButtonHintFrame/HintTextContainer/HintTextBackground"]
@@ -107,11 +107,11 @@ __meta__ = {
 }
 
 [node name="DialogButton" type="Button" parent="."]
-margin_left = 32.0
-margin_top = -119.0
-margin_right = 382.0
-margin_bottom = 1.0
-rect_min_size = Vector2( 350, 120 )
+offset_left = 32.0
+offset_top = -119.0
+offset_right = 382.0
+offset_bottom = 1.0
+custom_minimum_size = Vector2( 350, 120 )
 flat = true
 __meta__ = {
 "_edit_use_anchors_": false

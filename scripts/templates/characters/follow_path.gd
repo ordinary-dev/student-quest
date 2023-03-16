@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 # Ai that follows the path
 # Just put it on a standard sprite
@@ -16,17 +16,17 @@ const MAX_DISTANCE := 250
 # Lower is faster...
 const ANIMATION_SPEED := 0.4
 
-export (NodePath) var line_path
-export (bool) var wait_for_player = true
-export (bool) var autostart = true
-export (bool) var call_function = false
-export (NodePath) var obj
-export (String) var fun = "function"
-export (String) var arg = ""
-export (float) var call_delay = 0
-export (int) var speed := 380
+@export (NodePath) var line_path
+@export (bool) var wait_for_player = true
+@export (bool) var autostart = true
+@export (bool) var call_function = false
+@export (NodePath) var obj
+@export (String) var fun = "function"
+@export (String) var arg = ""
+@export (float) var call_delay = 0
+@export (int) var speed := 380
 
-var _player: KinematicBody2D
+var _player: CharacterBody2D
 var _target: Vector2
 var _line2d: Line2D
 var _index := 0
@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 				set_process(false)
 				if call_function:
 					if call_delay > 0:
-						yield(get_tree().create_timer(call_delay), "timeout")
+						await get_tree().create_timer(call_delay).timeout
 					if arg == "":
 						get_node(obj).call_deferred(fun)
 					else:

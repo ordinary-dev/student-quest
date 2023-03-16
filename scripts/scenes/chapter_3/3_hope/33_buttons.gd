@@ -4,8 +4,8 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var edit_scene_path
-export (String, FILE, "*.tscn") var delete_scene_path
+@export (String, FILE, "*.tscn") var edit_scene_path
+@export (String, FILE, "*.tscn") var delete_scene_path
 
 
 func _on_Edit_pressed() -> void:

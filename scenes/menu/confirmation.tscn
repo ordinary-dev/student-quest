@@ -6,8 +6,8 @@
 [node name="Confirmation" type="VBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -1290.0
-margin_bottom = -583.0
+offset_right = -1290.0
+offset_bottom = -583.0
 custom_constants/separation = 60
 script = ExtResource( 2 )
 __meta__ = {
@@ -16,8 +16,8 @@ __meta__ = {
 quit_scene_path = "res://scenes/quit.tscn"
 
 [node name="ConfirmationText" type="Label" parent="."]
-margin_right = 630.0
-margin_bottom = 137.0
+offset_right = 630.0
+offset_bottom = 137.0
 size_flags_vertical = 7
 text = "QUIT_CONFIRMATION"
 align = 1
@@ -25,27 +25,27 @@ valign = 1
 autowrap = true
 
 [node name="ButtonContainer" type="HBoxContainer" parent="."]
-margin_top = 197.0
-margin_right = 630.0
-margin_bottom = 497.0
+offset_top = 197.0
+offset_right = 630.0
+offset_bottom = 497.0
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
 [node name="No" parent="ButtonContainer" instance=ExtResource( 1 )]
-margin_right = 300.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 300, 300 )
-focus_neighbour_right = NodePath("../Button_Yes2")
+offset_right = 300.0
+offset_bottom = 300.0
+custom_minimum_size = Vector2( 300, 300 )
+focus_neighbor_right = NodePath("../Button_Yes2")
 focus_mode = 2
 text = "NO"
 
 [node name="Yes" parent="ButtonContainer" instance=ExtResource( 1 )]
-margin_left = 330.0
-margin_right = 630.0
-margin_bottom = 300.0
-rect_min_size = Vector2( 300, 300 )
-focus_neighbour_left = NodePath("../Button_No")
+offset_left = 330.0
+offset_right = 630.0
+offset_bottom = 300.0
+custom_minimum_size = Vector2( 300, 300 )
+focus_neighbor_left = NodePath("../Button_No")
 focus_mode = 2
 text = "YES"
 [connection signal="pressed" from="ButtonContainer/No" to="." method="_return"]

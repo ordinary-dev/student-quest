@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/buildings/building_2.png" type="Texture" id=1]
+[ext_resource path="res://sprites/buildings/building_2.png" type="Texture2D" id=1]
 
 
 
@@ -9,9 +9,9 @@
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 53.5347, 18.9972 )
+size = Vector2( 53.5347, 18.9972 )
 
-[node name="Building_Type4" type="Sprite"]
+[node name="Building_Type4" type="Sprite2D"]
 scale = Vector2( 4, 4 )
 z_index = 4
 texture = ExtResource( 1 )

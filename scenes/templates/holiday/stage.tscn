@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/house/scene.png" type="Texture" id=1]
-[ext_resource path="res://sprites/characters/speaker_2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/house/scene.png" type="Texture2D" id=1]
+[ext_resource path="res://sprites/characters/speaker_2.png" type="Texture2D" id=2]
 
 
 
@@ -11,9 +11,9 @@
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 12 )
+size = Vector2( 16, 12 )
 
-[node name="StageTemplate" type="Sprite"]
+[node name="StageTemplate" type="Sprite2D"]
 scale = Vector2( 8, 8 )
 z_index = 4
 z_as_relative = false
@@ -28,7 +28,7 @@ collision_mask = 1024
 position = Vector2( 0, 6 )
 shape = SubResource( 1 )
 
-[node name="Speaker" type="Sprite" parent="."]
+[node name="Speaker" type="Sprite2D" parent="."]
 position = Vector2( 4, 12 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )

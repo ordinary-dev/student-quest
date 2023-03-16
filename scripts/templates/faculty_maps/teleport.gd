@@ -3,17 +3,17 @@ extends Node2D
 enum Directions {UP, DOWN, LEFT, RIGHT}
 enum Positions {FIRST, SECOND, THIRD}
 
-export (String, FILE, "*.tscn") var street_scene_path
-export (Directions) var player_direction = Directions.DOWN
-export (Positions) var initial_pos = Positions.SECOND
-export (bool) var block_turnstile = false setget set_turnstile_state
-export (bool) var show_security_guard = true
+@export (String, FILE, "*.tscn") var street_scene_path
+@export (Directions) var player_direction = Directions.DOWN
+@export (Positions) var initial_pos = Positions.SECOND
+@export (bool) var block_turnstile = false : set = set_turnstile_state
+@export (bool) var show_security_guard = true
 
-onready var _turnstile = $Turnstiles/CollisionShape2D
-onready var _p1 = $FloorPositions/Floor1
-onready var _p2 = $FloorPositions/Floor2
-onready var _p3 = $FloorPositions/Floor3
-onready var _security_guard = $YSort/Guard
+@onready var _turnstile = $Turnstiles/CollisionShape2D
+@onready var _p1 = $FloorPositions/Floor1
+@onready var _p2 = $FloorPositions/Floor2
+@onready var _p3 = $FloorPositions/Floor3
+@onready var _security_guard = $Node2D/Guard
 
 
 func set_turnstile_state(value : bool) -> void:
@@ -26,10 +26,10 @@ func print_warning() -> void:
 	NOTIFY.show("NOENTER")
 
 
-func teleport(node : Position2D, fade = true) -> void:
+func teleport(node : Marker2D, fade = true) -> void:
 	if fade:
 		SCENES._fade_in()
-		yield(get_tree().create_timer(SCENES.TIME), "timeout")
+		await get_tree().create_timer(SCENES.TIME).timeout
 	var player_path = STORAGE.get("player_path")
 	get_node(player_path).position = node.position
 	if fade:

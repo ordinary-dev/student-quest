@@ -1,12 +1,12 @@
 extends Control
 
-export (NodePath) var label_path
+@export (NodePath) var label_path
 
 var time = .05
 var text_delay
 
-onready var effect = $Tween
-onready var mc = $MainContainer
+@onready var effect = $Tween
+@onready var mc = $MainContainer
 
 const x_from := 550
 const x_to := 600
@@ -35,14 +35,14 @@ func hide_anim() -> void:
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
 	)
 	effect.interpolate_property(
-		mc, "rect_size",
+		mc, "size",
 		Vector2(x_to, y_to), 
 		Vector2(x_from, y_to), y_time,
 		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
 		text_delay
 	)
 	effect.interpolate_property(
-		mc, "rect_size",
+		mc, "size",
 		Vector2(x_from, y_to), 
 		Vector2(x_from, y_from), y_time,
 		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
@@ -53,13 +53,13 @@ func hide_anim() -> void:
 
 func start_anim() -> void:
 	effect.interpolate_property(
-		mc, "rect_size",
+		mc, "size",
 		Vector2(x_from, y_from), 
 		Vector2(x_from, y_to), y_time,
 		Tween.TRANS_QUAD, Tween.EASE_IN_OUT
 	)
 	effect.interpolate_property(
-		mc, "rect_size",
+		mc, "size",
 		Vector2(x_from, y_to), 
 		Vector2(x_to, y_to), y_time,
 		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, y_time

@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/house/bench_1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/house/bench_1.png" type="Texture2D" id=1]
 
 
 
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 3.2 )
+size = Vector2( 8, 3.2 )
 
-[node name="Bench" type="Sprite"]
+[node name="Bench" type="Sprite2D"]
 position = Vector2( -2.84217e-14, 1.90735e-06 )
 scale = Vector2( 10, 10 )
 z_index = 4

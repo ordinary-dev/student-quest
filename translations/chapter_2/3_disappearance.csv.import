@@ -2,13 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
+uid="uid://d04kbh131bxrg"
 
 [deps]
 
-files=[ "res://translations/chapter_2/3_disappearance.ru.translation", "res://translations/chapter_2/3_disappearance.en.translation" ]
+files=["res://translations/chapter_2/3_disappearance.ru.translation", "res://translations/chapter_2/3_disappearance.en.translation"]
 
 source_file="res://translations/chapter_2/3_disappearance.csv"
-dest_files=[ "res://translations/chapter_2/3_disappearance.ru.translation", "res://translations/chapter_2/3_disappearance.en.translation" ]
+dest_files=["res://translations/chapter_2/3_disappearance.ru.translation", "res://translations/chapter_2/3_disappearance.en.translation"]
 
 [params]
 

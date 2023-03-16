@@ -1,34 +1,34 @@
-[gd_resource type="AudioBusLayout" load_steps=3 format=2]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://de7kdh1o22jdp"]
 
-[sub_resource type="AudioEffectReverb" id=1]
+[sub_resource type="AudioEffectReverb" id="1"]
 resource_name = "Reverb"
 room_size = 1.0
 damping = 1.0
 
-[sub_resource type="AudioEffectStereoEnhance" id=2]
+[sub_resource type="AudioEffectStereoEnhance" id="2"]
 resource_name = "StereoEnhance"
 surround = 1.0
 
 [resource]
-bus/1/name = "OST"
+bus/1/name = &"OST"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
 bus/1/volume_db = 0.0
-bus/1/send = "Master"
-bus/2/name = "FX"
+bus/1/send = &"Master"
+bus/2/name = &"FX"
 bus/2/solo = false
 bus/2/mute = false
 bus/2/bypass_fx = false
 bus/2/volume_db = -4.003
-bus/2/send = "Master"
-bus/3/name = "Ambient"
+bus/2/send = &"Master"
+bus/3/name = &"Ambient"
 bus/3/solo = false
 bus/3/mute = false
 bus/3/bypass_fx = false
 bus/3/volume_db = -0.130497
-bus/3/send = "FX"
-bus/3/effect/0/effect = SubResource( 1 )
+bus/3/send = &"FX"
+bus/3/effect/0/effect = SubResource("1")
 bus/3/effect/0/enabled = true
-bus/3/effect/1/effect = SubResource( 2 )
+bus/3/effect/1/effect = SubResource("2")
 bus/3/effect/1/enabled = true

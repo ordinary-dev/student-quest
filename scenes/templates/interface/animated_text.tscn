@@ -30,19 +30,19 @@ __meta__ = {
 }
 
 [node name="Line1" type="Label" parent="BackgroundColor/Content"]
-margin_top = 438.0
-margin_right = 1920.0
-margin_bottom = 538.0
-rect_min_size = Vector2( 0, 100 )
+offset_top = 438.0
+offset_right = 1920.0
+offset_bottom = 538.0
+custom_minimum_size = Vector2( 0, 100 )
 text = "Sample text"
 align = 1
 valign = 1
 
 [node name="Line2" type="Label" parent="BackgroundColor/Content"]
-margin_top = 542.0
-margin_right = 1920.0
-margin_bottom = 642.0
-rect_min_size = Vector2( 0, 100 )
+offset_top = 542.0
+offset_right = 1920.0
+offset_bottom = 642.0
+custom_minimum_size = Vector2( 0, 100 )
 text = "Something else"
 align = 1
 valign = 1

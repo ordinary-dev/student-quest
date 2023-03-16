@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=1]
+[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture2D" id=1]
 [ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=2]
-[ext_resource path="res://sprites/backgrounds/blurry_room.jpg" type="Texture" id=3]
+[ext_resource path="res://sprites/backgrounds/blurry_room.jpg" type="Texture2D" id=3]
 
 [node name="Dialog" type="Node2D"]
 
-[node name="Background" type="Sprite" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 modulate = Color( 0.317647, 0.6, 0.960784, 1 )
 position = Vector2( 960, 540 )
 scale = Vector2( 1.46901, 0.636637 )
 texture = ExtResource( 3 )
 flip_v = true
 
-[node name="MainCharacter" type="Sprite" parent="."]
+[node name="MainCharacter" type="Sprite2D" parent="."]
 position = Vector2( 360, 680 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 1 )
@@ -21,7 +21,7 @@ vframes = 3
 hframes = 3
 frame = 8
 
-[node name="Someone" type="Sprite" parent="."]
+[node name="Someone" type="Sprite2D" parent="."]
 modulate = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
 position = Vector2( 1504, 680 )
 scale = Vector2( 5, 5 )
