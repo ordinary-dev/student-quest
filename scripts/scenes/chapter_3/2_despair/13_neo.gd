@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 # Approaches the player,
 # starts a dialog,
@@ -7,10 +7,10 @@ extends Sprite
 const MAX_X_POS := 800
 const SPEED := 250
 const DELAY := 30
-export (String, FILE, "*.json") var dialog_path
+@export (String, FILE, "*.json") var dialog_path
 var _current_frame := 0
-onready var _blood := $AnimatedSprite
-onready var _singer := $"../Singer"
+@onready var _blood := $AnimatedSprite2D
+@onready var _singer := $"../Singer"
 
 
 func enable_ai() -> void:

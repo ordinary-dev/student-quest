@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=6 format=2]
 
-[ext_resource path="res://sprites/street/flag/flag.png" type="Texture" id=1]
+[ext_resource path="res://sprites/street/flag/flag.png" type="Texture2D" id=1]
 
 
 

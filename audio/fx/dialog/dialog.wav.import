@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/dialog.wav-010cd7015e54bc27571e88b4b7814532.sample"
+type="AudioStreamWAV"
+uid="uid://c78sf5dal3un5"
+path="res://.godot/imported/dialog.wav-010cd7015e54bc27571e88b4b7814532.sample"
 
 [deps]
 
 source_file="res://audio/fx/dialog/dialog.wav"
-dest_files=[ "res://.import/dialog.wav-010cd7015e54bc27571e88b4b7814532.sample" ]
+dest_files=["res://.godot/imported/dialog.wav-010cd7015e54bc27571e88b4b7814532.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

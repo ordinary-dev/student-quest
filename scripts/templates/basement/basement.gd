@@ -1,4 +1,4 @@
-tool
+@tool
 extends Node2D
 
 # Script for quick setup of the basement
@@ -7,12 +7,12 @@ extends Node2D
 
 # I haven't found a better way
 # to store paths to objects
-const NEO_PATH := "YSort/Neo"
-const LIGHT_PATH := "Light2D"
+const NEO_PATH := "Node2D/Neo"
+const LIGHT_PATH := "PointLight2D"
 const COMPUTER_PATH := "Computer"
-export (bool) var show_neo = false setget _set_neo_visibility
-export (bool) var enable_light = true setget _set_light_visibility
-export (bool) var show_computer = true setget _set_computer_visibility
+@export (bool) var show_neo = false: set = _set_neo_visibility
+@export (bool) var enable_light = true: set = _set_light_visibility
+@export (bool) var show_computer = true: set = _set_computer_visibility
 
 
 func _set_neo_visibility(val: bool) -> void:

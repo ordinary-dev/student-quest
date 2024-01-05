@@ -2,13 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
+uid="uid://bty06tsg187v1"
 
 [deps]
 
-files=[ "res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/2_celebration.en.translation" ]
+files=["res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/2_celebration.en.translation"]
 
 source_file="res://translations/chapter_2/2_celebration.csv"
-dest_files=[ "res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/2_celebration.en.translation" ]
+dest_files=["res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/2_celebration.en.translation"]
 
 [params]
 

@@ -1,6 +1,6 @@
-extends Sprite
+extends Sprite2D
 
-export (bool) var enable_collider = true setget _col
+@export (bool) var enable_collider = true: set = _col
 
 
 func _col(val: bool) -> void:

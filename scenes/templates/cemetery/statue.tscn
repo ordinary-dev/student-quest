@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/cemetery/statue.png" type="Texture" id=1]
+[ext_resource path="res://sprites/cemetery/statue.png" type="Texture2D" id=1]
 
 
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 24 )
 
-[node name="Statue" type="Sprite"]
+[node name="Statue" type="Sprite2D"]
 z_index = 4
 texture = ExtResource( 1 )
 offset = Vector2( 2, -32 )

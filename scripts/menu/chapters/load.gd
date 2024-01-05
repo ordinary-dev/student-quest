@@ -6,7 +6,7 @@ extends Node
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-onready var _stages := [
+@onready var _stages := [
 	# Chapter 1
 	$VBoxContainer/Chapter1/Beginning,           #0
 	$VBoxContainer/Chapter1/FirstDays,           #1

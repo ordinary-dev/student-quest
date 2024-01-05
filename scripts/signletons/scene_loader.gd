@@ -21,7 +21,7 @@ func load_scene(scene_name: String, anim_start := true, anim_end := true) -> voi
 	# Fade in
 	if anim_start:
 		_fade_in()
-		yield(get_tree().create_timer(TIME), "timeout")
+		await get_tree().create_timer(TIME).timeout
 	
 	# Save player position
 	var player_path = STORAGE.get("player_path")
@@ -32,7 +32,7 @@ func load_scene(scene_name: String, anim_start := true, anim_end := true) -> voi
 	
 	# Load scene
 	last_scene_path = scene_name
-	var status = get_tree().change_scene(scene_name)
+	var status = get_tree().change_scene_to_file(scene_name)
 	if status != OK:
 		NOTIFY.show("Can't change scene. Please report a bug.")
 	
@@ -52,7 +52,7 @@ func _create_color_rect() -> void:
 	tmp.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	tmp.color = START_COLOR
 	tmp.name = "transition"
-	tmp.rect_min_size = Vector2(1920, 1080)
+	tmp.custom_minimum_size = Vector2(1920, 1080)
 	UI.add_child(tmp)
 
 
@@ -73,5 +73,5 @@ func _fade_out() -> void:
 		END_COLOR, START_COLOR, TIME, 
 		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	start()
-	yield(get_tree().create_timer(TIME), "timeout")
+	await get_tree().create_timer(TIME).timeout
 	UI.remove_child(color_rect)

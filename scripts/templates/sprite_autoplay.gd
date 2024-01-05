@@ -1,4 +1,4 @@
-extends AnimatedSprite
+extends AnimatedSprite2D
 
 # Autoplay animation.
 # This allows you not to overwrite

@@ -2,14 +2,18 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-path="res://.import/soft_piano_loop_2.mp3-136e6564b0c0f0423bb2d00a92051eed.mp3str"
+uid="uid://b25ebo65c5h8g"
+path="res://.godot/imported/soft_piano_loop_2.mp3-136e6564b0c0f0423bb2d00a92051eed.mp3str"
 
 [deps]
 
 source_file="res://audio/music/piano/soft_piano_loop_2.mp3"
-dest_files=[ "res://.import/soft_piano_loop_2.mp3-136e6564b0c0f0423bb2d00a92051eed.mp3str" ]
+dest_files=["res://.godot/imported/soft_piano_loop_2.mp3-136e6564b0c0f0423bb2d00a92051eed.mp3str"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

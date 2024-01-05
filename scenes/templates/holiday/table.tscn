@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/house/table.png" type="Texture" id=1]
+[ext_resource path="res://sprites/house/table.png" type="Texture2D" id=1]
 
 
 
@@ -9,9 +9,9 @@
 radius = 17.3333
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( -10.9988, 12.0091, -7.9735, 12.0091, -9.49545, 11.1182 )
+polygon = PackedVector2Array( -10.9988, 12.0091, -7.9735, 12.0091, -9.49545, 11.1182 )
 
-[node name="Table" type="Sprite"]
+[node name="Table" type="Sprite2D"]
 light_mask = 2
 scale = Vector2( 6, 6 )
 z_index = 2

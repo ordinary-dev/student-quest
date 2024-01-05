@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://audio/fx/alarm_clock/analog_alarm_clock.ogg" type="AudioStream" id=1]
-[ext_resource path="res://sprites/alarm/alarm_lines.png" type="Texture" id=2]
-[ext_resource path="res://sprites/alarm/alarm.png" type="Texture" id=3]
+[ext_resource path="res://sprites/alarm/alarm_lines.png" type="Texture2D" id=2]
+[ext_resource path="res://sprites/alarm/alarm.png" type="Texture2D" id=3]
 
 
 
@@ -23,18 +23,18 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 0.2, 0.4 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ -12.0, 12.0, -12.0 ]
 }
 
-[node name="Alarm" type="Sprite"]
+[node name="Alarm" type="Sprite2D"]
 modulate = Color( 0.741176, 0.741176, 0.741176, 1 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 3 )
 
-[node name="AlarmLines" type="Sprite" parent="."]
+[node name="AlarmLines" type="Sprite2D" parent="."]
 position = Vector2( 0.506599, -11.1073 )
 rotation = -0.20944
 texture = ExtResource( 2 )

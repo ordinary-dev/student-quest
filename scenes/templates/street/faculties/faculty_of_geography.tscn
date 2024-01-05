@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/street/faculty_of_geography.png" type="Texture" id=1]
+[ext_resource path="res://sprites/street/faculty_of_geography.png" type="Texture2D" id=1]
 
 
 
@@ -13,7 +13,7 @@ extents = Vector2( 71.273, 151.705 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 3.19998, 0.799957 )
 
-[node name="FacultyOfGeography" type="Sprite"]
+[node name="FacultyOfGeography" type="Sprite2D"]
 scale = Vector2( 10, 10 )
 z_index = 4
 z_as_relative = false

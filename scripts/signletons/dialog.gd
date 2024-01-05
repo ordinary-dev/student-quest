@@ -59,8 +59,8 @@ func show_next() -> void:
 	# Next phrase is last
 	if _index == len(_content):
 		var btn = dialog.next_button
-		btn.disconnect("pressed", self, "show_next")
-		btn.connect("pressed", self, "hide_dialog")
+		btn.disconnect("pressed", Callable(self, "show_next"))
+		btn.connect("pressed", Callable(self, "hide_dialog"))
 
 
 func hide_dialog():
@@ -95,7 +95,9 @@ func _read_file(file_path: String) -> bool:
 		NOTIFY.show("I can't load the dialog. Please report a bug.")
 		return false
 	# Try to read the file
-	var json_result = JSON.parse(fl.get_as_text())
+	var test_json_conv = JSON.new()
+	test_json_conv.parse(fl.get_as_text())
+	var json_result = test_json_conv.get_data()
 	fl.close()
 	if json_result.error != OK:
 		NOTIFY.show("Can't parse the file. Please report a bug.")
@@ -118,10 +120,10 @@ func _hide_interface() -> void:
 
 
 func _create_dialog_obj() -> void:
-	var tmp = DIALOG_SCENE.instance()
+	var tmp = DIALOG_SCENE.instantiate()
 	tmp.name = "dialog"
 	UI.add_child(tmp)
-	UI.get_node("dialog").next_button.connect("pressed", self, "show_next")
+	UI.get_node("dialog").next_button.connect("pressed", Callable(self, "show_next"))
 
 
 func _process(_delta) -> void:

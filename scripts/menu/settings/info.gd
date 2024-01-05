@@ -6,9 +6,9 @@ extends Node
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var credits_scene
+@export (String, FILE, "*.tscn") var credits_scene
 
-onready var version_label = $Scroll/MarginContainer/TextContainer/Version
+@onready var version_label = $Scroll/MarginContainer/TextContainer/Version
 
 
 func open_store() -> void:

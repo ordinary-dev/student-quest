@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 # Animation of character movement on the screen
 # Copyright (c) 2020-2021 PixelTrain

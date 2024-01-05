@@ -5,13 +5,13 @@ extends Control
 # Licensed under the GPL-3 License
 
 # Path to the scene with new game
-export (String, FILE, "*.tscn") var new_game_scene
+@export (String, FILE, "*.tscn") var new_game_scene
 # The button that gets the focus
-onready var new_game_btn := $Left/Column/NewGame
+@onready var new_game_btn := $Left/Column/NewGame
 # Menu sections
-onready var game_loading_scene := $Right/LoadMenu
-onready var settings_scene := $Right/Settings
-onready var confirmation_scene := $Right/Confirmation
+@onready var game_loading_scene := $Right/LoadMenu
+@onready var settings_scene := $Right/Settings
+@onready var confirmation_scene := $Right/Confirmation
 
 
 # Start new game

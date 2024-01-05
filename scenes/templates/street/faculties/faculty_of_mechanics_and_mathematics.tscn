@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/street/faculty_of_mathematics.png" type="Texture" id=1]
+[ext_resource path="res://sprites/street/faculty_of_mathematics.png" type="Texture2D" id=1]
 [ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 51, 41 )
 
-[node name="FacultyOfMathematics" type="Sprite"]
+[node name="FacultyOfMathematics" type="Sprite2D"]
 scale = Vector2( 10, 10 )
 z_index = 4
 z_as_relative = false

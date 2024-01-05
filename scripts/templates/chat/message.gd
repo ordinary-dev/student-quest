@@ -4,8 +4,8 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String) var text
-onready var _label = $Background/MarginContainer/MessageText
+@export (String) var text
+@onready var _label = $Background/MarginContainer/MessageText
 
 
 func _ready() -> void:

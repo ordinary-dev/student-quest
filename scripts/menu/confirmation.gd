@@ -4,7 +4,7 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var quit_scene_path
+@export (String, FILE, "*.tscn") var quit_scene_path
 
 
 # Return to menu

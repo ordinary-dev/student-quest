@@ -1,6 +1,6 @@
 [gd_resource type="SpriteFrames" load_steps=15 format=2]
 
-[ext_resource path="res://sprites/explosion/explosion.png" type="Texture" id=1]
+[ext_resource path="res://sprites/explosion/explosion.png" type="Texture2D" id=1]
 
 
 

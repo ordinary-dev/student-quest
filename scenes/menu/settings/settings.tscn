@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/menu/settings/graphics.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprites/icons/right.png" type="Texture" id=2]
-[ext_resource path="res://sprites/icons/left.png" type="Texture" id=3]
+[ext_resource path="res://sprites/icons/right.png" type="Texture2D" id=2]
+[ext_resource path="res://sprites/icons/left.png" type="Texture2D" id=3]
 [ext_resource path="res://scenes/menu/settings/info.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/menu/settings/settings.gd" type="Script" id=5]
 [ext_resource path="res://scenes/menu/settings/languages.tscn" type="PackedScene" id=7]
@@ -49,22 +49,22 @@ corner_radius_bottom_left = 20
 
 [node name="Settings" type="TabContainer"]
 light_mask = 0
-margin_right = 860.0
-margin_bottom = 326.0
-rect_min_size = Vector2( 860, 0 )
-rect_clip_content = true
-focus_neighbour_bottom = NodePath("LANG/VBoxContainer/English")
+offset_right = 860.0
+offset_bottom = 326.0
+custom_minimum_size = Vector2( 860, 0 )
+clip_contents = true
+focus_neighbor_bottom = NodePath("LANG/VBoxContainer/English")
 focus_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
-custom_icons/increment_highlight = ExtResource( 2 )
-custom_icons/increment = ExtResource( 2 )
-custom_icons/decrement_highlight = ExtResource( 3 )
-custom_icons/decrement = ExtResource( 3 )
-custom_styles/tab_fg = SubResource( 1 )
-custom_styles/tab_bg = SubResource( 2 )
-custom_styles/panel = SubResource( 3 )
-tab_align = 0
+theme_override_icons/increment_highlight = ExtResource( 2 )
+theme_override_icons/increment = ExtResource( 2 )
+theme_override_icons/decrement_highlight = ExtResource( 3 )
+theme_override_icons/decrement = ExtResource( 3 )
+theme_override_styles/tab_selected = SubResource( 1 )
+theme_override_styles/tab_unselected = SubResource( 2 )
+theme_override_styles/panel = SubResource( 3 )
+tab_alignment = 0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false

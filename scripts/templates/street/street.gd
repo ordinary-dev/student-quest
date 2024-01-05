@@ -8,27 +8,27 @@ enum Positions {HOSTEL, FOUNTAIN, FACULTY, SOUTH_ENTRANCE, FAC_OF_HUMANITIES}
 enum PlayerSprite {MAIN, NEO}
 enum Directions {UP, DOWN, LEFT, RIGHT}
 
-export (Positions) var initial_position = Positions.HOSTEL
-export (PlayerSprite) var player_sprite = PlayerSprite.MAIN
-export (Directions) var initial_direction = Directions.RIGHT
-export (bool) var allow_entrance = false
-export (String, FILE, "*.tscn") var next_scene
-export (bool) var show_singer = true
-export (bool) var show_gardener = true
-export (bool) var enable_npc = true
-export (bool) var enable_lights = true
+@export (Positions) var initial_position = Positions.HOSTEL
+@export (PlayerSprite) var player_sprite = PlayerSprite.MAIN
+@export (Directions) var initial_direction = Directions.RIGHT
+@export (bool) var allow_entrance = false
+@export (String, FILE, "*.tscn") var next_scene
+@export (bool) var show_singer = true
+@export (bool) var show_gardener = true
+@export (bool) var enable_npc = true
+@export (bool) var enable_lights = true
 
-onready var _trigger := $Triggers/Mathematics
-onready var _singer := $MrSinger
-onready var _gardener := $YSort/Gardener
-onready var _ai := $YSort/AI
-onready var _streetlights := $YSort/Streetlights
+@onready var _trigger := $Triggers/Mathematics
+@onready var _singer := $MrSinger
+@onready var _gardener := $Node2D/Gardener
+@onready var _ai := $Node2D/AI
+@onready var _streetlights := $Node2D/Streetlights
 # Initial positions
-onready var _hostel_pos := $Positions/Hostel_Position2D
-onready var _fountain_pos := $Positions/Fountain_Position2D
-onready var _faculty_pos := $Positions/Faculty_Position2D
-onready var _south_entrance := $Positions/South_Entrance_Position2D
-onready var _fac_of_humanities := $Positions/Fac_Of_Humanities_Position2D
+@onready var _hostel_pos := $Positions/Hostel_Position2D
+@onready var _fountain_pos := $Positions/Fountain_Position2D
+@onready var _faculty_pos := $Positions/Faculty_Position2D
+@onready var _south_entrance := $Positions/South_Entrance_Position2D
+@onready var _fac_of_humanities := $Positions/Fac_Of_Humanities_Position2D
 
 
 func enter_the_building():

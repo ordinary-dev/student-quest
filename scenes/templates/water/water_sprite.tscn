@@ -10,7 +10,7 @@
 
 
 
-[node name="WaterSprite" type="AnimatedSprite"]
+[node name="WaterSprite" type="AnimatedSprite2D"]
 scale = Vector2( 12, 12 )
 frames = ExtResource( 1 )
 script = ExtResource( 2 )

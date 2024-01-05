@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/faculties/turnstile.png" type="Texture" id=1]
+[ext_resource path="res://sprites/faculties/turnstile.png" type="Texture2D" id=1]
 
 
 
@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4.10132, 3.41901 )
 
-[node name="Turnstile" type="Sprite"]
+[node name="Turnstile" type="Sprite2D"]
 position = Vector2( 466.25, 249.65 )
 scale = Vector2( 6, 6 )
 z_index = 1

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=1]
-[ext_resource path="res://sprites/characters/girlfriend.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture2D" id=1]
+[ext_resource path="res://sprites/characters/girlfriend.png" type="Texture2D" id=2]
 [ext_resource path="res://scenes/templates/roof/sunset.tscn" type="PackedScene" id=3]
 
 
@@ -15,7 +15,7 @@
 
 [node name="Sunset" parent="." instance=ExtResource( 3 )]
 
-[node name="Alex" type="Sprite" parent="."]
+[node name="Alex" type="Sprite2D" parent="."]
 position = Vector2( 731.85, 766.376 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 1 )
@@ -23,7 +23,7 @@ vframes = 3
 hframes = 3
 frame = 7
 
-[node name="Girlfriend" type="Sprite" parent="."]
+[node name="Girlfriend" type="Sprite2D" parent="."]
 position = Vector2( 1080.97, 758.764 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 2 )

@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://fonts/press_start_2p/press_start_2p_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/press_start_2p/press_start_2p_small.tres" type="FontFile" id=1]
 [ext_resource path="res://scenes/templates/interface/button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/menu/settings/info.gd" type="Script" id=3]
 
@@ -31,11 +31,11 @@ bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 light_mask = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 62.0
-custom_constants/margin_right = 50
-custom_constants/margin_top = 50
-custom_constants/margin_left = 50
-custom_constants/margin_bottom = 50
+offset_top = 62.0
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_bottom = 50
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -44,55 +44,55 @@ credits_scene = "res://scenes/chapter_3/3_hope/48_credits.tscn"
 
 [node name="Scroll" type="ScrollContainer" parent="."]
 light_mask = 0
-margin_left = 50.0
-margin_top = 50.0
-margin_right = 1870.0
-margin_bottom = 968.0
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 1870.0
+offset_bottom = 968.0
 size_flags_vertical = 3
 scroll_horizontal_enabled = false
 
 [node name="MarginContainer" type="MarginContainer" parent="Scroll"]
 light_mask = 0
-margin_right = 1820.0
-margin_bottom = 700.0
+offset_right = 1820.0
+offset_bottom = 700.0
 mouse_filter = 1
 size_flags_horizontal = 3
-custom_constants/margin_right = 20
+theme_override_constants/margin_right = 20
 
 [node name="TextContainer" type="VBoxContainer" parent="Scroll/MarginContainer"]
 light_mask = 0
-margin_right = 1800.0
-margin_bottom = 700.0
+offset_right = 1800.0
+offset_bottom = 700.0
 size_flags_horizontal = 3
-custom_constants/separation = 20
+theme_override_constants/separation = 20
 
 [node name="OpenSite" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_right = 1800.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+offset_right = 1800.0
+theme_override_styles/hover = SubResource( 1 )
+theme_override_styles/pressed = SubResource( 2 )
+theme_override_styles/focus = SubResource( 3 )
+theme_override_styles/disabled = SubResource( 4 )
+theme_override_styles/normal = SubResource( 5 )
 text = "OPENSITE"
 
 [node name="ShowCredits" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_top = 100.0
-margin_right = 1800.0
-margin_bottom = 180.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+offset_top = 100.0
+offset_right = 1800.0
+offset_bottom = 180.0
+theme_override_styles/hover = SubResource( 1 )
+theme_override_styles/pressed = SubResource( 2 )
+theme_override_styles/focus = SubResource( 3 )
+theme_override_styles/disabled = SubResource( 4 )
+theme_override_styles/normal = SubResource( 5 )
 text = "SHOW_CREDITS"
 
 [node name="Link" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 200.0
-margin_right = 1800.0
-margin_bottom = 224.0
+offset_top = 200.0
+offset_right = 1800.0
+offset_bottom = 224.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
+theme_override_fonts/font = ExtResource( 1 )
 text = "pixeltrain.itch.io/student-quest"
 autowrap = true
 __meta__ = {
@@ -101,11 +101,11 @@ __meta__ = {
 
 [node name="Version" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 244.0
-margin_right = 1800.0
-margin_bottom = 268.0
+offset_top = 244.0
+offset_right = 1800.0
+offset_bottom = 268.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
+theme_override_fonts/font = ExtResource( 1 )
 text = "Version"
 autowrap = true
 __meta__ = {
@@ -114,11 +114,11 @@ __meta__ = {
 
 [node name="Godot" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 288.0
-margin_right = 1800.0
-margin_bottom = 312.0
+offset_top = 288.0
+offset_right = 1800.0
+offset_bottom = 312.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
+theme_override_fonts/font = ExtResource( 1 )
 text = "GODOT"
 autowrap = true
 __meta__ = {
@@ -126,45 +126,45 @@ __meta__ = {
 }
 
 [node name="Patreon" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_top = 332.0
-margin_right = 1800.0
-margin_bottom = 412.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+offset_top = 332.0
+offset_right = 1800.0
+offset_bottom = 412.0
+theme_override_styles/hover = SubResource( 1 )
+theme_override_styles/pressed = SubResource( 2 )
+theme_override_styles/focus = SubResource( 3 )
+theme_override_styles/disabled = SubResource( 4 )
+theme_override_styles/normal = SubResource( 5 )
 text = "Patreon"
 
 [node name="Ko-Fi" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_top = 432.0
-margin_right = 1800.0
-margin_bottom = 512.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+offset_top = 432.0
+offset_right = 1800.0
+offset_bottom = 512.0
+theme_override_styles/hover = SubResource( 1 )
+theme_override_styles/pressed = SubResource( 2 )
+theme_override_styles/focus = SubResource( 3 )
+theme_override_styles/disabled = SubResource( 4 )
+theme_override_styles/normal = SubResource( 5 )
 text = "Ko-fi"
 
 [node name="Liberapay" parent="Scroll/MarginContainer/TextContainer" instance=ExtResource( 2 )]
-margin_top = 532.0
-margin_right = 1800.0
-margin_bottom = 612.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 4 )
-custom_styles/normal = SubResource( 5 )
+offset_top = 532.0
+offset_right = 1800.0
+offset_bottom = 612.0
+theme_override_styles/hover = SubResource( 1 )
+theme_override_styles/pressed = SubResource( 2 )
+theme_override_styles/focus = SubResource( 3 )
+theme_override_styles/disabled = SubResource( 4 )
+theme_override_styles/normal = SubResource( 5 )
 text = "Liberapay"
 
 [node name="Legal" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 632.0
-margin_right = 1800.0
-margin_bottom = 656.0
+offset_top = 632.0
+offset_right = 1800.0
+offset_bottom = 656.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
+theme_override_fonts/font = ExtResource( 1 )
 text = "LEGAL"
 autowrap = true
 __meta__ = {
@@ -173,11 +173,11 @@ __meta__ = {
 
 [node name="Copyright" type="Label" parent="Scroll/MarginContainer/TextContainer"]
 light_mask = 0
-margin_top = 676.0
-margin_right = 1800.0
-margin_bottom = 700.0
+offset_top = 676.0
+offset_right = 1800.0
+offset_bottom = 700.0
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 1 )
+theme_override_fonts/font = ExtResource( 1 )
 text = "© 2020-2021"
 autowrap = true
 __meta__ = {

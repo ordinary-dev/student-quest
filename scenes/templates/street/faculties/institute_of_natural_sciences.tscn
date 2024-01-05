@@ -2,13 +2,13 @@
 
 [ext_resource path="res://sprites/street/flag/flag.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sprites/street/institute_of_natural_sciences.png" type="Texture" id=3]
+[ext_resource path="res://sprites/street/institute_of_natural_sciences.png" type="Texture2D" id=3]
 [ext_resource path="res://scripts/templates/sprite_autoplay.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 105, 40 )
 
-[node name="InstituteOfNaturalSciences" type="Sprite"]
+[node name="InstituteOfNaturalSciences" type="Sprite2D"]
 scale = Vector2( 10, 10 )
 z_index = 4
 z_as_relative = false
@@ -24,7 +24,7 @@ collision_mask = 1024
 position = Vector2( -0.8, -39.2 )
 shape = SubResource( 1 )
 
-[node name="Flag" type="AnimatedSprite" parent="."]
+[node name="Flag" type="AnimatedSprite2D" parent="."]
 position = Vector2( -39.6, -153.6 )
 frames = ExtResource( 1 )
 script = ExtResource( 4 )

@@ -1,15 +1,15 @@
 [gd_resource type="TileSet" load_steps=5 format=2]
 
-[ext_resource path="res://tilemaps/house/overlay.png" type="Texture" id=1]
+[ext_resource path="res://tilemaps/house/overlay.png" type="Texture2D" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 6.01001, 0, 6.0641 )
+points = PackedVector2Array( 0, 0, 16, 0, 16, 6.01001, 0, 6.0641 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 0, 5.90183, 0, 0, 16, 0, 16, 16, 10.2063, 16, 10.1144, 5.98042 )
+points = PackedVector2Array( 0, 5.90183, 0, 0, 16, 0, 16, 16, 10.2063, 16, 10.1144, 5.98042 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 5.89215, 0, 6.08595 )
+points = PackedVector2Array( 0, 0, 16, 0, 16, 5.89215, 0, 6.08595 )
 
 [resource]
 0/name = "overlay.png 0"

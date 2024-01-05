@@ -21,12 +21,12 @@ func write_settings() -> void:
 	var dict = {
 		"music": MUSIC.volume,
 		"fx": FX.volume,
-		"fullscreen": str(OS.window_fullscreen),
-		"vsync": str(OS.vsync_enabled),
+		"fullscreen": str(((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))),
+		"vsync": str((DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)),
 		"lang": TranslationServer.get_locale(),
 		"progress": progress,
 	}
-	fl.store_line(to_json(dict))
+	fl.store_line(JSON.new().stringify(dict))
 	fl.close()
 
 
@@ -45,7 +45,9 @@ func _read_settings() -> void:
 		# Read data
 		var state = fl.open(FILE_PATH, File.READ)
 		assert(state == OK)
-		var json_result = JSON.parse(fl.get_as_text())
+		var test_json_conv = JSON.new()
+		test_json_conv.parse(fl.get_as_text())
+		var json_result = test_json_conv.get_data()
 		if json_result.error == OK:
 			var content = json_result.result
 			_restore(content)
@@ -64,9 +66,9 @@ func _restore(content: Dictionary) -> void:
 	
 	# Graphics
 	if content.has("fullscreen"):
-		OS.window_fullscreen = _str_to_bool(content["fullscreen"])
+		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (_str_to_bool(content["fullscreen"])) else Window.MODE_WINDOWED
 	if content.has("vsync"):
-		OS.vsync_enabled = _str_to_bool(content["vsync"])
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (_str_to_bool(content["vsync"])) else DisplayServer.VSYNC_DISABLED)
 	
 	# Language
 	if content.has("lang"):
@@ -85,6 +87,6 @@ func _str_to_bool(val: String) -> bool:
 func _set_default() -> void:
 	MUSIC.volume = 0
 	FX.volume = 0
-	OS.vsync_enabled = true
-	OS.window_fullscreen = true
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (true) else DisplayServer.VSYNC_DISABLED)
+	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (true) else Window.MODE_WINDOWED
 	TranslationServer.set_locale("en")

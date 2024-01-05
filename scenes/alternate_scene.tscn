@@ -9,7 +9,7 @@
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 1920, 1080 )
+custom_minimum_size = Vector2( 1920, 1080 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -23,20 +23,20 @@ menu_scene_path = "res://scenes/menu/menu.tscn"
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 1920, 1080 )
-custom_constants/margin_top = 150
-custom_constants/margin_left = 250
+custom_minimum_size = Vector2( 1920, 1080 )
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_left = 250
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Console" type="Label" parent="MarginContainer"]
-margin_left = 250.0
-margin_top = 150.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+offset_left = 250.0
+offset_top = 150.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_vertical = 5
-custom_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+theme_override_colors/font_color = Color( 0.172549, 0.172549, 0.172549, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
