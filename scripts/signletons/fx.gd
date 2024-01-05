@@ -6,8 +6,8 @@ extends AudioStreamPlayer
 
 const MAX_VOLUME := 5
 const MIN_VOLUME := -35
-@export (AudioStream) var btn_click_sound
-@export (AudioStream) var dialog_sound
+@export var btn_click_sound: AudioStream
+@export var dialog_sound: AudioStream
 var volume: float: get = _get_volume, set = _set_volume
 var _num := 0
 

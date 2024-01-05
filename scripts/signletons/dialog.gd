@@ -24,7 +24,7 @@ func show_dialog(file_path: String, obj := "", method := "", argv := "") -> void
 	if _read_file(file_path) == false:
 		return
 	# Lock player movement
-	var player_path = STORAGE.get("player_path")
+	var player_path = STORAGE.get_value("player_path")
 	if has_node(player_path):
 		get_node(player_path).lock()
 	# Save arguments
@@ -69,7 +69,7 @@ func hide_dialog():
 	dialog.hide()
 	set_process(false)
 	# Unlock player movement
-	var player_path = STORAGE.get("player_path")
+	var player_path = STORAGE.get_value("player_path")
 	if has_node(player_path):
 		get_node(player_path).unlock()
 	# Call a method if necessary
@@ -89,20 +89,18 @@ func hide_dialog():
 # Try to read the file
 # Returns true if there were no errors
 func _read_file(file_path: String) -> bool:
-	var fl := File.new()
-	var state := fl.open(file_path, File.READ)
-	if state != OK:
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file == null:
 		NOTIFY.show("I can't load the dialog. Please report a bug.")
 		return false
 	# Try to read the file
 	var test_json_conv = JSON.new()
-	test_json_conv.parse(fl.get_as_text())
-	var json_result = test_json_conv.get_data()
-	fl.close()
-	if json_result.error != OK:
+	var err = test_json_conv.parse(file.get_as_text())
+	file.close()
+	if err != OK:
 		NOTIFY.show("Can't parse the file. Please report a bug.")
 		return false
-	_content = json_result.result
+	_content = test_json_conv.data
 	return true
 
 

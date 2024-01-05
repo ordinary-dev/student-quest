@@ -1,4 +1,4 @@
-extends Tween
+extends Node
 
 # Custom scene loader
 # Copyright (c) 2020-2021 PixelTrain
@@ -13,7 +13,7 @@ var last_scene_path: String
 # Load scene by path
 func load_scene(scene_name: String, anim_start := true, anim_end := true) -> void:
 	# Check path
-	var file_exists := File.new().file_exists(scene_name)
+	var file_exists := FileAccess.file_exists(scene_name)
 	if (!file_exists):
 		NOTIFY.show("Can't find scene. Please report a bug.")
 		return
@@ -24,7 +24,7 @@ func load_scene(scene_name: String, anim_start := true, anim_end := true) -> voi
 		await get_tree().create_timer(TIME).timeout
 	
 	# Save player position
-	var player_path = STORAGE.get("player_path")
+	var player_path = STORAGE.get_value("player_path")
 	if has_node(player_path):
 		var player = get_node(player_path)
 		if player.restore_position:
@@ -59,19 +59,13 @@ func _create_color_rect() -> void:
 func _fade_in() -> void:
 	_create_color_rect()
 	var color_rect = UI.get_node("transition")
-	interpolate_property(
-		color_rect, "color",
-		START_COLOR, END_COLOR, TIME, 
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	start()
+	color_rect.color = END_COLOR
 
 
 func _fade_out() -> void:
 	var color_rect = UI.get_node("transition")
-	interpolate_property(
-		color_rect, "color",
-		END_COLOR, START_COLOR, TIME, 
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	start()
+	if color_rect == null:
+		return
+	color_rect.color = START_COLOR
 	await get_tree().create_timer(TIME).timeout
 	UI.remove_child(color_rect)

@@ -8,9 +8,9 @@ const BG_COLOR_ENABLED := "#232323"
 const BG_COLOR_DISABLED := "#303030"
 const SECRET_TEXT := "../.."
 
-@export (CompressedTexture2D) var texture
-@export (String) var chapter_name
-@export (String, FILE, "*.tscn") var path_to_scene
+@export var texture: CompressedTexture2D
+@export var chapter_name: String
+@export_file ("*.tscn") var path_to_scene
 
 var enabled : set = _set_state
 

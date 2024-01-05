@@ -4,10 +4,10 @@ extends CanvasLayer
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (bool) var show_pause_menu : set = _show_pause_menu
-@export (bool) var show_joystick : set = _show_joystick
+@export var show_pause_menu: bool: set = _show_pause_menu
+@export var show_joystick: bool: set = _show_joystick
 # Show joystick on win/mac/linux for debugging
-@export (bool) var force_joystick = false
+@export var force_joystick: bool = false
 @onready var _joystick = $Joystick
 @onready var _pause_menu = $"PauseMenu-UI"
 

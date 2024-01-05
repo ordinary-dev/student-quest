@@ -5,8 +5,8 @@ extends Control
 # Licensed under the GPL-3 License
 
 const DELAY := 0.7
-@export (String, FILE, "*.tscn") var menu_scene_path
-@export (String, FILE, "*.tscn") var alternate_scene_path
+@export_file("*.tscn") var menu_scene_path
+@export_file("*.tscn") var alternate_scene_path
 @onready var _loading_text := $LoadingText
 @onready var _audio_src := $Click
 

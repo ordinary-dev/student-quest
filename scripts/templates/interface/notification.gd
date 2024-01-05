@@ -1,6 +1,6 @@
 extends Control
 
-@export (NodePath) var label_path
+@export var label_path: NodePath
 
 var time = .05
 var text_delay
@@ -22,9 +22,7 @@ func set_label(text : String) -> void:
 
 func hide_self() -> void:
 	hide_anim()
-	yield(get_tree().create_timer(
-		2*y_time + text_delay
-	), "timeout")
+	await get_tree().create_timer(2*y_time + text_delay).timeout
 	UI.get_node("Notifications").remove_child(self)
 
 
@@ -69,11 +67,9 @@ func start_anim() -> void:
 		0, 1, text_delay,
 		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 2*y_time)
 	effect.start()
-	yield(get_tree().create_timer(
-		text_delay + 2*y_time + 1
-	), "timeout")
+	await get_tree().create_timer(text_delay + 2*y_time + 1).timeout
 	hide_self()
 
 
 func _ready() -> void:
-	get_node(label_path).percent_visible = 0
+	get_node(label_path).percent_visible = 0.0

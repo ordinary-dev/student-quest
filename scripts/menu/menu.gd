@@ -5,7 +5,7 @@ extends Control
 # Licensed under the GPL-3 License
 
 # Path to the scene with new game
-@export (String, FILE, "*.tscn") var new_game_scene
+@export_file("*.tscn") var new_game_scene
 # The button that gets the focus
 @onready var new_game_btn := $Left/Column/NewGame
 # Menu sections

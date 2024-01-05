@@ -6,8 +6,8 @@ class_name ChangeUI
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (bool) var show_pause_menu = false
-@export (bool) var show_joystick = false
+@export var show_pause_menu: bool = false
+@export var show_joystick: bool = false
 
 
 func _ready() -> void:

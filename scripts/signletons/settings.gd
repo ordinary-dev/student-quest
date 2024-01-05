@@ -14,9 +14,7 @@ var progress := 1
 
 # Write dictionary to file
 func write_settings() -> void:
-	var fl := File.new()
-	var state = fl.open(FILE_PATH, File.WRITE)
-	assert(state == OK)
+	var file = FileAccess.open(FILE_PATH, FileAccess.WRITE)
 	# Save dictionary as JSON
 	var dict = {
 		"music": MUSIC.volume,
@@ -26,8 +24,7 @@ func write_settings() -> void:
 		"lang": TranslationServer.get_locale(),
 		"progress": progress,
 	}
-	fl.store_line(JSON.new().stringify(dict))
-	fl.close()
+	file.store_line(JSON.stringify(dict))
 
 
 func _ready() -> void:
@@ -35,23 +32,20 @@ func _ready() -> void:
 
 
 func is_file_exist() -> bool:
-	return File.new().file_exists(FILE_PATH)
+	return FileAccess.file_exists(FILE_PATH)
 
 
 # Try to read settings file
 func _read_settings() -> void:
-	var fl := File.new()
-	if fl.file_exists(FILE_PATH):
+	if FileAccess.file_exists(FILE_PATH):
 		# Read data
-		var state = fl.open(FILE_PATH, File.READ)
-		assert(state == OK)
+		var file = FileAccess.open(FILE_PATH, FileAccess.READ)
 		var test_json_conv = JSON.new()
-		test_json_conv.parse(fl.get_as_text())
+		test_json_conv.parse(file.get_as_text())
 		var json_result = test_json_conv.get_data()
 		if json_result.error == OK:
 			var content = json_result.result
 			_restore(content)
-		fl.close()
 	else:
 		_set_default()
 

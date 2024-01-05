@@ -5,9 +5,9 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String, FILE, "*.tscn") var menu_scene
-@export (String, FILE, "*.tscn") var quit_scene
-@export (NodePath) var return_btn
+@export_file("*.tscn") var menu_scene
+@export_file("*.tscn") var quit_scene
+@export var return_btn: NodePath
 
 var enabled := false
 var show_joystick := false
@@ -27,8 +27,8 @@ func switch():
 
 
 func _ready() -> void:
-	assert(File.new().file_exists(menu_scene))
-	assert(File.new().file_exists(quit_scene))
+	assert(FileAccess.file_exists(menu_scene))
+	assert(FileAccess.file_exists(quit_scene))
 	assert(has_node(return_btn))
 	main_container.visible = false
 	background.visible = false

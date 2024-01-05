@@ -28,10 +28,10 @@ var _first_time := true
 
 # Show the dialog on the screen
 func play_dialog(name: String, text: String) -> void:
-	if _tween.is_active():
-		_tween.stop_all()
+	#if _tween.is_running():
+	#	_tween.stop_all()
 	_name_label.text = name
-	_text_label.percent_visible = 0
+	_text_label.visible_ratio = 0.0
 	_text_label.text = text
 	if _first_time:
 		_play(true)
@@ -41,7 +41,7 @@ func play_dialog(name: String, text: String) -> void:
 
 
 # Destroy this object
-func hide() -> void:
+func hide_dialog() -> void:
 	anim_template(LEFT_OFFSET_END, LEFT_OFFSET_START, 
 			RIGHT_OFFSET_END, RIGHT_OFFSET_START, 
 			true, false)
@@ -61,22 +61,9 @@ func anim_template(left_from: int, left_to: int,
 			animate_form: bool, text_anim := true) -> void:
 	if animate_form:
 		for obj in [_border, _body]:
-			_tween.interpolate_property(
-				obj, "offset_left",
-				left_from, left_to, ANIM_DURATION,
-				Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-			)
-			_tween.interpolate_property(
-				obj, "offset_right",
-				right_from, right_to, ANIM_DURATION,
-				Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-			)
-		_tween.start()
+			obj.offset_left = left_to
+			obj.offset_right = right_to
 		if text_anim:
 			await get_tree().create_timer(ANIM_DURATION).timeout
 	if text_anim:
-		_tween.interpolate_property(
-			_text_label, "percent_visible",
-			0, 1, len(_text_label.text) / TEXT_ANIM_SPEED,
-			Tween.TRANS_LINEAR)
-		_tween.start()
+		_text_label.visible_ratio = 1.0
