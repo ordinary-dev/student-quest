@@ -4,9 +4,9 @@ extends Node
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String, FILE, "*.tscn") var scene_path 
-@export (bool) var fade_in = true
-@export (bool) var fade_out = true
+@export_file("*.tscn") var scene_path 
+@export var fade_in: bool = true
+@export var fade_out: bool = true
 
 
 # Don't edit the function name

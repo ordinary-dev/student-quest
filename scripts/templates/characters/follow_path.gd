@@ -16,15 +16,15 @@ const MAX_DISTANCE := 250
 # Lower is faster...
 const ANIMATION_SPEED := 0.4
 
-@export (NodePath) var line_path
-@export (bool) var wait_for_player = true
-@export (bool) var autostart = true
-@export (bool) var call_function = false
-@export (NodePath) var obj
-@export (String) var fun = "function"
-@export (String) var arg = ""
-@export (float) var call_delay = 0
-@export (int) var speed := 380
+@export_node_path var line_path
+@export var wait_for_player: bool = true
+@export var autostart: bool = true
+@export var call_function: bool = false
+@export_node_path var obj
+@export var fun: String = "function"
+@export var arg: String = ""
+@export var call_delay: float = 0
+@export var speed: int = 380
 
 var _player: CharacterBody2D
 var _target: Vector2
@@ -136,7 +136,7 @@ func _go_down(delta: float, blocked: bool) -> void:
 
 
 func _ready() -> void:
-	var player_path = STORAGE.get("player_path")
+	var player_path = STORAGE.get_value("player_path")
 	_player = get_node(player_path)
 	_line2d = get_node(line_path)
 	_target = _line2d.points[_index]

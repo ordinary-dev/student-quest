@@ -4,7 +4,7 @@ extends Node2D
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (bool) var enable_light = true: set = _set_state
+@export var enable_light: bool = true: set = _set_state
 @onready var _light_source = $LightSource
 
 

@@ -63,6 +63,6 @@ func _get_volume() -> float:
 	return volume
 
 
-func _destroy(name: int) -> void:
-	var player = get_node(str(name))
+func _destroy(idx: int) -> void:
+	var player = get_node(str(idx))
 	remove_child(player)

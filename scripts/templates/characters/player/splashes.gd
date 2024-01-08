@@ -19,14 +19,14 @@ func enable_water() -> void:
 	_number_of_requests += 1
 	if !hide_water and _number_of_requests == 1:
 		visible = true
-		playing = true
+		play()
 
 
 func disable_water() -> void:
 	_number_of_requests -= 1
 	if _number_of_requests == 0:
 		visible = false
-		playing = false
+		stop()
 
 
 func _set_water_visibility(val):
@@ -34,7 +34,7 @@ func _set_water_visibility(val):
 	if !hide_water:
 		if _number_of_requests == 1:
 			visible = true
-			playing = true
+			play()
 	else:
 		visible = false
-		playing = false
+		stop()

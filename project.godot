@@ -129,6 +129,7 @@ translations=PackedStringArray("res://translations/chapters.en.translation", "re
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0

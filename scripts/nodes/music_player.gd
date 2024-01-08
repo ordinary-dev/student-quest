@@ -5,12 +5,12 @@ class_name MusicPlayer
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String, FILE, "*.ogg") var file
-@export (float, 0.0, 5.0) var delay = 0.0
+@export_file("*.ogg") var file
+@export_range(0.0, 5.0) var delay: float = 0.0
 
 
 func _ready() -> void:
-	assert(File.new().file_exists(file))
+	assert(FileAccess.file_exists(file))
 	if delay > 0:
 		await get_tree().create_timer(delay).timeout
 	MUSIC.play_sound(file)

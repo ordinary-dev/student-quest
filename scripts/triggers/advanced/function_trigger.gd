@@ -4,8 +4,8 @@ extends "res://scripts/triggers/advanced/base.gd"
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (NodePath) var object_name
-@export (String) var function_name
+@export_node_path var object_name
+@export var function_name: String
 
 
 func action() -> void:

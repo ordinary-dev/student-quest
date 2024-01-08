@@ -5,7 +5,7 @@ extends Node2D
 # Licensed under the GPL-3 License
 
 const DELAY := 3
-@export var next_scene # (String, FILE, "*.tscn")
+@export_file("*.tscn") var next_scene
 @onready var _audio := $TrainSound
 
 

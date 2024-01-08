@@ -1,29 +1,23 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://bppxq74um4qto"]
 
-[ext_resource path="res://sprites/rector/bookcase_2.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://jtvjqjwb7fww" path="res://sprites/rector/bookcase_2.png" id="1"]
 
-
-
-
-
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 40, 32 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(80, 64)
 
 [node name="Bookcase2" type="Sprite2D"]
-scale = Vector2( 6, 6 )
 z_index = 2
-texture = ExtResource( 1 )
-offset = Vector2( 0, -8 )
+scale = Vector2(6, 6)
+texture = ExtResource("1")
+offset = Vector2(0, -8)
 
 [node name="BookCaseCollider" type="StaticBody2D" parent="."]
 visible = false
-position = Vector2( 0, -5.33333 )
-scale = Vector2( 0.166667, 0.166667 )
-collision_layer = 0
-collision_mask = 1024
+position = Vector2(0, -5.33333)
+scale = Vector2(0.166667, 0.166667)
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape2D" parent="BookCaseCollider"]
-position = Vector2( 1.90735e-06, 3.8147e-06 )
 z_index = 3
-shape = SubResource( 1 )
+position = Vector2(1.90735e-06, 3.8147e-06)
+shape = SubResource("1")

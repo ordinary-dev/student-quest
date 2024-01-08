@@ -1,25 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://co2n1p2q45wne"]
 
-[ext_resource path="res://sprites/rector/table_1.png" type="Texture2D" id=1]
-
-
-
-
-
-
+[ext_resource type="Texture2D" uid="uid://csk5ies22xidg" path="res://sprites/rector/table_1.png" id="1"]
 
 [node name="Table3" type="Sprite2D"]
 light_mask = 2
-scale = Vector2( 6, 6 )
 z_index = 4
-texture = ExtResource( 1 )
-offset = Vector2( 0, -7 )
+scale = Vector2(6, 6)
+texture = ExtResource("1")
+offset = Vector2(0, -7)
 
 [node name="Collider" type="StaticBody2D" parent="."]
 visible = false
-position = Vector2( 0, -6.66667 )
-collision_layer = 0
-collision_mask = 1024
+position = Vector2(0, -6.66667)
+collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collider"]
-polygon = PackedVector2Array( -5.02843, 6.90096, 4.90187, 6.94268, 7.94772, 0.934433, 7.98944, -2.02797, 6.94635, -4.03072, -6.94772, -3.94727, -7.90738, -2.06969, -7.99083, 0.850983 )
+polygon = PackedVector2Array(-5.02843, 6.90096, 4.90187, 6.94268, 7.94772, 0.934433, 7.98944, -2.02797, 6.94635, -4.03072, -6.94772, -3.94727, -7.90738, -2.06969, -7.99083, 0.850983)

@@ -5,7 +5,7 @@ class_name StageUnlocker
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (int) var subchapter_id = 1
+@export var subchapter_id: int = 1
 
 
 func _ready() -> void:

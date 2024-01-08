@@ -5,10 +5,10 @@ class_name AutomaticSceneLoader
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String, FILE, "*.tscn") var next_scene
-@export (float, 0.0, 7.0) var delay = 0.0
-@export (bool) var transition_in = true
-@export (bool) var transition_out = true
+@export_file("*.tscn") var next_scene
+@export_range(0.0, 7.0) var delay: float = 0.0
+@export var transition_in: bool = true
+@export var transition_out: bool = true
 
 
 func _ready() -> void:

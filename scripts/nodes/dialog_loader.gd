@@ -5,23 +5,23 @@ class_name DialogLoader
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String, FILE, "*.json") var dialog_path
+@export_file("*.json") var dialog_path
 
-@export (bool) var enable_delay = false
-@export (float) var delay = 2.0
+@export var enable_delay: bool = false
+@export var delay: float = 2.0
 
-@export (bool) var load_scene = false
-@export (String, FILE, "*.tscn") var scene_path
-@export (float) var loading_delay = 0.0
-@export (bool) var fade_in = true
-@export (bool) var fade_out = true
+@export var load_scene: bool = false
+@export_file ("*.tscn") var scene_path
+@export var loading_delay: float = 0.0
+@export var fade_in: bool = true
+@export var fade_out: bool = true
 
-@export (bool) var show_once = false
-@export (String) var uid = "id"
+@export var show_once: bool = false
+@export var uid: String = "id"
 
-@export (bool) var call_function = false
-@export (NodePath) var obj
-@export (String) var fun
+@export var call_function: bool = false
+@export var obj: NodePath
+@export var fun: String
 
 
 func load_next_scene() -> void:

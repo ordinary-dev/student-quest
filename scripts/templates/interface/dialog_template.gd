@@ -17,7 +17,6 @@ var _first_time := true
 
 # For other scripts
 @onready var next_button := $Button
-@onready var _tween := $Tween
 # Animated objects
 @onready var _border := $MarginContainer/Border
 @onready var _body := $MarginContainer/Body
@@ -27,10 +26,8 @@ var _first_time := true
 
 
 # Show the dialog on the screen
-func play_dialog(name: String, text: String) -> void:
-	#if _tween.is_running():
-	#	_tween.stop_all()
-	_name_label.text = name
+func play_dialog(character_name: String, text: String) -> void:
+	_name_label.text = character_name
 	_text_label.visible_ratio = 0.0
 	_text_label.text = text
 	if _first_time:

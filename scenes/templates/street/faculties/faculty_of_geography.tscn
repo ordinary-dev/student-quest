@@ -1,34 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://bgb6ntmwusqck"]
 
-[ext_resource path="res://sprites/street/faculty_of_geography.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://6woky7k3qx7m" path="res://sprites/street/faculty_of_geography.png" id="1"]
 
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(142.546, 303.41)
 
-
-
-
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 71.273, 151.705 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 3.19998, 0.799957 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(6.39996, 1.59991)
 
 [node name="FacultyOfGeography" type="Sprite2D"]
-scale = Vector2( 10, 10 )
 z_index = 4
 z_as_relative = false
-texture = ExtResource( 1 )
-offset = Vector2( -14, -8.841 )
+scale = Vector2(10, 10)
+texture = ExtResource("1")
+offset = Vector2(-14, -8.841)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
-collision_layer = 0
-collision_mask = 1024
+collision_mask = 0
 
 [node name="MainCollider" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -4.00008, -10.4 )
-shape = SubResource( 1 )
+position = Vector2(-4.00008, -10.4)
+shape = SubResource("1")
 
 [node name="PoleCollider" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -92.8, -0.800014 )
-shape = SubResource( 2 )
+position = Vector2(-92.8, -0.800014)
+shape = SubResource("2")

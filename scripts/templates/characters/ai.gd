@@ -15,12 +15,12 @@ const SPRITE_PATHS := [
 	"res://sprites/characters/npc_3.png",
 ]
 
-@export (NodePath) var ai_config_path
+@export_node_path var ai_config_path
 
 var _path: PackedVector2Array
 var _minpos: Vector2
 var _maxpos: Vector2
-var _nav_2d: Navigation2D
+var _nav_2d: Node
 var _current_dir = Directions.UNSET
 var _anim_playing := false
 var _cfg
@@ -78,7 +78,7 @@ func _process(delta) -> void:
 		# The character approached the destination point
 		else:
 			position = _path[0]
-			_path.remove(0)
+			_path.remove_at(0)
 	# The character has reached the last point
 	else:
 		_ap.stop()
@@ -94,8 +94,8 @@ func _generate_path() -> void:
 	var x := randf_range(_minpos.x, _maxpos.x)
 	var y := randf_range(_minpos.y, _maxpos.y)
 	var point := Vector2(x, y)
-	_path = _nav_2d.get_simple_path(position, point)
-	set_process(true)
+	#_path = _nav_2d.get_simple_path(position, point)
+	#set_process(true)
 
 
 # Stop when a player approaches

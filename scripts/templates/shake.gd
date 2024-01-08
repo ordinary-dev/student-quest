@@ -2,9 +2,9 @@ extends Camera2D
 
 # Camera shake
 
-@export (float) var max_diff = 3
+@export var max_diff: float = 3
 # Offset every frame
-@export (float) var opf = 0.8
+@export var opf: float = 0.8
 var _pos: Vector2
 
 

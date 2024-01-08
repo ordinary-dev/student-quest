@@ -14,14 +14,13 @@ var last_scene_path: String
 func load_scene(scene_name: String, anim_start := true, anim_end := true) -> void:
 	# Check path
 	var file_exists := FileAccess.file_exists(scene_name)
-	if (!file_exists):
+	if !file_exists:
 		NOTIFY.show("Can't find scene. Please report a bug.")
 		return
 	
 	# Fade in
 	if anim_start:
 		_fade_in()
-		await get_tree().create_timer(TIME).timeout
 	
 	# Save player position
 	var player_path = STORAGE.get_value("player_path")
@@ -60,6 +59,7 @@ func _fade_in() -> void:
 	_create_color_rect()
 	var color_rect = UI.get_node("transition")
 	color_rect.color = END_COLOR
+	await get_tree().create_timer(TIME).timeout
 
 
 func _fade_out() -> void:

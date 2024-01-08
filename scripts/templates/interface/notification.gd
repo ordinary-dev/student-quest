@@ -5,7 +5,7 @@ extends Control
 var time = .05
 var text_delay
 
-@onready var effect = $Tween
+
 @onready var mc = $MainContainer
 
 const x_from := 550
@@ -27,49 +27,32 @@ func hide_self() -> void:
 
 
 func hide_anim() -> void:
-	effect.interpolate_property(
-		get_node(label_path), "percent_visible",
-		1, 0, text_delay,
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT
-	)
-	effect.interpolate_property(
-		mc, "size",
-		Vector2(x_to, y_to), 
-		Vector2(x_from, y_to), y_time,
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
-		text_delay
-	)
-	effect.interpolate_property(
-		mc, "size",
-		Vector2(x_from, y_to), 
-		Vector2(x_from, y_from), y_time,
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, 
-		text_delay + y_time
-	)
-	effect.start()
+	var tween = create_tween()
+	tween.tween_property(
+		get_node(label_path), "visible_ratio", 0.0, text_delay,
+	).from(1.0)
+	tween.tween_property(
+		mc, "size", Vector2(x_from, y_to), y_time,
+	).from(Vector2(x_to, y_to))
+	tween.tween_property(
+		mc, "size", Vector2(x_from, y_from), y_time,
+	).from(Vector2(x_from, y_to))
 
 
 func start_anim() -> void:
-	effect.interpolate_property(
-		mc, "size",
-		Vector2(x_from, y_from), 
-		Vector2(x_from, y_to), y_time,
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT
-	)
-	effect.interpolate_property(
-		mc, "size",
-		Vector2(x_from, y_to), 
-		Vector2(x_to, y_to), y_time,
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT, y_time
-	)
-	effect.interpolate_property(
-		get_node(label_path), "percent_visible",
-		0, 1, text_delay,
-		Tween.TRANS_LINEAR, Tween.EASE_IN_OUT, 2*y_time)
-	effect.start()
+	var tween = create_tween()
+	tween.tween_property(
+		mc, "size", Vector2(x_from, y_to), y_time,
+	).from(Vector2(x_from, y_from))
+	tween.tween_property(
+		mc, "size", Vector2(x_to, y_to), y_time,
+	).from(Vector2(x_from, y_to))
+	tween.tween_property(
+		get_node(label_path), "visible_ratio", 1.0, text_delay,
+	).from(0.0)
 	await get_tree().create_timer(text_delay + 2*y_time + 1).timeout
 	hide_self()
 
 
 func _ready() -> void:
-	get_node(label_path).percent_visible = 0.0
+	get_node(label_path).visible_ratio = 0.0

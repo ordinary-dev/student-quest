@@ -1,28 +1,25 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=2]
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dmfs0pkx4ia54"]
 
-[ext_resource path="res://sprites/street/fountain/fountain_atlas.png" type="Texture2D" id=1]
+[ext_resource type="Texture2D" uid="uid://ck13ud1bdjwl3" path="res://sprites/street/fountain/fountain_atlas.png" id="1"]
 
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 15, 16)
 
-
-
-
-
-
-
-
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 15, 16 )
-
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 15, 0, 15, 16 )
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("1")
+region = Rect2(15, 0, 15, 16)
 
 [resource]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("1")
+}, {
+"duration": 1.0,
+"texture": SubResource("2")
+}],
 "loop": true,
-"name": "default",
+"name": &"default",
 "speed": 4.0
-} ]
+}]

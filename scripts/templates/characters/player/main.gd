@@ -8,11 +8,13 @@ extends CharacterBody2D
 # State types
 enum States {DOWN, UP, LEFT, RIGHT}
 enum Sprites {MAIN, NEO}
-@export (Sprites) var sprite_sheet = Sprites.MAIN: set = set_sprite
+@export var sprite_sheet: Sprites = Sprites.MAIN: set = set_sprite
 # Sprite frame numbers
-enum Frames {DOWN_1, UP_1, SIDE_1,
-		DOWN_2, UP_2, SIDE_2,
-		DOWN_STILL, UP_STILL, SIDE_STILL}
+enum Frames {
+	DOWN_1, UP_1, SIDE_1,
+	DOWN_2, UP_2, SIDE_2,
+	DOWN_STILL, UP_STILL, SIDE_STILL,
+}
 
 # Movement
 const SPEED := 120
@@ -22,14 +24,14 @@ const FRICTION := 0.65
 const CAMERA_PATH := "Camera2D"
 const SPRITE_PATH := "Sprite2D"
 
-@export (States) var default_state = States.UP: set = _set_state
-@export (bool) var restore_position = false
-@export (bool) var locked = false
-@export (int) var camera_limit_left = -10000000: set = _set_cl_left
-@export (int) var camera_limit_top = -10000000: set = _set_cl_top
-@export (int) var camera_limit_right = 10000000: set = _set_cl_right
-@export (int) var camera_limit_bottom = 10000000: set = _set_cl_bottom
-@export (float) var camera_zoom = 0.6: set = _set_camera_zoom
+@export var default_state: States = States.UP: set = _set_state
+@export var restore_position: bool = false
+@export var locked: bool = false
+@export var camera_limit_left: int = -10000000: set = _set_cl_left
+@export var camera_limit_top: int = -10000000: set = _set_cl_top
+@export var camera_limit_right: int = 10000000: set = _set_cl_right
+@export var camera_limit_bottom: int = 10000000: set = _set_cl_bottom
+@export var camera_zoom: float = 0.6: set = _set_camera_zoom
 
 # Get input from joystick
 # Otherwise use the keyboard
