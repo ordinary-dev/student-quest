@@ -1,159 +1,130 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=12 format=3 uid="uid://c36px3wtawq70"]
 
-[ext_resource path="res://scripts/menu/menu.gd" type="Script" id=1]
-[ext_resource path="res://scenes/menu/chapters/load.tscn" type="PackedScene" id=3]
-[ext_resource path="res://fonts/press_start_2p/press_start_2p_large.tres" type="FontFile" id=4]
-[ext_resource path="res://scenes/templates/interface/button.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/menu/settings/settings.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/menu/confirmation.tscn" type="PackedScene" id=7]
+[ext_resource type="Script" path="res://scripts/menu/menu.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/menu/chapters/load.tscn" id="3"]
+[ext_resource type="FontFile" path="res://fonts/press_start_2p/press_start_2p_large.tres" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/templates/interface/button.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/menu/settings/settings.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/menu/confirmation.tscn" id="7"]
 
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.0235294, 0.0235294, 0.0235294, 1)
 
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(0.0509804, 0.0509804, 0.0509804, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.105882, 0.105882, 0.105882, 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.0509804, 0.0509804, 0.0509804, 1 )
 
 [node name="Menu" type="HBoxContainer"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 new_game_scene = "res://scenes/menu/new_game.tscn"
 
 [node name="Left" type="MarginContainer" parent="."]
-offset_right = 960.0
-offset_bottom = 1080.0
-custom_minimum_size = Vector2( 960, 0 )
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_right = 100
-theme_override_constants/margin_top = 150
 theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 150
 
 [node name="Column" type="VBoxContainer" parent="Left"]
-modulate = Color( 0.992157, 0.843137, 0.823529, 0.886275 )
-offset_left = 100.0
-offset_top = 150.0
-offset_right = 860.0
-offset_bottom = 930.0
+modulate = Color(0.992157, 0.843137, 0.823529, 0.886275)
+layout_mode = 2
 size_flags_horizontal = 3
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="GameName" type="Label" parent="Left/Column"]
-offset_right = 760.0
-offset_bottom = 100.0
-custom_minimum_size = Vector2( 0, 100 )
-theme_override_fonts/font = ExtResource( 4 )
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4")
 text = "Student quest"
-align = 1
 
-[node name="NewGame" parent="Left/Column" instance=ExtResource( 5 )]
-offset_top = 104.0
-offset_right = 760.0
-offset_bottom = 270.0
+[node name="NewGame" parent="Left/Column" instance=ExtResource("5")]
+layout_mode = 2
+size_flags_vertical = 3
 focus_neighbor_bottom = NodePath("../BtnLoad")
 focus_mode = 1
-size_flags_vertical = 3
-theme_override_styles/hover = SubResource( 1 )
-theme_override_styles/pressed = SubResource( 2 )
-theme_override_styles/focus = SubResource( 3 )
-theme_override_styles/disabled = SubResource( 4 )
-theme_override_styles/normal = SubResource( 5 )
-focus_mode = 1
+theme_override_styles/normal = SubResource("5")
+theme_override_styles/hover = SubResource("1")
+theme_override_styles/pressed = SubResource("2")
+theme_override_styles/disabled = SubResource("4")
+theme_override_styles/focus = SubResource("3")
 text = "NEW_GAME"
 
-[node name="LoadGame" parent="Left/Column" instance=ExtResource( 5 )]
-offset_top = 274.0
-offset_right = 760.0
-offset_bottom = 440.0
+[node name="LoadGame" parent="Left/Column" instance=ExtResource("5")]
+layout_mode = 2
+size_flags_vertical = 3
 focus_neighbor_top = NodePath("../BtnNew")
 focus_neighbor_bottom = NodePath("../BtnSettings")
-size_flags_vertical = 3
-theme_override_styles/hover = SubResource( 1 )
-theme_override_styles/pressed = SubResource( 2 )
-theme_override_styles/focus = SubResource( 3 )
-theme_override_styles/disabled = SubResource( 4 )
-theme_override_styles/normal = SubResource( 5 )
+theme_override_styles/normal = SubResource("5")
+theme_override_styles/hover = SubResource("1")
+theme_override_styles/pressed = SubResource("2")
+theme_override_styles/disabled = SubResource("4")
+theme_override_styles/focus = SubResource("3")
 text = "LOAD_GAME"
 
-[node name="Settings" parent="Left/Column" instance=ExtResource( 5 )]
-offset_top = 444.0
-offset_right = 760.0
-offset_bottom = 610.0
+[node name="Settings" parent="Left/Column" instance=ExtResource("5")]
+layout_mode = 2
+size_flags_vertical = 3
 focus_neighbor_top = NodePath("../BtnLoad")
 focus_neighbor_right = NodePath("../../../Right/Settings")
 focus_neighbor_bottom = NodePath("../BtnQuit")
-size_flags_vertical = 3
-theme_override_styles/hover = SubResource( 1 )
-theme_override_styles/pressed = SubResource( 2 )
-theme_override_styles/focus = SubResource( 3 )
-theme_override_styles/disabled = SubResource( 4 )
-theme_override_styles/normal = SubResource( 5 )
+theme_override_styles/normal = SubResource("5")
+theme_override_styles/hover = SubResource("1")
+theme_override_styles/pressed = SubResource("2")
+theme_override_styles/disabled = SubResource("4")
+theme_override_styles/focus = SubResource("3")
 text = "SETTINGS"
 
-[node name="Quit" parent="Left/Column" instance=ExtResource( 5 )]
-offset_top = 614.0
-offset_right = 760.0
-offset_bottom = 780.0
+[node name="Quit" parent="Left/Column" instance=ExtResource("5")]
+layout_mode = 2
+size_flags_vertical = 3
 focus_neighbor_top = NodePath("../BtnSettings")
 focus_neighbor_right = NodePath("../../../Right/Confirm")
-size_flags_vertical = 3
-theme_override_styles/hover = SubResource( 1 )
-theme_override_styles/pressed = SubResource( 2 )
-theme_override_styles/focus = SubResource( 3 )
-theme_override_styles/disabled = SubResource( 4 )
-theme_override_styles/normal = SubResource( 5 )
+theme_override_styles/normal = SubResource("5")
+theme_override_styles/hover = SubResource("1")
+theme_override_styles/pressed = SubResource("2")
+theme_override_styles/disabled = SubResource("4")
+theme_override_styles/focus = SubResource("3")
 text = "QUIT"
 
 [node name="Right" type="MarginContainer" parent="."]
-offset_left = 964.0
-offset_right = 1924.0
-offset_bottom = 1080.0
-custom_minimum_size = Vector2( 960, 0 )
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_right = 100
 theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 150
 
-[node name="LoadMenu" parent="Right" instance=ExtResource( 3 )]
-offset_top = 150.0
-offset_right = 860.0
-offset_bottom = 930.0
+[node name="LoadMenu" parent="Right" instance=ExtResource("3")]
+layout_mode = 2
 
-[node name="Settings" parent="Right" instance=ExtResource( 6 )]
+[node name="Settings" parent="Right" instance=ExtResource("6")]
 visible = false
-offset_top = 150.0
-offset_bottom = 930.0
+layout_mode = 2
 
-[node name="Confirmation" parent="Right" instance=ExtResource( 7 )]
+[node name="Confirmation" parent="Right" instance=ExtResource("7")]
 visible = false
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_top = 150.0
-offset_right = 860.0
-offset_bottom = 930.0
+layout_mode = 2
+
 [connection signal="pressed" from="Left/Column/NewGame" to="." method="_new_game"]
 [connection signal="pressed" from="Left/Column/LoadGame" to="." method="_load_game"]
 [connection signal="pressed" from="Left/Column/Settings" to="." method="_settings"]

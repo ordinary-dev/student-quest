@@ -37,17 +37,18 @@ func is_file_exist() -> bool:
 
 # Try to read settings file
 func _read_settings() -> void:
-	if FileAccess.file_exists(FILE_PATH):
-		# Read data
-		var file = FileAccess.open(FILE_PATH, FileAccess.READ)
-		var test_json_conv = JSON.new()
-		test_json_conv.parse(file.get_as_text())
-		var json_result = test_json_conv.get_data()
-		if json_result.error == OK:
-			var content = json_result.result
-			_restore(content)
-	else:
+	if not FileAccess.file_exists(FILE_PATH):
 		_set_default()
+	
+	# Read data
+	var file = FileAccess.open(FILE_PATH, FileAccess.READ)
+	var test_json_conv = JSON.new()
+	var err = test_json_conv.parse(file.get_as_text())
+	if err != OK:
+		_set_default()
+	
+	var content = test_json_conv.get_data()
+	_restore(content)
 
 
 # Restore existing values from json file
