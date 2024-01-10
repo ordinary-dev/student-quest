@@ -8,7 +8,7 @@ extends Control
 const TIME := ["0:00", "6:00", "12:00", "18:00"]
 const REPEAT := 3
 const DELAY := 0.3
-@export (String, FILE, "*.tscn") var next_scene
+@export_file("*.tscn") var next_scene
 @onready var _label := $Label
 
 

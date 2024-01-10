@@ -26,7 +26,7 @@ func show_dialog(file_path: String, obj := "", method := "", argv := "") -> void
 	# Lock player movement
 	var player_path = STORAGE.get_value("player_path")
 	if has_node(player_path):
-		get_node(player_path).lock()
+		get_node(player_path).lock_movement()
 	# Save arguments
 	if obj != "" and method != "":
 		_call_fnc = true
@@ -59,8 +59,8 @@ func show_next() -> void:
 	# Next phrase is last
 	if _index == len(_content):
 		var btn = dialog.next_button
-		btn.disconnect("pressed", Callable(self, "show_next"))
-		btn.connect("pressed", Callable(self, "hide_dialog"))
+		#btn.disconnect("pressed", Callable(self, "show_next"))
+		#btn.connect("pressed", Callable(self, "hide_dialog"))
 
 
 func hide_dialog():
@@ -121,7 +121,7 @@ func _create_dialog_obj() -> void:
 	var tmp = DIALOG_SCENE.instantiate()
 	tmp.name = "dialog"
 	UI.add_child(tmp)
-	UI.get_node("dialog").next_button.connect("pressed", Callable(self, "show_next"))
+	#UI.get_node("dialog").next_button.connect("pressed", Callable(self, "show_next"))
 
 
 func _process(_delta) -> void:

@@ -10,9 +10,9 @@ extends Node2D
 const NEO_PATH := "Node2D/Neo"
 const LIGHT_PATH := "PointLight2D"
 const COMPUTER_PATH := "Computer"
-@export (bool) var show_neo = false: set = _set_neo_visibility
-@export (bool) var enable_light = true: set = _set_light_visibility
-@export (bool) var show_computer = true: set = _set_computer_visibility
+@export var show_neo: bool = false: set = _set_neo_visibility
+@export var enable_light: bool = true: set = _set_light_visibility
+@export var show_computer: bool = true: set = _set_computer_visibility
 
 
 func _set_neo_visibility(val: bool) -> void:

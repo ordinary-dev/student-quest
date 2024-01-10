@@ -3,7 +3,7 @@ extends Node2D
 # Turns off the light without animation
 # and loads the scene
 
-@export (String, FILE, "*.tscn") var scene_path
+@export_file("*.tscn") var scene_path
 @onready var _background := $Background
 
 

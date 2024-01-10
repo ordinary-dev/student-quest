@@ -6,15 +6,15 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String, FILE, "*.tscn") var next_scene_path
-@export (String, FILE, "*.tscn") var phone_scene
-@export (String, FILE, "*.tscn") var commandant_scene
+@export_file("*.tscn") var next_scene_path
+@export_file("*.tscn") var phone_scene
+@export_file("*.tscn") var commandant_scene
 @onready var _buttons := $Buttons
 
 
 func _ready() -> void:
-	var sv_phone: String = STORAGE.get("sv_phone")
-	var sv_commandant: String = STORAGE.get("sv_commandant")
+	var sv_phone: String = STORAGE.get_value("sv_phone")
+	var sv_commandant: String = STORAGE.get_value("sv_commandant")
 	
 	# Has the phone been checked?
 	if sv_phone != "yes":

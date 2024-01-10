@@ -5,7 +5,7 @@ extends Button
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String) var label : set = _set_label
+@export var label: String : set = _set_label
 
 
 func _set_label(val: String) -> void:

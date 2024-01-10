@@ -4,8 +4,8 @@ extends Node2D
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String) var prop
-@export (String) var value
+@export var prop: String
+@export var value: String
 
 
 func _ready() -> void:

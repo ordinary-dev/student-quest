@@ -5,7 +5,7 @@ class_name PoliceOfficerConfig
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (NodePath) var nav_node = NodePath("../Navigation2D")
-@export (NodePath) var upper_left_node
-@export (NodePath) var bottom_right_node
-@export (String, FILE, "*.tscn") var restart_scene
+@export_node_path var nav_node = NodePath("../Navigation2D")
+@export_node_path var upper_left_node
+@export_node_path var bottom_right_node
+@export_file("*.tscn") var restart_scene

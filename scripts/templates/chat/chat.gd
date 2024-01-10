@@ -8,9 +8,9 @@ extends Control
 const MIN_DELAY := 1
 const MAX_DELAY := 3
 
-@export (String) var title = "CHAT"
-@export (String, FILE, "*.tscn") var next_scene_path
-@export (Array, String) var messages
+@export var title: String = "CHAT"
+@export_file ("*.tscn") var next_scene_path
+@export var messages: Array
 
 var _message = load("res://scenes/templates/chat/message.tscn")
 @onready var _container := $VBoxContainer/BodyBackground/Container

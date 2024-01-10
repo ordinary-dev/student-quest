@@ -5,8 +5,8 @@ extends Sprite2D
 const DELAY := 30
 const SPEED := 250
 const MAX_X_POS := 600
-@export (String, FILE, "*.json") var dialog_path
-@export (String, FILE, "*.tscn") var scene_path
+@export_file("*.json") var dialog_path
+@export_file("*.tscn") var scene_path
 var _current_frame := 0
 @onready var _neo = $"../Neo"
 

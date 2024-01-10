@@ -7,7 +7,7 @@ extends Sprite2D
 const ANIM_SPEED = 50
 const DISTANCE = 500
 const SPEED = 290
-@export (NodePath) var player_path
+@export_node_path var player_path
 var _player
 var _frame_num = 0
 

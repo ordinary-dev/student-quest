@@ -4,7 +4,7 @@ class_name Notification
 # Simple script to show a
 # notification when loading a scene
 
-@export (String) var text
+@export var text: String
 
 
 func _ready() -> void:

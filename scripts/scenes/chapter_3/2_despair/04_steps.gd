@@ -1,7 +1,7 @@
 extends Node2D
 
-@export (String, FILE, "*.tscn") var room_scene
-@export (String, FILE, "*.tscn") var basement_scene
+@export_file("*.tscn") var room_scene
+@export_file("*.tscn") var basement_scene
 
 
 func room() -> void:

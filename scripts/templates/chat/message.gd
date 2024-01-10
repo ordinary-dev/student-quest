@@ -4,7 +4,7 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String) var text
+@export var text: String
 @onready var _label = $Background/MarginContainer/MessageText
 
 

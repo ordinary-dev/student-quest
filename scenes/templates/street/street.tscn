@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://b0qa8mlexwm16" path="res://scenes/templates/plants/tree_1.tscn" id="28"]
 [ext_resource type="PackedScene" uid="uid://boqqcm5bgumm1" path="res://scenes/templates/plants/bush_1.tscn" id="29"]
 [ext_resource type="PackedScene" uid="uid://6ci61elv1k5l" path="res://scenes/templates/characters/player.tscn" id="30"]
-[ext_resource type="PackedScene" path="res://scenes/triggers/advanced/function_trigger.tscn" id="31"]
+[ext_resource type="PackedScene" uid="uid://brj8gkoicn5o0" path="res://scenes/triggers/advanced/function_trigger.tscn" id="31"]
 [ext_resource type="PackedScene" uid="uid://dms7ir753l4fx" path="res://scenes/triggers/label.tscn" id="32"]
 [ext_resource type="PackedScene" path="res://scenes/templates/water/water_sprite.tscn" id="33"]
 [ext_resource type="PackedScene" path="res://scenes/templates/streetlight.tscn" id="34"]
@@ -2467,7 +2467,7 @@ position = Vector2(-96.8873, 232.846)
 position = Vector2(-313, 2363)
 camera_limit_right = 8120
 camera_limit_bottom = 10040
-camera_zoom = 1.0
+camera_zoom = 1.4
 
 [node name="Gardener" type="Sprite2D" parent="Node2D"]
 z_index = 4

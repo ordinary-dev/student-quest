@@ -5,9 +5,9 @@ extends Node2D
 # Licensed under the GPL-3 License
 
 const DIST := 600
-@export (String, FILE, "*.tscn") var scene_path
-@export (String, FILE, "*.json") var dialog_path
-@export (String, FILE, "*.json") var dialog_path_2
+@export_file("*.tscn") var scene_path
+@export_file("*.json") var dialog_path
+@export_file("*.json") var dialog_path_2
 var _dialog_shown := false
 var _player_path: String
 var _player: CharacterBody2D
@@ -38,7 +38,7 @@ func teleport() -> void:
 	# Disable AI
 	_stranger.set_process(false)
 	# Get path to player
-	_player = get_node(STORAGE.get("player_path"))
+	_player = get_node(STORAGE.get_value("player_path"))
 	# Turn the player to the left
 	_player.turn_left()
 	# Move player and stranger

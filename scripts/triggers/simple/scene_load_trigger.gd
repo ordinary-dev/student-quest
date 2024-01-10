@@ -4,9 +4,9 @@ extends "res://scripts/triggers/simple/base.gd"
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-@export (String, FILE, "*.tscn") var scene
-@export (bool) var fade_in = true
-@export (bool) var fade_out = true
+@export_file("*.tscn") var scene
+@export var fade_in: bool = true
+@export var fade_out: bool = true
 
 
 func action() -> void:

@@ -7,7 +7,7 @@ extends Sprite2D
 const MAX_X_POS := 800
 const SPEED := 250
 const DELAY := 30
-@export (String, FILE, "*.json") var dialog_path
+@export_file("*.json") var dialog_path
 var _current_frame := 0
 @onready var _blood := $AnimatedSprite2D
 @onready var _singer := $"../Singer"

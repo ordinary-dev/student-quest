@@ -65,7 +65,7 @@ func set_sprite(val) -> void:
 
 
 # Lock input
-func lock() -> void:
+func lock_movement() -> void:
 	set_physics_process(false)
 	_idle = true
 	_anim.stop()
@@ -207,7 +207,7 @@ func _ready() -> void:
 
 func _try_to_restore_position() -> void:
 	if STORAGE.is_saved(SCENES.last_scene_path):
-		var pos: Vector2 = STORAGE.get(SCENES.last_scene_path)
+		var pos: Vector2 = STORAGE.get_value(SCENES.last_scene_path)
 		position.x = pos.x
 		position.y = pos.y
 
