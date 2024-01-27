@@ -19,8 +19,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 3.5, 3.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 3.5, 3.8 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.203922, 0.2, 0.223529, 1 ) ]
 }
@@ -31,8 +31,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 3 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 3 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [ 0.0 ],
 "method": "play"
@@ -49,8 +49,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 4 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 4 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [ "", false ],
 "method": "play"
@@ -63,8 +63,8 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 3.7 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 3.7 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [ 0.0 ],
 "method": "play"
@@ -77,8 +77,8 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 4.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 4.5 ),
+"transitions": PackedFloat32Array( 1 ),
 "values": [ {
 "args": [  ],
 "method": "load_scene"
@@ -92,7 +92,7 @@ tracks/2/keys = {
 [node name="TeacherSprite" parent="ClassroomMap" instance=ExtResource( 2 )]
 position = Vector2( 681.585, 473.712 )
 script = ExtResource( 3 )
-line_path = NodePath("../Path")
+line_path = NodePath("../Path3D")
 wait_for_player = false
 autostart = false
 call_function = true
@@ -100,9 +100,9 @@ obj = NodePath("../../ExplosionAnim")
 fun = "play"
 arg = "Explosion"
 
-[node name="Path" type="Line2D" parent="ClassroomMap"]
+[node name="Path3D" type="Line2D" parent="ClassroomMap"]
 visible = false
-points = PoolVector2Array( 683.398, 476.219, 679.511, 550.735, 626.726, 675.544, 529.03, 778.964, 245.094, 918.814, 62.866, 969.668 )
+points = PackedVector2Array( 683.398, 476.219, 679.511, 550.735, 626.726, 675.544, 529.03, 778.964, 245.094, 918.814, 62.866, 969.668 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.203922, 0.2, 0.223529, 1 )
@@ -117,7 +117,7 @@ position = Vector2( -42.7148, 1078.55 )
 stream = ExtResource( 7 )
 bus = "FX"
 
-[node name="Explosion" type="AnimatedSprite" parent="."]
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
 modulate = Color( 0.188235, 0.164706, 0.164706, 1 )
 position = Vector2( -453.634, 394.168 )
 scale = Vector2( 55.9854, 54.5352 )

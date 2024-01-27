@@ -5,16 +5,16 @@ extends Node2D
 # Licensed under the GPL-3 License
 
 const DIST := 600
-export (String, FILE, "*.tscn") var scene_path
-export (String, FILE, "*.json") var dialog_path
-export (String, FILE, "*.json") var dialog_path_2
+@export_file("*.tscn") var scene_path
+@export_file("*.json") var dialog_path
+@export_file("*.json") var dialog_path_2
 var _dialog_shown := false
 var _player_path: String
-var _player: KinematicBody2D
-onready var _stranger := $Characters/Stranger
-onready var _teleport_trigger   := $Teleports/TeleportTrigger
-onready var _teleport_trigger_2 := $Teleports/TeleportTrigger2
-onready var _teleport_trigger_3 := $Teleports/TeleportTrigger3
+var _player: CharacterBody2D
+@onready var _stranger := $Characters/Stranger
+@onready var _teleport_trigger   := $Teleports/TeleportTrigger
+@onready var _teleport_trigger_2 := $Teleports/TeleportTrigger2
+@onready var _teleport_trigger_3 := $Teleports/TeleportTrigger3
 
 
 # The first function that will be called
@@ -38,14 +38,14 @@ func teleport() -> void:
 	# Disable AI
 	_stranger.set_process(false)
 	# Get path to player
-	_player = get_node(STORAGE.get("player_path"))
+	_player = get_node(STORAGE.get_value("player_path"))
 	# Turn the player to the left
 	_player.turn_left()
 	# Move player and stranger
 	_player.position.x -= DIST
 	_stranger.position.x -= DIST
 	# Wait for a little bit and show second dialog
-	yield(get_tree().create_timer(1), "timeout")
+	await get_tree().create_timer(1).timeout
 	DIALOG.show_dialog(dialog_path_2, get_path(), "move_2")
 
 

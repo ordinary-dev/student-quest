@@ -1,18 +1,21 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=3 uid="uid://dd7ob3kegyuma"]
 
-[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=1]
-[ext_resource path="res://scenes/templates/water/water_sprite.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sprites/train/bridge.png" type="Texture" id=3]
-[ext_resource path="res://scenes/chapter_1/1_beginning/Objects/train.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sprites/train/background/water.png" type="Texture" id=5]
-[ext_resource path="res://animations/chapter_1/bridge.tres" type="Animation" id=6]
-[ext_resource path="res://scripts/templates/load_scene_function.gd" type="Script" id=7]
+[ext_resource type="Script" path="res://scripts/nodes/change_ui.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/templates/water/water_sprite.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://b6jtmgyttx0pa" path="res://sprites/train/bridge.png" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/chapter_1/1_beginning/Objects/train.tscn" id="4"]
+[ext_resource type="SpriteFrames" path="res://sprites/water/water.tres" id="4_egoeu"]
+[ext_resource type="Texture2D" uid="uid://s5bhwjthxbwt" path="res://sprites/train/background/water.png" id="5"]
+[ext_resource type="Animation" uid="uid://dxw28ekvssyr6" path="res://animations/chapter_1/bridge.tres" id="6"]
+[ext_resource type="Script" path="res://scripts/templates/load_scene_function.gd" id="7"]
 
-
-
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nlmf8"]
+_data = {
+"Bridge": ExtResource("6")
+}
 
 [node name="BridgeScene" type="Node2D"]
-script = ExtResource( 7 )
+script = ExtResource("7")
 scene_path = "res://scenes/chapter_1/1_beginning/09_hall.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -20,105 +23,127 @@ layer = -1
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Sky"]
-modulate = Color( 0.843137, 0.839216, 0.843137, 1 )
-position = Vector2( 960, 544 )
-scale = Vector2( 17, 17 )
-texture = ExtResource( 5 )
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+modulate = Color(0.843137, 0.839216, 0.843137, 1)
+position = Vector2(960, 544)
+scale = Vector2(17, 17)
+texture = ExtResource("5")
 
 [node name="Water" type="Node2D" parent="ParallaxBackground/Sky"]
-modulate = Color( 0.890196, 0.890196, 0.890196, 0.317647 )
-position = Vector2( -8, 0 )
+modulate = Color(0.890196, 0.890196, 0.890196, 0.317647)
+position = Vector2(-8, 0)
 
-[node name="Water-sprite-Template_AnimatedSprite_0" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( -24, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_0" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(-24, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_1" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 168, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_1" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(168, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_2" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 360, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_2" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(360, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_3" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 552, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_3" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(552, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_4" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 744, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_4" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(744, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_5" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 936, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_5" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(936, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_6" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1128, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_6" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1128, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_7" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1320, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_7" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1320, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_8" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1512, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_8" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1512, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_9" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1704, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_9" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1704, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_10" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1896, 880 )
+[node name="Water-sprite-Template_AnimatedSprite_10" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1896, 880)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_11" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( -24, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_11" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(-24, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_12" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 168, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_12" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(168, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_13" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 360, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_13" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(360, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_14" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 552, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_14" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(552, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_15" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 744, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_15" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(744, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_16" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 936, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_16" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(936, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_17" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1128, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_17" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1128, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_18" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1320, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_18" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1320, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_19" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1512, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_19" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1512, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_20" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1704, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_20" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1704, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
-[node name="Water-sprite-Template_AnimatedSprite_21" parent="ParallaxBackground/Sky/Water" instance=ExtResource( 2 )]
-position = Vector2( 1896, 1072 )
+[node name="Water-sprite-Template_AnimatedSprite_21" parent="ParallaxBackground/Sky/Water" instance=ExtResource("2")]
+position = Vector2(1896, 1072)
+sprite_frames = ExtResource("4_egoeu")
 
 [node name="Railroad" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.4, 1 )
+motion_scale = Vector2(1.4, 1)
 
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/Railroad"]
-position = Vector2( 868.179, 541.858 )
-scale = Vector2( 17, 17 )
-texture = ExtResource( 3 )
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Railroad"]
+position = Vector2(868.179, 541.858)
+scale = Vector2(17, 17)
+texture = ExtResource("3")
 
-[node name="Train" parent="." instance=ExtResource( 4 )]
-modulate = Color( 0.87451, 0.898039, 0.933333, 1 )
-position = Vector2( 1060, 596 )
-scale = Vector2( 0.3, 0.3 )
+[node name="Train" parent="." instance=ExtResource("4")]
+modulate = Color(0.87451, 0.898039, 0.933333, 1)
+position = Vector2(100, 596)
+scale = Vector2(0.3, 0.3)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2( 148, 80 )
+offset = Vector2(-50, 0)
 anchor_mode = 0
-current = true
-zoom = Vector2( 0.9, 0.9 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_nlmf8")
+}
 autoplay = "Bridge"
-anims/Bridge = ExtResource( 6 )
 
 [node name="ChangeUI" type="Node" parent="."]
-script = ExtResource( 1 )
+script = ExtResource("1")
 show_pause_menu = true

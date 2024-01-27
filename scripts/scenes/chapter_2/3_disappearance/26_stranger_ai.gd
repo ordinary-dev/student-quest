@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 # Simple AI for the scene on the bridge
 # Copyright (c) 2020-2021 PixelTrain
@@ -7,7 +7,7 @@ extends Sprite
 const ANIM_SPEED = 50
 const DISTANCE = 500
 const SPEED = 290
-export (NodePath) var player_path
+@export_node_path var player_path
 var _player
 var _frame_num = 0
 

@@ -1,4 +1,4 @@
-extends Tween
+extends Node
 
 # Custom scene loader
 # Copyright (c) 2020-2021 PixelTrain
@@ -13,18 +13,17 @@ var last_scene_path: String
 # Load scene by path
 func load_scene(scene_name: String, anim_start := true, anim_end := true) -> void:
 	# Check path
-	var file_exists := File.new().file_exists(scene_name)
-	if (!file_exists):
+	var file_exists := FileAccess.file_exists(scene_name)
+	if !file_exists:
 		NOTIFY.show("Can't find scene. Please report a bug.")
 		return
 	
 	# Fade in
 	if anim_start:
 		_fade_in()
-		yield(get_tree().create_timer(TIME), "timeout")
 	
 	# Save player position
-	var player_path = STORAGE.get("player_path")
+	var player_path = STORAGE.get_value("player_path")
 	if has_node(player_path):
 		var player = get_node(player_path)
 		if player.restore_position:
@@ -32,7 +31,7 @@ func load_scene(scene_name: String, anim_start := true, anim_end := true) -> voi
 	
 	# Load scene
 	last_scene_path = scene_name
-	var status = get_tree().change_scene(scene_name)
+	var status = get_tree().change_scene_to_file(scene_name)
 	if status != OK:
 		NOTIFY.show("Can't change scene. Please report a bug.")
 	
@@ -52,26 +51,21 @@ func _create_color_rect() -> void:
 	tmp.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	tmp.color = START_COLOR
 	tmp.name = "transition"
-	tmp.rect_min_size = Vector2(1920, 1080)
+	tmp.custom_minimum_size = Vector2(1920, 1080)
 	UI.add_child(tmp)
 
 
 func _fade_in() -> void:
 	_create_color_rect()
 	var color_rect = UI.get_node("transition")
-	interpolate_property(
-		color_rect, "color",
-		START_COLOR, END_COLOR, TIME, 
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	start()
+	color_rect.color = END_COLOR
+	await get_tree().create_timer(TIME).timeout
 
 
 func _fade_out() -> void:
 	var color_rect = UI.get_node("transition")
-	interpolate_property(
-		color_rect, "color",
-		END_COLOR, START_COLOR, TIME, 
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	start()
-	yield(get_tree().create_timer(TIME), "timeout")
+	if color_rect == null:
+		return
+	color_rect.color = START_COLOR
+	await get_tree().create_timer(TIME).timeout
 	UI.remove_child(color_rect)

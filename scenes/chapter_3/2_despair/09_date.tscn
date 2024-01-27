@@ -4,7 +4,7 @@
 [ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
 
 [node name="Text" type="Control"]
-rect_min_size = Vector2( 1920, 1080 )
+custom_minimum_size = Vector2( 1920, 1080 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

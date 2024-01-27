@@ -16,7 +16,7 @@ func save(key: String, data) -> void:
 
 
 # Returns value of the key or -1
-func get(key: String):
+func get_value(key: String):
 	if _dict.has(key):
 		return _dict[key]
 	return "-1"

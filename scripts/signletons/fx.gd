@@ -6,9 +6,9 @@ extends AudioStreamPlayer
 
 const MAX_VOLUME := 5
 const MIN_VOLUME := -35
-export (AudioStream) var btn_click_sound
-export (AudioStream) var dialog_sound
-var volume: float setget _set_volume, _get_volume
+@export var btn_click_sound: AudioStream
+@export var dialog_sound: AudioStream
+var volume: float: get = _get_volume, set = _set_volume
 var _num := 0
 
 
@@ -25,7 +25,7 @@ func play_sound(obj: AudioStream) -> void:
 		player.stream = obj
 		player.bus = "FX"
 		# Destroy the new audio player at the end
-		var state = player.connect("finished", self, "_destroy", [_num])
+		var state = player.connect("finished", Callable(self, "_destroy").bind(_num))
 		assert(state == OK)
 		# Play audio
 		add_child(player)
@@ -63,6 +63,6 @@ func _get_volume() -> float:
 	return volume
 
 
-func _destroy(name: int) -> void:
-	var player = get_node(str(name))
+func _destroy(idx: int) -> void:
+	var player = get_node(str(idx))
 	remove_child(player)

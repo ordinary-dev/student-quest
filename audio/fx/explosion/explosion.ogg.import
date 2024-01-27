@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/explosion.ogg-b6ff584c611d50ea5d09220449688c4f.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bsjk4ipt086t5"
+path="res://.godot/imported/explosion.ogg-b6ff584c611d50ea5d09220449688c4f.oggvorbisstr"
 
 [deps]
 
 source_file="res://audio/fx/explosion/explosion.ogg"
-dest_files=[ "res://.import/explosion.ogg-b6ff584c611d50ea5d09220449688c4f.oggstr" ]
+dest_files=["res://.godot/imported/explosion.ogg-b6ff584c611d50ea5d09220449688c4f.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,4 +1,4 @@
-extends Sprite
+extends Sprite2D
 
 
 enum States {DOWN, UP, LEFT, RIGHT}

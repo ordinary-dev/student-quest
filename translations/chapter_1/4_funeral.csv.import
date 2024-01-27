@@ -2,13 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
+uid="uid://c5wuc54ra36uq"
 
 [deps]
 
-files=[ "res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_1/4_funeral.en.translation" ]
+files=["res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_1/4_funeral.en.translation"]
 
 source_file="res://translations/chapter_1/4_funeral.csv"
-dest_files=[ "res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_1/4_funeral.en.translation" ]
+dest_files=["res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_1/4_funeral.en.translation"]
 
 [params]
 

@@ -4,8 +4,8 @@ extends Control
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var menu
-export (String, FILE, "*.tscn") var next_scene
+@export_file("*.tscn") var menu
+@export_file("*.tscn") var next_scene
 
 
 func _start_game() -> void:

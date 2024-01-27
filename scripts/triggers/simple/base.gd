@@ -5,7 +5,7 @@ extends Area2D
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (bool) var activate_once = false
+@export var activate_once: bool = false
 var _used := false
 
 

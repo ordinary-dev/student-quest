@@ -5,8 +5,8 @@ extends Node2D
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var dialog_scene
-export (String, FILE, "*.tscn") var basement_scene
+@export_file("*.tscn") var dialog_scene
+@export_file("*.tscn") var basement_scene
 
 
 func go() -> void:

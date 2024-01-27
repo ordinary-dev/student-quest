@@ -4,10 +4,10 @@ extends "res://scripts/triggers/simple/base.gd"
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (bool) var enabled = true
-export (bool) var call_one_time = false
-export (NodePath) var obj
-export (String) var method
+@export var enabled: bool = true
+@export var call_one_time: bool = false
+@export_node_path var obj
+@export var method: String
 var _called = false
 
 

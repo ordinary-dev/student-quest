@@ -6,9 +6,9 @@ extends Node
 # Copyright (c) 2020-2021 PixelTrain
 # Licensed under the GPL-3 License
 
-export (String, FILE, "*.tscn") var credits_scene
+@export_file("*.tscn") var credits_scene
 
-onready var version_label = $Scroll/MarginContainer/TextContainer/Version
+@onready var version_label = $Scroll/MarginContainer/TextContainer/Version
 
 
 func open_store() -> void:
@@ -39,8 +39,7 @@ func _open_site(link: String) -> void:
 
 func _ready() -> void:
 	# Read version from file
-	var fp := File.new()
-	var status := fp.open("res://VERSION.txt", File.READ)
-	assert(status == OK)
-	var version := "v" + fp.get_as_text()
+	var file := FileAccess.open("res://VERSION.txt", FileAccess.READ)
+	assert(file != null)
+	var version := "v" + file.get_as_text()
 	version_label.text = version

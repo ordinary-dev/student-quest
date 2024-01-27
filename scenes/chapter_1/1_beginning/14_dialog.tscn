@@ -1,38 +1,37 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://yoic71f2hsvm"]
 
-[ext_resource path="res://scripts/nodes/change_ui.gd" type="Script" id=2]
-[ext_resource path="res://sprites/characters/guide.png" type="Texture" id=3]
-[ext_resource path="res://sprites/backgrounds/blurry_room.jpg" type="Texture" id=4]
-[ext_resource path="res://scripts/nodes/dialog_loader.gd" type="Script" id=5]
+[ext_resource type="Script" path="res://scripts/nodes/change_ui.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cvfejividiycx" path="res://sprites/characters/guide.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dcavgq8qat3sw" path="res://sprites/backgrounds/blurry_room.jpg" id="4"]
+[ext_resource type="Script" path="res://scripts/nodes/dialog_loader.gd" id="5"]
 
 [node name="DialogScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Background" type="Sprite" parent="."]
-modulate = Color( 0.345098, 0.345098, 0.345098, 1 )
-position = Vector2( 280.415, 727.419 )
-scale = Vector2( 2.55594, 2.25341 )
-texture = ExtResource( 4 )
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(0.345098, 0.345098, 0.345098, 1)
+position = Vector2(280.415, 727.419)
+scale = Vector2(2.55594, 2.25341)
+texture = ExtResource("4")
 flip_h = true
 flip_v = true
 
-[node name="Guide" type="Sprite" parent="."]
-position = Vector2( 1008, 712 )
-scale = Vector2( 37.3026, 37.3026 )
-texture = ExtResource( 3 )
-vframes = 3
+[node name="Guide" type="Sprite2D" parent="."]
+position = Vector2(1008, 712)
+scale = Vector2(37.3026, 37.3026)
+texture = ExtResource("3")
 hframes = 3
+vframes = 3
 frame = 6
 
 [node name="ChangeUI" type="Node" parent="."]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="Dialog" type="Node" parent="."]
-script = ExtResource( 5 )
+script = ExtResource("5")
 dialog_path = "res://dialogs/chapter_1/beginning/guide.json"
 enable_delay = true
 delay = 1.0

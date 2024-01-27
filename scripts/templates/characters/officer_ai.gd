@@ -7,18 +7,18 @@ extends Node2D
 enum Directions {UP, DOWN, LEFT, RIGHT, UNSET}
 const SPEED := 270
 
-export (NodePath) var config_node = NodePath("../AI_Config")
+@export_node_path var config_node = NodePath("../AI_Config")
 
-var _path: PoolVector2Array
+var _path: PackedVector2Array
 var _minpos: Vector2
 var _maxpos: Vector2
-var _nav_2d: Navigation2D
+#var _nav_2d: Navigation2D
 var _cfg: PoliceOfficerConfig
 var _current_dir = Directions.UNSET
 
-onready var _ap := $AnimationPlayer
-onready var _flashlight := $Flashlight
-onready var _sprite := $Sprite
+@onready var _ap := $AnimationPlayer
+@onready var _flashlight := $Flashlight
+@onready var _sprite := $Sprite2D
 
 
 func _ready() -> void:
@@ -27,7 +27,7 @@ func _ready() -> void:
 	_minpos = get_node(_cfg.upper_left_node).position
 	_maxpos = get_node(_cfg.bottom_right_node).position
 	randomize()
-	_nav_2d = get_node(_cfg.nav_node)
+	#_nav_2d = get_node(_cfg.nav_node)
 
 
 func _process(delta) -> void:
@@ -69,7 +69,7 @@ func _process(delta) -> void:
 		# The character approached the destination point
 		else:
 			position = _path[0]
-			_path.remove(0)
+			_path.remove_at(0)
 	# Officer has reached the last point
 	else:
 		_ap.stop()
@@ -81,10 +81,10 @@ func _process(delta) -> void:
 			_:
 				_sprite.frame = 8
 		_current_dir = Directions.UNSET
-		var x = rand_range(_minpos.x, _maxpos.x)
-		var y = rand_range(_minpos.y, _maxpos.y)
+		var x = randf_range(_minpos.x, _maxpos.x)
+		var y = randf_range(_minpos.y, _maxpos.y)
 		var point = Vector2(x, y)
-		_path = _nav_2d.get_simple_path(position, point)
+		#_path = _nav_2d.get_simple_path(position, point)
 
 
 func _on_Area2D_body_entered(_body) -> void:

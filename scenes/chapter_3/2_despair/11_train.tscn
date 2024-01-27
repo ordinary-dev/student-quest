@@ -9,10 +9,10 @@
 scene_path = "res://scenes/chapter_3/2_despair/12_village.tscn"
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -128.0
-margin_top = -8.0
-margin_right = 2048.0
-margin_bottom = 1088.0
+offset_left = -128.0
+offset_top = -8.0
+offset_right = 2048.0
+offset_bottom = 1088.0
 color = Color( 0.121569, 0.0705882, 0, 0.443137 )
 __meta__ = {
 "_edit_use_anchors_": false

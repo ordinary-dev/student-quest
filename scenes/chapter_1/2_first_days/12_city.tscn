@@ -11,8 +11,8 @@ __meta__ = {
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.517647, 0.643137, 0.72549, 1 )
-margin_right = 1920.0
-margin_bottom = 1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="Dialog" type="Node" parent="."]
 script = ExtResource( 2 )

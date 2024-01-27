@@ -23,8 +23,8 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HBoxContainer"]
-margin_right = 958.0
-margin_bottom = 1080.0
+offset_right = 958.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "Authors:
@@ -58,9 +58,9 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="HBoxContainer"]
-margin_left = 962.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+offset_left = 962.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 text = "waxsocks
@@ -97,7 +97,7 @@ __meta__ = {
 [node name="Button" parent="." instance=ExtResource( 1 )]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -80.0
-margin_right = 0.0
+offset_left = -80.0
+offset_right = 0.0
 text = "x"
 [connection signal="pressed" from="Button" to="." method="load_scene"]

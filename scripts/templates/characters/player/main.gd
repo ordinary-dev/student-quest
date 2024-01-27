@@ -1,5 +1,5 @@
-tool
-extends KinematicBody2D
+@tool
+extends CharacterBody2D
 
 # Player controller
 # Copyright (c) 2020-2021 PixelTrain
@@ -8,11 +8,13 @@ extends KinematicBody2D
 # State types
 enum States {DOWN, UP, LEFT, RIGHT}
 enum Sprites {MAIN, NEO}
-export (Sprites) var sprite_sheet = Sprites.MAIN setget set_sprite
+@export var sprite_sheet: Sprites = Sprites.MAIN: set = set_sprite
 # Sprite frame numbers
-enum Frames {DOWN_1, UP_1, SIDE_1,
-		DOWN_2, UP_2, SIDE_2,
-		DOWN_STILL, UP_STILL, SIDE_STILL}
+enum Frames {
+	DOWN_1, UP_1, SIDE_1,
+	DOWN_2, UP_2, SIDE_2,
+	DOWN_STILL, UP_STILL, SIDE_STILL,
+}
 
 # Movement
 const SPEED := 120
@@ -20,16 +22,16 @@ const FRICTION := 0.65
 
 # Used to get nodes in editor mode
 const CAMERA_PATH := "Camera2D"
-const SPRITE_PATH := "Sprite"
+const SPRITE_PATH := "Sprite2D"
 
-export (States) var default_state = States.UP setget _set_state
-export (bool) var restore_position = false
-export (bool) var locked = false
-export (int) var camera_limit_left = -10000000 setget _set_cl_left
-export (int) var camera_limit_top = -10000000 setget _set_cl_top
-export (int) var camera_limit_right = 10000000 setget _set_cl_right
-export (int) var camera_limit_bottom = 10000000 setget _set_cl_bottom
-export (float) var camera_zoom = 0.6 setget _set_camera_zoom
+@export var default_state: States = States.UP: set = _set_state
+@export var restore_position: bool = false
+@export var locked: bool = false
+@export var camera_limit_left: int = -10000000: set = _set_cl_left
+@export var camera_limit_top: int = -10000000: set = _set_cl_top
+@export var camera_limit_right: int = 10000000: set = _set_cl_right
+@export var camera_limit_bottom: int = 10000000: set = _set_cl_bottom
+@export var camera_zoom: float = 0.6: set = _set_camera_zoom
 
 # Get input from joystick
 # Otherwise use the keyboard
@@ -45,25 +47,25 @@ var _left_right_btn_pressed := false
 var _velocity := Vector2(0, 0)
 
 # Used by another scripts
-onready var water := $Water
+@onready var water := $Water
 # Objects
-onready var _anim := $WalkCycle
-onready var _joystick_handler := $JoystickHandler
-onready var _keyboard_handler := $KeyboardHandler
-onready var _sprite: Sprite = $Sprite
+@onready var _anim := $WalkCycle
+@onready var _joystick_handler := $JoystickHandler
+@onready var _keyboard_handler := $KeyboardHandler
+@onready var _sprite: Sprite2D = $Sprite2D
 
 
 func set_sprite(val) -> void:
 	sprite_sheet = val
 	match sprite_sheet:
 		Sprites.NEO:
-			get_node("Sprite").load_neo_sprite()
+			get_node("Sprite2D").load_neo_sprite()
 		Sprites.MAIN:
-			get_node("Sprite").load_main_sprite()
+			get_node("Sprite2D").load_main_sprite()
 
 
 # Lock input
-func lock() -> void:
+func lock_movement() -> void:
 	set_physics_process(false)
 	_idle = true
 	_anim.stop()
@@ -193,7 +195,7 @@ func _set_state(val) -> void:
 
 
 func _ready() -> void:
-	if not Engine.editor_hint:
+	if not Engine.is_editor_hint():
 		STORAGE.save("player_path", get_path())
 		if restore_position:
 			_try_to_restore_position()
@@ -205,14 +207,14 @@ func _ready() -> void:
 
 func _try_to_restore_position() -> void:
 	if STORAGE.is_saved(SCENES.last_scene_path):
-		var pos: Vector2 = STORAGE.get(SCENES.last_scene_path)
+		var pos: Vector2 = STORAGE.get_value(SCENES.last_scene_path)
 		position.x = pos.x
 		position.y = pos.y
 
 
 # Invoked constantly
 func _physics_process(_delta) -> void:
-	if not Engine.editor_hint and not locked:
+	if not Engine.is_editor_hint() and not locked:
 		var dir = Vector2()
 		_left_right_btn_pressed = false
 		if _use_joystick:
@@ -235,5 +237,7 @@ func _physics_process(_delta) -> void:
 				_move_up()
 			_idle = false
 		_velocity += dir * SPEED
-		_velocity = move_and_slide(_velocity)
+		set_velocity(_velocity)
+		move_and_slide()
+		_velocity = velocity
 		_velocity *= FRICTION

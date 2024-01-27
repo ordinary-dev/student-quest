@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/templates/streetlight.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/templates/characters/player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://sprites/snow_street/background.jpg" type="Texture" id=4]
+[ext_resource path="res://sprites/snow_street/background.jpg" type="Texture2D" id=4]
 
 
 
@@ -21,17 +21,17 @@ extents = Vector2( 72, 96 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.1, 0.1 )
 
-[node name="Background" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 modulate = Color( 0.356863, 0.364706, 0.392157, 1 )
 position = Vector2( -154.417, -227.415 )
 scale = Vector2( 0.393208, 0.385735 )
 texture = ExtResource( 4 )
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer/Background"]
-margin_left = -2556.0
-margin_top = 601.0
-margin_right = 2056.0
-margin_bottom = 2174.0
+offset_left = -2556.0
+offset_top = 601.0
+offset_right = 2056.0
+offset_bottom = 2174.0
 color = Color( 0.0862745, 0.0627451, 0.0627451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

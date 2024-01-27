@@ -6,15 +6,15 @@ extends Node2D
 # Licensed under the GPL-3 License
 
 enum Positions {DOOR, COMPUTER, BED}
-export (bool) var character_enabled = true
-export (Positions) var init_pos = Positions.DOOR
-onready var _door_marker := $Positions/Door
-onready var _comp_marker := $Positions/Computer
-onready var _bed_marker := $Positions/Bed
+@export var character_enabled: bool = true
+@export var init_pos: Positions = Positions.DOOR
+@onready var _door_marker := $Positions/Door
+@onready var _comp_marker := $Positions/Computer
+@onready var _bed_marker := $Positions/Bed
 
 
 func _ready() -> void:
-	var player_path = STORAGE.get("player_path")
+	var player_path = STORAGE.get_value("player_path")
 	var player = get_node(player_path)
 	if !character_enabled:
 		player.queue_free()

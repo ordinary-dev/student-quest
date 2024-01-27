@@ -1,50 +1,44 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://cxoqxr7panxw1"]
 
-[ext_resource path="res://sprites/street/tickets_store/block.png" type="Texture" id=1]
-[ext_resource path="res://sprites/street/tickets_store/store.png" type="Texture" id=2]
+[ext_resource type="Texture2D" uid="uid://okmx5fbabu5l" path="res://sprites/street/tickets_store/block.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://u81qxoeimora" path="res://sprites/street/tickets_store/store.png" id="2"]
 
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(28, 8)
 
-
-
-
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14, 4 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 14, 2 )
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(28, 4)
 
 [node name="TicketWindow" type="Node2D"]
 
-[node name="MainBox_Sprite" type="Sprite" parent="."]
-position = Vector2( 0, 24 )
-scale = Vector2( 4, 4 )
+[node name="MainBox_Sprite" type="Sprite2D" parent="."]
 z_index = 4
 z_as_relative = false
-texture = ExtResource( 2 )
-offset = Vector2( 0, -13 )
+position = Vector2(0, 24)
+scale = Vector2(4, 4)
+texture = ExtResource("2")
+offset = Vector2(0, -13)
 
-[node name="Siderail_Sprite" type="Sprite" parent="."]
-position = Vector2( -96, 0 )
-scale = Vector2( 4, 4 )
+[node name="Siderail_Sprite" type="Sprite2D" parent="."]
 z_index = 4
 z_as_relative = false
-texture = ExtResource( 1 )
-offset = Vector2( -2, -1 )
+position = Vector2(-96, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+offset = Vector2(-2, -1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
-position = Vector2( 0, -32 )
-scale = Vector2( 4, 4 )
 z_index = 4
-collision_layer = 0
-collision_mask = 1024
+position = Vector2(0, -32)
+scale = Vector2(4, 4)
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 0, 10 )
-shape = SubResource( 1 )
+position = Vector2(0, 10)
+shape = SubResource("1")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( -24, 6 )
 z_index = 1
-shape = SubResource( 2 )
+position = Vector2(-24, 6)
+shape = SubResource("2")

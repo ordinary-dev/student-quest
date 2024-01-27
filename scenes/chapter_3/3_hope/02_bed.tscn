@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture" id=1]
-[ext_resource path="res://sprites/blanket.png" type="Texture" id=2]
+[ext_resource path="res://sprites/characters/alex/alex.png" type="Texture2D" id=1]
+[ext_resource path="res://sprites/blanket.png" type="Texture2D" id=2]
 [ext_resource path="res://scenes/templates/room/room.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/nodes/automatic_scene_loader.gd" type="Script" id=4]
 
@@ -10,7 +10,7 @@
 [node name="RoomTemplate" parent="." instance=ExtResource( 3 )]
 character_enabled = false
 
-[node name="Alex" type="Sprite" parent="."]
+[node name="Alex" type="Sprite2D" parent="."]
 position = Vector2( 544.238, 128.329 )
 rotation = 1.5708
 scale = Vector2( 2.7, 2.7 )
@@ -19,7 +19,7 @@ texture = ExtResource( 1 )
 vframes = 3
 hframes = 3
 
-[node name="Blanket" type="Sprite" parent="."]
+[node name="Blanket" type="Sprite2D" parent="."]
 modulate = Color( 0.843137, 0.886275, 0.913725, 1 )
 position = Vector2( 506.555, 128.1 )
 rotation = 1.5708

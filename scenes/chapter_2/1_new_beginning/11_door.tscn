@@ -8,10 +8,10 @@
 [node name="Roof" parent="." instance=ExtResource( 1 )]
 
 [node name="Label" type="Label" parent="."]
-margin_left = 8.0
-margin_top = 312.0
-margin_right = 1920.0
-margin_bottom = 440.0
+offset_left = 8.0
+offset_top = 312.0
+offset_right = 1920.0
+offset_bottom = 440.0
 text = "A_COUPLE_OF_HOURS_LATER"
 align = 1
 __meta__ = {

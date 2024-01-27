@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://sprites/light/light.png" type="Texture" id=1]
+[ext_resource path="res://sprites/light/light.png" type="Texture2D" id=1]
 [ext_resource path="res://sprites/fire.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://scripts/templates/holiday/campfire.gd" type="Script" id=3]
 [ext_resource path="res://animations/templates/fire.tres" type="Animation" id=4]
@@ -19,7 +19,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 5.68892 )
 
-[node name="Campfire" type="AnimatedSprite"]
+[node name="Campfire" type="AnimatedSprite2D"]
 modulate = Color( 1, 1, 1, 0.784314 )
 light_mask = 2
 scale = Vector2( 3.8125, 3.8125 )
@@ -37,7 +37,7 @@ visible = false
 position = Vector2( -2.84447, -5.68892 )
 shape = SubResource( 1 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2( -0.786896, -10.4919 )
 texture = ExtResource( 1 )
 texture_scale = 2.0

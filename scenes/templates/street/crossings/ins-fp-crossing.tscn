@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://b45afwvon65ef"]
 
-[ext_resource path="res://scenes/triggers/transition.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprites/street/crossing_2.png" type="Texture" id=2]
+[ext_resource type="PackedScene" path="res://scenes/triggers/transition.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://ygpdb5if5y0w" path="res://sprites/street/crossing_2.png" id="2"]
 
-[node name="NaturalSciences-Physics-Crossing" type="Sprite"]
+[node name="NaturalSciences-Physics-Crossing" type="Sprite2D"]
 z_index = 4
 z_as_relative = false
-texture = ExtResource( 2 )
-offset = Vector2( -7, -18 )
+texture = ExtResource("2")
+offset = Vector2(-7, -18)
 
-[node name="Transition" parent="." instance=ExtResource( 1 )]
+[node name="Transition" parent="." instance=ExtResource("1")]
 visible = false
-position = Vector2( -1.23743, -22.6274 )
-scale = Vector2( 2.08, 2.52 )
+position = Vector2(-1.23743, -22.6274)
+scale = Vector2(2.08, 2.52)
+collision_mask = 2
 object = NodePath("..")

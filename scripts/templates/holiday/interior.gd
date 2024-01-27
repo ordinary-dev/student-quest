@@ -1,4 +1,4 @@
-tool
+@tool
 extends Node2D
 
 # Controls the state of the door.
@@ -7,9 +7,9 @@ extends Node2D
 # Licensed under the GPL-3 License
 
 const TRIGGER_PATH := "Trigger"
-export (bool) var door_open = true setget _set_door_status
-export (String, FILE, "*.tscn") var street_scene
-onready var _street_trigger := $Trigger
+@export var door_open: bool = true: set = _set_door_status
+@export_file("*.tscn") var street_scene
+@onready var _street_trigger := $Trigger
 
 
 func street() -> void:
@@ -19,7 +19,7 @@ func street() -> void:
 func _set_door_status(val: bool) -> void:
 	door_open = val
 	# Hide trigger in editor if door is locked
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		if has_node(TRIGGER_PATH):
 			var trigger = get_node(TRIGGER_PATH)
 			trigger.visible = door_open

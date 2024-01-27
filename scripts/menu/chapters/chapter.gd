@@ -8,15 +8,15 @@ const BG_COLOR_ENABLED := "#232323"
 const BG_COLOR_DISABLED := "#303030"
 const SECRET_TEXT := "../.."
 
-export (StreamTexture) var texture
-export (String) var chapter_name
-export (String, FILE, "*.tscn") var path_to_scene
+@export var texture: CompressedTexture2D
+@export var chapter_name: String
+@export_file ("*.tscn") var path_to_scene
 
-var enabled setget _set_state
+var enabled : set = _set_state
 
-onready var _label = $MarginContainer/Content/Label
-onready var _image = $MarginContainer/Content/TextureRect
-onready var _btn = $Button
+@onready var _label = $MarginContainer/Content/Label
+@onready var _image = $MarginContainer/Content/TextureRect
+@onready var _btn = $Button
 
 
 # Assigned by load script

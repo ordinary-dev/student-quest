@@ -6,26 +6,21 @@ extends Area2D
 const TIME := 0.3
 const START_COLOR := Color(1, 1, 1, 0)
 const END_COLOR := Color(1, 1, 1, 1)
-export (String) var label = "Label"
-onready var _tween := $Tween
-onready var _frame := $Frame
-onready var _label := $Frame/MarginContainer/Background/MarginContainer/Label
+@export var label: String = "Label"
+@onready var _frame := $Frame
+@onready var _label := $Frame/MarginContainer/Background/MarginContainer/Label
 
 
 func show_ui() -> void:
 	_frame.visible = true
-	_tween.interpolate_property(_frame, "modulate",
-		START_COLOR, END_COLOR, TIME, 
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	_tween.start()
+	var tween = create_tween()
+	tween.tween_property(_frame, "modulate", END_COLOR, TIME).from(START_COLOR)
 
 
 func hide_ui() -> void:
-	_tween.interpolate_property(_frame, "modulate",
-		END_COLOR, START_COLOR, TIME, 
-		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	_tween.start()
-	yield(get_tree().create_timer(TIME * 2), "timeout")
+	var tween = create_tween()
+	tween.tween_property(_frame, "modulate", START_COLOR, TIME).from(END_COLOR)
+	await get_tree().create_timer(TIME * 2).timeout
 	_frame.visible = false
 
 

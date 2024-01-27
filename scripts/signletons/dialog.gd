@@ -24,9 +24,9 @@ func show_dialog(file_path: String, obj := "", method := "", argv := "") -> void
 	if _read_file(file_path) == false:
 		return
 	# Lock player movement
-	var player_path = STORAGE.get("player_path")
+	var player_path = STORAGE.get_value("player_path")
 	if has_node(player_path):
-		get_node(player_path).lock()
+		get_node(player_path).lock_movement()
 	# Save arguments
 	if obj != "" and method != "":
 		_call_fnc = true
@@ -59,8 +59,8 @@ func show_next() -> void:
 	# Next phrase is last
 	if _index == len(_content):
 		var btn = dialog.next_button
-		btn.disconnect("pressed", self, "show_next")
-		btn.connect("pressed", self, "hide_dialog")
+		#btn.disconnect("pressed", Callable(self, "show_next"))
+		#btn.connect("pressed", Callable(self, "hide_dialog"))
 
 
 func hide_dialog():
@@ -69,7 +69,7 @@ func hide_dialog():
 	dialog.hide()
 	set_process(false)
 	# Unlock player movement
-	var player_path = STORAGE.get("player_path")
+	var player_path = STORAGE.get_value("player_path")
 	if has_node(player_path):
 		get_node(player_path).unlock()
 	# Call a method if necessary
@@ -89,18 +89,18 @@ func hide_dialog():
 # Try to read the file
 # Returns true if there were no errors
 func _read_file(file_path: String) -> bool:
-	var fl := File.new()
-	var state := fl.open(file_path, File.READ)
-	if state != OK:
+	var file = FileAccess.open(file_path, FileAccess.READ)
+	if file == null:
 		NOTIFY.show("I can't load the dialog. Please report a bug.")
 		return false
 	# Try to read the file
-	var json_result = JSON.parse(fl.get_as_text())
-	fl.close()
-	if json_result.error != OK:
+	var test_json_conv = JSON.new()
+	var err = test_json_conv.parse(file.get_as_text())
+	file.close()
+	if err != OK:
 		NOTIFY.show("Can't parse the file. Please report a bug.")
 		return false
-	_content = json_result.result
+	_content = test_json_conv.data
 	return true
 
 
@@ -118,10 +118,10 @@ func _hide_interface() -> void:
 
 
 func _create_dialog_obj() -> void:
-	var tmp = DIALOG_SCENE.instance()
+	var tmp = DIALOG_SCENE.instantiate()
 	tmp.name = "dialog"
 	UI.add_child(tmp)
-	UI.get_node("dialog").next_button.connect("pressed", self, "show_next")
+	#UI.get_node("dialog").next_button.connect("pressed", Callable(self, "show_next"))
 
 
 func _process(_delta) -> void:

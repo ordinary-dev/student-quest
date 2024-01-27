@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/house/furniture.png" type="Texture" id=1]
+[ext_resource path="res://sprites/house/furniture.png" type="Texture2D" id=1]
 
 
 
@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
-[node name="Furniture-Template_Sprite_0" type="Sprite"]
+[node name="Furniture-Template_Sprite_0" type="Sprite2D"]
 scale = Vector2( 9, 9 )
 z_index = 2
 texture = ExtResource( 1 )

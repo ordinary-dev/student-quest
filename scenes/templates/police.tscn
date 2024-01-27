@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://sprites/transport/police.png" type="Texture" id=1]
+[ext_resource path="res://sprites/transport/police.png" type="Texture2D" id=1]
 
 
 
@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 92, 48 )
 
-[node name="Police" type="Sprite"]
+[node name="Police" type="Sprite2D"]
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 

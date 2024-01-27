@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/characters/npc_1.png" type="Texture" id=1]
+[ext_resource path="res://sprites/characters/npc_1.png" type="Texture2D" id=1]
 
 
 
@@ -9,9 +9,9 @@
 extents = Vector2( 5.33333, 2.66667 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
-polygon = PoolVector2Array( -4.93964, -0.127963, -3.99683, -2.868, 2.868, -2.868, 4.51792, -0.186887, 2.54391, -2.30821, -3.37811, -2.3966 )
+polygon = PackedVector2Array( -4.93964, -0.127963, -3.99683, -2.868, 2.868, -2.868, 4.51792, -0.186887, 2.54391, -2.30821, -3.37811, -2.3966 )
 
-[node name="NPC_1" type="Sprite"]
+[node name="NPC_1" type="Sprite2D"]
 light_mask = 2
 scale = Vector2( 3, 3 )
 z_index = 4

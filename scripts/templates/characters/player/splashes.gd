@@ -1,4 +1,4 @@
-extends AnimatedSprite
+extends AnimatedSprite2D
 
 # Script for water splashes
 # Copyright (c) 2020-2021 PixelTrain
@@ -12,21 +12,21 @@ extends AnimatedSprite
 var _number_of_requests := 0
 # Bridges use this to prevent
 # water splashes from showing
-var hide_water := false setget _set_water_visibility
+var hide_water := false: set = _set_water_visibility
 
 
 func enable_water() -> void:
 	_number_of_requests += 1
 	if !hide_water and _number_of_requests == 1:
 		visible = true
-		playing = true
+		play()
 
 
 func disable_water() -> void:
 	_number_of_requests -= 1
 	if _number_of_requests == 0:
 		visible = false
-		playing = false
+		stop()
 
 
 func _set_water_visibility(val):
@@ -34,7 +34,7 @@ func _set_water_visibility(val):
 	if !hide_water:
 		if _number_of_requests == 1:
 			visible = true
-			playing = true
+			play()
 	else:
 		visible = false
-		playing = false
+		stop()

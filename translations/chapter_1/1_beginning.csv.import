@@ -2,13 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
+uid="uid://b7myury1m0hs5"
 
 [deps]
 
-files=[ "res://translations/chapter_1/1_beginning.ru.translation", "res://translations/chapter_1/1_beginning.en.translation" ]
+files=["res://translations/chapter_1/1_beginning.ru.translation", "res://translations/chapter_1/1_beginning.en.translation"]
 
 source_file="res://translations/chapter_1/1_beginning.csv"
-dest_files=[ "res://translations/chapter_1/1_beginning.ru.translation", "res://translations/chapter_1/1_beginning.en.translation" ]
+dest_files=["res://translations/chapter_1/1_beginning.ru.translation", "res://translations/chapter_1/1_beginning.en.translation"]
 
 [params]
 

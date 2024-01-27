@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/frozen_fjords_only_guitar.wav-2e006000bc4f255c79a3e5e9fb30c89f.sample"
+type="AudioStreamWAV"
+uid="uid://brxbwnsoj1exw"
+path="res://.godot/imported/frozen_fjords_only_guitar.wav-2e006000bc4f255c79a3e5e9fb30c89f.sample"
 
 [deps]
 
 source_file="res://audio/music/frozen_fjords/frozen_fjords_only_guitar.wav"
-dest_files=[ "res://.import/frozen_fjords_only_guitar.wav-2e006000bc4f255c79a3e5e9fb30c89f.sample" ]
+dest_files=["res://.godot/imported/frozen_fjords_only_guitar.wav-2e006000bc4f255c79a3e5e9fb30c89f.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0
