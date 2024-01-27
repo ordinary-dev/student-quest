@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvrc1s728j70q"]
+
+[ext_resource type="Script" path="res://remake/001-menu/menu.gd" id="1_d1l2o"]
+[ext_resource type="Theme" uid="uid://374y6xrb0q5e" path="res://remake/001-menu/theme.tres" id="1_diqnp"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d1l2o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Label" type="Label" parent="VBoxContainer/LabelMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 64
+text = "Remake"
+vertical_alignment = 1
+
+[node name="ControlsMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="Controls" type="HBoxContainer" parent="VBoxContainer/ControlsMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/ControlsMarginContainer/Controls"]
+layout_mode = 2
+
+[node name="ContinueBtn" type="Button" parent="VBoxContainer/ControlsMarginContainer/Controls/Buttons"]
+layout_mode = 2
+theme = ExtResource("1_diqnp")
+text = "Continue"
+
+[node name="NewGameBtn" type="Button" parent="VBoxContainer/ControlsMarginContainer/Controls/Buttons"]
+layout_mode = 2
+theme = ExtResource("1_diqnp")
+text = "New game"
+
+[node name="SettingsBtn" type="Button" parent="VBoxContainer/ControlsMarginContainer/Controls/Buttons"]
+layout_mode = 2
+theme = ExtResource("1_diqnp")
+text = "Settings"
+
+[node name="QuitBtn" type="Button" parent="VBoxContainer/ControlsMarginContainer/Controls/Buttons"]
+layout_mode = 2
+theme = ExtResource("1_diqnp")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/ControlsMarginContainer/Controls/Buttons/QuitBtn" to="." method="_on_quit_btn_pressed"]

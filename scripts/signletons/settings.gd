@@ -43,9 +43,13 @@ func _read_settings() -> void:
 	# Read data
 	var file = FileAccess.open(FILE_PATH, FileAccess.READ)
 	var test_json_conv = JSON.new()
+	if file == null:
+		_set_default()
+		return
 	var err = test_json_conv.parse(file.get_as_text())
 	if err != OK:
 		_set_default()
+		return
 	
 	var content = test_json_conv.get_data()
 	_restore(content)
