@@ -24,3 +24,6 @@ Builds
 
 # Temporary files
 .~lock.*
+
+# Source audio files
+audio/src

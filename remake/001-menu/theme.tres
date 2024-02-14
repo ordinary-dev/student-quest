@@ -1,4 +1,18 @@
-[gd_resource type="Theme" format=3 uid="uid://374y6xrb0q5e"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://374y6xrb0q5e"]
+
+[ext_resource type="StyleBox" uid="uid://cdtko040a1djx" path="res://remake/001-menu/buttons-normal.tres" id="1_fcfv0"]
+[ext_resource type="StyleBox" uid="uid://bvj0bqdb6ctt7" path="res://remake/001-menu/buttons-focus.tres" id="2_gawty"]
+[ext_resource type="StyleBox" uid="uid://dxpvlb83opk0" path="res://remake/001-menu/buttons-pressed.tres" id="2_mcvyc"]
 
 [resource]
-default_font_size = 48
+default_font_size = 32
+Button/styles/disabled = ExtResource("1_fcfv0")
+Button/styles/focus = ExtResource("2_gawty")
+Button/styles/hover = ExtResource("1_fcfv0")
+Button/styles/normal = ExtResource("1_fcfv0")
+Button/styles/pressed = ExtResource("2_mcvyc")
+TabContainer/styles/tab_disabled = ExtResource("1_fcfv0")
+TabContainer/styles/tab_focus = ExtResource("2_gawty")
+TabContainer/styles/tab_hovered = ExtResource("2_mcvyc")
+TabContainer/styles/tab_selected = ExtResource("2_mcvyc")
+TabContainer/styles/tab_unselected = ExtResource("1_fcfv0")
