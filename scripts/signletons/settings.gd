@@ -17,10 +17,6 @@ func write_settings() -> void:
 	var file = FileAccess.open(FILE_PATH, FileAccess.WRITE)
 	# Save dictionary as JSON
 	var dict = {
-		"music": MUSIC.volume,
-		"fx": FX.volume,
-		"fullscreen": str(((get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN) or (get_window().mode == Window.MODE_FULLSCREEN))),
-		"vsync": str((DisplayServer.window_get_vsync_mode() != DisplayServer.VSYNC_DISABLED)),
 		"lang": TranslationServer.get_locale(),
 		"progress": progress,
 	}
@@ -57,18 +53,6 @@ func _read_settings() -> void:
 
 # Restore existing values from json file
 func _restore(content: Dictionary) -> void:
-	# Audio
-	if content.has("music"):
-		MUSIC.volume = content["music"]
-	if content.has("fx"):
-		FX.volume = content["fx"]
-	
-	# Graphics
-	if content.has("fullscreen"):
-		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (_str_to_bool(content["fullscreen"])) else Window.MODE_WINDOWED
-	if content.has("vsync"):
-		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (_str_to_bool(content["vsync"])) else DisplayServer.VSYNC_DISABLED)
-	
 	# Language
 	if content.has("lang"):
 		TranslationServer.set_locale(content["lang"])
@@ -84,8 +68,4 @@ func _str_to_bool(val: String) -> bool:
 
 # Set default values
 func _set_default() -> void:
-	MUSIC.volume = 0
-	FX.volume = 0
-	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if (true) else DisplayServer.VSYNC_DISABLED)
-	get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (true) else Window.MODE_WINDOWED
 	TranslationServer.set_locale("en")

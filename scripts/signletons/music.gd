@@ -19,17 +19,7 @@ func play_sound(song_path: String) -> void:
 
 
 func _set_volume(value: float) -> void:
-	if value > MAX_VOLUME:
-		value = MAX_VOLUME
-	elif value < MIN_VOLUME:
-		value = MIN_VOLUME
-	volume = value
-	AudioServer.set_bus_volume_db(1, volume)
-	# Mute
-	if volume == MIN_VOLUME:
-		AudioServer.set_bus_mute(1, true)
-	elif AudioServer.is_bus_mute(1):
-		AudioServer.set_bus_mute(1, false)
+	pass
 
 
 func _get_volume() -> float:

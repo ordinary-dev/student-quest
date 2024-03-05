@@ -113,15 +113,11 @@ dialog_next={
 
 pointing/emulate_touch_from_mouse=true
 
-[internationalization]
-
-locale/translations=PackedStringArray("res://translations/chapters.en.translation", "res://translations/chapters.ru.translation", "res://translations/characters.en.translation", "res://translations/characters.ru.translation", "res://translations/menu.en.translation", "res://translations/menu.ru.translation", "res://translations/strings.en.translation", "res://translations/strings.ru.translation", "res://translations/chapter_1/1_beginning.en.translation", "res://translations/chapter_1/1_beginning.ru.translation", "res://translations/chapter_1/2_first_days.en.translation", "res://translations/chapter_1/2_first_days.ru.translation", "res://translations/chapter_1/3_accident.en.translation", "res://translations/chapter_1/3_accident.ru.translation", "res://translations/chapter_1/4_funeral.en.translation", "res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_2/1_new_beginning.en.translation", "res://translations/chapter_2/1_new_beginning.ru.translation", "res://translations/chapter_2/2_celebration.en.translation", "res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/3_disappearance.en.translation", "res://translations/chapter_2/3_disappearance.ru.translation", "res://translations/chapter_3/1_secret_society.en.translation", "res://translations/chapter_3/1_secret_society.ru.translation", "res://translations/chapter_3/2_despair.en.translation", "res://translations/chapter_3/2_despair.ru.translation", "res://translations/chapter_3/3_hope.en.translation", "res://translations/chapter_3/3_hope.ru.translation")
-
 [locale]
 
-test="en"
-fallback="ru"
-translations=PackedStringArray("res://translations/chapters.en.translation", "res://translations/chapters.ru.translation", "res://translations/characters.en.translation", "res://translations/characters.ru.translation", "res://translations/menu.en.translation", "res://translations/menu.ru.translation", "res://translations/strings.en.translation", "res://translations/strings.ru.translation", "res://translations/chapter_1/1_beginning.en.translation", "res://translations/chapter_1/1_beginning.ru.translation", "res://translations/chapter_1/2_first_days.en.translation", "res://translations/chapter_1/2_first_days.ru.translation", "res://translations/chapter_1/3_accident.en.translation", "res://translations/chapter_1/3_accident.ru.translation", "res://translations/chapter_1/4_funeral.en.translation", "res://translations/chapter_1/4_funeral.ru.translation", "res://translations/chapter_2/1_new_beginning.en.translation", "res://translations/chapter_2/1_new_beginning.ru.translation", "res://translations/chapter_2/2_celebration.en.translation", "res://translations/chapter_2/2_celebration.ru.translation", "res://translations/chapter_2/3_disappearance.en.translation", "res://translations/chapter_2/3_disappearance.ru.translation", "res://translations/chapter_3/1_secret_society.en.translation", "res://translations/chapter_3/1_secret_society.ru.translation", "res://translations/chapter_3/2_despair.en.translation", "res://translations/chapter_3/2_despair.ru.translation", "res://translations/chapter_3/3_hope.en.translation", "res://translations/chapter_3/3_hope.ru.translation")
+test="ru"
+fallback="en"
+translations=PackedStringArray()
 
 [physics]
 

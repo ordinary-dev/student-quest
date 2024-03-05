@@ -46,17 +46,7 @@ func play_dialog_sound() -> void:
 
 
 func _set_volume(value: float) -> void:
-	if value > MAX_VOLUME:
-		value = MAX_VOLUME
-	elif value < MIN_VOLUME:
-		value = MIN_VOLUME
-	volume = value
-	AudioServer.set_bus_volume_db(2, volume)
-	# Mute
-	if volume == MIN_VOLUME:
-		AudioServer.set_bus_mute(2, true)
-	elif AudioServer.is_bus_mute(2):
-		AudioServer.set_bus_mute(2, false)
+	pass
 
 
 func _get_volume() -> float:
