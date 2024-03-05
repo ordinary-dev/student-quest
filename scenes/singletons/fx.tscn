@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://c7aoujntvq873"]
 
-[ext_resource path="res://audio/fx/button/button_v03.ogg" type="AudioStream" id=1]
-[ext_resource path="res://audio/fx/dialog/dialog.wav" type="AudioStream" id=2]
-[ext_resource path="res://scripts/signletons/fx.gd" type="Script" id=3]
+[ext_resource type="AudioStream" uid="uid://bocijqceq66w1" path="res://audio/fx/button/button_v03.ogg" id="1"]
+[ext_resource type="AudioStream" uid="uid://c78sf5dal3un5" path="res://audio/fx/dialog/dialog.wav" id="2"]
+[ext_resource type="Script" path="res://scripts/signletons/fx.gd" id="3"]
 
 [node name="FX" type="AudioStreamPlayer"]
 process_mode = 3
-bus = "FX"
-script = ExtResource( 3 )
-btn_click_sound = ExtResource( 1 )
-dialog_sound = ExtResource( 2 )
+script = ExtResource("3")
+btn_click_sound = ExtResource("1")
+dialog_sound = ExtResource("2")
